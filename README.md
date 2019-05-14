@@ -1,4 +1,4 @@
-# ORIGIN_Agent
+# ORIZIN_Agent
 AIアシスタント、ORIZINのPythonコードです。動作にはPython2系及びPython3系の両方が必要です。
 
 このコードの動作には、Open JTalk、Julius、snowboy及びそれらの動作に必要なライブラリ等を別途ダウンロードする必要があります。また、動作確認はRaspberry Piで行っており、他の環境（Windows等）では適宜書き換えてお使いください。
