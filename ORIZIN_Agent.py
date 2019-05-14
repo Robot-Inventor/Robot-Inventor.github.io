@@ -14,7 +14,7 @@ nameOfThisSoftware = 'ORIZIN　AIアシスタント'
 dictionary = ''
 index = 0
 notAdjustedQuestion = ''
-responce = ''
+response = ''
 knownQuestion = False
 
 
@@ -24,7 +24,7 @@ def whereAmI():
     thisDir = tk.filedialog.askdirectory()
 
 def readDictionary():
-    f = open(thisDir + '/responce.txt')
+    f = open(thisDir + '/response.txt')
     global dictionary
     global index
     dictionaryFile = f.read()
@@ -45,7 +45,7 @@ def readDictionary():
     dictionary = dictionaryFile
     f.close()
 
-def run():
+def worker():
     global notAdjustedQuestion
     notAdjustedQuestion = requestBox.get()
     question = adjustQuestion(notAdjustedQuestion)
@@ -72,13 +72,13 @@ def run():
         else:
             speak('ジャンケンですか。良いですね。やりましょう。それではいきますよ。ジャン　ケン　ポン。私はパーです。')
     else:
-        searchResponce(question)
+        searchresponse(question)
 
-def runFromShortcut(event):
-    run()
+def workerFromShortcut(event):
+    worker()
     
-def searchResponce(request):
-    global responce
+def searchresponse(request):
+    global response
     global knownQuestion
     knownQuestion = False
     candidateForDictionary = dictionary
@@ -96,13 +96,10 @@ def searchResponce(request):
         speak('そうですか。')
 
 def speak(content):
-    global responce
-    responce = content
-    command = 'echo "' + content + '" | open_jtalk -x /var/lib/mecab/dic/open-jspeak/naist-jdic -m /usr/share/hts-voice/mei/mei_normal.htsvoice  -ow /dev/stdout -fm -5 | aplay'
-    speaker = subprocess.Popen(command.split(), stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    speaker.communicate()
-    #getoutput('echo "' + content + '" | open_jtalk -x /var/lib/mecab/dic/open-jspeak/naist-jdic -m /usr/share/hts-voice/mei/mei_normal.htsvoice  -ow /dev/stdout -fm -5 | aplay')
-    resultBox.insert('end', notAdjustedQuestion + '\n' + responce + '\n>>>')
+    global response
+    response = content
+    getoutput('echo "' + content + '" | open_jtalk -x /var/lib/mecab/dic/open-jtalk/naist-jdic -m /usr/share/hts-voice/mei/mei_normal.htsvoice  -ow /dev/stdout -fm -5 | aplay')
+    resultBox.insert('end', notAdjustedQuestion + '\n' + response + '\n>>>')
 
 def playSound(soundFile):
     command = 'aplay ' + soundFile
@@ -134,7 +131,7 @@ root.geometry("500x300")
 
 root.bind('<Control-q>', shutdownFromShortcut)
 root.bind('<Control-Delete>', resetFromShortcut)
-root.bind('<Return>', runFromShortcut)
+root.bind('<Return>', workerFromShortcut)
 
 whereAmI()
 readDictionary()
@@ -148,7 +145,7 @@ controllerFrame.pack(anchor=tk.NW, pady=5, expand=1, fill=tk.X)
 requestBox = tk.Entry(controllerFrame)
 requestBox.pack(anchor=tk.NW, side=tk.LEFT, expand=1, fill=tk.BOTH)
 
-startButton = tk.Button(controllerFrame, text='実行', command=run)
+startButton = tk.Button(controllerFrame, text='実行', command=worker)
 startButton.pack(side=tk.LEFT, anchor=tk.NW)
 
 stopFrame = tk.Frame(mainFrame, height=100)
