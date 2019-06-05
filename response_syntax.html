@@ -11,7 +11,7 @@
   <h2>いつもあなたと共に。オープンな相棒 <s>　　</s></h2>
   <p>ORIZIN Agent は、オープンソースの AI アシスタントです。</p>
   <br><h1><span style="color:#d2691e">認識する言葉のカスタマイズ</span></h1><br>
-  <h3><span syle="color:#d2691e">1. 基本</span></h3>
+  <h2><span style="color:#d2691e">1. 基本</span></h2>
   <p>基本的には、response.txtを編集することで挙動をカスタマイズすることができます。以下に、具体例を示します。</p>
 <pre><code>オリジン:オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。
 おりじん:オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。
@@ -26,7 +26,7 @@ origin:オリジンは、私の名前の元となった、原点という意味�
 <li>反応する言葉と応答1セットごとに改行を入れてください。また、空行は入れないでください。</li>
 <li>プログラム中でユーザーからの入力に含まれる空白、<code>・</code>、<code>_</code>等は取り除かれ、アルファベットは小文字に変換されます。そのため、反応する言葉は、空白、<code>・</code>、<code>_</code>を取り除いた（アルファベットは）小文字で書く必要があります。</li>
 </ul>
-<details><summary>Tips!</summary><div>
+<span style="color:#d2691e"><details><summary>Tips!</summary></span><div>
 <p><code>/</code>を使うことでresponse.txtを短く、詳しく書くことができます。以下は、上の例と同じ意味です。</p>
 <pre><code>オリジン/おりじん/orizin:オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。
 origin:オリジンは、私の名前の元となった、原点という意味の英単語です。また、私の名前の綴りはORIZINで、Gの部分がZになっています。
@@ -37,7 +37,72 @@ origin:オリジンは、私の名前の元となった、原点という意味�
 </code></pre>
 <p>この例は、例えば1行目であれば、ユーザーからの入力に<code>オリジン</code>、<code>おりじん</code>、<code>orizin</code>のどれかが含まれていた場合、<code>オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。</code>と喋り、GUI画面には応答として<code>ORIZINは、私の名前です。原点という意味の英単語、originに由来しています。</code>と表示します。この機能は、英単語を発音することができないOpen JTalkに無理やり英単語を発音させる場合に便利です。今回の例で言えば、<code>ORIZIN</code>と喋らせたい場合、通常なら「オー・アール・アイ・ズィー・アイ・エヌ」と発音されてしまうところを、<code>オリジン</code>と発音させ、GUI画面には本来の<code>ORIZIN</code>を表示させます。</p>
 </div></details>
-  このページと同じ内容を、<a href="https://github.com/Robot-Inventor/ORIZIN_Agent/wiki/挙動をカスタマイズする">Wiki</a>でも見ることができます。
+<h2><span style="color:#d2691e">2. 発展</span></h2>
+  <p>音楽を再生する等、会話以外のことをしたい場合、ORIZIN_Agent.pyを書き換える必要があります。以下は、音楽を再生する例です（ORIZIN_Agent.pyより引用）。</p>
+  <pre><code>if judge(question, ['catlife', 'キャットライフ']):
+        speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')
+        playSound(thisDir + '/sounds/musics/wav/catLife.wav')
+elif judge(question, ['曲', '音楽', '楽曲', '歌', '唄', 'うた', 'ミュージック']):
+        if random.randint(0, 1) == 0:
+            speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')
+            playSound(thisDir + '/sounds/musics/wav/catLife.wav')
+        else:
+            speak('私の好きな曲は、せんじんです。せんじんを再生します。', '私の好きな曲は、戦神です。戦神を再生します。')
+            playSound(thisDir + '/sounds/musics/wav/senjin.wav')
+  </code></pre>
+  <p><code>if judge(question, ['catlife', 'キャットライフ']):</code>は、ユーザーからの入力に'catlife'または'キャットライフ'が含まれているかを判定します。つまり、<code>elif judge(question, ['曲', '音楽', '楽曲', '歌', '唄', 'うた', 'ミュージック']):</code>の部分は、ユーザーからの入力に<code>catlife</code>も<code>キャットライフ</code>も含まれていない場合に、'曲'、'音楽'、'楽曲'、'歌'、'唄'、'うた'、'ミュージック'の内のどれかが含まれているかを判定します。</p>
+<p><code>speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')</code>は、'私の好きな曲は、キャットライフです。キャットライフを再生します。'と喋り、GUI画面のユーザーの入力とそれに対する応答を表示するスペースの応答に'私の好きな曲は、Cat lifeです。Cat lifeを再生します。'と表示します。また、以下はspeak関数の書き方の例です。<br>
+<code>speak('content1', 'content2', request = 'content3', prompt = True, speed = 0)</code><br>
+各引数の意味は、以下の通りです。</p>
+<table>
+<thead>
+<tr>
+<th align="center">引数名</th>
+<th align="center">意味</th>
+<th align="center">変数の型</th>
+<th align="center">省略可/不可</th>
+<th align="center">デフォルト値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">第1引数</td>
+<td align="center">喋らせたい内容</td>
+<td align="center">String</td>
+<td align="center">不可</td>
+<td align="center">なし</td>
+</tr>
+<tr>
+<td align="center">第2引数</td>
+<td align="center">応答としてGUI画面に表示する内容</td>
+<td align="center">String</td>
+<td align="center">可('no arg'または省略でデフォルト値が使われる)</td>
+<td align="center">第1引数</td>
+</tr>
+<tr>
+<td align="center">request</td>
+<td align="center">ユーザーからの入力として表示する内容</td>
+<td align="center">String</td>
+<td align="center">可('no arg'または省略でデフォルト値が使われる)</td>
+<td align="center">ユーザーからの入力</td>
+</tr>
+<tr>
+<td align="center">prompt</td>
+<td align="center">ユーザーからの入力を表示するかどうか</td>
+<td align="center">Boolean</td>
+<td align="center">可(省略するとデフォルト値が使われる)</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td align="center">speed</td>
+<td align="center">話速</td>
+<td align="center">0~2のintまたはfloat</td>
+<td align="center">可(省略するとデフォルト値が使われる)</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+  <br><br>このページと同じ内容を、<a href="https://github.com/Robot-Inventor/ORIZIN_Agent/wiki/挙動をカスタマイズする">Wiki</a>でも見ることができます。<br>
   <a href="https://github.com/Robot-Inventor/ORIZIN_Agent">GitHub</a>
 </main>
 <footer style="text-align:center;">
