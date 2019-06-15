@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 <html>
+    <style>
+    #loader-bg {
+        background: #fff;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+    }
+    #loader-bg img {	
+        background: #fff;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+    </style>
+    <div id="loader-bg">
+        <img src="805.png">
+    </div>
+
     <head>
         <meta charset="UTF-8">
         <title>オープンな AI アシスタント ORIZIN Agent</title>
@@ -23,4 +48,11 @@
             <hr><p>Copyright &#169; 2019 Robot-Inventor     All rights reserved.</p>
         </footer>
     </body>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        jQuery(window).on('load', function() {
+        jQuery('#loader-bg').hide();
+        });
+    </script>
 </html>
