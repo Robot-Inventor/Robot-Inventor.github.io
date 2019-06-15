@@ -39,9 +39,9 @@
             <h2><span style="color:#d2691e">1. 基本</span></h2>
             <p>基本的には、response.txtを編集することで挙動をカスタマイズすることができます。以下に、具体例を示します。</p>
             <pre><code>オリジン:オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。
-                おりじん:オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。
-                orizin:オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。
-                origin:オリジンは、私の名前の元となった、原点という意味の英単語です。また、私の名前の綴りはORIZINで、Gの部分がZになっています。
+おりじん:オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。
+orizin:オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。
+origin:オリジンは、私の名前の元となった、原点という意味の英単語です。また、私の名前の綴りはORIZINで、Gの部分がZになっています。
             </code></pre>
             <ul>
                 <li>
@@ -54,26 +54,26 @@
             <details><summary>Tips!</summary><div>
                 <p><code>/</code>を使うことでresponse.txtを短く、詳しく書くことができます。以下は、上の例と同じ意味です。</p>
                 <pre><code>オリジン/おりじん/orizin:オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。
-                    origin:オリジンは、私の名前の元となった、原点という意味の英単語です。また、私の名前の綴りはORIZINで、Gの部分がZになっています。
+origin:オリジンは、私の名前の元となった、原点という意味の英単語です。また、私の名前の綴りはORIZINで、Gの部分がZになっています。
                 </code></pre>
                 <p>この例は、反応する言葉を複数指定しています。ただし、<code>/</code>は半角である必要があります。また、下の例を見てください。</p>
                 <pre><code>オリジン/おりじん/orizin:オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。/ORIZINは、私の名前です。原点という意味の英単語、originに由来しています。
-                    origin:オリジンは、私の名前の元となった、原点という意味の英単語です。また、私の名前の綴りはORIZINで、Gの部分がZになっています。/originは、私の名前の元となった、原点という意味の英単語です。また、私の名前の綴りはORIZINで、Gの部分がZになっています。
+origin:オリジンは、私の名前の元となった、原点という意味の英単語です。また、私の名前の綴りはORIZINで、Gの部分がZになっています。/originは、私の名前の元となった、原点という意味の英単語です。また、私の名前の綴りはORIZINで、Gの部分がZになっています。
                 </code></pre>
                 <p>この例は、例えば1行目であれば、ユーザーからの入力に<code>オリジン</code>、<code>おりじん</code>、<code>orizin</code>のどれかが含まれていた場合、<code>オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。</code>と喋り、GUI画面には応答として<code>ORIZINは、私の名前です。原点という意味の英単語、originに由来しています。</code>と表示します。この機能は、英単語を発音することができないOpen JTalkに無理やり英単語を発音させる場合に便利です。今回の例で言えば、<code>ORIZIN</code>と喋らせたい場合、通常なら「オー・アール・アイ・ズィー・アイ・エヌ」と発音されてしまうところを、<code>オリジン</code>と発音させ、GUI画面には本来の<code>ORIZIN</code>を表示させます。</p>
             </div></details>
             <h2><span style="color:#d2691e">2. 発展</span></h2>
                 <p>音楽を再生する等、会話以外のことをしたい場合、ORIZIN_Agent.pyを書き換える必要があります。以下は、音楽を再生する例です（ORIZIN_Agent.pyより引用）。</p>
                 <pre><code>if judge(question, ['catlife', 'キャットライフ']):
-            speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')
-            playSound(thisDir + '/sounds/musics/wav/catLife.wav')
+    speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')
+    playSound(thisDir + '/sounds/musics/wav/catLife.wav')
 elif judge(question, ['曲', '音楽', '楽曲', '歌', '唄', 'うた', 'ミュージック']):
-        if random.randint(0, 1) == 0:
-            speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')
-            playSound(thisDir + '/sounds/musics/wav/catLife.wav')
-        else:
-            speak('私の好きな曲は、せんじんです。せんじんを再生します。', '私の好きな曲は、戦神です。戦神を再生します。')
-            playSound(thisDir + '/sounds/musics/wav/senjin.wav')
+    if random.randint(0, 1) == 0:
+        speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')
+        playSound(thisDir + '/sounds/musics/wav/catLife.wav')
+    else:
+        speak('私の好きな曲は、せんじんです。せんじんを再生します。', '私の好きな曲は、戦神です。戦神を再生します。')
+        playSound(thisDir + '/sounds/musics/wav/senjin.wav')
             </code></pre>
             <p><code>if judge(question, ['catlife', 'キャットライフ']):</code>は、ユーザーからの入力に'catlife'または'キャットライフ'が含まれているかを判定します。つまり、<code>elif judge(question, ['曲', '音楽', '楽曲', '歌', '唄', 'うた', 'ミュージック']):</code>の部分は、ユーザーからの入力に<code>catlife</code>も<code>キャットライフ</code>も含まれていない場合に、'曲'、'音楽'、'楽曲'、'歌'、'唄'、'うた'、'ミュージック'の内のどれかが含まれているかを判定します。</p>
             <p><code>speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')</code>は、'私の好きな曲は、キャットライフです。キャットライフを再生します。'と喋り、GUI画面のユーザーの入力とそれに対する応答を表示するスペースの応答に'私の好きな曲は、Cat lifeです。Cat lifeを再生します。'と表示します。また、以下はspeak関数の書き方の例です。<br>
