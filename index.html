@@ -1,62 +1,64 @@
 <!DOCTYPE html>
 <html>
-<style>
-#loader-bg {
-    background: #fff;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 10;
-}
-#loader-bg img {	
-    background: #fff;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    z-index: 10;
-}
-</style>
-<div id="loader-bg">
-  <img src="805.png">
-</div>
+    <style>
+    #loader-bg {
+        background: #fff;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+    }
+    #loader-bg img {	
+        background: #fff;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+    </style>
+    <div id="loader-bg">
+        <img src="805.png">
+    </div>
 
-<head>
-<meta charset="UTF-8">
-<title>オープンな AI アシスタント ORIZIN Agent</title>
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-<meta name="description" content="オープンソースのAIアシスタント、ORIZIN Agent公式ページです。"
-</head>
-<body bgcolor="#ffffff" text="#a9a9a9" link="#d2691e" vlink="#d98719" alink="#ff7f50">
-<main>
-  <img src="ORIZIN_Agent-2_透明.png" alt="ORIZIN Agentのロゴ" title="ORIZIN Agentのロゴ" width="1080" height="392" style="text-align:center;">
-  <h2>いつもあなたと共に。オープンな相棒 <strike>　　</strike></h2>
-  <p>ORIZIN Agent は、オープンソースの AI アシスタントです。</p>
-  <br><p><h1><span style="color:#d2691e">オープンソース</span></h1>
-  ORIZIN Agent は、<a href="https://github.com/Robot-Inventor/ORIZIN_Agent/blob/master/LICENSE">MIT ライセンス</a>の下に GitHub 上で公開されている簡易的な AI アシスタントです。Linux 上で動作します。その他の動作環境は、Wiki をご覧ください。<br><a href="https://github.com/Robot-Inventor/ORIZIN_Agent/wiki/動作環境について">Wiki</a></p>
-  <br><p><h1><span style="color:#d2691e">オフライン</span></h1>
-  基本機能は全てオフラインで動作します。また、インターネット接続があれば、ニュースの読み上げにも対応します。</p>
-  <br><p><h1><span style="color:#d2691e">互換性</span></h1>
-  GUI に Python 標準ライブラリの tkinter を使用しています。その為、新たにインストールする必要があるライブラリ等は最小限に抑えられています。</p>
-  <br><p><h1><span style="color:#d2691e">豊富な機能</span></h1>
-  早口言葉やジャンケン、ニュース読み上げ、音楽の再生等にも対応します。</p>
-  <br><p><h1><span style="color:#d2691e">簡単な機能拡張</span></h1>
-  ORIZIN Agent が認識できる言葉とそれに対する応答は、テキストファイルを編集するだけで自分好みに変更できます。また、ORIZIN Agent のプログラムは単純なので、機能の追加も比較的簡単に行えます。もし、あなたが Python を使ったことがあるなら、それは驚くほど簡単でしょう。<br><a href="response_syntax.html">詳細</a></p>
-  <a href="development_document.html">開発記録・ORIZIN Agent 関連資料</a><br>
-  <a href="https://github.com/Robot-Inventor/ORIZIN_Agent">GitHub</a>
-</main>
-<footer style="text-align:center;">
-  <hr><p>Copyright &#169; 2019 Robot-Inventor All rights reserved.</p>
-</footer>
-</body>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script>
-jQuery(window).on('load', function() {
-  jQuery('#loader-bg').hide();
-});
-</script>
+    <head>
+        <meta charset="UTF-8">
+        <title>オープンな AI アシスタント ORIZIN Agent</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <meta name="description" content="オープンソースのAIアシスタント、ORIZIN Agent公式ページです。"
+    </head>
+
+    <body bgcolor="#ffffff" text="#a9a9a9" link="#d2691e" vlink="#d98719" alink="#ff7f50">
+        <main>
+            <img src="ORIZIN_Agent-2_透明.png" alt="ORIZIN Agentのロゴ" title="ORIZIN Agentのロゴ" width="1080" height="392" style="text-align:center;">
+            <h2>いつもあなたと共に。オープンな相棒 <strike>　　</strike></h2>
+            <p>ORIZIN Agent は、オープンソースの AI アシスタントです。</p>
+            <br><p><h1><span style="color:#d2691e">オープンソース</span></h1>
+            ORIZIN Agent は、<a href="https://github.com/Robot-Inventor/ORIZIN_Agent/blob/master/LICENSE">MIT ライセンス</a>の下に GitHub 上で公開されている簡易的な AI アシスタントです。Linux 上で動作します。その他の動作環境は、Wiki をご覧ください。<br><a href="https://github.com/Robot-Inventor/ORIZIN_Agent/wiki/動作環境について">Wiki</a></p>
+            <br><p><h1><span style="color:#d2691e">オフライン</span></h1>
+            基本機能は全てオフラインで動作します。また、インターネット接続があれば、ニュースの読み上げにも対応します。</p>
+            <br><p><h1><span style="color:#d2691e">互換性</span></h1>
+            GUI に Python 標準ライブラリの tkinter を使用しています。その為、新たにインストールする必要があるライブラリ等は最小限に抑えられています。</p>
+            <br><p><h1><span style="color:#d2691e">豊富な機能</span></h1>
+            早口言葉やジャンケン、ニュース読み上げ、音楽の再生等にも対応します。</p>
+            <br><p><h1><span style="color:#d2691e">簡単な機能拡張</span></h1>
+            ORIZIN Agent が認識できる言葉とそれに対する応答は、テキストファイルを編集するだけで自分好みに変更できます。また、ORIZIN Agent のプログラムは単純なので、機能の追加も比較的簡単に行えます。もし、あなたが Python を使ったことがあるなら、それは驚くほど簡単でしょう。<br><a href="response_syntax.html">詳細</a></p>
+            <a href="development_document.html">開発記録・ORIZIN Agent 関連資料</a><br>
+            <a href="https://github.com/Robot-Inventor/ORIZIN_Agent">GitHub</a>
+        </main>
+        <footer style="text-align:center;">
+            <hr><p>Copyright &#169; 2019 Robot-Inventor All rights reserved.</p>
+        </footer>
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        jQuery(window).on('load', function() {
+        jQuery('#loader-bg').hide();
+        });
+    </script>
 </html>
