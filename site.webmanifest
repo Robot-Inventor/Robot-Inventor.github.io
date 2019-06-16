@@ -15,6 +15,6 @@
     ],
     "theme_color": "#333333",
     "background_color": "#333333",
-    "start_url": "https://robot-inventor.github.io/ORIZIN_Agent/",
+    "start_url": "https://robot-inventor.github.io/ORIZIN_Agent",
     "display": "standalone"
 }
