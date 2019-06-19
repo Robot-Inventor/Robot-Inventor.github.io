@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Open source AI assistant, ORIZIN Agent</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/ORIZIN_Agent/icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/ORIZIN_Agent/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="194x194" href="/ORIZIN_Agent/icon/favicon-194x194.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/ORIZIN_Agent/icon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/ORIZIN_Agent/icon/favicon-16x16.png">
+        <link rel="manifest" href="/ORIZIN_Agent/icon/site.webmanifest">
+        <link rel="mask-icon" href="/ORIZIN_Agent/icon/safari-pinned-tab.svg" color="#d2691e">
+        <meta name="apple-mobile-web-app-title" content="ORIZIN Agent">
+        <meta name="application-name" content="ORIZIN Agent">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="mstile-144x144.png">
+        <meta name="theme-color" content="#333333">
+        <meta name="description" content="This is the official Engilish site top of the open source AI assistant, ORIZIN Agent.">
+        <style>
+            #loader-bg {
+                background: #333333;
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                z-index: 10;
+            }
+            #loader-bg img {	
+                background: #333333;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                z-index: 10;
+            }
+        </style>
+        <div id="loader-bg">
+            <img src="/ORIZIN_Agent/icon/805.png">
+        </div>
+    </head>
+    <body bgcolor="#333333" text="#a9a9a9" link="#d2691e" vlink="#d98719" alink="#ff7f50">
+        <main>
+            <a href="/ORIZIN_Agent"><img src="/ORIZIN_Agent/icon/ORIZIN_Agent-2_透明.png" alt="ORIZIN Agentのロゴ" title="ORIZIN Agentのロゴ" width="1080" height="392"></a>
+            <h2>Always with you.Your open partner. <strike>　　</strike></h2>
+            <p>ORIZIN Agent is an open source AI assistant.</p>
+            <br><p><h1><span style="color:#d2691e">Open Source</span></h1>
+            ORIZIN Agent is a simple AI assistant which is published on GitHub under <a href="https://github.com/Robot-Inventor/ORIZIN_Agent/blob/master/LICENSE">MIT license</a>.It works on Linux.If you want to know other conditions of it, please check the Wiki.<br><a href="https://github.com/Robot-Inventor/ORIZIN_Agent/wiki/動作環境について">Wiki</a></p>
+            <br><p><h1><span style="color:#d2691e">Off-line</span></h1>
+            ORIZIN Agent's basic functions can work off-line.If ORIZIN Agent can access the Internet, it can read news for you.</p>
+            <br><p><h1><span style="color:#d2691e">Versatility</span></h1>
+            ORIZIN Agent uses tkinter which is standard library of Python3 for graphic, so you have to install little libraries.</p>
+            <br><p><h1><span style="color:#d2691e">Abundant Functions</span></h1>
+            ORIZIN Agent has a lot of functions.For example, saying tongue twister, reading news etc.</p>
+            <br><p><h1><span style="color:#d2691e">Easy to Add Functions</span></h1>
+            You can change the words ORIZIN Agent can understand and its response easily.ORIZIN Agent's computer programs are simple, so if you want to add functions, you can do so easily (If you have written Python programs before).<br><a href="response_syntax.html">Detail</a></p>
+            <br><br><a href="/ORIZIN_Agent/development_document/development_document.html">Development documents</a><br>
+            <a href="https://github.com/Robot-Inventor/ORIZIN_Agent">GitHub</a>
+        </main>
+        <footer style="text-align:center;">
+            <hr><p>Copyright &#169; 2019 Robot-Inventor All rights reserved.</p><br>
+            <a href="/ORIZIN_Agent/TOS/latest_TOS.html">利用規約</a>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+            jQuery(window).on('load', function() {
+            jQuery('#loader-bg').hide();
+            });
+        </script>
+    </body>
+</html>
