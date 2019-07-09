@@ -25,38 +25,27 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-TileImage" content="mstile-144x144.png">
         <meta name="theme-color" content="#333333">
-        <meta name="description" content="オープンソースのAIアシスタント、ORIZIN Agent公式サイトのプライバシーポリシーです。">
-        <style>
-            #loader-bg {
-                background: #333333;
-                height: 100%;
-                width: 100%;
-                position: fixed;
-                top: 0px;
-                left: 0px;
-                z-index: 10;
-            }
-            #loader-bg img {	
-                background: #333333;
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                -webkit-transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-                z-index: 10;
-            }
-        </style>
+        <meta name="description" content="オープンソースのAIアシスタント、ORIZIN Agentの公式サイトトップです。">
+        <link rel="stylesheet" type="text/css" href="/ORIZIN_Agent/main_style.css">
         <div id="loader-bg">
             <img src="/ORIZIN_Agent/icon/805.png">
         </div>
     </head>
-    <body bgcolor="#333333" text="#a9a9a9" link="#d2691e" vlink="#d98719" alink="#ff7f50">
+    <body>
+        <header>
+            <div>
+                <a href="/ORIZIN_Agent"><img src="/ORIZIN_Agent/icon/ORIZIN_Agent-2_透明.png" alt="ORIZIN Agentのロゴ" title="ORIZIN Agentのロゴ" width="270" height="98"></a>
+                <a href="/ORIZIN_Agent/en_top.html">English </a>|
+                <a href="https://github.com/Robot-Inventor/ORIZIN_Agent"> GitHub </a>|
+                <a href="/ORIZIN_Agent/development_document/development_document.html"> 開発記録・ORIZIN Agent 関連資料 </a>|
+                <a href="/ORIZIN_Agent/TOS/latest_TOS.html"> 利用規約 </a>|
+                <a href="/ORIZIN_Agent/policy.html"> プライバシーポリシー</a>
+            </div>
+        </header>
         <main>
-            <a href="/ORIZIN_Agent"><img src="/ORIZIN_Agent/icon/ORIZIN_Agent-2_透明.png" alt="ORIZIN Agentのロゴ" title="ORIZIN Agentのロゴ" width="1080" height="392"></a>
             <h2>いつもあなたと共に。オープンな相棒 <del>　　</del></h2>
             <p>ORIZIN Agent は、オープンソースの AI アシスタントです。</p>
-            <br><p><h1><span style="color:#d2691e">プライバシーポリシー</span></h1>
+            <br><p><h1>プライバシーポリシー</h1>
             ORIZIN Agent 公式サイト（以降，「本サイト」とします。）では，サイトの分析と改善のために Google アナリティクスを使用しています。
             その際，データ収集のために Google がお使いのブラウザに cookie の設定及び既存の cookie の読み取り等を行う場合があります。
             また，本サイト利用中のブラウザは，Google にアクセスしたページのウェブアドレス及び IP アドレス等の特定の非個人情報を自動的に送信し，
@@ -68,12 +57,10 @@
             ただしサイト管理者は，本サイトで設定する cookie からサイトユーザーの氏名，生年月日，電話番号及びメールアドレス等の個人情報を把握することはできませんのでご安心ください。
             また，サイトユーザーはブラウザの設定により cookie の受け取りを拒否することができます。
             Google アナリティクスの cookie の受け取りを拒否したい場合は，<a href="https://tools.google.com/dlpage/gaoptout">Google アナリティクス オプトアウトアドオン</a>を参照してください。</p>
-            <br><br><a href="/ORIZIN_Agent/development_document/development_document.html">開発記録・ORIZIN Agent 関連資料</a><br>
-            <a href="https://github.com/Robot-Inventor/ORIZIN_Agent">GitHub</a>
+            <br><br>
         </main>
-        <footer style="text-align:center;">
-            <hr><p>Copyright &#169; 2019 Robot-Inventor All rights reserved.</p><br>
-            <a href="/ORIZIN_Agent/TOS/latest_TOS.html">利用規約</a> | <a href="/ORIZIN_Agent/policy.html">プライバシーポリシー</a> | <a href="/ORIZIN_Agent/en_top.html">English</a>
+        <footer>
+            <hr><p>Copyright &#169; 2019 Robot-Inventor All rights reserved.</p>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
