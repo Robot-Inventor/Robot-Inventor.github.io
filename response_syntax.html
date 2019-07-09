@@ -26,38 +26,28 @@
         <meta name="msapplication-TileImage" content="mstile-144x144.png">
         <meta name="theme-color" content="#333333">
         <meta name="description" content="オープンソースのAIアシスタント、ORIZIN Agentの挙動のカスタマイズ方法です。">
-        <style>
-            #loader-bg {
-                background: #333333;
-                height: 100%;
-                width: 100%;
-                position: fixed;
-                top: 0px;
-                left: 0px;
-                z-index: 10;
-            }
-            #loader-bg img {	
-                background: #333333;
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                -webkit-transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-                z-index: 10;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="/ORIZIN_Agent/main_style.css">
         <div id="loader-bg">
             <img src="/ORIZIN_Agent/icon/805.png">
         </div>
     </head>
-    <body bgcolor="#333333" text="#a9a9a9" link="#d2691e" vlink="#d98719" alink="#ff7f50">
+    <body>
+        <header>
+            <div>
+                <a href="/ORIZIN_Agent"><img src="/ORIZIN_Agent/icon/ORIZIN_Agent-2_透明.png" alt="ORIZIN Agentのロゴ" title="ORIZIN Agentのロゴ" width="270" height="98"></a>
+                <a href="/ORIZIN_Agent/en_top.html">English </a>|
+                <a href="https://github.com/Robot-Inventor/ORIZIN_Agent"> GitHub </a>|
+                <a href="/ORIZIN_Agent/development_document/development_document.html"> 開発記録・ORIZIN Agent 関連資料 </a>|
+                <a href="/ORIZIN_Agent/TOS/latest_TOS.html"> 利用規約 </a>|
+                <a href="/ORIZIN_Agent/policy.html"> プライバシーポリシー</a>
+            </div>
+        </header>
         <main>
             <a href="/ORIZIN_Agent"><img src="/ORIZIN_Agent/icon/ORIZIN_Agent-2_透明.png" alt="ORIZIN Agentのロゴ" title="ORIZIN Agentのロゴ" width="1080" height="392"></a>
             <h2>いつもあなたと共に。オープンな相棒 <del>　　</del></h2>
             <p>ORIZIN Agent は、オープンソースの AI アシスタントです。</p>
-            <br><h1><span style="color:#d2691e">認識する言葉のカスタマイズ</span></h1><br>
-            <h2><span style="color:#d2691e">1. 基本</span></h2>
+            <br><h1>認識する言葉のカスタマイズ</h1><br>
+            <h2>1. 基本</h2>
             <p>基本的には、response.txtを編集することで挙動をカスタマイズすることができます。以下に、具体例を示します。</p>
             <pre><code>オリジン:オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。
 おりじん:オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。
@@ -83,7 +73,7 @@ origin:オリジンは、私の名前の元となった、原点という意味�
                 </code></pre>
                 <p>この例は、例えば1行目であれば、ユーザーからの入力に<code>オリジン</code>、<code>おりじん</code>、<code>orizin</code>のどれかが含まれていた場合、<code>オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。</code>と喋り、GUI画面には応答として<code>ORIZINは、私の名前です。原点という意味の英単語、originに由来しています。</code>と表示します。この機能は、英単語を発音することができないOpen JTalkに無理やり英単語を発音させる場合に便利です。今回の例で言えば、<code>ORIZIN</code>と喋らせたい場合、通常なら「オー・アール・アイ・ズィー・アイ・エヌ」と発音されてしまうところを、<code>オリジン</code>と発音させ、GUI画面には本来の<code>ORIZIN</code>を表示させます。</p>
             </div></details>
-            <h2><span style="color:#d2691e">2. 発展</span></h2>
+            <h2>2. 発展</h2>
                 <p>音楽を再生する等、会話以外のことをしたい場合、ORIZIN_Agent.pyを書き換える必要があります。以下は、音楽を再生する例です（ORIZIN_Agent.pyより引用）。</p>
                 <pre><code>if judge(question, ['catlife', 'キャットライフ']):
     speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')
@@ -149,12 +139,10 @@ elif judge(question, ['曲', '音楽', '楽曲', '歌', '唄', 'うた', 'ミュ
                 </tbody>
             </table>
             <br><br>このページと同じ内容を、<a href="https://github.com/Robot-Inventor/ORIZIN_Agent/wiki/挙動をカスタマイズする">Wiki</a>でも見ることができます。
-            <br><br><a href="/ORIZIN_Agent">トップへ</a><br>
-            <a href="https://github.com/Robot-Inventor/ORIZIN_Agent">GitHub</a>
+            <br><br>
         </main>
-        <footer style="text-align:center;">
-            <hr><p>Copyright &#169; 2019 Robot-Inventor All rights reserved.</p><br>
-            <a href="TOS/latest_TOS.html">利用規約</a> | <a href="/ORIZIN_Agent/policy.html">プライバシーポリシー</a> | <a href="/ORIZIN_Agent/en_top.html">English</a>
+        <footer>
+            <hr><p>Copyright &#169; 2019 Robot-Inventor All rights reserved.</p>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
