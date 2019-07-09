@@ -31,6 +31,12 @@ h3 {
     color: #d2691e;
 }
 
+div {
+  background: #d2691e;
+  padding: 10px;
+  text-align: center;
+}
+
 #loader-bg {
     background: #333333;
     height: 100%;
