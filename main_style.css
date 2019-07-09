@@ -37,6 +37,10 @@ div {
     padding: 10px;
 }
 
+footer {
+    text-align: center;
+}
+
 #loader-bg {
     background: #333333;
     height: 100%;
