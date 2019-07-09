@@ -1,0 +1,40 @@
+body {
+    bgcolor: #333333;
+    text: #a9a9a9;
+    link: #d2691e;
+    vlink: #d98719;
+    alink: #ff7f50;
+}
+
+h1 {
+    color: #d2691e;
+}
+
+h2 {
+    color: #d2691e;
+}
+
+h3 {
+    color: #d2691e;
+}
+
+#loader-bg {
+    background: #333333;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+
+#loader-bg img {	
+    background: #333333;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
