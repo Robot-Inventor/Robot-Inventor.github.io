@@ -1,10 +1,22 @@
 body {
     background-color: #333333;
     color: #a9a9a9;
-    a:link { color: #d2691e; }
-    a:visited { color: #d98719; }
-    a:hover { color: #ff7f50; }
-    a:active { color: #ff7f50; }
+}
+
+a:link {
+    color: #d2691e;
+}
+
+a:visited {
+    color: #d98719;
+}
+
+a:hover {
+    color: #ff7f50;
+}
+
+a:active {
+    color: #ff7f50;
 }
 
 h1 {
