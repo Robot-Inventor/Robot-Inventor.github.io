@@ -32,9 +32,10 @@ h3 {
 }
 
 div {
-  background: #d2691e;
-  padding: 10px;
-  text-align: center;
+    background: #d2691e;
+    color: #a9a9a9;
+    padding: 10px;
+    text-align: center;
 }
 
 #loader-bg {
