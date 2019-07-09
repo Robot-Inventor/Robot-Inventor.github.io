@@ -36,7 +36,8 @@ div {
     color: #a9a9a9;
     padding: 10px;
     text-align: center;
-    display: inline-block;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #loader-bg {
