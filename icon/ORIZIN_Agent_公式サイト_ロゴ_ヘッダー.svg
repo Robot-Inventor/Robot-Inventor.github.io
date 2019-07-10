@@ -53,7 +53,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -86,7 +86,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;fill:#d2691e;fill-opacity:1;stroke-width:0.53585082">ORIZIN Agent</tspan></text>
     <g
        id="g845"
-       transform="translate(-80.246485,163.28616)">
+       transform="translate(-167.03025,163.28616)">
       <text
          id="text830"
          y="103.80006"
