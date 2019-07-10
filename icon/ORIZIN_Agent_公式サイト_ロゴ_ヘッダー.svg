@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="3840"
+   height="2160"
+   viewBox="0 0 1016 571.50002"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="ORIZIN_Agent_公式サイト_ロゴ_ヘッダー.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.175"
+     inkscape:cx="1636.2829"
+     inkscape:cy="693.39285"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="false"
+     units="px"
+     inkscape:pagecheckerboard="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <sodipodi:guide
+       position="-357.56547,153.45834"
+       orientation="1,0"
+       id="guide10"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="レイヤー 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,274.50002)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:70.55554962px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="78.619049"
+       y="-12.940493"
+       id="text14"><tspan
+         sodipodi:role="line"
+         id="tspan12"
+         x="78.619049"
+         y="57.959568"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;stroke-width:0.26458332" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:142.89355469px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;letter-spacing:0px;word-spacing:0px;fill:#d2691e;fill-opacity:1;stroke:none;stroke-width:0.53585082;"
+       x="23.016556"
+       y="29.967045"
+       id="text18"><tspan
+         sodipodi:role="line"
+         id="tspan16"
+         x="23.016556"
+         y="29.967045"
+         style="fill:#d2691e;fill-opacity:1;stroke-width:0.53585082;-inkscape-font-specification:IPAPGothic;font-family:IPAPGothic;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">ORIZIN Agent</tspan></text>
+    <g
+       id="g845"
+       transform="translate(-59.608972,24.644054)">
+      <text
+         id="text830"
+         y="103.80006"
+         x="92.825958"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:47.66017151px;line-height:1.25;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;letter-spacing:0px;word-spacing:0px;fill:#a9a9a9;fill-opacity:1;stroke:none;stroke-width:0.17872563"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:IPAPGothic;-inkscape-font-specification:IPAPGothic;fill:#a9a9a9;fill-opacity:1;stroke-width:0.17872563"
+           y="103.80006"
+           x="92.825958"
+           id="tspan828"
+           sodipodi:role="line">いつもあなたと共に。オープンな相棒</tspan></text>
+      <rect
+         y="86.420158"
+         x="841.90302"
+         height="2.3472195"
+         width="91.927567"
+         id="rect838"
+         style="opacity:1;fill:#a9a9a9;fill-opacity:1;stroke:#a9a9a9;stroke-width:0.42063761;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>
