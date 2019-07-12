@@ -41,6 +41,10 @@ footer {
     text-align: center;
 }
 
+iframe {
+    width: 100%;
+}
+
 #loader-bg {
     background: #333333;
     height: 100%;
@@ -49,10 +53,6 @@ footer {
     top: 0px;
     left: 0px;
     z-index: 10;
-}
-
-iframe {
-    width: 100%;
 }
 
 #loader-bg img {	
