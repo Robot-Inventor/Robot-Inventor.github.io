@@ -41,7 +41,7 @@ footer {
     text-align: center;
 }
 
-iframe[width=""] {
+iframe[width="auto"] {
     width: 100%;
 }
 
