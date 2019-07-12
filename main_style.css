@@ -51,6 +51,10 @@ footer {
     z-index: 10;
 }
 
+iframe {
+    width: 100%;
+}
+
 #loader-bg img {	
     background: #333333;
     position: fixed;
