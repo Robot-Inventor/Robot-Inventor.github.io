@@ -1,4 +1,4 @@
-@media screen and (width > 720px) {
+@media screen and (width > 720px), (orientation: landscape){
     div[show="pc"] {
         display: block; 
     }
