@@ -74,14 +74,15 @@ img {
     height: auto;
 }
 
-@media screen and (max-width: 720px) {
-    div[show="pc"] {
-        display: none; 
-    }
+div[show="pc"] {
+    display: none;
 }
 
 @media screen and (min-width: 721px) {
     div[show="phone"] {
         display: none; 
+    }
+    div[show="pc"] {
+        display: block; 
     }
 }
