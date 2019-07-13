@@ -1,3 +1,26 @@
+@media screen and (width > 720px) {
+    div[show="pc"] {
+        display: block; 
+    }
+    div[show="phone"] {
+        display: none; 
+    }
+}
+
+@media screen and (width < 720px), (orientation: portrait){
+    div[show="pc"] {
+        display: none; 
+    }
+    div[show="phone"] {
+        display: block; 
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     background-color: #333333;
     color: #a9a9a9;
@@ -67,27 +90,4 @@ iframe[width="auto"] {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 10;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-@media screen and (width > 720px) {
-    div[show="pc"] {
-        display: block; 
-    }
-    div[show="phone"] {
-        display: none; 
-    }
-}
-
-@media screen and (width < 720px) {
-    div[show="pc"] {
-        display: none; 
-    }
-    div[show="phone"] {
-        display: block; 
-    }
 }
