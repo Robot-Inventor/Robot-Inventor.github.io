@@ -77,8 +77,8 @@
             <h2>2. 発展</h2>
                 <p>音楽を再生する等、会話以外のことをしたい場合、ORIZIN_Agent.pyを書き換える必要があります。以下は、音楽を再生する例です（ORIZIN_Agent.pyより引用）。</p>
                 <iframe height="auto" width="auto" src="https://robot-inventor.github.io/ORIZIN_Agent/response_syntax/syntax_example4.html" scrolling=”yes”></iframe>
-            <p><div><code>if judge(question, ['catlife', 'キャットライフ']):</code></div>は、ユーザーからの入力に'catlife'または'キャットライフ'が含まれているかを判定します。つまり、<div><code>elif judge(question, ['曲', '音楽', '楽曲', '歌', '唄', 'うた', 'ミュージック']):</code></div>の部分は、ユーザーからの入力に<code>catlife</code>も<code>キャットライフ</code>も含まれていない場合に、'曲'、'音楽'、'楽曲'、'歌'、'唄'、'うた'、'ミュージック'の内のどれかが含まれているかを判定します。</p>
-            <p><div><code>speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')</code></div>は、'私の好きな曲は、キャットライフです。キャットライフを再生します。'と喋り、GUI画面のユーザーの入力とそれに対する応答を表示するスペースの応答に'私の好きな曲は、Cat lifeです。Cat lifeを再生します。'と表示します。また、以下はspeak関数の書き方の例です。<br>
+            <p><div type="inline"><code>if judge(question, ['catlife', 'キャットライフ']):</code></div>は、ユーザーからの入力に'catlife'または'キャットライフ'が含まれているかを判定します。つまり、<div type="inline"><code>elif judge(question, ['曲', '音楽', '楽曲', '歌', '唄', 'うた', 'ミュージック']):</code></div>の部分は、ユーザーからの入力に<code>catlife</code>も<code>キャットライフ</code>も含まれていない場合に、'曲'、'音楽'、'楽曲'、'歌'、'唄'、'うた'、'ミュージック'の内のどれかが含まれているかを判定します。</p>
+            <p><div type="inline"><code>speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')</code></div>は、'私の好きな曲は、キャットライフです。キャットライフを再生します。'と喋り、GUI画面のユーザーの入力とそれに対する応答を表示するスペースの応答に'私の好きな曲は、Cat lifeです。Cat lifeを再生します。'と表示します。また、以下はspeak関数の書き方の例です。
             <div><code>speak('content1', 'content2', request = 'content3', prompt = True, speed = 0)</code></div><br>
             各引数の意味は、以下の通りです。</p>
             <div>
