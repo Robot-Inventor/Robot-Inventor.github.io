@@ -35,6 +35,8 @@ div {
     background: #000000;
     color: #a9a9a9;
     padding: 10px;
+    max-width: 100%;
+    height: auto;
 }
 
 footer {
@@ -43,6 +45,7 @@ footer {
 
 iframe[width="auto"] {
     width: 100%;
+    height: auto;
 }
 
 #loader-bg {
