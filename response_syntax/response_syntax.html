@@ -77,58 +77,60 @@
             <h2>2. 発展</h2>
                 <p>音楽を再生する等、会話以外のことをしたい場合、ORIZIN_Agent.pyを書き換える必要があります。以下は、音楽を再生する例です（ORIZIN_Agent.pyより引用）。</p>
                 <iframe height="auto" width="auto" src="https://robot-inventor.github.io/ORIZIN_Agent/response_syntax/syntax_example4.html" scrolling=”yes”></iframe>
-            <p><code>if judge(question, ['catlife', 'キャットライフ']):</code>は、ユーザーからの入力に'catlife'または'キャットライフ'が含まれているかを判定します。つまり、<code>elif judge(question, ['曲', '音楽', '楽曲', '歌', '唄', 'うた', 'ミュージック']):</code>の部分は、ユーザーからの入力に<code>catlife</code>も<code>キャットライフ</code>も含まれていない場合に、'曲'、'音楽'、'楽曲'、'歌'、'唄'、'うた'、'ミュージック'の内のどれかが含まれているかを判定します。</p>
-            <p><code>speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')</code>は、'私の好きな曲は、キャットライフです。キャットライフを再生します。'と喋り、GUI画面のユーザーの入力とそれに対する応答を表示するスペースの応答に'私の好きな曲は、Cat lifeです。Cat lifeを再生します。'と表示します。また、以下はspeak関数の書き方の例です。<br>
-            <code>speak('content1', 'content2', request = 'content3', prompt = True, speed = 0)</code><br>
+            <p><div><code>if judge(question, ['catlife', 'キャットライフ']):</code></div>は、ユーザーからの入力に'catlife'または'キャットライフ'が含まれているかを判定します。つまり、<div><code>elif judge(question, ['曲', '音楽', '楽曲', '歌', '唄', 'うた', 'ミュージック']):</code></div>の部分は、ユーザーからの入力に<code>catlife</code>も<code>キャットライフ</code>も含まれていない場合に、'曲'、'音楽'、'楽曲'、'歌'、'唄'、'うた'、'ミュージック'の内のどれかが含まれているかを判定します。</p>
+            <p><div><code>speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')</code></div>は、'私の好きな曲は、キャットライフです。キャットライフを再生します。'と喋り、GUI画面のユーザーの入力とそれに対する応答を表示するスペースの応答に'私の好きな曲は、Cat lifeです。Cat lifeを再生します。'と表示します。また、以下はspeak関数の書き方の例です。<br>
+            <div><code>speak('content1', 'content2', request = 'content3', prompt = True, speed = 0)</code></div><br>
             各引数の意味は、以下の通りです。</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th align="center">引数名</th>
-                        <th align="center">意味</th>
-                        <th align="center">変数の型</th>
-                        <th align="center">省略可/不可</th>
-                        <th align="center">デフォルト値</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td align="center">第1引数</td>
-                        <td align="center">喋らせたい内容</td>
-                        <td align="center">String</td>
-                        <td align="center">不可</td>
-                        <td align="center">なし</td>
-                    </tr>
-                    <tr>
-                        <td align="center">第2引数</td>
-                        <td align="center">応答としてGUI画面に表示する内容</td>
-                        <td align="center">String</td>
-                        <td align="center">可('no arg'または省略でデフォルト値が使われる)</td>
-                        <td align="center">第1引数</td>
-                    </tr>
-                    <tr>
-                        <td align="center">request</td>
-                        <td align="center">ユーザーからの入力として表示する内容</td>
-                        <td align="center">String</td>
-                        <td align="center">可('no arg'または省略でデフォルト値が使われる)</td>
-                        <td align="center">ユーザーからの入力</td>
-                    </tr>
-                    <tr>
-                        <td align="center">prompt</td>
-                        <td align="center">ユーザーからの入力を表示するかどうか</td>
-                        <td align="center">Boolean</td>
-                        <td align="center">可(省略するとデフォルト値が使われる)</td>
-                        <td align="center">True</td>
-                    </tr>
-                    <tr>
-                        <td align="center">speed</td>
-                        <td align="center">話速</td>
-                        <td align="center">0~2のintまたはfloat</td>
-                        <td align="center">可(省略するとデフォルト値が使われる)</td>
-                        <td align="center">1</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th align="center">引数名</th>
+                            <th align="center">意味</th>
+                            <th align="center">変数の型</th>
+                            <th align="center">省略可/不可</th>
+                            <th align="center">デフォルト値</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center">第1引数</td>
+                            <td align="center">喋らせたい内容</td>
+                            <td align="center">String</td>
+                            <td align="center">不可</td>
+                            <td align="center">なし</td>
+                        </tr>
+                        <tr>
+                            <td align="center">第2引数</td>
+                            <td align="center">応答としてGUI画面に表示する内容</td>
+                            <td align="center">String</td>
+                            <td align="center">可('no arg'または省略でデフォルト値が使われる)</td>
+                            <td align="center">第1引数</td>
+                        </tr>
+                        <tr>
+                            <td align="center">request</td>
+                            <td align="center">ユーザーからの入力として表示する内容</td>
+                            <td align="center">String</td>
+                            <td align="center">可('no arg'または省略でデフォルト値が使われる)</td>
+                            <td align="center">ユーザーからの入力</td>
+                        </tr>
+                        <tr>
+                            <td align="center">prompt</td>
+                            <td align="center">ユーザーからの入力を表示するかどうか</td>
+                            <td align="center">Boolean</td>
+                            <td align="center">可(省略するとデフォルト値が使われる)</td>
+                           <td align="center">True</td>
+                        </tr>
+                        <tr>
+                            <td align="center">speed</td>
+                            <td align="center">話速</td>
+                            <td align="center">0~2のintまたはfloat</td>
+                            <td align="center">可(省略するとデフォルト値が使われる)</td>
+                            <td align="center">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <br><br>このページと同じ内容を、<a href="https://github.com/Robot-Inventor/ORIZIN_Agent/wiki/挙動をカスタマイズする">Wiki</a>でも見ることができます。
             <br><br>
         </main>
