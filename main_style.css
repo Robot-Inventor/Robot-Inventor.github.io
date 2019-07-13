@@ -44,16 +44,26 @@ a:active {
 
 h1 {
     color: #d2691e;
+}
+
+h1[type="inline"] {
     display: inline;
 }
 
 h2 {
     color: #d2691e;
+}
+
+h2[type="inline"] {
     display: inline;
 }
 
 h3 {
     color: #d2691e;
+    display: inline;
+}
+
+h3[type="inline"] {
     display: inline;
 }
 
