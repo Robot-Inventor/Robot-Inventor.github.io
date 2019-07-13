@@ -12,7 +12,7 @@
         display: none; 
     }
     div[show="phone"] {
-        display: block; 
+        display: inline-block; 
     }
 }
 
