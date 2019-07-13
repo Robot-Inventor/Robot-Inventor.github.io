@@ -74,15 +74,15 @@ img {
     height: auto;
 }
 
-div[show="pc"] {
+div[show="phone"] {
     display: none;
 }
 
-@media screen and (min-width: 721px) {
-    div[show="phone"] {
+@media screen and (max-width: 720px) and (orientation: portrait) {
+    div[show="pc"] {
         display: none; 
     }
-    div[show="pc"] {
+    div[show="phone"] {
         display: block; 
     }
 }
