@@ -75,13 +75,13 @@ img {
 }
 
 @media screen and (max-width: 720px) {
-    a[show="pc"] {
+    div[show="pc"] {
         display: none; 
     }
 }
 
 @media screen and (min-width: 721px) {
-    a[show="phone"] {
+    div[show="phone"] {
         display: none; 
     }
 }
