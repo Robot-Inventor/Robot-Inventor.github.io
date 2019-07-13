@@ -75,6 +75,10 @@ div {
     height: auto;
 }
 
+div[type="inline"] {
+    display: inline;
+}
+
 footer {
     text-align: center;
 }
