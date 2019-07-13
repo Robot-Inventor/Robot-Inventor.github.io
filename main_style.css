@@ -1,4 +1,4 @@
-@media screen and (width > 720px), (orientation: landscape){
+@media screen and (width > 720px), (orientation: landscape) {
     div[show="pc"] {
         display: block; 
     }
@@ -7,7 +7,7 @@
     }
 }
 
-@media screen and (width < 720px), (orientation: portrait){
+@media screen and (width < 720px), (orientation: portrait) {
     div[show="pc"] {
         display: none; 
     }
