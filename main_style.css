@@ -44,14 +44,17 @@ a:active {
 
 h1 {
     color: #d2691e;
+    display: inline;
 }
 
 h2 {
     color: #d2691e;
+    display: inline;
 }
 
 h3 {
     color: #d2691e;
+    display: inline;
 }
 
 div {
