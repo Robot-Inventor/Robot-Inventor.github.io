@@ -34,7 +34,6 @@
     </head>
     <body>
         <header>
-            <span id="header-menu"></span>
         </header>
         <main>
             <h2>いつもあなたと共に。オープンな相棒 <del>　　</del></h2>
@@ -66,9 +65,9 @@
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
             jQuery(window).on('load', function() {
-            jQuery('#loader-bg').hide();
+                jQuery('#loader-bg').hide();
             });
-            $('#header-menu').load('https://robot-inventor.github.io/ORIZIN_Agent/header_menu.html');
+            $('header').load('/ORIZIN_Agent/header_menu.html');
         </script>
     </body>
 </html>
