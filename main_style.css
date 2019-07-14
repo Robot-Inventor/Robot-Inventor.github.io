@@ -43,7 +43,7 @@ a:active {
 }
 
 h1 {
-    color: #d2691e;
+    color: #FF6A00;
 }
 
 h1[type="inline"] {
@@ -51,7 +51,7 @@ h1[type="inline"] {
 }
 
 h2 {
-    color: #d2691e;
+    color: #FF6A00;
 }
 
 h2[type="inline"] {
@@ -59,8 +59,7 @@ h2[type="inline"] {
 }
 
 h3 {
-    color: #d2691e;
-    display: inline;
+    color: #FF6A00;
 }
 
 h3[type="inline"] {
