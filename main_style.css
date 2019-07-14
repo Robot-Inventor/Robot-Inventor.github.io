@@ -48,6 +48,11 @@ img[size="third"] {
     height: auto;
 }
 
+img[size="fourth"] {
+    width: 25%;
+    height: auto;
+}
+
 img[size="tenth"] {
     width: 10%;
     height: auto;
