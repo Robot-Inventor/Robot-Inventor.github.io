@@ -34,16 +34,7 @@
     </head>
     <body>
         <header>
-            <div show="pc">
-                $(function(){
-                    $("div").load("/ORIZIN_Agent/header_menu_pc.html"); 
-                })
-            </div>
-            <div show="phone">
-                $(function(){
-                    $("div").load("/ORIZIN_Agent/header_menu_phone.html"); 
-                })
-            </div>
+            <span id="header-menu"></span>
         </header>
         <main>
             <h2>いつもあなたと共に。オープンな相棒 <del>　　</del></h2>
@@ -77,6 +68,7 @@
             jQuery(window).on('load', function() {
             jQuery('#loader-bg').hide();
             });
+            $('header-menu').load('/ORIZIN_Agent/header_menu.html');
         </script>
     </body>
 </html>
