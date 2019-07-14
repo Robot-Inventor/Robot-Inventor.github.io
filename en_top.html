@@ -51,10 +51,7 @@
             You can change the words ORIZIN Agent can understand and its response easily. ORIZIN Agent's computer programs are simple, so if you want to add functions, you can do so easily (If you have written Python programs before).<br><a href="/ORIZIN_Agent/response_syntax/response_syntax.html">Detail</a></p>
             <br>NOTICE:ORIZIN Agent corresponds to only Japanese. But if you will improve the computer programs, I think ORIZIN Agent will be able to understand other languages.<br>
             <br><h1>The Latest Notice</h1>
-            <div>
-                <h2>2019/07/13　サイト更新情報</h2>
-                    お知らせページのお知らせをインライン表示に変更しました。また、縦画面ではメニューをまとめて1つのボタンになるようにし、見やすくしました。
-                    さらに、<a href="/ORIZIN_Agent/response_syntax/response_syntax.html">認識する言葉のカスタマイズ</a>ページを見やすくしました。
+            <div id="notice">
             </div>
             <a href="https://robot-inventor.github.io/ORIZIN_Agent/notice/notice.html">View More</a>
             <br><br>Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.
@@ -68,6 +65,7 @@
         <script>
             jQuery(function() {
                 jQuery('header').load('/ORIZIN_Agent/header_menu.html');
+                jQuery('#notice').load('/ORIZIN_Agent/notice/notice_file.html new');
             });
             jQuery(window).on('load', function() {
                 jQuery('#loader-bg').hide();
