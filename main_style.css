@@ -1,17 +1,35 @@
-@media screen and (width > 720px), (orientation: landscape) {
+@media screen and (width > 800px), (orientation: landscape) {
     div[show="pc"] {
         display: block; 
     }
     div[show="phone"] {
         display: none; 
     }
+    div[show="phone_small"] {
+        display: none; 
+    }
 }
 
-@media screen and (width < 720px), (orientation: portrait) {
+@media screen and (width < 800px), (orientation: portrait) {
     div[show="pc"] {
         display: none; 
     }
     div[show="phone"] {
+        display: block; 
+    }
+    div[show="phone_small"] {
+        display: none; 
+    }
+}
+
+@media screen and (width < 500px) {
+    div[show="pc"] {
+        display: none; 
+    }
+    div[show="phone"] {
+        display: none; 
+    }
+    div[show="phone_small"] {
         display: block; 
     }
 }
