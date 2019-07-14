@@ -34,23 +34,6 @@
     </head>
     <body>
         <header>
-            <div show="pc">
-                <a href="/ORIZIN_Agent"><img src="/ORIZIN_Agent/icon/ORIZIN_Agent_公式サイト_ロゴ_ヘッダー.svg" alt="ORIZIN Agentのロゴ" title="ORIZIN Agentのロゴ" width="438" height="125"></a>
-                <div>
-                    <a href="/ORIZIN_Agent/en_top.html">English </a>|
-                    <a href="https://github.com/Robot-Inventor/ORIZIN_Agent"> GitHub </a>|
-                    <a href="/ORIZIN_Agent/development_document/development_document.html"> 開発記録・ORIZIN Agent 関連資料 </a>|
-                    <a href="/ORIZIN_Agent/notice/notice.html"> お知らせ </a>|
-                    <a href="/ORIZIN_Agent/TOS/latest_TOS.html"> 利用規約 </a>|
-                    <a href="/ORIZIN_Agent/policy.html"> プライバシーポリシー</a>
-                </div>
-            </div>
-            <div show="phone">
-                <div>
-                    <a href="/ORIZIN_Agent"><img src="/ORIZIN_Agent/icon/ORIZIN_Agent_公式サイト_ロゴ_ヘッダー.svg" alt="ORIZIN Agentのロゴ" title="ORIZIN Agentのロゴ" width="438" height="125"></a>
-                    <h2 type="inline"><a href="/ORIZIN_Agent/menu.html">Menu</a></h3>
-                </div>
-            </div>
         </header>
         <main>
             <h2>いつもあなたと共に。オープンな相棒 <del>　　</del></h2>
@@ -139,8 +122,11 @@
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
+            jQuery(function() {
+                jQuery('header').load('/ORIZIN_Agent/header_menu.html');
+            });
             jQuery(window).on('load', function() {
-            jQuery('#loader-bg').hide();
+                jQuery('#loader-bg').hide();
             });
         </script>
     </body>
