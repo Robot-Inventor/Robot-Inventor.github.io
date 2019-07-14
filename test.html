@@ -67,7 +67,9 @@
             jQuery(window).on('load', function() {
                 jQuery('#loader-bg').hide();
             });
-            $('header').load('/ORIZIN_Agent/header_menu.html');
+            $(function(){
+                $("header").load("/ORIZIN_Agent/header_menu.html");
+            })
         </script>
     </body>
 </html>
