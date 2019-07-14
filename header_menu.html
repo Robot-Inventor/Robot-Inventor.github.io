@@ -1,5 +1,37 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140830854-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-140830854-2');
+        </script>
+        <meta charset="UTF-8">
+        <title>Menue - ORIZIN Agent</title>
+        <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/favicon.ico">
+        <link rel="shortcut icon" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="194x194" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/favicon-194x194.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/favicon-16x16.png">
+        <link rel="manifest" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/site.webmanifest">
+        <link rel="mask-icon" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/safari-pinned-tab.svg" color="#d2691e">
+        <meta name="apple-mobile-web-app-title" content="ORIZIN Agent">
+        <meta name="application-name" content="ORIZIN Agent">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="https://robot-inventor.github.io/ORIZIN_Agent/icon/mstile-144x144.png">
+        <meta name="theme-color" content="#333333">
+        <meta name="description" content="This is the official Engilish site menu of the open source AI assistant, ORIZIN Agent.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/ORIZIN_Agent/main_style.css">
+        <div id="loader-bg">
+            <img src="/ORIZIN_Agent/icon/805.png">
+        </div>
+    </head>
     <body>
         <main>
             <div show="pc">
@@ -18,5 +50,11 @@
                 <h2 type="inline"><a href="/ORIZIN_Agent/menu.html">Menu</a></h3>
             </div>
         </main>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
+            jQuery(window).on('load', function() {
+            jQuery('#loader-bg').hide();
+            });
+        </script>
     </body>
 </html>
