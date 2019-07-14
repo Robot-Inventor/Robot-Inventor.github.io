@@ -1,4 +1,4 @@
-@media screen and (width > 800px), (orientation: landscape) {
+@media screen and (min-width: 800px) {
     div[show="pc"] {
         display: block; 
     }
@@ -10,7 +10,7 @@
     }
 }
 
-@media screen and (width > 600px) and (width < 900px), (orientation: portrait) {
+@media screen and (min-width: 600px) and (max-width: 800px), (orientation: portrait) {
     div[show="pc"] {
         display: none; 
     }
@@ -22,7 +22,7 @@
     }
 }
 
-@media screen and (width < 600px) {
+@media screen and (max-width: 600px) {
     div[show="pc"] {
         display: none; 
     }
@@ -35,7 +35,7 @@
 }
 
 img {
-    max-width: 100%;
+    width: 30%;
     height: auto;
 }
 
