@@ -34,8 +34,8 @@
     }
 }
 
-img {
-    width: 30%;
+img[size="auto"] {
+    width: 50%;
     height: auto;
 }
 
