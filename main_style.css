@@ -10,7 +10,7 @@
     }
 }
 
-@media screen and (width < 800px), (orientation: portrait) {
+@media screen and (width < 900px), (orientation: portrait) {
     div[show="pc"] {
         display: none; 
     }
@@ -22,7 +22,7 @@
     }
 }
 
-@media screen and (width < 500px) {
+@media screen and (width < 600px) {
     div[show="pc"] {
         display: none; 
     }
