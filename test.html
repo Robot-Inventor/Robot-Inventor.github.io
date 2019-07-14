@@ -10,7 +10,7 @@
             gtag('config', 'UA-140830854-2');
         </script>
         <meta charset="UTF-8">
-        <title>テスト - ORIZIN Agent</title>
+        <title>トップ - ORIZIN Agent</title>
         <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/favicon.ico">
         <link rel="shortcut icon" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/apple-touch-icon.png">
@@ -25,7 +25,7 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-TileImage" content="https://robot-inventor.github.io/ORIZIN_Agent/icon/mstile-144x144.png">
         <meta name="theme-color" content="#333333">
-        <meta name="description" content="オープンソースのAIアシスタント、ORIZIN Agentの公式サイトの技術的試験ページです。">
+        <meta name="description" content="オープンソースのAIアシスタント、ORIZIN Agentの公式サイトトップです。">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="/ORIZIN_Agent/main_style.css">
         <div id="loader-bg">
@@ -37,22 +37,19 @@
         </header>
         <main>
             <br><br><br>
-            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/0nzVLpGwufw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0nzVLpGwufw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <br><p><h1>オープンソース</h1>
             ORIZIN Agent は、<a href="https://github.com/Robot-Inventor/ORIZIN_Agent/blob/master/LICENSE">MIT ライセンス</a>の下に GitHub 上で公開されている簡易的な AI アシスタントです。Linux® 上で動作します。その他の動作環境は、Wiki をご覧ください。<br><a href="https://github.com/Robot-Inventor/ORIZIN_Agent/wiki/動作環境について">Wiki</a></p>
             <br><p><h1>オフライン</h1>
             基本機能は全てオフラインで動作します。また、インターネット接続があれば、ニュースの読み上げにも対応します。</p>
-            <br><p><h1>互換性</h1>
+            <br><p><h1>汎用性</h1>
             GUI に Python 標準ライブラリの tkinter を使用しています。その為、新たにインストールする必要があるライブラリ等は最小限に抑えられています。</p>
             <br><p><h1>豊富な機能</h1>
             早口言葉やジャンケン、ニュース読み上げ、音楽の再生等にも対応します。</p>
             <br><p><h1>簡単な機能拡張</h1>
-            ORIZIN Agent が認識できる言葉とそれに対する応答は、テキストファイルを編集するだけで自分好みに変更できます。また、ORIZIN Agent のプログラムは単純なので、機能の追加も比較的簡単に行えます。もし、あなたが Python を使ったことがあるなら、それは驚くほど簡単でしょう。<br><a href="response_syntax.html">詳細</a></p>
+            ORIZIN Agent が認識できる言葉とそれに対する応答は、テキストファイルを編集するだけで自分好みに変更できます。また、ORIZIN Agent のプログラムは単純なので、機能の追加も比較的簡単に行えます。もし、あなたが Python を使ったことがあるなら、それは驚くほど簡単でしょう。<br><a href="/ORIZIN_Agent/response_syntax/response_syntax.html">詳細</a></p>
             <br><h1>最新のお知らせ</h1>
-            <div>
-                <p><h2>2019/07/12　サイト更新情報</h2>
-                    お知らせページ（このページ）を公開しました。各ページのタイトルを分かりやすいように変更しました。
-                </p>
+            <div id="notice">
             </div>
             <a href="https://robot-inventor.github.io/ORIZIN_Agent/notice/notice.html">お知らせ をもっと見る</a>
             <br><br>Linux® is the registered trademark of Linus Torvalds in the U.S. and other countries.
@@ -65,6 +62,7 @@
         <script>
             jQuery(function() {
                 jQuery('header').load('/ORIZIN_Agent/header_menu.html');
+                jQuery('#notice').load('/ORIZIN_Agent/notice/notice_file.html new');
             });
             jQuery(window).on('load', function() {
                 jQuery('#loader-bg').hide();
