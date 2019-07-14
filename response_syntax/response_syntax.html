@@ -41,7 +41,7 @@
             <br><h1>認識する言葉のカスタマイズ</h1><br>
             <h2>1. 基本</h2>
             <p>基本的には、response.txtを編集することで挙動をカスタマイズすることができます。以下に、具体例を示します。</p>
-            <iframe height="auto" width="auto" src="https://robot-inventor.github.io/ORIZIN_Agent/response_syntax/syntax_example1.html" scrolling=”yes”></iframe>
+            <iframe height="250" src="https://robot-inventor.github.io/ORIZIN_Agent/response_syntax/syntax_example1.html" scrolling=”yes”></iframe>
             <ul>
                 <li>
                 <code>:</code>の前が反応する言葉、あとが応答です。例えば1行目であれば、入力内容に<code>オリジン</code>という言葉が含まれていたら<code>オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。</code>と応答するという意味です。</li>
@@ -52,14 +52,14 @@
             </ul>
             <details><summary>Tips!</summary><div>
                 <p><code>/</code>を使うことでresponse.txtを短く、詳しく書くことができます。以下は、上の例と同じ意味です。</p>
-                <iframe height="auto" width="auto" src="https://robot-inventor.github.io/ORIZIN_Agent/response_syntax/syntax_example2.html" scrolling=”yes”></iframe>
+                <iframe height="250" src="https://robot-inventor.github.io/ORIZIN_Agent/response_syntax/syntax_example2.html" scrolling=”yes”></iframe>
                 <p>この例は、反応する言葉を複数指定しています。ただし、<code>/</code>は半角である必要があります。また、下の例を見てください。</p>
-                <iframe height="auto" width="auto" src="https://robot-inventor.github.io/ORIZIN_Agent/response_syntax/syntax_example3.html" scrolling=”yes”></iframe>
+                <iframe height="250" src="https://robot-inventor.github.io/ORIZIN_Agent/response_syntax/syntax_example3.html" scrolling=”yes”></iframe>
                 <p>この例は、例えば1行目であれば、ユーザーからの入力に<code>オリジン</code>、<code>おりじん</code>、<code>orizin</code>のどれかが含まれていた場合、<code>オリジンは、私の名前です。原点という意味の英単語、オリジンに由来しています。</code>と喋り、GUI画面には応答として<code>ORIZINは、私の名前です。原点という意味の英単語、originに由来しています。</code>と表示します。この機能は、英単語を発音することができないOpen JTalkに無理やり英単語を発音させる場合に便利です。今回の例で言えば、<code>ORIZIN</code>と喋らせたい場合、通常なら「オー・アール・アイ・ズィー・アイ・エヌ」と発音されてしまうところを、<code>オリジン</code>と発音させ、GUI画面には本来の<code>ORIZIN</code>を表示させます。</p>
             </div></details>
             <h2>2. 発展</h2>
                 <p>音楽を再生する等、会話以外のことをしたい場合、ORIZIN_Agent.pyを書き換える必要があります。以下は、音楽を再生する例です（ORIZIN_Agent.pyより引用）。</p>
-                <iframe height="auto" width="auto" src="https://robot-inventor.github.io/ORIZIN_Agent/response_syntax/syntax_example4.html" scrolling=”yes”></iframe>
+                <iframe height="250" src="https://robot-inventor.github.io/ORIZIN_Agent/response_syntax/syntax_example4.html" scrolling=”yes”></iframe>
             <p><div><code>if judge(question, ['catlife', 'キャットライフ']):</code></div>は、ユーザーからの入力に'catlife'または'キャットライフ'が含まれているかを判定します。つまり、<div><code>elif judge(question, ['曲', '音楽', '楽曲', '歌', '唄', 'うた', 'ミュージック']):</code></div>の部分は、ユーザーからの入力に<code>catlife</code>も<code>キャットライフ</code>も含まれていない場合に、'曲'、'音楽'、'楽曲'、'歌'、'唄'、'うた'、'ミュージック'の内のどれかが含まれているかを判定します。</p>
             <p><div><code>speak('私の好きな曲は、キャットライフです。キャットライフを再生します。', '私の好きな曲は、Cat lifeです。Cat lifeを再生します。')</code></div>は、'私の好きな曲は、キャットライフです。キャットライフを再生します。'と喋り、GUI画面のユーザーの入力とそれに対する応答を表示するスペースの応答に'私の好きな曲は、Cat lifeです。Cat lifeを再生します。'と表示します。また、以下はspeak関数の書き方の例です。
             <div><code>speak('content1', 'content2', request = 'content3', prompt = True, speed = 0)</code></div><br>
