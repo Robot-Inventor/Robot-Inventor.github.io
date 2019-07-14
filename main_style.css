@@ -34,8 +34,13 @@
     }
 }
 
-img[size="auto"] {
+img[size="half"] {
     width: 50%;
+    height: auto;
+}
+
+img[size="third"] {
+    width: 33%;
     height: auto;
 }
 
