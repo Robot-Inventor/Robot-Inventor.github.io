@@ -64,12 +64,11 @@
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script>
-            /*jQuery(function() {
-                jQuery('header').load('/ORIZIN_Agent/header_menu.html');
-            });*/
+            jQuery(function() {
+                jQuery('#header').load('/ORIZIN_Agent/header_menu.html');
+            });
             jQuery(window).on('load', function() {
                 jQuery('#loader-bg').hide();
-                jQuery('header').load('/ORIZIN_Agent/header_menu.html');
             });
         </script>
     </body>
