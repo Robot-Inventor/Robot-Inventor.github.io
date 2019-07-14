@@ -34,6 +34,10 @@
     }
 }
 
+img {
+    max-width: 100%;
+}
+
 img[size="half"] {
     width: 50%;
     height: auto;
@@ -108,6 +112,10 @@ div[type="inline"] {
 
 footer {
     text-align: center;
+}
+
+iframe {
+    max-width: 100%;
 }
 
 iframe[width="auto"] {
