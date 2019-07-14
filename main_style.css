@@ -44,6 +44,11 @@ img[size="third"] {
     height: auto;
 }
 
+img[size="tenth"] {
+    width: 10%;
+    height: auto;
+}
+
 body {
     background-color: #333333;
     color: #a9a9a9;
