@@ -10,7 +10,7 @@
     }
 }
 
-@media screen and (width < 900px), (orientation: portrait) {
+@media screen and (width > 600px) and (width < 900px), (orientation: portrait) {
     div[show="pc"] {
         display: none; 
     }
