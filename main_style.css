@@ -123,6 +123,10 @@ iframe {
     max-width: 100%;
 }
 
+iframe[width="auto"] {
+    width: 100%;
+}
+
 #loader-bg {
     background: #333333;
     height: 100%;
