@@ -120,7 +120,7 @@ footer {
 }
 
 iframe {
-    max-width: 100%;
+    width: 100%;
 }
 
 #loader-bg {
