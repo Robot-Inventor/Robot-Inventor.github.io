@@ -43,7 +43,17 @@ img[size="half"] {
     height: auto;
 }
 
+.half {
+    width: 50%;
+    height: auto;
+}
+
 img[size="third"] {
+    width: 33%;
+    height: auto;
+}
+
+.third {
     width: 33%;
     height: auto;
 }
@@ -53,7 +63,17 @@ img[size="fourth"] {
     height: auto;
 }
 
+.fourth {
+    width: 25%;
+    height: auto;
+}
+
 img[size="tenth"] {
+    width: 10%;
+    height: auto;
+}
+
+.tenth {
     width: 10%;
     height: auto;
 }
@@ -77,6 +97,10 @@ a:hover {
 
 a:active {
     color: #ff7f50;
+}
+
+.inline {
+    display: inline;
 }
 
 h1 {
@@ -125,6 +149,20 @@ iframe {
 
 iframe[width="auto"] {
     width: 100%;
+}
+
+.video {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.video iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
 }
 
 #loader-bg {
