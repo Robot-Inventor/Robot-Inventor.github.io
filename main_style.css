@@ -166,7 +166,7 @@ iframe[width="auto"] {
 }
 
 table, td, th {
-    border: 1px;
+    border: 1px #a9a9a9 solid;
     border-collapse: collapse;
 }
 
