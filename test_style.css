@@ -108,22 +108,22 @@ h1 {
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 5px #00aaaa;
-    border-bottom: solid 1px #00aaaa;
+    border-bottom: solid 3px #00aaaa;
 }
 
 h2 {
     color: #FF6A00;
     padding: 0.25em 0.5em;
     background: transparent;
-    border-left: solid 5px #00aaaa;
-    border-bottom: solid 1px #00aaaa;
+    border-left: solid 4px #00aaaa;
+    border-bottom: solid 2px #00aaaa;
 }
 
 h3 {
     color: #FF6A00;
     padding: 0.25em 0.5em;
     background: transparent;
-    border-left: solid 5px #00aaaa;
+    border-left: solid 3px #00aaaa;
     border-bottom: solid 1px #00aaaa;
 }
 
