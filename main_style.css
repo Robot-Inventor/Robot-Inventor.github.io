@@ -61,6 +61,10 @@ img {
 body {
     background-color: #333333;
     color: #a9a9a9;
+    position: relative;
+    padding: 0px;
+    left: 0px;
+    top: 0px;
 }
 
 a:link {
