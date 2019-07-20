@@ -87,7 +87,7 @@ h1 {
     color: #FF6A00;
     padding: 0.25em 0.5em;
     background: transparent;
-    border-left: solid 5px #000000;
+    border-left: solid 9px #000000;
     border-bottom: solid 1px #000000;
 }
 
@@ -95,7 +95,7 @@ h2 {
     color: #FF6A00;
     padding: 0.25em 0.5em;
     background: transparent;
-    border-left: solid 5px #000000;
+    border-left: solid 7px #000000;
     border-bottom: solid 1px #000000;
 }
 
@@ -117,8 +117,6 @@ div {
 
 footer {
     text-align: center;
-    background-color: #555555;
-    color: #ababab;
 }
 
 iframe {
@@ -146,6 +144,13 @@ iframe[width="auto"] {
 table, td, th {
     border: 1px #a9a9a9 solid;
     border-collapse: collapse;
+}
+
+hr {
+    background-color: #a9a9a9;
+    border: none;
+    color: #a9a9a9;
+    height: 2px;
 }
 
 #loader-bg {
