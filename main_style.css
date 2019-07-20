@@ -125,9 +125,10 @@ div {
 }
 
 footer {
-    position:absolute;
+    position: absolute;
+    bottom: 0;
     height: 150px;
-    bottom:0;
+    width: 100%;
     text-align: center;
     background-color: #000000;
 }
