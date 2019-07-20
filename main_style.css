@@ -20,6 +20,10 @@
     div[show="phone_small"] {
         display: none; 
     }
+    header {
+        position: fixed;
+        top: 0px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -31,6 +35,10 @@
     }
     div[show="phone_small"] {
         display: block; 
+    }
+    header {
+        position: fixed;
+        top: 100px;
     }
 }
 
