@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /ORIZIN_Agent/icon/
-Allow: /ORIZIN_Agent/icon/ORIZIN_Agent_公式サイト_ロゴ_ヘッダー.png
-Allow: /ORIZIN_Agent/icon/en_ORIZIN_Agent_公式サイト_ロゴ_ヘッダー.png
-
-Sitemap: https://robot-inventor.github.io/ORIZIN_Agent/sitemap.xml
