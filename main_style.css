@@ -124,6 +124,10 @@ div {
     height: auto;
 }
 
+.nopadding {
+    padding: 0px;
+}
+
 footer {
     text-align: center;
 }
@@ -138,12 +142,14 @@ iframe[width="auto"] {
 
 .video {
     position: relative;
+    padding: 0px;
     width: 100%;
     padding-top: 56.25%;
 }
 
 .video iframe {
     position: absolute;
+    padding: 0px;
     top: 0;
     right: 0;
     width: 100%;
