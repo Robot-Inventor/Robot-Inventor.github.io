@@ -171,7 +171,7 @@ hr {
 footer {
     text-align: center;
     background-color: #000000;
-    height: 100px;
+    height: 100%;
     width: 100%;
     position: absolute;
     bottom: 0;
