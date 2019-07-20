@@ -79,10 +79,6 @@ a:active {
     color: #ff7f50;
 }
 
-.inline {
-    display: inline;
-}
-
 h1 {
     color: #FF6A00;
     padding: 0.25em 0.5em;
@@ -105,6 +101,13 @@ h3 {
     background: transparent;
     border-left: solid 5px #000000;
     border-bottom: solid 1px #000000;
+}
+
+.inline {
+    display: inline;
+    background: transparent;
+    border-left: none;
+    border-bottom: none;
 }
 
 div {
