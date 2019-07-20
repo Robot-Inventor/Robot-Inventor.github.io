@@ -172,12 +172,6 @@ footer {
     width: 100%;
 }
 
-header {
-    position: fixed;
-    width: 100%;
-    bottom: 0px;
-}
-
 #loader-bg {
     background: #333333;
     height: 100%;
