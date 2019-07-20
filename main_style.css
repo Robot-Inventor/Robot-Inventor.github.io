@@ -23,6 +23,7 @@
     header {
         position: fixed;
         top: 0px;
+        z-index: 0;
         width: 100%;
     }
     body {
@@ -43,6 +44,7 @@
     header {
         position: fixed;
         top: 100px;
+        z-index: 0;
         width: 100%;
     }
     body {
