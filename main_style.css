@@ -124,15 +124,6 @@ div {
     height: auto;
 }
 
-footer {
-    text-align: center;
-    background-color: #000000;
-	height: 100px;
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-}
-
 iframe {
     max-width: 100%;
 }
@@ -171,6 +162,15 @@ hr {
 
 .nopadding {
     padding: 0px;
+}
+
+footer {
+    text-align: center;
+    background-color: #000000;
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 #loader-bg {
