@@ -164,6 +164,10 @@ hr {
     height: 2px;
 }
 
+.nopadding {
+    padding: 0px;
+}
+
 #loader-bg {
     background: #333333;
     height: 100%;
