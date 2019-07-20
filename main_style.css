@@ -58,6 +58,10 @@ img {
     height: auto;
 }
 
+html {
+    background-color: #000000;
+}
+
 body {
     background-color: #333333;
     color: #a9a9a9;
@@ -126,6 +130,7 @@ div {
 
 footer {
     text-align: center;
+    background-color: #000000
 }
 
 iframe {
