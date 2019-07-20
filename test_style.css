@@ -109,6 +109,11 @@ h3 {
     border-bottom: none;
 }
 
+.noborder {
+    border-left: none;
+    border-bottom: none;
+}
+
 div {
     background: #000000;
     color: #a9a9a9;
