@@ -38,18 +38,8 @@ img {
     max-width: 100%;
 }
 
-img[size="half"] {
-    width: 50%;
-    height: auto;
-}
-
 .half {
     width: 50%;
-    height: auto;
-}
-
-img[size="third"] {
-    width: 33%;
     height: auto;
 }
 
@@ -58,18 +48,8 @@ img[size="third"] {
     height: auto;
 }
 
-img[size="fourth"] {
-    width: 25%;
-    height: auto;
-}
-
 .fourth {
     width: 25%;
-    height: auto;
-}
-
-img[size="tenth"] {
-    width: 10%;
     height: auto;
 }
 
@@ -99,32 +79,34 @@ a:active {
     color: #ff7f50;
 }
 
-.inline {
-    display: inline;
-}
-
 h1 {
     color: #FF6A00;
-}
-
-h1[type="inline"] {
-    display: inline;
+    padding: 0.25em 0.5em;
+    background: transparent;
+    border-left: solid 9px #000000;
+    border-bottom: solid 2px #000000;
 }
 
 h2 {
     color: #FF6A00;
-}
-
-h2[type="inline"] {
-    display: inline;
+    padding: 0.25em 0.5em;
+    background: transparent;
+    border-left: solid 7px #000000;
+    border-bottom: solid 1px #000000;
 }
 
 h3 {
     color: #FF6A00;
+    padding: 0.25em 0.5em;
+    background: transparent;
+    border-left: solid 5px #000000;
+    border-bottom: solid 1px #000000;
 }
 
-h3[type="inline"] {
+.inline {
     display: inline;
+    border-left: none;
+    border-bottom: none;
 }
 
 div {
@@ -133,10 +115,6 @@ div {
     padding: 10px;
     max-width: 100%;
     height: auto;
-}
-
-div[type="inline"] {
-    display: inline;
 }
 
 footer {
@@ -168,6 +146,13 @@ iframe[width="auto"] {
 table, td, th {
     border: 1px #a9a9a9 solid;
     border-collapse: collapse;
+}
+
+hr {
+    background-color: #a9a9a9;
+    border: none;
+    color: #a9a9a9;
+    height: 2px;
 }
 
 #loader-bg {
