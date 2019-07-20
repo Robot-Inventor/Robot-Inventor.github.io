@@ -20,15 +20,6 @@
     div[show="phone_small"] {
         display: none; 
     }
-    header {
-        position: fixed;
-        top: 0px;
-        z-index: 0;
-        width: 100%;
-    }
-    body {
-        padding-top: 100px;
-    }
 }
 
 @media screen and (max-width: 600px) {
@@ -40,15 +31,6 @@
     }
     div[show="phone_small"] {
         display: block; 
-    }
-    header {
-        position: fixed;
-        top: 100px;
-        z-index: 0;
-        width: 100%;
-    }
-    body {
-        padding-top: 100px;
     }
 }
 
