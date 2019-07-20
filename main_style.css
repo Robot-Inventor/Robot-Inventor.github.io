@@ -105,11 +105,13 @@ h3 {
 
 .inline {
     display: inline;
+    padding: 0px;
     border-left: none;
     border-bottom: none;
 }
 
 .noborder {
+    padding: 0px;
     border-left: none;
     border-bottom: none;
 }
