@@ -81,10 +81,9 @@ a:active {
 
 h1 {
     color: #FF6A00;
-    padding: 0.25em 0.5em;
-    background: transparent;
-    border-left: solid 9px #000000;
-    border-bottom: solid 2px #000000;
+    padding: 0.5em 0;
+    border-top: solid 4px #000000;
+    border-bottom: solid 4px #000000;
 }
 
 h2 {
