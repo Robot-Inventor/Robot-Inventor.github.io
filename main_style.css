@@ -180,6 +180,11 @@ footer {
     text-align: center;
     background-color: #000000;
     height: 100px;
+    padding-top: 100px;
+}
+
+p {
+    line-height: 200%;
 }
 
 #loader-bg {
