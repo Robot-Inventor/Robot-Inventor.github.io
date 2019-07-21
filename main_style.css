@@ -2,12 +2,6 @@
     div[show="pc"] {
         display: block;
     }
-    #menu input+div[show="pc"]{
-        display: none;
-    }
-    #menu input:checked+div[show="pc"]{
-        display: block;
-    }
     div[show="phone"] {
         display: none;
     }
