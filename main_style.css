@@ -73,6 +73,10 @@ img {
 body {
     background-color: #333333;
     color: #a9a9a9;
+    line-height: 0.8em;
+}
+
+main {
     padding-bottom: 100px;
 }
 
@@ -184,7 +188,7 @@ footer {
 }
 
 p {
-    line-height: 200%;
+    margin-top: 2em;
 }
 
 #loader-bg {
