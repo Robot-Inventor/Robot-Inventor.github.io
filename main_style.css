@@ -17,12 +17,6 @@
     div[show="phone"] {
         display: block;
     }
-    #menu input+div[show="phone"]{
-        display: none;
-    }
-    #menu input:checked+div[show="phone"]{
-        display: block;
-    }
     div[show="phone_small"] {
         display: none;
     }
@@ -38,29 +32,18 @@
     div[show="phone_small"] {
         display: block;
     }
-    #menu input+div[show="phone_small"]{
-        display: none;
-    }
-    #menu input:checked+div[show="phone_small"]{
-        display: block;
-    }
 }
 
-#menu {
+.overlay {
+    display: none;
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(51, 51, 51, 0.5);
-}
-
-#menu label{
-    cursor: pointer;
-}
-
-#menu input{
-    display: none;
+    background: rgba(51, 51, 51, 0.7);
+    overflow: scroll;
+    z-index: 100;
 }
 
 img {
