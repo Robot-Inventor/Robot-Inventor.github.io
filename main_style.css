@@ -76,7 +76,7 @@ body {
 }
 
 main {
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 a:link {
@@ -187,7 +187,7 @@ footer {
 }
 
 p {
-    margin-top: 8em;
+    margin-top: 4em;
 }
 
 #loader-bg {
