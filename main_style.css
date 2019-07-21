@@ -73,6 +73,7 @@ img {
 body {
     background-color: #333333;
     color: #a9a9a9;
+    padding-bottom: 100px;
 }
 
 a:link {
@@ -180,7 +181,6 @@ footer {
     text-align: center;
     background-color: #000000;
     height: 100px;
-    padding-top: 100px;
 }
 
 p {
