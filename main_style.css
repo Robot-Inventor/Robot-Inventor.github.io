@@ -199,10 +199,6 @@ div > p {
     margin-top: 0em;
 }
 
-iframe > p {
-    margin-top: 0em;
-}
-
 #loader-bg {
     background: #333333;
     height: 100%;
