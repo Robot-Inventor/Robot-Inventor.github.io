@@ -1,37 +1,63 @@
 @media screen and (min-width: 800px) {
     div[show="pc"] {
-        display: block; 
+        display: block;
+    }
+    #menu input+div[show="pc"]{
+        display: none;
+    }
+    #menu input:checked+div[show="pc"]{
+        display: block;
     }
     div[show="phone"] {
-        display: none; 
+        display: none;
     }
     div[show="phone_small"] {
-        display: none; 
+        display: none;
     }
 }
 
 @media screen and (min-width: 600px) and (max-width: 800px), (orientation: portrait) {
     div[show="pc"] {
-        display: none; 
+        display: none;
     }
     div[show="phone"] {
-        display: block; 
+        display: block;
+    }
+    #menu input+div[show="phone"]{
+        display: none;
+    }
+    #menu input:checked+div[show="phone"]{
+        display: block;
     }
     div[show="phone_small"] {
-        display: none; 
+        display: none;
     }
 }
 
 @media screen and (max-width: 600px) {
     div[show="pc"] {
-        display: none; 
+        display: none;
     }
     div[show="phone"] {
-        display: none; 
+        display: none;
     }
     div[show="phone_small"] {
-        display: block; 
+        display: block;
     }
+    #menu input+div[show="phone_small"]{
+        display: none;
+    }
+    #menu input:checked+div[show="phone_small"]{
+        display: block;
+    }
+}
+
+#menu label{
+    cursor: pointer;
+}
+
+#menu input{
+    display: none;
 }
 
 img {
