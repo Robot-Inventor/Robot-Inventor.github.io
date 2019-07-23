@@ -133,6 +133,12 @@ h3 {
     border-bottom: none;
 }
 
+.no_border {
+    padding: 0px;
+    border-left: none;
+    border-bottom: none;
+}
+
 div {
     background: #000000;
     color: #a9a9a9;
