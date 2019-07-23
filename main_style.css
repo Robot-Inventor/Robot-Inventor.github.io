@@ -187,6 +187,10 @@ footer > p {
     margin-top: 0em;
 }
 
+.no_color {
+    background-color: rgba(0, 0, 0, 0);
+}
+
 #loader-bg {
     background: #333333;
     height: 100%;
