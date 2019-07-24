@@ -3,7 +3,12 @@
     <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140830854-2"></script>
-        <script async src="/ORIZIN_Agent/etc/js/analytics.js"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-140830854-2');
+        </script>
         <meta charset="UTF-8"><link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/favicon.ico">
         <link rel="shortcut icon" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/apple-touch-icon.png">
