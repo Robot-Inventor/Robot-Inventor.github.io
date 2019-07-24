@@ -5,6 +5,8 @@ jQuery(window).on('load', function() {
 $( function() {
     $( 'img.lazy' ).lazyload( {
         effect: 'fadeIn',
-	effect_speed: 1000,
+	effect_speed: 3000,
+	skip_invisible: true,
+	placeholder: '/ORIZIN_Agent/icon/805.png',
     });
 });
