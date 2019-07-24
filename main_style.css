@@ -178,9 +178,12 @@ p {
 }
 
 footer {
+    display: table;
     text-align: center;
     background-color: #000000;
     height: 100px;
+    margin: 0px;
+    padding: 0px;
 }
 
 footer > p {
