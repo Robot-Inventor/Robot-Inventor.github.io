@@ -7,6 +7,6 @@ $( function() {
         effect: 'fadeIn',
 	effect_speed: 3000,
 	skip_invisible: true,
-	placeholder: '/ORIZIN_Agent/icon/805.png',
+	placeholder: '/ORIZIN_Agent/icon/ORIZIN_Agent-2_Oのみ_透明.png',
     });
 });
