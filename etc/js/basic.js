@@ -4,6 +4,7 @@ jQuery(window).on('load', function() {
 $( function() {
     jQuery('header').load('/ORIZIN_Agent/header_menu.html');
     jQuery('head').load('/ORIZIN_Agent/etc/html/set_icon.html');
+    jQuery('head').load('/ORIZIN_Agent/etc/html/footer.html');
     $( 'img.lazy' ).lazyload( {
         effect: 'fadeIn',
 	effect_speed: 3000,
