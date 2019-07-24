@@ -4,9 +4,9 @@ document.write("<script type='text/javascript' src='/ORIZIN_Agent/js/jquery.lazy
 document.close();
 jQuery(window).on('load', function() {
     jQuery('#loader-bg').hide();
-    jQuery('header').load('/ORIZIN_Agent/header_menu.html');
 });
 $( function() {
+    jQuery('header').load('/ORIZIN_Agent/header_menu.html');
     $( 'img.lazy' ).lazyload( {
         effect: 'fadeIn',
 	effect_speed: 3000,
