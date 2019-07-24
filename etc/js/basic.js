@@ -3,7 +3,6 @@ jQuery(window).on('load', function() {
 });
 $( function() {
     jQuery('header').load('/ORIZIN_Agent/header_menu.html');
-    jQuery('#icon_place').load('/ORIZIN_Agent/etc/html/set_icon.html');
     jQuery('footer').load('/ORIZIN_Agent/etc/html/footer.html');
     $( 'img.lazy' ).lazyload( {
         effect: 'fadeIn',
