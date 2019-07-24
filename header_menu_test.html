@@ -13,7 +13,7 @@
 </div>
 <div show="phone">
     <a href="/ORIZIN_Agent"><img data-original="/ORIZIN_Agent/icon/ORIZIN_Agent_公式サイト_ロゴ_ヘッダー.png" alt="ORIZIN Agentのロゴ" title="ORIZIN Agentのロゴ" class="half lazy"></a>
-    <img src="/ORIZIN_Agent/icon/menu.png" alt="MENU" title="MENU" class="fourth overlay_open_button" align="right">
+    <img data-original="/ORIZIN_Agent/icon/menu.png" alt="MENU" title="MENU" class="fourth overlay_open_button lazy" align="right">
 </div>
 <div show="phone_small">
     <a href="/ORIZIN_Agent"><img data-original="/ORIZIN_Agent/icon/ORIZIN_Agent_公式サイト_ロゴ_ヘッダー.png" alt="ORIZIN Agentのロゴ" title="ORIZIN Agentのロゴ" class="half lazy"></a>
@@ -70,6 +70,8 @@
     </a>
     <hr>
 </div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="/ORIZIN_Agent/js/jquery.lazyload.min.js"></script>
 <script>
     $(function() {
         $(".overlay_open_button").click(function() {
@@ -78,5 +80,11 @@
         $(".overlay_close_button").click(function() {
             $(".overlay").fadeOut();
         });
+        $( 'img.lazy' ).lazyload( {
+            effect: 'fadeIn',
+  	        effect_speed: 3000,
+        	skip_invisible: true,
+        	placeholder: '/ORIZIN_Agent/icon/805.png',
+    });
     });
 </script>
