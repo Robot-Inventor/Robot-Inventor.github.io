@@ -3,8 +3,7 @@ jQuery(window).on('load', function() {
 });
 $( function() {
     $( 'img.lazy' ).lazyload( {
-        data-attribute: 'src',
         effect: 'fadeIn',
-	      effect_speed: 1000,
+	effect_speed: 1000,
     });
 });
