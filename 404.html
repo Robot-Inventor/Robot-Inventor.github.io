@@ -9,8 +9,6 @@
             gtag('js', new Date());
             gtag('config', 'UA-140830854-2');
         </script>
-        <meta charset="UTF-8">
-        <title>404 Not Found Error - ORIZIN Agent</title>
         <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/favicon.ico">
         <link rel="shortcut icon" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="https://robot-inventor.github.io/ORIZIN_Agent/icon/apple-touch-icon.png">
@@ -25,13 +23,14 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-TileImage" content="https://robot-inventor.github.io/ORIZIN_Agent/icon/mstile-144x144.png">
         <meta name="theme-color" content="#333333">
-        <meta name="description" content="404 Not Found Error">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noindex, follow">
         <link rel="stylesheet" type="text/css" href="/ORIZIN_Agent/main_style.css">
         <div id="loader-bg">
             <img src="/ORIZIN_Agent/icon/805.png">
         </div>
+        <title>404 Not Found Error - ORIZIN Agent</title>
+        <meta name="description" content="404 Not Found Error">
     </head>
     <body>
         <header>
@@ -45,17 +44,9 @@
             <img src="/ORIZIN_Agent/icon/404.png" alt="Sorry." title="Sorry." class="half">
         </main>
         <footer>
-            <hr><p>Copyright &#169; 2019 Robot-Inventor All rights reserved.</p>
         </footer>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script>
-            jQuery(function() {
-                jQuery('header').load('/ORIZIN_Agent/header_menu.html');
-                jQuery('#notice').load('/ORIZIN_Agent/notice/notice_file.html new');
-            });
-            jQuery(window).on('load', function() {
-                jQuery('#loader-bg').hide();
-            });
-        </script>
+        <script async src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script async src='/ORIZIN_Agent/etc/js/jquery.lazyload.min.js'></script>
+        <script async src="/ORIZIN_Agent/etc/js/basic.js"></script>
     </body>
 </html>
