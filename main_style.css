@@ -191,14 +191,6 @@ footer > p {
     background-color: rgba(0, 0, 0, 0);
 }
 
-.serif {
-    font-family: 'Noto Serif JP', serif;
-}
-
-.sans-serif {
-    font-family: 'Noto Sans JP', sans-serif;
-}
-
 #loader-bg {
     background: #333333;
     height: 100%;
