@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:500|Noto+Serif+JP&display=swap');
 
 @media screen and (min-width: 800px) {
     div[show="pc"] {
@@ -75,8 +75,7 @@ img {
 body {
     background-color: #333333;
     color: #a9a9a9;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 100;
+    font-family: 'Noto Serif JP', serif;
 }
 
 main {
@@ -107,7 +106,6 @@ h1 {
     border-left: solid 9px #000000;
     border-bottom: solid 2px #000000;
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 500;
 }
 
 h2 {
@@ -117,7 +115,6 @@ h2 {
     border-left: solid 7px #000000;
     border-bottom: solid 1px #000000;
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 500;
 }
 
 h3 {
@@ -127,7 +124,6 @@ h3 {
     border-left: solid 5px #000000;
     border-bottom: solid 1px #000000;
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 500;
 }
 
 .inline {
