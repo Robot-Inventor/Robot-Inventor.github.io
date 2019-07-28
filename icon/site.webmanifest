@@ -1,20 +1,20 @@
 {
-    "name": "ORIZIN Agent",
-    "short_name": "ORIZIN Agent",
+    "name": "プログラミング関連の何か",
+    "short_name": "プロ何",
     "icons": [
         {
-            "src": "/ORIZIN_Agent/icon/android-chrome-192x192.png",
+            "src": "/icon/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/ORIZIN_Agent/icon/android-chrome-512x512.png",
+            "src": "/icon/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
     "theme_color": "#333333",
     "background_color": "#333333",
-    "start_url": "https://robot-inventor.github.io/ORIZIN_Agent",
+    "start_url": "https://robot-inventor.github.io/",
     "display": "standalone"
 }
