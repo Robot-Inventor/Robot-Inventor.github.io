@@ -46,6 +46,31 @@
     z-index: 100;
 }
 
+.back_image {
+    width: 500px; height: 500px;
+    background: url('/ORIZIN_Agent/etc/image/css_sprite.png') -1830px -2050px;
+}
+
+.menu_image {
+    width: 1800px; height: 500px;
+    background: url('/ORIZIN_Agent/etc/image/css_sprite.png') -10px -2050px;
+}
+
+.menu_line_image {
+    width: 500px; height: 500px;
+    background: url('/ORIZIN_Agent/etc/image/css_sprite.png') -2350px -2050px;
+}
+
+.en_header_image {
+    width: 3500px; height: 1000px;
+    background: url('/ORIZIN_Agent/etc/image/css_sprite.png') -10px -10px;
+}
+
+.header_image {
+    width: 3500px; height: 1000px;
+    background: url('/ORIZIN_Agent/etc/image/css_sprite.png') -10px -1030px;
+}
+
 img {
     max-width: 100%;
 }
