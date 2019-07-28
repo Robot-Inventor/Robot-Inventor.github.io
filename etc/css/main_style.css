@@ -46,6 +46,31 @@
     z-index: 100;
 }
 
+.back_image {
+    width: 500px; height: 500px;
+    background: url('/ORIZIN_Agent/etc/image/css_sprite.png') -1830px -2050px;
+}
+
+.menu_image {
+    width: 1800px; height: 500px;
+    background: url('/ORIZIN_Agent/etc/image/css_sprite.png') -10px -2050px;
+}
+
+.menu_line_image {
+    width: 500px; height: 500px;
+    background: url('/ORIZIN_Agent/etc/image/css_sprite.png') -2350px -2050px;
+}
+
+.en_header_image {
+    width: 3500px; height: 1000px;
+    background: url('/ORIZIN_Agent/etc/image/css_sprite.png') -10px -10px;
+}
+
+.header_image {
+    width: 3500px; height: 1000px;
+    background: url('/ORIZIN_Agent/etc/image/css_sprite.png') -10px -1030px;
+}
+
 img {
     max-width: 100%;
 }
@@ -71,8 +96,8 @@ img {
 }
 
 body {
-    background-color: #FFFFFF;
-    color: #333333;
+    background-color: #333333;
+    color: #a9a9a9;
 }
 
 main {
@@ -134,8 +159,8 @@ h3 {
 }
 
 div {
-    background: #AAAAAA;
-    color: #333333;
+    background: #000000;
+    color: #a9a9a9;
     padding: 10px;
     max-width: 100%;
     height: auto;
@@ -189,4 +214,25 @@ footer > p {
 
 .no_color {
     background-color: rgba(0, 0, 0, 0);
+}
+
+#loader-bg {
+    background: #333333;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+
+#loader-bg img {	
+    background: #333333;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 10;
 }
