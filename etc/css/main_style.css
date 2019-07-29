@@ -95,6 +95,11 @@ img {
     height: auto;
 }
 
+.twenties {
+    width: 5%;
+    height: auto;
+}
+
 body {
     background-color: #333333;
     color: #a9a9a9;
