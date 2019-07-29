@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140830854-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-140830854-3');
+        </script>
+        <link rel="preload" href="/etc/css/main_style.min.css" as="style">
+        <link rel="preload" href="https://code.jquery.com/jquery-3.2.1.min.js" as="script">
+        <link rel="preload" href="/etc/js/echo.min.js" as="script">
+        <link rel="preload" href="/etc/js/basic.min.js" as="script">
+        <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/icon/favicon.ico">
+        <link rel="shortcut icon" href="https://robot-inventor.github.io/icon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://robot-inventor.github.io/icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://robot-inventor.github.io/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="194x194" href="https://robot-inventor.github.io/icon/favicon-194x194.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://robot-inventor.github.io/icon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://robot-inventor.github.io/icon/favicon-16x16.png">
+        <link rel="manifest" href="https://robot-inventor.github.io/icon/site.webmanifest">
+        <link rel="mask-icon" href="https://robot-inventor.github.io/icon/safari-pinned-tab.svg" color="#d2691e">
+        <meta name="apple-mobile-web-app-title" content="理系YouTuber">
+        <meta name="application-name" content="理系YouTuber">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="https://robot-inventor.github.io/icon/mstile-144x144.png">
+        <meta name="theme-color" content="#333333">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/etc/css/main_style.min.css">
+        <title>各政党のチャンネル登録者数を比較してみた - 理系YouTuberのブログ的な何か</title>
+        <meta name="description" content="「理系YouTuberのブログ的な何か」は、主">
+    </head>
+    <body>
+        <header>
+        </header>
+        <main>
+            <p>
+                <h1>2019/07/29（水）　各政党のチャンネル登録者数を比較してみた</h1>
+                <script>
+                    document.write('<div align="right">最終更新 : ' + document.lastModified + '</div><br>');
+                </script>
+                <img src="/icon/805.png" data-echo="/article/2019-07-29-各政党のチャンネル登録者数を比較してみた/senkyo-bako.png" class="half">
+                先日、参議院選挙がありましたが、各党は SNS なども活用して戦ったようです。今回は、2019年7月29日時点での各党の YouTube のチャンネル登録者数を比較してみました。
+            </p>
+            <p>
+                <h2>結果</h2>
+                今回調査したのは、今回の選挙で議席を獲得した政党のみです。
+                <table>
+                    <tr>
+                        <td>自民</td>
+                        <td></td>
+            </p>
+            <p>
+                <h2>SNS など</h2>
+                「理系YouTuberのブログ的な何か」運営者の SNS などへのリンクです。ぜひ、ご覧ください。（YouTube は、わざわざ見るほどの内容はありません。時間を率先して無駄にしたい人にオススメ。）  
+                <div>
+                    <h2 class="no_border">
+                        <a href="https://www.youtube.com/channel/UCJFnl1HIx-atCMWnDcKBrfw">YouTube</a>
+                        <br>
+                        <a href="https://qiita.com/Robot-Inventor">Qiita</a>
+                        <br>
+                        <a href="https://github.com/Robot-Inventor">GitHub</a>
+                        <br>
+                        <a href="https://robot-inventor.github.io/ORIZIN_Agent/">ORIZIN Agent 公式サイト</a>
+                        <br>
+                        <a href="https://github.com/Robot-Inventor/ORIZIN_Agent">ORIZIN Agent の GitHub リポジトリ</a>
+                        <br>
+                        <a href="https://robot-inventor.github.io/">理系YouTuberのブログ的な何か（建設中...）（本サイト）</a>
+                    </h2>
+                </div>
+                ぜひ、YouTube のチャンネル登録や Qiita のフォローをお願いします！(・∀・)
+        </main>
+        <footer>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script async src="/etc/js/echo.min.js"></script>
+        <script async src="/etc/js/basic.min.js"></script>
+    </body>
+</html>
