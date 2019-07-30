@@ -171,6 +171,8 @@ div {
     padding: 10px;
     max-width: 100%;
     height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 iframe {
