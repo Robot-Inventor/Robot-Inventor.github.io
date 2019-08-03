@@ -1,3 +1,28 @@
+.half {
+    width: 50%;
+    height: auto;
+}
+
+.third {
+    width: 33%;
+    height: auto;
+}
+
+.fourth {
+    width: 25%;
+    height: auto;
+}
+
+.tenth {
+    width: 10%;
+    height: auto;
+}
+
+.twenties {
+    width: 5%;
+    height: auto;
+}
+
 @media screen and (min-width: 800px) {
     div[show="pc"] {
         display: block;
@@ -20,6 +45,10 @@
     div[show="phone_small"] {
         display: none;
     }
+    img[class="half"] {
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -31,6 +60,10 @@
     }
     div[show="phone_small"] {
         display: block;
+    }
+    img[class="half"] {
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -75,31 +108,6 @@ img {
     max-width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-.half {
-    width: 50%;
-    height: auto;
-}
-
-.third {
-    width: 33%;
-    height: auto;
-}
-
-.fourth {
-    width: 25%;
-    height: auto;
-}
-
-.tenth {
-    width: 10%;
-    height: auto;
-}
-
-.twenties {
-    width: 5%;
-    height: auto;
 }
 
 body {
