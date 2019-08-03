@@ -49,6 +49,10 @@
         width: 100%;
         height: auto;
     }
+    img[class="no_expand"] {
+        width: 50%;
+        height: auto;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -63,6 +67,10 @@
     }
     img[class="half"] {
         width: 100%;
+        height: auto;
+    }
+    img[class="no_expand"] {
+        width: 50%;
         height: auto;
     }
 }
