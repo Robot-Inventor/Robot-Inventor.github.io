@@ -8,11 +8,15 @@
     div[show="phone_small"] {
         display: none;
     }
-    img[class="header_image"]{
+    .header_image {
+        align: center;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .header_image img{
         width: 50%;
         height: auto;
     }
-    img[class="small_icon"]{
+    img[class="small_icon"] {
         width: 5%;
         height: auto;
     }
@@ -28,11 +32,15 @@
     div[show="phone_small"] {
         display: none;
     }
-    img[class="header_image"]{
+    .header_image {
+        align: center;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .header_image img{
         width: 100%;
         height: auto;
     }
-    img[class="small_icon"]{
+    img[class="small_icon"] {
         width: 10%;
         height: auto;
     }
@@ -48,11 +56,15 @@
     div[show="phone_small"] {
         display: block;
     }
-    img[class="header_image"]{
+    .header_image {
+        align: center;
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .header_image img{
         width: 100%;
         height: auto;
     }
-    img[class="small_icon"]{
+    img[class="small_icon"] {
         width: 10%;
         height: auto;
     }
