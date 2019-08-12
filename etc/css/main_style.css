@@ -8,7 +8,7 @@
     div[show="phone_small"] {
         display: none;
     }
-    .header_image {
+    div[class="header_image"] {
         align: center;
         background-color: rgba(0, 0, 0, 0);
     }
@@ -32,7 +32,7 @@
     div[show="phone_small"] {
         display: none;
     }
-    .header_image {
+    div[class="header_image"] {
         align: center;
         background-color: rgba(0, 0, 0, 0);
     }
@@ -56,7 +56,7 @@
     div[show="phone_small"] {
         display: block;
     }
-    .header_image {
+    div[class="header_image"] {
         align: center;
         background-color: rgba(0, 0, 0, 0);
     }
