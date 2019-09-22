@@ -8,18 +8,6 @@
     div[show="phone_small"] {
         display: none;
     }
-    div[class="header_image"] {
-        align: center;
-        background-color: rgba(0, 0, 0, 0);
-    }
-    .header_image img{
-        width: 50%;
-        height: auto;
-    }
-    img[class="small_icon"] {
-        width: 5%;
-        height: auto;
-    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 800px), (orientation: portrait) {
@@ -31,18 +19,6 @@
     }
     div[show="phone_small"] {
         display: none;
-    }
-    div[class="header_image"] {
-        align: center;
-        background-color: rgba(0, 0, 0, 0);
-    }
-    .header_image img{
-        width: 100%;
-        height: auto;
-    }
-    img[class="small_icon"] {
-        width: 10%;
-        height: auto;
     }
 }
 
@@ -56,18 +32,6 @@
     div[show="phone_small"] {
         display: block;
     }
-    div[class="header_image"] {
-        align: center;
-        background-color: rgba(0, 0, 0, 0);
-    }
-    .header_image img{
-        width: 100%;
-        height: auto;
-    }
-    img[class="small_icon"] {
-        width: 10%;
-        height: auto;
-    }
 }
 
 .overlay {
@@ -80,6 +44,10 @@
     background: rgba(51, 51, 51, 0.7);
     overflow: scroll;
     z-index: 100;
+}
+
+img {
+    max-width: 100%;
 }
 
 .half {
@@ -102,20 +70,14 @@
     height: auto;
 }
 
-.twenties {
-    width: 5%;
-    height: auto;
-}
-
-img {
-    max-width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-body {
+html, body {
     background-color: #333333;
     color: #a9a9a9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
 }
 
 main {
@@ -182,8 +144,6 @@ div {
     padding: 10px;
     max-width: 100%;
     height: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 iframe {
@@ -223,13 +183,12 @@ p {
 }
 
 footer {
+    display: inline-block;
+    vertical-align: middle;
     text-align: center;
     background-color: #000000;
+    width: 100vw;
     height: 100px;
-}
-
-footer > p {
-    margin-top: 0em;
 }
 
 .no_color {
