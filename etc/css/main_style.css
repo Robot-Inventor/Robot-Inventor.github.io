@@ -82,6 +82,8 @@ html, body {
 
 main {
     padding-bottom: 50px;
+    padding-left: 2vw;
+    padding-right: 2vw;
     min-height: 100vh;
 }
 
