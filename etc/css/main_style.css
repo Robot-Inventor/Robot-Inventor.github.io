@@ -155,8 +155,8 @@ iframe {
 .video {
     position: relative;
     padding: 0px;
-    width: 100%;
-    padding-top: 56.25%;
+    width: 100vw;
+    padding-top: 56.25vw;
 }
 
 .video iframe {
