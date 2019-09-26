@@ -134,6 +134,9 @@ h3 {
     border-bottom: none;
 }
 
+.block {
+    display: block;
+}
 .no_border {
     padding: 0px;
     border-left: none;
