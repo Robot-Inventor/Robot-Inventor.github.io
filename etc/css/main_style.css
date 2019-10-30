@@ -98,23 +98,23 @@ main {
 }
 
 a:link {
-    color: #d2691e;
+    color: #00FFFF;
 }
 
 a:visited {
-    color: #d98719;
+    color: #007DFF;
 }
 
 a:hover {
-    color: #ff7f50;
+    color: #00C8FF;
 }
 
 a:active {
-    color: #ff7f50;
+    color: #00C8FF;
 }
 
 h1 {
-    color: #FF6A00;
+    color: #00FFFF;
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 9px #000000;
@@ -122,7 +122,7 @@ h1 {
 }
 
 h2 {
-    color: #FF6A00;
+    color: #00FFFF;
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 7px #000000;
@@ -130,7 +130,7 @@ h2 {
 }
 
 h3 {
-    color: #FF6A00;
+    color: #00FFFF;
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 5px #000000;
