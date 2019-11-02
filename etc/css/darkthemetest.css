@@ -2,7 +2,7 @@
     --bgcolor: #FFFFFF;
     --textcolor: #000000;
     --themecolor: #00FFFF;
-    --divcolor: #555555;
+    --divcolor: #AAAAAA;
 }
 
 @media (prefers-color-scheme: dark) {
