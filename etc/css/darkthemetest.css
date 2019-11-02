@@ -2,14 +2,14 @@
     --bgcolor: #FFFFFF;
     --textcolor: #A9A9A9;
     --themecolor: #2d65cd;
-    --divcolor: /*#134798*/#AFEEEE;
+    --divcolor: /*#134798*/#00BFFF;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
       --bgcolor: #333333;
       --textcolor: #A9A9A9;
-      --themecolor: #2d65cd;
+      --themecolor: #467eff;
       --divcolor: #000000;
   }
 }
