@@ -10,7 +10,7 @@
       --bgcolor: #000000;
       --textcolor: #C0C0C0;
       --themecolor: #40E0D0;
-      --divcolor: #555555;
+      --divcolor: #333333;
   }
 }
 
@@ -133,24 +133,24 @@ h1 {
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
-    border-left: solid 9px var(--textcolor);
-    border-bottom: solid 2px var(--textcolor);
+    border-left: solid 9px var(--divcolor);
+    border-bottom: solid 2px var(--divcolor);
 }
 
 h2 {
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
-    border-left: solid 7px var(--textcolor);
-    border-bottom: solid 1px var(--textcolor);
+    border-left: solid 7px var(--divcolor);
+    border-bottom: solid 1px var(--divcolor);
 }
 
 h3 {
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
-    border-left: solid 5px var(--textcolor);
-    border-bottom: solid 1px #000000;
+    border-left: solid 5px var(--divcolor);
+    border-bottom: solid 1px var(--divcolor);
 }
 
 .inline {
