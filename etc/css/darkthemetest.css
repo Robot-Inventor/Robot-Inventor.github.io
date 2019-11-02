@@ -1,15 +1,15 @@
 :root {
     --bgcolor: #FFFFFF;
     --textcolor: #A9A9A9;
-    --themecolor: #134798;
-    --divcolor: /*#134798*/#2d65cd;
+    --themecolor: #2d65cd;
+    --divcolor: /*#134798*/#AFEEEE;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
       --bgcolor: #333333;
       --textcolor: #A9A9A9;
-      --themecolor: #00FFFF;
+      --themecolor: #2d65cd;
       --divcolor: #000000;
   }
 }
