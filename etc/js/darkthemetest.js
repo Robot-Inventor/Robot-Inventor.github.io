@@ -12,5 +12,5 @@ $(function(){
         label: '🌓'
     }
     const darkmode = new Darkmode(options);
-    window.setTimeout(darkmode.showWidget, 0);
+    window.setTimeout(darkmode.showWidget, 4);
 });
