@@ -1,16 +1,16 @@
 :root {
     --bgcolor: #FFFFFF;
-    --textcolor: #A9A9A9;
-    --themecolor: #2D65CD;
+    --textcolor: #C0C0C0;
+    --themecolor: #00CED1;
     --divcolor: #0000CD/*#134798*/;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-      --bgcolor: #333333;
-      --textcolor: #A9A9A9;
-      --themecolor: #60ABFF;
-      --divcolor: #000000;
+      --bgcolor: #000000;
+      --textcolor: #C0C0C0;
+      --themecolor: #40E0D0;
+      --divcolor: #696969;
   }
 }
 
