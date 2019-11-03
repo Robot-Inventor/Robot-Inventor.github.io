@@ -86,6 +86,10 @@ img {
     height: auto;
 }
 
+.darkmode_support_image {
+    filter: grayscale(100%);
+}
+
 html, body {
     background-color: var(--bgcolor);
     color: var(--textcolor);
