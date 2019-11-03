@@ -6,12 +6,15 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-      --bgcolor: #000000;
-      --textcolor: #C0C0C0;
-      --themecolor: #20B2AA;
-      --divcolor: #222222;
-  }
+    :root {
+        --bgcolor: #000000;
+        --textcolor: #C0C0C0;
+        --themecolor: #20B2AA;
+        --divcolor: #222222;
+    }
+    .darkmode_support_image {
+        filter: grayscale(100%);
+    }
 }
 
 @media screen and (min-width: 800px) {
@@ -84,10 +87,6 @@ img {
 .tenth {
     width: 10%;
     height: auto;
-}
-
-.darkmode_support_image {
-    filter: grayscale(100%);
 }
 
 html, body {
