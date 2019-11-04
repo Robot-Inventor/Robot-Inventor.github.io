@@ -94,15 +94,6 @@ figure {
     margin: 0;
 }
 
-figure img {
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-figure img:hover img {
-    transform: scale(1.5);
-}
-
 figcaption {
     position: absolute;
     top: 0;
@@ -128,6 +119,12 @@ figure:hover figcaption {
 
 img {
     max-width: 100%;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+img:hover {
+    transform: scale(1.5);
 }
 
 .half {
