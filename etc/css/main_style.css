@@ -87,6 +87,8 @@ figure {
     overflow: hidden;
     width: 100%;
     position: relative;
+    top: 0px;
+    left: 0px;
 }
 
 figcaption {
