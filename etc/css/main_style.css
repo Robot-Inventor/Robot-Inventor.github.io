@@ -109,6 +109,30 @@ p {
     margin-top: 4em;
 }
 
+h1 {
+    color: var(--themecolor);
+    padding: 0.25em 0.5em;
+    background: transparent;
+    border-left: solid 9px var(--divcolor);
+    border-bottom: solid 2px var(--divcolor);
+}
+
+h2 {
+    color: var(--themecolor);
+    padding: 0.25em 0.5em;
+    background: transparent;
+    border-left: solid 7px var(--divcolor);
+    border-bottom: solid 1px var(--divcolor);
+}
+
+h3 {
+    color: var(--themecolor);
+    padding: 0.25em 0.5em;
+    background: transparent;
+    border-left: solid 5px var(--divcolor);
+    border-bottom: solid 1px var(--divcolor);
+}
+
 figcaption p {
     position: relative;
     top: 50%;
@@ -244,30 +268,6 @@ a:hover[class="button"] {
 .button:hover {
     background: var(--themecolor);
     color: #FFFFFF;
-}
-
-h1 {
-    color: var(--themecolor);
-    padding: 0.25em 0.5em;
-    background: transparent;
-    border-left: solid 9px var(--divcolor);
-    border-bottom: solid 2px var(--divcolor);
-}
-
-h2 {
-    color: var(--themecolor);
-    padding: 0.25em 0.5em;
-    background: transparent;
-    border-left: solid 7px var(--divcolor);
-    border-bottom: solid 1px var(--divcolor);
-}
-
-h3 {
-    color: var(--themecolor);
-    padding: 0.25em 0.5em;
-    background: transparent;
-    border-left: solid 5px var(--divcolor);
-    border-bottom: solid 1px var(--divcolor);
 }
 
 .inline {
