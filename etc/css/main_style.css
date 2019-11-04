@@ -103,14 +103,12 @@ figcaption {
     -webkit-transition: 0.3s;
     transition: 0.3s;
     opacity: var(--figcaption_nohover);
-    margin: 0;
 }
 
 figcaption p {
     position: relative;
     top: 50%;
     left: 10%;
-    margin: 0;
 }
 
 figure:hover figcaption {
@@ -128,7 +126,6 @@ figure:hover img {
 
 img {
     max-width: 100%;
-    margin: 0;
 }
 
 a img {
