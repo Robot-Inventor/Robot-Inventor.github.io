@@ -91,6 +91,7 @@ figure {
     left: 0;
     transform: translate(0%, 0);
     display: block;
+    margin: 0;
 }
 
 figure img {
