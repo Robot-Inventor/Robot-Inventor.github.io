@@ -110,10 +110,12 @@ figcaption {
     -webkit-transition: 0.3s;
     transition: 0.3s;
     opacity: 0;
-    text-align: center;
-    display:inline-block;
-    vertical-align: middle;
-    line-height:normal;
+}
+
+figcaption p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 figure:hover figcaption {
