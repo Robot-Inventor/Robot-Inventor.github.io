@@ -129,8 +129,13 @@ img {
     max-width: 100%;
 }
 
-img:hover {
-    
+a img {
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+a img:hover {
+    transform: scale(1.1);
 }
 
 .half {
