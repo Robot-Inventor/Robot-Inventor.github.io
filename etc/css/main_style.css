@@ -224,6 +224,14 @@ a:active {
     color: #FFFFFF;
 }
 
+.button a:visited {
+    color: var(--themecolor);
+}
+
+.button a:active {
+    color: var(--themecolor);
+}
+
 .button {
     display: inline-block;
     padding: 0.3em 1em;
