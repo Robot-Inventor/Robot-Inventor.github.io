@@ -205,13 +205,26 @@ a:active {
     color: #00C8FF;
 }
 
+a[class="button"] {
+    color: var(--themecolor);
+}
+
+a:hover[class="button"] {
+    color: #FFFFFF;
+}
+
 .button {
-    display: inline-block;
     padding: 0.3em 1em;
     color: var(--themecolor);
     border: solid 2px var(--themecolor);
     border-radius: 3px;
-    transition: .4s;
+    transition: 0.4s;
+    opacity: 1;
+}
+
+.button:hover {
+    background: var(--themecolor);
+    opacity: 0.5;
 }
 
 h1 {
