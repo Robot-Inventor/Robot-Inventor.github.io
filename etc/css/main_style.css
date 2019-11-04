@@ -347,6 +347,7 @@ footer {
 
 strong {
     color: var(--themecolor);
+    font-size: 120%;
 }
 
 #loader-bg {
