@@ -159,7 +159,7 @@ a img:hover {
 }
 
 .half_height {
-    height: 50%;
+    height: 50vh;
     object-fit: cover;
 }
 
