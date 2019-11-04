@@ -87,8 +87,16 @@ figure {
     overflow: hidden;
     width: 100%;
     position: relative;
-    top: 0px;
-    left: 0px;
+    display: block;
+}
+
+figure img {
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+figure img:hover {
+    transform: scale(1.5);
 }
 
 figcaption {
