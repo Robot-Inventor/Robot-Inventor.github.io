@@ -131,11 +131,11 @@ figure:hover img {
 }
 
 img {
+    overflow: hidden;
     max-width: 100%;
 }
 
 a img {
-    overflow: hidden;
     transition: 0.3s;
 }
 
