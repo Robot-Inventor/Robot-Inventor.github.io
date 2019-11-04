@@ -131,7 +131,6 @@ figure:hover img {
 }
 
 img {
-    overflow: hidden;
     max-width: 100%;
 }
 
@@ -295,10 +294,11 @@ div {
     padding: 10px;
     max-width: 100%;
     height: auto;
+    overflow: hidden;
 }
 
 iframe {
-    max-width: 100vw;
+    max-width: 100%;
 }
 
 .video {
