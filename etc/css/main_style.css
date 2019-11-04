@@ -35,7 +35,9 @@
     div[show="phone_small"] {
         display: none;
     }
-    --figcaption_nohover: 0;
+    :root {
+        --figcaption_nohover: 0;
+    }
 }
 
 @media screen and (min-width: 600px) and (max-width: 800px), (orientation: portrait) {
@@ -48,7 +50,9 @@
     div[show="phone_small"] {
         display: none;
     }
-    --figcaption_nohover: 1;
+    :root {
+        --figcaption_nohover: 1;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -61,7 +65,9 @@
     div[show="phone_small"] {
         display: block;
     }
-    --figcaption_nohover: 1;
+    :root {
+        --figcaption_nohover: 1;
+    }
 }
 
 .overlay {
