@@ -105,10 +105,16 @@ figcaption {
     opacity: var(--figcaption_nohover);
 }
 
+p {
+    margin-top: 4em;
+    max-width: 100%;
+}
+
 figcaption p {
     position: relative;
     top: 50%;
     left: 10%;
+    margin: 0;
 }
 
 figure:hover figcaption {
@@ -313,10 +319,6 @@ hr {
     border: none;
     color: var(--textcolor);
     height: 2px;
-}
-
-p {
-    margin-top: 4em;
 }
 
 footer {
