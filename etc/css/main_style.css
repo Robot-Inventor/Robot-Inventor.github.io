@@ -270,6 +270,18 @@ h3 {
     border-bottom: solid 1px var(--divcolor);
 }
 
+figcaption h1 {
+    position: relative;
+}
+
+figcaption h2 {
+    position: relative;
+}
+
+figcaption h3 {
+    position: relative;
+}
+
 .inline {
     display: inline;
     padding: 0px;
