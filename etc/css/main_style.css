@@ -117,14 +117,21 @@ figure:hover figcaption {
     opacity: 1;
 }
 
-img {
-    max-width: 100%;
+figure img {
     overflow: hidden;
     transition: 0.3s;
 }
 
-img:hover {
+figure:hover img {
     transform: scale(1.5);
+}
+
+img {
+    max-width: 100%;
+}
+
+img:hover {
+    
 }
 
 .half {
