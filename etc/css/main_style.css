@@ -89,7 +89,6 @@ figure {
     position: relative;
     top: 0;
     left: 0;
-    transform: translate(0%, 0);
     display: block;
     margin: 0;
 }
@@ -111,6 +110,7 @@ figcaption p {
     position: relative;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, 0);
     margin: 0;
 }
 
