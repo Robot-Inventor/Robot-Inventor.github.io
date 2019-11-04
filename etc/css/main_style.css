@@ -345,6 +345,10 @@ footer {
     color: var(--themecolor);
 }
 
+strong {
+    color: var(--themecolor);
+}
+
 #loader-bg {
     background: #333333;
     height: 100%;
