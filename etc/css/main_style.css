@@ -239,13 +239,11 @@ a:hover[class="button"] {
     text-decoration: none;
     margin: 10px;
     transition: 0.4s;
-    opacity: 1;
 }
 
 .button:hover {
     background: var(--themecolor);
     color: #FFFFFF;
-    opacity: 0.5;
 }
 
 h1 {
