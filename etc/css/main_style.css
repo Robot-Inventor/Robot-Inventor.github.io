@@ -237,7 +237,7 @@ a:hover[class="button"] {
     border: solid 2px var(--themecolor);
     border-radius: 3px;
     text-decoration: none;
-    margin: 10px;
+    margin: 10px 10px 10px 0px;
     transition: 0.4s;
 }
 
