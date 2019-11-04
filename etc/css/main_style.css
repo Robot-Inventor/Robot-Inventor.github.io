@@ -158,6 +158,11 @@ a img:hover {
     height: auto;
 }
 
+.half_height {
+    height: 50%;
+    object-fit: cover;
+}
+
 .grayscale {
     filter: grayscale(100%) brightness(80%);
 }
@@ -205,11 +210,11 @@ a:active {
     color: #00C8FF;
 }
 
-a[class="button"] {
+.button a {
     color: var(--themecolor);
 }
 
-a:hover[class="button"] {
+.button a:hover {
     color: #FFFFFF;
 }
 
@@ -218,6 +223,8 @@ a:hover[class="button"] {
     color: var(--themecolor);
     border: solid 2px var(--themecolor);
     border-radius: 3px;
+    text-decoration: none;
+    margin: 3px;
     transition: 0.4s;
     opacity: 1;
 }
