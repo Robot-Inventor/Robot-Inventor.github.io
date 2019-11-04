@@ -103,6 +103,7 @@ figcaption {
     -webkit-transition: 0.3s;
     transition: 0.3s;
     opacity: var(--figcaption_nohover);
+    margin: 0;
 }
 
 figcaption p {
@@ -127,6 +128,7 @@ figure:hover img {
 
 img {
     max-width: 100%;
+    margin: 0;
 }
 
 a img {
@@ -220,6 +222,7 @@ a:active {
 }
 
 .button {
+    display: inline-block;
     padding: 0.3em 1em;
     color: var(--themecolor);
     border: solid 2px var(--themecolor);
