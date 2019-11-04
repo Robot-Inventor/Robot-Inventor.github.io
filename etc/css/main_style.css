@@ -84,7 +84,6 @@
 }
 
 figure {
-    position: relative;
     overflow: hidden;
     width: 100%;
 }
@@ -135,8 +134,7 @@ img {
 }
 
 .grayscale {
-    filter: grayscale(100%);
-    filter: brightness(80%);
+    filter: grayscale(100%) brightness(80%);
 }
 
 html, body {
