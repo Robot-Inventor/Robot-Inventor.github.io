@@ -225,7 +225,7 @@ a:active {
     border: solid 2px var(--themecolor);
     border-radius: 3px;
     text-decoration: none;
-    margin: 3px;
+    margin: 10px;
     transition: 0.4s;
     opacity: 1;
 }
