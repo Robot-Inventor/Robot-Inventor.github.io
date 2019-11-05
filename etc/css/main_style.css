@@ -110,9 +110,8 @@ p {
 }
 
 figcaption p {
-    position: relative;
-    top: 25%;
-    left: 10%;
+    padding-top: 25%;
+    padding-left: 10%;
     margin: 0;
 }
 
