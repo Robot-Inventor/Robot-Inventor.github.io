@@ -112,7 +112,7 @@ p {
 figcaption p {
     padding-top: 25%;
     padding-left: 10%;
-    margin: 0;
+    margin-left: 0;
 }
 
 figure:hover figcaption {
