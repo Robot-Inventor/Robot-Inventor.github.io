@@ -110,8 +110,9 @@ p {
 }
 
 figcaption p {
-    margin-top: 25%;
-    margin-left: 10%;
+    position: absolute;
+    top: 25%;
+    left: 10%;
 }
 
 figure:hover figcaption {
