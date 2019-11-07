@@ -110,10 +110,10 @@ p {
 }
 
 figcaption p {
+    position: absolute;
+    top: 10%;
+    left: 0;
     padding-left: 25vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 figure:hover figcaption {
