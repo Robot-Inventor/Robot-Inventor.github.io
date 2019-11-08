@@ -243,7 +243,7 @@ a:hover[class="button"] {
 }
 
 .button:hover {
-    background: var(--themecolor);
+    background: linear-gradient(bottom left, var(--themecolor), var(--bgcolor));
     color: #FFFFFF;
 }
 
