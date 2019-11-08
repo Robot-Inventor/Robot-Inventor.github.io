@@ -244,8 +244,8 @@ a:hover[class="button"] {
 
 .button:hover {
     background: linear-gradient(90deg, var(--themecolor) 0%, var(--bgcolor) 100%) no-repeat 50% 50% / 100% 100%;
-    border-image: linear-gradient(90deg, var(--themecolor) 0%, var(--bgcolor) 100%) no-repeat 50% 50% / 100% 100%;
-    color: #FFFFFF;
+    border-color: transparent;
+    color: var(--textcolor);
 }
 
 h1 {
