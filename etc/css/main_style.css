@@ -239,12 +239,11 @@ a:hover[class="button"] {
     border-radius: 3px;
     text-decoration: none;
     margin: 10px 10px 10px 0px;
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 .button:hover {
-    background: linear-gradient(90deg, var(--themecolor) 0%, var(--bgcolor) 100%) no-repeat 50% 50% / 100% 100%;
-    border-color: transparent;
+    background: var(--themecolor);
     color: var(--textcolor);
 }
 
