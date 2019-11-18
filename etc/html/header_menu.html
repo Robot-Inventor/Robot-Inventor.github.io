@@ -84,6 +84,7 @@
     <progress max="100">0%</progress>
 </div>
 <script>
+    var loadingStatus = 1;
     $(function() {
         $(".overlay_open_button").click(function() {
             $(".overlay").fadeIn();
@@ -97,7 +98,6 @@
         alert('JavaScriptのアラート');
         loadingStatus = 0;
     });
-    var loadingStatus = 1;
     var deleteLoadingBar = function() {
         if(loadingStatus == 1) {
             $(".now_loading").fadeOut();
