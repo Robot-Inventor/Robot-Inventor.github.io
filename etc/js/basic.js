@@ -6,6 +6,6 @@ $(function(){
     });
 });
 
-window.onload = function() {
+window.addEventListener('load', function() {
     $(".now_loading").fadeOut(2000);
 }
