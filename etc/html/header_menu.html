@@ -84,6 +84,10 @@
     <progress max="100">0%</progress>
 </div>
 <script>
+    var loadingTimeOut = function(){
+        $(".now_loading").fadeOut();
+    }
+    var loadingTimer = setTimeout(loadingTimeOut, 2000);
     $(function() {
         $(".overlay_open_button").click(function() {
             $(".overlay").fadeIn();
@@ -91,13 +95,10 @@
         $(".overlay_close_button").click(function() {
             $(".overlay").fadeOut();
         });
-        var loadingTimeOut = function(){
-            $(".now_loading").fadeOut();
-        }
-        setTimeout(loadingTimeOut, 2000);
     });
     
     $(window).on('load', function() {
+        clearTimeout(loadingTimer);
         $(".now_loading").fadeOut();
     });
 </script>
