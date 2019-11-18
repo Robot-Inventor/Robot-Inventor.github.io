@@ -4,6 +4,7 @@ $(function(){
     echo.init({
         throttle:"0"
     });
+    setTimeout($(".now_loading").fadeOut(2000), 3000);
 });
 
 window.addEventListener('load', function() {
