@@ -1,6 +1,6 @@
 @font-face {
     font-family: "League Spartan";
-    src: url("/etc/font/LeagueSpartan-Regular.ttf") format("ttf");
+    src: url("/etc/font/LeagueSpartan-Regular.ttf") format("truetype");
 }
 
 :root {
@@ -194,7 +194,7 @@ a img:hover {
 }
 
 html, body {
-    font-family: "League Spartan";
+    font-family: "League Spartan", sans-selif;
     background-color: var(--bgcolor);
     color: var(--textcolor);
     display: flex;
