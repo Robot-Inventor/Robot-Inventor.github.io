@@ -89,7 +89,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: var(--themecolor);
+    background: var(--bgcolor);
     overflow: hidden;
     z-index: 1000;
 }
