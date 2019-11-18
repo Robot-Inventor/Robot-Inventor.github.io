@@ -4,5 +4,8 @@ $(function(){
     echo.init({
         throttle:"0"
     });
-    $(".now_loading").fadeOut();
 });
+
+window.onload = function() {
+    $(".now_loading").fadeOut(2000);
+}
