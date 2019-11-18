@@ -3,6 +3,11 @@
     src: url("/etc/font/LeagueSpartan-Regular.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Noto Sans";
+    src: url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
+}
+
 :root {
     --bgcolor: #FFFFFF;
     --textcolor: #C0C0C0;
@@ -194,7 +199,7 @@ a img:hover {
 }
 
 html, body {
-    font-family: "League Spartan", sans-selif;
+    font-family: "League Spartan", "Noto Sans", sans-selif;
     background-color: var(--bgcolor);
     color: var(--textcolor);
     display: flex;
