@@ -44,6 +44,7 @@
     }
     :root {
         --figcaption_nohover: 0;
+        --figcaption_place: 10%;
     }
 }
 
@@ -59,6 +60,7 @@
     }
     :root {
         --figcaption_nohover: 1;
+        --figcaption_place: 5%;
     }
 }
 
@@ -74,6 +76,7 @@
     }
     :root {
         --figcaption_nohover: 1;
+        --figcaption_place: 5%;
     }
 }
 
@@ -134,7 +137,7 @@ p {
 
 figcaption p {
     position: absolute;
-    top: 10%;
+    top: var(--figcaption_place);
     left: 0;
     padding-left: 10vw;
 }
