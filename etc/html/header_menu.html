@@ -84,6 +84,11 @@
     <progress max="100">0%</progress>
 </div>
 <script>
+    var deleteLoadingBar = function(){
+        $(".now_loading").fadeOut();
+    }
+    var deleteLoadingBarTimer = setTimeout(deleteLoadingBar, 3000);
+    
     $(function() {
         $(".overlay_open_button").click(function() {
             $(".overlay").fadeIn();
@@ -91,6 +96,7 @@
         $(".overlay_close_button").click(function() {
             $(".overlay").fadeOut();
         });
-        $(".now_loading").fadeOut();
+        clearTimeOut(deleteLoadingBarTimer);
+        deleteLoadingBar();
     });
 </script>
