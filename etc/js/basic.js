@@ -1,13 +1,14 @@
-var deleteProgress = function(){
-    jQuery(".now_loading").fadeOut(2000);
+var deleteLoadingBar = function(){
+    jQuery(".now_loading").fadeOut();
 }
 
-setTimeout(deleteProgress, 3000);
+setTimeout(deleteLoadingBar, 3000);
+
 
 $(function(){
     jQuery("header").load("/etc/html/header_menu.html");
     jQuery("footer").load("/etc/html/footer.min.html");
-    jQuery(".now_loading").fadeOut(2000);
+    deleteLoadingBar();
     echo.init({
         throttle:"0"
     });
