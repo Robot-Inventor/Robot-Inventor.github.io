@@ -4,4 +4,5 @@ $(function(){
     echo.init({
         throttle:"0"
     });
+    $(".now_loading").fadeOut();
 });
