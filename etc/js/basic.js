@@ -2,12 +2,13 @@ var deleteLoadingBar = function(){
     jQuery(".now_loading").fadeOut();
 }
 
-setTimeout(deleteLoadingBar, 3000);
+var deleteLoadingBarTimer = setTimeout(deleteLoadingBar, 3000);
 
 
 $(function(){
     jQuery("header").load("/etc/html/header_menu.html");
     jQuery("footer").load("/etc/html/footer.min.html");
+    clearTimeOut(deleteLoadingBarTimer);
     deleteLoadingBar();
     echo.init({
         throttle:"0"
