@@ -79,11 +79,18 @@
     </a>
     <hr>
 </div>
-<div class="now_loading block half">
+<div class="now_loading block">
     <h2 class="no_border">Now Loading…</h2>
     <progress max="100">0%</progress>
 </div>
 <script>
+    var loadingStatus = 1;
+    var deleteLoadingBar = function() {
+        if(loadingStatus == 1) {
+            $(".now_loading").fadeOut();
+        }
+    }
+    setTimeout(deleteLoadingBar, 2000)
     $(function() {
         $(".overlay_open_button").click(function() {
             $(".overlay").fadeIn();
@@ -95,5 +102,6 @@
     $(window).on('load', function() {
         $(".now_loading").fadeOut();
         alert('JavaScriptのアラート');
+        loadingStatus = 0;
     });
 </script>
