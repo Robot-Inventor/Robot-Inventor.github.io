@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "League Spartan";
+    src: url("/etc/font/LeagueSpartan-Regular.ttf") format("ttf");
+}
+
 :root {
     --bgcolor: #FFFFFF;
     --textcolor: #C0C0C0;
@@ -189,6 +194,7 @@ a img:hover {
 }
 
 html, body {
+    font-family: "League Spartan";
     background-color: var(--bgcolor);
     color: var(--textcolor);
     display: flex;
