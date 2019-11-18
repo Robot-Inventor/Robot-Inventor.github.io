@@ -83,11 +83,7 @@
     <h2 class="no_border">Now Loading…</h2>
     <progress max="100">0%</progress>
 </div>
-<script>/*
-    var loadingTimeOut = function(){
-        $(".now_loading").fadeOut();
-    }
-    var loadingTimer = setTimeout(loadingTimeOut, 2000);*/
+<script>
     $(function() {
         $(".overlay_open_button").click(function() {
             $(".overlay").fadeIn();
@@ -96,9 +92,10 @@
             $(".overlay").fadeOut();
         });
     });
-    
-    $(window).on('load', function() {/*
-        clearTimeout(loadingTimer);*/
+    $(window).on('load', function() {
+        $(".now_loading").fadeOut();
+    });
+    $(window).on('unload', function(){
         $(".now_loading").fadeOut();
     });
 </script>
