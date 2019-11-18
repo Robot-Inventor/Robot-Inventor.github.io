@@ -83,20 +83,14 @@
     <h2 class="no_border">Now Loading…</h2>
     <progress max="100">0%</progress>
 </div>
-<script>/*
-    var deleteLoadingBar = function(){
-        $(".now_loading").fadeOut();
-    }
-    var deleteLoadingBarTimer = setTimeout(deleteLoadingBar, 2000);*/
-    
+<script>
     $(function() {
         $(".overlay_open_button").click(function() {
             $(".overlay").fadeIn();
         });
         $(".overlay_close_button").click(function() {
             $(".overlay").fadeOut();
-        });/*
-        clearTimeOut(deleteLoadingBarTimer);*/
+        });
         $(".now_loading").fadeOut();
     });
 </script>
