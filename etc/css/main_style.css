@@ -93,6 +93,7 @@
 }
 
 .now_loading {
+    display: none;
     text-align: center;
     position: fixed;
     top: 0;
