@@ -4,4 +4,10 @@ jQuery(function(){
     echo.init({
         throttle:"0"
     });
+    var e = document.getElementByTagName("main");
+    e.style.display = "none";
+});
+
+$(window).on('load', function() {
+    $("main").fadeIn();
 });
