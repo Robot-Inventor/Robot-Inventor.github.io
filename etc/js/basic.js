@@ -4,8 +4,8 @@ jQuery(function(){
     echo.init({
         throttle:"0"
     });
-    var e = document.getElementByTagName("main");
-    e.style.display = "none";
+    var content = document.getElementByTagName("main");
+    content.style.display = "none";
 });
 
 $(window).on('load', function() {
