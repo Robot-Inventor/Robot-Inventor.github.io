@@ -9,5 +9,5 @@ jQuery(function(){
 });
 
 $(window).on('load', function() {
-    $("main").fadeIn();
+    $("main").fadeIn(3000);
 });
