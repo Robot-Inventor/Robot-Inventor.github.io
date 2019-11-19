@@ -92,6 +92,8 @@
         $(".overlay_close_button").click(function() {
             $(".overlay").fadeOut();
         });
+        var e = document.getElementByClassName("now_loading");
+        e.style.display = "block";
     });
     $(window).on('load', function() {
         $(".now_loading").fadeOut();
