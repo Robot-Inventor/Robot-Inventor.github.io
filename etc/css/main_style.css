@@ -107,8 +107,6 @@
 
 progress {
     width: 50%;
-    background: var(--bgcolor);
-    color: var(--themecolor);
 }
 
 figure {
