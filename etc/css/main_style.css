@@ -379,3 +379,15 @@ strong {
     color: var(--themecolor);
     font-size: 200%;
 }
+
+.important {
+    display: block;
+    padding: 0.3em 1em;
+    color: #FF0000;
+    background: var(--bgcolor);
+    border: solid 2px #FF0000;
+    border-radius: 3px;
+    text-decoration: none;
+    margin: 10px 10px 10px 0px;
+    transition: 0.3s;
+}
