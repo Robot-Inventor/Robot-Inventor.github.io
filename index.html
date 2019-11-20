@@ -14,6 +14,7 @@
         <link rel="preload" href="/etc/js/echo.min.js" as="script">
         <link rel="preload" href="/etc/js/basic.min.js" as="script">
         <link rel="preload" href="/etc/js/read_notice.min.js" as="script">
+        <link rel="preload" href="/etc/js/load_new_article.min.js" as="script">
         <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/icon/favicon.ico">
         <link rel="shortcut icon" href="https://robot-inventor.github.io/icon/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="https://robot-inventor.github.io/icon/apple-touch-icon.png">
@@ -68,14 +69,15 @@
                 <a href="/notice/" class="button">お知らせ をもっと見る</a>
             </p>
             <p>
+                <h1>新着記事</h1>
+                <div class="new_article"></div>
+            </p>
+            <p>
                 <h1>新着動画</h1>
                 <div class="video">
                 	<iframe data-echo="https://www.youtube.com/embed/8QysH30G0hA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </p>
-            <p>
-                <h1>新着記事</h1>
-                <div class="new_article"></div>
             <p>
                 <h1>Twitter</h1>
                 <a class="twitter-timeline" href="https://twitter.com/keita_roboin?ref_src=twsrc%5Etfw" data-width="100%" data-height="80vh">Tweets by keita_roboin</a>
@@ -88,7 +90,9 @@
         <script async src="/etc/js/echo.min.js"></script>
         <script async src="/etc/js/basic.min.js"></script>
         <script async src="/etc/js/read_notice.min.js"></script>
+        <script async src="/etc/js/load_new_article.min.js"></script>
         <script>
             window.alert("このページは現在更新作業中です。閲覧はできますが，正常に表示されなかったり予期せぬ挙動をする可能性があります。");
+        </script>
     </body>
 </html>
