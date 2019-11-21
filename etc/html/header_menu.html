@@ -94,12 +94,12 @@
         });
         var e = document.getElementByClassName("now_loading");
         e.style.display = "block";
-        alert("これは一時的なデバッグ用です。無視してください$(function()");
+        window.alert("これは一時的なデバッグ用です。無視してください$(function()");
     });
     $(window).on('load', function() {
         $(".now_loading").fadeOut();
         loadingStatus = 0;
-        alert("これは一時的なデバッグ用です。無視してくださいwindow).on('load'");
+        window.alert("これは一時的なデバッグ用です。無視してくださいwindow).on('load'");
     });
     var deleteLoadingBar = function() {
         if(loadingStatus == 1) {
