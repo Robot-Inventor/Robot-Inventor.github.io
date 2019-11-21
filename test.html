@@ -14,6 +14,7 @@
         <link rel="preload" href="/etc/js/echo.min.js" as="script">
         <link rel="preload" href="/etc/js/basic.min.js" as="script">
         <link rel="preload" href="/etc/js/read_notice.min.js" as="script">
+        <link rel="preload" href="/etc/js/load_new_article.min.js" as="script">
         <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/icon/favicon.ico">
         <link rel="shortcut icon" href="https://robot-inventor.github.io/icon/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="https://robot-inventor.github.io/icon/apple-touch-icon.png">
@@ -29,7 +30,7 @@
         <meta name="msapplication-TileImage" content="https://robot-inventor.github.io/icon/mstile-144x144.png">
         <meta name="theme-color" content="#333333">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="/etc/css/main_style.css">
+        <link rel="stylesheet" type="text/css" href="/etc/css/main_style.min.css">
         <title>トップ - 理系YouTuberのブログ的な何か</title>
         <meta name="description" content="「理系YouTuberのブログ的な何か」は、主にプログラミングや理科に関する話題を投稿していくブログ的なものです。現在建設中...">
     </head>
@@ -37,6 +38,7 @@
         <header>
         </header>
         <main>
+            <span class="important">このページは現在更新作業中です。閲覧はできますが，正常に表示されなかったり予期せぬ挙動をする可能性があります。</span>
             <p>
                 <h1>理系YouTuberのブログ的な何か</h1>
                 「理系YouTuberのブログ的な何か」は、主にプログラミングや理科に関する話題を投稿していくブログ的なものです。現在、私の作った別のサイト<a href="https://robot-inventor.github.io/ORIZIN_Agent/">ORIZIN Agent 公式サイト</a>をベースに建設中...
@@ -46,23 +48,54 @@
                 <figcaption>
                     <p>
                         <strong>YouTube</strong><br>
-                        YouTubeチャンネル<a href="https://www.youtube.com/channel/UCJFnl1HIx-atCMWnDcKBrfw">「ロボット INVENTOR」</a>を運営しています。<br>
-                        <a href="/policyOfYoutube.html" class="button">チャンネル運営方針</a>
+                        YouTubeチャンネル「<a href="https://www.youtube.com/channel/UCJFnl1HIx-atCMWnDcKBrfw">ロボット INVENTOR</a>」を運営しています。<br>
+                        <a href="/policy_of_youtube_channel.html" class="button">チャンネル運営方針</a>
+                    </p>
+                </figcaption>
+            </figure>
+            <figure>
+                <img data-echo="/ORIZIN_Agent/icon/ORIZIN_Agent_公式サイト_ロゴ_ヘッダー.png" class="grayscale half_height">
+                <figcaption>
+                    <p>
+                        <strong>ORIZIN Agent</strong><br>
+                        主に会話を目的としたオープンソースのAIアシスタント「ORIZIN Agent」を制作しています。<br>
+                        <a href="/ORIZIN_Agent/" class="button">詳しく見る</a>
                     </p>
                 </figcaption>
             </figure>
             <p>
                 <h1>最新のお知らせ</h1>
-                <div id="notice">
+                <div id="notice" class="notice">
                 </div>
-                <a href="/notice/">お知らせ をもっと見る</a>
+                <a href="/notice/" class="button">お知らせ をもっと見る</a>
             </p>
+            <p>
+                <h1>新着記事</h1>
+                <div class="new_article"></div>
+            </p>
+            <p>
+                <h1>新着動画</h1>
+                <div class="video">
+                	<iframe data-echo="https://www.youtube.com/embed/8QysH30G0hA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </p>
+            <p>
+                <h1>Twitter</h1>
+                <a class="twitter-timeline" href="https://twitter.com/keita_roboin?ref_src=twsrc%5Etfw" data-width="100%" data-height="80vh">Tweets by keita_roboin</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </p>
+            <div class="view_timer" data-start-date"2019/11/22 1:17" data-end-date="2019/11/22 1:18"></div>
         </main>
         <footer>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script async src="/etc/js/echo.min.js"></script>
-        <script async src="/etc/js/basic.js"></script>
+        <script async src="/etc/js/basic.min.js"></script>
         <script async src="/etc/js/read_notice.min.js"></script>
+        <script async src="/etc/js/load_new_article.min.js"></script>
+        <script async src="/etc/js/view_timer.min.js"></script>
+        <script>
+            window.alert("あなたがこれから見ようとしているページは現在更新作業中です。閲覧はできますが，正常に表示されなかったり予期せぬ挙動をする可能性があります。");
+        </script>
     </body>
 </html>
