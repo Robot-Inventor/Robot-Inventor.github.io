@@ -130,6 +130,8 @@ figcaption {
     -webkit-transition: 0.3s;
     transition: 0.3s;
     opacity: var(--figcaption_nohover);
+    backdrop-filter: none;  
+    -webkit-backdrop-filter: none;
 }
 
 p {
@@ -146,6 +148,8 @@ figcaption p {
 
 figure:hover figcaption {
     opacity: 1;
+    backdrop-filter: blur(5px);  
+    -webkit-backdrop-filter: blur(5px);
 }
 
 figure img {
