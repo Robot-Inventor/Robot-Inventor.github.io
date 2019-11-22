@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).on('load', function() {
   $(".view_timer").each(function(index, target) {
     var startDate = $(this).attr("data-start-date");
     var endDate = $(this).attr("data-end-date");
