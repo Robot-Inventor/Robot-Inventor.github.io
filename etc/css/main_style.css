@@ -34,41 +34,50 @@
 }
 
 @media screen and (min-width: 800px) {
-    .phone {
+    div[show="pc"] {
+        display: block;
+    }
+    div[show="phone"] {
         display: none;
     }
-    .phone_small {
+    div[show="phone_small"] {
         display: none;
     }
     :root {
         --figcaption_nohover: 0;
-        --figcaption_place: 10vw;
+        --figcaption_place: 5%;
     }
 }
 
 @media screen and (min-width: 600px) and (max-width: 800px), (orientation: portrait) {
-    .pc {
+    div[show="pc"] {
         display: none;
     }
-    .phone_small {
+    div[show="phone"] {
+        display: block;
+    }
+    div[show="phone_small"] {
         display: none;
     }
     :root {
         --figcaption_nohover: 1;
-        --figcaption_place: 5vw;
+        --figcaption_place: 5%;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .pc {
+    div[show="pc"] {
         display: none;
     }
-    .phone {
+    div[show="phone"] {
         display: none;
+    }
+    div[show="phone_small"] {
+        display: block;
     }
     :root {
         --figcaption_nohover: 1;
-        --figcaption_place: 5vw;
+        --figcaption_place: 5%;
     }
 }
 
