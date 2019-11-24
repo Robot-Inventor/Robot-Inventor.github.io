@@ -143,8 +143,8 @@ figcaption p {
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: var(--figcaption_place);
-    padding-left: 10vw;
+    padding: var(--figcaption_place) 10vw;
+    margin: 0
 }
 
 figure:hover figcaption {
