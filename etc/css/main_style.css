@@ -227,12 +227,12 @@ body {
     margin-bottom: 0;
     margin-right: 2vw;
     margin-left: 2vw;*/
-    margin: 0;
-    padding: 0 2vw;
 }
 
 main {
     padding-bottom: 50px;
+    margin: 0;
+    padding: 0 2vw;
     /*padding-left: 2vw;
     padding-right: 2vw;*/
     min-height: 100vh;
