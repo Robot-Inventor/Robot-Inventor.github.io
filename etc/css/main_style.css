@@ -33,13 +33,10 @@
 }
 
 @media screen and (min-width: 800px) {
-    div[show="pc"] {
-        display: block;
-    }
-    div[show="phone"] {
+    .phone {
         display: none;
     }
-    div[show="phone_small"] {
+    .phone_small {
         display: none;
     }
     :root {
@@ -49,13 +46,10 @@
 }
 
 @media screen and (min-width: 600px) and (max-width: 800px), (orientation: portrait) {
-    div[show="pc"] {
+    .pc {
         display: none;
     }
-    div[show="phone"] {
-        display: block;
-    }
-    div[show="phone_small"] {
+    .phone_small {
         display: none;
     }
     :root {
@@ -65,14 +59,11 @@
 }
 
 @media screen and (max-width: 600px) {
-    div[show="pc"] {
+    .pc {
         display: none;
     }
-    div[show="phone"] {
+    .phone {
         display: none;
-    }
-    div[show="phone_small"] {
-        display: block;
     }
     :root {
         --figcaption_nohover: 1;
