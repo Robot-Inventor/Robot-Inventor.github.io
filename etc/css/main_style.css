@@ -44,7 +44,7 @@
     }
     :root {
         --figcaption_nohover: 0;
-        --figcaption_place: 5vw;
+        --figcaption_place: 10vw;
     }
 }
 
@@ -60,7 +60,7 @@
     }
     :root {
         --figcaption_nohover: 1;
-        --figcaption_place: 2vw;
+        --figcaption_place: 5vw;
     }
 }
 
@@ -76,7 +76,7 @@
     }
     :root {
         --figcaption_nohover: 1;
-        --figcaption_place: 2vw;
+        --figcaption_place: 5vw;
     }
 }
 
