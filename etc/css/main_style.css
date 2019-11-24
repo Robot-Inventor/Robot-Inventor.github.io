@@ -9,7 +9,8 @@
     --bgcolor: #FFFFFF;
     --textcolor: #C0C0C0;
     --themecolor: #00CED1;
-    --divcolor: #0000CD;
+    /*--divcolor: #0000CD;*/
+    --divcolor: #191970;
     --normallinkcolor: #40E0D0;
     --visitedlinkcolor: #6495ED;
     --hoverlinkcolor: #20B2AA;
