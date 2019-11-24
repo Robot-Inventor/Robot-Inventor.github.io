@@ -214,7 +214,9 @@ html, body {
     justify-content: center;
     flex-direction: column;
     width: 100vw;
-    max-width: 100vw;
+    padding: 0;
+    margin: 0;
+    /*max-width: 100vw;*/
 }
 
 html {
@@ -230,7 +232,12 @@ main {
     padding-left: 2vw;
     padding-right: 2vw;
     min-height: 100vh;
-    max-width:100vw;
+    /*max-width:100vw;*/
+    width: 100%;
+}
+
+header {
+    width: 100vw;
 }
 
 a:link {
