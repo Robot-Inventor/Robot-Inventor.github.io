@@ -44,7 +44,7 @@
     }
     :root {
         --figcaption_nohover: 0;
-        --figcaption_place: 5%;
+        --figcaption_place: 10vw;
     }
 }
 
@@ -60,7 +60,7 @@
     }
     :root {
         --figcaption_nohover: 1;
-        --figcaption_place: 5%;
+        --figcaption_place: 5vw;
     }
 }
 
@@ -76,7 +76,7 @@
     }
     :root {
         --figcaption_nohover: 1;
-        --figcaption_place: 5%;
+        --figcaption_place: 5vw;
     }
 }
 
@@ -228,7 +228,7 @@ body {
 }
 
 main {
-    width: 100%;
+    width: 100vw;
     padding-bottom: 50px;
     /*padding-left: 2vw;
     padding-right: 2vw;*/
@@ -239,7 +239,7 @@ main {
 }
 
 header {
-    width: 100%;
+    width: 100vw;
 }
 
 a:link {
