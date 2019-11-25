@@ -1,5 +1,5 @@
 .glitch {
-    color: #B4B4B4;
+    /*color: #B4B4B4;*/
     text-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
     animation: glitch-text 3.5s linear infinite;
 }
