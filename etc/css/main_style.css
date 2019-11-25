@@ -517,30 +517,30 @@ strong {
     }
     41% {
         text-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
-        transform: skewX(10deg);
+        transform: skewX(/*10deg*/5deg);
     }
     42% {
         text-shadow: 0px 0px 6px black, 5px 5px 3px #96007A, -3px -3px 3px #00A75B;
-        transform: skewX(-10deg);
+        transform: skewX(/*-10deg*/-5deg);
     }
     59% {
         text-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
-        transform: skewX(40deg) skewY(10deg);
+        transform: skewX(/*40deg*/20deg) skewY(/*10deg*/5deg);
     }
     60% {
         text-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
-        transform: skewX(-40deg) skewY(-10deg);
+        transform: skewX(/*-40deg*/-20deg) skewY(/*-10deg*/-5deg);
     }
     63% {
         text-shadow: 0px 0px 6px black, 3px 3px 3px #96007A, -2px -2px 3px #00A75B;
-        transform: skewX(10deg) skewY(-5deg);
+        transform: skewX(/*10deg*/5deg) skewY(/*-5deg*/-2deg);
     }
     70% {
         text-shadow: 0px 0px 6px black, 7px 7px 3px #00A75B, -7px -7px 3px #96007A;
-        transform: skewX(-50deg) skewY(-20deg);
+        transform: skewX(/*-50deg*/-25deg) skewY(/*-20deg*/-10deg);
     }
     71% {
         text-shadow: 0px 0px 6px black, 1px 1px 3px #96007A, -2px -2px 3px #00A75B;
-        transform: skewX(10deg) skewY(-10deg);
+        transform: skewX(/*10deg*/5deg) skewY(/*-10deg*/-5deg);
     }
 }
