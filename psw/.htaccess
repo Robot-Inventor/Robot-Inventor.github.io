@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName "Input your ID and Password."
-AuthUserFile /psw/.htpasswd
+AuthUserFile /home/robot-inventor.github.io/psw/.htpasswd
 require valid-user
