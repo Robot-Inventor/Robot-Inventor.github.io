@@ -72,5 +72,5 @@ jQuery(function(){
         //var startCountdown = $(this).attr("data-start-countdown");
         //var endCountdown = $(this).attr("data-end-countdown");
         CDT(jQuery(this).attr("data-start-countdown"), jQuery(this).attr("data-end-countdown"));
-    }
+    })
 });
