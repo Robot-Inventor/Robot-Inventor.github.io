@@ -39,7 +39,6 @@ CountdownTimer.prototype = {
 // ▼ 開始＆終了日時の指定と日付の判別
 function CDT(startCountdown, endCountdown) {
     var myD = Date.now(); // 1970/1/1午前0時から現在までのミリ秒
-    const result = ('p').data('name');
     //var start = new Date('2018-11-05T00:00+09:00'); // 開始日時の指定
     var start = new Date(startCountdown); // 開始日時の指定
     var myS = start.getTime(); // 1970/1/1午前0時からの開始日時までのミリ秒
