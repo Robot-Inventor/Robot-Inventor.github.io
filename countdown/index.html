@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140830854-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-140830854-3');
+        </script>
+        <!--**********ここからプリロード（読み込み高速化用）**********-->
+        <link rel="preload" href="/etc/css/main_style.min.css" as="style">
+        <link rel="preload" href="https://code.jquery.com/jquery-3.2.1.min.js" as="script">
+        <link rel="preload" href="/etc/js/echo.min.js" as="script">
+        <link rel="preload" href="/etc/js/basic.min.js" as="script">
+        <link rel="preload" href="/etc/js/read_notice.min.js" as="script">
+        <link rel="preload" href="/etc/js/load_new_article.min.js" as="script">
+        <!--**********プリロード（読み込み高速化用）ここまで**********-->
+        <!--**********ここからアイコン・その他の設定**********-->
+        <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/icon/favicon.ico">
+        <link rel="shortcut icon" href="https://robot-inventor.github.io/icon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://robot-inventor.github.io/icon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://robot-inventor.github.io/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="194x194" href="https://robot-inventor.github.io/icon/favicon-194x194.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://robot-inventor.github.io/icon/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://robot-inventor.github.io/icon/favicon-16x16.png">
+        <link rel="manifest" href="https://robot-inventor.github.io/icon/site.webmanifest">
+        <link rel="mask-icon" href="https://robot-inventor.github.io/icon/safari-pinned-tab.svg" color="#d2691e">
+        <meta name="apple-mobile-web-app-title" content="理系YouTuber">
+        <meta name="application-name" content="理系YouTuber">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="https://robot-inventor.github.io/icon/mstile-144x144.png">
+        <meta name="theme-color" content="#333333">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/etc/css/main_style.min.css">
+        <title>入試まで何日？ - 理系YouTuberのブログ的な何か</title>
+        <meta name="description" content="神奈川県公立高校入学試験までと何日か表示します。">
+        <!--**********アイコン・その他の設定ここまで**********-->
+    </head>
+    <body>
+        <header>
+        </header>
+        <main>
+            <h1>入試まであと何日？</h1>
+            <p>
+                神奈川県立高校入学試験の日まで，あと何日かを表示します。ただし，開始時間は考慮せず，単にその日付になるまでが何日かを表示します。ちなみに，試験日は<strong>2020/02/14（金）</strong>です。
+                <div class="countdown_box">
+                    <div class="countdown">
+                        <span class="countdown_txt" id="countdown_txt"></span>
+                        <span class="countdown_date" id="countdown_date"></span>
+                    </div>
+                </div>
+            </p>
+        </main>
+        <footer>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script async src="/etc/js/basic.min.js"></script>
+        <script async src="/etc/js/countdown.min.js"></script>
+    </body>
+</html>
