@@ -12,7 +12,7 @@
         <!--**********ここからプリロード（読み込み高速化用）**********-->
         <link rel="preload" href="/etc/css/main_style.min.css" as="style">
         <link rel="preload" href="https://code.jquery.com/jquery-3.2.1.min.js" as="script">
-        <link rel="preload" href="/etc/js/test_echo.min.js" as="script">
+        <link rel="preload" href="/etc/js/lazysizes.min.js" as="script">
         <link rel="preload" href="/etc/js/basic.min.js" as="script">
         <!--**********プリロード（読み込み高速化用）ここまで**********-->
         <!--**********ここからアイコン・その他の設定**********-->
@@ -46,8 +46,8 @@
             </p>
             <figure>
                 <picture>
-                    <source type="image/webp" data-echo-srcset="/test-214185.jpg.webp"></source>
-                    <img data-echo="/test-214185.jpg" class="grayscale half_height">
+                    <source type="image/webp" data-srcset="/test-214185.jpg.webp" class="lazyload"></source>
+                    <img data-src="/test-214185.jpg" class="grayscale half_height lazyload">
                 </picture>
                 <figcaption>
                     <p class="glitch">
@@ -61,7 +61,7 @@
         <footer>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script async src="/etc/js/test_echo.js"></script>
+        <script async src="/etc/js/lazysizes.min.js"></script>
         <script async src="/etc/js/basic.min.js"></script>
     </body>
 </html>
