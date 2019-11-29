@@ -16,6 +16,7 @@
         <link rel="preload" href="/etc/js/basic.min.js" as="script">
         <link rel="preload" href="/etc/js/read_notice.min.js" as="script">
         <link rel="preload" href="/etc/js/load_new_article.min.js" as="script">
+        <link rel="preload" href="/etc/js/lazysizes.min.js" as="script">
         <!--**********プリロード（読み込み高速化用）ここまで**********-->
         <!--**********ここからアイコン・その他の設定**********-->
         <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/icon/favicon.ico">
@@ -47,7 +48,10 @@
                 「理系YouTuberのブログ的な何か」は、主にプログラミングや理科に関する話題を投稿していくブログ的なものです。現在、私の作った別のサイト<a href="https://robot-inventor.github.io/ORIZIN_Agent/">ORIZIN Agent 公式サイト</a>をベースに建設中...
             </p>
             <figure>
-                <img data-echo="/test-214185.jpg" class="grayscale half_height">
+                <picture>
+                    <source type="image/webp" data-srcset="/test-214185.jpg.webp" class="lazyload"></source>
+                    <img data-src="/test-214185.jpg" class="grayscale half_height lazyload">
+                </picture>
                 <figcaption>
                     <p class="glitch">
                         <strong>YouTube</strong><br>
@@ -100,5 +104,6 @@
         <script async src="/etc/js/read_notice.min.js"></script>
         <script async src="/etc/js/load_new_article.min.js"></script>
         <script async src="/etc/js/view_timer.min.js"></script>
+        <script async src="/etc/js/lazysizes.min.js"></script>
     </body>
 </html>
