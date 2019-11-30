@@ -1,4 +1,3 @@
-@import url("https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css");
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
 @font-face {
     font-family: "League Spartan";
@@ -252,11 +251,8 @@ body {
 main {
     padding: 0 0 50px 0;
     margin: 0 2vw;
-    /*padding-left: 2vw;
-    padding-right: 2vw;*/
     min-height: 100vh;
     max-width: 100%;
-    /*max-width:100vw;*/
 }
 
 header {
@@ -403,7 +399,7 @@ footer {
     text-align: center;
     background-color: var(--divcolor);
     width: 100vw;
-    height: 100px;
+    height: 30vh;
 }
 
 .no_color {
