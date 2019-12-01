@@ -1,4 +1,4 @@
-function core() {
+var core = function() {
     jQuery(".view_timer").each(function(index, target) {
         var startDate = jQuery(this).attr("data-start-date");
         var endDate = jQuery(this).attr("data-end-date");
@@ -19,9 +19,8 @@ function core() {
     });
 };
 
-var coreLoop = core();
-
 jQuery(window).on('load', function() {
-      core();
-      setInterval(coreLoop, 30000);
+    core();
+    setTimeout(core, 5000);
+    setInterval(core, 30000);
 });
