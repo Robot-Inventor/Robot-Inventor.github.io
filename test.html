@@ -34,7 +34,7 @@
         <meta name="msapplication-TileImage" content="https://robot-inventor.github.io/icon/mstile-144x144.png">
         <meta name="theme-color" content="#333333">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="/etc/css/main_style.css">
+        <link rel="stylesheet" type="text/css" href="/etc/css/main_style.min.css">
         <title>トップ - 理系YouTuberのブログ的な何か</title>
         <meta name="description" content="「理系YouTuberのブログ的な何か」は、主にプログラミングや理科に関する話題を投稿していくブログ的なものです。現在建設中...">
         <!--**********アイコン・その他の設定ここまで**********-->
@@ -50,7 +50,7 @@
             <figure>
                 <picture>
                     <source type="image/webp" data-srcset="/test-214185.jpg.webp" class="lazyload"></source>
-                    <img data-src="/test-214185.jpg" class="grayscale half_height lazyload">
+                    <img src="/icon/30.svg" data-src="/test-214185.jpg" class="grayscale half_height lazyload">
                 </picture>
                 <figcaption>
                     <p class="glitch">
@@ -61,7 +61,7 @@
                 </figcaption>
             </figure>
             <figure>
-                <img data-echo="/ORIZIN_Agent/icon/header_image.svg" class="grayscale half_height">
+                <img src="/icon/30.svg" data-src="/ORIZIN_Agent/icon/header_image.svg" class="grayscale half_height lazyload">
                 <figcaption>
                     <p class="glitch">
                         <strong>ORIZIN Agent</strong><br>
@@ -84,26 +84,25 @@
             <p>
                 <h1>新着動画</h1>
                 <div class="video">
-                	<iframe  class="view_timer" data-end-date="2019/12/31 23:00" data-echo="https://www.youtube.com/embed/8QysH30G0hA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe  class="view_timer" data-start-date="2019/12/31 23:00" data-end-date="2020/1/1 0:00" data-echo="https://www.youtube.com/embed/YJR0BBlFGSc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                	<iframe  class="view_timer" data-start-date="2020/1/1 0:00" data-end-date="2020/1/20 0:00" data-echo="https://www.youtube.com/embed/Odoj6djrVpA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                	<iframe  class="view_timer" data-start-date="2020/1/20 0:00" data-echo="https://www.youtube.com/embed/B2IMZD8MnqQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                	<iframe  src="/icon/30.svg" class="view_timer" data-end-date="2019/12/31 23:00" data-echo="https://www.youtube.com/embed/8QysH30G0hA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe  src="/icon/30.svg" class="view_timer" data-start-date="2019/12/31 23:00" data-end-date="2020/1/1 0:00" data-echo="https://www.youtube.com/embed/YJR0BBlFGSc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                	<iframe  src="/icon/30.svg" class="view_timer" data-start-date="2020/1/1 0:00" data-end-date="2020/1/20 0:00" data-echo="https://www.youtube.com/embed/Odoj6djrVpA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                	<iframe  src="/icon/30.svg" class="view_timer" data-start-date="2020/1/20 0:00" data-echo="https://www.youtube.com/embed/B2IMZD8MnqQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </p>
             <p>
                 <h1>Twitter</h1>
-                <a class="twitter-timeline" href="https://twitter.com/keita_roboin?ref_src=twsrc%5Etfw" data-width="100%" data-height="80vh">Tweets by keita_roboin</a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <iframe data-src="https://twitter.com/keita_roboin" class="lazyload">
             </p>
         </main>
         <footer>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script async src="/etc/js/echo.min.js"></script>
-        <script async src="/etc/js/basic.js"></script>
+        <script async src="/etc/js/basic.min.js"></script>
         <script async src="/etc/js/read_notice.min.js"></script>
         <script async src="/etc/js/load_new_article.min.js"></script>
-        <script async src="/etc/js/view_timer.js"></script>
+        <script async src="/etc/js/view_timer.min.js"></script>
         <script async src="/etc/js/lazysizes.min.js"></script>
     </body>
 </html>
