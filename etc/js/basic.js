@@ -5,12 +5,12 @@ if(userAgent.indexOf('msie') != -1 ||
 }
 
 jQuery(function(){
-    jQuery("header").load("/etc/html/header_menu.html");
+    jQuery("header").load("/etc/html/header_menu.min.html");
     echo.init({
         throttle:"0"
     });
     setTimeout(function(){
-        jQuery("footer").load("/etc/html/footer.html");
+        jQuery("footer").load("/etc/html/footer.min.html");
     },3000);
     setTimeout(function(){
         if (document.cookie.indexOf("cookieConsent") == -1) {
