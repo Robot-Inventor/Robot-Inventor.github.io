@@ -1,3 +1,5 @@
 jQuery(function() {
-    jQuery('.notice').load('/notice/ #new');
+    setTimeout(function(){
+        jQuery('.notice').load('/notice/ #new');
+    },3000);
 });
