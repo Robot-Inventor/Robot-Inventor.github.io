@@ -4,14 +4,14 @@ if(userAgent.indexOf('msie') != -1 ||
         window.location.replace("/etc/html/do_not_use_ie.html");
 }
 
-function cookieConsent() {
+var cookieConsent = function() {
     if (document.cookie.indexOf("cookieConsent") == -1) {
         alert("このサイトでは、皆さんに最高の体験をお届けするためにcookieを使用しています。詳しくはメニューよりプライバシーポリシーをご覧ください。");
     }
     document.cookie = 'cookieConsent=true"; max-age=2592000';
 }
 
-function loadFooter() {
+var loadFooter = function() {
     jQuery("footer").load("/etc/html/footer.html");
 }
 
