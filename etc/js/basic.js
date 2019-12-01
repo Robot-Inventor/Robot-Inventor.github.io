@@ -12,7 +12,7 @@ function cookieConsent() {
 }
 
 function loadFooter() {
-    jQuery("footer").load("/etc/html/footer.min.html");
+    jQuery("footer").load("/etc/html/footer.html");
 }
 
 jQuery(function(){
