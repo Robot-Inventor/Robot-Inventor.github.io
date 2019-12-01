@@ -399,7 +399,8 @@ footer {
     text-align: center;
     background-color: var(--divcolor);
     width: 100vw;
-    height: 30vh;
+    min-height: 30vh;
+    padding: 10vh 0vh;
 }
 
 .no_color {
