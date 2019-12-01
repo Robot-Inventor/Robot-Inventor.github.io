@@ -15,10 +15,11 @@ var loadFooter = function() {
     jQuery("footer").load("/etc/html/footer.html");
 }
 
+setTimeout(loadFunction, 3000);
+setTimeout(cookieConsent, 3000)
+
 jQuery(function(){
     jQuery("header").load("/etc/html/header_menu.min.html");
-    setTimeout(loadFunction, 3000);
-    setTimeout(cookieConsent, 3000)
     echo.init({
         throttle:"0"
     });
