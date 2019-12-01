@@ -15,10 +15,13 @@ function core() {
             jQuery(this).show();
         } else {
             jQuery(this).hide();
-    }
+        }
+    });
 };
+
+var coreLoop = core();
 
 jQuery(window).on('load', function() {
       core();
-      setInterval(core, 30000);
+      setInterval(coreLoop, 30000);
 });
