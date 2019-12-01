@@ -1,3 +1,5 @@
 jQuery(function() {
-    jQuery('.new_article').load('/article/ .new');
+    setTimeout(function(){
+        jQuery('.new_article').load('/article/ .new');
+    },3000);
 });
