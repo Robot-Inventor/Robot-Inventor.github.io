@@ -102,10 +102,9 @@
         $(".now_loading").fadeOut();
         loadingStatus = 0;
     });
-    var deleteLoadingBar = function() {
+    setTimeout(function(){
         if(loadingStatus == 1) {
             $(".now_loading").fadeOut();
         }
-    }
-    setTimeout(deleteLoadingBar, 1000);
+    },1000);
 </script>
