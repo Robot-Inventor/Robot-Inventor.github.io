@@ -1,6 +1,11 @@
 <div show="pc">
     <a href="/"><img src="/icon/header_image.svg" alt="理系YouTuberのブログ的な何か" title="理系YouTuberのブログ的な何か" class="half darkmode_support_image glitch"></a>
-    <div>
+    <picture>
+        <source srcset="/icon/menu.svg" media="(min-width: 600px) and (max-width: 800px)">
+        <source srcset="/icon/menu_line.svg" media="(max-width: 600px)">
+        <img src="/icon/menu_line.svg" alt="MENU" title="MENU" class="tenth overlay_open_button darkmode_support_image" align="right">
+    </picture>
+    <div show="pc">
         <a href="/article/">記事一覧 </a>|
         <a href="https://www.youtube.com/channel/UCJFnl1HIx-atCMWnDcKBrfw"> YouTube </a>|
         <a href="https://qiita.com/Robot-Inventor"> Qiita </a>|
@@ -10,16 +15,6 @@
         <a href="/TOS/latest_TOS.html"> 利用規約 </a>|
         <a href="/policy.html"> プライバシーポリシー</a>
     </div>
-    <div class="important marquee"><p>お知らせ　　しばらく更新を休みます。ただし、お知らせ と新着動画は自動で更新されます。</p></div>
-</div>
-<div show="phone">
-    <a href="/"><img src="/icon/header_image.svg" alt="理系YouTuberのブログ的な何か" title="理系YouTuberのブログ的な何か" class="half darkmode_support_image glitch"></a>
-    <img src="/icon/menu.svg" alt="MENU" title="MENU" class="fourth overlay_open_button darkmode_support_image" align="right">
-    <div class="important marquee"><p>お知らせ　　しばらく更新を休みます。ただし、お知らせ と新着動画は自動で更新されます。</p></div>
-</div>
-<div show="phone_small">
-    <a href="/"><img src="/icon/header_image.svg" alt="理系YouTuberのブログ的な何か" title="理系YouTuberのブログ的な何か" class="half darkmode_support_image glitch"></a>
-    <img src="/icon/menu_line.svg" alt="MENU" title="MENU" class="tenth overlay_open_button darkmode_support_image" align="right">
     <div class="important marquee"><p>お知らせ　　しばらく更新を休みます。ただし、お知らせ と新着動画は自動で更新されます。</p></div>
 </div>
 <div class="overlay">
@@ -84,7 +79,7 @@
 </div>
 <div class="now_loading block">
     <h2 class="no_border">Now Loading…</h2>
-    <progress max="100">0%</progress>
+    <img src="/icon/30.svg" class="half">
 </div>
 <script async src="/etc/js/lazysizes.min.js"></script>
 <script>
