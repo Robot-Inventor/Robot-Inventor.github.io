@@ -400,7 +400,7 @@ footer {
     background-color: var(--divcolor);
     width: 100vw;
     min-height: 30vh;
-    padding: 10vh 0vh;
+    padding: 5vh 0vh 10vh 0vh;
 }
 
 .no_color {
