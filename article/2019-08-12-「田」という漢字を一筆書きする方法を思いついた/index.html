@@ -11,8 +11,8 @@
         </script>
         <link rel="preload" href="/etc/css/main_style.min.css" as="style">
         <link rel="preload" href="https://code.jquery.com/jquery-3.2.1.min.js" as="script">
-        <link rel="preload" href="/etc/js/echo.min.js" as="script">
         <link rel="preload" href="/etc/js/basic.min.js" as="script">
+        <link rel="preload" href="/etc/js/lazysizes.min.js" as="script">
         <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/icon/favicon.ico">
         <link rel="shortcut icon" href="https://robot-inventor.github.io/icon/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="https://robot-inventor.github.io/icon/apple-touch-icon.png">
@@ -38,12 +38,10 @@
         <main>
             <p>
                 <h1>2019/08/12（月）　「田」という漢字を一筆書きする方法を思いついた</h1>
-                <script>
-                    document.write('<div align="right">最終更新 : ' + document.lastModified + '</div><br>');
-                </script>
-                <div>
-                    <img src="/icon/805.png" data-echo="/article/2019-08-12-「田」という漢字を一筆書きする方法を思いついた/penIMGL9882_TP_V.jpg">
-                </div>
+                <picture>
+                    <source type="image/webp" data-srcset="/article/2019-08-12-「田」という漢字を一筆書きする方法を思いついた/penIMGL9882_TP_V.jpg.webp" class="lazyload">
+                    <img src="/icon/30.svg" data-src="/article/2019-08-12-「田」という漢字を一筆書きする方法を思いついた/penIMGL9882_TP_V.jpg" class="lazyload">
+                </picture>
                 本来、不可能な「田」の一筆書きをする方法を思いつきました。
             </p>
             <p>
@@ -54,7 +52,7 @@
                 <h2>ズルしよう</h2>
                 そこで、ずるい方法を思いつきました。言葉では説明しづらいので、30秒程の動画をご覧ください。
                 <div class="video">
-                	<iframe data-echo="https://www.youtube.com/embed/EuYGnp5tZPI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                	<iframe src="/icon/30.svg" data-src="https://www.youtube.com/embed/EuYGnp5tZPI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="lazyload"></iframe>
                 </div>
             </p>
             <p>
@@ -65,7 +63,7 @@
         <footer>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script async src="/etc/js/echo.min.js"></script>
         <script async src="/etc/js/basic.min.js"></script>
+        <script async src="/etc/js/lazysizes.min.js"></script>
     </body>
 </html>
