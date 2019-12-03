@@ -11,8 +11,8 @@
         </script>
         <link rel="preload" href="/etc/css/main_style.min.css" as="style">
         <link rel="preload" href="https://code.jquery.com/jquery-3.2.1.min.js" as="script">
-        <link rel="preload" href="/etc/js/echo.min.js" as="script">
         <link rel="preload" href="/etc/js/basic.min.js" as="script">
+        <link rel="preload" href="/etc/js/lazysizes.min.js" as="script">
         <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/icon/favicon.ico">
         <link rel="shortcut icon" href="https://robot-inventor.github.io/icon/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="https://robot-inventor.github.io/icon/apple-touch-icon.png">
@@ -38,12 +38,10 @@
         <main>
             <p>
                 <h1>2019/07/30（火）　YouTubeにオススメのフリーの画像・音楽・フォント</h1>
-                <script>
-                    document.write('<div align="right">最終更新 : ' + document.lastModified + '</div><br>');
-                </script>
-                <div>
-                    <img src="/icon/805.png" data-echo="/article/2019-07-30-YouTubeにオススメのフリー素材・フォント/KENTA039_jidoricamera_TP_V.jpg">
-                </div>
+                <picture>
+                    <source type="image/webp" srcset="/icon/30.svg" data-srcset="/article/2019-07-30-YouTubeにオススメのフリー素材・フォント/KENTA039_jidoricamera_TP_V.jpg.webp" class="lazyload">
+                    <img src="/icon/30.svg" data-src="/article/2019-07-30-YouTubeにオススメのフリー素材・フォント/KENTA039_jidoricamera_TP_V.jpg" class="lazyload">
+                </picture>
                 YouTubeなど、動画はもちろん、発表のスライドやポスターなどでは、フリー素材が重宝します。今回は、フリーの画像・音楽・効果音・フォントでおすすめのものを紹介します。
             </p>
             <p>
@@ -59,13 +57,13 @@
                     <p>
                         ↓Jazz In Paris
                         <div class="video">
-                        	<iframe src="/icon/805.png" data-echo="https://www.youtube.com/embed/mNLJMTRvyj8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        	<iframe src="/icon/30.svg" data-src="https://www.youtube.com/embed/mNLJMTRvyj8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="lazyload"></iframe>
                         </div>
                     </p>
                     <p>
                         ↓Sophomore Makeout
                         <div class="video">
-                            <iframe src="/icon/805.png" data-echo="https://www.youtube.com/embed/g2HzEvU1roY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="/icon/30.svg" data-src="https://www.youtube.com/embed/g2HzEvU1roY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="lazyload"></iframe>
                         </div>
                     </p>
                 </p>
@@ -104,7 +102,7 @@
         <footer>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script async src="/etc/js/echo.min.js"></script>
         <script async src="/etc/js/basic.min.js"></script>
+        <script async src="/etc/js/lazysizes.min.js"></script>
     </body>
 </html>
