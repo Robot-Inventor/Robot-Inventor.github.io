@@ -11,8 +11,8 @@
         </script>
         <link rel="preload" href="/etc/css/main_style.min.css" as="style">
         <link rel="preload" href="https://code.jquery.com/jquery-3.2.1.min.js" as="script">
-        <link rel="preload" href="/etc/js/echo.min.js" as="script">
         <link rel="preload" href="/etc/js/basic.min.js" as="script">
+        <link rel="preload" href="/etc/js/lazysizes.min.js" as="script">
         <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/icon/favicon.ico">
         <link rel="shortcut icon" href="https://robot-inventor.github.io/icon/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="https://robot-inventor.github.io/icon/apple-touch-icon.png">
@@ -40,7 +40,10 @@
                 <h1>2019/11/12（火）　YouTubeの新利用規約でチャンネル削除されるかも</h1>
                 2019/12/10にYouTubeの新しい利用規約が発効します。これによりYouTubeが“採算の合わないチャンネル”を勝手に削除できるようになるのだとか...。
                 <figure>
-                    <img data-echo="/article/2019/11/12/hammer-719066.jpg" class="half_height">
+                    <picture>
+                        <source type="image/webp" data-srcset="/article/2019/11/12/hammer-719066.jpg.webp" class="lazyload">
+                        <img data-src="/article/2019/11/12/hammer-719066.jpg" class="half_height lazyload">
+                    </picture>
                     <figcaption>
                         <p>
                             <strong>新</strong>しいYouTube利用規約はクリエイターの脅威になる可能性も
@@ -66,7 +69,7 @@
         <footer>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script async src="/etc/js/echo.min.js"></script>
         <script async src="/etc/js/basic.min.js"></script>
+        <script async src="/etc/js/lazysizes.min.js"></script>
     </body>
 </html>
