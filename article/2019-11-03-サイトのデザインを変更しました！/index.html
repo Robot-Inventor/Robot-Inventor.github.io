@@ -11,8 +11,8 @@
         </script>
         <link rel="preload" href="/etc/css/main_style.min.css" as="style">
         <link rel="preload" href="https://code.jquery.com/jquery-3.2.1.min.js" as="script">
-        <link rel="preload" href="/etc/js/echo.min.js" as="script">
         <link rel="preload" href="/etc/js/basic.min.js" as="script">
+        <link rel="preload" href="/etc/js/lazysizes.min.js" as="script">
         <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/icon/favicon.ico">
         <link rel="shortcut icon" href="https://robot-inventor.github.io/icon/favicon.ico">
         <link rel="apple-touch-icon" sizes="180x180" href="https://robot-inventor.github.io/icon/apple-touch-icon.png">
@@ -38,12 +38,10 @@
         <main>
             <p>
                 <h1>2019/11/03（日）　サイトのデザインを変更しました！</h1>
-                <script>
-                    document.write('<div align="right">最終更新 : ' + document.lastModified + '</div><br>');
-                </script>
-                <div>
-                    <img src="/icon/805.png" data-echo="/article/2019-11-03-サイトのデザインを変更しました！/YAMA_DSC2546.jpg">
-                </div>
+                <picture>
+                    <source type="image/webp" data-srcset="/article/2019-11-03-サイトのデザインを変更しました！/YAMA_DSC2546.jpg.webp" class="lazyload">
+                    <img src="/icon/30.svg" data-src="/article/2019-11-03-サイトのデザインを変更しました！/YAMA_DSC2546.jpg" class="lazyload">
+                </picture>
                 当サイトのデザインを大幅に変更しました！新旧デザインの比較や具体的にどう変更されたのかについては、<a href="/about_new_design/2019-11-03/" target="_parent">こちら</a>をご覧ください。
             </p>
             <p>
@@ -58,7 +56,7 @@
         <footer>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script async src="/etc/js/echo.min.js"></script>
         <script async src="/etc/js/basic.min.js"></script>
+        <script async src="/etc/js/lazysizes.min.js"></script>
     </body>
 </html>
