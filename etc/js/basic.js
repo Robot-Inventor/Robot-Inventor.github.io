@@ -21,9 +21,17 @@ setTimeout(function(){
     }
 },5000);
 
+var swURL = '';
+
+if(jQury('#basic_js').attr('data-service-worker') != undefined) {
+    swURL = jQuery(this).attr('data-service-worker');
+} else {
+    swURL = '/service_worker.js';
+}
+
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/service_worker.js').then(function(registration) {
+        navigator.serviceWorker.register(swURL).then(function(registration) {
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }, function(err) {
         console.log('ServiceWorker registration failed: ', err);
