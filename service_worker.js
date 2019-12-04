@@ -1,7 +1,7 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js')
 
 
-self.addEventListener('fetch', function(e) {
+self.addEventListener('fetch', function(event) {
 })
 
 workbox.precaching.precacheAndRoute([
@@ -22,7 +22,7 @@ workbox.precaching.precacheAndRoute([
         revision: '9af3880'
     },
     {
-        url: '/etc/js/lazysizes.min.js'
+        url: '/etc/js/lazysizes.min.js',
         revision: '420214d'
     },
     {
@@ -30,7 +30,7 @@ workbox.precaching.precacheAndRoute([
         revision: 'ed13b9c'
     },
     {
-        url: '/icon/back.svg'
+        url: '/icon/back.svg',
         revision: 'b197ee7'
     },
     {
@@ -40,5 +40,9 @@ workbox.precaching.precacheAndRoute([
     {
         url: '/icon/menu_line.svg',
         revision: 'b197ee7'
+    },
+    {
+        url: 'https://code.jquery.com/jquery-3.2.1.min.js',
+        revision: '0'
     }
 ])
