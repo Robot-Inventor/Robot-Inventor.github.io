@@ -20,3 +20,19 @@ setTimeout(function(){
         document.cookie = 'cookieConsent=true"; max-age=2592000';
     }
 },5000);
+
+var swURL = '';
+
+if(jQury('#basic_js').attr('data-service-worker') != undefined) {
+    swURL = jQuery(this).attr('data-service-worker');
+} else {
+    swURL = '/service_worker.js';
+}
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register(swURL).then(function(registration) {
+        console.log('ServiceWorker の登録に成功しました。スコープ: ', registration.scope);
+    }).catch(function(err) {
+        console.log('ServiceWorker の登録に失敗しました。', err);
+    });
+}
