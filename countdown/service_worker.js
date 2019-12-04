@@ -44,5 +44,9 @@ workbox.precaching.precacheAndRoute([
     {
         url: 'https://code.jquery.com/jquery-3.2.1.min.js',
         revision: '0'
+    },
+    {
+        url: '/etc/js/countdown.min.js',
+        revision: '9d4a435'
     }
 ])
