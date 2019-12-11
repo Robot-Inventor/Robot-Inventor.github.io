@@ -648,3 +648,14 @@ strong {
         transform: skewX(5deg) skewY(-5deg);
     }
 }
+
+/************************以下、クリスマス用**************************************/
+header, footer {
+    background-image: url("/topPageImage/christmas-3864552.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header div {
+    background: rgba(0, 0, 0, 0.5);
+}
