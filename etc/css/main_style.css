@@ -252,7 +252,7 @@ body {
 }
 
 main {
-    /*padding: 0 0 50px 0;*/
+    padding-bottom: 50px;
     /*margin: 0 2vw;*/
     margin: 0;
     padding: 0;
@@ -323,7 +323,7 @@ h1 {
     background: transparent;
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
-    width: calc(100% - 1em);
+    width: calc(100vw - 1em);
     margin: 0.5em;
 }
 
@@ -333,7 +333,7 @@ h2 {
     background: transparent;
     border-left: solid 7px var(--divcolor);
     border-bottom: solid 1px var(--divcolor);
-    width: calc(100% - 1em);
+    width: calc(100vw - 1em);
     margin: 0.5em;
 }
 
@@ -343,7 +343,7 @@ h3 {
     background: transparent;
     border-left: solid 5px var(--divcolor);
     border-bottom: solid 1px var(--divcolor);
-    width: calc(100% - 1em);
+    width: calc(100vw - 1em);
     margin: 0.5em;
 }
 
