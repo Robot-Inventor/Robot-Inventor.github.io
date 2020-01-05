@@ -140,6 +140,8 @@ figcaption {
 
 p {
     margin-bottom: 4em;
+    width: 96vw;
+    margin-left: 2vw;
 }
 
 figcaption p {
@@ -227,6 +229,7 @@ body {
     display: -ms-flexbox;
     display: flex;
     margin: 0;
+    padding: 0;/******/
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -240,23 +243,28 @@ body {
     width: 100vw;
 }
 
-html {
+/*html {
     background-color: var(--divcolor);
-}
+}*/
 
 body {
     background-color: var(--bgcolor);
 }
 
 main {
-    padding: 0 0 50px 0;
-    margin: 0 2vw;
-    min-height: 100vh;
-    max-width: 100%;
+    /*padding: 0 0 50px 0;*/
+    /*margin: 0 2vw;*/
+    margin: 0;
+    padding: 0;
+    /*min-height: 100vh;*/
+    min-height: 70vh;
+    width: 100vw;
 }
 
 header {
-    width: 100%;
+    /*width: 100%;*/
+    width: 100vw;
+    margin: 0;
 }
 
 a:link {
@@ -315,6 +323,8 @@ h1 {
     background: transparent;
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
+    width: 96vw;
+    margin-left: 2vw;
 }
 
 h2 {
@@ -323,6 +333,8 @@ h2 {
     background: transparent;
     border-left: solid 7px var(--divcolor);
     border-bottom: solid 1px var(--divcolor);
+    width: 96vw;
+    margin-left: 2vw;
 }
 
 h3 {
@@ -331,6 +343,8 @@ h3 {
     background: transparent;
     border-left: solid 5px var(--divcolor);
     border-bottom: solid 1px var(--divcolor);
+    width: 96vw;
+    margin-left: 2vw;
 }
 
 .inline {
