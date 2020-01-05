@@ -140,8 +140,8 @@ figcaption {
 
 p {
     margin-bottom: 4em;
-    width: 96vw;
-    margin-left: 2vw;
+    width: calc(100% - 1em);
+    margin: 0 0.5em;
 }
 
 figcaption p {
@@ -323,8 +323,8 @@ h1 {
     background: transparent;
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
-    width: 96vw;
-    margin-left: 2vw;
+    width: calc(100% - 1em);
+    margin: 0;
 }
 
 h2 {
@@ -333,8 +333,8 @@ h2 {
     background: transparent;
     border-left: solid 7px var(--divcolor);
     border-bottom: solid 1px var(--divcolor);
-    width: 96vw;
-    margin-left: 2vw;
+    width: calc(100% - 1em);
+    margin: 0;
 }
 
 h3 {
@@ -343,8 +343,8 @@ h3 {
     background: transparent;
     border-left: solid 5px var(--divcolor);
     border-bottom: solid 1px var(--divcolor);
-    width: 96vw;
-    margin-left: 2vw;
+    width: calc(100% - 1em);
+    margin: 0;
 }
 
 .inline {
