@@ -318,7 +318,7 @@ a:hover[class="button"] {
 }
 
 h1 {
-    width: calc(100vw - 1.5em - 9px);
+    width: calc(100vw - 2em - 9px);
     margin-left: 0.5em;
     color: var(--themecolor);
     padding: 0.25em 0.5em;
@@ -328,7 +328,7 @@ h1 {
 }
 
 h2 {
-    width: calc(100vw - 1.5em - 9px);
+    width: calc(100vw - 2em - 9px);
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
@@ -337,7 +337,7 @@ h2 {
 }
 
 h3 {
-    width: calc(100vw - 1.5em - 9px);
+    width: calc(100vw - 2em - 9px);
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
