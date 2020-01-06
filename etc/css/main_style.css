@@ -393,27 +393,27 @@ h1 {
     background: transparent;
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
-    margin: 2em 0 2em 0.5em;
+    margin: 2em 0 1em 0.5em;
 }
 
 h2 {
-    width: calc(100vw - 2em - 9px);
+    width: calc(100vw - 1em - 9px);
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 7px var(--divcolor);
     border-bottom: solid 1px var(--divcolor);
-    margin: 2em 0 2em 0.5em;
+    margin: 2em 0 1em 0.5em;
 }
 
 h3 {
-    width: calc(100vw - 2em - 9px);
+    width: calc(100vw - 1em - 9px);
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 5px var(--divcolor);
     border-bottom: solid 1px var(--divcolor);
-    margin: 2em 0 2em 0.5em;
+    margin: 2em 0 1em 0.5em;
 }
 
 .inline {
@@ -520,13 +520,13 @@ strong {
     position: relative;
 }
 
-.marquee span:after {
+.marquee p:after {
     content: "";
     white-space: nowrap;
     padding-right: 50px;
 }
 
-.marquee span {
+.marquee p {
     margin: 0;
     padding-left: 100%;
     display: inline-block;
