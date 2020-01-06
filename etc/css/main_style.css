@@ -388,13 +388,12 @@ a:hover[class="button"] {
 
 h1 {
     width: calc(100vw - 2em - 9px);
-    margin-left: 0.5em;
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
-    margin: 2em 0;
+    margin: 2em 0 2em 0.5em;
 }
 
 h2 {
@@ -404,7 +403,7 @@ h2 {
     background: transparent;
     border-left: solid 7px var(--divcolor);
     border-bottom: solid 1px var(--divcolor);
-    margin: 2em 0;
+    margin: 2em 0 2em 0.5em;
 }
 
 h3 {
@@ -414,7 +413,7 @@ h3 {
     background: transparent;
     border-left: solid 5px var(--divcolor);
     border-bottom: solid 1px var(--divcolor);
-    margin: 2em 0;
+    margin: 2em 0 2em 0.5em;
 }
 
 .inline {
