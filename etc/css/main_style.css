@@ -521,13 +521,13 @@ strong {
     position: relative;
 }
 
-.marquee p:after {
+.marquee span:after {
     content: "";
     white-space: nowrap;
     padding-right: 50px;
 }
 
-.marquee p {
+.marquee span {
     margin: 0;
     padding-left: 100%;
     display: inline-block;
