@@ -512,6 +512,7 @@ strong {
     padding-left: 100%;
     display: inline-block;
     white-space: nowrap;
+    width: auto;
     -webkit-animation-name: marquee;
     -webkit-animation-timing-function: linear;
     -webkit-animation-duration: 10s;
