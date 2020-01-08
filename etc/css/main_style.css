@@ -715,7 +715,7 @@ strong {
 }
 
 /************************以下、正月用**************************************/
-header, footer {
+/*header, footer {
     background-image: url("/topPageImage/kumakichi0221023.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -723,4 +723,4 @@ header, footer {
 
 header div {
     background: rgba(0, 0, 0, 0.5);
-}
+}*/
