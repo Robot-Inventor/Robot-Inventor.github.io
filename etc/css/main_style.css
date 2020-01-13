@@ -325,6 +325,11 @@ header {
     margin: 0;
 }
 
+* {
+    background: var(--themecolor);
+    color: white;
+}
+
 a:link {
     color: #00FFFF;
 }
