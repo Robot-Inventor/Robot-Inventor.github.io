@@ -325,7 +325,7 @@ header {
     margin: 0;
 }
 
-* {
+*::selection {
     background: var(--themecolor);
     color: white;
 }
