@@ -214,14 +214,11 @@ figure img {
     filter: none;
 }
 
-figure img:hover {
-    filter: blur(5px);
-}
-
 figure:hover img {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
+    filter: blur(5px);
 }
 
 img {
