@@ -204,8 +204,6 @@ figcaption p {
 
 figure:hover figcaption {
     opacity: 1;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
 }
 
 figure img {
@@ -213,6 +211,11 @@ figure img {
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+    filter: none;
+}
+
+figure img:hover {
+    filter: blur(5px);
 }
 
 figure:hover img {
