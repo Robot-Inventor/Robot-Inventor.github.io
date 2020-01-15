@@ -57,13 +57,14 @@ input, button, textarea, select {
 
 :root {
     --bgcolor: #FFFFFF;
-    --textcolor: #C0C0C0;
+    --textcolor: #333333;
     --themecolor: #00CED1;
     --divcolor: #001970;
     --normallinkcolor: #40E0D0;
     --visitedlinkcolor: #6495ED;
     --hoverlinkcolor: #20B2AA;
     --activelinkcolor: #008080;
+    --quotetextcolor: #999999;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -76,6 +77,7 @@ input, button, textarea, select {
         --visitedlinkcolor: #6495ED;
         --hoverlinkcolor: #2F4F4F;
         --activelinkcolor: #2F4F4F;
+        --quotetextcolor: #333333;
     }
     .darkmode_support_image {
         -webkit-filter: grayscale(100%);
@@ -497,14 +499,20 @@ strong {
     display: block;
     padding: 0.3em 1em;
     color: #FF0000;
-    background: var(--bgcolor);
+    background: transparent;
     border: solid 2px #FF0000;
     border-radius: 3px;
-    text-decoration: none;
     margin: 10px 10px 10px 0px;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
+}
+
+.quote {
+    display: block;
+    padding: 0.3em 1em;
+    color: var(--quotetextcolor);
+    background: transparent;
+    border: solid 2px var(--quotetextcolor);
+    border-radius: 3px;
+    margin: 10px 10px 10px 0px;
 }
 
 .marquee {
