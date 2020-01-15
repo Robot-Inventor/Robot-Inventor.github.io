@@ -191,7 +191,7 @@ figcaption {
 p {
     width: calc(100% - 1em);
     margin: 0 0.5em;
-    margin-bottom: 4em;
+    margin-bottom: 3em;
 }
 
 figcaption p {
@@ -391,22 +391,22 @@ h1 {
 }
 
 h2 {
-    width: calc(100vw - 1em - 9px);
+    width: calc(100vw - 2em - 9px);
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
-    border-left: solid 7px var(--divcolor);
-    border-bottom: solid 1px var(--divcolor);
+    border-left: solid 9px var(--divcolor);
+    border-bottom: solid 2px var(--divcolor);
     margin: 2em 0 1em 0.5em;
 }
 
 h3 {
-    width: calc(100vw - 1em - 9px);
+    width: calc(100vw - 2em - 9px);
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
-    border-left: solid 5px var(--divcolor);
-    border-bottom: solid 1px var(--divcolor);
+    border-left: solid 9px var(--divcolor);
+    border-bottom: solid 2px var(--divcolor);
     margin: 2em 0 1em 0.5em;
 }
 
