@@ -335,10 +335,17 @@ div {
     margin: 2em 0;
 }
 
-header, header div {
+header {
     /*width: 100%;*/
     width: 100vw;
     margin: 0;
+    padding: 0;
+}
+
+header div {
+    width: calc(100vw - 20px);
+    margin: 0;
+    padding: 10px;
 }
 
 *::selection {
@@ -403,7 +410,7 @@ a:hover[class="button"] {
     left: 0;
     background: var(--cookie_info_bg);
     color: var(--cookie_info_textcolor);
-    width: calc(100vw - 1em);
+    width: calc(100vw - 2em);
     margin: 0;
     padding: 2em 1em;
     display: none;
