@@ -379,6 +379,7 @@ a:hover[class="button"] {
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+    background: transparent;
 }
 
 .button:hover, button:hover {
@@ -396,6 +397,7 @@ a:hover[class="button"] {
     margin: 0;
     padding: 2em 1em;
     display: none;
+    z-index: 200;
 }
 
 h1 {
