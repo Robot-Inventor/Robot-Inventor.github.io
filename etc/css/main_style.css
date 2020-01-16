@@ -58,6 +58,7 @@ input, button, textarea, select {
 :root {
     --bgcolor: #FFFFFF;
     --textcolor: #333333;
+    --div_textcolor: white;
     --themecolor: #00CED1;
     --divcolor: #001970;
     --normallinkcolor: #40E0D0;
@@ -73,6 +74,7 @@ input, button, textarea, select {
      :root {
         --bgcolor: #000000;
         --textcolor: #696969;
+        --div_textcolor: var(--textcolot);
         --themecolor: #20B2AA;
         --divcolor: #222222;
         --normallinkcolor: #40E0D0;
@@ -327,7 +329,7 @@ main {
 
 div {
     background: var(--divcolor);
-    color: #696969;
+    color: var(--div_textcolor);
     padding: 10px;
     max-width: 100%;
     height: auto;
