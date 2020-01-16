@@ -65,6 +65,8 @@ input, button, textarea, select {
     --hoverlinkcolor: #20B2AA;
     --activelinkcolor: #008080;
     --quotetextcolor: #999999;
+    --cookie_info_bg: rgba(0, 0, 0, 0.5);
+    --cookie_info_textcolor: white;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -78,6 +80,8 @@ input, button, textarea, select {
         --hoverlinkcolor: #2F4F4F;
         --activelinkcolor: #2F4F4F;
         --quotetextcolor: #333333;
+        --cookie_info_bg: rgba(255, 255, 255, 0.5);
+        --cookie_info_textcolor: black;
     }
     .darkmode_support_image {
         -webkit-filter: grayscale(100%);
@@ -364,7 +368,7 @@ a:hover[class="button"] {
     color: #FFFFFF;
 }
 
-.button {
+.button, button {
     display: inline-block;
     padding: 0.3em 1em;
     color: var(--themecolor);
@@ -377,9 +381,20 @@ a:hover[class="button"] {
     transition: 0.3s;
 }
 
-.button:hover {
+.button:hover, button:hover {
     background: var(--themecolor);
     color: var(--textcolor);
+}
+
+.cookie_info {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: var(--cookie_info_bg);
+    color: var(--cookie_info_textcolor);
+    width: 100vw;
+    margin: 0;
+    padding: 2em 1em;
 }
 
 h1 {
