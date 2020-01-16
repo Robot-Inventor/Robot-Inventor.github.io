@@ -20,8 +20,8 @@ setTimeout(function(){
         jQuery(".cookie_info").fadeIn(300);
         jQuery(".agree_cookie").click(function() {
             jQuery(".cookie_info").fadeOut(300);
+            document.cookie = 'cookieConsent=true; max-age=2592000';
         });
-        document.cookie = 'cookieConsent=true; max-age=2592000';
     }
 },5000);
 
