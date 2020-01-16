@@ -395,6 +395,7 @@ a:hover[class="button"] {
     width: 100vw;
     margin: 0;
     padding: 2em 1em;
+    display: none;
 }
 
 h1 {
