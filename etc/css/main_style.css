@@ -335,7 +335,7 @@ div {
     margin: 2em 0;
 }
 
-header {
+header, header div {
     /*width: 100%;*/
     width: 100vw;
     margin: 0;
