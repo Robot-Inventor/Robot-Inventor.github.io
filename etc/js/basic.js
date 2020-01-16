@@ -17,7 +17,7 @@ setTimeout(function(){
 setTimeout(function(){
     if (document.cookie.indexOf("cookieConsent") == -1) {
         //alert("このサイトでは、皆さんに最高の体験をお届けするためにcookieを使用しています。詳しくはメニューよりプライバシーポリシーをご覧ください。");
-        jQuery(".cookie_info).fadeIn(300);
+        jQuery(".cookie_info").fadeIn(300);
         jQuery(".agree_cookie").click(function() {
             jQuery(".cookie_info").fadeOut(300);
         });
