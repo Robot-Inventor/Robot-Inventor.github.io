@@ -325,6 +325,16 @@ main {
     width: 100vw;
 }
 
+div {
+    background: var(--divcolor);
+    color: #696969;
+    padding: 10px;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin: 2em 0;
+}
+
 header {
     /*width: 100%;*/
     width: 100vw;
@@ -445,16 +455,6 @@ h3 {
     padding: 0px;
     border-left: none;
     border-bottom: none;
-}
-
-div {
-    background: var(--divcolor);
-    color: #696969;
-    padding: 10px;
-    max-width: 100%;
-    height: auto;
-    overflow: hidden;
-    margin: 1em 0;
 }
 
 iframe {
