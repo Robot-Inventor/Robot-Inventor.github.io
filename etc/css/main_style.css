@@ -431,7 +431,7 @@ h3 {
 
 div {
     background: var(--divcolor);
-    color: var(--textcolor);
+    color: #696969;
     padding: 10px;
     max-width: 100%;
     height: auto;
