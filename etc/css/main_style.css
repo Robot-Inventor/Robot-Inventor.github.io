@@ -403,7 +403,7 @@ a:hover[class="button"] {
     left: 0;
     background: var(--cookie_info_bg);
     color: var(--cookie_info_textcolor);
-    width: 100vw;
+    width: calc(100vw - 1em);
     margin: 0;
     padding: 2em 1em;
     display: none;
