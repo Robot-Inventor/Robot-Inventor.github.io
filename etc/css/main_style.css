@@ -331,7 +331,7 @@ div {
     background: var(--divcolor);
     color: var(--div_textcolor);
     padding: 0.5em;
-    width: calc(100% - 1em);
+    max-width: 100%;
     height: auto;
     overflow: hidden;
     margin: 2em 0;
@@ -341,7 +341,7 @@ code {
     background: #004444;
     color: white;
     padding: 0.5em;
-    width: calc(100% - 1em);
+    max-width: 100%;
     height: auto;
     overflow: scroll;
     margin: 0;
