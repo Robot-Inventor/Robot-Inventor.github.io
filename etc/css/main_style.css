@@ -331,7 +331,7 @@ div {
     background: var(--divcolor);
     color: var(--div_textcolor);
     padding: 0.5em;
-    width: 100%;
+    width: calc(100% - 1em);
     height: auto;
     overflow: hidden;
     margin: 2em 0;
@@ -341,11 +341,11 @@ code {
     background: #004444;
     color: white;
     padding: 0.5em;
-    width: 100%;
+    width: calc(100% - 1em);
     height: auto;
     overflow: scroll;
     margin: 0;
-    padding-bottom: 2em;
+    margin-bottom: 2em;
     white-space: pre;
     display: block;
 }
