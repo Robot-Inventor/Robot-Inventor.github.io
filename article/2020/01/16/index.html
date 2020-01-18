@@ -129,37 +129,29 @@
             <p>
                 では、更新していきましょう。ターミナルで
             </p>
-            <div>
-                $ sudo nano /etc/apt/sources.list
-            </div>
+            <code>$ sudo nano /etc/apt/sources.list</code>
             <p>
                 を実行し、ファイル内の"stretch"を全て"buster"に書き換えます。私の環境では2ヶ所でした。
             </p>
             <p>
                 次に
             </p>
-            <div>
-                $ sudo nano /etc/apt/sources.list.d/raspi.list
-            </div>
+            <code>$ sudo nano /etc/apt/sources.list.d/raspi.list</code>
             <p>
                 を実行し、同じ作業を行います。
             </p>
             <p>
                 そして、お決まりの
             </p>
-            <div>
-                $ sudo apt update<br>
-                または<br>
-                $ sudo apt-get update
-            </div>
+            <code>$ sudo apt update
+または
+$ sudo apt-get update</code>
             <p>
                 続いて
             </p>
-            <div>
-                $ sudo apt dist-upgrade<br>
-                または<br>
-                $ sudo apt-get dist-upgrade
-            </div>
+            <code>$ sudo apt dist-upgrade
+または
+$ sudo apt-get dist-upgrade</code>
             <p>
                 私の環境では、新たにインストールしたりアップグレードしたりするパッケージが1300個くらいありました。
             </p>
@@ -175,20 +167,16 @@
             <p>
                 その後、念の為、以下も実行します。
             </p>
-            <div>
-                $ sudo apt-get upgrade<br>
-                $ sudo apt-get autoremove<br>
-                $ sudo apt-get autoclean
-            </div>
+            <code>$ sudo apt-get upgrade
+$ sudo apt-get autoremove
+$ sudo apt-get autoclean</code>
             <p>
                 2つ目のコマンドを実行すると、「Stretchで必要だったけどBusterで不要になったもの」が削除されます。
             </p>
             <p>
                 サポートされていないパッケージもあるようなので
             </p>
-            <div>
-                $ sudo apt purge timidity lxmusic gnome-disk-utility deluge-gtk evince wicd wicd-gtk clipit usermode gucharmap gnome-system-tools pavucontrol
-            </div>
+            <code>$ sudo apt purge timidity lxmusic gnome-disk-utility deluge-gtk evince wicd wicd-gtk clipit usermode gucharmap gnome-system-tools pavucontrol</code>
             <p>
                 で削除します。
             </p>
@@ -207,9 +195,7 @@
             <p>
                 上記の長い更新をしても、UIはおそらく何も変わらないはずです。StretchのUIではなくBusterのUIにするには、再起動したあと、
             </p>
-            <div>
-                メインメニュー > Appearance Settings > Defaults タブ
-            </div>
+            <code>メインメニュー > Appearance Settings > Defaults タブ</code>
             <p>
                 のいくつかあるSet Defaultsボタンの内、自分の使っている画面にあったものを押します。ただし、これを押すと、デスクトップの壁紙やウィンドウ上部の色なども自動的に変更されるため、カスタマイズしていた場合は再度設定が必要になります。また、ボタンを間違えた場合はそのまま正しいボタンを押せば問題ありません。ちなみに、メインメニューは、Raspberry Piの画面上部のタスクバーの1番左にあるRaspberry Piのロゴです。
             </p>
