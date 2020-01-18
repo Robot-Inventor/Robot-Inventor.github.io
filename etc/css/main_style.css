@@ -544,7 +544,7 @@ strong {
     border: solid 2px #FF0000;
     border-radius: 3px;
     margin: 10px 10px 10px 0px;
-    width: calc(100% - 2em -24px);
+    width: calc(100% - 3em -24px);
 }
 
 .quote {
@@ -555,11 +555,12 @@ strong {
     border: solid 2px var(--quotetextcolor);
     border-radius: 3px;
     margin: 10px 10px 10px 0px;
-    width: calc(100% - 2em -24px);
+    width: calc(100% - 3em -24px);
 }
 
 .quote p {
     margin: 0;
+    margin-bottom: 3em;
     padding: 0;
 }
 
