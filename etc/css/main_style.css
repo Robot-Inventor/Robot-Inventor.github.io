@@ -331,7 +331,7 @@ div {
     background: var(--divcolor);
     color: var(--div_textcolor);
     padding: 0.5em;
-    max-width: 100%;
+    width: calc(100% - 1em);
     height: auto;
     overflow: hidden;
     margin: 2em 0;
@@ -341,7 +341,7 @@ code {
     background: #004444;
     color: white;
     padding: 0.5em;
-    max-width: 100%;
+    max-width: calc(100% - 1em);
     height: auto;
     overflow: scroll;
     margin: 0;
@@ -544,6 +544,7 @@ strong {
     border: solid 2px #FF0000;
     border-radius: 3px;
     margin: 10px 10px 10px 0px;
+    width: calc(100% - 2em -24px);
 }
 
 .quote {
@@ -554,6 +555,7 @@ strong {
     border: solid 2px var(--quotetextcolor);
     border-radius: 3px;
     margin: 10px 10px 10px 0px;
+    width: calc(100% - 2em -24px);
 }
 
 .marquee {
