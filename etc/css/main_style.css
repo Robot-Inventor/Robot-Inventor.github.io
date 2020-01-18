@@ -197,9 +197,10 @@ figcaption {
 }
 
 p {
-    width: calc(100% - 1em);
+    width: 100%;
     margin: 0 0.5em;
     margin-bottom: 3em;
+    box-sizing: border-box;
 }
 
 figcaption p {
@@ -325,29 +326,32 @@ main {
     /*min-height: 100vh;*/
     min-height: calc(70vh - 4em);
     width: 100vw;
+    box-sizing: border-box;
 }
 
 div {
     background: var(--divcolor);
     color: var(--div_textcolor);
     padding: 0.5em;
-    width: calc(100% - 1em);
+    width: 100%;
     height: auto;
     overflow: hidden;
     margin: 2em 0;
+    box-sizing: border-box;
 }
 
 code {
     background: #004444;
     color: white;
     padding: 0.5em;
-    max-width: calc(100% - 1em);
+    width: 100%;
     height: auto;
     overflow: scroll;
     margin: 0;
     margin-bottom: 2em;
     white-space: pre;
     display: block;
+    box-sizing: border-box;
 }
 
 header {
@@ -358,9 +362,10 @@ header {
 }
 
 header div {
-    width: calc(100vw - 20px);
+    width: 100vw;
     margin: 0;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 *::selection {
@@ -425,41 +430,45 @@ a:hover[class="button"] {
     left: 0;
     background: var(--cookie_info_bg);
     color: var(--cookie_info_textcolor);
-    width: calc(100vw - 2em);
+    width: 100vw;
     margin: 0;
     padding: 2em 1em;
     display: none;
     z-index: 200;
+    box-sizing: border-box;
 }
 
 h1 {
-    width: calc(100vw - 2em - 9px);
+    width: 100vw;
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
     margin: 2em 0 1em 0.5em;
+    box-sizing: border-box;
 }
 
 h2 {
-    width: calc(100vw - 2em - 9px);
+    width: 100vw;
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
     margin: 2em 0 1em 0.5em;
+    box-sizing: border-box;
 }
 
 h3 {
-    width: calc(100vw - 2em - 9px);
+    width: 100vw;
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
     margin: 2em 0 1em 0.5em;
+    box-sizing: border-box;
 }
 
 .inline {
@@ -521,6 +530,7 @@ footer {
     width: 100vw;
     min-height: 30vh;
     padding: 5vh 0vh 20vh 0vh;
+    box-sizing: border-box;
 }
 
 .no_color {
@@ -533,7 +543,7 @@ footer {
 
 strong {
     color: var(--themecolor);
-    font-size: 200%;
+    font-size: 150%;
 }
 
 .important {
@@ -544,7 +554,8 @@ strong {
     border: solid 2px #FF0000;
     border-radius: 3px;
     margin: 10px 10px 10px 0px;
-    width: calc(100% - 4em -30px);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .quote {
@@ -555,14 +566,16 @@ strong {
     border: solid 2px var(--quotetextcolor);
     border-radius: 3px;
     margin: 10px 10px 10px 0px;
-    width: calc(100% - 4em -30px);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .quote p {
     margin: 0;
     margin-bottom: 3em;
     padding: 0;
-    max-width: calc(100% - 2em);
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .marquee {
@@ -571,6 +584,7 @@ strong {
     overflow: hidden;
     margin-bottom: 10px;
     position: relative;
+    box-sizing: content-box;
 }
 
 .marquee p:after {
