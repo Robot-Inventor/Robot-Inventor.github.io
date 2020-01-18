@@ -344,7 +344,8 @@ code {
     width: 100%;
     height: auto;
     overflow: scroll;
-    margin: 2em 0;
+    margin: 0;
+    padding-bottom: 2em;
     white-space: pre;
     display: block;
 }
