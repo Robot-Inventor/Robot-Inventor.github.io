@@ -562,6 +562,7 @@ strong {
     margin: 0;
     margin-bottom: 3em;
     padding: 0;
+    max-width: calc(100% - 2em);
 }
 
 .marquee {
