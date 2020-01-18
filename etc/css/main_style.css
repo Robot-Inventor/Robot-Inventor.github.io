@@ -330,11 +330,22 @@ main {
 div {
     background: var(--divcolor);
     color: var(--div_textcolor);
-    padding: 10px;
-    max-width: 100%;
+    padding: 0.5em;
+    width: 100%;
     height: auto;
     overflow: hidden;
     margin: 2em 0;
+}
+
+code {
+    background: #004444;
+    color: white;
+    padding: 10px;
+    max-width: 100%;
+    height: auto;
+    overflow: scroll;
+    margin: 2em 0;
+    white-space: pre;
 }
 
 header {
