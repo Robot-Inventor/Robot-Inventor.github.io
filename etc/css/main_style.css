@@ -1,5 +1,6 @@
 *, *::before, *::after {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
  
 ul[class], ol[class] {
@@ -22,7 +23,8 @@ ul[class], ol[class] {
 }
 
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
 img {
@@ -40,9 +42,13 @@ input, button, textarea, select {
 
 @media (prefers-reduced-motion: reduce) {
   * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+         -o-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -212,7 +218,8 @@ figcaption p {
 
 figure:hover figcaption {
     opacity: 1;
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
 }
 
 figure img {
@@ -220,7 +227,8 @@ figure img {
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
-    filter: none;
+    -webkit-filter: none;
+            filter: none;
 }
 
 figure:hover img {
@@ -325,7 +333,8 @@ main {
     /*min-height: 100vh;*/
     min-height: calc(70vh - 4em);
     width: 100vw;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 div {
@@ -336,7 +345,8 @@ div {
     height: auto;
     overflow: hidden;
     margin: 2em 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 code {
@@ -350,7 +360,8 @@ code {
     margin-bottom: 2em;
     white-space: pre;
     display: block;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 header {
@@ -364,7 +375,13 @@ header div {
     width: 100vw;
     margin: 0;
     padding: 10px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+*::-moz-selection {
+    background: var(--themecolor);
+    color: white;
 }
 
 *::selection {
@@ -434,7 +451,8 @@ a:hover[class="button"] {
     padding: 2em 1em;
     display: none;
     z-index: 200;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 h1 {
@@ -445,7 +463,8 @@ h1 {
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
     margin: 2em 0 1em 0.5em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 h2 {
@@ -456,7 +475,8 @@ h2 {
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
     margin: 2em 0 1em 0.5em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 h3 {
@@ -467,7 +487,8 @@ h3 {
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
     margin: 2em 0 1em 0.5em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .inline {
@@ -529,7 +550,8 @@ footer {
     width: 100vw;
     min-height: 30vh;
     padding: 5vh 0vh 20vh 0vh;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .no_color {
@@ -554,7 +576,8 @@ strong {
     border-radius: 3px;
     margin: 10px 10px 10px 0px;
     width: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .quote {
@@ -566,7 +589,8 @@ strong {
     border-radius: 3px;
     margin: 10px 10px 10px 0px;
     width: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .quote p {
@@ -574,7 +598,8 @@ strong {
     margin-bottom: 3em;
     padding: 0;
     max-width: 100%;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .marquee {
@@ -583,7 +608,8 @@ strong {
     overflow: hidden;
     margin-bottom: 10px;
     position: relative;
-    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
 }
 
 .marquee p:after {
