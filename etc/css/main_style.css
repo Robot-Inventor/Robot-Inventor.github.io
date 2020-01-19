@@ -73,7 +73,7 @@ input, button, textarea, select {
 @media (prefers-color-scheme: dark) {
      :root {
         --bgcolor: #000000;
-        --textcolor: #696969;
+        --textcolor: #dddddd;
         --div_textcolor: var(--textcolot);
         --themecolor: #20B2AA;
         --divcolor: #222222;
@@ -81,7 +81,7 @@ input, button, textarea, select {
         --visitedlinkcolor: #6495ED;
         --hoverlinkcolor: #2F4F4F;
         --activelinkcolor: #2F4F4F;
-        --quotetextcolor: #333333;
+        --quotetextcolor: #888888;
         --cookie_info_bg: rgba(255, 255, 255, 0.5);
         --cookie_info_textcolor: black;
     }
@@ -197,10 +197,9 @@ figcaption {
 }
 
 p {
-    width: 100%;
+    width: calc(100% - 1em);
     margin: 0 0.5em;
     margin-bottom: 3em;
-    box-sizing: border-box;
 }
 
 figcaption p {
@@ -439,7 +438,7 @@ a:hover[class="button"] {
 }
 
 h1 {
-    width: 100vw;
+    width: calc(100% - 2em - 9px);
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
@@ -450,7 +449,7 @@ h1 {
 }
 
 h2 {
-    width: 100vw;
+    width: calc(100% - 2em - 9px);
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
@@ -461,7 +460,7 @@ h2 {
 }
 
 h3 {
-    width: 100vw;
+    width: calc(100% - 2em - 9px);
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
