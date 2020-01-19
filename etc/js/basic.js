@@ -27,7 +27,7 @@ setTimeout(function(){
 
 var swURL = '';
 
-if(jQury('#basic_js').attr('data-service-worker') != undefined) {
+if(jQuery('#basic_js').attr('data-service-worker') != undefined) {
     swURL = jQuery(this).attr('data-service-worker');
 } else {
     swURL = '/service_worker.js';
