@@ -1,60 +1,79 @@
-*, *::before, *::after {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-}
- 
-ul[class], ol[class] {
-  padding: 0;
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 
-body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {
-  margin: 0;
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
 }
 
 body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
 }
 
-ul[class], ol[class] {
-  list-style: none;
+ul[class],
+ol[class] {
+    list-style: none;
 }
 
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip-ink: auto;
 }
 
 img {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
-article > * + * {
-  margin-top: 1em;
+article>*+* {
+    margin-top: 1em;
 }
 
-input, button, textarea, select {
-  font: inherit;
+input,
+button,
+textarea,
+select {
+    font: inherit;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    -webkit-animation-duration: 0.01ms !important;
-            animation-duration: 0.01ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
-    -webkit-transition-duration: 0.01ms !important;
-         -o-transition-duration: 0.01ms !important;
-            transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+    * {
+        -webkit-animation-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        -webkit-animation-iteration-count: 1 !important;
+        animation-iteration-count: 1 !important;
+        -webkit-transition-duration: 0.01ms !important;
+        -o-transition-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
-
 @font-face {
     font-family: "League Spartan";
     src: url("/etc/font/LeagueSpartan-Regular.ttf") format("truetype");
@@ -213,13 +232,14 @@ figcaption p {
     top: 0;
     left: 0;
     padding: var(--figcaption_place) 10vw;
-    margin: 0
+    margin: 0 width: calc(100% - 10vw);
+    height: 100%;
 }
 
 figure:hover figcaption {
     opacity: 1;
     -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 figure img {
@@ -228,7 +248,7 @@ figure img {
     -o-transition: 0.3s;
     transition: 0.3s;
     -webkit-filter: none;
-            filter: none;
+    filter: none;
 }
 
 figure:hover img {
@@ -295,7 +315,8 @@ body {
     display: -ms-flexbox;
     display: flex;*/
     margin: 0;
-    padding: 0;/******/
+    padding: 0;
+    /******/
     /*-webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -315,8 +336,9 @@ body {
 }
 
 *::-webkit-scrollbar {
-    display:none;
+    display: none;
 }
+
 
 /*html {
     background-color: var(--divcolor);
@@ -334,7 +356,7 @@ main {
     min-height: calc(70vh - 4em);
     width: 100vw;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 div {
@@ -346,7 +368,7 @@ div {
     overflow: hidden;
     margin: 2em 0;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 code {
@@ -361,7 +383,7 @@ code {
     white-space: pre;
     display: block;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 header {
@@ -376,7 +398,7 @@ header div {
     margin: 0;
     padding: 10px;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *::-moz-selection {
@@ -391,6 +413,7 @@ header div {
 
 a:link {
     color: #00FFFF;
+    transition: 0.3s;
 }
 
 a:visited {
@@ -421,7 +444,8 @@ a:hover[class="button"] {
     color: #FFFFFF;
 }
 
-.button, button {
+.button,
+button {
     display: inline-block;
     padding: 0.3em 1em;
     color: var(--themecolor);
@@ -435,7 +459,8 @@ a:hover[class="button"] {
     background: transparent;
 }
 
-.button:hover, button:hover {
+.button:hover,
+button:hover {
     background: var(--themecolor);
     color: var(--textcolor);
 }
@@ -452,43 +477,37 @@ a:hover[class="button"] {
     display: none;
     z-index: 200;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 h1 {
-    width: calc(100% - 2em - 9px);
+    width: calc(100% - 1em);
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
     margin: 2em 0 1em 0.5em;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
 }
 
 h2 {
-    width: calc(100% - 2em - 9px);
+    width: calc(100% - 1em);
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
     margin: 2em 0 1em 0.5em;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
 }
 
 h3 {
-    width: calc(100% - 2em - 9px);
+    width: calc(100% - 1em);
     color: var(--themecolor);
     padding: 0.25em 0.5em;
     background: transparent;
     border-left: solid 9px var(--divcolor);
     border-bottom: solid 2px var(--divcolor);
     margin: 2em 0 1em 0.5em;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
 }
 
 .inline {
@@ -551,7 +570,7 @@ footer {
     min-height: 30vh;
     padding: 5vh 0vh 20vh 0vh;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .no_color {
@@ -577,7 +596,7 @@ strong {
     margin: 10px 10px 10px 0px;
     width: 100%;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .quote {
@@ -590,7 +609,7 @@ strong {
     margin: 10px 10px 10px 0px;
     width: 100%;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .quote p {
@@ -599,7 +618,7 @@ strong {
     padding: 0;
     max-width: 100%;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .marquee {
@@ -609,7 +628,7 @@ strong {
     margin-bottom: 10px;
     position: relative;
     -webkit-box-sizing: content-box;
-            box-sizing: content-box;
+    box-sizing: content-box;
 }
 
 .marquee p:after {
@@ -825,7 +844,10 @@ strong {
     }
 }
 
+
 /************************以下、正月用**************************************/
+
+
 /*header, footer {
     background-image: url("/topPageImage/kumakichi0221023.jpg");
     background-size: cover;
