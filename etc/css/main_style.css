@@ -233,7 +233,9 @@ figcaption p {
     left: 0;
     padding: var(--figcaption_place) 10vw;
     margin: 0 width: calc(100% - 10vw);
+    width: 100%;
     height: 100%;
+    box-sizing: border-box;
 }
 
 figure:hover figcaption {
@@ -843,17 +845,3 @@ strong {
         transform: skewX(5deg) skewY(-5deg);
     }
 }
-
-
-/************************以下、正月用**************************************/
-
-
-/*header, footer {
-    background-image: url("/topPageImage/kumakichi0221023.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-header div {
-    background: rgba(0, 0, 0, 0.5);
-}*/
