@@ -89,13 +89,14 @@ select {
     --quotetextcolor: #999999;
     --cookie_info_bg: rgba(0, 0, 0, 0.8);
     --cookie_info_textcolor: white;
+    --header_height: 10vw;
 }
 
 @media (prefers-color-scheme: dark) {
      :root {
         --bgcolor: #000000;
         --textcolor: #dddddd;
-        --div_textcolor: var(--textcolot);
+        --div_textcolor: var(--textcolor);
         --themecolor: #20B2AA;
         --divcolor: #222222;
         --normallinkcolor: #40E0D0;
@@ -349,7 +350,7 @@ body {
 main {
     padding: 0;
     /*margin: 0 2vw;*/
-    margin: 0 0 4em 0;
+    margin: calc(var(--header_height) + 3rem) 0 4em 0;
     /*min-height: 100vh;*/
     min-height: calc(70vh - 4em);
     width: 100vw;
@@ -387,16 +388,21 @@ code {
 header {
     /*width: 100%;*/
     width: 100vw;
+    height: var(--header_height);
     margin: 0;
-    padding: 0;
+    padding: 2rem 0;
+    position: fixed;
+    top: 0;
+    z-index: 50;
 }
 
 header div {
     width: 100vw;
     margin: 0;
-    padding: 10px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    height: 100%;
+    opacity: 0.8;
 }
 
 *::-moz-selection {
@@ -690,6 +696,7 @@ strong {
     drop-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
     -webkit-animation: glitch-text 3.5s linear infinite;
     animation: glitch-text 3.5s linear infinite;
+    color: var(--textcolor);
 }
 
 @-webkit-keyframes glitch-text {
