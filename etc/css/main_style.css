@@ -74,11 +74,7 @@ select {
 }
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
-@font-face {
-    font-family: "League Spartan";
-    src: url("/etc/font/LeagueSpartan-Regular.ttf") format("truetype");
-    font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 
 :root {
     --bgcolor: #FFFFFF;
@@ -310,7 +306,7 @@ a img:hover {
 
 html,
 body {
-    font-family: "League Spartan", "Noto Sans JP", sans-selif;
+    font-family: "Comfortaa", "Noto Sans JP", sans-selif;
     background-color: var(--bgcolor);
     color: var(--textcolor);
     /*display: -webkit-box;
