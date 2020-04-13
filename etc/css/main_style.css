@@ -589,6 +589,7 @@ footer {
     padding: 5vh 0vh 20vh 0vh;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    color: var(--div_textcolor);
 }
 
 .no_color {
