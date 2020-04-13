@@ -4,7 +4,7 @@ if(userAgent.indexOf('msie') != -1 ||
         window.location.replace("/etc/html/do_not_use_ie.html");
 }
 
-jQuery(function() {
+function set_lazyload() {
     if ("loading" in HTMLImageElement.prototype && "loading" in HTMLIFrameElement.prototype) {
         lazy_elements = document.querySelectorAll("img.lazyload, iframe.lazyload");
         lazy_elements.forEach(function(e) {
@@ -16,11 +16,21 @@ jQuery(function() {
         script.src = "https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js"
         document.body.appendChild(script);
     }
+}
+
+jQuery(function() {
+    set_lazyload();
+    const target = document;
+    const observer = new MutationObserver(records => {
+        set_lazyload();
+    });
+    observer.observe(target, {
+        childList: true
+    })
 });
 
 setTimeout(function(){
     if (document.cookie.indexOf("cookieConsent") == -1) {
-        //alert("このサイトでは、皆さんに最高の体験をお届けするためにcookieを使用しています。詳しくはメニューよりプライバシーポリシーをご覧ください。");
         jQuery(".cookie_info").fadeIn(300);
         jQuery(".agree_cookie").click(function() {
             jQuery(".cookie_info").fadeOut(300);
