@@ -172,6 +172,19 @@ select {
     background: rgba(51, 51, 51, 0.7);
     overflow: scroll;
     z-index: 100;
+    padding: 0;
+    margin: 0;
+    backdrop-filter: blur(10px);
+}
+
+.overlay a div {
+    padding: 0;
+    margin: 0;
+}
+
+.overlay_close_button {
+    padding: 0;
+    margin: 0;
 }
 
 .now_loading {
@@ -401,7 +414,7 @@ header {
     margin: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    height: 100%;
+    height: auto;
     opacity: 0.8;
 }
 
