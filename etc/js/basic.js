@@ -5,28 +5,25 @@ if(userAgent.indexOf('msie') != -1 ||
 }
 
 function set_lazyload() {
-    if ("loading" in HTMLImageElement.prototype && "loading" in HTMLIFrameElement.prototype) {
-        lazy_elements = document.querySelectorAll("img.lazyload, iframe.lazyload");
-        lazy_elements.forEach(function(e) {
-            e.setAttribute("loading", "lazy");
-            e.setAttribute("src", e.getAttribute("data-src"));
-        });
-    } else {
-        var script = document.createElement("script");
-        script.src = "https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js"
-        document.body.appendChild(script);
-    }
+    // 以下のコードは，loading属性に対応させたけど読み込み速度が大幅に落ちたため，loading属性が改善されるまで封印する。
+    // if ("loading" in HTMLImageElement.prototype && "loading" in HTMLIFrameElement.prototype) {
+    //     lazy_elements = document.querySelectorAll("img.lazyload, iframe.lazyload");
+    //     lazy_elements.forEach(function(e) {
+    //         e.setAttribute("loading", "lazy");
+    //         e.setAttribute("src", e.getAttribute("data-src"));
+    //     });
+    // } else {
+    //     var script = document.createElement("script");
+    //     script.src = "https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js"
+    //     document.body.appendChild(script);
+    // }
+    var script = document.createElement("script");
+    script.src = "https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js"
+    document.body.appendChild(script);
 }
 
 jQuery(function() {
     set_lazyload();
-    const target = document;
-    const observer = new MutationObserver(records => {
-        set_lazyload();
-    });
-    observer.observe(target, {
-        childList: true
-    })
 });
 
 setTimeout(function(){
