@@ -4,7 +4,7 @@ if(userAgent.indexOf('msie') != -1 ||
         window.location.replace("/etc/html/do_not_use_ie.html");
 }
 
-function set_lazyload() {
+// function set_lazyload() {
     // 以下のコードは，loading属性に対応させたけど読み込み速度が大幅に落ちたため，loading属性が改善されるまで封印する。
     // if ("loading" in HTMLImageElement.prototype && "loading" in HTMLIFrameElement.prototype) {
     //     lazy_elements = document.querySelectorAll("img.lazyload, iframe.lazyload");
@@ -17,14 +17,14 @@ function set_lazyload() {
     //     script.src = "https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js"
     //     document.body.appendChild(script);
     // }
-    var script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js"
-    document.body.appendChild(script);
-}
+    // var script = document.createElement("script");
+    // script.src = "https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js"
+    // document.body.appendChild(script);
+// }
 
-jQuery(function() {
-    set_lazyload();
-});
+// jQuery(function() {
+//     set_lazyload();
+// });
 
 setTimeout(function(){
     if (document.cookie.indexOf("cookieConsent") == -1) {

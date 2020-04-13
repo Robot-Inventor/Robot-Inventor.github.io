@@ -6,14 +6,9 @@ import re
 import glob
 
 
-CSS_FILE_PATH = "etc/css/main_style.min.css"
-CSS_START_MESSAGE = "<!--template css start-->"
-CSS_END_MESSAGE = "<!--template css end-->"
+CSS_START_MESSAGE = "<!--template preload start-->"
+CSS_END_MESSAGE = "<!--template preload end-->"
 
-template_css = ""
-
-with open(CSS_FILE_PATH, mode="r", newline="", encoding="utf-8_sig") as f:
-    template_css = f.read().strip()
 
 def change_css(html_file_path):
     old_css = ""
@@ -21,10 +16,12 @@ def change_css(html_file_path):
         old_css = f.read()
         old_css = old_css.replace("\r\n", "\n").replace("\r", "\n")
     with open(html_file_path, mode="w", newline="", encoding="utf-8_sig") as f:
-        pattern = re.compile(f"{CSS_START_MESSAGE}.*?{CSS_END_MESSAGE}", re.MULTILINE | re.DOTALL)
-        old_css = re.sub(pattern, f"{CSS_START_MESSAGE}\n<style>{template_css}</style>\n{CSS_END_MESSAGE}", old_css)
+        old_css = old_css.replace(
+            '        <link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" as="script">\n        <link rel="preload" href="/etc/js/basic.min.js" as="script">',
+            f'{CSS_START_MESSAGE}\n<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" as="script">\n<link rel="preload" href="/etc/js/basic.min.js" as="script">\n<link rel="preload" href="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" as="script">\n{CSS_END_MESSAGE}')
         f.write(old_css)
 
 for file in glob.glob("**/*.html", recursive=True):
     change_css(file)
+#change_css("test.html")
 print("Finished.")
