@@ -40,5 +40,9 @@ workbox.precaching.precacheAndRoute([
     {
         url: 'https://platform.twitter.com/widgets.js',
         revision: '0'
+    },
+    {
+        url: 'https://www.googletagmanager.com/gtag/js?id=UA-140830854-3',
+        revision: '0'
     }
 ])
