@@ -6,47 +6,15 @@ self.addEventListener('fetch', function(event) {
 
 workbox.precaching.precacheAndRoute([
     {
-        url: '/etc/html/header_menu.min.html',
-        revision: 'b5c9e67'
-    },
-    {
-        url: '/etc/html/footer.min.html',
-        revision: '5bba1cd'
-    },
-    {
-        url: '/etc/css/main_style.min.css',
-        revision: 'f351cd4'
-    },
-    {
         url: '/etc/js/basic.min.js',
         revision: '9af3880'
     },
     {
-        url: '/etc/js/lazysizes.min.js',
-        revision: '420214d'
+        url: 'https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js',
+        revision: '0123456'
     },
     {
-        url: '/icon/header_image.svg',
-        revision: 'ed13b9c'
-    },
-    {
-        url: '/icon/back.svg',
-        revision: 'b197ee7'
-    },
-    {
-        url: '/icon/menu.svg',
-        revision: 'b197ee7'
-    },
-    {
-        url: '/icon/menu_line.svg',
-        revision: 'b197ee7'
-    },
-    {
-        url: 'https://code.jquery.com/jquery-3.2.1.min.js',
-        revision: '0'
-    },
-    {
-        url: '/etc/js/countdown.min.js',
-        revision: '9d4a435'
+        url: 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js',
+        revision: '0123456'
     }
 ])
