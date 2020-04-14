@@ -22,7 +22,7 @@ def change_css(html_file_path):
         old_css = old_css.replace("\r\n", "\n").replace("\r", "\n")
     with open(html_file_path, mode="w", newline="", encoding="utf-8_sig") as f:
         pattern = re.compile(f"{CSS_START_MESSAGE}.*?{CSS_END_MESSAGE}", re.MULTILINE | re.DOTALL)
-        old_css = re.sub(pattern, f"{CSS_START_MESSAGE}\n{template_css}\n{CSS_END_MESSAGE}", old_css)
+        old_css = re.sub(pattern, f"{CSS_START_MESSAGE}<style>\n{template_css}</style>\n{CSS_END_MESSAGE}", old_css)
         f.write(old_css)
 
 for file in glob.glob("**/*.html", recursive=True):
