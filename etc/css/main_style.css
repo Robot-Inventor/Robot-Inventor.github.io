@@ -90,7 +90,7 @@ select {
     --quotetextcolor: #999999;
     --cookie_info_bg: rgba(0, 0, 0, 0.8);
     --cookie_info_textcolor: white;
-    --header_height: 10vw;
+    --header_height: 10vmin;
 }
 
 @media (prefers-color-scheme: dark) {
