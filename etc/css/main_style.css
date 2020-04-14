@@ -6,6 +6,7 @@
 *::after {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
+    font-display: swap;
 }
 
 ul[class],
