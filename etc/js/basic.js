@@ -36,6 +36,10 @@ setTimeout(function(){
     }
 },5000);
 
+setTimeout(function(){
+    jQuery("#sns_follow_button").load("/etc/html/sns_follow_button.min.html");
+},5000);
+
 var swURL = '';
 
 if(jQuery('#basic_js').attr('data-service-worker') != undefined) {
