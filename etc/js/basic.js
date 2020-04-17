@@ -38,7 +38,7 @@ setTimeout(function(){
         jQuery("#stay_home").fadeIn(300);
         jQuery("#agree_to_stay_home_button").click(function() {
             jQuery("#stay_home").fadeOut(300);
-            document.cookie = 'agree_to_stay_home=true; max-age=2592000';
+            document.cookie = 'agree_to_stay_home=true; max-age=604800';
         });
     }
 },5000);
