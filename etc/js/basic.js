@@ -34,6 +34,13 @@ setTimeout(function(){
             document.cookie = 'cookieConsent=true; max-age=2592000';
         });
     }
+    if (document.cookie.indexOf("agree_to_stay_home") == -1) {
+        jQuery("#stay_home").fadeIn(300);
+        jQuery("#agree_to_stay_home_button").click(function() {
+            jQuery("#stay_home").fadeOut(300);
+            document.cookie = 'agree_to_stay_home=true; max-age=2592000';
+        });
+    }
 },5000);
 
 setTimeout(function(){
