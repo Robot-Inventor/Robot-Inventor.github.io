@@ -59,15 +59,4 @@
             border: solid 2px #00cccc;
         }
     </style>
-    <script>
-        $(function() {
-            if (document.cookie.indexOf("stay_home_agree") == -1) {
-                $("#stay_home").fadeIn(300);
-                $("#agree_to_stay_home_button").click(function() {
-                    $("#stay_home").fadeOut(300);
-                    document.cookie = "stay_home_agree=true; max-age=2592000";
-                });
-            }
-        });
-    </script>
 </div>
