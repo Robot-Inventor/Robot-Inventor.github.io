@@ -1,0 +1,73 @@
+<div id="stay_home">
+    <div class="innner">
+        <h2>Stay Home</h2>
+        <p>
+            このサイトを閲覧するには，できる限り家にいる，またはそれができない場合できる限り人との接触を避けることに同意する必要があります。
+        </p>
+        <button id="agree_to_stay_home_button">はい，同意します。</button>
+    </div>
+    <style>
+        #stay_home {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            font-family: sans-serif;
+            z-index: 1000;
+            display: none;
+        }
+
+        #stay_home .innner {
+            margin-top: 50vh;
+            transform: translateY(-50%);
+            background: none;
+        }
+
+        #stay_home h2 {
+            text-align: center;
+            color: #00ffff;
+        }
+
+        #stay_home p {
+            padding: 2em;
+            color: black;
+        }
+
+        #agree_to_stay_home_button {
+            background: transparent;
+            border: solid 2px #00ffff;
+            border-radius: 0.5em;
+            color: #00ffff;
+            padding: 0.5em;
+            transition: 0.3s;
+            outline: 0;
+            margin-left: 2em;
+        }
+
+        #agree_to_stay_home_button:hover {
+            background: #00ffff;
+            color: white;
+        }
+
+        #agree_to_stay_home_button:active {
+            background: #00cccc;
+            border: solid 2px #00cccc;
+        }
+    </style>
+    <script>
+        $(function() {
+            if (document.cookie.indexOf("stay_home_agree") == -1) {
+                $("#stay_home").fadeIn(300);
+                $("#agree_to_stay_home_button").click(function() {
+                    $("#stay_home").fadeOut(300);
+                    document.cookie = "stay_home_agree=true; max-age=2592000";
+                });
+            }
+        });
+    </script>
+</div>
