@@ -20,10 +20,13 @@ def change_script(html_file_path):
     with open(html_file_path, mode="r", newline="", encoding="utf-8_sig") as f:
         old_script = f.read()
         old_script = old_script.replace("\r\n", "\n").replace("\r", "\n")
+    if "<html amp" in old_script:
+        return
     with open(html_file_path, mode="w", newline="", encoding="utf-8_sig") as f:
         pattern = re.compile(f"{SCRIPT_START_MESSAGE}.*?{SCRIPT_END_MESSAGE}", re.MULTILINE | re.DOTALL)
         old_script = re.sub(pattern, f"{SCRIPT_START_MESSAGE}\n{template_script}\n{SCRIPT_END_MESSAGE}", old_script)
         f.write(old_script)
+    return
 
 for file in glob.glob("**/*.html", recursive=True):
     change_script(file)
