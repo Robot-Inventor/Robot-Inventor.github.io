@@ -845,8 +845,8 @@ amp-sidebar {
 }
 
 amp-sidebar a {
-    padding: 2em 1em;
-    display-inline-block;
+    padding: 1em;
+    display:inline-block;
     text-decoration: none;
 }
 
