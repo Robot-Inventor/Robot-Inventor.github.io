@@ -63,14 +63,14 @@ select {
 
 @media (prefers-reduced-motion: reduce) {
     * {
-        -webkit-animation-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        -webkit-animation-iteration-count: 1 !important;
-        animation-iteration-count: 1 !important;
-        -webkit-transition-duration: 0.01ms !important;
-        -o-transition-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+        -webkit-animation-duration: 0.01ms;
+        animation-duration: 0.01ms;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-transition-duration: 0.01ms;
+        -o-transition-duration: 0.01ms;
+        transition-duration: 0.01ms;
+        scroll-behavior: auto;
     }
 }
 
@@ -172,6 +172,11 @@ figure {
     left: 0;
     display: block;
     margin: 0;
+}
+
+figure div {
+    margin: 0;
+    padding: 0;
 }
 
 figcaption {
@@ -340,11 +345,10 @@ main {
 div {
     background: var(--divcolor);
     color: var(--div_textcolor);
-    padding: 0.5em;
     width: 100%;
     height: auto;
     overflow: hidden;
-    margin: 2em 0;
+    padding: 0.5em;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
@@ -860,7 +864,7 @@ amp-sidebar hr {
     background: none;
 }
 
-.i-amphtml-sidebar-mask {
+div[open] {
     margin: 0;
     padding: 0;
 }
