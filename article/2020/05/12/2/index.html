@@ -3,13 +3,12 @@
     <head>
         <meta charset="utf-8">
         <script async src="https://cdn.ampproject.org/v0.js"></script>
-        <title>フリー素材だけでシネマティック動画を作ってみた - 理系YouTuberのブログ的な何か</title>
-        <link rel="canonical" href="https://robot-inventor.github.io/article/2020/04/11/index.html">
+        <title>Inkscapeで作成したSVGから個人情報流出の可能性 - 理系YouTuberのブログ的な何か</title>
+        <link rel="canonical" href="https://robot-inventor.github.io/article/2020/05/12/2/">
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
         <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
         <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
         <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-        <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap">
         <!--**********ここからアイコン・その他の設定**********-->
         <link rel="icon" type="image/x-icon" href="https://robot-inventor.github.io/icon/favicon.ico">
@@ -26,7 +25,7 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-TileImage" content="https://robot-inventor.github.io/icon/mstile-144x144.png">
         <meta name="theme-color" content="#333333">
-        <meta name="description" content="フリー素材・フリーのソフトのみでシネマティック動画を作ってみました。">
+        <meta name="description" content="Inkscapeで作成したSVGから個人情報流出の可能性があることに気づいたので記事にしました。">
 <!--template css start--><style amp-custom>
 *,::after,::before{-webkit-box-sizing:content-box;box-sizing:content-box;font-display:swap}ol[class],ul[class]{padding:0}blockquote,body,dd,dl,figcaption,figure,h1,h2,h3,h4,li,ol[class],p,ul[class]{margin:0}body{min-height:100vh;scroll-behavior:smooth;text-rendering:optimizeSpeed;line-height:1.5}ol[class],ul[class]{list-style:none}a:not([class]){-webkit-text-decoration-skip:ink;text-decoration-skip-ink:auto}amp-img{max-width:100%;display:block}article>*+*{margin-top:1em}button,input,select,textarea{font:inherit}@media (prefers-reduced-motion:reduce){*{-webkit-animation-duration:0s;animation-duration:0s;-webkit-animation-iteration-count:1;animation-iteration-count:1;-webkit-transition-duration:0s;-o-transition-duration:0s;transition-duration:0s;scroll-behavior:auto}}:root{--bgcolor:#FFFFFF;--textcolor:#333333;--div_textcolor:white;--themecolor:#00CED1;--divcolor:#001970;--normallinkcolor:#40E0D0;--visitedlinkcolor:#6495ED;--hoverlinkcolor:#20B2AA;--activelinkcolor:#008080;--quotetextcolor:#999999;--cookie_info_bg:rgba(0, 0, 0, 0.8);--cookie_info_textcolor:white;--header_height:10vmin}@media (prefers-color-scheme:dark){:root{--bgcolor:#000000;--textcolor:#dddddd;--div_textcolor:var(--textcolor);--themecolor:#20B2AA;--divcolor:#222222;--normallinkcolor:#40E0D0;--visitedlinkcolor:#6495ED;--hoverlinkcolor:#2F4F4F;--activelinkcolor:#2F4F4F;--quotetextcolor:#888888;--cookie_info_bg:rgba(255, 255, 255, 0.5);--cookie_info_textcolor:black}.darkmode_support_image{-webkit-filter:grayscale(100%);filter:grayscale(100%)}}@media screen and (min-width:800px){div[show=pc]{display:block}div[show=phone]{display:none}div[show=phone_small]{display:none}:root{--figcaption_nohover:0;--figcaption_place:5%}}@media screen and (min-width:600px) and (max-width:800px),(orientation:portrait){div[show=pc]{display:none}div[show=phone]{display:block}div[show=phone_small]{display:none}:root{--figcaption_nohover:1;--figcaption_place:5%}}@media screen and (max-width:600px){div[show=pc]{display:none}div[show=phone]{display:none}div[show=phone_small]{display:block}:root{--figcaption_nohover:1;--figcaption_place:5%}}progress{width:50%}figure{overflow:hidden;width:100%;position:relative;top:0;left:0;display:block;margin:0}figure div{margin:0;padding:0}figcaption{overflow:scroll;position:absolute;top:0;left:0;z-index:2;width:100%;height:100%;background:rgba(0,0,0,.6);-webkit-transition:.3s;-o-transition:.3s;transition:.3s;opacity:var(--figcaption_nohover);backdrop-filter:none;-webkit-backdrop-filter:none}p{width:calc(100% - 1em);margin:1em .5em 0 .5em}figcaption p{position:absolute;top:0;left:0;padding:var(--figcaption_place) 10vw;margin:0;width:100%;height:100%;box-sizing:border-box;color:#fff}figure:hover figcaption{opacity:1;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}figure amp-img{overflow:hidden;-webkit-transition:.3s;-o-transition:.3s;transition:.3s;-webkit-filter:none;filter:none}figure:hover amp-img{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}amp-img{max-width:100%}a amp-img{-webkit-transition:.3s;-o-transition:.3s;transition:.3s}a amp-img:hover{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}.half{width:50%;height:auto}.third{width:33%;height:auto}.fourth{width:25%;height:auto}.tenth{width:10%;height:auto}.half_height{width:100%;height:50vh;max-height:50vw;-o-object-fit:cover;object-fit:cover}.half_height amp-img,.half_height img{object-fit:cover}.grayscale{-webkit-filter:grayscale(100%) brightness(80%);filter:grayscale(100%) brightness(80%)}body,html{font-family:Comfortaa,"Noto Sans JP",sans-selif;background-color:var(--bgcolor);color:var(--textcolor);margin:0;padding:0;width:100vw}*{-ms-overflow-style:none;scrollbar-width:none;outline:0}::-webkit-scrollbar{display:none}body{background-color:var(--bgcolor)}main{padding:0;margin:var(--header_height) 0 4em 0;min-height:calc(70vh - 4em);width:100vw;-webkit-box-sizing:border-box;box-sizing:border-box}div{background:var(--divcolor);color:var(--div_textcolor);width:100%;height:auto;overflow:hidden;padding:.5em;-webkit-box-sizing:border-box;box-sizing:border-box}code{background:#044;color:#fff;padding:.5em;width:100%;height:auto;overflow:scroll;margin:0;margin-bottom:2em;white-space:pre;display:block;-webkit-box-sizing:border-box;box-sizing:border-box}::-moz-selection{background:var(--themecolor);color:#fff}::selection{background:var(--themecolor);color:#fff}a:link{color:var(--themecolor);transition:.3s}a:visited{color:#007dff}a:hover{color:#00c8ff}a:active{color:#00c8ff}a[class=button]{color:var(--themecolor)}a:visited[class=button]{color:var(--themecolor)}a:active[class=button]{color:var(--themecolor)}a:hover[class=button]{color:#fff}.button,button{display:inline-block;padding:.3em 1em;color:var(--themecolor);border:solid 2px var(--themecolor);border-radius:3px;text-decoration:none;margin:10px 10px 10px 0;-webkit-transition:.3s;-o-transition:.3s;transition:.3s;background:0 0}.button:hover,button:hover{background:var(--themecolor);color:var(--textcolor)}.cookie_info{position:fixed;bottom:0;left:0;background:var(--cookie_info_bg);color:var(--cookie_info_textcolor);width:100vw;margin:0;padding:2em 1em;display:none;z-index:200;-webkit-box-sizing:border-box;box-sizing:border-box;backdrop-filter:blur(10px)}h1{width:calc(100% - 2em - 9px);color:var(--themecolor);padding:.25em .5em;background:0 0;border-left:solid 9px var(--divcolor);border-bottom:solid 2px var(--divcolor);margin:2em 0 1em .5em}h2{width:calc(100% - 2em - 9px);color:var(--themecolor);padding:.25em .5em;background:0 0;border-left:solid 9px var(--divcolor);border-bottom:solid 2px var(--divcolor);margin:2em 0 1em .5em}h3{width:calc(100% - 2em - 9px);color:var(--themecolor);padding:.25em .5em;background:0 0;border-left:solid 9px var(--divcolor);border-bottom:solid 2px var(--divcolor);margin:2em 0 1em .5em}.inline{display:inline;padding:0;border-left:none;border-bottom:none}.block{display:block}.no_border{padding:0;border-left:none;border-bottom:none}iframe{max-width:100%}.video{position:relative;padding:0;width:100%;padding-top:56.25%}.video iframe{position:absolute;padding:0;top:0;right:0;width:100%;height:100%}table,td,th{border:1px var(--textcolor) solid;border-collapse:collapse}hr{background:var(--textcolor);border:none;color:var(--textcolor);height:2px}footer{display:inline-block;vertical-align:middle;text-align:center;background-color:var(--divcolor);width:100vw;min-height:30vh;padding:5vh 0 20vh 0;-webkit-box-sizing:border-box;box-sizing:border-box;color:var(--div_textcolor)}.no_color{background-color:rgba(0,0,0,0)}.themecolor{color:var(--themecolor)}strong{color:var(--themecolor);font-size:150%}.important{display:block;padding:.3em 1em;color:red;background:0 0;border:solid 2px red;border-radius:3px;margin:10px 10px 10px 0;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box}.quote{display:block;padding:.3em 1em;color:var(--quotetextcolor);background:0 0;border:solid 2px var(--quotetextcolor);border-radius:3px;margin:10px 10px 10px 0;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box}.quote p{margin:0;margin-bottom:3em;padding:0;max-width:100%;-webkit-box-sizing:border-box;box-sizing:border-box}.marquee{width:100%;padding:.5em 0;overflow:hidden;margin-bottom:10px;position:relative;-webkit-box-sizing:content-box;box-sizing:content-box}.marquee p:after{content:"";white-space:nowrap;padding-right:50px}.marquee p{margin:0;padding-left:100%;display:inline-block;white-space:nowrap;width:auto;-webkit-animation-name:marquee;-webkit-animation-timing-function:linear;-webkit-animation-duration:10s;-webkit-animation-iteration-count:infinite;-moz-animation-name:marquee;-moz-animation-timing-function:linear;-moz-animation-duration:10s;-moz-animation-iteration-count:infinite;-ms-animation-name:marquee;-ms-animation-timing-function:linear;-ms-animation-duration:10s;-ms-animation-iteration-count:infinite;-o-animation-name:marquee;-o-animation-timing-function:linear;-o-animation-duration:10s;-o-animation-iteration-count:infinite;animation-name:marquee;animation-timing-function:linear;animation-duration:10s;animation-iteration-count:infinite}@-webkit-keyframes marquee{from{-webkit-transform:translate(0)}99%,to{-webkit-transform:translate(-100%)}}@keyframes marquee{from{-webkit-transform:translate(0);transform:translate(0)}99%,to{-webkit-transform:translate(-100%);transform:translate(-100%)}}.glitch{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;drop-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-animation:glitch-text 3.5s linear infinite;animation:glitch-text 3.5s linear infinite;color:var(--textcolor)}@-webkit-keyframes glitch-text{0%,100%,40%,44%,58%,61%,65%,69%,73%{text-shadow:0 0 6px #000,0 0 3px #00a75b,0 0 3px #96007a;drop-shadow:0 0 6px #000,0 0 3px #00a75b,0 0 3px #96007a;-webkit-transform:skewX(0);transform:skewX(0)}41%{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;drop-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-transform:skewX(5deg);transform:skewX(5deg)}42%{text-shadow:0 0 6px #000,5px 5px 3px #96007a,-3px -3px 3px #00a75b;drop-shadow:0 0 6px #000,5px 5px 3px #96007a,-3px -3px 3px #00a75b;-webkit-transform:skewX(-5deg);transform:skewX(-5deg)}59%{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;drop-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-transform:skewX(20deg) skewY(5deg);transform:skewX(20deg) skewY(5deg)}60%{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;drop-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-transform:skewX(-20deg) skewY(-5deg);transform:skewX(-20deg) skewY(-5deg)}63%{text-shadow:0 0 6px #000,3px 3px 3px #96007a,-2px -2px 3px #00a75b;drop-shadow:0 0 6px #000,3px 3px 3px #96007a,-2px -2px 3px #00a75b;-webkit-transform:skewX(5deg) skewY(-2deg);transform:skewX(5deg) skewY(-2deg)}70%{text-shadow:0 0 6px #000,7px 7px 3px #00a75b,-7px -7px 3px #96007a;drop-shadow:0 0 6px #000,7px 7px 3px #00a75b,-7px -7px 3px #96007a;-webkit-transform:skewX(-25deg) skewY(-10deg);transform:skewX(-25deg) skewY(-10deg)}71%{text-shadow:0 0 6px #000,1px 1px 3px #96007a,-2px -2px 3px #00a75b;drop-shadow:0 0 6px #000,1px 1px 3px #96007a,-2px -2px 3px #00a75b;-webkit-transform:skewX(5deg) skewY(-5deg);transform:skewX(5deg) skewY(-5deg)}}@keyframes glitch-text{0%,100%,40%,44%,58%,61%,65%,69%,73%{text-shadow:0 0 6px #000,0 0 3px #00a75b,0 0 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(0 0 3px #00a75b) drop-shadow(0 0 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(0 0 3px #00a75b) drop-shadow(0 0 3px #96007a);-webkit-transform:skewX(0);transform:skewX(0)}41%{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);-webkit-transform:skewX(5deg);transform:skewX(5deg)}42%{text-shadow:0 0 6px #000,5px 5px 3px #96007a,-3px -3px 3px #00a75b;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #96007a) drop-shadow(-3px -3px 3px #00a75b);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #96007a) drop-shadow(-3px -3px 3px #00a75b);-webkit-transform:skewX(-5deg);transform:skewX(-5deg)}59%{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);-webkit-transform:skewX(20deg) skewY(5deg);transform:skewX(20deg) skewY(5deg)}60%{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);-webkit-transform:skewX(-20deg) skewY(-5deg);transform:skewX(-20deg) skewY(-5deg)}63%{text-shadow:0 0 6px #000,3px 3px 3px #96007a,-2px -2px 3px #00a75b;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(3px 3px 3px #96007a) drop-shadow(-2px -2px 3px #00a75b);filter:drop-shadow(0 0 6px #000) drop-shadow(3px 3px 3px #96007a) drop-shadow(-2px -2px 3px #00a75b);-webkit-transform:skewX(5deg) skewY(-2deg);transform:skewX(5deg) skewY(-2deg)}70%{text-shadow:0 0 6px #000,7px 7px 3px #00a75b,-7px -7px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(7px 7px 3px #00a75b) drop-shadow(-7px -7px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(7px 7px 3px #00a75b) drop-shadow(-7px -7px 3px #96007a);-webkit-transform:skewX(-25deg) skewY(-10deg);transform:skewX(-25deg) skewY(-10deg)}71%{text-shadow:0 0 6px #000,1px 1px 3px #96007a,-2px -2px 3px #00a75b;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(1px 1px 3px #96007a) drop-shadow(-2px -2px 3px #00a75b);filter:drop-shadow(0 0 6px #000) drop-shadow(1px 1px 3px #96007a) drop-shadow(-2px -2px 3px #00a75b);-webkit-transform:skewX(5deg) skewY(-5deg);transform:skewX(5deg) skewY(-5deg)}}.headerbar{width:100vw;height:var(--header_height);margin:0;padding:0;position:fixed;top:0;z-index:50;background:var(--divcolor);opacity:.8}.headerbar svg{opacity:1}.site_title_logo{height:var(--header_height);display:inline-block;max-width:50vw}.hamburger{height:var(--header_height);display:inline-block;max-width:50vw;float:right}amp-sidebar{padding:0 2em;background:rgba(51,51,51,.7)}amp-sidebar a{padding:1em;display:inline-block;text-decoration:none}amp-sidebar hr{background:#fff}.close-sidebar{margin:2em 0;padding:0;background:0 0}div[open]{margin:0;padding:0}</style>
 <!--template css end-->
@@ -45,20 +44,307 @@
 <!--header end-->
         <main>
             <figure class="half_height">
-                <amp-img srcset="/article/2020/04/11/サムネイル.png.webp 1920w, /article/2020/04/11/サムネイル_s.png.webp 400w" alt="" width="1920" height="1080" layout="responsive">
-                    <amp-img fallback srcset="/article/2020/04/11/サムネイル.png 1920w, /article/2020/04/11/サムネイル_s.png 400w" alt="" width="1920" height="1080" layout="responsive"></amp-img>
+                <amp-img srcset="/article/2020/05/12/2/computer-1591018_1920.jpg.webp 1920w, /article/2020/05/12/2/computer-1591018_1920_s.jpg.webp 400w" alt="" width="1920" height="1080" layout="responsive">
+                    <amp-img fallback srcset="/article/2020/05/12/2/computer-1591018_1920.jpg 1920w, /article/2020/05/12/2/computer-1591018_1920_s.jpg 400w" alt="" width="1920" height="1080" layout="responsive"></amp-img>
                 </amp-img>
                 <figcaption>
                     <p>
-                        <strong>完</strong>全に無料で作られたシネマティック動画
+                        <strong>個</strong>人情報流出の可能性が
                     </p>
                 </figcaption>
             </figure>
-            <h1>2020/04/11（土）　フリー素材だけでシネマティック動画を作ってみた</h1>
+            <div class="important">
+                この記事と同じ内容を<a href="https://qiita.com/Robot-Inventor/items/f7d18438de290a250051" target="_blank" rel="noreferrer noopener">Qiita</a>にも投稿してあります。
+            </div>
+            <h1>2020/05/12（火）　Inkscapeで作成したSVGから個人情報流出の可能性</h1>
             <p>
-                BGM・環境音・映像はフリー素材，フォント・動画編集ソフトはオープンソースのものを使用して作りました。つまり，完全にフリー素材のみで制作されたシネマティック動画です。シネマティック動画の練習として作りました。シネマティックは初めてなので改善点はたくさんありますが，お楽しみください。
+                <a href="/article/2020/05/12/">今日の別の記事</a>にも書きましたが，このブログのAMP化の作業を行いました。そのとき，SVGファイルをテキストエディターで開いたら個人情報が含まれていたので記事にしました。
             </p>
-            <amp-youtube data-videoid="uWvt-sMbkgw" width="1920" height="1080" layout="responsive"></amp-youtube>
+            <p>
+                最初に断っておきますが，SVGに含まれる個人情報というのはPCのユーザー名です。PCのユーザー名はパスワードでも住所でもないので個人情報だと考えるかは人それぞれだと思いますが，場合によっては本名がバレるということでここでは個人情報として扱います。
+            </p>
+            <p>
+                ちなみに，こんな記事を書いておきながら，私はPCのユーザー名くらい別に良いかなと思います...。
+            </p>
+            <p>
+                この問題が発生するのはオープンソースのベクターグラフィックエディターの <a href="https://inkscape.org/" target="_blank" rel="noreferrer noopener">Inkscape</a>とWindows10を使用した場合です。他の環境ではどうなるか分かりませんが，おそらくInkscapeを使用していればOSに関係なくこの問題が発生すると思います。
+            </p>
+            <h1>詳細</h1>
+            <p>
+                この問題はInkscapeを使用してSVG画像を作成し，そのデータをインターネットでの公開を含め誰かに渡したり見せたりする場合に発生します。
+            </p>
+            <p>
+                まず，以下がInkscapeで作成した空のSVGファイルです。ファイルの保存形式はデフォルトのInkscape SVGを選択しました。この時点ではまだ個人情報は含まれていません。
+            </p>
+            <details>
+                <summary>コードを見る</summary>
+                <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;svg
+   xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;
+   xmlns:cc=&quot;http://creativecommons.org/ns#&quot;
+   xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+   xmlns:svg=&quot;http://www.w3.org/2000/svg&quot;
+   xmlns=&quot;http://www.w3.org/2000/svg&quot;
+   xmlns:sodipodi=&quot;http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd&quot;
+   xmlns:inkscape=&quot;http://www.inkscape.org/namespaces/inkscape&quot;
+   sodipodi:docname=&quot;ファイル名.svg&quot;
+   inkscape:version=&quot;1.0 (4035a4fb49, 2020-05-01)&quot;
+   id=&quot;svg8&quot;
+   version=&quot;1.1&quot;
+   viewBox=&quot;0 0 210 297&quot;
+   height=&quot;297mm&quot;
+   width=&quot;210mm&quot;&gt;
+  &lt;defs
+     id=&quot;defs2&quot; /&gt;
+  &lt;sodipodi:namedview
+     inkscape:window-maximized=&quot;1&quot;
+     inkscape:window-y=&quot;-6&quot;
+     inkscape:window-x=&quot;-6&quot;
+     inkscape:window-height=&quot;850&quot;
+     inkscape:window-width=&quot;1368&quot;
+     showgrid=&quot;false&quot;
+     inkscape:document-rotation=&quot;0&quot;
+     inkscape:current-layer=&quot;layer1&quot;
+     inkscape:document-units=&quot;mm&quot;
+     inkscape:cy=&quot;560&quot;
+     inkscape:cx=&quot;400&quot;
+     inkscape:zoom=&quot;0.35&quot;
+     inkscape:pageshadow=&quot;2&quot;
+     inkscape:pageopacity=&quot;0.0&quot;
+     borderopacity=&quot;1.0&quot;
+     bordercolor=&quot;#666666&quot;
+     pagecolor=&quot;#ffffff&quot;
+     id=&quot;base&quot; /&gt;
+  &lt;metadata
+     id=&quot;metadata5&quot;&gt;
+    &lt;rdf:RDF&gt;
+      &lt;cc:Work
+         rdf:about=&quot;&quot;&gt;
+        &lt;dc:format&gt;image/svg+xml&lt;/dc:format&gt;
+        &lt;dc:type
+           rdf:resource=&quot;http://purl.org/dc/dcmitype/StillImage&quot; /&gt;
+        &lt;dc:title&gt;&lt;/dc:title&gt;
+      &lt;/cc:Work&gt;
+    &lt;/rdf:RDF&gt;
+  &lt;/metadata&gt;
+  &lt;g
+     id=&quot;layer1&quot;
+     inkscape:groupmode=&quot;layer&quot;
+     inkscape:label=&quot;レイヤー 1&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+            </details>
+            <p>
+                そして，以下は同じ内容をプレーンSVGを選択して保存したものです。同じく，これもまだ個人情報は含まれていません。
+            </p>
+            <details>
+                <summary>コードを見る</summary>
+                <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;svg
+   xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;
+   xmlns:cc=&quot;http://creativecommons.org/ns#&quot;
+   xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+   xmlns:svg=&quot;http://www.w3.org/2000/svg&quot;
+   xmlns=&quot;http://www.w3.org/2000/svg&quot;
+   id=&quot;svg836&quot;
+   version=&quot;1.1&quot;
+   viewBox=&quot;0 0 210 297&quot;
+   height=&quot;297mm&quot;
+   width=&quot;210mm&quot;&gt;
+  &lt;defs
+     id=&quot;defs830&quot; /&gt;
+  &lt;metadata
+     id=&quot;metadata833&quot;&gt;
+    &lt;rdf:RDF&gt;
+      &lt;cc:Work
+         rdf:about=&quot;&quot;&gt;
+        &lt;dc:format&gt;image/svg+xml&lt;/dc:format&gt;
+        &lt;dc:type
+           rdf:resource=&quot;http://purl.org/dc/dcmitype/StillImage&quot; /&gt;
+        &lt;dc:title&gt;&lt;/dc:title&gt;
+      &lt;/cc:Work&gt;
+    &lt;/rdf:RDF&gt;
+  &lt;/metadata&gt;
+  &lt;g
+     id=&quot;layer1&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+            </details>
+            <p>
+                ところが，Inkscapeの「PNG画像にエクスポート」機能を使ったあとのSVGファイルには個人情報が含まれるようになります。以下は，Inkscape SVGで保存した場合です。
+            </p>
+            <details>
+                <summary>コードを見る</summary>
+                <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;svg
+   xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;
+   xmlns:cc=&quot;http://creativecommons.org/ns#&quot;
+   xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+   xmlns:svg=&quot;http://www.w3.org/2000/svg&quot;
+   xmlns=&quot;http://www.w3.org/2000/svg&quot;
+   xmlns:sodipodi=&quot;http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd&quot;
+   xmlns:inkscape=&quot;http://www.inkscape.org/namespaces/inkscape&quot;
+   inkscape:export-ydpi=&quot;96&quot;
+   inkscape:export-xdpi=&quot;96&quot;
+   inkscape:export-filename=&quot;C:\Users\ユーザー名\エクスポート先のファイル名.png&quot;
+   width=&quot;210mm&quot;
+   height=&quot;297mm&quot;
+   viewBox=&quot;0 0 210 297&quot;
+   version=&quot;1.1&quot;
+   id=&quot;svg8&quot;
+   inkscape:version=&quot;1.0 (4035a4fb49, 2020-05-01)&quot;
+   sodipodi:docname=&quot;ファイル名.svg&quot;&gt;
+  &lt;defs
+     id=&quot;defs2&quot; /&gt;
+  &lt;sodipodi:namedview
+     id=&quot;base&quot;
+     pagecolor=&quot;#ffffff&quot;
+     bordercolor=&quot;#666666&quot;
+     borderopacity=&quot;1.0&quot;
+     inkscape:pageopacity=&quot;0.0&quot;
+     inkscape:pageshadow=&quot;2&quot;
+     inkscape:zoom=&quot;0.35&quot;
+     inkscape:cx=&quot;400&quot;
+     inkscape:cy=&quot;560&quot;
+     inkscape:document-units=&quot;mm&quot;
+     inkscape:current-layer=&quot;layer1&quot;
+     inkscape:document-rotation=&quot;0&quot;
+     showgrid=&quot;false&quot;
+     inkscape:window-width=&quot;1368&quot;
+     inkscape:window-height=&quot;850&quot;
+     inkscape:window-x=&quot;-6&quot;
+     inkscape:window-y=&quot;-6&quot;
+     inkscape:window-maximized=&quot;1&quot; /&gt;
+  &lt;metadata
+     id=&quot;metadata5&quot;&gt;
+    &lt;rdf:RDF&gt;
+      &lt;cc:Work
+         rdf:about=&quot;&quot;&gt;
+        &lt;dc:format&gt;image/svg+xml&lt;/dc:format&gt;
+        &lt;dc:type
+           rdf:resource=&quot;http://purl.org/dc/dcmitype/StillImage&quot; /&gt;
+        &lt;dc:title&gt;&lt;/dc:title&gt;
+      &lt;/cc:Work&gt;
+    &lt;/rdf:RDF&gt;
+  &lt;/metadata&gt;
+  &lt;g
+     inkscape:label=&quot;レイヤー 1&quot;
+     inkscape:groupmode=&quot;layer&quot;
+     id=&quot;layer1&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+            </details>
+            <p>
+                以下は，プレーンSVGの場合です。
+            </p>
+            <details>
+                <summary>コードを見る</summary>
+                <pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+&lt;svg
+   xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;
+   xmlns:cc=&quot;http://creativecommons.org/ns#&quot;
+   xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+   xmlns:svg=&quot;http://www.w3.org/2000/svg&quot;
+   xmlns=&quot;http://www.w3.org/2000/svg&quot;
+   xmlns:sodipodi=&quot;http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd&quot;
+   xmlns:inkscape=&quot;http://www.inkscape.org/namespaces/inkscape&quot;
+   inkscape:export-ydpi=&quot;96&quot;
+   inkscape:export-xdpi=&quot;96&quot;
+   inkscape:export-filename=&quot;C:\Users\ユーザー名\エクスポート先のファイル名.png&quot;
+   sodipodi:docname=&quot;ファイル名.svg&quot;
+   inkscape:version=&quot;1.0 (4035a4fb49, 2020-05-01)&quot;
+   id=&quot;svg836&quot;
+   version=&quot;1.1&quot;
+   viewBox=&quot;0 0 210 297&quot;
+   height=&quot;297mm&quot;
+   width=&quot;210mm&quot;&gt;
+  &lt;defs
+     id=&quot;defs830&quot; /&gt;
+  &lt;sodipodi:namedview
+     inkscape:window-maximized=&quot;0&quot;
+     inkscape:window-y=&quot;0&quot;
+     inkscape:window-x=&quot;0&quot;
+     inkscape:window-height=&quot;872&quot;
+     inkscape:window-width=&quot;1368&quot;
+     showgrid=&quot;false&quot;
+     inkscape:document-rotation=&quot;0&quot;
+     inkscape:current-layer=&quot;layer1&quot;
+     inkscape:document-units=&quot;mm&quot;
+     inkscape:cy=&quot;560&quot;
+     inkscape:cx=&quot;400&quot;
+     inkscape:zoom=&quot;0.35&quot;
+     inkscape:pageshadow=&quot;2&quot;
+     inkscape:pageopacity=&quot;0.0&quot;
+     borderopacity=&quot;1.0&quot;
+     bordercolor=&quot;#666666&quot;
+     pagecolor=&quot;#ffffff&quot;
+     id=&quot;base&quot; /&gt;
+  &lt;metadata
+     id=&quot;metadata833&quot;&gt;
+    &lt;rdf:RDF&gt;
+      &lt;cc:Work
+         rdf:about=&quot;&quot;&gt;
+        &lt;dc:format&gt;image/svg+xml&lt;/dc:format&gt;
+        &lt;dc:type
+           rdf:resource=&quot;http://purl.org/dc/dcmitype/StillImage&quot; /&gt;
+        &lt;dc:title&gt;&lt;/dc:title&gt;
+      &lt;/cc:Work&gt;
+    &lt;/rdf:RDF&gt;
+  &lt;/metadata&gt;
+  &lt;g
+     id=&quot;layer1&quot;
+     inkscape:groupmode=&quot;layer&quot;
+     inkscape:label=&quot;レイヤー 1&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+            </details>
+            <p>
+                さて，どこが問題か分かりましたか？問題があるのは，以下の部分です。これは，Inkscape SVGとプレーンSVGで共通です。
+            </p>
+            <code><pre>inkscape:export-filename="C:\Users\ユーザー名\エクスポート先のファイル名.png"</pre></code>
+            注）「ユーザー名」と「エクスポート先のファイル名」にはそれぞれ実際の値が入りますが，ここでは例としてこのように書いています。
+            <p>
+                これらは，エクスポートしたPNG画像の絶対パスです。設定として保存されているのでしょう。「ユーザー名」にはそのPCにログインしているユーザー名が入ります。おそらく，Windows10以外のOSでもパスのどこかしらにユーザー名が入ると思います。
+            </p>
+            <p>
+                このように，個人情報が含まれているのです。これをローカルで使用するだけなら問題ないですが，ファイルを配布したりインターネットで公開したりすると，ユーザー名が流出することになります。
+            </p>
+            <h2>対策方法</h2>
+            <p>
+                この問題は，ユーザー名を初期設定のときに設定したものから変更している場合は古いユーザー名が流出するだけなので問題ないですね。
+            </p>
+            <p>
+                しかし，変更していない場合は影響を受けます。
+            </p>
+            <p>
+                対策方法としては，テキストエディターでそのファイルを開いて
+            </p>
+            <code><pre>inkscape:export-filename="C:\Users\ユーザー名\エクスポート先のファイル名.png"</pre></code>
+            <p>
+                の1行をまるごと削除します。
+            </p>
+            <h2>ちなみに</h2>
+            <p>
+                ちなみに，そんな人がいるか分かりませんが，ファイル名に嫌いな人の悪口やfワードを付けて保存している場合はもう1つ気をつける点があります。
+            </p>
+            <p>
+                配布や公開する前にファイル名だけ変えても，前のファイル名がバレてしまいます。これは，「PNG画像にエクスポート」を使用しなくても発生します。問題があるのは，Inkscape SVGとプレーンSVGに共通で以下の部分です。
+            </p>
+            <code><pre>sodipodi:docname="ファイル名.svg"</pre></code>
+            注）「ファイル名」には実際のSVGのファイル名が入ります。
+            <p>
+                ちなみに，ファイル名変更後Inkscapeでファイルを開き，編集して保存すれば，上の「ファイル名」の部分は更新されます。Inkscapeで開いて保存しても，ファイルを編集しないと更新されません。
+            </p>
+            <h2>さいごに</h2>
+            <p>
+                こんな記事を書きましたが，別にInkscapeが嫌いで批判したいわけではありません。あのソフトが無料で使えるのは本当に素晴らしいと思いますし，この記事で指摘した問題のある部分は設定を保存することでInkscapeをより使いやすくするためのものですから，仕方ないとも思います。また，個人情報といってもPCのユーザー名です。
+            </p>
+            <p>
+                一方で，気にする人もいると思うので，この記事がSVG画像を公開する人の役に少しでも立てば嬉しいです。
+            </p>
+            <p>
+                最後までお読みいただき，ありがとうございました。
+            </p>
         </main>
         <footer>
 Copyright © 2020 Robot-Inventor All rights reserved.
