@@ -430,7 +430,7 @@ header {
 }
 
 a:link {
-    color: #00FFFF;
+    color: var(--themecolor);
     transition: 0.3s;
 }
 
