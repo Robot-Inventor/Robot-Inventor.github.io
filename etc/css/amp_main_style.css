@@ -534,12 +534,11 @@ strong {
 
 .quote {
     display: block;
-    padding: 0.3em 1em;
     color: var(--quotetextcolor);
     background: transparent;
-    border: solid 2px var(--quotetextcolor);
-    border-radius: 3px;
-    margin: 10px 10px 10px 0px;
+    border-left: solid 0.3em var(--quotetextcolor);
+    margin: 1em;
+    padding: 1em;
     width: 100%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -548,7 +547,6 @@ strong {
 .quote p {
     margin: 0;
     margin-bottom: 3em;
-    padding: 0;
     max-width: 100%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
