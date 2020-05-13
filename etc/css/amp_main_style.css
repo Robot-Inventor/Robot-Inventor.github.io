@@ -380,6 +380,7 @@ code {
 a:link {
     color: var(--themecolor);
     transition: 0.3s;
+    word-break: break-all;
 }
 
 a:visited {
