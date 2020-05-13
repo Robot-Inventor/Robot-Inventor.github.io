@@ -864,3 +864,131 @@ strong {
         transform: skewX(5deg) skewY(-5deg);
     }
 }
+
+/* ここからハイライトの設定 */
+/* 背景の設定 */
+.editor-colors {
+    background: #364549;
+    color: white;
+    font-family: meiryo, sans-serif;
+    line-height: 180%;
+    width: 100%;
+    overflow-x: scroll;
+    margin: 0;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+/* ここからPython用 */
+.syntax--comment {
+    /* コメント部分 */
+    color: #9dabae;
+    font-style: italic;
+}
+
+.syntax--keyword.syntax--control {
+    /* importやifなどの文 */
+    color: #ebd247;
+}
+
+.syntax--keyword.syntax--operator {
+    /* =などの演算子 */
+    color: #ff8095;
+}
+
+.syntax--string.syntax--quoted {
+    /* クォーテーションで囲まれた文字列 */
+    color: #41b7d7;
+}
+
+.syntax--storage.syntax--type.syntax--function {
+    /* def文 */
+    color: #ebd247;
+}
+
+.syntax--storage.syntax--type.syntax--function + .syntax--entity.syntax--name.syntax--function {
+    /* defの直後の関数名 */
+    color: #8bdf4c;
+}
+
+.syntax--constant.syntax--numeric {
+    /* クォーテーションで囲まれていない数字 */
+    color: #a980f5;
+}
+
+/* ここからxml用 */
+.syntax--meta.syntax--tag.syntax--preprocessor,
+.syntax--meta.syntax--tag.syntax--preprocessor .syntax--punctuation.syntax--definition.syntax--tag {
+    /* xml宣言 */
+    color: #9dabae;
+}
+
+.syntax--punctuation.syntax--definition.syntax--tag,
+.syntax--entity.syntax--name.syntax--tag {
+    /* タグ */
+    color: #ff8095;
+}
+
+.syntax--meta.syntax--tag {
+    /* 属性名 */
+    color: #8bdf4c;
+}
+
+/* ここからJavaScript用 */
+.syntax--support.syntax--variable {
+    /* オブジェクト名 */
+    color: #8bdf4c;
+}
+
+.syntax--entity.syntax--name.syntax--function {
+    /* 関数名 */
+    color: #8bdf4c;
+}
+
+.syntax--storage.syntax--modifier,
+.syntax--storage.syntax--type {
+    /* constやletなどの宣言 */
+    color: #ebd247;
+}
+
+.syntax--variable.syntax--other.syntax--object.syntax--property.syntax--unquoted {
+    /* valueなどの属性名 */
+    color: #8bdf4c;
+}
+
+.syntax--storage.syntax--type.syntax--function.syntax--arrow {
+    /* アロー関数の=> */
+    color: #ff8095;
+}
+
+/* ここからHTML用 */
+.syntax--meta.syntax--tag.syntax--doctype {
+    /* DOCTYPE宣言 */
+    color: #9dabae;
+}
+
+.syntax--entity.syntax--other.syntax--attribute-name {
+    /* 属性名 */
+    color: #8bdf4c;
+}
+
+.syntax--punctuation.syntax--separator.syntax--key-value {
+    /* 属性の= */
+    color: #8bdf4c;
+}
+
+.syntax--string {
+    /* 属性値 */
+    color: #41b7d7;
+}
+
+/* ここからCSS用 */
+.syntax--punctuation.syntax--separator.syntax--key-value {
+    /* プロパティの: */
+    color: white;
+}
+
+.syntax--support.syntax--function.syntax--misc {
+    /* filterのblurなどの関数 */
+    color: #8bdf4c;
+}
