@@ -958,3 +958,22 @@ div[open] {
     /* filterのblurなどの関数 */
     color: #8bdf4c;
 }
+
+/* 記事一覧ページのCSS */
+.article_list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.article_list div {
+    width: 40vmin;
+    min-width: 20vmax;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.article_list amp-img,
+.article_list img {
+    object-fit: cover;
+}
