@@ -313,9 +313,9 @@ body {
 
 main {
     padding: 0;
-    margin: var(--header_height) 0 4em 0;
+    margin: var(--header_height) 0 4em calc((100vw - 100vmin) / 2);
     min-height: calc(70vh - 4em);
-    width: 100vw;
+    width: 100vmin;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
