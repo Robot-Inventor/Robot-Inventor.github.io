@@ -16,5 +16,28 @@
     "theme_color": "#333333",
     "background_color": "#333333",
     "display": "standalone",
-    "start_url": "/index.html"
+    "start_url": "/index.html",
+    "shortcuts": [
+        {
+            "name": "トップページを開く",
+            "short_name": "トップ",
+            "description": "トップページを開く",
+            "url": "/index.html",
+            "icons": [{"src": "/icon/android-chrome-192x192.png", "sizes": "192x192"}]
+        },
+        {
+            "name": "記事一覧ページを開く",
+            "short_name": "記事一覧",
+            "description": "記事一覧ページを開く",
+            "url": "/article/index.html",
+            "icons": [{"src": "/icon/android-chrome-192x192.png", "sizes": "192x192"}]
+        },
+        {
+            "name": "お知らせページを開く",
+            "short_name": "お知らせ",
+            "description": "お知らせページを開く",
+            "url": "/notice/index.html",
+            "icons": [{"src": "/icon/android-chrome-192x192.png", "sizes": "192x192"}]
+        }
+    ]
 }
