@@ -779,6 +779,7 @@ strong {
     height: var(--header_height);
     display: inline-block;
     max-width: 50vw;
+    float: right;
 }
 
 .hamburger {
