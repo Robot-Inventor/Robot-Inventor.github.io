@@ -777,7 +777,6 @@ strong {
 
 .site_title_logo {
     height: var(--header_height);
-    display: inline-block;
     max-width: 50vw;
     float: right;
 }
