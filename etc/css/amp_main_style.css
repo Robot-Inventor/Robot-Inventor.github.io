@@ -279,8 +279,7 @@ a amp-img:hover {
     object-fit: cover;
 }
 
-.half_height amp-img,
-.half_height img {
+.half_height amp-img, .half_height img {
     -o-object-fit: cover;
     object-fit: cover;
 }
@@ -650,45 +649,44 @@ strong {
     41% {
         text-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
         filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
-        -webkit-transform: skewX(/*10deg*/
-        5deg);
-        transform: skewX( 5deg);
+        -webkit-transform: skewX(5deg);
+        transform: skewX(5deg);
     }
     42% {
         text-shadow: 0px 0px 6px black, 5px 5px 3px #96007A, -3px -3px 3px #00A75B;
         filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #96007A) drop-shadow(-3px -3px 3px #00A75B);
-        -webkit-transform: skewX( -5deg);
-        transform: skewX( -5deg);
+        -webkit-transform: skewX(-5deg);
+        transform: skewX(-5deg);
     }
     59% {
         text-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
         filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
-        -webkit-transform: skewX( 20deg) skewY( 5deg);
-        transform: skewX( 20deg) skewY( 5deg);
+        -webkit-transform: skewX(20deg) skewY(5deg);
+        transform: skewX(20deg) skewY(5deg);
     }
     60% {
         text-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
         filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
-        -webkit-transform: skewX( -20deg) skewY( -5deg);
-        transform: skewX( -20deg) skewY( -5deg);
+        -webkit-transform: skewX(-20deg) skewY(-5deg);
+        transform: skewX(-20deg) skewY(-5deg);
     }
     63% {
         text-shadow: 0px 0px 6px black, 3px 3px 3px #96007A, -2px -2px 3px #00A75B;
         filter: drop-shadow(0px 0px 6px black) drop-shadow(3px 3px 3px #96007A) drop-shadow(-2px -2px 3px #00A75B);
-        -webkit-transform: skewX( 5deg) skewY( -2deg);
-        transform: skewX( 5deg) skewY( -2deg);
+        -webkit-transform: skewX(5deg) skewY(-2deg);
+        transform: skewX(5deg) skewY(-2deg);
     }
     70% {
         text-shadow: 0px 0px 6px black, 7px 7px 3px #00A75B, -7px -7px 3px #96007A;
         filter: drop-shadow(0px 0px 6px black) drop-shadow(7px 7px 3px #00A75B) drop-shadow(-7px -7px 3px #96007A);
-        -webkit-transform: skewX( -25deg) skewY( -10deg);
-        transform: skewX( -25deg) skewY( -10deg);
+        -webkit-transform: skewX(-25deg) skewY(-10deg);
+        transform: skewX(-25deg) skewY(-10deg);
     }
     71% {
         text-shadow: 0px 0px 6px black, 1px 1px 3px #96007A, -2px -2px 3px #00A75B;
         filter: drop-shadow(0px 0px 6px black) drop-shadow(1px 1px 3px #96007A) drop-shadow(-2px -2px 3px #00A75B);
-        -webkit-transform: skewX( 5deg) skewY( -5deg);
-        transform: skewX( 5deg) skewY( -5deg);
+        -webkit-transform: skewX(5deg) skewY(-5deg);
+        transform: skewX(5deg) skewY(-5deg);
     }
 }
 
@@ -777,14 +775,14 @@ strong {
 
 .site_title_logo {
     height: var(--header_height);
+    display: inline-block;
     max-width: 50vw;
-    float: right;
 }
 
 .hamburger {
     height: var(--header_height);
-    display: inline-block;
     max-width: 50vw;
+    float: right;
 }
 
 amp-sidebar {
@@ -794,7 +792,7 @@ amp-sidebar {
 
 amp-sidebar a {
     padding: 1em;
-    display: inline-block;
+    display:inline-block;
     text-decoration: none;
 }
 
@@ -813,12 +811,8 @@ div[open] {
     padding: 0;
 }
 
-
 /* ここからハイライトの設定 */
-
-
 /* 背景の設定 */
-
 .editor-colors {
     background: #364549;
     color: white;
@@ -829,12 +823,10 @@ div[open] {
     margin: 0;
     padding: 1em;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+            box-sizing: border-box;
 }
 
-
 /* ここからPython用 */
-
 .syntax--comment {
     /* コメント部分 */
     color: #9dabae;
@@ -861,7 +853,7 @@ div[open] {
     color: #ebd247;
 }
 
-.syntax--storage.syntax--type.syntax--function+.syntax--entity.syntax--name.syntax--function {
+.syntax--storage.syntax--type.syntax--function + .syntax--entity.syntax--name.syntax--function {
     /* defの直後の関数名 */
     color: #8bdf4c;
 }
@@ -871,9 +863,7 @@ div[open] {
     color: #a980f5;
 }
 
-
 /* ここからxml用 */
-
 .syntax--meta.syntax--tag.syntax--preprocessor,
 .syntax--meta.syntax--tag.syntax--preprocessor .syntax--punctuation.syntax--definition.syntax--tag {
     /* xml宣言 */
@@ -891,9 +881,7 @@ div[open] {
     color: #8bdf4c;
 }
 
-
 /* ここからJavaScript用 */
-
 .syntax--support.syntax--variable {
     /* オブジェクト名 */
     color: #8bdf4c;
@@ -920,9 +908,7 @@ div[open] {
     color: #ff8095;
 }
 
-
 /* ここからHTML用 */
-
 .syntax--meta.syntax--tag.syntax--doctype {
     /* DOCTYPE宣言 */
     color: #9dabae;
@@ -943,10 +929,9 @@ div[open] {
     color: #41b7d7;
 }
 
-
 /* ここからCSS用 */
-
 .syntax--punctuation.syntax--separator.syntax--key-value {
+
     color: white;
 }
 
@@ -955,17 +940,15 @@ div[open] {
     color: #8bdf4c;
 }
 
-
 /* 記事一覧ページのCSS */
-
 .article_list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: distribute;
-    justify-content: space-around;
+        justify-content: space-around;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .article_list div {
@@ -978,5 +961,5 @@ div[open] {
 .article_list amp-img,
 .article_list img {
     -o-object-fit: cover;
-    object-fit: cover;
+       object-fit: cover;
 }
