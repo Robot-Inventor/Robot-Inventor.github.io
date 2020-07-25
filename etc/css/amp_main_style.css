@@ -216,8 +216,6 @@ figcaption p {
 
 figure:hover figcaption {
     opacity: 1;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
 }
 
 figure amp-img {
@@ -625,7 +623,8 @@ strong {
 
 .glitch {
     text-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
-    filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
+    -webkit-filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
+            filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
     -webkit-animation: glitch-text 3.5s linear infinite;
     animation: glitch-text 3.5s linear infinite;
     color: var(--textcolor);
@@ -642,49 +641,57 @@ strong {
     73%,
     100% {
         text-shadow: 0px 0px 6px black, 0px 0px 3px #00A75B, 0px 0px 3px #96007A;
-        filter: drop-shadow(0px 0px 6px black) drop-shadow(0px 0px 3px #00A75B) drop-shadow(0px 0px 3px #96007A);
+        -webkit-filter: drop-shadow(0px 0px 6px black) drop-shadow(0px 0px 3px #00A75B) drop-shadow(0px 0px 3px #96007A);
+                filter: drop-shadow(0px 0px 6px black) drop-shadow(0px 0px 3px #00A75B) drop-shadow(0px 0px 3px #96007A);
         -webkit-transform: skewX(0deg);
         transform: skewX(0deg);
     }
     41% {
         text-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
-        filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
+        -webkit-filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
+                filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
         -webkit-transform: skewX(5deg);
         transform: skewX(5deg);
     }
     42% {
         text-shadow: 0px 0px 6px black, 5px 5px 3px #96007A, -3px -3px 3px #00A75B;
-        filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #96007A) drop-shadow(-3px -3px 3px #00A75B);
+        -webkit-filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #96007A) drop-shadow(-3px -3px 3px #00A75B);
+                filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #96007A) drop-shadow(-3px -3px 3px #00A75B);
         -webkit-transform: skewX(-5deg);
         transform: skewX(-5deg);
     }
     59% {
         text-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
-        filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
+        -webkit-filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
+                filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
         -webkit-transform: skewX(20deg) skewY(5deg);
         transform: skewX(20deg) skewY(5deg);
     }
     60% {
         text-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
-        filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
+        -webkit-filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
+                filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
         -webkit-transform: skewX(-20deg) skewY(-5deg);
         transform: skewX(-20deg) skewY(-5deg);
     }
     63% {
         text-shadow: 0px 0px 6px black, 3px 3px 3px #96007A, -2px -2px 3px #00A75B;
-        filter: drop-shadow(0px 0px 6px black) drop-shadow(3px 3px 3px #96007A) drop-shadow(-2px -2px 3px #00A75B);
+        -webkit-filter: drop-shadow(0px 0px 6px black) drop-shadow(3px 3px 3px #96007A) drop-shadow(-2px -2px 3px #00A75B);
+                filter: drop-shadow(0px 0px 6px black) drop-shadow(3px 3px 3px #96007A) drop-shadow(-2px -2px 3px #00A75B);
         -webkit-transform: skewX(5deg) skewY(-2deg);
         transform: skewX(5deg) skewY(-2deg);
     }
     70% {
         text-shadow: 0px 0px 6px black, 7px 7px 3px #00A75B, -7px -7px 3px #96007A;
-        filter: drop-shadow(0px 0px 6px black) drop-shadow(7px 7px 3px #00A75B) drop-shadow(-7px -7px 3px #96007A);
+        -webkit-filter: drop-shadow(0px 0px 6px black) drop-shadow(7px 7px 3px #00A75B) drop-shadow(-7px -7px 3px #96007A);
+                filter: drop-shadow(0px 0px 6px black) drop-shadow(7px 7px 3px #00A75B) drop-shadow(-7px -7px 3px #96007A);
         -webkit-transform: skewX(-25deg) skewY(-10deg);
         transform: skewX(-25deg) skewY(-10deg);
     }
     71% {
         text-shadow: 0px 0px 6px black, 1px 1px 3px #96007A, -2px -2px 3px #00A75B;
-        filter: drop-shadow(0px 0px 6px black) drop-shadow(1px 1px 3px #96007A) drop-shadow(-2px -2px 3px #00A75B);
+        -webkit-filter: drop-shadow(0px 0px 6px black) drop-shadow(1px 1px 3px #96007A) drop-shadow(-2px -2px 3px #00A75B);
+                filter: drop-shadow(0px 0px 6px black) drop-shadow(1px 1px 3px #96007A) drop-shadow(-2px -2px 3px #00A75B);
         -webkit-transform: skewX(5deg) skewY(-5deg);
         transform: skewX(5deg) skewY(-5deg);
     }
@@ -820,8 +827,8 @@ div[open] {
     line-height: 180%;
     width: 100%;
     overflow-x: scroll;
-    margin: 0;
-    padding: 1em;
+    margin: 1em 0.5em;
+    padding: 0.5rem;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }

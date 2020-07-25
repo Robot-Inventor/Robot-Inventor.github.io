@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <script async src="https://cdn.ampproject.org/v0.js"></script>
-        <title>androidのGoogle ChromeでUIとWEBコンテンツを強制的にダークテーマにする - 理系YouTuberのブログ的な何か</title>
-        <link rel="canonical" href="https://robot-inventor.github.io/article/2020/05/14/">
+        <title>PCのローカルサーバーにスマホからアクセスする方法 - 理系YouTuberのブログ的な何か</title>
+        <link rel="canonical" href="https://robot-inventor.github.io/article/2020/07/25/">
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
         <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
         <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
@@ -25,7 +25,7 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-TileImage" content="https://robot-inventor.github.io/icon/mstile-144x144.png">
         <meta name="theme-color" content="#333333">
-        <meta name="description" content="androidのGoogle ChromeでUIとWEBコンテンツを強制的にダークテーマにする方法を画像つきで解説します。">
+        <meta name="description" content="PCで立てたローカルサーバーにスマホからアクセスする方法について分かりやすく説明します。">
 <!--template css start--><style amp-custom>
 *,::after,::before{-webkit-box-sizing:content-box;box-sizing:content-box;font-display:swap}ol[class],ul[class]{padding:0}blockquote,body,dd,dl,figcaption,figure,h1,h2,h3,h4,li,ol[class],p,ul[class]{margin:0}body{min-height:100vh;scroll-behavior:smooth;text-rendering:optimizeSpeed;line-height:1.5}ol[class],ul[class]{list-style:none}a:not([class]){-webkit-text-decoration-skip:ink;text-decoration-skip-ink:auto}amp-img{max-width:100%;display:block}article>*+*{margin-top:1em}button,input,select,textarea{font:inherit}@media (prefers-reduced-motion:reduce){*{-webkit-animation-duration:0s;animation-duration:0s;-webkit-animation-iteration-count:1;animation-iteration-count:1;-webkit-transition-duration:0s;-o-transition-duration:0s;transition-duration:0s;scroll-behavior:auto}}:root{--bgcolor:#FFFFFF;--textcolor:#333333;--div_textcolor:white;--themecolor:#00CED1;--divcolor:#001970;--normallinkcolor:#40E0D0;--visitedlinkcolor:#6495ED;--hoverlinkcolor:#20B2AA;--activelinkcolor:#008080;--quotetextcolor:#999999;--cookie_info_bg:rgba(0, 0, 0, 0.8);--cookie_info_textcolor:white;--header_height:10vmin}@media (prefers-color-scheme:dark){:root{--bgcolor:#000000;--textcolor:#dddddd;--div_textcolor:var(--textcolor);--themecolor:#20B2AA;--divcolor:#222222;--normallinkcolor:#40E0D0;--visitedlinkcolor:#6495ED;--hoverlinkcolor:#2F4F4F;--activelinkcolor:#2F4F4F;--quotetextcolor:#888888;--cookie_info_bg:rgba(255, 255, 255, 0.5);--cookie_info_textcolor:black}.darkmode_support_image{-webkit-filter:grayscale(100%);filter:grayscale(100%)}}@media screen and (min-width:800px){div[show=pc]{display:block}div[show=phone]{display:none}div[show=phone_small]{display:none}:root{--figcaption_nohover:0;--figcaption_place:5%}}@media screen and (min-width:600px) and (max-width:800px),(orientation:portrait){div[show=pc]{display:none}div[show=phone]{display:block}div[show=phone_small]{display:none}:root{--figcaption_nohover:1;--figcaption_place:5%}}@media screen and (max-width:600px){div[show=pc]{display:none}div[show=phone]{display:none}div[show=phone_small]{display:block}:root{--figcaption_nohover:1;--figcaption_place:5%}}progress{width:50%}figure{overflow:hidden;width:100%;position:relative;top:0;left:0;display:block;margin:0}figure div{margin:0;padding:0}figcaption{overflow:scroll;position:absolute;top:0;left:0;z-index:2;width:100%;height:100%;background:rgba(0,0,0,.6);-webkit-transition:.3s;-o-transition:.3s;transition:.3s;opacity:var(--figcaption_nohover);backdrop-filter:none;-webkit-backdrop-filter:none}p{width:calc(100% - 1em);margin:1em .5em 0 .5em}figcaption p{position:absolute;top:0;left:0;padding:var(--figcaption_place) 10vw;margin:0;width:100%;height:100%;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff}figure:hover figcaption{opacity:1}figure amp-img{overflow:hidden;-webkit-transition:.3s;-o-transition:.3s;transition:.3s;-webkit-filter:none;filter:none}figure:hover amp-img{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}amp-img{max-width:100%}a amp-img{-webkit-transition:.3s;-o-transition:.3s;transition:.3s}a amp-img:hover{-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1)}.half{width:50%;height:auto}.third{width:33%;height:auto}.fourth{width:25%;height:auto}.tenth{width:10%;height:auto}.half_height{width:100%;height:50vh;max-height:50vw;-o-object-fit:cover;object-fit:cover}.half_height amp-img,.half_height img{-o-object-fit:cover;object-fit:cover}.grayscale{-webkit-filter:grayscale(100%) brightness(80%);filter:grayscale(100%) brightness(80%)}body,html{font-family:Comfortaa,"Noto Sans JP",sans-selif;background-color:var(--bgcolor);color:var(--textcolor);margin:0;padding:0;width:100vw}*{-ms-overflow-style:none;scrollbar-width:none;outline:0}::-webkit-scrollbar{display:none}body{background-color:var(--bgcolor)}main{padding:0;margin:var(--header_height) 0 4em calc((100vw - 100vmin)/ 2);min-height:calc(70vh - 4em);width:100vmin;-webkit-box-sizing:border-box;box-sizing:border-box}div{background:var(--divcolor);color:var(--div_textcolor);width:100%;height:auto;overflow:hidden;padding:.5em;-webkit-box-sizing:border-box;box-sizing:border-box}::-moz-selection{background:var(--themecolor);color:#fff}::selection{background:var(--themecolor);color:#fff}a:link{color:var(--themecolor);-webkit-transition:.3s;-o-transition:.3s;transition:.3s;word-break:break-all}a:visited{color:#007dff}a:hover{color:#00c8ff}a:active{color:#00c8ff}a[class=button]{color:var(--themecolor)}a:visited[class=button]{color:var(--themecolor)}a:active[class=button]{color:var(--themecolor)}a:hover[class=button]{color:#fff}.button,button{display:inline-block;padding:.3em 1em;color:var(--themecolor);border:solid 2px var(--themecolor);border-radius:3px;text-decoration:none;margin:10px 10px 10px 0;-webkit-transition:.3s;-o-transition:.3s;transition:.3s;background:0 0}.button:hover,button:hover{background:var(--themecolor);color:var(--textcolor)}.cookie_info{position:fixed;bottom:0;left:0;background:var(--cookie_info_bg);color:var(--cookie_info_textcolor);width:100vw;margin:0;padding:2em 1em;display:none;z-index:200;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}h1{width:calc(100% - 2em - 9px);color:var(--themecolor);padding:.25em .5em;background:0 0;border-left:solid 9px var(--divcolor);border-bottom:solid 2px var(--divcolor);margin:2em 0 1em .5em}h2{width:calc(100% - 2em - 9px);color:var(--themecolor);padding:.25em .5em;background:0 0;border-left:solid 9px var(--divcolor);border-bottom:solid 2px var(--divcolor);margin:2em 0 1em .5em}h3{width:calc(100% - 2em - 9px);color:var(--themecolor);padding:.25em .5em;background:0 0;border-left:solid 9px var(--divcolor);border-bottom:solid 2px var(--divcolor);margin:2em 0 1em .5em}.inline{display:inline;padding:0;border-left:none;border-bottom:none}.block{display:block}.no_border{padding:0;border-left:none;border-bottom:none}iframe{max-width:100%}.video{position:relative;padding:0;width:100%;padding-top:56.25%}.video iframe{position:absolute;padding:0;top:0;right:0;width:100%;height:100%}table,td,th{border:1px var(--textcolor) solid;border-collapse:collapse}hr{background:var(--textcolor);border:none;color:var(--textcolor);height:2px}footer{display:inline-block;vertical-align:middle;text-align:center;background-color:var(--divcolor);width:100vw;min-height:30vh;padding:5vh 0 20vh 0;-webkit-box-sizing:border-box;box-sizing:border-box;color:var(--div_textcolor)}.no_color{background-color:rgba(0,0,0,0)}.themecolor{color:var(--themecolor)}strong{color:var(--themecolor);font-size:120%}.important{display:block;padding:.3em 1em;color:red;background:0 0;border:solid 2px red;border-radius:3px;margin:10px 10px 10px 0;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box}.quote{display:block;color:var(--quotetextcolor);background:0 0;border-left:solid .3em var(--quotetextcolor);margin:1em;padding:1em;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box}.quote p{margin:0;margin-bottom:3em;max-width:100%;-webkit-box-sizing:border-box;box-sizing:border-box}.marquee{width:100%;padding:.5em 0;overflow:hidden;margin-bottom:10px;position:relative;-webkit-box-sizing:content-box;box-sizing:content-box}.marquee p:after{content:"";white-space:nowrap;padding-right:50px}.marquee p{margin:0;padding-left:100%;display:inline-block;white-space:nowrap;width:auto;-webkit-animation-name:marquee;-webkit-animation-timing-function:linear;-webkit-animation-duration:10s;-webkit-animation-iteration-count:infinite;-moz-animation-name:marquee;-moz-animation-timing-function:linear;-moz-animation-duration:10s;-moz-animation-iteration-count:infinite;-ms-animation-name:marquee;-ms-animation-timing-function:linear;-ms-animation-duration:10s;-ms-animation-iteration-count:infinite;-o-animation-name:marquee;-o-animation-timing-function:linear;-o-animation-duration:10s;-o-animation-iteration-count:infinite;animation-name:marquee;animation-timing-function:linear;animation-duration:10s;animation-iteration-count:infinite}@-webkit-keyframes marquee{from{-webkit-transform:translate(0)}99%,to{-webkit-transform:translate(-100%)}}@keyframes marquee{from{-webkit-transform:translate(0);transform:translate(0)}99%,to{-webkit-transform:translate(-100%);transform:translate(-100%)}}.glitch{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);-webkit-animation:glitch-text 3.5s linear infinite;animation:glitch-text 3.5s linear infinite;color:var(--textcolor)}@-webkit-keyframes glitch-text{0%,100%,40%,44%,58%,61%,65%,69%,73%{text-shadow:0 0 6px #000,0 0 3px #00a75b,0 0 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(0 0 3px #00a75b) drop-shadow(0 0 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(0 0 3px #00a75b) drop-shadow(0 0 3px #96007a);-webkit-transform:skewX(0);transform:skewX(0)}41%{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);-webkit-transform:skewX(5deg);transform:skewX(5deg)}42%{text-shadow:0 0 6px #000,5px 5px 3px #96007a,-3px -3px 3px #00a75b;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #96007a) drop-shadow(-3px -3px 3px #00a75b);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #96007a) drop-shadow(-3px -3px 3px #00a75b);-webkit-transform:skewX(-5deg);transform:skewX(-5deg)}59%{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);-webkit-transform:skewX(20deg) skewY(5deg);transform:skewX(20deg) skewY(5deg)}60%{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);-webkit-transform:skewX(-20deg) skewY(-5deg);transform:skewX(-20deg) skewY(-5deg)}63%{text-shadow:0 0 6px #000,3px 3px 3px #96007a,-2px -2px 3px #00a75b;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(3px 3px 3px #96007a) drop-shadow(-2px -2px 3px #00a75b);filter:drop-shadow(0 0 6px #000) drop-shadow(3px 3px 3px #96007a) drop-shadow(-2px -2px 3px #00a75b);-webkit-transform:skewX(5deg) skewY(-2deg);transform:skewX(5deg) skewY(-2deg)}70%{text-shadow:0 0 6px #000,7px 7px 3px #00a75b,-7px -7px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(7px 7px 3px #00a75b) drop-shadow(-7px -7px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(7px 7px 3px #00a75b) drop-shadow(-7px -7px 3px #96007a);-webkit-transform:skewX(-25deg) skewY(-10deg);transform:skewX(-25deg) skewY(-10deg)}71%{text-shadow:0 0 6px #000,1px 1px 3px #96007a,-2px -2px 3px #00a75b;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(1px 1px 3px #96007a) drop-shadow(-2px -2px 3px #00a75b);filter:drop-shadow(0 0 6px #000) drop-shadow(1px 1px 3px #96007a) drop-shadow(-2px -2px 3px #00a75b);-webkit-transform:skewX(5deg) skewY(-5deg);transform:skewX(5deg) skewY(-5deg)}}@keyframes glitch-text{0%,100%,40%,44%,58%,61%,65%,69%,73%{text-shadow:0 0 6px #000,0 0 3px #00a75b,0 0 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(0 0 3px #00a75b) drop-shadow(0 0 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(0 0 3px #00a75b) drop-shadow(0 0 3px #96007a);-webkit-transform:skewX(0);transform:skewX(0)}41%{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);-webkit-transform:skewX(5deg);transform:skewX(5deg)}42%{text-shadow:0 0 6px #000,5px 5px 3px #96007a,-3px -3px 3px #00a75b;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #96007a) drop-shadow(-3px -3px 3px #00a75b);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #96007a) drop-shadow(-3px -3px 3px #00a75b);-webkit-transform:skewX(-5deg);transform:skewX(-5deg)}59%{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);-webkit-transform:skewX(20deg) skewY(5deg);transform:skewX(20deg) skewY(5deg)}60%{text-shadow:0 0 6px #000,5px 5px 3px #00a75b,-3px -3px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(5px 5px 3px #00a75b) drop-shadow(-3px -3px 3px #96007a);-webkit-transform:skewX(-20deg) skewY(-5deg);transform:skewX(-20deg) skewY(-5deg)}63%{text-shadow:0 0 6px #000,3px 3px 3px #96007a,-2px -2px 3px #00a75b;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(3px 3px 3px #96007a) drop-shadow(-2px -2px 3px #00a75b);filter:drop-shadow(0 0 6px #000) drop-shadow(3px 3px 3px #96007a) drop-shadow(-2px -2px 3px #00a75b);-webkit-transform:skewX(5deg) skewY(-2deg);transform:skewX(5deg) skewY(-2deg)}70%{text-shadow:0 0 6px #000,7px 7px 3px #00a75b,-7px -7px 3px #96007a;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(7px 7px 3px #00a75b) drop-shadow(-7px -7px 3px #96007a);filter:drop-shadow(0 0 6px #000) drop-shadow(7px 7px 3px #00a75b) drop-shadow(-7px -7px 3px #96007a);-webkit-transform:skewX(-25deg) skewY(-10deg);transform:skewX(-25deg) skewY(-10deg)}71%{text-shadow:0 0 6px #000,1px 1px 3px #96007a,-2px -2px 3px #00a75b;-webkit-filter:drop-shadow(0 0 6px #000) drop-shadow(1px 1px 3px #96007a) drop-shadow(-2px -2px 3px #00a75b);filter:drop-shadow(0 0 6px #000) drop-shadow(1px 1px 3px #96007a) drop-shadow(-2px -2px 3px #00a75b);-webkit-transform:skewX(5deg) skewY(-5deg);transform:skewX(5deg) skewY(-5deg)}}.headerbar{width:100vw;height:var(--header_height);margin:0;padding:0;position:fixed;top:0;z-index:50;background:var(--divcolor);opacity:.8}.headerbar svg{opacity:1}.site_title_logo{height:var(--header_height);display:inline-block;max-width:50vw}.hamburger{height:var(--header_height);max-width:50vw;float:right}amp-sidebar{padding:0 2em;background:rgba(51,51,51,.7)}amp-sidebar a{padding:1em;display:inline-block;text-decoration:none}amp-sidebar hr{background:#fff}.close-sidebar{margin:2em 0;padding:0;background:0 0}div[open]{margin:0;padding:0}.editor-colors{background:#364549;color:#fff;font-family:meiryo,sans-serif;line-height:180%;width:100%;overflow-x:scroll;margin:1em .5em;padding:.5rem;-webkit-box-sizing:border-box;box-sizing:border-box}.syntax--comment{color:#9dabae;font-style:italic}.syntax--keyword.syntax--control{color:#ebd247}.syntax--keyword.syntax--operator{color:#ff8095}.syntax--string.syntax--quoted{color:#41b7d7}.syntax--storage.syntax--type.syntax--function{color:#ebd247}.syntax--storage.syntax--type.syntax--function+.syntax--entity.syntax--name.syntax--function{color:#8bdf4c}.syntax--constant.syntax--numeric{color:#a980f5}.syntax--meta.syntax--tag.syntax--preprocessor,.syntax--meta.syntax--tag.syntax--preprocessor .syntax--punctuation.syntax--definition.syntax--tag{color:#9dabae}.syntax--entity.syntax--name.syntax--tag,.syntax--punctuation.syntax--definition.syntax--tag{color:#ff8095}.syntax--meta.syntax--tag{color:#8bdf4c}.syntax--support.syntax--variable{color:#8bdf4c}.syntax--entity.syntax--name.syntax--function{color:#8bdf4c}.syntax--storage.syntax--modifier,.syntax--storage.syntax--type{color:#ebd247}.syntax--variable.syntax--other.syntax--object.syntax--property.syntax--unquoted{color:#8bdf4c}.syntax--storage.syntax--type.syntax--function.syntax--arrow{color:#ff8095}.syntax--meta.syntax--tag.syntax--doctype{color:#9dabae}.syntax--entity.syntax--other.syntax--attribute-name{color:#8bdf4c}.syntax--punctuation.syntax--separator.syntax--key-value{color:#8bdf4c}.syntax--string{color:#41b7d7}.syntax--punctuation.syntax--separator.syntax--key-value{color:#fff}.syntax--support.syntax--function.syntax--misc{color:#8bdf4c}.article_list{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;-ms-flex-wrap:wrap;flex-wrap:wrap}.article_list div{width:40vmin;min-width:20vmax;padding:0;margin-bottom:2rem}.article_list amp-img,.article_list img{-o-object-fit:cover;object-fit:cover}</style>
 <!--template css end-->
@@ -37,94 +37,63 @@
 <!--header end-->
         <main>
             <figure class="half_height">
-                <amp-img srcset="/article/2020/05/14/webサイトを暗くする.jpg.webp 1920w, /article/2020/05/14/webサイトを暗くする_s.jpg.webp 400w" alt="" width="1920" height="1200" layout="responsive">
-                    <amp-img fallback srcset="/article/2020/05/14/webサイトを暗くする.jpg 1920w, /article/2020/05/14/webサイトを暗くする_s.jpg 400w" alt="" width="1920" height="1200" layout="responsive"></amp-img>
+                <amp-img srcset="/article/2020/07/25/datacenter_DSC00055.jpg.webp 1920w, /article/2020/07/25/datacenter_DSC00055_s.jpg.webp 400w" alt="" width="1920" height="1280" layout="responsive">
+                    <amp-img fallback srcset="/article/2020/07/25/datacenter_DSC00055.jpg 1920w, /article/2020/07/25/datacenter_DSC00055_s.jpg 400w" alt="" width="1920" height="1280" layout="responsive"></amp-img>
                 </amp-img>
                 <figcaption>
                     <p>
-                        <strong>ダ</strong>ークテーマのコンテンツ
+                        <strong>サ</strong>ーバーにアクセス
                     </p>
                 </figcaption>
             </figure>
-            <div class="important">
-                <details>
-                    <summary>重要　2020/07/23追記　2020/07/23以前に記事を閲覧した方へ（クリックで詳細を表示します）</summary>
-                    Google Chrome 84にアップデートしたところ、以前の本記事に書いていた方法でWEBコンテンツを強制的にダークテーマにしたものを簡単にはもとに戻せなくなりました（現在の本記事の方法の場合は簡単に元に戻せます）。もとに戻せなくなるのが困る場合は、アップデート前に設定の<b>「ウェブサイトを暗くする」チェックボックスを外してから</b>WEBコンテンツを強制的にダークテーマにする試験機能を解除しておいてください。また、すでにアップデートしてしまった場合でWEBコンテンツを強制的にダークテーマにする試験機能を解除したい場合は、設定からChromeを無効化し、その後Play Storeでアップデートすると解除されますが、開いていたタブやChromeの設定はすべて消えます。また、Chrome 84向けに記事内容を色々変更しました。変更前の記事は、<a href="index_old.html">こちら</a>
-                </details>
-            </div>
-            <div class="important">
-                この記事と同じ内容を<a href="https://qiita.com/Robot-Inventor/items/1d522c5858898ce63366" target="_blank" rel="noreferrer noopener">Qiita</a>にも投稿してあります。
-            </div>
-            <div class="important">
-                注意　この記事で紹介する方法は開発途中の機能を有効にするものを含みます。ただし、UIのダークテーマは正式な機能になっています。また、画像はandroid タブレットのものであり、スマートフォンでは画面やボタンの配置等が異なる可能性があります。
-            </div>
-            <div class="important">
-                この記事はGoogle Chrome 84向けです。古いバージョンを使っている場合は<del>（更新しろ）</del><a href="index_old.html">こちら</a>
-            </div>
-            <h1>2020/05/14（木）　androidのGoogle ChromeでUIとWEBコンテンツを強制的にダークテーマにする</h1>
-            <h2 id="ダークモードについて">ダークモードについて</h2>
-            <p>先日、YouTubeで<a href="https://youtu.be/E5Jg4Wm9b7o" target="_blank" rel="noreferrer noopener">iOS 13 がダークモードに対応するという動画</a>を見ました。androidでダークモードに対応しているアプリを調べていた際、ふと、Chromeをダークモードにできるのかが気になりました。</p>
-            <p>ちなみにPCのChromeは、<a href="https://chrome.google.com/webstore/unsupported" target="_blank" rel="noreferrer noopener">Chrome ウェブストア</a>でテーマをダウンロードすればダークモードにできます。また、正式にダークモードをサポートしているGoogle のandroid向けアプリには以下のようなものがあります（実際には他にもたくさんあります）。</p>
-            <ul>
-            <li>keep</li>
-            <li>カレンダー</li>
-            <li>時計</li>
-            <li>連絡帳</li>
-            <li>Youtube</li>
-            <li>Google 日本語入力</li>
-            </ul>
-            <p>ダークモードにする利点としては、</p>
-            <ul>
-            <li>かっこいい</li>
-            <li>バッテリーを節約できる（特に有機 EL ディスプレイ搭載端末）</li>
-            <li>目に優しい（？）</li>
-            </ul>
-            <p>などがあります。</p>
-            <h2 id="uiをダークテーマにする">UIをダークテーマにする</h2>
-            <p>簡単です。</p>
-            <pre class="editor-colors">Chromeのメニュー（画面右上の丸が縦に3つ並んだマーク）&gt; 設定 &gt; 基本設定 &gt; テーマ &gt; 暗</pre>
-            <p>を選択すればUIをダークテーマにできます。</p>
-            <h2 id="webコンテンツを強制的にダークテーマにする">WEBコンテンツを強制的にダークテーマにする</h2>
-            <p>ダークテーマに対応しているサイト（コンテンツの見た目を設定するCSSのメディアクエリでprefers-color-schemeを使用しているサイト）であれば、上記のUIの変更だけでWEBコンテンツもダークテーマになります。</p>
-            <p>ところが、現時点で対応しているサイトは一部のサイトを除き、ほとんどありません。そこで、コンテンツを強制的にダークテーマにします。</p>
-            <p>まず、Chromeを開き、検索窓に</p>
-            <pre class="editor-colors">chrome://flags</pre>
-            <p>と入力します。</p>
-            <p>すると、開発途中の機能の有効・無効を切り替えるメニューが表示されます。</p>
-            <amp-img srcset="/article/2020/05/14/flags_page.jpg.webp 1920w, /article/2020/05/14/flags_page_s.jpg.webp 400w" alt="" width="1920" height="1036" layout="responsive">
-                <amp-img fallback srcset="/article/2020/05/14/flags_page.jpg 1920w, /article/2020/05/14/flags_page_s.jpg 400w" alt="" width="1920" height="1036" layout="responsive"></amp-img>
-            </amp-img>
-            <p>ページ内検索か、画面上部のSearch flagsに</p>
-            <pre class="editor-colors">dark</pre>
-            <p>と入力します。</p>
-            <p>Force Dark Mode for Web Contentsという項目のDefaultをEnabledに切り替えます。Enabledが複数ありますが、色の反転方法や画像の色を反転するかどうかが違います。好きなのを選んでください。</p>
-            <p>すると、画面下部に</p>
-            <blockquote>
-            <p>Your changes will take effect the next time you relaunch Google Chrome.
-            訳：変更は、次回Google Chromeを再起動したときに有効になります。</p>
-            </blockquote>
-            <p>と表示されるのでRelaunchを押して再起動します。コンテンツが上手くダークにならない場合は1度Chromeを閉じてもう1度起動してみてください）</p>
-            <h2 id="結果">結果</h2>
-            <p>ChromeのUIとウェブサイトの表示の両方をダークモードにすると、下の画像のようになります（画像はQiitaのトップページ）。以前試験機能の別の項目しか方法がなかったときはコンテンツをダークテーマにすると画像の色が反転することがありましたが今は問題ありません。</p>
-            <amp-img srcset="/article/2020/05/14/ダークテーマのqiita.jpg.webp 1920w, /article/2020/05/14/ダークテーマのqiita_s.jpg.webp 400w" alt="" width="1920" height="1200" layout="responsive">
-                <amp-img fallback srcset="/article/2020/05/14/ダークテーマのqiita.jpg 1920w, /article/2020/05/14/ダークテーマのqiita_s.jpg 400w" alt="" width="1920" height="1200" layout="responsive"></amp-img>
-            </amp-img>
-            <p>ただし、サイトによっては配色が不自然になったり、背景が透過に設定されている画像が見にくくなったり、さらに文字が読みにくくなったりする場合があります。気になる場合、ダークモードにするのは UI のみにしましょう。</p>
-            <p>下の画像は、以前試験機能の別の項目しか方法がなかったときにコンテンツをダークテーマにした際のスクリーンショットです。配色や画像の色が不自然でしたが、現在は改善されているのがよくわかると思います。</p>
-            <amp-img srcset="/article/2020/05/14/古いダークテーマのqiita.jpg.webp 1920w, /article/2020/05/14/古いダークテーマのqiita_s.jpg.webp 400w" alt="" width="1920" height="1200" layout="responsive">
-                <amp-img fallback srcset="/article/2020/05/14/古いダークテーマのqiita.jpg 1920w, /article/2020/05/14/古いダークテーマのqiita_s.jpg 400w" alt="" width="1920" height="1200" layout="responsive"></amp-img>
-            </amp-img>
-            <h2 id="設定の解除">設定の解除</h2>
-            <p>ここで紹介した方法を使えば通常の設定からUIやコンテンツのダークテーマを切り替えできるのでそこから解除してください。</p>
-            <p>試験機能自体を解除したい場合は、まず、Chromeを開き、検索窓に</p>
-            <pre class="editor-colors">chrome://flags</pre>
-            <p>と入力し、画面右上の「Reset all to default」を押します。他の試験機能も有効にしていてダークテーマの試験機能のみ解除したい場合はReset all to defaultせずに該当する項目の「Enabled」を「Default」にします。</p>
-            <p>すると、画面下部に</p>
-            <blockquote>
-            <p>Your changes will take effect the next time you relaunch Google Chrome.
-            訳：変更は、次回Google Chromeを再起動したときに有効になります。</p>
-            </blockquote>
-            <p>と表示されるのでRelaunchを押して再起動します。</p>
+            <h1>2020/07/25（土）　PCのローカルサーバーにスマホからアクセスする方法</h1>
+            <p>
+                PCで立てたローカルサーバーにスマホからアクセスする方法です。サーバーはどうやって立てても同じようにできるはずですが，今回はPythonを使って説明します。
+            </p>
+            <p>
+                また，今回紹介する方法は，ローカルサーバーを立てたPCとアクセスするスマホが同じネットワークに繋がっている必要があります。同じネットワークというのは，例えば同じWi-Fiに接続しているなどです。
+            </p>
+            <p>
+                Pythonがインストールされている環境でサーバーを立てるには，コマンドラインで以下のコマンドを実行します。Pythonを使わずにローカルサーバーを立てたい場合は，自分で調べてください。
+            </p>
+            <p>
+                また，すでにローカルサーバーを立ててある場合は，次のコマンドを実行する必要はありません。
+            </p>
+            <pre class="editor-colors">$ python -m http.server 8000</pre>
+            <p>
+                これで，ローカルサーバーを立てられました。また，8000の部分は別の数字でも良いです。
+            </p>
+            <p>
+                次に，PCのIPアドレスを調べます。ここからは，どんな方法でローカルサーバーを立てたとしても同じ手順です。
+            </p>
+            <p>
+                Windowsの場合は，次のコマンドを実行します。
+            </p>
+            <pre class="editor-colors">$ ipconfig</pre>
+            <p>色々出てきた中で，「IPv4 アドレス」と書かれたxxx.xxx.x.x（注：xは数字・文字数が違う可能性あり）という部分を使います。</p>
+            <p>
+                また，Macならメニュー（左上のリンゴのマーク）からシステム環境設定を開き，ネットワークを開き，「IPアドレスxxx.xxx.x.x（注：xは数字・文字数が違う可能性あり）が設定されています。」の部分です。
+            </p>
+            <p>
+                Linuxなら
+            </p>
+            <pre class="editor-colors">$ hostname -I</pre>
+            <p>
+                です。複数出てくる場合は最初のもので良いはず。
+            </p>
+            <p>
+                さて，ここまででローカルサーバーを立てるところからPCのIPアドレスを調べるところまでできました。
+            </p>
+            <p>
+                ここからは，スマホを使います。GoogleアプリでもGoogle ChromeでもSafariでも，とりあえずURLを入力して開けるアプリを用意し，次のURL（？）を半角で入力します。
+            </p>
+            <pre class="editor-colors">&lt;PCのIPアドレス&gt;:8000</pre>
+            <p>
+                &lt;PCのIPアドレス&gt;は，先程調べたPCのIPアドレスに置き換えてください。
+            </p>
+            <p>
+                また，8000の部分は，サーバーを立てるときに別の数字を指定した場合はそれを使ってください。
+            </p>
         </main>
         <footer>
 Copyright © 2020 Robot-Inventor All rights reserved.
