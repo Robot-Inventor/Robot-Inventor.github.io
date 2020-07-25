@@ -790,6 +790,7 @@ strong {
     height: var(--header_height);
     max-width: 50vw;
     float: right;
+    cursor: pointer;
 }
 
 amp-sidebar {
@@ -816,6 +817,10 @@ amp-sidebar hr {
 div[open] {
     margin: 0;
     padding: 0;
+}
+
+details summary {
+    cursor: pointer;
 }
 
 /* ここからハイライトの設定 */
