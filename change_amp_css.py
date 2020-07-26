@@ -7,8 +7,12 @@ import glob
 
 
 CSS_FILE_PATH = "etc/css/amp_main_style.min.css"
-CSS_START_MESSAGE = "<!--template css start-->"
-CSS_END_MESSAGE = "<!--template css end-->"
+# テンプレートCSSの範囲の目印（正規表現で使用される文字をエスケープしたもの）
+ESCAPED_CSS_START_MESSAGE = "/\*template css start\*/"
+ESCAPED_CSS_END_MESSAGE = "/\*template css end\*/"
+# テンプレートCSSの範囲の目印（正規表現で使用される文字をエスケープしていないもの）
+CSS_START_MESSAGE = "/*template css start*/"
+CSS_END_MESSAGE = "/*template css end*/"
 
 template_css = ""
 
@@ -22,8 +26,8 @@ def change_css(html_file_path):
         old_css = old_css.replace("\r\n", "\n").replace("\r", "\n")
     if "<html amp" in old_css:
         with open(html_file_path, mode="w", newline="", encoding="utf-8_sig") as f:
-            pattern = re.compile(f"{CSS_START_MESSAGE}.*?{CSS_END_MESSAGE}", re.MULTILINE | re.DOTALL)
-            old_css = re.sub(pattern, f"{CSS_START_MESSAGE}<style amp-custom>\n{template_css}</style>\n{CSS_END_MESSAGE}", old_css)
+            pattern = re.compile(f"{ESCAPED_CSS_START_MESSAGE}.*?{ESCAPED_CSS_END_MESSAGE}", re.MULTILINE | re.DOTALL)
+            old_css = re.sub(pattern, f"{CSS_START_MESSAGE}\n{template_css}\n{CSS_END_MESSAGE}", old_css)
             f.write(old_css)
     return
 
