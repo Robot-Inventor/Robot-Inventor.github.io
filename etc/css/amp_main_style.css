@@ -951,27 +951,3 @@ details summary {
     /* filterのblurなどの関数 */
     color: #8bdf4c;
 }
-
-/* 記事一覧ページのCSS */
-.article_list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-}
-
-.article_list div {
-    width: 40vmin;
-    min-width: 20vmax;
-    padding: 0;
-    margin-bottom: 2rem;
-}
-
-.article_list amp-img,
-.article_list img {
-    -o-object-fit: cover;
-       object-fit: cover;
-}
