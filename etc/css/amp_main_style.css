@@ -830,7 +830,7 @@ details summary {
     color: white;
     font-family: meiryo, sans-serif;
     line-height: 180%;
-    width: 100%;
+    width: calc(100% - 1em);
     overflow-x: scroll;
     margin: 1em 0.5em;
     padding: 0.5rem;
