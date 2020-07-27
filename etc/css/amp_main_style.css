@@ -75,35 +75,23 @@ select {
 }
 
 :root {
-    --bgcolor: #FFFFFF;
-    --textcolor: #333333;
-    --div_textcolor: white;
-    --themecolor: #00CED1;
-    --divcolor: #001970;
-    --normallinkcolor: #40E0D0;
-    --visitedlinkcolor: #6495ED;
-    --hoverlinkcolor: #20B2AA;
-    --activelinkcolor: #008080;
-    --quotetextcolor: #999999;
-    --cookie_info_bg: rgba(0, 0, 0, 0.8);
-    --cookie_info_textcolor: white;
+    --bg_color: #FFFFFF;
+    --text_color: #333333;
+    --div_text_color: white;
+    --theme_color: #00CED1;
+    --div_color: #001970;
+    --quote_text_color: #999999;
     --header_height: 10vmin;
 }
 
 @media (prefers-color-scheme: dark) {
      :root {
-        --bgcolor: #000000;
-        --textcolor: #dddddd;
-        --div_textcolor: var(--textcolor);
-        --themecolor: #20B2AA;
-        --divcolor: #222222;
-        --normallinkcolor: #40E0D0;
-        --visitedlinkcolor: #6495ED;
-        --hoverlinkcolor: #2F4F4F;
-        --activelinkcolor: #2F4F4F;
-        --quotetextcolor: #888888;
-        --cookie_info_bg: rgba(255, 255, 255, 0.5);
-        --cookie_info_textcolor: black;
+        --bg_color: #000000;
+        --text_color: #dddddd;
+        --div_text_color: var(--text_color);
+        --theme_color: #20B2AA;
+        --div_color: #222222;
+        --quote_text_color: #888888;
     }
     .darkmode_support_image {
         -webkit-filter: grayscale(100%);
@@ -112,56 +100,18 @@ select {
 }
 
 @media screen and (min-width: 800px) {
-    div[show="pc"] {
-        display: block;
-    }
-    div[show="phone"] {
-        display: none;
-    }
-    div[show="phone_small"] {
-        display: none;
-    }
      :root {
         --figcaption_nohover: 0;
         --figcaption_place: 5%;
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 800px),
+@media screen and (max-width: 800px),
 (orientation: portrait) {
-    div[show="pc"] {
-        display: none;
-    }
-    div[show="phone"] {
-        display: block;
-    }
-    div[show="phone_small"] {
-        display: none;
-    }
      :root {
         --figcaption_nohover: 1;
         --figcaption_place: 5%;
     }
-}
-
-@media screen and (max-width: 600px) {
-    div[show="pc"] {
-        display: none;
-    }
-    div[show="phone"] {
-        display: none;
-    }
-    div[show="phone_small"] {
-        display: block;
-    }
-     :root {
-        --figcaption_nohover: 1;
-        --figcaption_place: 5%;
-    }
-}
-
-progress {
-    width: 50%;
 }
 
 figure {
@@ -172,11 +122,6 @@ figure {
     left: 0;
     display: block;
     margin: 0;
-}
-
-figure div {
-    margin: 0;
-    padding: 0;
 }
 
 figcaption {
@@ -198,7 +143,7 @@ figcaption {
 
 p {
     width: calc(100% - 1em);
-    margin: 1em 0.5em 0em 0.5em;
+    margin: 1em 0.5em;
 }
 
 figcaption p {
@@ -254,16 +199,6 @@ a amp-img:hover {
     height: auto;
 }
 
-.third {
-    width: 33%;
-    height: auto;
-}
-
-.fourth {
-    width: 25%;
-    height: auto;
-}
-
 .tenth {
     width: 10%;
     height: auto;
@@ -290,8 +225,8 @@ a amp-img:hover {
 html,
 body {
     font-family: "Comfortaa", "Noto Sans JP", sans-selif;
-    background-color: var(--bgcolor);
-    color: var(--textcolor);
+    background: var(--bg_color);
+    color: var(--text_color);
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -307,10 +242,6 @@ body {
     display: none;
 }
 
-body {
-    background-color: var(--bgcolor);
-}
-
 main {
     padding: 0;
     margin: var(--header_height) 0 4em calc((100vw - 100vmin) / 2);
@@ -321,8 +252,8 @@ main {
 }
 
 div {
-    background: var(--divcolor);
-    color: var(--div_textcolor);
+    background: var(--div_color);
+    color: var(--div_text_color);
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -332,17 +263,17 @@ div {
 }
 
 *::-moz-selection {
-    background: var(--themecolor);
+    background: var(--theme_color);
     color: white;
 }
 
 *::selection {
-    background: var(--themecolor);
+    background: var(--theme_color);
     color: white;
 }
 
 a:link {
-    color: var(--themecolor);
+    color: var(--theme_color);
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
@@ -353,24 +284,15 @@ a:visited {
     color: #007DFF;
 }
 
-a:hover {
-    color: #00C8FF;
-}
-
+a:hover,
 a:active {
     color: #00C8FF;
 }
 
-a[class="button"] {
-    color: var(--themecolor);
-}
-
-a:visited[class="button"] {
-    color: var(--themecolor);
-}
-
+a[class="button"],
+a:visited[class="button"],
 a:active[class="button"] {
-    color: var(--themecolor);
+    color: var(--theme_color);
 }
 
 a:hover[class="button"] {
@@ -381,8 +303,8 @@ a:hover[class="button"] {
 button {
     display: inline-block;
     padding: 0.3em 1em;
-    color: var(--themecolor);
-    border: solid 2px var(--themecolor);
+    color: var(--theme_color);
+    border: solid 2px var(--theme_color);
     border-radius: 3px;
     text-decoration: none;
     margin: 10px 10px 10px 0px;
@@ -394,66 +316,38 @@ button {
 
 .button:hover,
 button:hover {
-    background: var(--themecolor);
-    color: var(--textcolor);
-}
-
-.cookie_info {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background: var(--cookie_info_bg);
-    color: var(--cookie_info_textcolor);
-    width: 100vw;
-    margin: 0;
-    padding: 2em 1em;
-    display: none;
-    z-index: 200;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    background: var(--theme_color);
+    color: var(--text_color);
 }
 
 h1 {
-    width: calc(100% - 2em - 9px);
-    color: var(--themecolor);
+    width: calc(100% - 2em + 9px);
+    color: var(--theme_color);
     padding: 0.25em 0.5em;
     background: transparent;
-    border-left: solid 9px var(--divcolor);
-    border-bottom: solid 2px var(--divcolor);
-    margin: 2em 0 1em 0.5em;
+    border-left: solid 9px var(--div_color);
+    border-bottom: solid 2px var(--div_color);
+    margin: 4em 0.5em 0 calc(0.5em - 9px);
 }
 
 h2 {
-    width: calc(100% - 2em - 9px);
-    color: var(--themecolor);
+    width: calc(100% - 2em);
+    color: var(--theme_color);
     padding: 0.25em 0.5em;
     background: transparent;
-    border-left: solid 9px var(--divcolor);
-    border-bottom: solid 2px var(--divcolor);
-    margin: 2em 0 1em 0.5em;
+    border-left: solid 9px var(--div_color);
+    border-bottom: solid 2px var(--div_color);
+    margin: 2em 0 1em calc(0.5em - 9px);
 }
 
 h3 {
     width: calc(100% - 2em - 9px);
-    color: var(--themecolor);
+    color: var(--theme_color);
     padding: 0.25em 0.5em;
     background: transparent;
-    border-left: solid 9px var(--divcolor);
-    border-bottom: solid 2px var(--divcolor);
+    border-left: solid 9px var(--div_color);
+    border-bottom: solid 2px var(--div_color);
     margin: 2em 0 1em 0.5em;
-}
-
-.inline {
-    display: inline;
-    padding: 0px;
-    border-left: none;
-    border-bottom: none;
-}
-
-.block {
-    display: block;
 }
 
 .no_border {
@@ -466,59 +360,31 @@ iframe {
     max-width: 100%;
 }
 
-.video {
-    position: relative;
-    padding: 0px;
-    width: 100%;
-    padding-top: 56.25%;
-}
-
-.video iframe {
-    position: absolute;
-    padding: 0px;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-}
-
 table,
 td,
 th {
-    border: 1px var(--textcolor) solid;
+    border: 1px var(--text_color) solid;
     border-collapse: collapse;
 }
 
 hr {
-    background: var(--textcolor);
+    background: var(--text_color);
     border: none;
-    color: var(--textcolor);
+    color: var(--text_color);
     height: 2px;
 }
 
 footer {
-    display: inline-block;
-    vertical-align: middle;
     text-align: center;
-    background-color: var(--divcolor);
+    background: var(--div_color);
     width: 100vw;
     min-height: 30vh;
-    padding: 5vh 0vh 20vh 0vh;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    color: var(--div_textcolor);
-}
-
-.no_color {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.themecolor {
-    color: var(--themecolor);
+    padding: 5vh 0vh 10vh 0vh;
+    color: var(--div_text_color);
 }
 
 strong {
-    color: var(--themecolor);
+    color: var(--theme_color);
     font-size: 120%;
 }
 
@@ -537,9 +403,9 @@ strong {
 
 .quote {
     display: block;
-    color: var(--quotetextcolor);
+    color: var(--quote_text_color);
     background: transparent;
-    border-left: solid 0.3em var(--quotetextcolor);
+    border-left: solid 0.3em var(--quote_text_color);
     margin: 1em;
     padding: 1em;
     width: 100%;
@@ -555,6 +421,9 @@ strong {
     box-sizing: border-box;
 }
 
+/* header等にmarqueeを実装する用のCSS。現在は不要のためコメントアウト */
+
+/* 
 .marquee {
     width: 100%;
     padding: 0.5em 0;
@@ -619,7 +488,7 @@ strong {
         -webkit-transform: translate(-100%);
         transform: translate(-100%);
     }
-}
+} */
 
 .glitch {
     text-shadow: 0px 0px 6px black, 5px 5px 3px #00A75B, -3px -3px 3px #96007A;
@@ -627,7 +496,7 @@ strong {
             filter: drop-shadow(0px 0px 6px black) drop-shadow(5px 5px 3px #00A75B) drop-shadow(-3px -3px 3px #96007A);
     -webkit-animation: glitch-text 3.5s linear infinite;
     animation: glitch-text 3.5s linear infinite;
-    color: var(--textcolor);
+    color: var(--text_color);
 }
 
 @-webkit-keyframes glitch-text {
@@ -772,7 +641,7 @@ strong {
     position: fixed;
     top: 0;
     z-index: 50;
-    background: var(--divcolor);
+    background: var(--div_color);
     opacity: 0.8;
 }
 

@@ -4,6 +4,19 @@
 
 import re
 import glob
+import typing
+
+
+def search_class(html_file_path: str, class_name: str) -> typing.List[str]:
+    with open(html_file_path, mode="r", newline="", encoding="utf-8_sig") as f:
+        html_content = f.read()
+        html_content = html_content.replace("\r\n", "\n").replace("\r", "\n")
+    class_list = re.findall("class=[\'\"].*?[\'\"]", html_content)
+    result = []
+    for class in class_list:
+        if class_name in class:
+            result.append(html_file_path)
+    return result
 
 
 def check(html_file_path: str) -> None:
