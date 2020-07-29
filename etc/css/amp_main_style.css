@@ -681,6 +681,8 @@ amp-sidebar hr {
     margin: 2em 0;
     padding: 0;
     background: none;
+    text-align: right;
+    cursor: pointer;
 }
 
 div[open] {
