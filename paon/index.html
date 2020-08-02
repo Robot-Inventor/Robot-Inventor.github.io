@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ORIZIN Paon</title>
+    </head>
+    <body>
+        <div id="top_page">
+            <div class="overlay"></div>
+            <div id="menu_outer">
+                <div id="press_any_keys_page">
+                    <h1>何かしらのキーを押すか，どこかをクリックしてください。</h1>
+                </div>
+                <div id="title_page">
+                    <h1>ORIZIN Paon</h1>
+                    <button id="start_button">START</button>
+                    <button id="menu_button">MENU</button>
+                </div>
+                <div id="menu_page">
+                    <h1><span class="back">←</span>MENU</h1>
+                    <button id="setting_button">設定</button>
+                    <button id="oss_licence_button">OSSライセンス</button>
+                    <button id="about_this_game_button">このゲームについて</button>
+                </div>
+                <div id="setting_page">
+                    <h1><span class="back">←</span>設定</h1>
+                    BGMを使用する<input type="checkbox" class="toggle" id="toggle_bgm_setting" checked>
+                </div>
+                <div id="oss_licence_page">
+                    <h1><span class="back">←</span>OSSライセンス</h1>
+                    <span>本ソフトウェアでは，以下のオープンソースソフトウェア（OSS）を使用しています。OSSの名前をクリックするとライセンスが表示されます。</span>
+                    <details>
+                        <summary>
+                            PixelMplus（ピクセル・エムプラス）
+                        </summary>
+<pre>
+PixelMplus（ピクセル・エムプラス）
+=================================
+
+Copyright (C) 2002-2013 M+ FONTS PROJECT
+
+
+
+Description
+-----------
+
+8bit風味のファミコンのビットマップフォントのような感じを出せる
+TrueTyep アウトラインフォントです。
+
+
+Feature
+-------
+
+- ビットマップフォントのように見えるが、アウトラインのみのTrueTypeフォント。
+    埋め込みビットマップは なし。ボールド体（太字）あり。
+
+- JIS第1・第2水準のすべての漢字を収録。ISO-8859-1(Latin-1)の文字も収録。
+    そのほかにもいくつかの記号を追加。
+
+- 実体は単なるTrueType等幅フォント。テキストエディターで使用することもできる。
+
+- ライセンスは自由なM+ FONT LICENSE。
+
+
+詳しくは以下を参照。
+<a href="http://itouhiro.hatenablog.com/entry/20130602/font" target="_blank" rel="noopener noreferrer">http://itouhiro.hatenablog.com/entry/20130602/font</a>
+
+
+
+License
+-------
+
+M+ FONT LICENSE
+
+M+ FONT LICENSEについては、配布物に含まれる
+mplus_bitmap_fonts/LICENSE_E
+をご覧ください。
+
+
+-- 
+Itou Hiroki &lt;itouhiro at users dot sourceforge dot jp&gt;
+</pre>
+                    </details>
+                    <details>
+                        <summary>ORIZIN Agent HTML</summary>
+<pre>
+MIT License
+
+Copyright (c) 2019 - 2020 Robot-Inventor
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</pre>
+                    </details>
+                    <details>
+                        <summary>three.js r118</summary>
+<pre>
+The MIT License
+
+Copyright © 2010-2020 three.js authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</pre>
+                    </details>
+                    <details>
+                        <summary>Set of Elephants 3D Model</summary>
+<pre>
+Downloaded from <a href="https://creazilla.com/nodes/6209-set-of-elephants-3d-model" target="_blank" rel="noopener noreferrer">creazilla</a>
+You may obtain a copy of the License at <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">https://creativecommons.org/publicdomain/zero/1.0/</a>
+</pre>
+                    </details>
+                    <details>
+                        <summary class="ripple_effect">Material design icons 3.0.1</summary>
+                        <pre>
+                              Apache License
+                        Version 2.0, January 2004
+                     http://www.apache.org/licenses/
+
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+1. Definitions.
+
+   "License" shall mean the terms and conditions for use, reproduction,
+   and distribution as defined by Sections 1 through 9 of this document.
+
+   "Licensor" shall mean the copyright owner or entity authorized by
+   the copyright owner that is granting the License.
+
+   "Legal Entity" shall mean the union of the acting entity and all
+   other entities that control, are controlled by, or are under common
+   control with that entity. For the purposes of this definition,
+   "control" means (i) the power, direct or indirect, to cause the
+   direction or management of such entity, whether by contract or
+   otherwise, or (ii) ownership of fifty percent (50%) or more of the
+   outstanding shares, or (iii) beneficial ownership of such entity.
+
+   "You" (or "Your") shall mean an individual or Legal Entity
+   exercising permissions granted by this License.
+
+   "Source" form shall mean the preferred form for making modifications,
+   including but not limited to software source code, documentation
+   source, and configuration files.
+
+   "Object" form shall mean any form resulting from mechanical
+   transformation or translation of a Source form, including but
+   not limited to compiled object code, generated documentation,
+   and conversions to other media types.
+
+   "Work" shall mean the work of authorship, whether in Source or
+   Object form, made available under the License, as indicated by a
+   copyright notice that is included in or attached to the work
+   (an example is provided in the Appendix below).
+
+   "Derivative Works" shall mean any work, whether in Source or Object
+   form, that is based on (or derived from) the Work and for which the
+   editorial revisions, annotations, elaborations, or other modifications
+   represent, as a whole, an original work of authorship. For the purposes
+   of this License, Derivative Works shall not include works that remain
+   separable from, or merely link (or bind by name) to the interfaces of,
+   the Work and Derivative Works thereof.
+
+   "Contribution" shall mean any work of authorship, including
+   the original version of the Work and any modifications or additions
+   to that Work or Derivative Works thereof, that is intentionally
+   submitted to Licensor for inclusion in the Work by the copyright owner
+   or by an individual or Legal Entity authorized to submit on behalf of
+   the copyright owner. For the purposes of this definition, "submitted"
+   means any form of electronic, verbal, or written communication sent
+   to the Licensor or its representatives, including but not limited to
+   communication on electronic mailing lists, source code control systems,
+   and issue tracking systems that are managed by, or on behalf of, the
+   Licensor for the purpose of discussing and improving the Work, but
+   excluding communication that is conspicuously marked or otherwise
+   designated in writing by the copyright owner as "Not a Contribution."
+
+   "Contributor" shall mean Licensor and any individual or Legal Entity
+   on behalf of whom a Contribution has been received by Licensor and
+   subsequently incorporated within the Work.
+
+2. Grant of Copyright License. Subject to the terms and conditions of
+   this License, each Contributor hereby grants to You a perpetual,
+   worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+   copyright license to reproduce, prepare Derivative Works of,
+   publicly display, publicly perform, sublicense, and distribute the
+   Work and such Derivative Works in Source or Object form.
+
+3. Grant of Patent License. Subject to the terms and conditions of
+   this License, each Contributor hereby grants to You a perpetual,
+   worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+   (except as stated in this section) patent license to make, have made,
+   use, offer to sell, sell, import, and otherwise transfer the Work,
+   where such license applies only to those patent claims licensable
+   by such Contributor that are necessarily infringed by their
+   Contribution(s) alone or by combination of their Contribution(s)
+   with the Work to which such Contribution(s) was submitted. If You
+   institute patent litigation against any entity (including a
+   cross-claim or counterclaim in a lawsuit) alleging that the Work
+   or a Contribution incorporated within the Work constitutes direct
+   or contributory patent infringement, then any patent licenses
+   granted to You under this License for that Work shall terminate
+   as of the date such litigation is filed.
+
+4. Redistribution. You may reproduce and distribute copies of the
+   Work or Derivative Works thereof in any medium, with or without
+   modifications, and in Source or Object form, provided that You
+   meet the following conditions:
+
+   (a) You must give any other recipients of the Work or
+       Derivative Works a copy of this License; and
+
+   (b) You must cause any modified files to carry prominent notices
+       stating that You changed the files; and
+
+   (c) You must retain, in the Source form of any Derivative Works
+       that You distribute, all copyright, patent, trademark, and
+       attribution notices from the Source form of the Work,
+       excluding those notices that do not pertain to any part of
+       the Derivative Works; and
+
+   (d) If the Work includes a "NOTICE" text file as part of its
+       distribution, then any Derivative Works that You distribute must
+       include a readable copy of the attribution notices contained
+       within such NOTICE file, excluding those notices that do not
+       pertain to any part of the Derivative Works, in at least one
+       of the following places: within a NOTICE text file distributed
+       as part of the Derivative Works; within the Source form or
+       documentation, if provided along with the Derivative Works; or,
+       within a display generated by the Derivative Works, if and
+       wherever such third-party notices normally appear. The contents
+       of the NOTICE file are for informational purposes only and
+       do not modify the License. You may add Your own attribution
+       notices within Derivative Works that You distribute, alongside
+       or as an addendum to the NOTICE text from the Work, provided
+       that such additional attribution notices cannot be construed
+       as modifying the License.
+
+   You may add Your own copyright statement to Your modifications and
+   may provide additional or different license terms and conditions
+   for use, reproduction, or distribution of Your modifications, or
+   for any such Derivative Works as a whole, provided Your use,
+   reproduction, and distribution of the Work otherwise complies with
+   the conditions stated in this License.
+
+5. Submission of Contributions. Unless You explicitly state otherwise,
+   any Contribution intentionally submitted for inclusion in the Work
+   by You to the Licensor shall be under the terms and conditions of
+   this License, without any additional terms or conditions.
+   Notwithstanding the above, nothing herein shall supersede or modify
+   the terms of any separate license agreement you may have executed
+   with Licensor regarding such Contributions.
+
+6. Trademarks. This License does not grant permission to use the trade
+   names, trademarks, service marks, or product names of the Licensor,
+   except as required for reasonable and customary use in describing the
+   origin of the Work and reproducing the content of the NOTICE file.
+
+7. Disclaimer of Warranty. Unless required by applicable law or
+   agreed to in writing, Licensor provides the Work (and each
+   Contributor provides its Contributions) on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+   implied, including, without limitation, any warranties or conditions
+   of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+   PARTICULAR PURPOSE. You are solely responsible for determining the
+   appropriateness of using or redistributing the Work and assume any
+   risks associated with Your exercise of permissions under this License.
+
+8. Limitation of Liability. In no event and under no legal theory,
+   whether in tort (including negligence), contract, or otherwise,
+   unless required by applicable law (such as deliberate and grossly
+   negligent acts) or agreed to in writing, shall any Contributor be
+   liable to You for damages, including any direct, indirect, special,
+   incidental, or consequential damages of any character arising as a
+   result of this License or out of the use or inability to use the
+   Work (including but not limited to damages for loss of goodwill,
+   work stoppage, computer failure or malfunction, or any and all
+   other commercial damages or losses), even if such Contributor
+   has been advised of the possibility of such damages.
+
+9. Accepting Warranty or Additional Liability. While redistributing
+   the Work or Derivative Works thereof, You may choose to offer,
+   and charge a fee for, acceptance of support, warranty, indemnity,
+   or other liability obligations and/or rights consistent with this
+   License. However, in accepting such obligations, You may act only
+   on Your own behalf and on Your sole responsibility, not on behalf
+   of any other Contributor, and only if You agree to indemnify,
+   defend, and hold each Contributor harmless for any liability
+   incurred by, or claims asserted against, such Contributor by reason
+   of your accepting any such warranty or additional liability.
+
+END OF TERMS AND CONDITIONS
+
+APPENDIX: How to apply the Apache License to your work.
+
+   To apply the Apache License to your work, attach the following
+   boilerplate notice, with the fields enclosed by brackets "[]"
+   replaced with your own identifying information. (Don't include
+   the brackets!)  The text should be enclosed in the appropriate
+   comment syntax for the file format. We also recommend that a
+   file or class name and description of purpose be included on the
+   same "printed page" as the copyright notice for easier
+   identification within third-party archives.
+
+Copyright [yyyy] [name of copyright owner]
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+                        </pre>
+                    </details>
+                </div>
+                <div id="about_this_game_page">
+                    <h1><span class="back">←</span>このゲームについて</h1>
+                    このゲームはRobot-Inventorによって作られ，MITライセンスの下に配布されており，誰でも自由に無料で利用することができます。また，本ゲームは，くそいサイト様のゲーム「ぴえん」に触発されていますが，直接の関係はありません。ご注意ください。
+                </div>
+                <div id="ask_about_tutorial_page">
+                    <h1><span class="back">←</span>チュートリアル</h1>
+                    <button>チュートリアルへ</button>
+                    <button id="skip_tutorial">チュートリアルをスキップ</button>
+                </div>
+            </div>
+            <div id="copyright">Copyright (c) 2020 Robot-Inventor</div>
+            <div class="cloud" style="top: 10vh; animation-delay: 0s;"></div>
+            <div class="cloud" style="top: 20vh; animation-delay: -3s;"></div>
+            <div class="cloud" style="top: 50vh; animation-delay: -7s;"></div>
+            <div class="cloud" style="top: 80vh; animation-delay: -9s;"></div>
+        </div>
+        <canvas id="game_canvas"></canvas>
+        <div id="end_credit"></div>
+        <div id="fullscreen_button" title="全画面表示の切り替え（F11またはCommand + Control + F）"><i class="material_icon">fullscreen</i></div>
+    </body>
+    <style>
+        :root {
+            --border_radius_size: 0.5rem;
+            --toggle_width: 2.5rem;
+            --toggle_height: 0.9rem;
+            --toggle_border_width: 0.075vw;
+            --toggle_border_color: gray;
+            --toggle_disabled_color: white;
+            --toggle_enabled_color: #adff99;
+            --toggle_handle_color: white;
+        }
+
+        @font-face {
+            font-family: "PixelMplus";
+            src: url("font/PixelMplus12-Regular.ttf");
+        }
+
+        @font-face {
+            font-family: "Material Icons";
+            font-style: normal;
+            font-weight: 400;
+            src: url("font/MaterialIcons-Regular.woff2") format("woff2");
+        }
+
+        .material_icon {
+            font-family: "Material Icons";
+            font-weight: normal;
+            font-style: normal;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "PixelMplus";
+            color: white;
+            line-height: 150%;
+            letter-spacing: 0.1em;
+            cursor: default;
+        }
+
+        body {
+            background: #010101;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        #top_page {
+            background: rgb(22, 161, 216);
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        #top_page #menu_outer {
+            width: 80vmin;
+            height: 80vmin;
+            position: absolute;
+            top: 50vh;
+            left: 50vw;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 1em;
+            box-sizing: border-box;
+            border-radius: 0.5rem;
+            z-index: 1;
+            background: rgba(100, 100, 100, 0.5);
+            overflow: scroll;
+        }
+
+        #top_page #menu_outer::-webkit-scrollbar {
+            display: block;
+            width: 0.2rem;
+            transition: 0.3s;
+        }
+
+        #top_page #menu_outer::-webkit-scrollbar {
+            width: 0.2rem;
+        }
+
+        #top_page #menu_outer::-webkit-scrollbar-thumb {
+            background: none;
+            border-radius: 0.2rem;
+        }
+
+        #top_page #menu_outer::-webkit-scrollbar-thumb {
+            background: white;
+        }
+
+        #top_page #menu_outer::-webkit-scrollbar-corner {
+            display: none;
+        }
+
+        #top_page #menu_outer #press_any_keys_page h1 {
+            padding-top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #press_any_keys_page {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .overlay {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: transparent;
+            z-index: 2;
+        }
+
+        #top_page .overlay {
+            cursor: pointer;
+        }
+
+        #top_page #menu_outer #title_page h1 {
+            font-size: 10vmin;
+            margin-top: 17.5vmin;
+            text-align: center;
+            line-height: 100%;
+            letter-spacing: 0em;
+        }
+
+        #top_page #menu_outer div button {
+            display: block;
+            font-size: 5vmin;
+            margin-top: 1em;
+            border: solid white 0.1rem;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            border-radius: 0.5rem;
+            width: 70%;
+            margin-left: 15%;
+            transition: 0.3s;
+            cursor: pointer;
+            background: none;
+            outline: none;
+            text-align: center;
+            line-height: 100%;
+            letter-spacing: 0em;
+        }
+
+        #top_page #menu_outer div button:hover {
+            background: white;
+            color: rgb(22, 161, 216);
+            animation: none;
+            transform: translate(0.1rem, 0.1rem);
+        }
+
+        #top_page #menu_outer div:not(#press_any_keys_page) {
+            display: none;
+        }
+
+        #top_page #menu_outer div:not(#title_page) h1 {
+            font-size: 7.5vmin;
+            margin: 2rem 0;
+            position: relative;
+            text-align: center;
+            padding-left: 1em;
+            line-height: 100%;
+            letter-spacing: 0em;
+        }
+
+        #top_page #menu_outer div:not(#title_page) h1 .back {
+            font-size: 7.5vmin;
+            margin-top: 2rem;
+            position: absolute;
+            top: -2rem;
+            left: 0;
+            cursor: pointer;
+            line-height: 100%;
+            letter-spacing: 0em;
+        }
+
+        #oss_licence_page span:not(.back) {
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        #oss_licence_page details summary {
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-top: solid 0.1rem;
+            outline: none;
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        #oss_licence_page details[open] {
+            padding-bottom: 2rem;
+        }
+
+        #oss_licence_page details[open] summary {
+            padding-bottom: 2rem;
+        }
+
+        #oss_licence_page details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        #oss_licence_page details pre {
+            white-space: pre-wrap;
+            padding-left: 1rem;
+        }
+
+        #copyright {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: 1rem;
+        }
+
+        .cloud {
+            background: white;
+            width: 10vmin;
+            height: 5vmin;
+            position: fixed;
+            animation: cloud 10s linear 0s infinite normal;
+            overflow: visible;
+        }
+
+        .cloud::after {
+            content: "";
+            display: block;
+            background: white;
+            width: 10vmin;
+            height: 5vmin;
+            position: absolute;
+            top: -2vmin;
+            left: 2vmin;
+        }
+
+        .cloud::before {
+            content: "";
+            display: block;
+            background: white;
+            width: 10vmin;
+            height: 5vmin;
+            position: absolute;
+            top: 2vmin;
+            left: -7vmin;
+        }
+
+        @keyframes cloud {
+            0% {
+                left: 110vw;
+            }
+            100% {
+                left: -50vw;
+            }
+        }
+
+        .toggle {
+            display: none;
+            transition: 0.3s;
+        }
+
+        .toggle+label {
+            display: inline-block;
+            background: var(--toggle_disabled_color);
+            width: var(--toggle_width);
+            height: var(--toggle_height);
+            border: solid var(--toggle_border_width) var(--toggle_border_color);
+            border-radius: var(--toggle_width);
+            margin: 0;
+            padding: 0;
+            vertical-align: bottom;
+            overflow: visible;
+        }
+
+        .toggle:checked+label {
+            background: var(--toggle_enabled_color);
+        }
+
+        .toggle+label::before {
+            display: block;
+            content: "";
+            background: var(--toggle_handle_color);
+            width: calc(var(--toggle_height) + 0.4rem);
+            height: calc(var(--toggle_height) + 0.4rem);
+            border: var(--toggle_border_color) solid var(--toggle_border_width);
+            border-radius: var(--toggle_width);
+            box-shadow: 0 2px 5px var(--shadow);
+            transition: 0.3s;
+            margin: 0;
+            position: relative;
+            top: calc(var(--toggle_border_width) * -1 - 0.2rem);
+            left: calc(var(--toggle_border_width) * -1 - 0.2rem);
+        }
+
+        .toggle:checked+label::before {
+            margin-left: calc(100% - var(--toggle_height));
+        }
+
+        #game_canvas {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+        }
+
+        #end_credit {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+        }
+
+        #fullscreen_button {
+            position: fixed;
+            width: 3rem;
+            height: 3rem;
+            bottom: 1rem;
+            left: 1rem;
+            margin: 0;
+            padding: 0.5rem;
+            border-radius: 3rem;
+            z-index: 3;
+            background: white;
+            box-sizing: border-box;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        #fullscreen_button i.material_icon {
+            color: #010101;
+            padding: 0;
+            margin: 0;
+            transform: translateY(-0.2rem);
+            cursor: pointer;
+        }
+    </style>
+    <script src="javascript/three.min.js"></script>
+    <script src="javascript/OrbitControls.js"></script>
+    <script src="javascript/GLTFLoader.js"></script>
+    <script>
+        const CHANGE_PAGE_TRANSITION_TIME = 100;
+        let main_music = new Audio("audio/物語の始まり.mp3");
+        let main_music_play_status = true;
+        let is_any_keys_pressed_or_clicked = false;
+
+        function hide_page(element, transition_time=100) {
+            const element_style = document.querySelector(element).style;
+            element_style.transition = transition_time + "ms";
+            element_style.opacity = "0";
+            element_style.transform = "scale(0.9)";
+            setTimeout(() => {
+                element_style.display = "none";
+                element_style.opacity = "1";
+                element_style.transform = "none";
+            }, transition_time);
+        }
+
+        function show_page(element, transition_time=100) {
+            const element_style = document.querySelector(element).style;
+            element_style.transition = "0s";
+            element_style.opacity = "0";
+            element_style.display = "block";
+            element_style.transform = "scale(0.9)";
+            element_style.transition = transition_time + "ms";
+            setTimeout(() => {
+                element_style.opacity = "1";
+                element_style.transform = "none";
+            }, transition_time);
+        }
+
+        function change_page(page1, page2, transition_time=100) {
+            hide_page(page1, transition_time);
+            setTimeout(() => {
+                show_page(page2, transition_time);
+            }, transition_time);
+        }
+
+        function toggle_switch_component() {
+            toggle_element_num = 0;
+            document.querySelectorAll("input[type=checkbox].toggle").forEach(function(toggle_element) {
+                toggle_id = toggle_element.getAttribute("id");
+                if (!toggle_id) {
+                    toggle_element.setAttribute("id", "toggle_element_" + toggle_element_num);
+                    toggle_id = "toggle_element_" + toggle_element_num;
+                    toggle_element_num += 1;
+                }
+                toggle_element.insertAdjacentHTML("afterend", "<label for='" + toggle_id + "' class='ripple_effect'></label>");
+            });
+        }
+
+        toggle_switch_component();
+
+        function play_main_music() {
+            main_music.pause();
+            main_music.currentTime = 0;
+            main_music.volume = 1;
+            main_music.play();
+            main_music.addEventListener("ended", function() {
+                play_main_music();
+            });
+        }
+
+        function stop_main_music(volume=1) {
+            volume -= 0.1;
+            if (volume > 0) {
+                setTimeout(() => {
+                    stop_main_music(volume);
+                }, 150);
+                main_music.volume = volume;
+            } else {
+                main_music.pause();
+                main_music.volume = 1;
+            }
+        }
+
+        function show_title_page() {
+            if (!is_any_keys_pressed_or_clicked) {
+                document.querySelector("#top_page .overlay").style.display = "none";
+                change_page("#top_page #menu_outer #press_any_keys_page", "#top_page #menu_outer #title_page");
+                play_main_music();
+                is_any_keys_pressed_or_clicked = true;
+            }
+        }
+
+        document.addEventListener("keydown", show_title_page);
+
+        document.querySelector("#top_page .overlay").addEventListener("click", show_title_page);
+
+        document.getElementById("toggle_bgm_setting").addEventListener("change", function() {
+            if (document.getElementById("toggle_bgm_setting").checked) {
+                play_main_music();
+            } else {
+                stop_main_music();
+            }
+        });
+
+        document.getElementById("fullscreen_button").addEventListener("click", function() {
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                document.documentElement.requestFullscreen();
+            }
+        });
+
+        document.addEventListener("fullscreenchange", function() {
+            if (document.fullscreenElement) {
+                document.querySelector("#fullscreen_button i.material_icon").textContent = "fullscreen_exit";
+            } else {
+                document.querySelector("#fullscreen_button i.material_icon").textContent = "fullscreen";
+            }
+        });
+
+        document.querySelector("#top_page #menu_outer #title_page #menu_button").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #title_page", "#top_page #menu_outer #menu_page", CHANGE_PAGE_TRANSITION_TIME);
+        });
+
+        document.querySelector("#top_page #menu_outer #menu_page .back").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #menu_page", "#top_page #menu_outer #title_page", CHANGE_PAGE_TRANSITION_TIME);
+        });
+
+        document.querySelector("#top_page #menu_outer #menu_page #setting_button").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #menu_page", "#top_page #menu_outer #setting_page", CHANGE_PAGE_TRANSITION_TIME);
+        });
+
+        document.querySelector("#top_page #menu_outer #setting_page .back").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #setting_page", "#top_page #menu_outer #menu_page", CHANGE_PAGE_TRANSITION_TIME);
+        });
+
+        document.querySelector("#top_page #menu_outer #menu_page #oss_licence_button").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #menu_page", "#top_page #menu_outer #oss_licence_page", CHANGE_PAGE_TRANSITION_TIME);
+        });
+
+        document.querySelector("#top_page #menu_outer #oss_licence_page .back").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #oss_licence_page", "#top_page #menu_outer #menu_page", CHANGE_PAGE_TRANSITION_TIME);
+        });
+
+        document.querySelector("#top_page #menu_outer #menu_page #about_this_game_button").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #menu_page", "#top_page #menu_outer #about_this_game_page", CHANGE_PAGE_TRANSITION_TIME);
+        });
+
+        document.querySelector("#top_page #menu_outer #about_this_game_page .back").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #about_this_game_page", "#top_page #menu_outer #menu_page", CHANGE_PAGE_TRANSITION_TIME);
+        });
+
+        document.querySelector("#top_page #menu_outer #title_page #start_button").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #title_page", "#top_page #menu_outer #ask_about_tutorial_page", CHANGE_PAGE_TRANSITION_TIME);
+        });
+
+        document.querySelector("#top_page #menu_outer #ask_about_tutorial_page .back").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #ask_about_tutorial_page", "#top_page #menu_outer #title_page", CHANGE_PAGE_TRANSITION_TIME);
+        });
+
+        function show_game_canvas() {
+            stop_main_music();
+            const top_page_style = document.getElementById("top_page").style;
+            const game_canvas_style = document.getElementById("game_canvas").style;
+            top_page_style.transition = "1s";
+            top_page_style.opacity = "0";
+            setTimeout(() => {
+                top_page_style.transition = "0s";
+                top_page_style.display = "none";
+                game_canvas_style.display = "block";
+            }, 2000);
+        }
+
+        document.querySelector("#top_page #menu_outer #ask_about_tutorial_page #skip_tutorial").addEventListener("click", function() {
+            show_game_canvas();
+            game_start();
+        });
+
+        function show_end_credit() {
+            document.getElementById("end_credit").style.display = "block";
+        }
+
+        function game_start() {
+            function resize_canvas() {
+                const canvas_width = innerWidth;
+                const canvas_height = innerHeight;
+                renderer.setPixelRatio(devicePixelRatio);
+                renderer.setSize(canvas_width, canvas_height);
+                camera.aspect = canvas_width / canvas_height;
+                camera.updateProjectionMatrix();
+            }
+
+            window.addEventListener("resize", resize_canvas);
+            const canvas_width = innerWidth;
+            const canvas_height = innerHeight;
+            const renderer = new THREE.WebGLRenderer({
+                canvas: document.getElementById("game_canvas")
+            });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(canvas_width, canvas_height);
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(
+                45,
+                canvas_width / canvas_height,
+                1,
+                10000
+            );
+            camera.position.set(0, 0, 5);
+            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.2;
+            // const geometry = new THREE.BoxGeometry(500, 500, 500);
+            // const material = new THREE.MeshStandardMaterial({
+            //     color: 0x0000ff
+            // });
+            // const box = new THREE.Mesh(geometry, material);
+            // scene.add(box);
+            const directionalLight = new THREE.DirectionalLight(
+                0xffffff
+            );
+            directionalLight.position.set(1, 1, 1);
+            scene.add(directionalLight);
+            const loader = new THREE.GLTFLoader();
+            loader.load("3dmodel/Elephant 3.glb", (gltf) => {
+                // const gltf = data;
+                // const object = gltf.scene;
+                // scene.add(object);
+                scene.add(gltf.scene);
+                gltf.animations;
+                gltf.scene;
+                gltf.scenes;
+                gltf.cameras;
+                gltf.asset;
+            });
+            renderer.render(scene, camera);
+            resize_canvas();
+            loop();
+
+            function loop() {
+                controls.update();
+                // box.rotation.x += 0.01;
+                // box.rotation.y += 0.01;
+                renderer.render(scene, camera);
+                requestAnimationFrame(loop);
+            }
+        }
+    </script>
+</html>
