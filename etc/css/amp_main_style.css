@@ -45,11 +45,6 @@ a:not([class]) {
     text-decoration-skip-ink: auto;
 }
 
-amp-img {
-    max-width: 100%;
-    display: block;
-}
-
 article>*+* {
     margin-top: 1em;
 }
@@ -178,8 +173,13 @@ figure:hover amp-img {
     transform: scale(1.1);
 }
 
-amp-img {
+amp-img,
+img {
+    display: block;
     max-width: 100%;
+    width: auto;
+    max-height: 80vh;
+    object-fit: contain;
 }
 
 a amp-img {
