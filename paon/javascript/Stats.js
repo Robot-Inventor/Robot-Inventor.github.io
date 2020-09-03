@@ -1,3 +1,9 @@
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(global.Stats = factory());
+}(this, (function () { 'use strict';
+
 /**
  * @author mrdoob / http://mrdoob.com/
  */
@@ -8,6 +14,7 @@ var Stats = function () {
 
 	var container = document.createElement( 'div' );
 	container.style.cssText = 'position:fixed;top:0;left:0;cursor:pointer;opacity:0.9;z-index:10000';
+	container.id = "stats_container";
 	container.addEventListener( 'click', function ( event ) {
 
 		event.preventDefault();
@@ -168,4 +175,6 @@ Stats.Panel = function ( name, fg, bg ) {
 
 };
 
-export { Stats as default };
+return Stats;
+
+})));

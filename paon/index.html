@@ -26,7 +26,8 @@
                 </div>
                 <div id="setting_page">
                     <h1><span class="back">←</span>設定</h1>
-                    BGMを使用する<input type="checkbox" class="toggle" id="toggle_bgm_setting" checked>
+                    BGMを使用する<input type="checkbox" class="toggle" id="toggle_bgm_setting" checked><br>
+                    画面左上にフレームレートを表示する<input type="checkbox" class="toggle" id="toggle_stats_setting">
                 </div>
                 <div id="oss_licence_page">
                     <h1><span class="back">←</span>OSSライセンス</h1>
@@ -348,6 +349,32 @@ See the License for the specific language governing permissions and
 limitations under the License.
                         </pre>
                     </details>
+                    <details>
+                        <summary>stats.js</summary>
+                        <pre>
+The MIT License
+
+Copyright (c) 2009-2016 stats.js authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+                        </pre>
+                    </details>
                 </div>
                 <div id="about_this_game_page">
                     <h1><span class="back">←</span>このゲームについて</h1>
@@ -366,8 +393,11 @@ limitations under the License.
             <div class="cloud" style="top: 80vh; animation-delay: -9s;"></div>
         </div>
         <canvas id="game_canvas"></canvas>
-        <div id="end_credit"></div>
+        <div id="pointer_controls_menu">
+            <p>Clickしろ！</p>
+        </div>
         <div id="fullscreen_button" title="全画面表示の切り替え（F11またはCommand + Control + F）"><i class="material_icon">fullscreen</i></div>
+
     </body>
     <style>
         :root {
@@ -723,15 +753,48 @@ limitations under the License.
             transform: translateY(-0.2rem);
             cursor: pointer;
         }
+
+        #pointer_controls_menu {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(100, 100, 100, 0.5);
+            color: white;
+            display: none;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        #stats_container {
+            display: none;
+        }
     </style>
+    <script src="javascript/Stats.js"></script>
     <script src="javascript/three.min.js"></script>
-    <script src="javascript/OrbitControls.js"></script>
+    <!-- <script src="javascript/OrbitControls.js"></script> -->
+    <script src="javascript/PointerLockControls.js"></script>
+    <script src="javascript/FirstPersonControls.js"></script>
     <script src="javascript/GLTFLoader.js"></script>
     <script>
         const CHANGE_PAGE_TRANSITION_TIME = 100;
-        let main_music = new Audio("audio/物語の始まり.mp3");
+        let main_music = new Audio();
+        load_audio_data("audio/物語の始まり.mp3.base64", main_music);
         let main_music_play_status = true;
         let is_any_keys_pressed_or_clicked = false;
+
+        const stats = new Stats();
+        stats.showPanel(0);
+        document.body.appendChild(stats.dom);
+
+        async function load_audio_data(audio_file_path, audio_element) {
+            const response = await fetch(audio_file_path);
+            const text = await response.text();
+            audio_element.src = "data:audio/mpeg;base64," + text;
+        }
 
         function hide_page(element, transition_time=100) {
             const element_style = document.querySelector(element).style;
@@ -824,6 +887,14 @@ limitations under the License.
             }
         });
 
+        document.getElementById("toggle_stats_setting").addEventListener("change", function() {
+            if(document.getElementById("toggle_stats_setting").checked) {
+                document.getElementById("stats_container").style.display = "block";
+            } else {
+                document.getElementById("stats_container").style.display = "none";
+            }
+        });
+
         document.getElementById("fullscreen_button").addEventListener("click", function() {
             if (document.fullscreenElement) {
                 document.exitFullscreen();
@@ -910,9 +981,11 @@ limitations under the License.
                 renderer.setSize(canvas_width, canvas_height);
                 camera.aspect = canvas_width / canvas_height;
                 camera.updateProjectionMatrix();
+                // controls.handleResize();
             }
 
             window.addEventListener("resize", resize_canvas);
+            document.getElementById("pointer_controls_menu").style.display = "block";
             const canvas_width = innerWidth;
             const canvas_height = innerHeight;
             const renderer = new THREE.WebGLRenderer({
@@ -928,15 +1001,75 @@ limitations under the License.
                 10000
             );
             camera.position.set(0, 0, 5);
-            const controls = new THREE.OrbitControls(camera, renderer.domElement);
-            controls.enableDamping = true;
-            controls.dampingFactor = 0.2;
-            // const geometry = new THREE.BoxGeometry(500, 500, 500);
-            // const material = new THREE.MeshStandardMaterial({
-            //     color: 0x0000ff
-            // });
-            // const box = new THREE.Mesh(geometry, material);
-            // scene.add(box);
+            // const controls = new THREE.OrbitControls(camera, renderer.domElement);
+            // controls.enableDamping = true;
+            // controls.dampingFactor = 0.2;
+            // const fps_controls = new THREE.FirstPersonControls(camera, document.getElementById("game_canvas"));
+            // fps_controls.lookSpeed = 0.2;
+            // fps_controls.movementSpeed = 5;
+            // fps_controls.lookVertical = false;
+            const pointer_controls = new THREE.PointerLockControls(camera, document.getElementById("game_canvas"));
+            document.getElementById("pointer_controls_menu").addEventListener("click", function() {
+                pointer_controls.lock();
+            });
+            pointer_controls.addEventListener("lock", function() {
+                document.getElementById("pointer_controls_menu").style.display = "none";
+            });
+            pointer_controls.addEventListener("unlock", function() {
+                document.getElementById("pointer_controls_menu").style.display = "block";
+            });
+            let is_move_forward_mode = false;
+            let is_move_back_mode = false;
+            let is_move_left_mode = false;
+            let is_move_right_mode = false;
+            setInterval(function() {
+                const move_distance = 0.1;
+                if(is_move_forward_mode) {
+                    pointer_controls.moveForward(move_distance);
+                }
+                if(is_move_back_mode) {
+                    pointer_controls.moveForward(-1 * move_distance);
+                }
+                if(is_move_right_mode) {
+                    pointer_controls.moveRight(move_distance);
+                }
+                if(is_move_left_mode) {
+                    pointer_controls.moveRight(-1 * move_distance);
+                }
+            }, 1000 / 60);
+            document.addEventListener("keydown", function() {
+                switch(event.keyCode) {
+                    case 87:
+                        is_move_forward_mode = true;
+                        break;
+                    case 83:
+                        is_move_back_mode = true;
+                        break;
+                    case 68:
+                        is_move_right_mode = true;
+                        break;
+                    case 65:
+                        is_move_left_mode = true;
+                        break;
+                }
+            });
+            document.addEventListener("keyup", function() {
+                switch(event.keyCode) {
+                    case 87:
+                        is_move_forward_mode = false;
+                        break;
+                    case 83:
+                        is_move_back_mode = false;
+                        break;
+                    case 68:
+                        is_move_right_mode = false;
+                        break;
+                    case 65:
+                        is_move_left_mode = false;
+                        break;
+                }
+            });
+            // const clock = new THREE.Clock(true);
             const directionalLight = new THREE.DirectionalLight(
                 0xffffff
             );
@@ -944,9 +1077,6 @@ limitations under the License.
             scene.add(directionalLight);
             const loader = new THREE.GLTFLoader();
             loader.load("3dmodel/Elephant 3.glb", (gltf) => {
-                // const gltf = data;
-                // const object = gltf.scene;
-                // scene.add(object);
                 scene.add(gltf.scene);
                 gltf.animations;
                 gltf.scene;
@@ -959,10 +1089,11 @@ limitations under the License.
             loop();
 
             function loop() {
-                controls.update();
-                // box.rotation.x += 0.01;
-                // box.rotation.y += 0.01;
+                // controls.update();
+                // fps_controls.update(clock.getDelta());
+                stats.begin();
                 renderer.render(scene, camera);
+                stats.end();
                 requestAnimationFrame(loop);
             }
         }
