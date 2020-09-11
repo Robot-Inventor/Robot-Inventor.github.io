@@ -396,8 +396,8 @@ THE SOFTWARE.
         <div id="pointer_controls_menu">
             <p>Clickしろ！</p>
         </div>
+        <!-- <textarea id="hoge" cols="30" rows="10" style="z-index: 1000;margin: 0;padding: 0;width: 50vw;height: 50vh;color: black;position: fixed;top: 0;left: 0;"></textarea> -->
         <div id="fullscreen_button" title="全画面表示の切り替え（F11またはCommand + Control + F）"><i class="material_icon">fullscreen</i></div>
-
     </body>
     <style>
         :root {
@@ -793,8 +793,78 @@ THE SOFTWARE.
         async function load_audio_data(audio_file_path, audio_element) {
             const response = await fetch(audio_file_path);
             const text = await response.text();
-            audio_element.src = "data:audio/mpeg;base64," + text;
+            audio_element.src = "data:audio/mpeg;base64," + text.replace(/<0x41>/g, "A").replace(/<a>/g, "z");
         }
+
+        // async function key_generater() {
+        //     const key = await crypto.subtle.generateKey(
+        //         {
+        //             name: "AES-GCM",
+        //             length: 256
+        //         },
+        //         true,
+        //         ["encrypt", "decrypt"]
+        //     );
+        //     const exported = await window.crypto.subtle.exportKey(
+        //         "jwk",
+        //         key
+        //     );
+        //     document.getElementById("hoge").value = JSON.stringify(exported);
+        // }
+        // key_generater();
+
+        // async function encrypter() {
+        //     const jwk_data = '{"alg":"A256GCM","ext":true,"k":"WPnYrAtUepgQIjieZnVsakQPBpfXHX2aoQbcFgMq-1c","key_ops":["encrypt","decrypt"],"kty":"oct"}';
+        //     const encoder = new TextEncoder();
+        //     const decoder = new TextDecoder();
+        //     const key = await crypto.subtle.importKey(
+        //         "jwk",
+        //         JSON.parse(jwk_data),
+        //         "AES-GCM",
+        //         false,
+        //         ["encrypt", "decrypt"]
+        //     );
+        //     // const response = await fetch("audio/物語の始まり.mp3.base64");
+        //     // const text = await response.text();
+        //     const text = "hoge";
+        //     const encoded = encoder.encode(text);
+        //     const iv = encoder.encode(atob("kXNUZG5x+0xsm4xv"));
+        //     const result = await crypto.subtle.encrypt(
+        //         {
+        //             name: "AES-GCM",
+        //             iv: iv
+        //         },
+        //         key,
+        //         encoded
+        //     );
+        //     document.getElementById("hoge").value = String.fromCharCode.apply(null, new Uint8Array(result));
+        // }
+        // encrypter();
+
+//         async function decrypter() {
+//             const encoder = new TextEncoder();
+//             const iv = encoder.encode(atob("kXNUZG5x+0xsm4xv"));
+//             const jwk_data = '{"alg":"A256GCM","ext":true,"k":"WPnYrAtUepgQIjieZnVsakQPBpfXHX2aoQbcFgMq-1c","key_ops":["encrypt","decrypt"],"kty":"oct"}';
+//             const key = await crypto.subtle.importKey(
+//                 "jwk",
+//                 JSON.parse(jwk_data),
+//                 "AES-GCM",
+//                 false,
+//                 ["encrypt", "decrypt"]
+//             );
+//             const encoded = encoder.encode(`¢ºö½È2\)ó´x.Î
+// `);
+//             const result = await crypto.subtle.decrypt(
+//                 {
+//                     name: "AES-GCM",
+//                     iv: iv
+//                 },
+//                 key,
+//                 encoded
+//             );
+//             console.log(result)
+//         }
+//         decrypter();
 
         function hide_page(element, transition_time=100) {
             const element_style = document.querySelector(element).style;
@@ -984,8 +1054,48 @@ THE SOFTWARE.
                 // controls.handleResize();
             }
 
+            function play_horror_music() {
+                const horror_music = new Audio();
+                load_audio_data("audio/本当に有った怖い話.mp3.base64", horror_music);
+                function player() {
+                    horror_music.currentTime = 0;
+                    horror_music.volume = 0.5;
+                    horror_music.play();
+                }
+                player();
+                horror_music.addEventListener("ended", function() {
+                    player();
+                });
+            }
+            play_horror_music();
+
+            function random_timing_player(file_path) {
+                const roar = new Audio();
+                load_audio_data(file_path, roar);
+                function player() {
+                    roar.currentTime = 0;
+                    roar.play();
+                }
+                function generate_random() {
+                    const MIN = Math.ceil(30);
+                    const MAX = Math.floor(60);
+                    return Math.floor((Math.random() * (MAX - MIN) + MAX) * 1000);
+                }
+                setTimeout(function() {
+                    player();
+                }, generate_random());
+                roar.addEventListener("ended", function() {
+                    setTimeout(function() {
+                        player();
+                    }, generate_random());
+                });;
+            }
+            random_timing_player("audio/お食事モンスター.mp3.base64")
+
             window.addEventListener("resize", resize_canvas);
+
             document.getElementById("pointer_controls_menu").style.display = "block";
+
             const canvas_width = innerWidth;
             const canvas_height = innerHeight;
             const renderer = new THREE.WebGLRenderer({
@@ -993,6 +1103,7 @@ THE SOFTWARE.
             });
             renderer.setPixelRatio(window.devicePixelRatio);
             renderer.setSize(canvas_width, canvas_height);
+
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(
                 45,
@@ -1000,7 +1111,8 @@ THE SOFTWARE.
                 1,
                 10000
             );
-            camera.position.set(0, 0, 5);
+            camera.position.set(0, 2, 5);
+            scene.add(camera);
             // const controls = new THREE.OrbitControls(camera, renderer.domElement);
             // controls.enableDamping = true;
             // controls.dampingFactor = 0.2;
@@ -1008,6 +1120,7 @@ THE SOFTWARE.
             // fps_controls.lookSpeed = 0.2;
             // fps_controls.movementSpeed = 5;
             // fps_controls.lookVertical = false;
+
             const pointer_controls = new THREE.PointerLockControls(camera, document.getElementById("game_canvas"));
             document.getElementById("pointer_controls_menu").addEventListener("click", function() {
                 pointer_controls.lock();
@@ -1018,25 +1131,11 @@ THE SOFTWARE.
             pointer_controls.addEventListener("unlock", function() {
                 document.getElementById("pointer_controls_menu").style.display = "block";
             });
+
             let is_move_forward_mode = false;
             let is_move_back_mode = false;
             let is_move_left_mode = false;
             let is_move_right_mode = false;
-            setInterval(function() {
-                const move_distance = 0.1;
-                if(is_move_forward_mode) {
-                    pointer_controls.moveForward(move_distance);
-                }
-                if(is_move_back_mode) {
-                    pointer_controls.moveForward(-1 * move_distance);
-                }
-                if(is_move_right_mode) {
-                    pointer_controls.moveRight(move_distance);
-                }
-                if(is_move_left_mode) {
-                    pointer_controls.moveRight(-1 * move_distance);
-                }
-            }, 1000 / 60);
             document.addEventListener("keydown", function() {
                 switch(event.keyCode) {
                     case 87:
@@ -1070,13 +1169,21 @@ THE SOFTWARE.
                 }
             });
             // const clock = new THREE.Clock(true);
-            const directionalLight = new THREE.DirectionalLight(
-                0xffffff
-            );
-            directionalLight.position.set(1, 1, 1);
-            scene.add(directionalLight);
-            const loader = new THREE.GLTFLoader();
-            loader.load("3dmodel/Elephant 3.glb", (gltf) => {
+            // raycaster_front.setFromCamera(new THREE.Vector2(0, 0), camera);
+
+            // const elephant_loader = new THREE.GLTFLoader();
+            // elephant_loader.load("3dmodel/Elephant 3.glb", (gltf) => {
+            //     gltf.scene.position.y += 2.8;
+            //     scene.add(gltf.scene);
+            //     gltf.animations;
+            //     gltf.scene;
+            //     gltf.scenes;
+            //     gltf.cameras;
+            //     gltf.asset;
+            // });
+
+            const maze_loader = new THREE.GLTFLoader();
+            maze_loader.load("3dmodel/original/maze.glb", (gltf) => {
                 scene.add(gltf.scene);
                 gltf.animations;
                 gltf.scene;
@@ -1084,7 +1191,24 @@ THE SOFTWARE.
                 gltf.cameras;
                 gltf.asset;
             });
+
+            const point_light = new THREE.PointLight(0xFFFFFF, 20, 50, 1.0);
+            camera.add(point_light);
+
+            const raycaster_front = new THREE.Raycaster();
+            const raycaster_left = new THREE.Raycaster();
+            const raycaster_right = new THREE.Raycaster();
+            const raycaster_back = new THREE.Raycaster();
+            const camera_direction = new THREE.Vector3();
+            const camera_direction_copy = new THREE.Vector3();
+            const camera_direction_copy2 = new THREE.Vector3();
+            const axis = new THREE.Vector3(0, 1, 0);
+
+            let render_cycle = 1 / 60;
+
+            renderer.physicallyCorrectLights = true;
             renderer.render(scene, camera);
+
             resize_canvas();
             loop();
 
@@ -1092,7 +1216,69 @@ THE SOFTWARE.
                 // controls.update();
                 // fps_controls.update(clock.getDelta());
                 stats.begin();
+
+                render_start_time = new Date().getTime();
+
+                raycaster_front.setFromCamera(new THREE.Vector2(0, 0), camera);
+                // raycaster_front.set(camera.position, new THREE.Vector3(0, 0, -1));
+                const intersects_front = raycaster_front.intersectObjects(scene.children, true);
+                if(intersects_front.length > 0) {
+                    if(intersects_front[0].distance < 2) {
+                        is_move_forward_mode = false;
+                        pointer_controls.moveForward(intersects_front[0].distance - 1.9);
+                    }
+                }
+
+                camera.getWorldDirection(camera_direction);
+                camera.getWorldDirection(camera_direction_copy);
+                camera.getWorldDirection(camera_direction_copy2);
+                const camera_position = camera.position;
+
+                raycaster_right.set(camera_position, camera_direction.applyAxisAngle(axis, -1 * (Math.PI / 2)));
+                const intersects_right = raycaster_right.intersectObjects(scene.children, true);
+                if(intersects_right.length > 0) {
+                    if(intersects_right[0].distance < 1) {
+                        is_move_right_mode = false;
+                        pointer_controls.moveRight(intersects_right[0].distance - 0.9);
+                    }
+                }
+
+                raycaster_left.set(camera_position, camera_direction_copy.applyAxisAngle(axis, Math.PI / 2));
+                const intersects_left = raycaster_left.intersectObjects(scene.children, true);
+                if(intersects_left.length > 0) {
+                    if(intersects_left[0].distance < 1) {
+                        is_move_left_mode = false;
+                        pointer_controls.moveRight(-1 * (intersects_left[0].distance - 0.9));
+                    }
+                }
+
+                raycaster_back.set(camera_position, camera_direction_copy2.applyAxisAngle(axis, Math.PI));
+                const intersects_back = raycaster_back.intersectObjects(scene.children, true);
+                if(intersects_back.length > 0) {
+                    if(intersects_back[0].distance < 1) {
+                        is_move_back_mode = false;
+                        pointer_controls.moveForward(-1 * (intersects_back[0].distance - 0.9));
+                    }
+                }
+
+                const moving_distance = Math.min(1, 6 * render_cycle);
+                if(is_move_forward_mode) {
+                    pointer_controls.moveForward(moving_distance);
+                }
+                if(is_move_back_mode) {
+                    pointer_controls.moveForward(-1 * moving_distance);
+                }
+                if(is_move_right_mode) {
+                    pointer_controls.moveRight(moving_distance);
+                }
+                if(is_move_left_mode) {
+                    pointer_controls.moveRight(-1 * moving_distance);
+                }
+
                 renderer.render(scene, camera);
+
+                render_cycle = (new Date().getTime() - render_start_time) / 100;
+
                 stats.end();
                 requestAnimationFrame(loop);
             }
