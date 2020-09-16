@@ -380,10 +380,26 @@ THE SOFTWARE.
                     <h1><span class="back">←</span>このゲームについて</h1>
                     このゲームはRobot-Inventorによって作られ，MITライセンスの下に配布されており，誰でも自由に無料で利用することができます。また，本ゲームは，くそいサイト様のゲーム「ぴえん」に触発されていますが，直接の関係はありません。ご注意ください。
                 </div>
-                <div id="ask_about_tutorial_page">
-                    <h1><span class="back">←</span>チュートリアル</h1>
-                    <button>チュートリアルへ</button>
-                    <button id="skip_tutorial">チュートリアルをスキップ</button>
+                <div id="ask_about_device_page">
+                    <h1><span class="back">←</span>デバイスを選択</h1>
+                    <div id="smartphone">
+                        <button>
+                            スマートフォン<br>
+                            <i class="material_icon">smartphone</i>
+                            <p>
+                                タッチパネルとジャイロセンサーの両方を搭載している場合に選択してください。
+                            </p>
+                        </button>
+                    </div>
+                    <div id="pc">
+                        <button>
+                            PC<br>
+                            <i class="material_icon">desktop_windows</i>
+                            <p>
+                                キーボードとマウスの両方が接続されている場合に選択してください。
+                            </p>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div id="copyright">Copyright (c) 2020 Robot-Inventor</div>
@@ -392,9 +408,28 @@ THE SOFTWARE.
             <div class="cloud" style="top: 50vh; animation-delay: -7s;"></div>
             <div class="cloud" style="top: 80vh; animation-delay: -9s;"></div>
         </div>
+        <div id="page_loading">
+            <p>Now Loading. Please wait...</p>
+            <div class="loading_circle"></div>
+            <div id="progress_outer">
+                <span id="progress_value"></span><progress max="100" value="0"></progress>
+            </div>
+        </div>
         <canvas id="game_canvas"></canvas>
         <div id="pointer_controls_menu">
-            <p>Clickしろ！</p>
+            <p>Click<i class="material_icon">mouse</i></p>
+        </div>
+        <div id="usage">
+            <p>移動: 矢印またはWASD</p>
+            <p>視点: マウス</p>
+            <p>中断: esc</p>
+            <p>全画面: 左下のボタン</p>
+        </div>
+        <div id="end_message">
+            <p></p>
+            <menu>
+                <button onclick="location.reload()">もう1回<i class="material_icon">refresh</i></button>
+            </menu>
         </div>
         <!-- <textarea id="hoge" cols="30" rows="10" style="z-index: 1000;margin: 0;padding: 0;width: 50vw;height: 50vh;color: black;position: fixed;top: 0;left: 0;"></textarea> -->
         <div id="fullscreen_button" title="全画面表示の切り替え（F11またはCommand + Control + F）"><i class="material_icon">fullscreen</i></div>
@@ -624,6 +659,41 @@ THE SOFTWARE.
             padding-left: 1rem;
         }
 
+        #menu_outer #ask_about_device_page div button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        #menu_outer #ask_about_device_page div button:hover {
+            background: transparent;
+            border: none;
+            color: white;
+            transform: none;
+        }
+
+        #menu_outer #ask_about_device_page div button i.material_icon {
+            font-size: 10vmin;
+            cursor: pointer;
+        }
+
+        #menu_outer #ask_about_device_page div button i.material_icon + p {
+            font-size: 40%;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        #menu_outer div#ask_about_device_page div#smartphone,
+        #menu_outer div#ask_about_device_page div#pc {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 1em;
+            margin: 0;
+            height: auto;
+            background: transparent;
+            display: inline-block;
+        }
+
         #copyright {
             position: absolute;
             bottom: 0;
@@ -759,25 +829,203 @@ THE SOFTWARE.
             height: 100vh;
             margin: 0;
             padding: 0;
+            padding-top: 50vh;
             position: fixed;
             top: 0;
             left: 0;
-            background: rgba(100, 100, 100, 0.5);
+            background: rgba(0, 0, 0, 0.5);
             color: white;
             display: none;
             z-index: 2;
+            cursor: pointer;
+            text-align: center;
+            transform: translateY(-10vmin);
+        }
+
+        #pointer_controls_menu p {
+            font-size: 10vmin;
+            cursor: pointer;
+        }
+
+        #pointer_controls_menu p i {
+            font-size: 10vmin;
+            vertical-align: text-top;
             cursor: pointer;
         }
 
         #stats_container {
             display: none;
         }
+
+        #end_message {
+            margin: 0;
+            padding: 0;
+            padding-top: 50vh;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform: translateY(-20vmin);
+            display: none;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        #end_message p {
+            width: 100vw;
+            height: auto;
+            padding: 0;
+            padding-left: 0.2em;
+            margin: 0;
+            text-align: center;
+            font-size: 10vmin;
+        }
+
+        #end_message menu {
+            width: 100vw;
+            height: auto;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        #end_message menu button {
+            display: inline-block;
+            font-size: 5vmin;
+            margin: 1em;
+            border: solid white 0.1rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            width: 65vmin;
+            transition: 0.3s;
+            cursor: pointer;
+            background: none;
+            outline: none;
+            text-align: center;
+            line-height: 100%;
+            letter-spacing: 0em;
+        }
+
+        #end_message menu button i {
+            font-size: 5vmin;
+            cursor: pointer;
+            vertical-align: bottom;
+            margin-left: 0.5em;
+            transition: 0.3s;
+        }
+
+        #end_message menu button:hover {
+            background: white;
+            color: rgb(22, 161, 216);
+        }
+
+        #end_message menu button:hover i {
+            color: rgb(22, 161, 216);
+        }
+
+        #page_loading {
+            z-index: 4;
+            background: #010101;
+            width: 100vw;
+            height: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: 0.3s;
+            text-align: center;
+            padding-top: 50vh;
+            transform: translateY(-5vmin);
+        }
+
+        #page_loading p {
+            font-size: 5vmin;
+            font-family: "Yu Gothic", "YuGothic", sans-serif;
+            font-weight: lighter;
+        }
+
+        #page_loading .loading_circle {
+            width: 10vmin;
+            height: 10vmin;
+            animation: loading_circle_animation linear 1s infinite;
+            border: solid 1vmin white;
+            border-color: white white white black;
+            border-radius: 100%;
+            display: inline-block;
+            margin: 1em;
+        }
+
+        @keyframes loading_circle_animation {
+            0% {
+                transform: none;
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #page_loading #progress_outer {
+            margin-top: 2em;
+        }
+
+        #page_loading #progress_outer span {
+            margin-right: 1em;
+            font-family: "Yu Gothic", "YuGothic", sans-serif;
+            display: inline-block;
+            transform: translateY(0.4em);
+        }
+
+        #page_loading #progress_outer progress {
+            display: none;
+        }
+
+        progress {
+            -webkit-appearance: none;
+            width: 50vmin;
+            height: 0.5vmin;
+        }
+
+        progress:not([value]) {
+            -webkit-appearance: none;
+        }
+
+        progress:not([value])::-webkit-progress-bar {
+            background: none;
+            border-radius: 0.5rem;
+        }
+
+        progress::-webkit-progress-bar {
+            background: white;
+            border-radius: 0.5rem;
+        }
+
+        progress[value]::-webkit-progress-value {
+            background: rgb(22, 161, 216);
+            border-radius: 0.5rem;
+        }
+
+        #usage {
+            width: auto;
+            height: auto;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 3;
+            padding: 1em;
+            display: none;
+        }
+
+        #usage p {
+            width: auto;
+            height: auto;
+            font-family: "Yu Gothic", "YuGothic", sans-serif;
+            font-weight: bold;
+        }
     </style>
     <script src="javascript/Stats.js"></script>
     <script src="javascript/three.min.js"></script>
-    <!-- <script src="javascript/OrbitControls.js"></script> -->
     <script src="javascript/PointerLockControls.js"></script>
-    <script src="javascript/FirstPersonControls.js"></script>
+    <script src="javascript/DeviceOrientationControls.js"></script>
     <script src="javascript/GLTFLoader.js"></script>
     <script>
         const CHANGE_PAGE_TRANSITION_TIME = 100;
@@ -785,6 +1033,9 @@ THE SOFTWARE.
         load_audio_data("audio/物語の始まり.mp3.base64", main_music);
         let main_music_play_status = true;
         let is_any_keys_pressed_or_clicked = false;
+        let arrow_bgm = true;
+        let is_pc = false;
+        let is_smartphone = false;
 
         const stats = new Stats();
         stats.showPanel(0);
@@ -796,75 +1047,25 @@ THE SOFTWARE.
             audio_element.src = "data:audio/mpeg;base64," + text.replace(/<0x41>/g, "A").replace(/<a>/g, "z");
         }
 
-        // async function key_generater() {
-        //     const key = await crypto.subtle.generateKey(
-        //         {
-        //             name: "AES-GCM",
-        //             length: 256
-        //         },
-        //         true,
-        //         ["encrypt", "decrypt"]
-        //     );
-        //     const exported = await window.crypto.subtle.exportKey(
-        //         "jwk",
-        //         key
-        //     );
-        //     document.getElementById("hoge").value = JSON.stringify(exported);
-        // }
-        // key_generater();
+        function show_loading() {
+            const loading_style = document.getElementById("page_loading").style;
+            loading_style.transition = "0.3s";
+            loading_style.display = "block";
+            loading_style.opacity = "1";
+        }
 
-        // async function encrypter() {
-        //     const jwk_data = '{"alg":"A256GCM","ext":true,"k":"WPnYrAtUepgQIjieZnVsakQPBpfXHX2aoQbcFgMq-1c","key_ops":["encrypt","decrypt"],"kty":"oct"}';
-        //     const encoder = new TextEncoder();
-        //     const decoder = new TextDecoder();
-        //     const key = await crypto.subtle.importKey(
-        //         "jwk",
-        //         JSON.parse(jwk_data),
-        //         "AES-GCM",
-        //         false,
-        //         ["encrypt", "decrypt"]
-        //     );
-        //     // const response = await fetch("audio/物語の始まり.mp3.base64");
-        //     // const text = await response.text();
-        //     const text = "hoge";
-        //     const encoded = encoder.encode(text);
-        //     const iv = encoder.encode(atob("kXNUZG5x+0xsm4xv"));
-        //     const result = await crypto.subtle.encrypt(
-        //         {
-        //             name: "AES-GCM",
-        //             iv: iv
-        //         },
-        //         key,
-        //         encoded
-        //     );
-        //     document.getElementById("hoge").value = String.fromCharCode.apply(null, new Uint8Array(result));
-        // }
-        // encrypter();
+        function hide_loading() {
+            const loading_style = document.getElementById("page_loading").style;
+            loading_style.transition = "0.3s";
+            loading_style.opacity = "0";
+            setTimeout(() => {
+                loading_style.display = "none";
+            }, 300);
+        }
 
-//         async function decrypter() {
-//             const encoder = new TextEncoder();
-//             const iv = encoder.encode(atob("kXNUZG5x+0xsm4xv"));
-//             const jwk_data = '{"alg":"A256GCM","ext":true,"k":"WPnYrAtUepgQIjieZnVsakQPBpfXHX2aoQbcFgMq-1c","key_ops":["encrypt","decrypt"],"kty":"oct"}';
-//             const key = await crypto.subtle.importKey(
-//                 "jwk",
-//                 JSON.parse(jwk_data),
-//                 "AES-GCM",
-//                 false,
-//                 ["encrypt", "decrypt"]
-//             );
-//             const encoded = encoder.encode(`¢ºö½È2\)ó´x.Î
-// `);
-//             const result = await crypto.subtle.decrypt(
-//                 {
-//                     name: "AES-GCM",
-//                     iv: iv
-//                 },
-//                 key,
-//                 encoded
-//             );
-//             console.log(result)
-//         }
-//         decrypter();
+        window.addEventListener("load", function() {
+            hide_loading();
+        });
 
         function hide_page(element, transition_time=100) {
             const element_style = document.querySelector(element).style;
@@ -952,8 +1153,10 @@ THE SOFTWARE.
         document.getElementById("toggle_bgm_setting").addEventListener("change", function() {
             if (document.getElementById("toggle_bgm_setting").checked) {
                 play_main_music();
+                arrow_bgm = true;
             } else {
                 stop_main_music();
+                arrow_bgm = false;
             }
         });
 
@@ -1014,11 +1217,11 @@ THE SOFTWARE.
         });
 
         document.querySelector("#top_page #menu_outer #title_page #start_button").addEventListener("click", function() {
-            change_page("#top_page #menu_outer #title_page", "#top_page #menu_outer #ask_about_tutorial_page", CHANGE_PAGE_TRANSITION_TIME);
+            change_page("#top_page #menu_outer #title_page", "#top_page #menu_outer #ask_about_device_page", CHANGE_PAGE_TRANSITION_TIME);
         });
 
-        document.querySelector("#top_page #menu_outer #ask_about_tutorial_page .back").addEventListener("click", function() {
-            change_page("#top_page #menu_outer #ask_about_tutorial_page", "#top_page #menu_outer #title_page", CHANGE_PAGE_TRANSITION_TIME);
+        document.querySelector("#top_page #menu_outer #ask_about_device_page .back").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #ask_about_device_page", "#top_page #menu_outer #title_page", CHANGE_PAGE_TRANSITION_TIME);
         });
 
         function show_game_canvas() {
@@ -1034,7 +1237,15 @@ THE SOFTWARE.
             }, 2000);
         }
 
-        document.querySelector("#top_page #menu_outer #ask_about_tutorial_page #skip_tutorial").addEventListener("click", function() {
+        
+        document.querySelector("#top_page #menu_outer #ask_about_device_page #smartphone").addEventListener("click", function() {
+                is_smartphone = true;
+                show_game_canvas();
+                game_start();
+        });
+
+        document.querySelector("#top_page #menu_outer #ask_about_device_page #pc").addEventListener("click", function() {
+            is_pc = true;
             show_game_canvas();
             game_start();
         });
@@ -1051,7 +1262,6 @@ THE SOFTWARE.
                 renderer.setSize(canvas_width, canvas_height);
                 camera.aspect = canvas_width / canvas_height;
                 camera.updateProjectionMatrix();
-                // controls.handleResize();
             }
 
             function play_horror_music() {
@@ -1067,7 +1277,9 @@ THE SOFTWARE.
                     player();
                 });
             }
-            play_horror_music();
+            if(arrow_bgm) {
+                play_horror_music();
+            }
 
             function random_timing_player(file_path) {
                 const roar = new Audio();
@@ -1090,11 +1302,11 @@ THE SOFTWARE.
                     }, generate_random());
                 });;
             }
-            random_timing_player("audio/お食事モンスター.mp3.base64")
+            if(arrow_bgm) {
+                random_timing_player("audio/お食事モンスター.mp3.base64");
+            }
 
             window.addEventListener("resize", resize_canvas);
-
-            document.getElementById("pointer_controls_menu").style.display = "block";
 
             const canvas_width = innerWidth;
             const canvas_height = innerHeight;
@@ -1113,24 +1325,25 @@ THE SOFTWARE.
             );
             camera.position.set(0, 2, 5);
             scene.add(camera);
-            // const controls = new THREE.OrbitControls(camera, renderer.domElement);
-            // controls.enableDamping = true;
-            // controls.dampingFactor = 0.2;
-            // const fps_controls = new THREE.FirstPersonControls(camera, document.getElementById("game_canvas"));
-            // fps_controls.lookSpeed = 0.2;
-            // fps_controls.movementSpeed = 5;
-            // fps_controls.lookVertical = false;
 
-            const pointer_controls = new THREE.PointerLockControls(camera, document.getElementById("game_canvas"));
-            document.getElementById("pointer_controls_menu").addEventListener("click", function() {
-                pointer_controls.lock();
-            });
-            pointer_controls.addEventListener("lock", function() {
-                document.getElementById("pointer_controls_menu").style.display = "none";
-            });
-            pointer_controls.addEventListener("unlock", function() {
+            let orientation_controls;
+            let pointer_controls;
+            if(is_pc) {
                 document.getElementById("pointer_controls_menu").style.display = "block";
-            });
+                pointer_controls = new THREE.PointerLockControls(camera, document.getElementById("game_canvas"));
+                document.getElementById("pointer_controls_menu").addEventListener("click", function() {
+                    pointer_controls.lock();
+                });
+                pointer_controls.addEventListener("lock", function() {
+                    document.getElementById("pointer_controls_menu").style.display = "none";
+                });
+                pointer_controls.addEventListener("unlock", function() {
+                    document.getElementById("pointer_controls_menu").style.display = "block";
+                });
+            }
+            if(is_smartphone) {
+                orientation_controls = new THREE.DeviceOrientationControls(camera);
+            }
 
             let is_move_forward_mode = false;
             let is_move_back_mode = false;
@@ -1138,15 +1351,19 @@ THE SOFTWARE.
             let is_move_right_mode = false;
             document.addEventListener("keydown", function() {
                 switch(event.keyCode) {
+                    case 38:
                     case 87:
                         is_move_forward_mode = true;
                         break;
+                    case 40:
                     case 83:
                         is_move_back_mode = true;
                         break;
+                    case 39:
                     case 68:
                         is_move_right_mode = true;
                         break;
+                    case 37:
                     case 65:
                         is_move_left_mode = true;
                         break;
@@ -1154,22 +1371,43 @@ THE SOFTWARE.
             });
             document.addEventListener("keyup", function() {
                 switch(event.keyCode) {
+                    case 38:
                     case 87:
                         is_move_forward_mode = false;
                         break;
+                    case 40:
                     case 83:
                         is_move_back_mode = false;
                         break;
+                    case 39:
                     case 68:
                         is_move_right_mode = false;
                         break;
+                    case 37:
                     case 65:
                         is_move_left_mode = false;
                         break;
                 }
             });
-            // const clock = new THREE.Clock(true);
-            // raycaster_front.setFromCamera(new THREE.Vector2(0, 0), camera);
+            function move_forward(distance) {
+                if(is_pc) {
+                    pointer_controls.moveForward(distance);
+                } else if(is_smartphone) {
+                    vec = new THREE.Vector3();
+                    vec.setFromMatrixColumn(camera.matrix, 0);
+                    vec.crossVectors(camera.up, vec);
+                    camera.position.addScaledVector(vec, distance);
+                }
+            }
+            function move_right(distance) {
+                if(is_pc) {
+                    pointer_controls.moveRight(distance);
+                } else if(is_smartphone) {
+                    vec = new THREE.Vector3();
+                    vec.setFromMatrixColumn(camera.matrix, 0);
+                    camera.position.addScaledVector(vec, distance);
+                }
+            }
 
             // const elephant_loader = new THREE.GLTFLoader();
             // elephant_loader.load("3dmodel/Elephant 3.glb", (gltf) => {
@@ -1183,31 +1421,130 @@ THE SOFTWARE.
             // });
 
             const maze_loader = new THREE.GLTFLoader();
+            document.querySelector("#page_loading .loading_circle").style.display = "none";
+            document.querySelector("#page_loading progress").style.display = "inline-block";
+            show_loading();
             maze_loader.load("3dmodel/original/maze.glb", (gltf) => {
                 scene.add(gltf.scene);
-                gltf.animations;
-                gltf.scene;
-                gltf.scenes;
-                gltf.cameras;
-                gltf.asset;
+                document.getElementById("usage").style.display = "block";
+                hide_loading();
+            }, (xhr) => {
+                const value = xhr.loaded / xhr.total * 100;
+                document.querySelector("#page_loading progress").value = value;
+                document.querySelector("#page_loading span").textContent = parseInt(value, 10) + "%";
             });
 
             const point_light = new THREE.PointLight(0xFFFFFF, 20, 50, 1.0);
             camera.add(point_light);
 
+            const light_position_data = [
+                {
+                    "lightPlace": [-28, 2, -54],
+                    "goalArea": {
+                        "xMin": -39,
+                        "xMax": -25,
+                        "zMin": -55,
+                        "zMax": -52
+                    },
+                    "trapArea": {
+                        "xMin": -39,
+                        "xMax": -58,
+                        "zMin": -55,
+                        "zMax": -52
+                    }
+                },
+                {
+                    "lightPlace": [18, 2, -54],
+                    "goalArea": {
+                        "xMin": 15,
+                        "xMax": 29,
+                        "zMin": -55,
+                        "zMax": -52
+                    },
+                    "trapArea": {
+                        "xMin": 8,
+                        "xMax": 28,
+                        "zMin": -55,
+                        "zMax": -52
+                    }
+                },
+                {
+                    "lightPlace": [27, 2, -81],
+                    "goalArea": {
+                        "xMin": 25,
+                        "xMax": 34,
+                        "zMin": -82,
+                        "zMax": -80
+                    },
+                    "trapArea": {
+                        "xMin": 20,
+                        "xMax": 34,
+                        "zMin": -83,
+                        "zMax": -79
+                    }
+                }
+            ];
+
+            for(let i = light_position_data.length - 1; i > 0; i --) {
+                let r = Math.floor(Math.random() * (i + 1));
+                let tmp = light_position_data[i];
+                light_position_data[i] = light_position_data[r];
+                light_position_data[r] = tmp;
+            }
+
+            const light_intensity = 20;
+            const light_distance = 20;
+            const light_decay = 2.5;
+            const goal_light = new THREE.PointLight(0x00FF00, light_intensity, light_distance, light_decay);
+            goal_light.position.set(...light_position_data[0].lightPlace);
+            scene.add(goal_light);
+            const poison_light = new THREE.PointLight(0x9D00FF, light_intensity, light_distance, light_decay);
+            poison_light.position.set(...light_position_data[1].lightPlace);
+            scene.add(poison_light);
+            const curse_light = new THREE.PointLight(0xFF0000, light_intensity, light_distance, light_decay);
+            curse_light.position.set(...light_position_data[2].lightPlace);
+            scene.add(curse_light);
+
             const raycaster_front = new THREE.Raycaster();
+            const raycaster_back = new THREE.Raycaster();
             const raycaster_left = new THREE.Raycaster();
             const raycaster_right = new THREE.Raycaster();
-            const raycaster_back = new THREE.Raycaster();
             const camera_direction = new THREE.Vector3();
             const camera_direction_copy = new THREE.Vector3();
             const camera_direction_copy2 = new THREE.Vector3();
+            const camera_direction_copy3 = new THREE.Vector3();
             const axis = new THREE.Vector3(0, 1, 0);
 
+            const distance_limit = {
+                "front": 2,
+                "back": 1,
+                "right": 1,
+                "left": 1
+            };
+
             let render_cycle = 1 / 60;
+            let frame_counter = 0;
+
+            function show_end_message(message) {
+                document.querySelector("#end_message p").textContent = message;
+                document.getElementById("end_message").style.display = "block";
+                if(is_pc) {
+                    pointer_controls.unlock();
+                    document.getElementById("pointer_controls_menu").style.display = "none";
+                }
+            }
+
+            function is_in_area(object_position, area_data) {
+                return area_data.xMin < object_position.x && object_position.x < area_data.xMax && area_data.zMin < object_position.z && object_position.z < area_data.zMax;
+            }
 
             renderer.physicallyCorrectLights = true;
             renderer.render(scene, camera);
+
+            setInterval(() => {
+                render_cycle = 1 / frame_counter;
+                frame_counter = 0;
+            }, 1000);
 
             resize_canvas();
             loop();
@@ -1217,67 +1554,86 @@ THE SOFTWARE.
                 // fps_controls.update(clock.getDelta());
                 stats.begin();
 
-                render_start_time = new Date().getTime();
-
-                raycaster_front.setFromCamera(new THREE.Vector2(0, 0), camera);
-                // raycaster_front.set(camera.position, new THREE.Vector3(0, 0, -1));
-                const intersects_front = raycaster_front.intersectObjects(scene.children, true);
-                if(intersects_front.length > 0) {
-                    if(intersects_front[0].distance < 2) {
-                        is_move_forward_mode = false;
-                        pointer_controls.moveForward(intersects_front[0].distance - 1.9);
-                    }
-                }
-
                 camera.getWorldDirection(camera_direction);
                 camera.getWorldDirection(camera_direction_copy);
                 camera.getWorldDirection(camera_direction_copy2);
+                camera.getWorldDirection(camera_direction_copy3);
                 const camera_position = camera.position;
 
-                raycaster_right.set(camera_position, camera_direction.applyAxisAngle(axis, -1 * (Math.PI / 2)));
-                const intersects_right = raycaster_right.intersectObjects(scene.children, true);
-                if(intersects_right.length > 0) {
-                    if(intersects_right[0].distance < 1) {
-                        is_move_right_mode = false;
-                        pointer_controls.moveRight(intersects_right[0].distance - 0.9);
+                raycaster_front.set(camera_position, new THREE.Vector3(camera_direction.x, 0, camera_direction.z));
+                const intersects_front = raycaster_front.intersectObjects(scene.children, true);
+                if(intersects_front.length > 0) {
+                    const distance = intersects_front[0].distance;
+                    if(distance < distance_limit.front) {
+                        is_move_forward_mode = false;
+                        move_forward(distance - distance_limit.front + 0.1);
                     }
                 }
 
-                raycaster_left.set(camera_position, camera_direction_copy.applyAxisAngle(axis, Math.PI / 2));
-                const intersects_left = raycaster_left.intersectObjects(scene.children, true);
-                if(intersects_left.length > 0) {
-                    if(intersects_left[0].distance < 1) {
-                        is_move_left_mode = false;
-                        pointer_controls.moveRight(-1 * (intersects_left[0].distance - 0.9));
-                    }
-                }
-
-                raycaster_back.set(camera_position, camera_direction_copy2.applyAxisAngle(axis, Math.PI));
+                camera_direction_copy.applyAxisAngle(axis, Math.PI);
+                raycaster_back.set(camera_position, new THREE.Vector3(camera_direction_copy.x, 0, camera_direction_copy.z));
                 const intersects_back = raycaster_back.intersectObjects(scene.children, true);
                 if(intersects_back.length > 0) {
-                    if(intersects_back[0].distance < 1) {
+                    const distance = intersects_back[0].distance;
+                    if(distance < distance_limit.back) {
                         is_move_back_mode = false;
-                        pointer_controls.moveForward(-1 * (intersects_back[0].distance - 0.9));
+                        move_forward(-1 * (distance - distance_limit.back + 0.1));
+                    }
+                }
+
+                camera_direction_copy2.applyAxisAngle(axis, -1 * (Math.PI / 2));
+                raycaster_right.set(camera_position, new THREE.Vector3(camera_direction_copy2.x, 0, camera_direction_copy2.z));
+                const intersects_right = raycaster_right.intersectObjects(scene.children, true);
+                if(intersects_right.length > 0) {
+                    const distance = intersects_right[0].distance;
+                    if(distance < distance_limit.right) {
+                        is_move_right_mode = false;
+                        move_right(distance - distance_limit.right + 0.1);
+                    }
+                }
+
+                camera_direction_copy3.applyAxisAngle(axis, Math.PI / 2);
+                raycaster_left.set(camera_position, new THREE.Vector3(camera_direction_copy3.x, 0, camera_direction_copy3.z));
+                const intersects_left = raycaster_left.intersectObjects(scene.children, true);
+                if(intersects_left.length > 0) {
+                    const distance = intersects_left[0].distance;
+                    if(distance < distance_limit.left) {
+                        is_move_left_mode = false;
+                        move_right(-1 * (distance - distance_limit.left + 0.1));
                     }
                 }
 
                 const moving_distance = Math.min(1, 6 * render_cycle);
                 if(is_move_forward_mode) {
-                    pointer_controls.moveForward(moving_distance);
+                    move_forward(moving_distance);
                 }
                 if(is_move_back_mode) {
-                    pointer_controls.moveForward(-1 * moving_distance);
+                    move_forward(-1 * moving_distance);
                 }
                 if(is_move_right_mode) {
-                    pointer_controls.moveRight(moving_distance);
+                    move_right(moving_distance);
                 }
                 if(is_move_left_mode) {
-                    pointer_controls.moveRight(-1 * moving_distance);
+                    move_right(-1 * moving_distance);
+                }
+
+                if(is_in_area(camera_position, light_position_data[0].goalArea)) {
+                    show_end_message("CLEAR!");
+                }
+                if(is_in_area(camera_position, light_position_data[1].trapArea)) {
+                    show_end_message("毒にやられた！");
+                }
+                if(is_in_area(camera_position, light_position_data[2].trapArea)) {
+                    show_end_message("呪われてしまった！");
+                }
+
+                if(is_smartphone) {
+                    orientation_controls.update();
                 }
 
                 renderer.render(scene, camera);
 
-                render_cycle = (new Date().getTime() - render_start_time) / 100;
+                frame_counter++;
 
                 stats.end();
                 requestAnimationFrame(loop);
