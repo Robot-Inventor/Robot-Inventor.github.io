@@ -1555,7 +1555,7 @@ THE SOFTWARE.
                 document.getElementById("usage").style.display = "block";
                 hide_loading();
             }, (xhr) => {
-                const value = xhr.loaded / xhr.total * 100;
+                const value = Math.floor(xhr.loaded / xhr.total * 100);
                 document.querySelector("#page_loading progress").value = value;
                 document.querySelector("#page_loading span").textContent = parseInt(value, 10) + "%";
             });
