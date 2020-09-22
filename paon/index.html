@@ -387,7 +387,7 @@ THE SOFTWARE.
                             スマートフォン<br>
                             <i class="material_icon">smartphone</i>
                             <p>
-                                タッチパネルとジャイロセンサーの両方を搭載している場合に選択してください。
+                                タッチパネルとジャイロセンサーの両方を搭載している場合に選択してください。処理を軽くするため，象は追いかけてきません。
                             </p>
                         </button>
                     </div>
@@ -423,16 +423,23 @@ THE SOFTWARE.
         <label for="usage_button" title="操作方法を表示"><i class="material_icon">cancel</i></label>
         <div id="usage">
             <p>移動: <span class="for_pc">矢印またはWASD</span><span class="for_smartphone">キーボードの矢印・WASDまたは左下のボタン</span></p>
-            <p>視点: <spasn class="for_pc">マウス</spasn><span class="for_smartphone">スマホの向き</span></p>
+            <p>視点: <spasn class="for_pc">マウス</spasn><span class="for_smartphone">右下のボタン</span></p>
             <p class="for_pc">中断: esc</p>
-            <p>全画面: 右下のボタン</p>
+            <p>全画面: 右下の<i class="material_icon">fullscreen</i>ボタン</p>
         </div>
-        <div id="controller" class="for_smartphone">
-            <div id="controller_forward"><i class="material_icon">keyboard_arrow_up</i></div>
-            <div id="controller_back"><i class="material_icon">keyboard_arrow_down</i></div>
-            <div id="controller_right"><i class="material_icon">keyboard_arrow_right</i></div>
-            <div id="controller_left"><i class="material_icon">keyboard_arrow_left</i></div>
+        <div id="move_controller" class="controller" class="for_smartphone">
+            <div class="controller_top" id="controller_forward"></div>
+            <div class="controller_bottom" id="controller_back"></div>
+            <div class="controller_right" id="controller_right"></div>
+            <div class="controller_left" id="controller_left"></div>
         </div>
+        <div id="rotation_controller" class="controller" class="for_smartphone">
+            <div class="controller_top" id="controller_forward"></div>
+            <div class="controller_bottom" id="controller_back"></div>
+            <div class="controller_right" id="controller_right"></div>
+            <div class="controller_left" id="controller_left"></div>
+        </div>
+        <div id="time_limit_display"></div>
         <div id="end_message">
             <p></p>
             <menu>
@@ -1059,54 +1066,116 @@ THE SOFTWARE.
             font-weight: bold;
         }
 
-        #controller {
-            width: auto;
-            height: 5rem;
-            position: fixed;
-            bottom: 0;
-            left: 1rem;
-            padding: 0;
+        :root {
+            --controller_size: calc((20vmin + 20vmax) / 2);
+            --controller_bg: white;
+            --controller_bg_hover: rgb(230, 230, 230);
+            --controller_bg_active: rgb(205, 205, 205);
+            --controller_opacity: 0.8;
+            --controller_border_bg: black;
+            --controller_border_thickness: 0.1rem;
+        }
+
+        div.controller {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: var(--controller_size);
+            height: var(--controller_size);
             margin: 0;
+            padding: 0;
+            transform: rotate(45deg);
+            opacity: var(--controller_opacity);
+        }
+
+        div.controller div {
+            background: var(--controller_bg);
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            box-sizing: border-box;
+            transition: 0s;
+        }
+
+        div.controller div:hover {
+            background: var(--controller_bg_hover);
+            transform: scale(0.98);
+        }
+
+        div.controller div:active {
+            background: var(--controller_bg_active);
+            transform: scale(0.95);
+        }
+
+        div.controller div.controller_top {
+            top: 0;
+            left: 0;
+            border-radius: 100% 0 0 0;
+            border-right: solid var(--controller_border_thickness) var(--controller_border_bg);
+            border-bottom: solid var(--controller_border_thickness) var(--controller_border_bg);
+        }
+
+        div.controller div.controller_right {
+            top: 0;
+            left: 50%;
+            border-radius: 0 100% 0 0;
+            border-left: solid var(--controller_border_thickness) var(--controller_border_bg);
+            border-bottom: solid var(--controller_border_thickness) var(--controller_border_bg);
+        }
+
+        div.controller div.controller_bottom {
+            top: 50%;
+            left: 50%;
+            border-radius: 0 0 100% 0;
+            border-left: solid var(--controller_border_thickness) var(--controller_border_bg);
+            border-top: solid var(--controller_border_thickness) var(--controller_border_bg);
+        }
+
+        div.controller div.controller_left {
+            top: 50%;
+            left: 0;
+            border-radius: 0 0 0 100%;
+            border-right: solid var(--controller_border_thickness) var(--controller_border_bg);
+            border-top: solid var(--controller_border_thickness) var(--controller_border_bg);
+        }
+
+        div.controller div i.material_icon {
+            color: #010101;
+            cursor: pointer;
+        }
+
+        #move_controller {
+            position: fixed;
+            left: 1rem;
+            top: calc(100vh - var(--controller_size) - 1rem);
             display: none;
         }
 
-        #controller div {
-            background: white;
-            width: 2rem;
-            height: 2rem;
+        #rotation_controller {
+            position: fixed;
+            left: calc(100vw - var(--controller_size) - 1rem);
+            top: calc(100vh - var(--controller_size) - 1rem);
+            display: none;
+        }
+
+        #time_limit_display {
+            width: auto;
+            height: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
             margin: 0;
-            padding: 0;
-            text-align: center;
-            border-radius: 100%;
-            display: inline-block;
-            font-size: 150%;
-            cursor: pointer;
-            position: absolute;
-        }
-
-        #controller_forward {
-            top: -2rem;
-            left: 2rem;
-        }
-
-        #controller_back {
-            top: 2rem;
-            left: 2rem;
-        }
-
-        #controller_right {
-            left: 4rem;
-        }
-
-        #controller div i.material_icon {
-            color: #010101;
-            cursor: pointer;
+            padding: 1rem;
+            z-index: 2;
+            font-size: 200%;
         }
     </style>
     <script src="javascript/Stats.js"></script>
     <script src="javascript/three.min.js"></script>
     <script src="javascript/PointerLockControls.js"></script>
-    <script src="javascript/DeviceOrientationControls.js"></script>
     <script src="javascript/GLTFLoader.js"></script>
     <script>
         const CHANGE_PAGE_TRANSITION_TIME = 100;
@@ -1117,6 +1186,8 @@ THE SOFTWARE.
         let arrow_bgm = true;
         let is_pc = false;
         let is_smartphone = false;
+
+        document.oncontextmenu = function () {return false;}
 
         const stats = new Stats();
         stats.showPanel(0);
@@ -1419,7 +1490,6 @@ THE SOFTWARE.
             camera.position.set(0, 2, 5);
             scene.add(camera);
 
-            let orientation_controls;
             let pointer_controls;
             if(is_pc) {
                 document.getElementById("pointer_controls_menu").style.display = "block";
@@ -1438,8 +1508,8 @@ THE SOFTWARE.
                 });
             }
             if(is_smartphone) {
-                orientation_controls = new THREE.DeviceOrientationControls(camera);
-                document.getElementById("controller").style.display = "block";
+                document.getElementById("move_controller").style.display = "block";
+                document.getElementById("rotation_controller").style.display = "block";
                 document.querySelectorAll(".for_pc").forEach(function(element) {
                     element.style.display = "none";
                 });
@@ -1489,28 +1559,28 @@ THE SOFTWARE.
                         break;
                 }
             });
-            document.getElementById("controller_forward").addEventListener("touchstart", function() {
+            document.querySelector("#move_controller div.controller_top").addEventListener("touchstart", function() {
                 is_move_forward_mode = true;
             });
-            document.getElementById("controller_back").addEventListener("touchstart", function() {
+            document.querySelector("#move_controller div.controller_bottom").addEventListener("touchstart", function() {
                 is_move_back_mode = true;
             });
-            document.getElementById("controller_left").addEventListener("touchstart", function() {
+            document.querySelector("#move_controller div.controller_left").addEventListener("touchstart", function() {
                 is_move_left_mode = true;
             });
-            document.getElementById("controller_right").addEventListener("touchstart", function() {
+            document.querySelector("#move_controller div.controller_right").addEventListener("touchstart", function() {
                 is_move_right_mode = true;
             });
-            document.getElementById("controller_forward").addEventListener("touchend", function() {
+            document.querySelector("#move_controller div.controller_top").addEventListener("touchend", function() {
                 is_move_forward_mode = false;
             });
-            document.getElementById("controller_back").addEventListener("touchend", function() {
+            document.querySelector("#move_controller div.controller_bottom").addEventListener("touchend", function() {
                 is_move_back_mode = false;
             });
-            document.getElementById("controller_left").addEventListener("touchend", function() {
+            document.querySelector("#move_controller div.controller_left").addEventListener("touchend", function() {
                 is_move_left_mode = false;
             });
-            document.getElementById("controller_right").addEventListener("touchend", function() {
+            document.querySelector("#move_controller div.controller_right").addEventListener("touchend", function() {
                 is_move_right_mode = false;
             });
 
@@ -1534,7 +1604,42 @@ THE SOFTWARE.
                 }
             }
 
-            const point_light = new THREE.PointLight(0xFFFFFF, 20, 50, 1.0);
+            let is_rotation_up_mode = false;
+            let is_rotation_down_mode = false;
+            let is_rotation_left_mode = false;
+            let is_rotation_right_mode = false;
+            document.querySelector("#rotation_controller div.controller_top").addEventListener("touchstart", function() {
+                is_rotation_up_mode = true;
+            });
+            document.querySelector("#rotation_controller div.controller_bottom").addEventListener("touchstart", function() {
+                is_rotation_down_mode = true;
+            });
+            document.querySelector("#rotation_controller div.controller_left").addEventListener("touchstart", function() {
+                is_rotation_left_mode = true;
+            });
+            document.querySelector("#rotation_controller div.controller_right").addEventListener("touchstart", function() {
+                is_rotation_right_mode = true;
+            });
+            document.querySelector("#rotation_controller div.controller_top").addEventListener("touchend", function() {
+                is_rotation_up_mode = false;
+            });
+            document.querySelector("#rotation_controller div.controller_bottom").addEventListener("touchend", function() {
+                is_rotation_down_mode = false;
+            });
+            document.querySelector("#rotation_controller div.controller_left").addEventListener("touchend", function() {
+                is_rotation_left_mode = false;
+            });
+            document.querySelector("#rotation_controller div.controller_right").addEventListener("touchend", function() {
+                is_rotation_right_mode = false;
+            });
+
+            let point_light_intensity;
+            if(is_pc) {
+                point_light_intensity = 20;
+            } else {
+                point_light_intensity = 40;
+            }
+            const point_light = new THREE.PointLight(0xFFFFFF, point_light_intensity, 50, 1.0);
             camera.add(point_light);
 
             const light_position_data = [
@@ -1610,17 +1715,21 @@ THE SOFTWARE.
             let is_elephant_loaded = false;
             let is_maze_loaded = false;
 
-            const elephant_loader = new THREE.GLTFLoader();
-            elephant_loader.load("3dmodel/Elephant 3.glb", (gltf) => {
-                const goal_place = light_position_data[0].lightPlace;
-                elephant = gltf.scene;
-                elephant.position.set(goal_place[0], 1.4, goal_place[2]);
-                // elephant.position.set(0, 1.4, -24);
-                elephant.scale.set(0.5, 0.5, 0.5);
-                scene.add(gltf.scene);
+            if(is_pc) {
+                const elephant_loader = new THREE.GLTFLoader();
+                elephant_loader.load("3dmodel/Elephant 3.glb", (gltf) => {
+                    const goal_place = light_position_data[0].lightPlace;
+                    elephant = gltf.scene;
+                    elephant.position.set(goal_place[0], 1.4, goal_place[2]);
+                    // elephant.position.set(0, 1.4, -24);
+                    elephant.scale.set(0.5, 0.5, 0.5);
+                    scene.add(gltf.scene);
+                    is_elephant_loaded = true;
+                }, (xhr) => {
+                });
+            } else {
                 is_elephant_loaded = true;
-            }, (xhr) => {
-            });
+            }
 
             const maze_loader = new THREE.GLTFLoader();
             document.querySelector("#page_loading .loading_circle").style.display = "none";
@@ -1646,7 +1755,7 @@ THE SOFTWARE.
             const camera_direction_copy = new THREE.Vector3();
             const camera_direction_copy2 = new THREE.Vector3();
             const camera_direction_copy3 = new THREE.Vector3();
-            const axis = new THREE.Vector3(0, 1, 0);
+            const y_axis = new THREE.Vector3(0, 1, 0);
 
             const elephant_raycaster_front = new THREE.Raycaster();
             const elephant_raycaster_back = new THREE.Raycaster();
@@ -1686,6 +1795,22 @@ THE SOFTWARE.
                 frame_counter = 0;
             }, 1000);
 
+            let is_game_started = false;
+            let time_limit = 600;
+            document.getElementById("time_limit_display").textContent = "残り" + time_limit + "秒";
+            setInterval(function() {
+                if(is_game_started && time_limit) {
+                    time_limit -= 1;
+                    if(time_limit <= 60) {
+                        document.getElementById("time_limit_display").style.color = "red";
+                    }
+                    document.getElementById("time_limit_display").textContent = "残り" + time_limit + "秒";
+                    if(time_limit === 0) {
+                        show_end_message("時間切れ");
+                    }
+                }
+            }, 1000);
+
             resize_canvas();
             loop();
 
@@ -1693,6 +1818,8 @@ THE SOFTWARE.
                 stats.begin();
 
                 if(is_elephant_loaded && is_maze_loaded) {
+                    is_game_started = true;
+
                     camera.getWorldDirection(camera_direction);
                     camera.getWorldDirection(camera_direction_copy);
                     camera.getWorldDirection(camera_direction_copy2);
@@ -1709,7 +1836,7 @@ THE SOFTWARE.
                         }
                     }
 
-                    camera_direction_copy.applyAxisAngle(axis, Math.PI);
+                    camera_direction_copy.applyAxisAngle(y_axis, Math.PI);
                     raycaster_back.set(camera_position, new THREE.Vector3(camera_direction_copy.x, 0, camera_direction_copy.z));
                     const intersects_back = raycaster_back.intersectObjects(scene.children, true);
                     if(intersects_back.length > 0) {
@@ -1720,7 +1847,7 @@ THE SOFTWARE.
                         }
                     }
 
-                    camera_direction_copy2.applyAxisAngle(axis, -1 * (Math.PI / 2));
+                    camera_direction_copy2.applyAxisAngle(y_axis, -1 * (Math.PI / 2));
                     raycaster_right.set(camera_position, new THREE.Vector3(camera_direction_copy2.x, 0, camera_direction_copy2.z));
                     const intersects_right = raycaster_right.intersectObjects(scene.children, true);
                     if(intersects_right.length > 0) {
@@ -1731,7 +1858,7 @@ THE SOFTWARE.
                         }
                     }
 
-                    camera_direction_copy3.applyAxisAngle(axis, Math.PI / 2);
+                    camera_direction_copy3.applyAxisAngle(y_axis, Math.PI / 2);
                     raycaster_left.set(camera_position, new THREE.Vector3(camera_direction_copy3.x, 0, camera_direction_copy3.z));
                     const intersects_left = raycaster_left.intersectObjects(scene.children, true);
                     if(intersects_left.length > 0) {
@@ -1756,72 +1883,98 @@ THE SOFTWARE.
                         move_right(-1 * moving_distance);
                     }
 
-                    let front_direction = new THREE.Vector3(0, 0, 1);
-                    elephant_raycaster_back.set(elephant.position, front_direction);
-                    front_direction.applyAxisAngle(axis, Math.PI);
-                    elephant_raycaster_front.set(elephant.position, front_direction);
-                    front_direction.applyAxisAngle(axis, Math.PI / 2);
-                    elephant_raycaster_left.set(elephant.position, front_direction);
-                    front_direction.applyAxisAngle(axis, Math.PI);
-                    elephant_raycaster_right.set(elephant.position, front_direction);
+                    if(is_smartphone) {
+                        const camera_rotation_size = 0.5 * render_cycle;
+                        let euler = new THREE.Euler(0, 0, 0, 'YXZ');
+                        const min_polar_angle = 0;
+                        const max_polar_angle = Math.PI;
 
-                    const elephant_intersects_back = elephant_raycaster_back.intersectObjects(scene.children, true);
-                    const elephant_intersects_front = elephant_raycaster_front.intersectObjects(scene.children, true);
-                    const elephant_intersects_left = elephant_raycaster_left.intersectObjects(scene.children, true);
-                    const elephant_intersects_right = elephant_raycaster_right.intersectObjects(scene.children, true);
+                        euler.setFromQuaternion(camera.quaternion);
 
-                    let is_elephant_move_forward_mode = true;
-                    let is_elephant_move_left_mode = true;
-                    let is_elephant_move_back_mode = true;
-                    let is_elephant_move_right_mode = true;
-
-                    if(elephant_intersects_back.length > 0) {
-                        const distance = elephant_intersects_back[0].distance;
-                        if(distance < 2) {
-                            is_elephant_move_back_mode = false;
+                        if(is_rotation_up_mode) {
+                            euler.x += camera_rotation_size;
                         }
-                    }
-                    if(elephant_intersects_front.length > 0) {
-                        const distance = elephant_intersects_front[0].distance;
-                        if(distance < 2) {
-                            is_elephant_move_forward_mode = false;
+                        if(is_rotation_down_mode) {
+                            euler.x -= camera_rotation_size;
                         }
-                    }
-                    if(elephant_intersects_left.length > 0) {
-                        const distance = elephant_intersects_left[0].distance;
-                        if(distance < 2) {
-                            is_elephant_move_left_mode = false;
+                        if(is_rotation_right_mode) {
+                            euler.y -= camera_rotation_size;
                         }
-                    }
-                    if(elephant_intersects_right.length > 3) {
-                        const distance = elephant_intersects_right[3].distance;
-                        if(distance < 2) {
-                            is_elephant_move_right_mode = false;
+                        if(is_rotation_left_mode) {
+                            euler.y += camera_rotation_size;
                         }
+                        euler.x = Math.max(Math.PI / 2 - max_polar_angle, Math.min(Math.PI / 2 - min_polar_angle, euler.x));
+                        camera.quaternion.setFromEuler(euler);
                     }
 
-                    const position_difference_x = camera.position.x - elephant.position.x;
-                    const position_difference_z = camera.position.z - elephant.position.z;
-                    const elephant_x_movement_status = Math.abs(position_difference_x) > 2;
-                    const elephant_z_movement_status = Math.abs(position_difference_z) > 2;
-                    if(elephant_x_movement_status || elephant_z_movement_status) {
-                        if(elephant_x_movement_status) {
-                            if(position_difference_x > 0 && is_elephant_move_right_mode) {
-                                elephant.position.x += moving_distance * 0.7;
-                            } else if(position_difference_x < 0 && is_elephant_move_left_mode) {
-                                elephant.position.x += moving_distance * -0.7;
+                    if(is_pc) {
+                        let front_direction = new THREE.Vector3(0, 0, 1);
+                        elephant_raycaster_back.set(elephant.position, front_direction);
+                        front_direction.applyAxisAngle(y_axis, Math.PI);
+                        elephant_raycaster_front.set(elephant.position, front_direction);
+                        front_direction.applyAxisAngle(y_axis, Math.PI / 2);
+                        elephant_raycaster_left.set(elephant.position, front_direction);
+                        front_direction.applyAxisAngle(y_axis, Math.PI);
+                        elephant_raycaster_right.set(elephant.position, front_direction);
+
+                        const elephant_intersects_back = elephant_raycaster_back.intersectObjects(scene.children, true);
+                        const elephant_intersects_front = elephant_raycaster_front.intersectObjects(scene.children, true);
+                        const elephant_intersects_left = elephant_raycaster_left.intersectObjects(scene.children, true);
+                        const elephant_intersects_right = elephant_raycaster_right.intersectObjects(scene.children, true);
+
+                        let is_elephant_move_forward_mode = true;
+                        let is_elephant_move_left_mode = true;
+                        let is_elephant_move_back_mode = true;
+                        let is_elephant_move_right_mode = true;
+
+                        if(elephant_intersects_back.length > 0) {
+                            const distance = elephant_intersects_back[0].distance;
+                            if(distance < 2) {
+                                is_elephant_move_back_mode = false;
                             }
                         }
-                        if(elephant_z_movement_status) {
-                            if(position_difference_z > 0 && is_elephant_move_back_mode) {
-                                elephant.position.z += moving_distance * 0.7;
-                            } else if(position_difference_z < 0 && is_elephant_move_forward_mode) {
-                                elephant.position.z += moving_distance * -0.7;
+                        if(elephant_intersects_front.length > 0) {
+                            const distance = elephant_intersects_front[0].distance;
+                            if(distance < 2) {
+                                is_elephant_move_forward_mode = false;
                             }
                         }
-                    } else {
-                        camera.lookAt(elephant.position);
-                        show_end_message("ぱおん");
+                        if(elephant_intersects_left.length > 0) {
+                            const distance = elephant_intersects_left[0].distance;
+                            if(distance < 2) {
+                                is_elephant_move_left_mode = false;
+                            }
+                        }
+                        if(elephant_intersects_right.length > 3) {
+                            const distance = elephant_intersects_right[3].distance;
+                            if(distance < 2) {
+                                is_elephant_move_right_mode = false;
+                            }
+                        }
+
+                        const position_difference_x = camera.position.x - elephant.position.x;
+                        const position_difference_z = camera.position.z - elephant.position.z;
+                        const elephant_x_movement_status = Math.abs(position_difference_x) > 2;
+                        const elephant_z_movement_status = Math.abs(position_difference_z) > 2;
+                        if(elephant_x_movement_status || elephant_z_movement_status) {
+                            if(elephant_x_movement_status) {
+                                if(position_difference_x > 0 && is_elephant_move_right_mode) {
+                                    elephant.position.x += moving_distance * 0.7;
+                                } else if(position_difference_x < 0 && is_elephant_move_left_mode) {
+                                    elephant.position.x += moving_distance * -0.7;
+                                }
+                            }
+                            if(elephant_z_movement_status) {
+                                if(position_difference_z > 0 && is_elephant_move_back_mode) {
+                                    elephant.position.z += moving_distance * 0.7;
+                                } else if(position_difference_z < 0 && is_elephant_move_forward_mode) {
+                                    elephant.position.z += moving_distance * -0.7;
+                                }
+                            }
+                        } else {
+                            camera.lookAt(elephant.position);
+                            show_end_message("ぱおん");
+                        }
                     }
 
                     if(is_in_area(camera_position, light_position_data[0].goalArea)) {
@@ -1833,10 +1986,6 @@ THE SOFTWARE.
                     if(is_in_area(camera_position, light_position_data[2].trapArea)) {
                         show_end_message("呪われてしまった！");
                     }
-                }
-
-                if(is_smartphone) {
-                    orientation_controls.update();
                 }
 
                 renderer.render(scene, camera);
