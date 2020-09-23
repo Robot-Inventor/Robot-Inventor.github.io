@@ -440,6 +440,7 @@ THE SOFTWARE.
             <div class="controller_left" id="controller_left"></div>
         </div>
         <div id="time_limit_display"></div>
+        <img src="" alt="" id="horror_picture">
         <div id="end_message">
             <p></p>
             <menu>
@@ -1172,6 +1173,18 @@ THE SOFTWARE.
             z-index: 2;
             font-size: 200%;
         }
+
+        #horror_picture {
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: contain;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+        }
     </style>
     <script src="javascript/Stats.js"></script>
     <script src="javascript/three.min.js"></script>
@@ -1772,7 +1785,24 @@ THE SOFTWARE.
             let render_cycle = 1 / 60;
             let frame_counter = 0;
 
-            function show_end_message(message) {
+            
+            const horror_picture_src_list = [
+                "image/horror/gothic-1378352.jpg",
+                "image/horror/halloween-2570636.jpg",
+                "image/horror/monster-1454286.jpg",
+                "image/horror/skeletons-1617539.jpg",
+                "image/horror/zombie-945622.jpg",
+                "image/horror/zombie-2554660.jpg"
+            ];
+            for(let i = horror_picture_src_list.length - 1; i > 0; i --) {
+                let r = Math.floor(Math.random() * (i + 1));
+                let tmp = horror_picture_src_list[i];
+                horror_picture_src_list[i] = horror_picture_src_list[r];
+                horror_picture_src_list[r] = tmp;
+            }
+            document.getElementById("horror_picture").src = horror_picture_src_list[0];
+
+            function show_end_message(message, game_over=true) {
                 document.querySelector("#end_message p").textContent = message;
                 document.getElementById("end_message").style.display = "block";
                 if(is_pc) {
@@ -1781,6 +1811,7 @@ THE SOFTWARE.
                         document.getElementById("pointer_controls_menu").style.display = "none";
                     }, 100);
                 }
+                document.getElementById("horror_picture").style.display = "block";
             }
 
             function is_in_area(object_position, area_data) {
@@ -1978,7 +2009,7 @@ THE SOFTWARE.
                     }
 
                     if(is_in_area(camera_position, light_position_data[0].goalArea)) {
-                        show_end_message("CLEAR!");
+                        show_end_message("CLEAR!", false);
                     }
                     if(is_in_area(camera_position, light_position_data[1].trapArea)) {
                         show_end_message("毒にやられた！");
