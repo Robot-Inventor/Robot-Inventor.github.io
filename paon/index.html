@@ -16,7 +16,26 @@
                 <div id="title_page">
                     <h1>ORIZIN Paon</h1>
                     <button id="start_button">START</button>
+                    <button id="rule_button">RULE etc</button>
                     <button id="menu_button">MENU</button>
+                </div>
+                <div id="rule_page">
+                    <h1><span class="back">←</span>RULE etc</h1>
+                    <p>
+                        このゲームはパオンから逃げながら迷路をクリアするホラーゲームです。スマホ版ではパオンは追いかけてきません。これは，パオンを入れると処理が重くなり，スマホで使えなくなるためです。
+                    </p>
+                    <p>
+                        ルール（？）は簡単です。緑のランプのある場所がゴールです。別の色のランプに近づいてしまったり，パオンに捕まってしまったりしたらゲームオーバーです。
+                    </p>
+                    <p>
+                        スマホ版ではパオンが追いかけてこない点と操作性の観点から，できるだけPCでプレイすることをお勧めします。
+                    </p>
+                    <p>
+                        動作確認はAndroid 10 & Google Chrome 85とWindows 10 & Google Chrome 85で動作確認しています。プレイの際はできるだけAndroid，Windows，Mac（動作確認していません）のGoogle Chromeを使用してください。Safariでは動作確認しておらず，正常に動作しない可能性があります。
+                    </p>
+                    <p>
+                        また，iPhoneのGoogle ChromeはChromeの皮をかぶったSafariなのでSafariでうまく動かなければiPoneのGoogle Chromeでも動きません。
+                    </p>
                 </div>
                 <div id="menu_page">
                     <h1><span class="back">←</span>MENU</h1>
@@ -387,7 +406,7 @@ THE SOFTWARE.
                             スマートフォン<br>
                             <i class="material_icon">smartphone</i>
                             <p>
-                                タッチパネルとジャイロセンサーの両方を搭載している場合に選択してください。処理を軽くするため，象は追いかけてきません。
+                                タッチパネルを搭載している場合に選択してください。処理を軽くするため，象は追いかけてきません。
                             </p>
                         </button>
                     </div>
@@ -559,6 +578,10 @@ THE SOFTWARE.
         #top_page #menu_outer #press_any_keys_page h1 {
             padding-top: 50%;
             transform: translateY(-50%);
+        }
+
+        #top_page #menu_outer p {
+            margin-bottom: 1em;
         }
 
         #press_any_keys_page {
@@ -1359,6 +1382,14 @@ THE SOFTWARE.
                 document.querySelector("#usage_button + label i.material_icon").textContent = "cancel";
                 document.querySelector("#usage_button + label").title = "操作方法を消す";
             }
+        });
+
+        document.querySelector("#top_page #menu_outer #title_page #rule_button").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #title_page", "#top_page #menu_outer #rule_page", CHANGE_PAGE_TRANSITION_TIME);
+        });
+
+        document.querySelector("#top_page #menu_outer #rule_page .back").addEventListener("click", function() {
+            change_page("#top_page #menu_outer #rule_page", "#top_page #menu_outer #title_page", CHANGE_PAGE_TRANSITION_TIME);
         });
 
         document.querySelector("#top_page #menu_outer #title_page #menu_button").addEventListener("click", function() {
