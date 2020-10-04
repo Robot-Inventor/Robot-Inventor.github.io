@@ -1,3 +1,5 @@
 # Robot-Inventor.github.io
 
-これは，[https://robot-inventor.github.io/](https://robot-inventor.github.io/)のリポジトリーです。**このリポジトリーはオープンソースではありません。** コンテンツの利用に関しては，[利用規約](https://robot-inventor.github.io/TOS/latest_TOS.html)を確認してください。また，使用しているフリー素材等のライセンス・利用規約等の関係上，このリポジトリーのダウンロードは控えてください。ただし，リポジトリーを構成する個別のコンテンツのダウンロード等は，[利用規約](https://robot-inventor.github.io/TOS/latest_TOS.html)で認められている場合は問題ありません。
+![Broken Link Check](https://github.com/Robot-Inventor/Robot-Inventor.github.io/workflows/Broken%20Link%20Check/badge.svg) ![CodeQL](https://github.com/Robot-Inventor/Robot-Inventor.github.io/workflows/CodeQL/badge.svg) [![deepcode](https://www.deepcode.ai/api/gh/badge?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF0Zm9ybTEiOiJnaCIsIm93bmVyMSI6IlJvYm90LUludmVudG9yIiwicmVwbzEiOiJSb2JvdC1JbnZlbnRvci5naXRodWIuaW8iLCJpbmNsdWRlTGludCI6ZmFsc2UsImF1dGhvcklkIjoxOTUwNCwiaWF0IjoxNjAxODIzNDgzfQ.EKBzzq44z_pyY6FBMMVFWwIfyeVPOc7ptPPEil5IYc4)](https://www.deepcode.ai/app/gh/Robot-Inventor/Robot-Inventor.github.io/_/dashboard?utm_content=gh%2FRobot-Inventor%2FRobot-Inventor.github.io)
+
+これは[https://robot-inventor.github.io/](https://robot-inventor.github.io/) のリポジトリーです。コンテンツの利用に関しては[利用規約](https://robot-inventor.github.io/TOS/latest_TOS.html)を確認してください。
