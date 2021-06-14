@@ -46,8 +46,10 @@ function parse_markdown_metadata(metadata) {
 
     let metadata_json = {};
     for (let i = 0; i < metadata.length; i++) {
-        const data = metadata[i].split(":");
-        metadata_json[data[0]] = data[1];
+        const first_colon_place = metadata[i].indexOf(":");
+        const metadata_property = metadata[i].slice(0, first_colon_place);
+        const metadata_value = metadata[i].slice(first_colon_place + 1);
+        metadata_json[metadata_property] = metadata_value;
     }
 
     return metadata_json;
