@@ -160,7 +160,7 @@
         },
         "article/2021/06/15/index.md": {
             "created": "2021-06-15T00:00:00.000",
-            "updated": "2021-06-15T01:38:39.875",
+            "updated": "2021-06-15T01:52:19.116",
             "images": {
                 "old_and_new_logo.png": "e4db2136d279df67564f6eac2bae4f40abdb035943929575b8ae3e6b6a784c4b",
                 "old_and_new_favicon.png": "023867bebd9ccd8c548b25acf52d61fc8863664eca7caee9fc2907ab88d8ccff",
@@ -172,7 +172,7 @@
                 "date_information.png": "ae96f7f176b3747f96f8a83c03e830041ca6a60708eed19d7a20d56dc0edaf9c",
                 "ogp_preview.png": "5d54786e9ac8d490fe0a4e6ecfcd5c63f35527ef93609c78e54e80c263ab2974"
             },
-            "hash": "ea36197cc0f5d8dd31f0bcb740b35c5ca7773d1ac560363ddd03c757e6a96f0e"
+            "hash": "c170eeb86c4a92844dacd8267e5204360c1383cddae1a300aeab85dcf397a0dc"
         }
     },
     "template": "9f9a6c7b8db7cbdb25e41c58627ef673c8637ab0cb95d65881d59763916f73b0"
