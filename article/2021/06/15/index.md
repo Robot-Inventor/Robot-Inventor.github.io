@@ -43,6 +43,14 @@ thumbnail: https://robot-inventor.github.io/article/2021/06/15/old_and_new_logo.
 
 ![共有ボタンのアニメーション](share_button_animation.gif)
 
+## OGP対応
+
+OGP（*Open Graphic Protocol*）に対応しました。今まではSNSでリンクを共有した際にただリンクが表示されるだけでしたが、これからはタイトルやサムネイルが表示されるようになります。
+
+画像は、[Card Validator](https://cards-dev.twitter.com/validator)を使用した、Twitterでの共有イメージです。
+
+![OGPのプレビュー画像](ogp_preview.png)
+
 ## 記事の投稿日、更新日が表示されるように
 
 今まではタイトル内に投稿日を記述していましたが、これからは画像のように、タイトルの下に投稿日と更新日が表示されるようになりました。
