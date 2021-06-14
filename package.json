@@ -1,0 +1,30 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robot-Inventor/Robot-Inventor.github.io.git"
+  },
+  "author": "Robot-Inventor",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Robot-Inventor/Robot-Inventor.github.io/issues"
+  },
+  "homepage": "https://github.com/Robot-Inventor/Robot-Inventor.github.io#readme",
+  "dependencies": {
+    "highlight.js": "^10.7.2",
+    "html-minifier": "^4.0.0",
+    "jsdom": "^16.6.0",
+    "lighthouse": "^7.5.0",
+    "marked": "^2.0.5",
+    "sharp": "^0.28.3",
+    "sitemap": "^7.0.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-scss": "^3.19.0"
+  }
+}

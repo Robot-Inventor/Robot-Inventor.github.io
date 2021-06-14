@@ -1,0 +1,104 @@
+{
+    "2021-06-15T00:00:00.000": {
+        "link": "/article/2021/06/15/",
+        "thumbnail": "/article/2021/06/15/old_and_new_logo.png",
+        "article-title": "全面リニューアルしました！",
+        "description": "サイトのデザインなどを全面的にリニューアルしました。サイトの名称も変更になり、過去の記事についても読みやすいように表現を変えています。"
+    },
+    "2021-05-13T00:00:00.000": {
+        "link": "/article/2021/05/13/",
+        "thumbnail": "/src/icon/ogp_default_thumbnail.png",
+        "article-title": "ORIZIN Agentの最初のコミットから2年が経ちました！",
+        "description": "ORIZIN Agent HTMLの前身のORIZIN Agentの最初のコミットから2年が経ちました。それを記念して、ORIZIN Agent HTMLのv5.2をリリースしました。"
+    },
+    "2020-08-29T00:00:00.000": {
+        "link": "/article/2020/08/29/",
+        "thumbnail": "/article/2020/08/29/screenshot2.jpg",
+        "article-title": "「Web版」のGoogleがダークモードに対応！",
+        "description": "とうとう、アプリではなく「Web版」のGoogleがダークモードに対応しました。"
+    },
+    "2020-07-25T00:00:00.000": {
+        "link": "/article/2020/07/25/",
+        "thumbnail": "/article/2020/07/25/datacenter_DSC00055.jpg",
+        "article-title": "PCのローカルサーバーにスマホからアクセスする方法",
+        "description": "PCで立てたローカルサーバーにスマホからアクセスする方法について分かりやすく説明します。"
+    },
+    "2020-05-18T00:00:00.000": {
+        "link": "/article/2020/05/18/",
+        "thumbnail": "/article/2020/05/18/screenshot.jpg",
+        "article-title": "KritaでSurface Penを使うための設定",
+        "description": "オープンソースのペイントソフトのKritaでは、デフォルトの状態ではSurface Penの筆圧検知と消しゴム機能が使えません。設定はとても簡単です。"
+    },
+    "2020-05-14T00:00:00.000": {
+        "link": "/article/2020/05/14/",
+        "thumbnail": "/article/2020/05/14/flags_page.jpg",
+        "article-title": "AndroidのGoogle ChromeでUIとWebコンテンツを強制的にダークモードにする",
+        "description": "AndroidのGoogle ChromeでUIとWebコンテンツを強制的にダークモードにする方法を画像つきで解説します。"
+    },
+    "2020-05-13T00:00:00.000": {
+        "link": "/article/2020/05/13/",
+        "thumbnail": "/article/2020/05/13/desert-1654439_1920.jpg",
+        "article-title": "黄砂ってなんだろう　黄砂の正体と対策方法を解説",
+        "description": "ニュースで黄砂という言葉を聞くことがあると思います。では、黄砂の正体は一体何なのでしょうか。黄砂の対策方法とともにわかりやすく解説します。"
+    },
+    "2020-05-12T00:00:00.001": {
+        "link": "/article/2020/05/12/2/",
+        "thumbnail": "/article/2020/05/12/2/computer-1591018_1920.jpg",
+        "article-title": "Inkscapeで作成したSVGから個人情報流出の可能性",
+        "description": "Inkscapeで作成したSVGから個人情報流出の可能性があることに気づいたので記事にしました。"
+    },
+    "2020-05-12T00:00:00.000": {
+        "link": "/article/2020/05/12/",
+        "thumbnail": "/article/2020/05/12/flash-845848_1920.jpg",
+        "article-title": "ページのAMP化でつまずいたこと",
+        "description": "ブログをAMPに対応させました。途中でいくつかつまずいた点があったので記事にします。"
+    },
+    "2020-04-11T00:00:00.000": {
+        "link": "/article/2020/04/11/",
+        "thumbnail": "/src/icon/ogp_default_thumbnail.png",
+        "article-title": "フリー素材だけでシネマティック動画を作ってみた",
+        "description": "フリー素材・フリーのソフトのみでシネマティック動画を作ってみました。"
+    },
+    "2020-01-16T00:00:00.000": {
+        "link": "/article/2020/01/16/",
+        "thumbnail": "/article/2020/01/16/file_manager.png",
+        "article-title": "Raspberry Pi 4 Model B発売！そして、OSをBusterへ更新しよう",
+        "description": "Raspberry Pi 4 Model Bの発売に合わせ、新しいRaspberry Pi用OSがリリースされました。最新のOSに更新しましょう。"
+    },
+    "2020-01-15T00:00:00.000": {
+        "link": "/article/2020/01/15/",
+        "thumbnail": "/article/2020/01/15/youtube-2617510.jpg",
+        "article-title": "再生回数1,000回突破！ありがとう",
+        "description": "YouTubeのチャンネル全体での再生回数が1,000回を突破しました。ありがとうございます！"
+    },
+    "2019-12-11T00:00:00.000": {
+        "link": "/article/2019/12/11/",
+        "thumbnail": "/src/icon/ogp_default_thumbnail.png",
+        "article-title": "ORIZIN Agent新ロゴ製作中",
+        "description": "オープンソースのAIアシスタントORIZIN Agentの新しいロゴの制作を開始しました。"
+    },
+    "2019-11-03T00:00:00.000": {
+        "link": "/article/2019-11-03-サイトのデザインを変更しました！/",
+        "thumbnail": "/article/2019-11-03-サイトのデザインを変更しました！/YAMA_DSC2546.jpg",
+        "article-title": "サイトのデザインを変更しました！",
+        "description": "当サイトのデザインを大幅に変更しました！"
+    },
+    "2019-08-12T00:00:00.000": {
+        "link": "/article/2019-08-12-「田」という漢字を一筆書きする方法を思いついた/",
+        "thumbnail": "/article/2019-08-12-「田」という漢字を一筆書きする方法を思いついた/penIMGL9882_TP_V.jpg",
+        "article-title": "「田」という漢字を一筆書きする方法を思いついた",
+        "description": "一筆書きできる図形には、ある特徴があります。「田」は、その特徴を満たしていない為、一筆書きはできません。ところが、今回、「田」を一筆書きする方法を思いつきました。"
+    },
+    "2019-07-30T00:00:00.000": {
+        "link": "/article/2019-07-30-YouTubeにオススメのフリー素材・フォント/",
+        "thumbnail": "/article/2019-07-30-YouTubeにオススメのフリー素材・フォント/KENTA039_jidoricamera_TP_V.jpg",
+        "article-title": "YouTubeにオススメのフリーの画像・音楽・フォント",
+        "description": "動画はもちろん、発表のスライドやポスターなどでは、フリー素材が重宝します。今回は、フリーの画像・音楽・効果音・フォントでオススメのものを紹介します。"
+    },
+    "2019-07-28T00:00:00.000": {
+        "link": "/article/2019-07-28-現在建設中/",
+        "thumbnail": "/article/2019-07-28-現在建設中/hukkousagyou_TP_V.jpg",
+        "article-title": "現在建設中...",
+        "description": "「理系YouTuberのブログ的な何か」は、主にプログラミングや理科に関する話題を投稿していくブログ的なものです。現在建設中..."
+    }
+}

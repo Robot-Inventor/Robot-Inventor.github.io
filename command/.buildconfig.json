@@ -1,0 +1,8 @@
+{
+    "site_name": "Robot Inventor",
+    "site_name_short": "Robot Inventor",
+    "template": "src/html/template.html",
+    "sitemap": "sitemap.xml",
+    "twitter_id": "keita_roboin",
+    "default_thumbnail": "https://robot-inventor.github.io/src/icon/ogp_default_thumbnail.png"
+}
