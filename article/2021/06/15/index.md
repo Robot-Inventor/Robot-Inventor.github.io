@@ -1,5 +1,6 @@
 ---
 description: サイトのデザインなどを全面的にリニューアルしました。サイトの名称も変更になり、過去の記事についても読みやすいように表現を変えています。
+thumbnail: https://robot-inventor.github.io/article/2021/06/15/old_and_new_logo.png
 ---
 
 # 全面リニューアルしました！
