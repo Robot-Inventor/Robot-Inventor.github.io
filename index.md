@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2021/05/13/landscape_logo2.svg"
-            link="/article/2021/05/13/"
-            article-title="2021/05/13　ORIZIN Agentの最初のコミットから2年が経ちました！"
-            description="ORIZIN Agent HTMLの前身のORIZIN Agentの最初のコミットから2年が経ちました。それを記念して、ORIZIN Agent HTMLのv5.2をリリースしました。"></article-card>
+<article-card thumbnail="/article/2021/06/15/old_and_new_logo.png"
+            link="/article/2021/06/15/"
+            article-title="全面リニューアルしました！"
+            description="サイトのデザインなどを全面的にリニューアルしました。サイトの名称も変更になり、過去の記事についても読みやすいように表現を変えています。"></article-card>
 
 ## 新着動画
 
