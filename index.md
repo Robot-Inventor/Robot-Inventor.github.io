@@ -5,7 +5,7 @@ description: 「Robot Inventor　ブログ」は、主にプログラミング�
 
 # Robot Inventor ブログ
 
-「理系YouTuberのブログ的な何か」は、主にプログラミングや理科に関する話題を投稿していくブログ的なものです。
+「Robot Inventor　ブログ」は、主にプログラミングや理科に関する話題を投稿していくブログ的なものです。
 
 ## Robot Inventorはどんな人？
 
