@@ -1,33 +1,17 @@
 "use strict";
+const default_card_type = window.innerHeight > window.innerWidth ? "landscape" : "normal";
 const change_button = document.createElement("button");
+toggle_button_label(default_card_type);
 const article_list_area = document.createElement("div");
 article_list_area.id = "article_list_area";
 const article_container = document.getElementById("article_container_inner");
-if (article_container)
+if (article_container) {
+    article_container.appendChild(change_button);
     article_container.appendChild(article_list_area);
-else
-    console.error("#article_container_innerが見つかりませんでした");
-if (article_list_area)
-    article_list_area.insertAdjacentElement("beforebegin", change_button);
-else
-    console.error("#article_list_areaが見つかりませんでした");
-function change_card_type(type) {
-    document.querySelectorAll("article-card").forEach(element => element.setAttribute("card-type", type));
-    if (type === "normal") {
-        change_button.dataset.currentType = "normal";
-        change_button.textContent = "横表示に切り替え";
-    }
-    else if (type === "landscape") {
-        change_button.dataset.currentType = "landscape";
-        change_button.textContent = "縦表示に切り替え";
-    }
 }
-change_button.addEventListener("click", () => {
-    if (change_button.dataset.currentType === "normal")
-        change_card_type("landscape");
-    else
-        change_card_type("normal");
-});
+else {
+    console.error("#article_container_innerが見つかりませんでした");
+}
 const style = document.createElement("style");
 style.textContent = `
 #${article_list_area.id} {
@@ -54,6 +38,20 @@ article-card {
 }
 `;
 document.body.appendChild(style);
+function change_card_type(type) {
+    document.querySelectorAll("article-card").forEach(element => element.setAttribute("card-type", type));
+    change_button.dataset.currentType = type;
+    toggle_button_label(type);
+}
+function toggle_button_label(type) {
+    change_button.textContent = type === "landscape" ? "横表示に切り替え" : "縦表示に切り替え";
+}
+change_button.addEventListener("click", () => {
+    if (change_button.dataset.currentType === "normal")
+        change_card_type("landscape");
+    else
+        change_card_type("normal");
+});
 (async () => {
     const data_response = await fetch("article_data.json");
     const article_data = await data_response.json();
@@ -65,9 +63,6 @@ document.body.appendChild(style);
         });
         article_list_area.appendChild(card);
     });
-    if (window.innerHeight > window.innerWidth)
-        change_card_type("landscape");
-    else
-        change_card_type("normal");
+    change_card_type(default_card_type);
 })();
 //# sourceMappingURL=index.js.map
