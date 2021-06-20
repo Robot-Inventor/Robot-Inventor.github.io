@@ -6,6 +6,10 @@ toggle_button_label(default_card_type);
 const article_list_area = document.createElement("div");
 article_list_area.id = "article_list_area";
 
+const loading_message = document.createElement("div");
+loading_message.textContent = "読み込み中...";
+article_list_area.appendChild(loading_message);
+
 const article_container = document.getElementById("article_container_inner");
 
 if (article_container) {
@@ -73,4 +77,5 @@ change_button.addEventListener("click", () => {
     });
 
     change_card_type(default_card_type);
+    loading_message.remove();
 })();
