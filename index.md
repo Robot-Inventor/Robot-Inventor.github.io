@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2021/06/15/old_and_new_logo.png"
-            link="/article/2021/06/15/"
-            article-title="全面リニューアルしました！"
-            description="サイトのデザインなどを全面的にリニューアルしました。サイトの名称も変更になり、過去の記事についても読みやすいように表現を変えています。"></article-card>
+<article-card thumbnail="/src/icon/ogp_default_thumbnail.png"
+            link="/article/2021/06/17/"
+            article-title="コミュ症になった理由の考察と、コミュ症を治そうとしている話"
+            description="どうしてコミュ症になったのか、その理由を考察した。また、ここ1週間はコミュ症を治す努力をしており、大きく改善された。"></article-card>
 
 ## 新着動画
 
