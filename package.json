@@ -19,7 +19,7 @@
   "dependencies": {
     "highlight.js": "^10.7.2",
     "html-minifier": "^4.0.0",
-    "jsdom": "^16.6.0",
+    "jsdom": "^16.7.0",
     "lighthouse": "^7.5.0",
     "marked": "^2.0.5",
     "sharp": "^0.28.3",
