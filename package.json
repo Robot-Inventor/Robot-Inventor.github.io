@@ -20,7 +20,7 @@
     "highlight.js": "^11.0.0",
     "html-minifier": "^4.0.0",
     "jsdom": "^17.0.0",
-    "lighthouse": "^7.5.0",
+    "lighthouse": "^8.0.0",
     "marked": "^3.0.0",
     "sharp": "^0.29.0",
     "sitemap": "^7.0.0",
