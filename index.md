@@ -19,11 +19,11 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/src/icon/ogp_default_thumbnail.png"
-            link="/article/2021/06/17/"
-            article-title="コミュ症になった理由の考察と、コミュ症を治そうとしている話"
-            description="どうしてコミュ症になったのか、その理由を考察した。また、ここ1週間はコミュ症を治す努力をしており、大きく改善された。"></article-card>
+<article-card thumbnail="/article/2021/10/24/davinci_resolve_17.4_vertical_text.png"
+            link="/article/2021/10/24/"
+            article-title="DaVinci Resolve 17.4に「ちゃんとした」縦書きテキストのサポートが追加"
+            description="DaVinci Resolve 17.4がリリースされました。このバージョンで、メディアでは取り上げられていないものの日本語ユーザーにとってもっとも便利な新機能は「縦書きテキスト」でしょう。"></article-card>
 
 ## 新着動画
 
-<yt-video video-id="4fRqgCXQA6g"></yt-video>
+<yt-video video-id="nNSLBkmXYlI"></yt-video>

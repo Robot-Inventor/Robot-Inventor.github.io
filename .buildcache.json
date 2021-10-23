@@ -142,8 +142,8 @@
         },
         "index.md": {
             "created": "2021-06-11T02:33:02.543",
-            "hash": "01d9724048b4c8324a40e7e7486389a334348dcb07cfdea184c9644b39d1519e",
-            "updated": "2021-06-20T16:36:49.176",
+            "hash": "eae31b1a6ab02aaae95b5ac2e9faae393eeab8b47a45f05a6b5b86169b671c73",
+            "updated": "2021-10-24T00:22:48.565",
             "images": {}
         },
         "article/index.md": {
@@ -154,8 +154,8 @@
         },
         "notice/index.md": {
             "created": "2021-06-13T23:28:51.664",
-            "hash": "f8d62e37f66377413e68ffe17385ab0a6a1e19cb899ca5fb06044571b6ea0ca9",
-            "updated": "2021-06-20T16:38:07.429",
+            "hash": "22f4aea451ac2260cb27961eddc21e7dea772bb7ff25457f23c1602010d0d272",
+            "updated": "2021-10-24T00:25:59.390",
             "images": {}
         },
         "article/2021/06/15/index.md": {
@@ -179,6 +179,14 @@
             "hash": "af5b718aa680b7646984382048464dd2b99fd6bcfa34904f59d11c2f1ab0cdd5",
             "updated": "2021-06-18T00:36:13.136",
             "images": {}
+        },
+        "article/2021/10/24/index.md": {
+            "created": "2021-10-24T00:20:19.34",
+            "hash": "2bff688987d97b1d61f95dccfdb4b029caa98e2685306c6da19aee6fe43daa56",
+            "updated": "2021-10-24T00:25:46.967",
+            "images": {
+                "davinci_resolve_17.4_vertical_text.png": "12d7bf7d418a012552e925ccdd8aa95ef11f2cd0bd166fbd7929be14c60a6bc1"
+            }
         }
     },
     "template": "9f9a6c7b8db7cbdb25e41c58627ef673c8637ab0cb95d65881d59763916f73b0"
