@@ -22,7 +22,7 @@
     "jsdom": "^19.0.0",
     "lighthouse": "^9.0.0",
     "marked": "^4.0.0",
-    "sharp": "^0.29.2",
+    "sharp": "^0.29.3",
     "sitemap": "^7.0.0",
     "stylelint-config-recommended-scss": "^5.0.0",
     "stylelint-scss": "^4.0.0"
