@@ -23,7 +23,7 @@
     "lighthouse": "^9.2.0",
     "marked": "^4.0.4",
     "sharp": "^0.29.2",
-    "sitemap": "^7.0.0",
+    "sitemap": "^7.1.0",
     "stylelint-config-recommended-scss": "^5.0.0",
     "stylelint-scss": "^4.1.0"
   }
