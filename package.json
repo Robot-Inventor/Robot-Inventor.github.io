@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Robot-Inventor/Robot-Inventor.github.io#readme",
   "dependencies": {
-    "highlight.js": "^11.3.1",
+    "highlight.js": "^11.4.0",
     "html-minifier": "^4.0.0",
     "jsdom": "^19.0.0",
     "lighthouse": "^9.2.0",
