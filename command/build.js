@@ -63,7 +63,10 @@ function parse_markdown_metadata(metadata) {
 function split_extension(string) {
     const parsed_path = path.parse(string);
     const extension = parsed_path.ext;
-    const file_name = parsed_path.dir === "" ? parsed_path.name : `${parsed_path.dir}/${parsed_path.name}`;
+    const file_name =
+        parsed_path.dir === ""
+            ? parsed_path.name
+            : `${parsed_path.dir}/${parsed_path.name}`;
     return [file_name, extension];
 }
 
@@ -72,10 +75,14 @@ function split_extension(string) {
  * @param {Document} document 対象とするdocument。JSDOMで生成したものを使う
  */
 function optimize_images(document) {
-    if (!build_cache.articles[markdown_path].images) build_cache.articles[markdown_path].images = {};
+    if (!build_cache.articles[markdown_path].images)
+        build_cache.articles[markdown_path].images = {};
 
     document.querySelectorAll("img").forEach((element) => {
-        const absolute_src = path.resolve(path.dirname(markdown_path), element.src);
+        const absolute_src = path.resolve(
+            path.dirname(markdown_path),
+            element.src
+        );
 
         const parsed_absolute_src = path.parse(absolute_src);
 
@@ -88,17 +95,18 @@ function optimize_images(document) {
         const relative_output_folder = "optimized_images";
         const absolute_output_folder = `${parsed_absolute_src.dir}/${relative_output_folder}`;
 
-        if (!fs.existsSync(absolute_output_folder)) fs.mkdirSync(absolute_output_folder);
+        if (!fs.existsSync(absolute_output_folder))
+            fs.mkdirSync(absolute_output_folder);
 
         const formats = [
             // 優先したいフォーマットを先に書く
             "avif",
-            "webp"
+            "webp",
         ];
         const output_sizes = [
             {
                 size: 1920,
-                media: "(min-width: 960px)"
+                media: "(min-width: 960px)",
             },
             {
                 size: 960,
@@ -106,8 +114,8 @@ function optimize_images(document) {
             },
             {
                 size: 480,
-                media: "(max-width: 480px)"
-            }
+                media: "(max-width: 480px)",
+            },
         ];
 
         const link_to_default_picture = document.createElement("a");
@@ -119,28 +127,49 @@ function optimize_images(document) {
         element.remove();
 
         const latest_hash = get_hash(file.read(absolute_src));
-        const is_changed = build_cache.articles[markdown_path].images[element.src] !== latest_hash;
+        const is_changed =
+            build_cache.articles[markdown_path].images[element.src] !==
+            latest_hash;
 
         if (is_changed) {
-            build_cache.articles[markdown_path].images[element.src] = latest_hash;
+            build_cache.articles[markdown_path].images[element.src] =
+                latest_hash;
             console.log(`${element.src}を最適化中...`);
         } else {
-            console.log(`${element.src}は変更されていないため最適化をスキップしました。`);
+            console.log(
+                `${element.src}は変更されていないため最適化をスキップしました。`
+            );
         }
 
-        for (let format_index = 0; format_index < formats.length; format_index++) {
+        for (
+            let format_index = 0;
+            format_index < formats.length;
+            format_index++
+        ) {
             const target_format = formats[format_index];
 
-            for (let size_index = 0; size_index < output_sizes.length; size_index++) {
+            for (
+                let size_index = 0;
+                size_index < output_sizes.length;
+                size_index++
+            ) {
                 const target_size = output_sizes[size_index].size;
                 const output_file_name = `${parsed_absolute_src.name}_${target_size}px.${target_format}`;
                 const relative_output_path = `${relative_output_folder}/${output_file_name}`;
                 const absolute_output_path = `${absolute_output_folder}/${output_file_name}`;
 
-                if (parsed_absolute_src.ext === ".gif" && target_format !== "webp") continue;
+                if (
+                    parsed_absolute_src.ext === ".gif" &&
+                    target_format !== "webp"
+                )
+                    continue;
 
                 if (is_changed) {
-                    sharp(absolute_src, { animated: parsed_absolute_src.ext === ".gif" }).resize(target_size).toFile(absolute_output_path);
+                    sharp(absolute_src, {
+                        animated: parsed_absolute_src.ext === ".gif",
+                    })
+                        .resize(target_size)
+                        .toFile(absolute_output_path);
                 }
 
                 const source_element = document.createElement("source");
@@ -149,12 +178,18 @@ function optimize_images(document) {
                 source_element.setAttribute("loading", "lazy");
                 source_element.setAttribute("alt", img_alt);
 
-                const bigger_images = output_sizes.filter(image => image.size > target_size);
+                const bigger_images = output_sizes.filter(
+                    (image) => image.size > target_size
+                );
                 if (bigger_images.length) {
                     for (let i = 0; i < bigger_images.length; i++) {
-                        const pixel_density = `${bigger_images[i].size / target_size}x`;
+                        const pixel_density = `${
+                            bigger_images[i].size / target_size
+                        }x`;
                         const pixel_density_descriptor = `${relative_output_folder}/${parsed_absolute_src.name}_${bigger_images[i].size}px.${target_format} ${pixel_density}`;
-                        const srcset = source_element.getAttribute("srcset").split(", ");
+                        const srcset = source_element
+                            .getAttribute("srcset")
+                            .split(", ");
                         srcset.push(pixel_density_descriptor);
                         const new_srcset = srcset.join(", ");
                         source_element.setAttribute("srcset", new_srcset);
@@ -200,7 +235,7 @@ function minify_html(html) {
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
         removeTagWhitespace: true,
-        useShortDoctype: false
+        useShortDoctype: false,
     });
 
     return minified;
@@ -243,7 +278,10 @@ function get_hash(input) {
  */
 function convert_filename_md_to_html(markdown_name) {
     const input_file_name_and_extension = split_extension(markdown_name);
-    const html_name = input_file_name_and_extension[1] === ".md" ? input_file_name_and_extension[0] + ".html" : markdown_name + ".html";
+    const html_name =
+        input_file_name_and_extension[1] === ".md"
+            ? input_file_name_and_extension[0] + ".html"
+            : markdown_name + ".html";
     return html_name;
 }
 
@@ -254,9 +292,16 @@ function convert_filename_md_to_html(markdown_name) {
  */
 function compile(markdown_path) {
     const date = new Date();
-    const date_time = `${String(date.getFullYear()).padStart(2, "0")}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}T${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}:${String(date.getSeconds()).padStart(2, "0")}.${date.getMilliseconds(date)}`;
+    const date_time = `${String(date.getFullYear()).padStart(2, "0")}-${String(
+        date.getMonth() + 1
+    ).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}T${String(
+        date.getHours()
+    ).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}:${String(
+        date.getSeconds()
+    ).padStart(2, "0")}.${date.getMilliseconds(date)}`;
 
-    if (!build_cache.articles[markdown_path].created) build_cache.articles[markdown_path].created = date_time;
+    if (!build_cache.articles[markdown_path].created)
+        build_cache.articles[markdown_path].created = date_time;
 
     const metadata_block_re = /-{3}.*?-{3}/s;
     const markdown = file.read(markdown_path);
@@ -265,8 +310,13 @@ function compile(markdown_path) {
     const template_hash = get_hash(template);
 
     const markdown_hash = get_hash(markdown);
-    if (build_cache.articles[markdown_path].hash === markdown_hash && build_cache.template === template_hash) {
-        console.log("Markdownファイルとテンプレートの両方に変更が見つからなかったため、コンパイルをスキップしました。");
+    if (
+        build_cache.articles[markdown_path].hash === markdown_hash &&
+        build_cache.template === template_hash
+    ) {
+        console.log(
+            "Markdownファイルとテンプレートの両方に変更が見つからなかったため、コンパイルをスキップしました。"
+        );
         return;
     } else {
         build_cache.articles[markdown_path].hash = markdown_hash;
@@ -274,20 +324,27 @@ function compile(markdown_path) {
         build_cache.articles[markdown_path].updated = date_time;
     }
 
-    const metadata = parse_markdown_metadata(normalize_break_code(markdown.match(metadata_block_re)[0]).replace(/(\n|)(-){3,}(\n|)/g, ""));
+    const metadata = parse_markdown_metadata(
+        normalize_break_code(markdown.match(metadata_block_re)[0]).replace(
+            /(\n|)(-){3,}(\n|)/g,
+            ""
+        )
+    );
     marked.setOptions({
-        smartLists: true
+        smartLists: true,
     });
-    const contents = marked(markdown.replace(metadata_block_re, ""));
+    const contents = marked.parse(markdown.replace(metadata_block_re, ""));
 
     const { window } = new JSDOM(contents);
     const document = window.document;
     const first_h1 = document.querySelector("h1");
 
-    if (!(metadata.title || first_h1)) throw "h1要素を定義するか、メタデータブロックでtitleを定義してください。";
+    if (!(metadata.title || first_h1))
+        throw "h1要素を定義するか、メタデータブロックでtitleを定義してください。";
     const title = metadata.title || first_h1.textContent;
 
-    if (!metadata.description) throw "メタデータブロックでdescriptionを定義してください。";
+    if (!metadata.description)
+        throw "メタデータブロックでdescriptionを定義してください。";
 
     const date_information = `
 <div id="article_date_information">
@@ -296,7 +353,11 @@ function compile(markdown_path) {
             <source media="(prefers-color-scheme: dark)" srcset="/src/icon/article_white.svg" loading="lazy" decoding="async" alt="アイコン">
             <img src="/src/icon/article_black.svg" loading="lazy" decoding="async" alt="アイコン">
         </picture>
-        作成：<time datetime="${build_cache.articles[markdown_path].created}">${build_cache.articles[markdown_path].created.replace("T", "　").replace(/:\d+?\.\d+?$/, "")}</time>
+        作成：<time datetime="${
+            build_cache.articles[markdown_path].created
+        }">${build_cache.articles[markdown_path].created
+        .replace("T", "　")
+        .replace(/:\d+?\.\d+?$/, "")}</time>
     </div>
 </div>`;
     if (first_h1) {
@@ -312,9 +373,15 @@ function compile(markdown_path) {
         <source media="(prefers-color-scheme: dark)" srcset="/src/icon/edit_white.svg" loading="lazy" decoding="async" alt="アイコン">
         <img src="/src/icon/edit_black.svg" loading="lazy" decoding="async" alt="アイコン">
     </picture>
-    最終更新：<time datetime="${build_cache.articles[markdown_path].updated}">${build_cache.articles[markdown_path].updated.replace("T", "　").replace(/:\d+?\.\d+?$/, "")}</time>
+    最終更新：<time datetime="${
+        build_cache.articles[markdown_path].updated
+    }">${build_cache.articles[markdown_path].updated
+            .replace("T", "　")
+            .replace(/:\d+?\.\d+?$/, "")}</time>
 </div>`;
-        document.getElementById("article_date_information").insertAdjacentHTML("beforeend", update_information);
+        document
+            .getElementById("article_date_information")
+            .insertAdjacentHTML("beforeend", update_information);
     }
 
     optimize_images(document);
@@ -322,9 +389,13 @@ function compile(markdown_path) {
     const code_elements = document.querySelectorAll("pre code");
 
     code_elements.forEach((element) => {
-        const language_class = Array.from(element.classList).filter(class_name => /^language-/.test(class_name));
+        const language_class = Array.from(element.classList).filter(
+            (class_name) => /^language-/.test(class_name)
+        );
         if (language_class.length) {
-            hljs.highlightElement(element, { language: language_class[0].replace("language-") });
+            hljs.highlightElement(element, {
+                language: language_class[0].replace("language-"),
+            });
 
             element.dataset.isSourceCode = true;
         }
@@ -344,11 +415,14 @@ function compile(markdown_path) {
             let image_path;
             all_images.forEach((image_element) => {
                 if (!/\.svg$/i.test(image_element.src)) {
-                    if (/^\//.test(image_element.src)) image_path = `https://robot-inventor.github.io${image_element.src}`;
-
-                    else if (/^https:\/\//.test(image_element.src)) image_path = image_element.src;
-
-                    else image_path = `https://robot-inventor.github.io/${path.dirname(markdown_path)}/${image_element.src}`;
+                    if (/^\//.test(image_element.src))
+                        image_path = `https://robot-inventor.github.io${image_element.src}`;
+                    else if (/^https:\/\//.test(image_element.src))
+                        image_path = image_element.src;
+                    else
+                        image_path = `https://robot-inventor.github.io/${path.dirname(
+                            markdown_path
+                        )}/${image_element.src}`;
                 }
             });
             return image_path;
@@ -359,17 +433,26 @@ function compile(markdown_path) {
         throw "記事中にOGPのサムネイル画像に使用できる画像が見つかりませんでした。画像をメタデータブロックの「thumbnail」か.buildconfig.jsonの「default_thumbnail」で明示的に指定してください。";
     })();
 
-    if (!thumbnail_image.match(/^https:\/\//)) throw "OGPのサムネイルには相対パスやルート相対パスではなく絶対パスを使用してください。";
+    if (!thumbnail_image.match(/^https:\/\//))
+        throw "OGPのサムネイルには相対パスやルート相対パスではなく絶対パスを使用してください。";
     const template_values = {
         title: title,
         site_name: config.site_name,
         site_name_sort: config.site_name_short,
         contents: document.body.innerHTML,
         description: metadata.description,
-        page_url: "https://robot-inventor.github.io/" + convert_filename_md_to_html(markdown_path).replace(/index\.html$/, ""),
-        og_type: convert_filename_md_to_html(markdown_path) === "index.html" ? "website" : "article",
+        page_url:
+            "https://robot-inventor.github.io/" +
+            convert_filename_md_to_html(markdown_path).replace(
+                /index\.html$/,
+                ""
+            ),
+        og_type:
+            convert_filename_md_to_html(markdown_path) === "index.html"
+                ? "website"
+                : "article",
         twitter_id: config.twitter_id,
-        thumbnail_image: thumbnail_image
+        thumbnail_image: thumbnail_image,
     };
     const compiled = insert_template(template, template_values);
 
@@ -378,53 +461,75 @@ function compile(markdown_path) {
     const component_table = {
         "yt-video": "/src/js/components/yt-video/yt-video.min.js",
         "info-block": "/src/js/components/info-block/info-block.min.js",
-        "caution-block": "/src/js/components/caution-block/caution-block.min.js",
-        "article-card": "/src/js/components/article-card/article-card.min.js"
+        "caution-block":
+            "/src/js/components/caution-block/caution-block.min.js",
+        "article-card": "/src/js/components/article-card/article-card.min.js",
     };
     Object.keys(component_table).forEach((component_name) => {
         if (compiled_document.window.document.querySelector(component_name)) {
-            const script_element = compiled_document.window.document.createElement("script");
+            const script_element =
+                compiled_document.window.document.createElement("script");
             script_element.src = component_table[component_name];
             compiled_document.window.document.body.appendChild(script_element);
         }
     });
 
-    if (compiled_document.window.document.querySelector("pre code[data-is-source-code='true']")) {
-        const highlight_style = compiled_document.window.document.createElement("link");
+    if (
+        compiled_document.window.document.querySelector(
+            "pre code[data-is-source-code='true']"
+        )
+    ) {
+        const highlight_style =
+            compiled_document.window.document.createElement("link");
         highlight_style.rel = "preload";
         highlight_style.setAttribute("as", "style");
         highlight_style.href = "/src/css/vs2015.min.css";
         highlight_style.setAttribute("onload", "this.rel='stylesheet'");
         compiled_document.window.document.head.appendChild(highlight_style);
 
-        const font_preconnect = compiled_document.window.document.createElement("link");
+        const font_preconnect =
+            compiled_document.window.document.createElement("link");
         font_preconnect.rel = "preconnect";
         font_preconnect.href = "https://fonts.gstatic.com";
         compiled_document.window.document.head.appendChild(font_preconnect);
 
-        const font_style = compiled_document.window.document.createElement("link");
+        const font_style =
+            compiled_document.window.document.createElement("link");
         font_style.rel = "preload";
         font_style.setAttribute("as", "style");
-        font_style.href = "https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap";
+        font_style.href =
+            "https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap";
         font_style.setAttribute("onload", "this.rel='stylesheet'");
         compiled_document.window.document.head.appendChild(font_style);
     }
 
-    const minified = "<!DOCTYPE html>" + minify_html(compiled_document.window.document.documentElement.outerHTML);
+    const minified =
+        "<!DOCTYPE html>" +
+        minify_html(
+            compiled_document.window.document.documentElement.outerHTML
+        );
 
     const output_file = convert_filename_md_to_html(markdown_path);
 
     let sitemap_data = [];
     Object.keys(build_cache.articles).forEach((key) => {
         const article_data = {
-            url: "/" + convert_filename_md_to_html(key).replace(/index\.html$/, ""),
-            lastmod: build_cache.articles[key].updated || build_cache.articles[key].created
+            url:
+                "/" +
+                convert_filename_md_to_html(key).replace(/index\.html$/, ""),
+            lastmod:
+                build_cache.articles[key].updated ||
+                build_cache.articles[key].created,
         };
         sitemap_data.push(article_data);
     });
     (async () => {
-        const stream = new SitemapStream({ hostname: "https://robot-inventor.github.io" });
-        const sitemap_content = await streamToPromise(Readable.from(sitemap_data).pipe(stream)).then((data) => data.toString());
+        const stream = new SitemapStream({
+            hostname: "https://robot-inventor.github.io",
+        });
+        const sitemap_content = await streamToPromise(
+            Readable.from(sitemap_data).pipe(stream)
+        ).then((data) => data.toString());
         fs.writeFile(config.sitemap, sitemap_content, (err) => {
             if (err) throw err;
 
@@ -444,7 +549,8 @@ if (!markdown_path) throw "ビルドするMarkdownファイルを指定してく
 
 if (!build_cache.articles) build_cache.articles = {};
 
-if (!build_cache.articles[markdown_path]) build_cache.articles[markdown_path] = {};
+if (!build_cache.articles[markdown_path])
+    build_cache.articles[markdown_path] = {};
 
 compile(markdown_path);
 
