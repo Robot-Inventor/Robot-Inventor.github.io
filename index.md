@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2021/10/24/davinci_resolve_17.4_vertical_text.png"
-            link="/article/2021/10/24/"
-            article-title="DaVinci Resolve 17.4に「ちゃんとした」縦書きテキストのサポートが追加"
-            description="DaVinci Resolve 17.4がリリースされました。このバージョンで、メディアでは取り上げられていないものの日本語ユーザーにとってもっとも便利な新機能は「縦書きテキスト」でしょう。"></article-card>
+<article-card thumbnail="/article/2022/02/18/stylus.png"
+            link="/article/2022/02/18/"
+            article-title="オススメの拡張機能20選"
+            description="Webブラウザーは拡張機能をインストールすることで機能を増やせます。この記事では、オススメの拡張機能を紹介します。"></article-card>
 
 ## 新着動画
 
