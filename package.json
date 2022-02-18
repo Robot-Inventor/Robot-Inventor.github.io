@@ -17,14 +17,14 @@
   },
   "homepage": "https://github.com/Robot-Inventor/Robot-Inventor.github.io#readme",
   "dependencies": {
-    "highlight.js": "^11.3.1",
+    "highlight.js": "^11.4.0",
     "html-minifier": "^4.0.0",
-    "jsdom": "^18.0.1",
-    "lighthouse": "^9.0.0",
-    "marked": "^4.0.0",
-    "sharp": "^0.29.2",
-    "sitemap": "^7.0.0",
+    "jsdom": "^19.0.0",
+    "lighthouse": "^9.2.0",
+    "marked": "^4.0.11",
+    "sharp": "^0.30.0",
+    "sitemap": "^7.1.0",
     "stylelint-config-recommended-scss": "^5.0.0",
-    "stylelint-scss": "^4.0.0"
+    "stylelint-scss": "^4.1.0"
   }
 }
