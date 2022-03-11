@@ -1,22 +1,20 @@
-const marked = require("marked");
-const jsdom = require("jsdom");
+import { marked } from "marked";
+import jsdom from "jsdom";
 const { JSDOM } = jsdom;
-const fs = require("fs");
-const minify = require("html-minifier").minify;
-const sharp = require("sharp");
-const path = require("path");
-const hljs = require("highlight.js");
-const crypto = require("crypto");
+import { minify } from "html-minifier";
+import sharp from "sharp";
+import path from "path";
+import fs from "fs";
+import hljs from "highlight.js";
+import crypto_lib from "crypto";
 const { SitemapStream, streamToPromise } = require("sitemap");
 const { Readable } = require("stream");
-const file = require("./modules/file");
+import { file } from "./modules/file";
 
-const config_file = file.read("command/.buildconfig.json");
-const config = JSON.parse(config_file);
-const cache_file = ".buildcache.json";
+import config from "./.buildconfig.json";
 
-if (!fs.existsSync(cache_file)) fs.writeFileSync(cache_file, "{}");
-const build_cache = JSON.parse(file.read(cache_file));
+const cache_file_path = "../.buildcache.json";
+import build_cache from "../.buildcache.json";
 
 /**
  * HTMLのテンプレートを読み込む
@@ -28,27 +26,27 @@ function get_html_template() {
 
 /**
  * 改行コードを\nに統一する
- * @param {string} string 入力
+ * @param string 入力
  * @returns 改行コードを\nに統一した文字列
  */
-function normalize_break_code(string) {
+function normalize_break_code(string: string) {
     return string.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
 }
 
 /**
  * マークダウンのメタデータブロックの内容を解析し、オブジェクトとして返す
- * @param {string} metadata メタデータのテキスト。メタデータブロックを表す「---」は含まない
+ * @param metadata メタデータのテキスト。メタデータブロックを表す「---」は含まない
  * @returns メタデータのオブジェクト
  */
-function parse_markdown_metadata(metadata) {
+function parse_markdown_metadata(metadata: string) {
     const colon_normalized = metadata.replace(/^(.*?)(?<!\\): /gm, "$1:");
-    metadata = colon_normalized.split("\n");
+    const metadata_array = colon_normalized.split("\n");
 
-    let metadata_json = {};
-    for (let i = 0; i < metadata.length; i++) {
-        const first_colon_place = metadata[i].indexOf(":");
-        const metadata_property = metadata[i].slice(0, first_colon_place);
-        const metadata_value = metadata[i].slice(first_colon_place + 1);
+    let metadata_json: { [index: string]: string } = {};
+    for (let i = 0; i < metadata_array.length; i++) {
+        const first_colon_place = metadata_array[i].indexOf(":");
+        const metadata_property = metadata_array[i].slice(0, first_colon_place);
+        const metadata_value = metadata_array[i].slice(first_colon_place + 1);
         metadata_json[metadata_property] = metadata_value;
     }
 
@@ -57,10 +55,10 @@ function parse_markdown_metadata(metadata) {
 
 /**
  * ファイルのパスを拡張子以外の部分と拡張子に分割する
- * @param {String} string ファイルのパス
+ * @param string ファイルのパス
  * @returns 1つ目の要素を拡張子を除いたファイルのパス、2つ目の要素を拡張子とした配列
  */
-function split_extension(string) {
+function split_extension(string: string) {
     const parsed_path = path.parse(string);
     const extension = parsed_path.ext;
     const file_name =
@@ -72,9 +70,9 @@ function split_extension(string) {
 
 /**
  * 与えられたDOM（documentを想定）内の画像のフォーマットと解像度を最適化する
- * @param {Document} document 対象とするdocument。JSDOMで生成したものを使う
+ * @param document 対象とするdocument。JSDOMで生成したものを使う
  */
-function optimize_images(document) {
+function optimize_images(document: Document) {
     if (!build_cache.articles[markdown_path].images)
         build_cache.articles[markdown_path].images = {};
 
@@ -128,12 +126,16 @@ function optimize_images(document) {
 
         const latest_hash = get_hash(file.read(absolute_src));
         const is_changed =
-            build_cache.articles[markdown_path].images[element.src] !==
-            latest_hash;
+            // @ts-expect-error あとで直す
+            build_cache.articles[
+                markdown_path as keyof typeof build_cache.articles
+            ].images[element.src] !== latest_hash;
 
         if (is_changed) {
-            build_cache.articles[markdown_path].images[element.src] =
-                latest_hash;
+            // @ts-expect-error あとで直す
+            build_cache.articles[
+                markdown_path as keyof typeof build_cache.articles
+            ].images[element.src] = latest_hash;
             console.log(`${element.src}を最適化中...`);
         } else {
             console.log(
@@ -187,9 +189,9 @@ function optimize_images(document) {
                             bigger_images[i].size / target_size
                         }x`;
                         const pixel_density_descriptor = `${relative_output_folder}/${parsed_absolute_src.name}_${bigger_images[i].size}px.${target_format} ${pixel_density}`;
-                        const srcset = source_element
-                            .getAttribute("srcset")
-                            .split(", ");
+                        const srcset = (
+                            source_element.getAttribute("srcset") || ""
+                        ).split(", ");
                         srcset.push(pixel_density_descriptor);
                         const new_srcset = srcset.join(", ");
                         source_element.setAttribute("srcset", new_srcset);
@@ -213,10 +215,10 @@ function optimize_images(document) {
 
 /**
  * HTML文字列をMinify化する
- * @param {String} html Minify化したいHTMLの文字列
+ * @param html Minify化したいHTMLの文字列
  * @returns Minify化したHTML文字列
  */
-function minify_html(html) {
+function minify_html(html: string) {
     const minified = minify(html, {
         // conservativeCollapseとuseShortDoctype以外は https://kangax.github.io/html-minifier/ のデフォルト値を使用
         collapseBooleanAttributes: true,
@@ -243,8 +245,8 @@ function minify_html(html) {
 
 /**
  * テンプレートの文字列中の指定されたものを変数で置き換えする
- * @param {String} template テンプレートの文字列
- * @param {{}} template_values テンプレートの文字列をこの変数で指定されたものに置き換える。キーで指定されたものを対応する値に置き換える
+ * @param template テンプレートの文字列
+ * @param template_values テンプレートの文字列をこの変数で指定されたものに置き換える。キーで指定されたものを対応する値に置き換える
  * @returns 置き換え済みの文字列
  * @example
  * const template = "${target} World!";
@@ -252,31 +254,37 @@ function minify_html(html) {
  * console.log(insert_template(template, values););
  * // Hello World!
  */
-function insert_template(template, template_values) {
-    Object.keys(template_values).forEach((key) => {
+function insert_template(template: string, template_values: object) {
+    const keys = Object.keys(template_values);
+
+    keys.forEach((key) => {
         const template_regex = new RegExp("\\$\\{" + key + "\\}", "g");
-        template = template.replace(template_regex, template_values[key]);
+        template = template.replace(
+            template_regex,
+            template_values[key as keyof typeof template_values]
+        );
     });
+
     return template;
 }
 
 /**
  * ハッシュ値を計算する
- * @param {String} input ハッシュ化したいターゲット
+ * @param input ハッシュ化したいターゲット
  * @returns ハッシュ値
  */
-function get_hash(input) {
-    const sha256 = crypto.createHash("sha256");
+function get_hash(input: string) {
+    const sha256 = crypto_lib.createHash("sha256");
     sha256.update(input);
     return sha256.digest("hex");
 }
 
 /**
  * ファイル名の拡張子を.mdから.htmlに変更する
- * @param {String} markdown_name 変更元のファイル名
+ * @param markdown_name 変更元のファイル名
  * @return 拡張子を.mdから.htmlに変更したあとのファイル名
  */
-function convert_filename_md_to_html(markdown_name) {
+function convert_filename_md_to_html(markdown_name: string) {
     const input_file_name_and_extension = split_extension(markdown_name);
     const html_name =
         input_file_name_and_extension[1] === ".md"
@@ -287,10 +295,10 @@ function convert_filename_md_to_html(markdown_name) {
 
 /**
  * MarkdownをMinify化されたHTMLにコンパイルする
- * @param {string} markdown_path コンパイルしたいMarkdownファイルのパス
+ * @param markdown_path コンパイルしたいMarkdownファイルのパス
  * @returns HTMLにコンパイルし、Minify化したもの
  */
-function compile(markdown_path) {
+function compile(markdown_path: string) {
     const date = new Date();
     const date_time = `${String(date.getFullYear()).padStart(2, "0")}-${String(
         date.getMonth() + 1
@@ -298,10 +306,16 @@ function compile(markdown_path) {
         date.getHours()
     ).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}:${String(
         date.getSeconds()
-    ).padStart(2, "0")}.${date.getMilliseconds(date)}`;
+    ).padStart(2, "0")}.${date.getMilliseconds()}`;
 
-    if (!build_cache.articles[markdown_path].created)
-        build_cache.articles[markdown_path].created = date_time;
+    if (
+        !build_cache.articles[
+            markdown_path as keyof typeof build_cache.articles
+        ].created
+    )
+        build_cache.articles[
+            markdown_path as keyof typeof build_cache.articles
+        ].created = date_time;
 
     const metadata_block_re = /-{3}.*?-{3}/s;
     const markdown = file.read(markdown_path);
@@ -311,7 +325,8 @@ function compile(markdown_path) {
 
     const markdown_hash = get_hash(markdown);
     if (
-        build_cache.articles[markdown_path].hash === markdown_hash &&
+        build_cache.articles[markdown_path as keyof typeof build_cache.articles]
+            .hash === markdown_hash &&
         build_cache.template === template_hash
     ) {
         console.log(
@@ -319,17 +334,25 @@ function compile(markdown_path) {
         );
         return;
     } else {
-        build_cache.articles[markdown_path].hash = markdown_hash;
+        build_cache.articles[
+            markdown_path as keyof typeof build_cache.articles
+        ].hash = markdown_hash;
         build_cache.template = template_hash;
-        build_cache.articles[markdown_path].updated = date_time;
+        build_cache.articles[
+            markdown_path as keyof typeof build_cache.articles
+        ].updated = date_time;
     }
 
-    const metadata = parse_markdown_metadata(
-        normalize_break_code(markdown.match(metadata_block_re)[0]).replace(
-            /(\n|)(-){3,}(\n|)/g,
-            ""
-        )
-    );
+    const metadata_block = markdown.match(metadata_block_re);
+    const metadata =
+        metadata_block === null
+            ? {}
+            : parse_markdown_metadata(
+                  normalize_break_code(metadata_block[0]).replace(
+                      /(\n|)(-){3,}(\n|)/g,
+                      ""
+                  )
+              );
     marked.setOptions({
         smartLists: true,
     });
@@ -341,6 +364,7 @@ function compile(markdown_path) {
 
     if (!(metadata.title || first_h1))
         throw "h1要素を定義するか、メタデータブロックでtitleを定義してください。";
+    // @ts-expect-error あとで直す
     const title = metadata.title || first_h1.textContent;
 
     if (!metadata.description)
@@ -354,8 +378,12 @@ function compile(markdown_path) {
             <img src="/src/icon/article_black.svg" loading="lazy" decoding="async" alt="アイコン">
         </picture>
         作成：<time datetime="${
-            build_cache.articles[markdown_path].created
-        }">${build_cache.articles[markdown_path].created
+            build_cache.articles[
+                markdown_path as keyof typeof build_cache.articles
+            ].created
+        }">${build_cache.articles[
+        markdown_path as keyof typeof build_cache.articles
+    ].created
         .replace("T", "　")
         .replace(/:\d+?\.\d+?$/, "")}</time>
     </div>
@@ -366,7 +394,10 @@ function compile(markdown_path) {
         document.body.insertAdjacentHTML("afterbegin", date_information);
     }
 
-    if (build_cache.articles[markdown_path].updated) {
+    if (
+        build_cache.articles[markdown_path as keyof typeof build_cache.articles]
+            .updated
+    ) {
         const update_information = `
 <div id="last_updated_date" title="最終更新日時">
     <picture>
@@ -374,30 +405,39 @@ function compile(markdown_path) {
         <img src="/src/icon/edit_black.svg" loading="lazy" decoding="async" alt="アイコン">
     </picture>
     最終更新：<time datetime="${
-        build_cache.articles[markdown_path].updated
-    }">${build_cache.articles[markdown_path].updated
+        build_cache.articles[markdown_path as keyof typeof build_cache.articles]
+            .updated
+    }">${build_cache.articles[
+            markdown_path as keyof typeof build_cache.articles
+        ].updated
             .replace("T", "　")
             .replace(/:\d+?\.\d+?$/, "")}</time>
 </div>`;
-        document
-            .getElementById("article_date_information")
-            .insertAdjacentHTML("beforeend", update_information);
+
+        const date_info_element = document.getElementById(
+            "article_date_information"
+        );
+        if (!date_info_element)
+            throw new Error("article_date_information要素が見つかりません。");
+        date_info_element.insertAdjacentHTML("beforeend", update_information);
     }
 
     optimize_images(document);
 
-    const code_elements = document.querySelectorAll("pre code");
+    const code_elements: NodeListOf<HTMLElement> =
+        document.querySelectorAll("pre code");
 
     code_elements.forEach((element) => {
         const language_class = Array.from(element.classList).filter(
             (class_name) => /^language-/.test(class_name)
         );
-        if (language_class.length) {
-            hljs.highlightElement(element, {
-                language: language_class[0].replace("language-"),
-            });
 
-            element.dataset.isSourceCode = true;
+        if (language_class.length) {
+            // TODO: 仕様変更により、この方法での言語指定ができなくなっている
+            // @ts-expect-error: 後で直す
+            hljs.highlightElement(element, {
+                language: language_class[0].replace("language-", ""),
+            });
         }
     });
 
@@ -410,7 +450,8 @@ function compile(markdown_path) {
     const thumbnail_image = (() => {
         if (metadata.thumbnail) return metadata.thumbnail;
 
-        const all_images = document.querySelectorAll("p img");
+        const all_images: NodeListOf<HTMLImageElement> =
+            document.querySelectorAll("p img");
         if (all_images.length) {
             let image_path;
             all_images.forEach((image_element) => {
@@ -433,7 +474,7 @@ function compile(markdown_path) {
         throw "記事中にOGPのサムネイル画像に使用できる画像が見つかりませんでした。画像をメタデータブロックの「thumbnail」か.buildconfig.jsonの「default_thumbnail」で明示的に指定してください。";
     })();
 
-    if (!thumbnail_image.match(/^https:\/\//))
+    if (!(thumbnail_image && thumbnail_image.match(/^https:\/\//)))
         throw "OGPのサムネイルには相対パスやルート相対パスではなく絶対パスを使用してください。";
     const template_values = {
         title: title,
@@ -465,11 +506,15 @@ function compile(markdown_path) {
             "/src/js/components/caution-block/caution-block.min.js",
         "article-card": "/src/js/components/article-card/article-card.min.js",
     };
-    Object.keys(component_table).forEach((component_name) => {
+
+    const component_names = Object.keys(component_table);
+
+    component_names.forEach((component_name) => {
         if (compiled_document.window.document.querySelector(component_name)) {
             const script_element =
                 compiled_document.window.document.createElement("script");
-            script_element.src = component_table[component_name];
+            script_element.src =
+                component_table[component_name as keyof typeof component_table];
             compiled_document.window.document.body.appendChild(script_element);
         }
     });
@@ -511,25 +556,32 @@ function compile(markdown_path) {
 
     const output_file = convert_filename_md_to_html(markdown_path);
 
-    let sitemap_data = [];
+    interface articleData {
+        url: string;
+        lastmod: string;
+    }
+    let sitemap_data: Array<articleData> = [];
     Object.keys(build_cache.articles).forEach((key) => {
         const article_data = {
             url:
                 "/" +
                 convert_filename_md_to_html(key).replace(/index\.html$/, ""),
             lastmod:
-                build_cache.articles[key].updated ||
-                build_cache.articles[key].created,
+                build_cache.articles[key as keyof typeof build_cache.articles]
+                    .updated ||
+                build_cache.articles[key as keyof typeof build_cache.articles]
+                    .created,
         };
         sitemap_data.push(article_data);
     });
+
     (async () => {
         const stream = new SitemapStream({
             hostname: "https://robot-inventor.github.io",
         });
         const sitemap_content = await streamToPromise(
             Readable.from(sitemap_data).pipe(stream)
-        ).then((data) => data.toString());
+        ).then((data: any) => data.toString());
         fs.writeFile(config.sitemap, sitemap_content, (err) => {
             if (err) throw err;
 
@@ -544,18 +596,20 @@ function compile(markdown_path) {
     });
 }
 
-const markdown_path = process.argv[2];
+const markdown_path = process.argv[2] as keyof typeof build_cache.articles;
 if (!markdown_path) throw "ビルドするMarkdownファイルを指定してください。";
 
+// @ts-expect-error
 if (!build_cache.articles) build_cache.articles = {};
 
 if (!build_cache.articles[markdown_path])
+    // @ts-expect-error
     build_cache.articles[markdown_path] = {};
 
 compile(markdown_path);
 
-fs.writeFile(cache_file, JSON.stringify(build_cache, null, 4), (err) => {
+fs.writeFile(cache_file_path, JSON.stringify(build_cache, null, 4), (err) => {
     if (err) throw err;
 
-    console.log(`キャッシュを${cache_file}に書き込みました。`);
+    console.log(`キャッシュを${cache_file_path}に書き込みました。`);
 });
