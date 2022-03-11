@@ -4,6 +4,12 @@
 
 これは[https://robot-inventor.github.io/](https://robot-inventor.github.io/) のリポジトリーです。コンテンツの利用に関しては[利用規約](https://robot-inventor.github.io/tos/)を確認してください。
 
+## Command
+
+```powershell
+npm run build-article -- path/to/article/index.md
+```
+
 ## ToDo
 
 ### Bug
