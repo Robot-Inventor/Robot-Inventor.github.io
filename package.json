@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-article": "node ./command/build.js"
+    "build-article": "ts-node ./command/build.ts"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "sharp": "^0.30.1",
     "sitemap": "^7.1.1",
     "stylelint-config-recommended-scss": "^5.0.0",
-    "stylelint-scss": "^4.1.0"
+    "stylelint-scss": "^4.1.0",
+    "ts-node": "^10.7.0"
   }
 }
