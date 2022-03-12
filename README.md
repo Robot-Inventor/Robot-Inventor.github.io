@@ -4,6 +4,13 @@
 
 これは[https://robot-inventor.github.io/](https://robot-inventor.github.io/) のリポジトリーです。コンテンツの利用に関しては[利用規約](https://robot-inventor.github.io/tos/)を確認してください。
 
+## 記事の更新手順
+
+1. Markdownで記事を書く
+2. 記事をビルド
+3. 記事一覧に追加
+4. お知らせページを更新
+
 ## Command
 
 ### MarkdownファイルをHTMLに変換
