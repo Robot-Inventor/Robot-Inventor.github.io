@@ -36,7 +36,9 @@ class OptimizeImages {
         if (!build_cache.articles[markdown_path].images)
             build_cache.articles[markdown_path].images = {};
 
-        document.querySelectorAll("img").forEach(this.process_image);
+        this.document
+            .querySelectorAll("img")
+            .forEach((image) => this.process_image(image));
     }
 
     private optimize_svg(element: HTMLImageElement) {
@@ -45,7 +47,7 @@ class OptimizeImages {
     }
 
     private generate_fallback_image(src: string, alt: string) {
-        const img = document.createElement("img");
+        const img = this.document.createElement("img");
         img.loading = "lazy";
         img.src = src;
         img.alt = alt;
@@ -53,7 +55,7 @@ class OptimizeImages {
     }
 
     private generate_source_element(srcset: string, type: string, alt: string) {
-        const source = document.createElement("source");
+        const source = this.document.createElement("source");
         source.srcset = srcset;
         source.type = type;
         return source;
@@ -111,9 +113,9 @@ class OptimizeImages {
             },
         ] as const;
 
-        const link_to_default_picture = document.createElement("a");
+        const link_to_default_picture = this.document.createElement("a");
         link_to_default_picture.href = element.src;
-        const picture_element = document.createElement("picture");
+        const picture_element = this.document.createElement("picture");
         link_to_default_picture.appendChild(picture_element);
         const img_alt = element.alt;
         element.insertAdjacentElement("afterend", link_to_default_picture);
