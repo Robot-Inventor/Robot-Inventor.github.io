@@ -14,7 +14,7 @@ import {
 
 import config from "./.buildconfig.json";
 
-const cache_file_path = "../.buildcache.json";
+const cache_file_path = ".buildcache.json";
 import build_cache from "../.buildcache.json";
 import { get_thumbnail } from "./modules/get_thumbnail";
 import { minify_html } from "./modules/minify_html";
