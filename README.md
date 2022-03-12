@@ -9,7 +9,7 @@
 ### MarkdownファイルをHTMLに変換
 
 ```powershell
-npm run build-article -- path/to/article/index.md
+npm run build-article -- "path/to/article/index.md"
 ```
 
 ### 記事一覧に追加
