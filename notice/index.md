@@ -8,7 +8,7 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 ## 2022/03/13　サイト更新情報
 
-新しい記事「[Hololiveの名前をユーザー辞書に登録して変換しやすくする](/article/2022/03/13/hololive-dictionary/)」を公開しました。
+新しい記事「[Hololiveメンバーの名前をユーザー辞書に登録して変換しやすくする](/article/2022/03/13/hololive-dictionary/)」を公開しました。
 
 ## 2022/02/18　サイト更新情報
 

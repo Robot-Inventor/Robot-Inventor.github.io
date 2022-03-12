@@ -21,7 +21,7 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 <article-card thumbnail="/article/2022/03/13/hololive-dictionary/2022-03-13-01-11-34.png"
             link="/article/2022/03/13/hololive-dictionary/"
-            article-title="Hololiveの名前をユーザー辞書に登録して変換しやすくする"
+            article-title="Hololiveメンバーの名前をユーザー辞書に登録して変換しやすくする"
             description="Hololiveメンバーの名前・推しマーク・ハッシュタグ・ファンネーム・TwitterのIDを変換で出せるようにするユーザー辞書を紹介します。"></article-card>
 
 ## 新着動画
