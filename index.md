@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/02/18/stylus.png"
-            link="/article/2022/02/18/"
-            article-title="オススメの拡張機能20選"
-            description="Webブラウザーは拡張機能をインストールすることで機能を増やせます。この記事では、オススメの拡張機能を紹介します。"></article-card>
+<article-card thumbnail="/article/2022/03/13/hololive-dictionary/2022-03-13-01-11-34.png"
+            link="/article/2022/03/13/hololive-dictionary/"
+            article-title="Hololiveの名前をユーザー辞書に登録して変換しやすくする"
+            description="Hololiveメンバーの名前・推しマーク・ハッシュタグ・ファンネーム・TwitterのIDを変換で出せるようにするユーザー辞書を紹介します。"></article-card>
 
 ## 新着動画
 
