@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-article": "ts-node ./command/build.ts",
+    "build-article": "ts-node --files ./command/build.ts",
     "register-article": "ts-node ./command/register_article.ts"
   },
   "repository": {

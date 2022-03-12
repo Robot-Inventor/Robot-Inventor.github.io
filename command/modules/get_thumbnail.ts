@@ -1,6 +1,5 @@
 import config from "../.buildconfig.json";
 import path from "path";
-import normalizeUrl from "normalize-url";
 
 const is_raster = (image: HTMLImageElement) => !/\.svg$/i.test(image.src);
 
@@ -18,17 +17,21 @@ const get_thumbnail = (document: Document, markdown_path: string) => {
     if (!raster_images.length) return config.default_thumbnail || null;
 
     const image_element = raster_images[0];
-    if (image_element.src[0] === "/") {
-        return normalizeUrl(
-            `https://robot-inventor.github.io${image_element.src}`
-        );
-    } else {
-        return normalizeUrl(
-            `https://robot-inventor.github.io/${path.dirname(markdown_path)}/${
-                image_element.src
-            }`
-        );
-    }
+    import("normalize-url").then((module) => {
+        const normalizeUrl = module.default;
+
+        if (image_element.src[0] === "/") {
+            return normalizeUrl(
+                `https://robot-inventor.github.io${image_element.src}`
+            );
+        } else {
+            return normalizeUrl(
+                `https://robot-inventor.github.io/${path.dirname(
+                    markdown_path
+                )}/${image_element.src}`
+            );
+        }
+    });
 };
 
 export { get_thumbnail };
