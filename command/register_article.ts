@@ -65,6 +65,18 @@ title: `);
     }
 };
 
+const sort_object = <T extends Object>(object: T): T => {
+    const keys = Object.keys(object) as Array<keyof typeof object>;
+    keys.sort().reverse();
+
+    const result = {} as T;
+
+    for (const key of keys) {
+        result[key] = object[key];
+    }
+    return result;
+};
+
 const main = async () => {
     const info = await ask_information();
     const time = get_date_time_string(new Date());
@@ -84,9 +96,10 @@ const main = async () => {
 
     article_data[time] = info;
 
+    const sorted_data = sort_object(article_data);
     file.write(
         "./article/article_data.json",
-        JSON.stringify(article_data, null, 4)
+        JSON.stringify(sorted_data, null, 4)
     );
 
     console.log(
