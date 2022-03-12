@@ -9,7 +9,7 @@ const is_raster = (image: HTMLImageElement) => !/\.svg$/i.test(image.src);
  *
  * メタデータブロックの「thumbnail」> 記事中の最初の画像（SVGを除く） > .buildconfig.jsonの「default_thumbnail」
  */
-const get_thumbnail = async (document: Document, markdown_path: string) => {
+const get_thumbnail =  (document: Document, markdown_path: string) => {
     const all_images: NodeListOf<HTMLImageElement> =
         document.querySelectorAll("p img");
 
