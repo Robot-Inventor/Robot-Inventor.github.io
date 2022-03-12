@@ -6,8 +6,16 @@
 
 ## Command
 
+### MarkdownファイルをHTMLに変換
+
 ```powershell
 npm run build-article -- path/to/article/index.md
+```
+
+### 記事一覧に追加
+
+```powershell
+npm run register-article
 ```
 
 ## ToDo
