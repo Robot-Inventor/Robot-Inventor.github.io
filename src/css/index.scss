@@ -17,9 +17,12 @@
     --info_block_background_color: #E2F3FD;
     --info_block_border_color: #3FB0F3;
     --info_block_font_color: #0B72AD;
-    --caution_block_background_color: #FFF5CD;
-    --caution_block_border_color: #F5C300;
-    --caution_block_font_color: #CFA500;
+    --warn_block_background_color: #FFF5CD;
+    --warn_block_border_color: #F5C300;
+    --warn_block_font_color: #CFA500;
+    --alert_block_background_color: #FFCDCD;
+    --alert_block_border_color: #B30909;
+    --alert_block_font_color: #970000;
     --code_block_background_color: #292929;
     --header_height: 3rem;
     --footer_min_height: 20vh;
@@ -45,9 +48,12 @@
         --info_block_background_color: #2A4453;
         --info_block_border_color: #60B2E4;
         --info_block_font_color: #99DAFF;
-        --caution_block_background_color: #665200;
-        --caution_block_border_color: #C8B157;
-        --caution_block_font_color: #E6D17D;
+        --warn_block_background_color: #665200;
+        --warn_block_border_color: #C8B157;
+        --warn_block_font_color: #E6D17D;
+        --alert_block_background_color: #681e1e;
+        --alert_block_border_color: #C85757;
+        --alert_block_font_color: #FFBCBC;
     }
 }
 
@@ -596,6 +602,69 @@ header {
                 background: var(--primary_color);
                 color: var(--font_color_on_primary_color);
             }
+        }
+
+        .note-info,
+        .note-warn,
+        .note-alert {
+            background: var(--note_background_color);
+            border: 0.1rem solid var(--note_border_color);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            position: relative;
+            top: 0;
+            left: 0;
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: var(--note_icon_url);
+                width: 1.5rem;
+                height: 1.5rem;
+                background-size: 1.5rem;
+            }
+
+            .note-content {
+                width: calc(100% - 2rem);
+                margin-left: 2rem;
+
+                p {
+                    color: var(--note_font_color);
+                }
+
+                p:first-child {
+                    margin-top: 0;
+                }
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .note-info {
+            --note_background_color: var(--info_block_background_color);
+            --note_border_color: var(--info_block_border_color);
+            --note_font_color: var(--info_block_font_color);
+            --note_icon_url: url("/src/icon/info.svg");
+        }
+
+        .note-warn {
+            --note_background_color: var(--warn_block_background_color);
+            --note_border_color: var(--warn_block_border_color);
+            --note_font_color: var(--warn_block_font_color);
+            --note_icon_url: url("/src/icon/warn.svg");
+        }
+
+        .note-alert {
+            --note_background_color: var(--alert_block_background_color);
+            --note_border_color: var(--alert_block_border_color);
+            --note_font_color: var(--alert_block_font_color);
+            --note_icon_url: url("/src/icon/alert.svg");
         }
     }
 }
