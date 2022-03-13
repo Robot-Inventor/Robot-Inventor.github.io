@@ -9,12 +9,10 @@ class YtVideo extends HTMLElement {
 
         const video_id = this.getAttribute("video-id");
 
-        const outer = document.createElement("div");
-        outer.id = "outer";
-
         this.iframe = document.createElement("iframe");
         this.iframe.title = "YouTube video player";
-        this.iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        this.iframe.allow =
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
         this.iframe.setAttribute("allowfullscreen", "");
         this.iframe.src = `https://www.youtube-nocookie.com/embed/${video_id}`;
 
@@ -26,30 +24,20 @@ class YtVideo extends HTMLElement {
     overflow: hidden;
 }
 
-#outer {
+iframe {
     width: 100%;
-    padding-bottom: 56.25%;
-    position: relative;
-}
-
-#outer iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    aspect-ratio: 16/9;
     border: none;
 }
         `;
 
         this.shadow.appendChild(style);
-        this.shadow.appendChild(outer);
 
         // 遅延読み込みの処理
         const observer = new IntersectionObserver((entries) => {
             if (!entries[0].isIntersecting) return;
 
-            outer.appendChild(this.iframe);
+            this.shadow.appendChild(this.iframe);
             observer.disconnect();
         });
         observer.observe(this);
@@ -59,7 +47,11 @@ class YtVideo extends HTMLElement {
         return ["video-id"];
     }
 
-    attributeChangedCallback(name: string, old_value: string, new_value: string) {
+    attributeChangedCallback(
+        name: string,
+        old_value: string,
+        new_value: string
+    ) {
         if (new_value !== "video-id") return;
 
         this.iframe.src = `https://www.youtube-nocookie.com/embed/${new_value}`;
