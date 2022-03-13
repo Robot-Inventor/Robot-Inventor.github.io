@@ -25,6 +25,7 @@ import { update_sitemap } from "./modules/update_sitemap";
 import { insert_template } from "./modules/insert_template";
 import metadataParser from "markdown-yaml-metadata-parser";
 import sizeOf from "image-size";
+import { qnote } from "qnote-parser";
 
 class OptimizeImages {
     private readonly document: Document;
@@ -239,6 +240,7 @@ function compile() {
 
     const { metadata, content: md_without_metadata } = metadataParser(markdown);
 
+    marked.use({ extensions: [qnote] });
     marked.setOptions({
         smartLists: true,
     });
