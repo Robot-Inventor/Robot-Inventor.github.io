@@ -4,9 +4,9 @@ description: AndroidのGoogle ChromeでUIとWebコンテンツを強制的にダ
 
 # AndroidのGoogle ChromeでUIとWebコンテンツを強制的にダークモードにする
 
-<caution-block>
-    この記事で紹介する方法は開発途中の機能を有効にするものを含みます。ただし、UIのダークモードは正式な機能になっています。また、画像はAndroidタブレットのものであり、スマートフォンでは画面やボタンの配置等が異なる可能性があります。
-</caution-block>
+:::note warn
+この記事で紹介する方法は開発途中の機能を有効にするものを含みます。ただし、UIのダークモードは正式な機能になっています。また、画像はAndroidタブレットのものであり、スマートフォンでは画面やボタンの配置等が異なる可能性があります。
+:::
 
 :::note info
 この記事はGoogle Chrome 88向けです。また、この記事と同じ内容を[Qiita](https://qiita.com/Robot-Inventor/items/1d522c5858898ce63366)にも投稿してあります。
