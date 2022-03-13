@@ -1,4 +1,8 @@
 :root {
+    color-scheme: light dark;
+}
+
+:root {
     --high_emphasis_font_color: rgba(51, 51, 51, var(--high_emphasis_opacity));
     --medium_emphasis_font_color: rgba(51, 51, 51, var(--medium_emphasis_opacity));
     --background_color: white;
