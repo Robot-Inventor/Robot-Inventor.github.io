@@ -24,6 +24,7 @@ import { change_file_extension } from "./modules/change_file_extension";
 import { update_sitemap } from "./modules/update_sitemap";
 import { insert_template } from "./modules/insert_template";
 import metadataParser from "markdown-yaml-metadata-parser";
+import sizeOf from "image-size";
 
 class OptimizeImages {
     private readonly document: Document;
@@ -46,11 +47,22 @@ class OptimizeImages {
         element.setAttribute("decoding", "async");
     }
 
-    private generate_fallback_image(src: string, alt: string) {
+    private generate_fallback_image(
+        src: string,
+        alt: string,
+        absolute_path: string
+    ) {
         const img = this.document.createElement("img");
         img.loading = "lazy";
         img.src = src;
         img.alt = alt;
+
+        const size = sizeOf(absolute_path);
+        if (!(size.width && size.height)) return img;
+
+        img.width = size.width;
+        img.height = size.height;
+
         return img;
     }
 
@@ -184,7 +196,11 @@ class OptimizeImages {
             }
         }
 
-        const fallback = this.generate_fallback_image(element.src, img_alt);
+        const fallback = this.generate_fallback_image(
+            element.src,
+            img_alt,
+            absolute_src
+        );
         picture_element.appendChild(fallback);
     }
 }
