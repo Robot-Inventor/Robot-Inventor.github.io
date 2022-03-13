@@ -4,9 +4,9 @@ description: 「理系YouTuberのブログ的な何か」は、主にプログ�
 
 # 現在建設中...
 
-<info-block>
-    現在「理系YouTuberのブログ的な何か」は、まったく新しく1から作り直され、サイト名も「Robot Inventor」に変更になりました。この記事の内容は古い内容を含みます。ご注意ください。
-</info-block>
+:::note info
+現在「理系YouTuberのブログ的な何か」は、まったく新しく1から作り直され、サイト名も「Robot Inventor」に変更になりました。この記事の内容は古い内容を含みます。ご注意ください。
+:::
 
 「理系YouTuberのブログ的な何か」は、主にプログラミングや理科に関する話題を投稿していくブログ的なものです。現在、私の作った別のサイト[ORIZIN Agent 公式サイト](https://robot-inventor.github.io/ORIZIN_Agent/)をベースに建設中...
 

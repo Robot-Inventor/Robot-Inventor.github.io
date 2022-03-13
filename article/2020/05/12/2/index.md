@@ -4,9 +4,9 @@ description: Inkscapeで作成したSVGから個人情報流出の可能性が�
 
 # Inkscapeで作成したSVGから個人情報流出の可能性
 
-<info-block>
-    この記事と同じ内容を<a href="https://qiita.com/Robot-Inventor/items/f7d18438de290a250051">Qiita</a>にも投稿してあります。
-</info-block>
+:::note info
+この記事と同じ内容を[Qiita](https://qiita.com/Robot-Inventor/items/f7d18438de290a250051)にも投稿してあります。
+:::
 
 ![パソコンの上に南京錠が置かれた画像](computer-1591018_1920.jpg)
 

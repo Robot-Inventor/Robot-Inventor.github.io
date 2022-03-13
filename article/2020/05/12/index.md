@@ -4,9 +4,9 @@ description: ブログをAMPに対応させました。途中でいくつかつ�
 
 # ページのAMP化でつまずいたこと
 
-<info-block>
-        この記事と同じ内容を<a href="https://qiita.com/Robot-Inventor/items/9dfd2f4d0a674e43150f">Qiita</a>にも投稿してあります。また2021年6月11日現在、ブログの改修にともない、本ブログのAMPサポートは終了しました。
-</info-block>
+:::note info
+この記事と同じ内容を[Qiita](https://qiita.com/Robot-Inventor/items/9dfd2f4d0a674e43150f)にも投稿してあります。また2021年6月11日現在、ブログの改修にともない、本ブログのAMPサポートは終了しました。
+:::
 
 ![木に雷が落ちている画像](flash-845848_1920.jpg)
 

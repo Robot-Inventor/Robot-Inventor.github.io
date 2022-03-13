@@ -4,9 +4,9 @@ description: Raspberry Pi 4 Model Bの発売に合わせ、新しいRaspberry Pi
 
 # Raspberry Pi 4 Model B発売！そして、OSをBusterへ更新しよう
 
-<info-block>
-    この記事は、私がQiitaに投稿したものに少し変更を加えたものです。<a href="https://qiita.com/Robot-Inventor/items/b565e323b94fc2985ec0">この記事をQiitaで読む</a>
-</info-block>
+:::note info
+この記事は、私がQiitaに投稿したものに少し変更を加えたものです。[この記事をQiitaで読む](https://qiita.com/Robot-Inventor/items/b565e323b94fc2985ec0)
+:::
 
 ## Raspberry Pi 4 Model B発売
 
@@ -152,13 +152,13 @@ OSの欄に"buster"と表示されています。
 
 Raspbian Stretchから変更された点を気付き次第追記します。
 
-|変更点|Stretch|Buster|
-|:--|:--|:--|
-|ボタンのデザイン|影あり|影（ほぼ）なし|
-|ウィンドウ上部のボタンのデザイン|_ □ ✕|[公式サイト](https://www.raspberrypi.org/blog/buster-the-new-version-of-raspbian/)参照|
-|ウィンドウの色|水色|グレー|
-|デフォルトのデスクトップの壁紙|道路の写真|どこかの寺院（？）の写真|
-|起動中の画面|-|Stretchのときと同じ一連の画面 + Debianのロゴ画面|
+| 変更点                           | Stretch    | Buster                                                                                 |
+| :------------------------------- | :--------- | :------------------------------------------------------------------------------------- |
+| ボタンのデザイン                 | 影あり     | 影（ほぼ）なし                                                                         |
+| ウィンドウ上部のボタンのデザイン | _ □ ✕      | [公式サイト](https://www.raspberrypi.org/blog/buster-the-new-version-of-raspbian/)参照 |
+| ウィンドウの色                   | 水色       | グレー                                                                                 |
+| デフォルトのデスクトップの壁紙   | 道路の写真 | どこかの寺院（？）の写真                                                               |
+| 起動中の画面                     | -          | Stretchのときと同じ一連の画面 + Debianのロゴ画面                                       |
 
 ## 2019/07/14　追記
 
