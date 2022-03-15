@@ -14,14 +14,14 @@ class YtVideo extends HTMLElement {
         style.textContent = `
 :host {
     display: block;
-    border-radius: 0.5rem;
-    overflow: hidden;
 }
 
 iframe {
     width: 100%;
     aspect-ratio: 16/9;
     border: none;
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
         `;
         this.shadow.appendChild(style);
