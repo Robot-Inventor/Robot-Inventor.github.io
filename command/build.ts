@@ -260,6 +260,16 @@ function compile() {
         }
     })();
 
+    const author = (() => {
+        if (metadata.author) {
+            return metadata.author;
+        } else if (config.default_author) {
+            return config.default_author;
+        } else {
+            throw "ビルド設定かメタデータブロックでauthorを定義してください。";
+        }
+    })();
+
     if (!metadata.description)
         throw "メタデータブロックでdescriptionを定義してください。";
 
@@ -341,6 +351,7 @@ function compile() {
         site_name_sort: config.site_name_short,
         contents: document.body.innerHTML,
         description: metadata.description,
+        author: author,
         page_url:
             "https://robot-inventor.github.io/" +
             change_file_extension(markdown_path).replace(/index\.html$/, ""),

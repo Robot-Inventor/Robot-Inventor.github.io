@@ -4,5 +4,6 @@
     "template": "src/html/template.html",
     "sitemap": "sitemap.xml",
     "twitter_id": "keita_roboin",
+    "default_author": "Robot-Inventor",
     "default_thumbnail": "https://robot-inventor.github.io/src/icon/ogp_default_thumbnail.png"
 }
