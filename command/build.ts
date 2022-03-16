@@ -206,6 +206,41 @@ class OptimizeImages {
     }
 }
 
+const auto_highlight = (element: HTMLElement) => {
+    const language_class = Array.from(element.classList).filter((class_name) =>
+        /^language-/.test(class_name)
+    );
+
+    if (language_class.length) {
+        // TODO: 仕様変更により、この方法での言語指定ができなくなっている
+        // @ts-expect-error: 後で直す
+        hljs.highlightElement(element, {
+            language: language_class[0].replace("language-", ""),
+        });
+
+        // シンタックスハイライトされたコードブロックのフォントをCSSで指定するために``data-is-source-code``を使っている。シンタックスハイライトされていないコードブロックにはフォントを指定しない。
+        element.setAttribute("data-is-source-code", "true");
+    }
+};
+
+const get_title = (
+    h1: HTMLHeadingElement | null,
+    metadata_title: string | undefined
+) => (h1 ? h1.textContent : metadata_title);
+
+const get_author = (
+    metadata_title: string | undefined,
+    default_config: string
+) => metadata_title || default_config;
+
+const parse_markdown = (markdown: string) => {
+    marked.use({ extensions: [qnote] });
+    marked.setOptions({
+        smartLists: true,
+    });
+    return marked.parse(markdown);
+};
+
 /**
  * MarkdownをMinify化されたHTMLにコンパイルする
  * @param markdown_path コンパイルしたいMarkdownファイルのパス
@@ -223,51 +258,36 @@ function compile() {
     const template_hash = get_hash(template);
 
     const markdown_hash = get_hash(markdown);
-    if (
+    const is_changed = !(
         build_cache.articles[markdown_path].hash === markdown_hash &&
         build_cache.template === template_hash
-    ) {
+    );
+
+    if (!is_changed) {
         console.log(
             "Markdownファイルとテンプレートの両方に変更が見つからなかったため、コンパイルをスキップしました。"
         );
         return;
-    } else {
-        build_cache.articles[markdown_path].hash = markdown_hash;
-        build_cache.template = template_hash;
-        build_cache.articles[markdown_path].updated = date_time;
     }
 
-    const { metadata, content: md_without_metadata } = metadataParser(markdown);
+    build_cache.articles[markdown_path].hash = markdown_hash;
+    build_cache.template = template_hash;
+    build_cache.articles[markdown_path].updated = date_time;
 
-    marked.use({ extensions: [qnote] });
-    marked.setOptions({
-        smartLists: true,
-    });
-    const contents = marked.parse(md_without_metadata);
+    const { metadata, content: md_without_metadata } = metadataParser(markdown);
+    const contents = parse_markdown(md_without_metadata);
 
     const { window } = new JSDOM(contents);
     const document = window.document;
     const first_h1 = document.querySelector("h1");
 
-    const title = (() => {
-        if (metadata.title) {
-            return metadata.title;
-        } else if (first_h1 && first_h1.textContent) {
-            return first_h1.textContent;
-        } else {
-            throw "h1要素を定義するか、メタデータブロックでtitleを定義してください。";
-        }
-    })();
+    const title = get_title(first_h1, metadata.title);
+    if (!title)
+        throw "h1要素を定義するか、メタデータブロックでtitleを定義してください。";
 
-    const author = (() => {
-        if (metadata.author) {
-            return metadata.author;
-        } else if (config.default_author) {
-            return config.default_author;
-        } else {
-            throw "ビルド設定かメタデータブロックでauthorを定義してください。";
-        }
-    })();
+    const author = get_author(metadata.author, config.default_author);
+    if (!author)
+        throw "ビルド設定かメタデータブロックでauthorを定義してください。";
 
     if (!metadata.description)
         throw "メタデータブロックでdescriptionを定義してください。";
@@ -320,22 +340,7 @@ function compile() {
     const code_elements: NodeListOf<HTMLElement> =
         document.querySelectorAll("pre code");
 
-    code_elements.forEach((element) => {
-        const language_class = Array.from(element.classList).filter(
-            (class_name) => /^language-/.test(class_name)
-        );
-
-        if (language_class.length) {
-            // TODO: 仕様変更により、この方法での言語指定ができなくなっている
-            // @ts-expect-error: 後で直す
-            hljs.highlightElement(element, {
-                language: language_class[0].replace("language-", ""),
-            });
-
-            // シンタックスハイライトされたコードブロックのフォントをCSSで指定するために``data-is-source-code``を使っている。シンタックスハイライトされていないコードブロックにはフォントを指定しない。
-            element.setAttribute("data-is-source-code", "true");
-        }
-    });
+    code_elements.forEach(auto_highlight);
 
     const thumbnail_image =
         metadata.thumbnail || get_thumbnail(document, markdown_path);
