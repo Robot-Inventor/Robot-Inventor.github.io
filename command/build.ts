@@ -217,7 +217,6 @@ function compile() {
     if (!build_cache.articles[markdown_path].created)
         build_cache.articles[markdown_path].created = date_time;
 
-    const metadata_block_re = /-{3}.*?-{3}/s;
     const markdown = file.read(markdown_path);
 
     const template = get_html_template(config.template);
