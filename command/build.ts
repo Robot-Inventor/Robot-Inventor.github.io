@@ -30,6 +30,22 @@ import { qnote } from "qnote-parser";
 class OptimizeImages {
     private readonly document: Document;
 
+    private readonly formats = ["avif", "webp"];
+    private readonly output_sizes = [
+        {
+            size: 1920,
+            media: "(min-width: 960px)",
+        },
+        {
+            size: 960,
+            media: "(min-width: 480px) and (max-width: 960px)",
+        },
+        {
+            size: 480,
+            media: "(max-width: 480px)",
+        },
+    ];
+
     constructor(document: Document) {
         this.document = document;
     }
@@ -87,11 +103,22 @@ class OptimizeImages {
             .toFile(output_path);
     }
 
+    private link_to_default_picture(element: HTMLImageElement) {
+        const link_to_default_picture = this.document.createElement("a");
+        link_to_default_picture.href = element.src;
+
+        const picture_element = this.document.createElement("picture");
+        link_to_default_picture.appendChild(picture_element);
+
+        element.insertAdjacentElement("afterend", link_to_default_picture);
+        element.remove();
+
+        return picture_element;
+    }
+
     private process_image(element: HTMLImageElement) {
-        const absolute_src = path.resolve(
-            path.dirname(markdown_path),
-            element.src
-        );
+        const src = element.src;
+        const absolute_src = path.resolve(path.dirname(markdown_path), src);
 
         const parsed_absolute_src = path.parse(absolute_src);
 
@@ -106,53 +133,26 @@ class OptimizeImages {
         if (!fs.existsSync(absolute_output_folder))
             fs.mkdirSync(absolute_output_folder);
 
-        const formats = [
-            // 優先したいフォーマットを先に書く
-            "avif",
-            "webp",
-        ] as const;
-        const output_sizes = [
-            {
-                size: 1920,
-                media: "(min-width: 960px)",
-            },
-            {
-                size: 960,
-                media: "(min-width: 480px) and (max-width: 960px)",
-            },
-            {
-                size: 480,
-                media: "(max-width: 480px)",
-            },
-        ] as const;
-
-        const link_to_default_picture = this.document.createElement("a");
-        link_to_default_picture.href = element.src;
-        const picture_element = this.document.createElement("picture");
-        link_to_default_picture.appendChild(picture_element);
         const img_alt = element.alt;
-        element.insertAdjacentElement("afterend", link_to_default_picture);
-        element.remove();
+        const picture_element = this.link_to_default_picture(element);
 
         const latest_hash = get_hash(file.read(absolute_src));
         const is_changed =
             // @ts-expect-error あとで直す
-            build_cache.articles[markdown_path].images[element.src] !==
-            latest_hash;
+            build_cache.articles[markdown_path].images[src] !== latest_hash;
 
         if (is_changed) {
             // @ts-expect-error あとで直す
-            build_cache.articles[markdown_path].images[element.src] =
-                latest_hash;
-            console.log(`${element.src}を最適化中...`);
+            build_cache.articles[markdown_path].images[src] = latest_hash;
+            console.log(`${src}を最適化中...`);
         } else {
             console.log(
-                `${element.src}は変更されていないため最適化をスキップしました。`
+                `${src}は変更されていないため最適化をスキップしました。`
             );
         }
 
-        for (const format of formats) {
-            for (const output_size of output_sizes) {
+        for (const format of this.formats) {
+            for (const output_size of this.output_sizes) {
                 const target_size = output_size.size;
                 const output_file_name = `${parsed_absolute_src.name}_${target_size}px.${format}`;
                 const relative_output_path = `${relative_output_folder}/${output_file_name}`;
@@ -177,7 +177,7 @@ class OptimizeImages {
                     img_alt
                 );
 
-                const bigger_images = output_sizes.filter(
+                const bigger_images = this.output_sizes.filter(
                     (image) => image.size > target_size
                 );
                 const additional_srcset = bigger_images
@@ -198,7 +198,7 @@ class OptimizeImages {
         }
 
         const fallback = this.generate_fallback_image(
-            element.src,
+            src,
             img_alt,
             absolute_src
         );
@@ -344,10 +344,6 @@ function compile() {
 
     const thumbnail_image =
         metadata.thumbnail || get_thumbnail(document, markdown_path);
-    if (!thumbnail_image)
-        throw new Error(
-            "記事中にOGPのサムネイル画像に使用できる画像が見つかりませんでした。画像をメタデータブロックの「thumbnail」か.buildconfig.jsonの「default_thumbnail」で明示的に指定してください。"
-        );
 
     const template_values = {
         title: title,

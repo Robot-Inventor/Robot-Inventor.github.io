@@ -5,12 +5,34 @@ import { SitemapStream, streamToPromise } from "sitemap";
 import { Readable } from "stream";
 import fs from "fs";
 
+interface SitemapData {
+    url: string;
+    lastmod: string;
+}
+
+const generate_sitemap = async (sitemap_data: Array<SitemapData>) => {
+    const stream = new SitemapStream({
+        hostname: "https://robot-inventor.github.io",
+    });
+
+    const sitemap_stream = Readable.from(sitemap_data).pipe(stream);
+
+    const sitemap_buffer = await streamToPromise(sitemap_stream);
+    const sitemap_content = await sitemap_buffer.toString();
+
+    fs.writeFile(config.sitemap, sitemap_content, (err) => {
+        if (err) throw err;
+
+        console.log("サイトマップを更新しました。");
+    });
+};
+
 const update_sitemap = () => {
     const article_keys = Object.keys(build_cache.articles) as Array<
         keyof typeof build_cache.articles
     >;
 
-    const sitemap_data = article_keys.map((md_path) => {
+    const sitemap_data: Array<SitemapData> = article_keys.map((md_path) => {
         const article_data = {
             url:
                 "/" +
@@ -22,21 +44,7 @@ const update_sitemap = () => {
         return article_data;
     });
 
-    (async () => {
-        const stream = new SitemapStream({
-            hostname: "https://robot-inventor.github.io",
-        });
-
-        const sitemap_content = await streamToPromise(
-            Readable.from(sitemap_data).pipe(stream)
-        ).then((data: any) => data.toString());
-
-        fs.writeFile(config.sitemap, sitemap_content, (err) => {
-            if (err) throw err;
-
-            console.log("サイトマップを更新しました。");
-        });
-    })();
+    generate_sitemap(sitemap_data);
 };
 
 export { update_sitemap };

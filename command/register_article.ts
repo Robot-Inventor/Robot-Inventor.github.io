@@ -1,6 +1,14 @@
 import readline from "readline";
 import { file } from "./modules/file";
 import { get_date_time_string } from "./modules/utility";
+import article_data from "../article/article_data.json";
+
+interface article_information {
+    "article-title": string;
+    link: string;
+    description: string;
+    thumbnail: string;
+}
 
 const console_color = {
     red: "\x1b[31m",
@@ -22,12 +30,7 @@ const question = (question: string): Promise<string> => {
     });
 };
 
-const ask_information = async (): Promise<{
-    "article-title": string;
-    link: string;
-    description: string;
-    thumbnail: string;
-}> => {
+const ask_information = async (): Promise<article_information> => {
     const title = await question(`
 --------------------
 
@@ -46,23 +49,23 @@ title: `);
     thumbnail: ${thumbnail}
 
     Are you sure you want to register this article? (y/n)`;
+
     while (!confirmed) {
         const answer = await question(confirm_message);
+
         if (["y", "n"].includes(answer)) {
             confirmed = answer;
         }
     }
 
-    if (confirmed === "y") {
-        return {
-            link,
-            thumbnail,
-            "article-title": title,
-            description,
-        };
-    } else {
-        return ask_information();
-    }
+    const information = {
+        link,
+        thumbnail,
+        "article-title": title,
+        description,
+    };
+
+    return confirmed === "y" ? information : await ask_information();
 };
 
 const sort_object = <T extends Object>(object: T): T => {
@@ -77,16 +80,22 @@ const sort_object = <T extends Object>(object: T): T => {
     return result;
 };
 
+const registered_articles = () => {
+    const articles = Object.keys(article_data) as Array<
+        keyof typeof article_data
+    >;
+    const article_links = articles
+        .map((key) => article_data[key])
+        .map((data) => data.link);
+
+    return article_links;
+};
+
 const main = async () => {
     const info = await ask_information();
     const time = get_date_time_string(new Date());
 
-    const article_data = JSON.parse(file.read("./article/article_data.json"));
-
-    const already_registered = Object.keys(article_data)
-        .map((key) => article_data[key])
-        .map((data) => data.link)
-        .includes(info.link);
+    const already_registered = registered_articles().includes(info.link);
 
     if (already_registered)
         throw new Error("This article is already registered.");
@@ -94,7 +103,7 @@ const main = async () => {
     if (time in article_data)
         throw new Error("Could not register article. Try again later.");
 
-    article_data[time] = info;
+    article_data[time as keyof typeof article_data] = info;
 
     const sorted_data = sort_object(article_data);
     file.write(
