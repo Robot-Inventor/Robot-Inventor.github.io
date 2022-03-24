@@ -28,7 +28,7 @@
     "marked": "^4.0.12",
     "normalize-url": "^4.5.1",
     "qnote-parser": "^1.0.2",
-    "sharp": "^0.30.1",
+    "sharp": "^0.30.2",
     "sitemap": "^7.1.1",
     "stylelint-config-recommended-scss": "^5.0.0",
     "stylelint-scss": "^4.1.0",
