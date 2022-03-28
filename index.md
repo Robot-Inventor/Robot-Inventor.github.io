@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/03/13/hololive-dictionary/2022-03-13-01-11-34.png"
-            link="/article/2022/03/13/hololive-dictionary/"
-            article-title="Hololiveメンバーの名前をユーザー辞書に登録して変換しやすくする"
-            description="Hololiveメンバーの名前・推しマーク・ハッシュタグ・ファンネーム・TwitterのIDを変換で出せるようにするユーザー辞書を紹介します。"></article-card>
+<article-card thumbnail="/article/2022/03/29/firefox-overlay-scrollbar/windows11_version_information.png"
+            link="/article/2022/03/29/firefox-overlay-scrollbar/"
+            article-title="FirefoxでWindows 11のオーバーレイスクロールバーを有効にする"
+            description="Windows 11では、さまざまなソフトでオーバーレイスクロールバーが採用されています。Firefoxのオーバーレイスクロールバーを有効にする方法について説明します。"></article-card>
 
 ## 新着動画
 

@@ -6,6 +6,10 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2022/03/29　サイト更新情報
+
+新しい記事「[FirefoxでWindows 11のオーバーレイスクロールバーを有効にする](/article/2022/03/29/firefox-overlay-scrollbar/)」を公開しました。
+
 ## 2022/03/13　サイト更新情報
 
 新しい記事「[Hololiveメンバーの名前をユーザー辞書に登録して変換しやすくする](/article/2022/03/13/hololive-dictionary/)」を公開しました。
