@@ -28,16 +28,16 @@
     "marked": "^4.0.12",
     "normalize-url": "^4.5.1",
     "qnote-parser": "^1.0.2",
-    "sharp": "^0.30.1",
+    "sharp": "^0.30.2",
     "sitemap": "^7.1.1",
-    "stylelint-config-recommended-scss": "^5.0.0",
+    "stylelint-config-recommended-scss": "^6.0.0",
     "stylelint-scss": "^4.1.0",
     "ts-node": "^10.7.0"
   },
   "devDependencies": {
     "@types/html-minifier": "4.0.2",
     "@types/jsdom": "16.2.14",
-    "@types/marked": "4.0.2",
+    "@types/marked": "4.0.3",
     "@types/sharp": "0.30.0"
   }
 }
