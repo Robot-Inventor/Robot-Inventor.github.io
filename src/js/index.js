@@ -49,68 +49,140 @@ menu_icon.addEventListener("click", () => {
         open_menu();
 });
 menu_overlay.addEventListener("click", close_menu);
+class ShareButtonElement {
+    constructor() {
+        this.status_attribute = "data-active";
+        this.button = this.create_button();
+        const overlay = this.create_overlay();
+        this.twitter = this.create_twitter();
+        this.facebook = this.create_facebook();
+        this.line = this.create_line();
+        const share_icon = this.create_share_icon();
+        this.copy = this.create_copy();
+        this.more = this.create_more();
+        const close = this.create_close();
+        const fragment = document.createDocumentFragment();
+        fragment.appendChild(overlay);
+        fragment.appendChild(this.twitter);
+        fragment.appendChild(this.facebook);
+        fragment.appendChild(this.line);
+        fragment.appendChild(share_icon);
+        fragment.appendChild(this.copy);
+        fragment.appendChild(this.more);
+        fragment.appendChild(close);
+        this.button.appendChild(fragment);
+    }
+    create_button() {
+        const button = document.createElement("button");
+        button.id = "share_button";
+        return button;
+    }
+    create_overlay() {
+        const overlay = document.createElement("div");
+        overlay.id = "share_button_overlay";
+        return overlay;
+    }
+    create_twitter() {
+        const twitter = document.createElement("img");
+        twitter.src = "/src/icon/twitter.svg";
+        twitter.id = "share_button_twitter";
+        twitter.alt = "Twitter";
+        return twitter;
+    }
+    create_facebook() {
+        const facebook = document.createElement("img");
+        facebook.src = "/src/icon/facebook.png";
+        facebook.id = "share_button_facebook";
+        facebook.alt = "Facebook";
+        return facebook;
+    }
+    create_line() {
+        const line = document.createElement("img");
+        line.src = "/src/icon/line.png";
+        line.id = "share_button_line";
+        line.alt = "LINE";
+        return line;
+    }
+    create_share_icon() {
+        const icon = document.createElement("img");
+        icon.src = "/src/icon/share_white.svg";
+        icon.alt = "アイコン";
+        icon.id = "share_button_icon";
+        return icon;
+    }
+    create_copy() {
+        const outer = document.createElement("div");
+        outer.id = "share_button_copy";
+        const icon = document.createElement("img");
+        icon.src = "/src/icon/link.svg";
+        icon.alt = "コピー";
+        outer.appendChild(icon);
+        return outer;
+    }
+    create_more() {
+        const outer = document.createElement("div");
+        outer.id = "share_button_more";
+        const icon = document.createElement("img");
+        icon.src = "/src/icon/more.svg";
+        icon.alt = "その他";
+        outer.appendChild(icon);
+        return outer;
+    }
+    create_close() {
+        const close = document.createElement("div");
+        close.id = "share_button_close";
+        return close;
+    }
+    show() {
+        this.button.setAttribute("data-show", "");
+    }
+    toggle_status() {
+        if (this.button.hasAttribute(this.status_attribute))
+            this.button.removeAttribute(this.status_attribute);
+        else
+            this.button.setAttribute(this.status_attribute, "");
+    }
+    get is_active() {
+        return this.button.hasAttribute(this.status_attribute);
+    }
+}
 /**
  * シェアボタンを読み込む
  */
 function initialize_share_button() {
-    document.getElementById("article_container_inner").insertAdjacentHTML("beforeend", `
-<button id="share_button">
-    <div id="share_button_overlay"></div>
-    <img src="/src/icon/twitter.svg" id="share_button_twitter" alt="Twitter">
-    <img src="/src/icon/facebook.png" id="share_button_facebook" alt="Facebook">
-    <img src="/src/icon/line.png" id="share_button_line" alt="LINE">
-    <img src="/src/icon/share_white.svg" alt="アイコン" id="share_button_icon">
-    <div id="share_button_copy">
-        <img src="/src/icon/link.svg" alt="コピー">
-    </div>
-    <div id="share_button_more">
-        <img src="/src/icon/more.svg" alt="その他">
-    </div>
-    <div id="share_button_close"></div>
-</button>
-    `);
-    const share_button = document.getElementById("share_button");
+    const share_button = new ShareButtonElement();
+    document
+        .getElementById("article_container_inner")
+        .appendChild(share_button.button);
     setTimeout(() => {
-        share_button.setAttribute("data-show", "");
+        share_button.show();
     }, 1000);
-    share_button.addEventListener("click", () => {
-        if (share_button.hasAttribute("data-active"))
-            share_button.removeAttribute("data-active");
-        else
-            share_button.setAttribute("data-active", "");
+    share_button.button.addEventListener("click", () => {
+        share_button.toggle_status();
     });
-    const share_button_twitter = document.getElementById("share_button_twitter");
-    share_button_twitter.addEventListener("click", () => {
-        if (share_button.hasAttribute("data-active"))
-            share("twitter");
-    });
-    const share_button_facebook = document.getElementById("share_button_facebook");
-    share_button_facebook.addEventListener("click", () => {
-        if (share_button.hasAttribute("data-active"))
-            share("facebook");
-    });
-    const share_button_line = document.getElementById("share_button_line");
-    share_button_line.addEventListener("click", () => {
-        if (share_button.hasAttribute("data-active"))
-            share("line");
-    });
-    const share_button_copy = document.getElementById("share_button_copy");
-    share_button_copy.addEventListener("click", () => {
-        if (share_button.hasAttribute("data-active"))
+    const basic_share = ["twitter", "facebook", "line"];
+    for (const share_type of basic_share) {
+        share_button[share_type].addEventListener("click", () => {
+            if (share_button.is_active)
+                share(share_type);
+        });
+    }
+    share_button.copy.addEventListener("click", () => {
+        if (share_button.is_active)
             copy_url();
     });
-    const share_button_more = document.getElementById("share_button_more");
-    if (navigator.share !== undefined)
-        share_button_more.style.display = "block";
-    share_button_more.addEventListener("click", () => {
-        if (!share_button.hasAttribute("data-active"))
-            return;
-        const share_data = {
-            title: document.head.querySelector("title").textContent || "",
-            url: location.href
-        };
-        navigator.share(share_data);
-    });
+    if (navigator.share !== undefined) {
+        share_button.more.style.display = "block";
+        share_button.more.addEventListener("click", () => {
+            if (!share_button.is_active)
+                return;
+            const share_data = {
+                title: document.title || "",
+                url: location.href,
+            };
+            navigator.share(share_data);
+        });
+    }
 }
 function on_scroll_process() {
     if (window.scrollY >= window.innerHeight / 2) {
