@@ -21,7 +21,7 @@ const insert_highlight_style = (document: Document) => {
 
     const highlight_style = document.createElement("link");
     highlight_style.rel = "preload";
-    highlight_style.as = "style";
+    highlight_style.setAttribute("as", "style");
     highlight_style.href = highlight_css_path;
     highlight_style.setAttribute("onload", "this.rel='stylesheet'");
     document.head.appendChild(highlight_style);
