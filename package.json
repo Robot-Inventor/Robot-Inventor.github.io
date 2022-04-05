@@ -23,7 +23,7 @@
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.1",
     "jsdom": "^19.0.0",
-    "lighthouse": "^9.4.0",
+    "lighthouse": "^9.5.0",
     "markdown-yaml-metadata-parser": "^3.0.0",
     "marked": "^4.0.12",
     "normalize-url": "^4.5.1",
