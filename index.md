@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/03/29/firefox-overlay-scrollbar/windows11_version_information.png"
-            link="/article/2022/03/29/firefox-overlay-scrollbar/"
-            article-title="FirefoxでWindows 11のオーバーレイスクロールバーを有効にする"
-            description="Windows 11では、さまざまなソフトでオーバーレイスクロールバーが採用されています。Firefoxのオーバーレイスクロールバーを有効にする方法について説明します。"></article-card>
+<article-card thumbnail="/article/2022/04/07/won-the-campaign/2022-04-07-00-22-03.png"
+            link="/article/2022/04/07/won-the-campaign/"
+            article-title="応募した記憶のない謎のキャンペーンに当選した話"
+            description="ある日、私のTwitterに「応募した記憶のない謎のキャンペーンに当選した」知らせが届きました。この詐欺サイトを調査してみました。"></article-card>
 
 ## 新着動画
 

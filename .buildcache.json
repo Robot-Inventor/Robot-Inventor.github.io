@@ -142,8 +142,8 @@
         },
         "index.md": {
             "created": "2021-06-11T02:33:02.543",
-            "hash": "8192b2ed8a92a2bc5c3264e6055d4daa244844157f3dd891aa0e1a3b2f84af18",
-            "updated": "2022-03-29T01:11:21.700",
+            "hash": "b0e63ba391ac56ea3ef46629163603f931855d52341967fd556e4d463e26fc93",
+            "updated": "2022-04-07T14:15:50.229",
             "images": {}
         },
         "article/index.md": {
@@ -154,8 +154,8 @@
         },
         "notice/index.md": {
             "created": "2021-06-13T23:28:51.664",
-            "hash": "99bda539eedc6afd9f98112535cc7463d3a7734af341abf68a60f705e2f6191b",
-            "updated": "2022-03-29T01:09:39.709",
+            "hash": "09b588ee6071ae11f9c90d6e31e09d10548e9cf62fe09f5ccfcdecc7dda40563",
+            "updated": "2022-04-07T14:14:03.348",
             "images": {}
         },
         "article/2021/06/15/index.md": {
@@ -236,6 +236,28 @@
                 "./about_config.png": "4cb71c49a3345cbed510419a689a4ee0c32116d8e6e56b590e30d935d2290872",
                 "./about_config_search_result.png": "6ce95e6b788ceeed4de2e99828ce2bdbb2ee0be421a94cba250bc5c7d138e6c9",
                 "./overlay_true.png": "f40f38f417bc4d5205dc34c3576d35ed645d99a98b9f5e14d3a23c5ed976490f"
+            }
+        },
+        "article/2022/04/07/won-the-campaign/index.md": {
+            "created": "2022-04-07T14:06:50.114",
+            "hash": "9b54a9825b0a2ff226053c482524809ad35ce6e724dc4d36c1744cd8e5ac6296",
+            "updated": "2022-04-07T14:23:36.170",
+            "images": {
+                "2022-04-07-00-22-03.png": "a93f03d28407ca83ca56e865d16144e03413581fad330f8546f047134689872a",
+                "2022-04-07-00-37-57.png": "0fb3768b6996ecaf575e1868b744fa8b75a45a0128e5920ea9746f19999789bd",
+                "2022-04-07-00-45-37.png": "027579b92db460be7fba950f35b7521475597244324c3e1c3ba4136e18824bea",
+                "2022-04-07-00-47-40.png": "4562e05ffd0bfbeb33345732f0fef07c6cd7389db3c2c044bddc3abdad630ba3",
+                "2022-04-07-00-56-03.png": "3dab32b78b5a982b80542dd2cd2ba20205866b4265103a09ed8841bddf288e66",
+                "2022-04-07-00-59-25.png": "33b1a09a0d30f8de449bab4c6f9a864dfcd1643c4353c25f803980fe2d87077f",
+                "2022-04-07-01-01-45.png": "25f4b385284f3200f56460acea793791a92676cb3e89d9ac23447cd2672fbb43",
+                "2022-04-07-01-10-12.png": "b2efcbbc40476d4c628e3e57d64d57d4707d2b0caecac0490b87c60cb31d1ce1",
+                "2022-04-07-13-05-25.png": "b09db2a5ef7bdea1ee4b9a66df665537020e2cf831e11d68650023b69f6a268d",
+                "2022-04-07-01-19-08.png": "8d81e021a2a633fb03533ca6bcd2c79779db0e9ed37da45bf8060d17ec1ccd5b",
+                "2022-04-07-01-25-43.png": "7c881d46481959b01b1fcf77f31ef9db8c33821c916bfb0ee39d7f2f3f78992d",
+                "2022-04-07-13-00-24.png": "6bc5de203274b626849795492eff7cff7dfd043cff65e8054bae65b73e2ca8fc",
+                "2022-04-07-12-55-26.png": "818e5769d38a5bb84bc4884af8d7af476cb88db4637956438c5bd471907f24b9",
+                "2022-04-07-13-01-48.png": "1976e62c67aa5b0bcc004157f88b276a29cfad54b663b95683f86afc198ddd4d",
+                "2022-04-07-13-02-54.png": "37111252cf23943db82c3780dba12ca63d624c8235b419fa37297a8985a91665"
             }
         }
     },
