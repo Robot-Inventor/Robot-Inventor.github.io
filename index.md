@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/04/07/won-the-campaign/2022-04-07-00-22-03.png"
-            link="/article/2022/04/07/won-the-campaign/"
-            article-title="応募した記憶のない謎のキャンペーンに当選した話"
-            description="ある日、私のTwitterに「応募した記憶のない謎のキャンペーンに当選した」知らせが届きました。この詐欺サイトを調査してみました。"></article-card>
+<article-card thumbnail="/article/2022/04/17/count-discord-members/2022-04-17-00-11-20.png"
+            link="/article/2022/04/17/count-discord-members/"
+            article-title="Discordでメンバーの人数をBotなしで確認する方法"
+            description="Discordでサーバーのメンバー数を、Botを使わずに確認する方法を紹介します。"></article-card>
 
 ## 新着動画
 
