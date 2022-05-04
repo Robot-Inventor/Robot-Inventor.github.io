@@ -25,7 +25,7 @@
     "jsdom": "^19.0.0",
     "lighthouse": "^9.5.0",
     "markdown-yaml-metadata-parser": "^3.0.0",
-    "marked": "^4.0.13",
+    "marked": "^4.0.14",
     "normalize-url": "^4.5.1",
     "qnote-parser": "^1.0.2",
     "sharp": "^0.30.3",
