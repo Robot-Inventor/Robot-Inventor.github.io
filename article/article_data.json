@@ -1,4 +1,10 @@
 {
+    "2022-06-01T00:02:55.525": {
+        "link": "/article/2022/05/31/create-google-forms-from-excel/",
+        "thumbnail": "/article/2022/05/31/create-google-forms-from-excel/2022-05-31-23-40-05.png",
+        "article-title": "ExcelのデータからGoogleフォームの選択肢を作る方法",
+        "description": "この記事では、「ExcelのデータからGoogleフォームの選択肢を作る方法」について説明します。改行区切りの文字列でデータをコピーし、Googleフォームに貼り付けることで、自動的に選択肢が追加されます。"
+    },
     "2022-04-17T01:42:09.389": {
         "link": "/article/2022/04/17/count-discord-members/",
         "thumbnail": "/article/2022/04/17/count-discord-members/2022-04-17-00-11-20.png",

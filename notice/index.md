@@ -6,6 +6,10 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2022/05/31　サイト更新情報
+
+新しい記事「[ExcelのデータからGoogleフォームの選択肢を作る方法](/article/2022/05/31/create-google-forms-from-excel/)」を公開しました。
+
 ## 2022/04/17　サイト更新情報
 
 新しい記事「[Discordでメンバーの人数をBotなしで確認する方法](/article/2022/04/17/count-discord-members/)」を公開しました。
