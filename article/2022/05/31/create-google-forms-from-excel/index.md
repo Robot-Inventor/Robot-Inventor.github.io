@@ -1,5 +1,6 @@
 ---
 description: この記事では、「ExcelのデータからGoogleフォームの選択肢を作る方法」について説明します。改行区切りの文字列でデータをコピーし、Googleフォームに貼り付けることで、自動的に選択肢が追加されます。
+thumbnail: https://robot-inventor.github.io/article/2022/05/31/create-google-forms-from-excel/2022-05-31-23-40-05.png
 ---
 
 # ExcelのデータからGoogleフォームの選択肢を作る方法
