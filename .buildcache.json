@@ -142,8 +142,8 @@
         },
         "index.md": {
             "created": "2021-06-11T02:33:02.543",
-            "hash": "79eedef59d10df735e6bf0ba175e970929edb416d04ab71c77697326c859d653",
-            "updated": "2022-06-01T00:07:09.364",
+            "hash": "74b3a75f69b7ece57273f1ff9b0ffaa3a2e0e32c0efef38c87b816ab6f10f1ff",
+            "updated": "2022-06-07T00:44:36.293",
             "images": {}
         },
         "article/index.md": {
@@ -154,8 +154,8 @@
         },
         "notice/index.md": {
             "created": "2021-06-13T23:28:51.664",
-            "hash": "8883e3998c9d30eced94245ad8c12d09b17e372d6ebaebdf89965fa35f8a332a",
-            "updated": "2022-06-01T00:05:07.450",
+            "hash": "5d5e4f2869ccd2845bfb6e29f519e2e256c23cbeac01278fbb2420e61315250e",
+            "updated": "2022-06-07T00:42:43.296",
             "images": {}
         },
         "article/2021/06/15/index.md": {
@@ -280,6 +280,21 @@
                 "2022-05-31-23-40-05.png": "d2be742671f621fe48f6f488c8092ba6115dbd311f7346605d6b0b130707e9b5",
                 "2022-05-31-23-42-33.png": "d4be72e579ce2b4b53ee81e9b93d20f93af2af8878518b6ff2465ff66737e157",
                 "2022-05-31-23-44-12.png": "fb1759c28dcc1f484e2ea21c7b45ff28954e8534a9443b7dfdfe432e39036d25"
+            }
+        },
+        "article/2022/06/07/run-apps-in-multiple-instances-in-android/index.md": {
+            "created": "2022-06-07T00:24:08.402",
+            "hash": "ad24e107f5d7872ce4262e531cd970a6e733d51cb6acbe921a437af63ae8b08f",
+            "updated": "2022-06-07T00:49:14.702",
+            "images": {
+                "Screenshot_20220603-181113.png": "28bab63cae39b3c00edafe6fbaa9fdd62e303fa806f7d5f267f0b33e35b6fa1e",
+                "Screenshot_20220603-181318.png": "f1229abee272b8185bb91bb1d044aa5679aca9fc7c7991e1cd5b856cd6357dd9",
+                "Screenshot_20220603-181410.png": "c84a708bfb80c2df1a0346c91a40373de97c9355e61c503203d5d0bbbab06449",
+                "Screenshot_20220603-181538.png": "4c6e8d3d7aa3304cabf537e000d46e0e04d5657a9ce8a0d69c8ae733c46236a2",
+                "Screenshot_20220603-182057.png": "7d58ad54f45e596a97f7293e4a6b1af6ce7192fdc5d65b18fe9f803cbb40fd33",
+                "Screenshot_20220603-182334.png": "20cebf46055bf90af69d48d0b138018f86baf4743e95ab3d78b705203e99e495",
+                "Screenshot_20220603-182744.png": "bc368c6eef21bfb75ae0ce52aa68487a601b37000dafda946a7e1d38fde7a732",
+                "Screenshot_20220603-182901.png": "4fcdb8eaeb67272b4bf2e6f1ac4c8c1bcb958fbbb02dfc37d1c0600f6b1a5c84"
             }
         }
     },

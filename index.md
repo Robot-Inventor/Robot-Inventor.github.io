@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/05/31/create-google-forms-from-excel/2022-05-31-23-40-05.png"
-            link="/article/2022/05/31/create-google-forms-from-excel/"
-            article-title="ExcelのデータからGoogleフォームの選択肢を作る方法"
-            description="この記事では、「ExcelのデータからGoogleフォームの選択肢を作る方法」について説明します。改行区切りの文字列でデータをコピーし、Googleフォームに貼り付けることで、自動的に選択肢が追加されます。"></article-card>
+<article-card thumbnail="/article/2022/06/07/run-apps-in-multiple-instances-in-android/Screenshot_20220603-182744.png"
+            link="/article/2022/06/07/run-apps-in-multiple-instances-in-android/"
+            article-title="【アプリ不要】Androidで同じアプリを複数起動する方法"
+            description="特別なアプリをインストールせずに「Androidスマホで同じアプリを複数個起動する方法」を説明します。ネットのほとんどの記事で紹介されている方法は、専用アプリのインストールが必須ですが、この記事の方法では一切インストール不要です。"></article-card>
 
 ## 新着動画
 

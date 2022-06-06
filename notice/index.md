@@ -6,6 +6,10 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2022/06/07　サイト更新情報
+
+新しい記事「[【アプリ不要】Androidで同じアプリを複数起動する方法](/article/2022/06/07/run-apps-in-multiple-instances-in-android/)」を公開しました。
+
 ## 2022/05/31　サイト更新情報
 
 新しい記事「[ExcelのデータからGoogleフォームの選択肢を作る方法](/article/2022/05/31/create-google-forms-from-excel/)」を公開しました。
