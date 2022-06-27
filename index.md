@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/06/07/run-apps-in-multiple-instances-in-android/Screenshot_20220603-182744.png"
-            link="/article/2022/06/07/run-apps-in-multiple-instances-in-android/"
-            article-title="【アプリ不要】Androidで同じアプリを複数起動する方法"
-            description="特別なアプリをインストールせずに「Androidスマホで同じアプリを複数個起動する方法」を説明します。ネットのほとんどの記事で紹介されている方法は、専用アプリのインストールが必須ですが、この記事の方法では一切インストール不要です。"></article-card>
+<article-card thumbnail="/article/2022/06/27/power-saving-with-dark-mode/thumbnail.png"
+            link="/article/2022/06/27/power-saving-with-dark-mode/"
+            article-title="ダークモードは電池持ちに影響しないときがある"
+            description="ダークモードには節電効果があり、電池持ちがよくなるという説明をよく見かけます。しかし、実際にダークモードには消費電力を減らす効果があるのでしょうか。"></article-card>
 
 ## 新着動画
 

@@ -142,8 +142,8 @@
         },
         "index.md": {
             "created": "2021-06-11T02:33:02.543",
-            "hash": "74b3a75f69b7ece57273f1ff9b0ffaa3a2e0e32c0efef38c87b816ab6f10f1ff",
-            "updated": "2022-06-07T00:44:36.293",
+            "hash": "eb007d76d9c6e4dadda3a68bb811aa221ff152d4f5dce63b2919d11a7057f474",
+            "updated": "2022-06-27T23:34:20.349",
             "images": {}
         },
         "article/index.md": {
@@ -154,8 +154,8 @@
         },
         "notice/index.md": {
             "created": "2021-06-13T23:28:51.664",
-            "hash": "5d5e4f2869ccd2845bfb6e29f519e2e256c23cbeac01278fbb2420e61315250e",
-            "updated": "2022-06-07T00:42:43.296",
+            "hash": "ab88a18dd15a083a4cc9540d6829b51485227210cb8a1b8df255e76c4c439f2e",
+            "updated": "2022-06-27T23:33:06.433",
             "images": {}
         },
         "article/2021/06/15/index.md": {
@@ -295,6 +295,14 @@
                 "Screenshot_20220603-182334.png": "20cebf46055bf90af69d48d0b138018f86baf4743e95ab3d78b705203e99e495",
                 "Screenshot_20220603-182744.png": "bc368c6eef21bfb75ae0ce52aa68487a601b37000dafda946a7e1d38fde7a732",
                 "Screenshot_20220603-182901.png": "4fcdb8eaeb67272b4bf2e6f1ac4c8c1bcb958fbbb02dfc37d1c0600f6b1a5c84"
+            }
+        },
+        "article/2022/06/27/power-saving-with-dark-mode/index.md": {
+            "created": "2022-06-27T23:30:35.500",
+            "hash": "baf59f4bbd74fab279edbde721d8bea44654e99ee79f26f87bb01db513a1b3c0",
+            "updated": "2022-06-27T23:40:52.920",
+            "images": {
+                "./thumbnail.png": "5fd6c6c542e2c3c0211e797bbb80d1dcf81946e62414b986cf4fe1b4cb30d887"
             }
         }
     },

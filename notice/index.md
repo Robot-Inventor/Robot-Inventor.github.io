@@ -6,6 +6,10 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2022/06/27　サイト更新情報
+
+新しい記事「[ダークモードは電池持ちに影響しないときがある](/article/2022/06/27/power-saving-with-dark-mode/)」を公開しました。
+
 ## 2022/06/07　サイト更新情報
 
 新しい記事「[【アプリ不要】Androidで同じアプリを複数起動する方法](/article/2022/06/07/run-apps-in-multiple-instances-in-android/)」を公開しました。
