@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@types/html-minifier": "4.0.2",
-    "@types/jsdom": "16.2.15",
+    "@types/jsdom": "20.0.0",
     "@types/marked": "4.0.3",
     "@types/sharp": "0.30.4"
   }
