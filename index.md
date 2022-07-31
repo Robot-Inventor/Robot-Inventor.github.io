@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/06/27/power-saving-with-dark-mode/thumbnail.png"
-            link="/article/2022/06/27/power-saving-with-dark-mode/"
-            article-title="ダークモードは電池持ちに影響しないときがある"
-            description="ダークモードには節電効果があり、電池持ちがよくなるという説明をよく見かけます。しかし、実際にダークモードには消費電力を減らす効果があるのでしょうか。"></article-card>
+<article-card thumbnail="/src/icon/ogp_default_thumbnail.png"
+            link="/tool/retweet-video-only/"
+            article-title="動画だけ引用リツイートするツール"
+            description="Twitterには、動画だけを引用してリツイートできる機能があります。このツールに引用元ツイートのURLを貼り付けると、動画だけを引用したツイートの作成画面が開きます。"></article-card>
 
 ## 新着動画
 
