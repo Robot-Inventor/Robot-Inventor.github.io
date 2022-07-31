@@ -1,7 +1,7 @@
 {
     "2022-07-31T11:40:03.635": {
         "link": "/tool/retweet-video-only/",
-        "thumbnail": "/src/icon/ogp_default_thumbnail.png",
+        "thumbnail": "/tool/retweet-video-only/thumbnail.png",
         "article-title": "動画だけ引用リツイートするツール",
         "description": "Twitterには、動画だけを引用してリツイートできる機能があります。このツールに引用元ツイートのURLを貼り付けると、動画だけを引用したツイートの作成画面が開きます。"
     },

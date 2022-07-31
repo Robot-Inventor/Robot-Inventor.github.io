@@ -19,7 +19,7 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/src/icon/ogp_default_thumbnail.png"
+<article-card thumbnail="/tool/retweet-video-only/thumbnail.png"
             link="/tool/retweet-video-only/"
             article-title="動画だけ引用リツイートするツール"
             description="Twitterには、動画だけを引用してリツイートできる機能があります。このツールに引用元ツイートのURLを貼り付けると、動画だけを引用したツイートの作成画面が開きます。"></article-card>

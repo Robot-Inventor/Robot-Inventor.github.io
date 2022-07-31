@@ -4,6 +4,8 @@ description: Twitterには、動画だけを引用してリツイートできる
 
 # 動画だけ引用リツイートするツール
 
+![ロゴ](thumbnail.png)
+
 <input type="url" placeholder="ここにツイートのURLを貼り付ける" id="tweet_url_textbox" autofocus="">
 <button id="open_twitter_button">ツイート画面を開く</button>
 
