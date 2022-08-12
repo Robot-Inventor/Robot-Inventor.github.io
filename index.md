@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/tool/retweet-video-only/thumbnail.png"
-            link="/tool/retweet-video-only/"
-            article-title="動画だけ引用リツイートするツール"
-            description="Twitterには、動画だけを引用してリツイートできる機能があります。このツールに引用元ツイートのURLを貼り付けると、動画だけを引用したツイートの作成画面が開きます。"></article-card>
+<article-card thumbnail="/article/2022/08/12/https-everywhere-will-sunset/2022-08-12-18-29-05.png"
+            link="/article/2022/08/12/https-everywhere-will-sunset/"
+            article-title="HTTPS Everywhereが2023年に廃止　ブラウザー標準の機能に移行しよう"
+            description="通信を暗号化してセキュリティーを高めてくれる人気のブラウザー拡張機能「HTTPS Everywhere」が2023年1月に廃止されます。現在はメンテナンスモードに移行しており、廃止までにブラウザー標準搭載の機能に移行することが推奨されます。"></article-card>
 
 ## 新着動画
 
