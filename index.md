@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/08/12/https-everywhere-will-sunset/2022-08-12-18-29-05.png"
-            link="/article/2022/08/12/https-everywhere-will-sunset/"
-            article-title="HTTPS Everywhereが2023年に廃止　ブラウザー標準の機能に移行しよう"
-            description="通信を暗号化してセキュリティーを高めてくれる人気のブラウザー拡張機能「HTTPS Everywhere」が2023年1月に廃止されます。現在はメンテナンスモードに移行しており、廃止までにブラウザー標準搭載の機能に移行することが推奨されます。"></article-card>
+<article-card thumbnail="/article/2022/08/21/android13-minor-changes/Screenshot_20220821-001558.png"
+            link="/article/2022/08/21/android13-minor-changes/"
+            article-title="Android 13であまり注目されていない13個の新機能・変更点"
+            description="日本時間の2022年8月16日、Android 13が正式リリースされました。この記事では、他の記事であまり注目されていないAndroid 13の新機能や変更点を13個紹介します。"></article-card>
 
 ## 新着動画
 

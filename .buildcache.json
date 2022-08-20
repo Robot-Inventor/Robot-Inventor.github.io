@@ -142,8 +142,8 @@
         },
         "index.md": {
             "created": "2021-06-11T02:33:02.543",
-            "hash": "3f528c27934bc111cba625e5d8e1e8b0b82a10ab3b0fccfef6f2bf53b05c021a",
-            "updated": "2022-08-12T18:38:01.112",
+            "hash": "87672a3946689b917512f394f1f075efc0f2783b4cb320a41d987854da93c17f",
+            "updated": "2022-08-21T00:59:21.725",
             "images": {}
         },
         "article/index.md": {
@@ -154,8 +154,8 @@
         },
         "notice/index.md": {
             "created": "2021-06-13T23:28:51.664",
-            "hash": "3f59fe8b9c18376010ed5600e09206f35c018c9223faf3c2d591adc8c507831d",
-            "updated": "2022-08-12T18:36:25.414",
+            "hash": "9a8fafe43a80134c757aa0d53bddafa7136f0cc0870692fdab05ef0aedba731a",
+            "updated": "2022-08-21T00:58:06.824",
             "images": {}
         },
         "article/2021/06/15/index.md": {
@@ -322,6 +322,26 @@
                 "2022-08-12-17-28-42.png": "468246640320dbebc34416a23f0138ee6f475908a96cd7761f2751685eece504",
                 "2022-08-12-17-27-03.png": "0a1341d46c8af51df2a3271a4a462a8326f14040f83d6a4ad84d6816ca0f9b07",
                 "2022-08-12-17-19-55.png": "43b7cbcc92d60ea958d1f3ea70121ae4031f874a2008a69b1c1bdb673c7f41d1"
+            }
+        },
+        "article/2022/08/21/android13-minor-changes/index.md": {
+            "created": "2022-08-21T00:22:50.617",
+            "hash": "0dd91c94616bffc89d9bab58f748de23e4e304751b4d734ebdd44ac5a00640ce",
+            "updated": "2022-08-21T01:06:44.162",
+            "images": {
+                "Screenshot_20220821-001558.png": "1f120fb9619416863934788ee3af4d1eb8345b4ad59afe4dab5f76f91ccb1b3b",
+                "Screenshot_20220715-142802.png": "982afe51bbb320fc66af95b1afe312c8fe8af2fde4f35dc293c915b83709ca99",
+                "Screenshot_20220820-004159.png": "a7b140da07b8a85c3da744027f1ba4103ce60f9003f281bbc37a9b81983ed3c5",
+                "a12-20.png": "9c5fab792845050c573de24fdfb8a85de0842cf7c340122745d1a33afe0799ec",
+                "Screenshot_20220820-004922.png": "6ccdebc1ec8ec6679b9aadf246a9ca7e2b3a788872ee78838cce8d1e69a2a01f",
+                "animation.gif": "8c2d212b70af2202eb4e70554e2fb144a9b5f3e3bc45e3d2c06009fb84efca9c",
+                "Screenshot_20220820-012707.png": "6884ac94f3bf2eec19ddfadeff14f9ed14b32dfc82abb1043b2e652f99dbb1ae",
+                "Screenshot_20220820-020350.png": "03f42e97aa5b92540ed799bec8a4020a02453ec80da694c3be1a947ce8389a5e",
+                "Screenshot_20220820-160115.png": "a7e672a3e3955263fdcc049453eda772a62f54db19e7b2d873184eaeccefa3d9",
+                "Screenshot_20220820-160352.png": "8056ed616cbec5f0c91c6a3bdc1993cad3676115b80234eaa607c2ac03aa367d",
+                "Screenshot_20220820-154915.png": "49ef0d8805e8fc86af507c57fe00f039b8cecc0d51fab4e169ed3fa45cd85eba",
+                "Screenshot_20220820-161214.png": "dd181711e9e6bf81bdf2e4fb1bb6b8453d3e8c530e32e3acc5590ad882fb29a9",
+                "Screenshot_20220820-161540.png": "602aafdf814ecade5d027225b00af0c07dd7ad7cf509854c55001bbec344ced3"
             }
         }
     },
