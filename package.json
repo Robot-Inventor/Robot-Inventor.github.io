@@ -21,7 +21,7 @@
   "dependencies": {
     "highlight.js": "^11.5.1",
     "html-minifier": "^4.0.0",
-    "image-size": "^1.0.1",
+    "image-size": "^1.0.2",
     "jsdom": "^20.0.0",
     "lighthouse": "^9.6.3",
     "markdown-yaml-metadata-parser": "^3.0.0",
