@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/08/21/android13-minor-changes/Screenshot_20220821-001558.png"
-            link="/article/2022/08/21/android13-minor-changes/"
-            article-title="Android 13であまり注目されていない13個の新機能・変更点"
-            description="日本時間の2022年8月16日、Android 13が正式リリースされました。この記事では、他の記事であまり注目されていないAndroid 13の新機能や変更点を13個紹介します。"></article-card>
+<article-card thumbnail="/article/2022/10/09/logo-background-materials-for-vtubers/blue.png"
+            link="/article/2022/10/09/logo-background-materials-for-vtubers/"
+            article-title="【VTuber向けフリー素材】ロゴや立ち絵用の背景素材を配布します！"
+            description="VTuber向けのフリー素材を配布します。ロゴや立ち絵の背景素材としてどうぞ！！必ず利用条件を確認のうえ、ご利用ください。カラーバリエーションは記事の末尾の素材一覧にまとめてあります。"></article-card>
 
 ## 新着動画
 

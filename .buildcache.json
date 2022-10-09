@@ -142,8 +142,8 @@
         },
         "index.md": {
             "created": "2021-06-11T02:33:02.543",
-            "hash": "87672a3946689b917512f394f1f075efc0f2783b4cb320a41d987854da93c17f",
-            "updated": "2022-08-21T00:59:21.725",
+            "hash": "ed822c49447270d56e57f474f74ce3dd5733ebfdb292bd22261c11d7b3666909",
+            "updated": "2022-10-10T01:05:56.476",
             "images": {}
         },
         "article/index.md": {
@@ -154,8 +154,8 @@
         },
         "notice/index.md": {
             "created": "2021-06-13T23:28:51.664",
-            "hash": "9a8fafe43a80134c757aa0d53bddafa7136f0cc0870692fdab05ef0aedba731a",
-            "updated": "2022-08-21T00:58:06.824",
+            "hash": "fa9c083fc4f6d1cb759825eaeb2946194be2651221b36601af3e6d7878fe0517",
+            "updated": "2022-10-10T01:04:05.568",
             "images": {}
         },
         "article/2021/06/15/index.md": {
@@ -342,6 +342,19 @@
                 "Screenshot_20220820-154915.png": "49ef0d8805e8fc86af507c57fe00f039b8cecc0d51fab4e169ed3fa45cd85eba",
                 "Screenshot_20220820-161214.png": "dd181711e9e6bf81bdf2e4fb1bb6b8453d3e8c530e32e3acc5590ad882fb29a9",
                 "Screenshot_20220820-161540.png": "602aafdf814ecade5d027225b00af0c07dd7ad7cf509854c55001bbec344ced3"
+            }
+        },
+        "article/2022/10/09/logo-background-materials-for-vtubers/index.md": {
+            "created": "2022-10-10T00:53:53.210",
+            "hash": "730c841dbde50946663f2bc21ca12cfafae3e181412957d416e11038f6d8e434",
+            "updated": "2022-10-10T00:55:42.823",
+            "images": {
+                "blue.png": "4efc096df8062f1d50d9f0bf13d7dd3b987f1df0da3959bcab78a933ddc79fe1",
+                "sample.png": "da84ea00a4b3581207f8a92a5d7d3d4f0188640dcdc1c8d426b7b50c7314a441",
+                "red.png": "4c1ea2abf92f542f2000f05d0aa9dde429c08d7e21540069d210c55dd5406a46",
+                "orange.png": "69b80483e92cb105ae900619d21b70be55bdcad291dae9261fc6f57e99f3de7e",
+                "purple.png": "0e85358b2ee72b881e162bfbb6a66e1345009c42df930582cb224ad265090ef8",
+                "green.png": "20805bdbcc3560c6dd5cc44adde6f6d06d1a92ad3075a9b4acb5900bc823f956"
             }
         }
     },

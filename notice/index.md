@@ -6,6 +6,10 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2022/10/09　サイト更新情報
+
+新しい記事「[【VTuber向けフリー素材】ロゴや立ち絵用の背景素材を配布します！](/article/2022/10/09/logo-background-materials-for-vtubers/)」を公開しました。
+
 ## 2022/08/21　サイト更新情報
 
 新しい記事「[Android 13であまり注目されていない13個の新機能・変更点](/article/2022/08/21/android13-minor-changes/)」を公開しました。
