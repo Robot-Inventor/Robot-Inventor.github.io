@@ -142,8 +142,8 @@
         },
         "index.md": {
             "created": "2021-06-11T02:33:02.543",
-            "hash": "ed822c49447270d56e57f474f74ce3dd5733ebfdb292bd22261c11d7b3666909",
-            "updated": "2022-10-10T01:05:56.476",
+            "hash": "db142eb2e9661a434fd856f997e8fb699f3d66b26a163945c23f2c7f170f7019",
+            "updated": "2022-10-11T23:22:38.193",
             "images": {}
         },
         "article/index.md": {
@@ -154,8 +154,8 @@
         },
         "notice/index.md": {
             "created": "2021-06-13T23:28:51.664",
-            "hash": "fa9c083fc4f6d1cb759825eaeb2946194be2651221b36601af3e6d7878fe0517",
-            "updated": "2022-10-10T01:04:05.568",
+            "hash": "13a558dd3c1b31bc6858e2ed0b04d13199ae5afa3586d30f930da2bf5add4353",
+            "updated": "2022-10-11T23:19:38.963",
             "images": {}
         },
         "article/2021/06/15/index.md": {
@@ -355,6 +355,16 @@
                 "orange.png": "69b80483e92cb105ae900619d21b70be55bdcad291dae9261fc6f57e99f3de7e",
                 "purple.png": "0e85358b2ee72b881e162bfbb6a66e1345009c42df930582cb224ad265090ef8",
                 "green.png": "20805bdbcc3560c6dd5cc44adde6f6d06d1a92ad3075a9b4acb5900bc823f956"
+            }
+        },
+        "article/2022/10/11/youtube-new-feature-handle/index.md": {
+            "created": "2022-10-11T23:14:04.541",
+            "hash": "7b9bfd9f36d674c6522b58385a965a077ac67a5bd6cca07c6e61968c74b8c2c6",
+            "updated": "2022-10-11T23:14:04.541",
+            "images": {
+                "2022-10-11-19-30-09.png": "82a53c4c0ca6e9079bd38a8346342673b2d08b7e36b4f857e9d4ff0ba312cfe9",
+                "2022-10-11-19-34-39.png": "a605a30b6f9247c1f40b68353dba9451becbafeb8730d2312992e55c6d456e9b",
+                "2022-10-11-19-44-12.png": "14e1ffce9c1cd88a97de55867c64bb216878b9229b1b428dc050a72b6e06d62a"
             }
         }
     },

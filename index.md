@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/10/09/logo-background-materials-for-vtubers/blue.png"
-            link="/article/2022/10/09/logo-background-materials-for-vtubers/"
-            article-title="【VTuber向けフリー素材】ロゴや立ち絵用の背景素材を配布します！"
-            description="VTuber向けのフリー素材を配布します。ロゴや立ち絵の背景素材としてどうぞ！！必ず利用条件を確認のうえ、ご利用ください。カラーバリエーションは記事の末尾の素材一覧にまとめてあります。"></article-card>
+<article-card thumbnail="/article/2022/10/11/youtube-new-feature-handle/2022-10-11-19-30-09.png"
+            link="/article/2022/10/11/youtube-new-feature-handle/"
+            article-title="YouTubeにハンドル機能実装　設定しないと、なりすまされる可能性も"
+            description="YouTubeにTwitterのユーザー名に似た機能「ハンドル」が実装されます。長期的にはなりすましを見分けやすくなる一方で、短期的にはなりすましに悪用されるリスクがあります。ハンドル機能を利用可能になり次第、すぐに設定することをオススメします。"></article-card>
 
 ## 新着動画
 
