@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/10/11/youtube-new-feature-handle/2022-10-11-19-30-09.png"
-            link="/article/2022/10/11/youtube-new-feature-handle/"
-            article-title="YouTubeにハンドル機能実装　設定しないと、なりすまされる可能性も"
-            description="YouTubeにTwitterのユーザー名に似た機能「ハンドル」が実装されます。長期的にはなりすましを見分けやすくなる一方で、短期的にはなりすましに悪用されるリスクがあります。ハンドル機能を利用可能になり次第、すぐに設定することをオススメします。"></article-card>
+<article-card thumbnail="/article/2022/10/17/misunderstanding-about-generative-ai/thumbnail.png"
+            link="/article/2022/10/17/misunderstanding-about-generative-ai/"
+            article-title="イラスト生成AIに対するよくある誤解"
+            description="Twitterを眺めていると、イラスト生成AIに対する誤解が多く見受けられます。この記事では、イラスト生成AIに対するよくある誤 解について、説明します。"></article-card>
 
 ## 新着動画
 

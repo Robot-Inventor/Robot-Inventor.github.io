@@ -6,6 +6,10 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2022/10/17　サイト更新情報
+
+新しい記事「[イラスト生成AIに対するよくある誤解](/article/2022/10/17/misunderstanding-about-generative-ai/)」を公開しました。
+
 ## 2022/10/11　サイト更新情報
 
 新しい記事「[YouTubeにハンドル機能実装　設定しないと、なりすまされる可能性も](/article/2022/10/11/youtube-new-feature-handle/)」を公開しました。
