@@ -26,4 +26,4 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着動画
 
-<yt-video video-id="nNSLBkmXYlI"></yt-video>
+<yt-video video-id="gy5Y4yl-b24"></yt-video>
