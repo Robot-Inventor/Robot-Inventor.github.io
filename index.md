@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/10/17/misunderstanding-about-generative-ai/thumbnail.png"
-            link="/article/2022/10/17/misunderstanding-about-generative-ai/"
-            article-title="イラスト生成AIに対するよくある誤解"
-            description="Twitterを眺めていると、イラスト生成AIに対する誤解が多く見受けられます。この記事では、イラスト生成AIに対するよくある誤 解について、説明します。"></article-card>
+<article-card thumbnail="/article/2022/11/30/figma-to-svg/figma_and_svg.png"
+            link="/article/2022/11/30/figma-to-svg/"
+            article-title="Figmaで書き出したSVGの形が崩れるときの対処法"
+            description="FigmaでエクスポートしたSVGは、ときどき形が崩れてしまっていることがあります。この記事では、Figmaから形が崩れないようにSVGに書き出す方法を説明します。"></article-card>
 
 ## 新着動画
 

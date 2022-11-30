@@ -1,4 +1,10 @@
 {
+    "2022-11-30T23:54:09.559": {
+        "link": "/article/2022/11/30/figma-to-svg/",
+        "thumbnail": "/article/2022/11/30/figma-to-svg/figma_and_svg.png",
+        "article-title": "Figmaで書き出したSVGの形が崩れるときの対処法",
+        "description": "FigmaでエクスポートしたSVGは、ときどき形が崩れてしまっていることがあります。この記事では、Figmaから形が崩れないようにSVGに書き出す方法を説明します。"
+    },
     "2022-10-17T01:14:47.810": {
         "link": "/article/2022/10/17/misunderstanding-about-generative-ai/",
         "thumbnail": "https://robot-inventor.github.io/article/2022/10/17/misunderstanding-about-generative-ai/thumbnail.png",

@@ -142,8 +142,8 @@
         },
         "index.md": {
             "created": "2021-06-11T02:33:02.543",
-            "hash": "062a5900858c4d7373e596a3f68450d6c5def658483f0c46259ced7549571ba3",
-            "updated": "2022-10-17T01:36:55.188",
+            "hash": "50edfec06daaafde5d4ceead3932cfe2c72d8233ca1278d3cbcac75320e67252",
+            "updated": "2022-11-30T23:59:14.664",
             "images": {}
         },
         "article/index.md": {
@@ -154,8 +154,8 @@
         },
         "notice/index.md": {
             "created": "2021-06-13T23:28:51.664",
-            "hash": "7005b823e40442474942629a49536f98ecfcc0760a89505f1af82f34fea45c1e",
-            "updated": "2022-10-17T01:22:56.532",
+            "hash": "8ea0d0e44b48d0011ae7c19f557e1cdba8d7aae69ef224ed79ce68635f835bab",
+            "updated": "2022-11-30T23:56:25.782",
             "images": {}
         },
         "article/2021/06/15/index.md": {
@@ -377,6 +377,23 @@
                 "SD_after.png": "9eb22f4741f0815d2a2e6b6f85a92d378f91fb75f141ad630590009238a9f72a",
                 "WD_before.png": "f05c6b583f039c6804f394055528b09e1b5c0e567bf397d23840882f8e4eb59e",
                 "WD_after.jpg": "a6585589174c5db94134af888438d6eff4cda1405536b66d927addb39b7b14ea"
+            }
+        },
+        "article/2022/11/30/figma-to-svg/index.md": {
+            "created": "2022-11-30T23:51:43.604",
+            "hash": "a787c1fc65655cd23e60942b6db84478601f108340e132c32f5a1e998a9dd1fa",
+            "updated": "2022-11-30T23:51:43.604",
+            "images": {
+                "figma_and_svg.png": "04a0346fbd47de16940ee7eff7e6c18b5258bb6659695c93a6f0e6623dddc87e",
+                "2022-11-30-18-57-00.png": "7016dbe768b00516a3dda7a56698a26756c90b6f272761c36bd444390c1d4122",
+                "2022-11-30-19-04-56.png": "f3051ea8eb8eb5ecce2b508f9a98fb73d90d3fac7bfb85324b36468123bafae0",
+                "2022-11-30-19-07-13.png": "5960dceb84daec723c114cc65d7495bc0dce91e808918d7f3c67c18cb70b900c",
+                "2022-11-30-19-16-37.png": "6ce39db64e1643cf670071c5e628d2b2d5db30b521214133ba18e909edd740a7",
+                "2022-11-30-19-15-21.png": "b284d046931afacb7b8579773b813133541a10e46ba9dfe5353a111c262fa66d",
+                "2022-11-30-19-25-26.png": "400380c3bf628b564ac64290b69945af3ef91076b6db63be654c78f8e8019911",
+                "2022-11-30-19-27-02.png": "35c879eea11cfb499cfa20d709edc59533f839a749979c8e9bee588f3908c1f8",
+                "2022-11-30-19-35-01.png": "932b48101a39a98be30ac8f51858f3d7b626b00ed763b31b6a1ce259efdb8458",
+                "2022-11-30-19-40-14.png": "4b0b4f2b723167823d713e00e4b1e4ee28dc2b830233849792804c5791bea0f5"
             }
         }
     },
