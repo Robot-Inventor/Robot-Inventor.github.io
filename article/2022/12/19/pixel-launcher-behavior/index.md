@@ -4,6 +4,8 @@ thumbnail: https://robot-inventor.github.io/article/2022/12/19/pixel-launcher-be
 ---
 # Pixel Launcherのアプリ検索が変な挙動をする理由と対策
 
+![サムネイル](thumbnail.png)
+
 :::note info
 この記事の内容は、次の環境で動作確認しています。
 

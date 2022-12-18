@@ -398,13 +398,14 @@
         },
         "article/2022/12/19/pixel-launcher-behavior/index.md": {
             "created": "2022-12-19T00:46:15.347",
-            "hash": "6845edff8c9a5d052e3347032dbd9f9b91988ba981585a756b79d5241a1bc1aa",
-            "updated": "2022-12-19T01:04:01.45",
+            "hash": "db59d03d2bc188166aee877026528e98026cc7e30d74b28594849876c3fea755",
+            "updated": "2022-12-19T01:18:22.843",
             "images": {
                 "Screenshot_20221216-132833.png": "c80015761a9a100629a750e0b56459674def803fcd5c83eac8f553a09ae2078c",
                 "Screenshot_20221216-133138.png": "200cc689daa7f05f018a5ea20580505eea0ba7e50f81aa6f525f08eb98b332b4",
                 "Screenshot_20221216-133829.png": "9fb1eb0459a794967e0c8375be0273d5bcc0aa5b2d1a90d1f4a3743741ecf5d2",
-                "Screenshot_20221216-134009.png": "b8597b77a6bbfc153b69fb48f3a43cc5c83cd2ac15debf1eaded39e280f36dbd"
+                "Screenshot_20221216-134009.png": "b8597b77a6bbfc153b69fb48f3a43cc5c83cd2ac15debf1eaded39e280f36dbd",
+                "thumbnail.png": "0f63ed08dbc5004eb7f30bec9e8fd302b142afd872d1fb8c66112a3759ce233f"
             }
         }
     },
