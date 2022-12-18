@@ -1,4 +1,10 @@
 {
+    "2022-12-19T01:03:40.596": {
+        "link": "/article/2022/12/19/pixel-launcher-behavior/",
+        "thumbnail": "https://robot-inventor.github.io/article/2022/12/19/pixel-launcher-behavior/thumbnail.png",
+        "article-title": "Pixel Launcherのアプリ検索が変な挙動をする理由と対策",
+        "description": "Google PixelのPixel Launcherで利用できるアプリ検索は、直感に反した変な挙動をするときがあります。この記事では、その理由と対策を2つのケースに分けて説明します。"
+    },
     "2022-11-30T23:54:09.559": {
         "link": "/article/2022/11/30/figma-to-svg/",
         "thumbnail": "/article/2022/11/30/figma-to-svg/figma_and_svg.png",

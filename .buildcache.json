@@ -142,8 +142,8 @@
         },
         "index.md": {
             "created": "2021-06-11T02:33:02.543",
-            "hash": "1a7ec767c5b5241c59872baf6113b21f2d7ef1629396c2412c59e1d5d81ffb77",
-            "updated": "2022-12-01T00:03:22.451",
+            "hash": "21ad04ed19b8f1f0076455a92ae97c81b4b46d44af95e2776d666eb895b16bcc",
+            "updated": "2022-12-19T01:07:43.744",
             "images": {}
         },
         "article/index.md": {
@@ -154,8 +154,8 @@
         },
         "notice/index.md": {
             "created": "2021-06-13T23:28:51.664",
-            "hash": "8ea0d0e44b48d0011ae7c19f557e1cdba8d7aae69ef224ed79ce68635f835bab",
-            "updated": "2022-11-30T23:56:25.782",
+            "hash": "59d04c1557c595640c9170f57faf0bf321fe843740ecf38efced1de0f6a2fe3e",
+            "updated": "2022-12-19T01:05:41.587",
             "images": {}
         },
         "article/2021/06/15/index.md": {
@@ -394,6 +394,17 @@
                 "2022-11-30-19-27-02.png": "35c879eea11cfb499cfa20d709edc59533f839a749979c8e9bee588f3908c1f8",
                 "2022-11-30-19-35-01.png": "932b48101a39a98be30ac8f51858f3d7b626b00ed763b31b6a1ce259efdb8458",
                 "2022-11-30-19-40-14.png": "4b0b4f2b723167823d713e00e4b1e4ee28dc2b830233849792804c5791bea0f5"
+            }
+        },
+        "article/2022/12/19/pixel-launcher-behavior/index.md": {
+            "created": "2022-12-19T00:46:15.347",
+            "hash": "6845edff8c9a5d052e3347032dbd9f9b91988ba981585a756b79d5241a1bc1aa",
+            "updated": "2022-12-19T01:04:01.45",
+            "images": {
+                "Screenshot_20221216-132833.png": "c80015761a9a100629a750e0b56459674def803fcd5c83eac8f553a09ae2078c",
+                "Screenshot_20221216-133138.png": "200cc689daa7f05f018a5ea20580505eea0ba7e50f81aa6f525f08eb98b332b4",
+                "Screenshot_20221216-133829.png": "9fb1eb0459a794967e0c8375be0273d5bcc0aa5b2d1a90d1f4a3743741ecf5d2",
+                "Screenshot_20221216-134009.png": "b8597b77a6bbfc153b69fb48f3a43cc5c83cd2ac15debf1eaded39e280f36dbd"
             }
         }
     },

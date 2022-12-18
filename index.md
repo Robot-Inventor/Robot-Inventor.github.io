@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/11/30/figma-to-svg/figma_and_svg.png"
-            link="/article/2022/11/30/figma-to-svg/"
-            article-title="Figmaで書き出したSVGの形が崩れるときの対処法"
-            description="FigmaでエクスポートしたSVGは、ときどき形が崩れてしまっていることがあります。この記事では、Figmaから形が崩れないようにSVGに書き出す方法を説明します。"></article-card>
+<article-card thumbnail="https://robot-inventor.github.io/article/2022/12/19/pixel-launcher-behavior/thumbnail.png"
+            link="/article/2022/12/19/pixel-launcher-behavior/"
+            article-title="Pixel Launcherのアプリ検索が変な挙動をする理由と対策"
+            description="Google PixelのPixel Launcherで利用できるアプリ検索は、直感に反した変な挙動をするときがあります。この記事では、その理由と対策を2つのケースに分けて説明します。"></article-card>
 
 ## 新着動画
 
