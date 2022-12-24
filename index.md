@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="https://robot-inventor.github.io/article/2022/12/19/pixel-launcher-behavior/thumbnail.png"
-            link="/article/2022/12/19/pixel-launcher-behavior/"
-            article-title="Pixel Launcherのアプリ検索が変な挙動をする理由と対策"
-            description="Google PixelのPixel Launcherで利用できるアプリ検索は、直感に反した変な挙動をするときがあります。この記事では、その理由と対策を2つのケースに分けて説明します。"></article-card>
+<article-card thumbnail="/article/2022/12/24/hide-twitter-view-count/logo2.png"
+            link="/article/2022/12/24/hide-twitter-view-count/"
+            article-title="Twitterのインプレッション数を非表示にする拡張機能を公開しました"
+            description="Twitterのインプレッション数を非表示にする拡張機能「Hide View Count」を作成・公開しました。この拡張機能をストアからインストールするだけで、ツイートに表示されるインプレッション数を非表示にできます。この拡張機能はインプレッション数の表示を一瞬たりとも許さないため、承認欲求モンスターが生まれてしまうのを防げます。"></article-card>
 
 ## 新着動画
 
