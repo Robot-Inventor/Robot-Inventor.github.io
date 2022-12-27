@@ -6,6 +6,10 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2022/12/27　サイト更新情報
+
+新しい記事「[Twitterのインプレッション数を非表示にする方法まとめ](article/2022/12/27/extensions-to-hide-twitter-view-count/)」を公開しました。
+
 ## 2022/12/24　サイト更新情報
 
 新しい記事「[Twitterのインプレッション数を非表示にする拡張機能を公開しました](/article/2022/12/24/hide-twitter-view-count/)」を公開しました。

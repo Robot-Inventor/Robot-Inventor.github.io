@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/12/24/hide-twitter-view-count/logo2.png"
-            link="/article/2022/12/24/hide-twitter-view-count/"
-            article-title="Twitterのインプレッション数を非表示にする拡張機能を公開しました"
-            description="Twitterのインプレッション数を非表示にする拡張機能「Hide View Count」を作成・公開しました。この拡張機能をストアからインストールするだけで、ツイートに表示されるインプレッション数を非表示にできます。この拡張機能はインプレッション数の表示を一瞬たりとも許さないため、承認欲求モンスターが生まれてしまうのを防げます。"></article-card>
+<article-card thumbnail="/article/2022/12/27/extensions-to-hide-twitter-view-count/logo2.png"
+            link="/article/2022/12/27/extensions-to-hide-twitter-view-count/"
+            article-title="Twitterのインプレッション数を非表示にする方法まとめ"
+            description="2022年12月23日、Twitterにインプレッション数を表示する機能が実装されました。この機能を鬱陶しいと感じる人や、他人と比べてしまうため非表示にしたいという人もいると思います。この記事では、そういった人のためにインプレッション数を非表示にする方法を紹介します。他の「非表示にする方法は見つかりませんでした」と書いているようなふざけたブログとは違い、ちゃんと非表示にする方法を解説します。"></article-card>
 
 ## 新着動画
 
