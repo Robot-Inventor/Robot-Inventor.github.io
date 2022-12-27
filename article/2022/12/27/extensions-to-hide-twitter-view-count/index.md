@@ -39,8 +39,8 @@ description: 2022年12月23日、Twitterにインプレッション数を表示�
 
 他の拡張機能との比較は[こちら](https://robot-inventor.github.io/article/2022/12/24/hide-twitter-view-count/#%E9%A1%9E%E4%BC%BC%E3%81%AE%E6%8B%A1%E5%BC%B5%E6%A9%9F%E8%83%BD%E3%81%A8%E3%81%AE%E9%81%95%E3%81%84)を参考にしてください。
 
-- Chrome版：[https://chrome.google.com/webstore/detail/hide-view-count/mmefeobjcchickbjelledfhagoddcklp](https://chrome.google.com/webstore/detail/hide-view-count/mmefeobjcchickbjelledfhagoddcklp)
-- Firefox版：[https://addons.mozilla.org/firefox/addon/hide-view-count/](https://addons.mozilla.org/firefox/addon/hide-view-count/)
+- [Chrome版](https://chrome.google.com/webstore/detail/hide-view-count/mmefeobjcchickbjelledfhagoddcklp)
+- [Firefox版](https://addons.mozilla.org/firefox/addon/hide-view-count/)
 
 ### おだやかTwitter
 
@@ -50,8 +50,8 @@ Chromeでのみ動作します。また、インプレッション数を非表�
 
 Chromeを使っていて、インプレッション数以外も非表示にしたい人にオススメです。
 
-- Chrome版：[https://chrome.google.com/webstore/detail/calm-twitter/cknklikacoaeledfaldmhabmldkldocj](https://chrome.google.com/webstore/detail/calm-twitter/cknklikacoaeledfaldmhabmldkldocj)
-- Firefox版：なし
+- [Chrome版](https://chrome.google.com/webstore/detail/calm-twitter/cknklikacoaeledfaldmhabmldkldocj)
+- Firefox版なし
 
 ### Hide Impression
 
@@ -71,8 +71,8 @@ Chromeでのみ動作します。数字のみを非表示にするため、イ�
 
 数字だけが非表示になればいいという人にオススメです。
 
-- Chrome版：[https://chrome.google.com/webstore/detail/twitter%E3%82%A2%E3%83%8A%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AF%E3%82%B9%E9%9D%9E%E8%A1%A8%E7%A4%BA/pcmnplinobfhahpdhacoajjeejnjfcac](https://chrome.google.com/webstore/detail/twitter%E3%82%A2%E3%83%8A%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AF%E3%82%B9%E9%9D%9E%E8%A1%A8%E7%A4%BA/pcmnplinobfhahpdhacoajjeejnjfcac)
-- Firefox版：なし
+- [Chrome版](https://chrome.google.com/webstore/detail/twitter%E3%82%A2%E3%83%8A%E3%83%AA%E3%83%86%E3%82%A3%E3%82%AF%E3%82%B9%E9%9D%9E%E8%A1%A8%E7%A4%BA/pcmnplinobfhahpdhacoajjeejnjfcac)
+- Firefox版なし
 
 ### Hide Twitter Views
 
@@ -82,8 +82,8 @@ Firefoxでのみ動作します。また、Twitterの言語設定が英語以外
 
 Firefoxを使っていて、Twitterの言語設定を英語にしている人にオススメです。
 
-- Chrome版：なし
-- Firefox版：[https://addons.mozilla.org/firefox/addon/hide-twitter-views/](https://addons.mozilla.org/firefox/addon/hide-twitter-views/)
+- Chrome版なし
+- [Firefox版](https://addons.mozilla.org/firefox/addon/hide-twitter-views/)
 
 ### まとめ
 
