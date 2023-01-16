@@ -38,6 +38,6 @@
     "@types/html-minifier": "4.0.2",
     "@types/jsdom": "20.0.1",
     "@types/marked": "4.0.8",
-    "@types/sharp": "0.31.0"
+    "@types/sharp": "0.31.1"
   }
 }
