@@ -22,7 +22,7 @@
     "highlight.js": "^11.7.0",
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.2",
-    "jsdom": "^20.0.1",
+    "jsdom": "^21.0.0",
     "lighthouse": "^9.6.8",
     "markdown-yaml-metadata-parser": "^3.0.0",
     "marked": "^4.1.0",
