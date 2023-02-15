@@ -19,10 +19,10 @@ YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel
 
 ## 新着記事
 
-<article-card thumbnail="/article/2022/12/27/extensions-to-hide-twitter-view-count/logo2.png"
-            link="/article/2022/12/27/extensions-to-hide-twitter-view-count/"
-            article-title="Twitterのインプレッション数を非表示にする方法まとめ"
-            description="2022年12月23日、Twitterにインプレッション数を表示する機能が実装されました。この機能を鬱陶しいと感じる人や、他人と比べてしまうため非表示にしたいという人もいると思います。この記事では、そういった人のためにインプレッション数を非表示にする方法を紹介します。他の「非表示にする方法は見つかりませんでした」と書いているようなふざけたブログとは違い、ちゃんと非表示にする方法を解説します。"></article-card>
+<article-card thumbnail="/article/2023/02/15/what-the-new-bing-ai-can-do/2023-02-14-00-20-26.png"
+            link="/article/2023/02/15/what-the-new-bing-ai-can-do/"
+            article-title="BingとEdgeにChatGPTが搭載！AIとチャットで検索できる新機能の魅力と限界"
+            description="BingとEdgeにChatGPTベースのAIが搭載されました。このAIは、ユーザーが検索エンジンとチャットできる画期的な機能です。検索とチャットの統一的な体験により、コンピューターとのやり取りの方法が変わります。この記事では、実際に試して分かった、新しいBingのAIの魅力と限界を紹介します。"></article-card>
 
 ## 新着動画
 

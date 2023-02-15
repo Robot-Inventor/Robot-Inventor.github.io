@@ -6,9 +6,13 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/02/15　サイト更新情報
+
+新しい記事「[BingとEdgeにChatGPTが搭載！AIとチャットで検索できる新機能の魅力と限界](/article/2023/02/15/what-the-new-bing-ai-can-do/)」を公開しました。
+
 ## 2022/12/27　サイト更新情報
 
-新しい記事「[Twitterのインプレッション数を非表示にする方法まとめ](article/2022/12/27/extensions-to-hide-twitter-view-count/)」を公開しました。
+新しい記事「[Twitterのインプレッション数を非表示にする方法まとめ](/article/2022/12/27/extensions-to-hide-twitter-view-count/)」を公開しました。
 
 ## 2022/12/24　サイト更新情報
 
