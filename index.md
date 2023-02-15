@@ -11,7 +11,7 @@ description: 「Robot Inventor　ブログ」は、主にプログラミング�
 
 ### YouTube
 
-YouTubeチャンネル「[ロボット INVENTOR](https://www.youtube.com/channel/UCJFnl1HIx-atCMWnDcKBrfw)」を運営しています。
+YouTubeチャンネル「[ろぼいん](https://www.youtube.com/channel/UCJFnl1HIx-atCMWnDcKBrfw)」を運営しています。
 
 ### ORIZIN Agent HTML
 
