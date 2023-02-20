@@ -26,17 +26,17 @@
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="msapplication-config" content="/src/icon/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <title>${title} - ${site_name}</title>
-    <meta name="author" content="${author}">
-    <meta name="description" content="${description}">
-    <meta property="og:url" content="${page_url}">
-    <meta property="og:type" content="${og_type}">
-    <meta property="og:title" content="${title}">
-    <meta property="og:description" content="${description}">
-    <meta property="og:site_name" content="${site_name}">
-    <meta property="og:image" content="${thumbnail_image}">
+    <title>{{title}} - {{siteName}}</title>
+    <meta name="author" content="{{author}}">
+    <meta name="description" content="{{description}}">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:type" content="{{ogType}}">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:site_name" content="{{siteName}}">
+    <meta property="og:image" content="{{thumbnailImage}}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@${twitter_id}">
+    <meta name="twitter:site" content="@{{twitterId}}">
 </head>
 <body>
     <header>
@@ -66,7 +66,7 @@
     </header>
     <main id="article_container">
         <article id="article_container_inner">
-            ${contents}
+            {{contents}}
         </article>
     </main>
     <footer>
