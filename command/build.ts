@@ -231,7 +231,7 @@ const optimizeImages = (markdownPath: string, document: Document) => {
         buildCache.articles[markdownPath].images = {};
     }
 
-    document.querySelectorAll("img").forEach((image) => {
+    document.querySelectorAll("img").forEach(async (image) => {
         if (/^https?:\/\//.test(image.src)) {
             console.log(`${MESSAGE.LOG.ABSOLUTE_IMAGE_PATH_FOUND}${image.src}`);
             return;
@@ -336,7 +336,7 @@ const insertPreconnect = (document: Document, href: string, crossOrigin: boolean
 const applySyntaxHighlight = (document: Document) => {
     const codeElements: NodeListOf<HTMLElement> = document.querySelectorAll("pre code");
     codeElements.forEach((code) => {
-        const language = [...code.classList].filter((className) => className.startsWith("language-"))[0];
+        const language = [...code.classList].filter((className) => className.startsWith("language-"));
         if (language.length) {
             hljs.highlightElement(code);
         }
@@ -376,14 +376,14 @@ const getFirstImageUrl = (relativeHtmlPath: string, document: Document) => {
 };
 
 const applyTemplate = (relativeHtmlPath: string, metadata: Metadata, document: Document) => {
-    const template = fs.readFileSync(config.template);
+    const template = fs.readFileSync(config.template, "utf-8");
     const handlebars = Handlebars.compile(template);
 
     const thumbnailImage =
         metadata.thumbnail || getFirstImageUrl(relativeHtmlPath, document) || config.default_thumbnail;
-    const pageUrl = `${ROOT_URL}${relativeHtmlPath.replace(/\.html$/, "")}`;
+    const pageUrl = normalizeUrl(`${ROOT_URL}/${relativeHtmlPath.replace(/index\.html$/, "")}`);
     const values = {
-        title: metadata.title,
+        title: metadata.title || document.querySelector("h1")?.textContent,
         siteName: config.site_name,
         siteNameShort: config.site_name_short,
         contents: document.body.innerHTML,
@@ -434,7 +434,7 @@ const loadComponentScript = (document: Document) => {
 
         const script = document.createElement("script");
         script.src = COMPONENT_DATA[name];
-        document.appendChild(script);
+        document.body.appendChild(script);
     }
 };
 
@@ -474,11 +474,15 @@ const compile = (markdownPath: string) => {
         buildCache.articles[markdownPath].updated
     );
     optimizeImages(markdownPath, document);
-    applySyntaxHighlight(document);
-    loadComponentScript(document);
 
     const outputRelativeHtmlPath = `${path.dirname(markdownPath)}/${path.parse(markdownPath).name}.html`;
     const compiledDocument = applyTemplate(outputRelativeHtmlPath, metadata, document);
+
+    // シンタックスハイライトはheadに要素を挿入するため、テンプレートの適用後に実行する必要がある。テンプレートの適用時はbodyの中身しか引き継がれない。
+    applySyntaxHighlight(compiledDocument);
+    // コンポーネントのスクリプトはbody閉じタグの直前に挿入するため、テンプレートの適用後に実行する必要がある。理由は上と同じ。
+    loadComponentScript(compiledDocument);
+
     const minifiedHtml = documentToMinifiedHtml(compiledDocument);
 
     updateSitemap();
