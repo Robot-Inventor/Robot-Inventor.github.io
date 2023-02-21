@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Robot-Inventor/Robot-Inventor.github.io#readme",
   "dependencies": {
+    "exif-reader": "^1.1.0",
     "handlebars": "^4.7.7",
     "highlight.js": "^11.7.0",
     "html-minifier": "^4.0.0",
@@ -38,6 +39,7 @@
     "ts-node": "^10.8.2"
   },
   "devDependencies": {
+    "@types/exif-reader": "^1.0.0",
     "@types/html-minifier": "4.0.2",
     "@types/jsdom": "21.1.0",
     "@types/jstoxml": "^2.0.2",

@@ -17,6 +17,7 @@ import normalizeUrl from "normalize-url";
 import { minify } from "html-minifier";
 import { toXML } from "jstoxml";
 import RSS from "rss";
+import exif from "exif-reader";
 
 const BUILD_CACHE_PATH = ".buildcache.json";
 const ARTICLE_DATA_PATH = "article/article_data.json";
@@ -28,7 +29,10 @@ const MESSAGE = {
         TITLE_NOT_DEFINED:
             "タイトルが定義されていません。h1要素を定義するか、メタデータブロックでtitleを定義してください。",
         AUTHOR_NOT_DEFINED: "執筆者名が指定されていません。メタデータブロックのauthorかビルド設定で定義してください。",
-        DESCRIPTION_NOT_DEFINED: "記事の概要が設定されていません。メタデータブロックのdescriptionで定義してください。"
+        DESCRIPTION_NOT_DEFINED: "記事の概要が設定されていません。メタデータブロックのdescriptionで定義してください。",
+        // 参考：https://blog.awm.jp/2017/06/11/imicc/
+        GPS_DATA_FOUND_IN_IMAGE:
+            '画像にGPS情報が埋め込まれています。GPS情報を削除してからもう一度実行してください。画像のすべてのExif情報を削除して上書き保存するには、次のコマンドを実行します。\n\nmagick convert "{{fileName}}" -auto-orient +profile "!icc,*" "{{fileName}}"\n\n'
     },
     LOG: {
         CACHE_WRITTEN: `キャッシュを${BUILD_CACHE_PATH}に書き込みました。`,
@@ -294,6 +298,13 @@ const optimizeImages = (markdownPath: string, document: Document) => {
             return;
         }
 
+        const imageMetadata = await sharp(absoluteImagePath).metadata();
+        if (imageMetadata.exif) {
+            const exifData = exif(imageMetadata.exif);
+            if (exifData.gps)
+                throw new Error(MESSAGE.ERROR.GPS_DATA_FOUND_IN_IMAGE.replaceAll("{{fileName}}", absoluteImagePath));
+        }
+
         const absoluteMarkdownDirectory = path.dirname(path.resolve(markdownPath));
         const absoluteImageOutputDirectory = path.join(absoluteMarkdownDirectory, IMAGE_OUTPUT_DIRNAME);
         if (!fs.existsSync(absoluteImageOutputDirectory)) {
@@ -330,6 +341,7 @@ const optimizeImages = (markdownPath: string, document: Document) => {
 
                 if (isImageChanged) {
                     // TODO: 画像の元サイズより小さいサイズにのみリサイズするように変更
+
                     sharp(absoluteImagePath, {
                         animated: isGif
                     })
