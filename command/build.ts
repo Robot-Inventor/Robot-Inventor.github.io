@@ -75,10 +75,12 @@ const COMPONENT_DATA = {
 } as const;
 const MAX_NUMBER_OF_RSS_ITEMS = 20;
 const RSS_FILE_NAME = "rss.xml";
+const RSS_TITLE = `${config.site_name} RSS Feed`;
+const RSS_URL = normalizeUrl(`${ROOT_URL}/${RSS_FILE_NAME}`);
 const RSS_OPTION: RSS.FeedOptions = {
-    title: `${config.site_name} RSSフィード`,
+    title: RSS_TITLE,
     description: `${config.site_name}のRSSフィードです。最新の${MAX_NUMBER_OF_RSS_ITEMS}件の記事をお知らせします。`,
-    feed_url: normalizeUrl(`${ROOT_URL}/${RSS_FILE_NAME}`),
+    feed_url: RSS_URL,
     site_url: ROOT_URL,
     // TODO: コピーライト表記をbuildconfigに追加
     copyright: "Copyright (C) 2023 Robot-Inventor All rights reserved.",
@@ -115,6 +117,8 @@ interface TemplateValues {
     title: string;
     siteName: string;
     siteNameShort: string;
+    rssTitle: string;
+    rssUrl: string;
     contents: string;
     description: string;
     author: string;
@@ -556,6 +560,8 @@ const compile = (markdownPath: string) => {
         title,
         siteName: config.site_name,
         siteNameShort: config.site_name_short,
+        rssTitle: RSS_TITLE,
+        rssUrl: RSS_URL,
         contents: document.body.innerHTML,
         description: metadata.description,
         author: metadata.author || config.default_author,
