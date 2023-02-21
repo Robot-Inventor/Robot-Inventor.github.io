@@ -27,7 +27,7 @@
     "image-size": "^1.0.2",
     "jsdom": "^21.0.0",
     "jstoxml": "^3.2.6",
-    "lighthouse": "^9.6.8",
+    "lighthouse": "^10.0.0",
     "markdown-yaml-metadata-parser": "^3.0.0",
     "marked": "^4.1.0",
     "normalize-url": "^4.5.1",
