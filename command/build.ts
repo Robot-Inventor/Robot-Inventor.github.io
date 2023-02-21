@@ -566,7 +566,7 @@ const compile = (markdownPath: string) => {
         description: metadata.description,
         author: metadata.author || config.default_author,
         pageUrl,
-        ogType: pageUrl === ROOT_URL ? "website" : "article",
+        ogType: pageUrl === normalizeUrl(ROOT_URL) ? "website" : "article",
         twitterId: config.twitter_id,
         thumbnailImage: thumbnailUrl
     } as const;
