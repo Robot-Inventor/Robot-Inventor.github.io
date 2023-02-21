@@ -6,9 +6,49 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/02/15　サイト更新情報
+
+新しい記事「[BingとEdgeにChatGPTが搭載！AIとチャットで検索できる新機能の魅力と限界](/article/2023/02/15/what-the-new-bing-ai-can-do/)」を公開しました。
+
+## 2022/12/27　サイト更新情報
+
+新しい記事「[Twitterのインプレッション数を非表示にする方法まとめ](/article/2022/12/27/extensions-to-hide-twitter-view-count/)」を公開しました。
+
+## 2022/12/24　サイト更新情報
+
+新しい記事「[Twitterのインプレッション数を非表示にする拡張機能を公開しました](/article/2022/12/24/hide-twitter-view-count/)」を公開しました。
+
+## 2022/12/19　サイト更新情報
+
+新しい記事「[Pixel Launcherのアプリ検索が変な挙動をする理由と対策](/article/2022/12/19/pixel-launcher-behavior/)」を公開しました。
+
+## 2022/11/30　サイト更新情報
+
+新しい記事「[Figmaで書き出したSVGの形が崩れるときの対処法](/article/2022/11/30/figma-to-svg/)」を公開しました。
+
+## 2022/10/17　サイト更新情報
+
+新しい記事「[イラスト生成AIに対するよくある誤解](/article/2022/10/17/misunderstanding-about-generative-ai/)」を公開しました。
+
+## 2022/10/11　サイト更新情報
+
+新しい記事「[YouTubeにハンドル機能実装　設定しないと、なりすまされる可能性も](/article/2022/10/11/youtube-new-feature-handle/)」を公開しました。
+
+## 2022/10/09　サイト更新情報
+
+新しい記事「[【VTuber向けフリー素材】ロゴや立ち絵用の背景素材を配布します！](/article/2022/10/09/logo-background-materials-for-vtubers/)」を公開しました。
+
+## 2022/08/21　サイト更新情報
+
+新しい記事「[Android 13であまり注目されていない13個の新機能・変更点](/article/2022/08/21/android13-minor-changes/)」を公開しました。
+
+## 2022/08/12　サイト更新情報
+
+新しい記事「[HTTPS Everywhereが2023年に廃止　ブラウザー標準の機能に移行しよう](/article/2022/08/12/https-everywhere-will-sunset/)」を公開しました。
+
 ## 2022/07/31　サイト更新情報
 
-新しい記事「[動画だけ引用リツイートするツール](/tool/retweet-video-only/)」を公開しました。
+新しいツール「[動画だけ引用リツイートするツール](/tool/retweet-video-only/)」を公開しました。
 
 ## 2022/06/27　サイト更新情報
 
