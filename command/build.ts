@@ -18,12 +18,14 @@ import { minify } from "html-minifier";
 import { toXML } from "jstoxml";
 import RSS from "rss";
 import exif from "exif-reader";
+import colors from "colors/safe";
 
 const BUILD_CACHE_PATH = ".buildcache.json";
 const ARTICLE_DATA_PATH = "article/article_data.json";
 const RELATIVE_MARKDOWN_PATH_REGEXP = /^(?!\.?\/).+\.md$/;
 const MESSAGE = {
     ERROR: {
+        ERROR: colors.bgRed("ERROR"),
         INVALID_MARKDOWN_PATH:
             "ビルドするMarkdown（.md）ファイルを相対パスで指定してください。なお、相対パスの最初の./は省略してください。",
         TITLE_NOT_DEFINED:
@@ -40,11 +42,12 @@ const MESSAGE = {
             "Markdownファイルとテンプレートの両方に変更が見つからなかったため、コンパイルをスキップしました。",
         ABSOLUTE_IMAGE_PATH_FOUND:
             "絶対パスが使用されている画像の最適化をスキップしました。最適化したい場合は相対パスかルート相対パスを使用してください：",
-        IMAGE_OPTIMIZING: "画像を最適化中...",
+        IMAGE_OPTIMIZING: "画像を最適化中：",
         SKIPPED_IMAGE_OPTIMIZATION: "画像が変更されていないため最適化をスキップしました：",
         COMPILE_FINISHED: "変換が完了しました。",
         SITEMAP_UPDATED: "サイトマップを更新しました。",
-        ARTICLE_REGISTERED: "指定された記事がデータベースに登録されていなかったため、登録しました。"
+        ARTICLE_REGISTERED: "指定された記事がデータベースに登録されていなかったため、登録しました。",
+        ALL_PROCESSED_FINISHED: "すべての処理が完了しました。"
     }
 } as const;
 const IMAGE_OUTPUT_DIRNAME = "optimized_images";
@@ -258,7 +261,7 @@ const insertDateInformation = (document: Document, createdDate: string, updatedD
     createdDateElement.insertAdjacentHTML("beforeend", updatedDateHtml);
 };
 
-const optimizeImages = (markdownPath: string, document: Document) => {
+const optimizeImages = async (markdownPath: string, document: Document) => {
     const OUTPUT_FORMATS = ["avif", "webp"] as const;
     const OUTPUT_SIZE_DATA = [
         {
@@ -279,10 +282,10 @@ const optimizeImages = (markdownPath: string, document: Document) => {
         buildCache.articles[markdownPath].images = {};
     }
 
-    document.querySelectorAll("img").forEach(async (image) => {
+    for (const image of document.querySelectorAll("img")) {
         if (/^https?:\/\//.test(image.src)) {
             console.log(`${MESSAGE.LOG.ABSOLUTE_IMAGE_PATH_FOUND}${image.src}`);
-            return;
+            continue;
         }
 
         const absoluteImagePath =
@@ -295,7 +298,7 @@ const optimizeImages = (markdownPath: string, document: Document) => {
         if (path.extname(image.src) === ".svg") {
             image.setAttribute("loading", "lazy");
             image.setAttribute("decoding", "async");
-            return;
+            continue;
         }
 
         const imageMetadata = await sharp(absoluteImagePath).metadata();
@@ -342,7 +345,7 @@ const optimizeImages = (markdownPath: string, document: Document) => {
                 if (isImageChanged) {
                     // TODO: 画像の元サイズより小さいサイズにのみリサイズするように変更
 
-                    sharp(absoluteImagePath, {
+                    await sharp(absoluteImagePath, {
                         animated: isGif
                     })
                         .resize(outputSize)
@@ -376,7 +379,7 @@ const optimizeImages = (markdownPath: string, document: Document) => {
             fallback.height = fallbackResolution.height;
         }
         picture.appendChild(fallback);
-    });
+    }
 };
 
 const insertPreconnect = (document: Document, href: string, crossOrigin: boolean) => {
@@ -515,7 +518,7 @@ const sortObjectByKey = <T extends Object>(object: T): T => {
  * @param markdownPath 変換対象のMarkdownファイルのパス
  * @returns 記事についての情報
  */
-const compile = (markdownPath: string) => {
+const compile = async (markdownPath: string) => {
     const dateTime = convertToIso8601Local(new Date());
 
     if (!buildCache.articles[markdownPath].created) {
@@ -554,7 +557,7 @@ const compile = (markdownPath: string) => {
         buildCache.articles[markdownPath].created,
         buildCache.articles[markdownPath].updated
     );
-    optimizeImages(markdownPath, document);
+    await optimizeImages(markdownPath, document);
 
     const outputRelativeHtmlPath = `${path.dirname(markdownPath)}/${path.parse(markdownPath).name}.html`;
 
@@ -606,33 +609,40 @@ const compile = (markdownPath: string) => {
     return articleInfo;
 };
 
-const main = () => {
-    const markdownPath = path.normalize(process.argv[2]).replaceAll("\\", "/");
-    if (!RELATIVE_MARKDOWN_PATH_REGEXP.test(markdownPath)) throw new Error(MESSAGE.ERROR.INVALID_MARKDOWN_PATH);
-    if (!buildCache.articles) buildCache.articles = {};
+const main = async () => {
+    try {
+        const markdownPath = path.normalize(process.argv[2]).replaceAll("\\", "/");
+        if (!RELATIVE_MARKDOWN_PATH_REGEXP.test(markdownPath)) throw new Error(MESSAGE.ERROR.INVALID_MARKDOWN_PATH);
+        if (!buildCache.articles) buildCache.articles = {};
 
-    const isNewArticle = !Boolean(buildCache.articles[markdownPath]);
-    if (isNewArticle) {
-        // @ts-expect-error
-        buildCache.articles[markdownPath] = {};
-    }
+        const isNewArticle = !Boolean(buildCache.articles[markdownPath]);
+        if (isNewArticle) {
+            // @ts-expect-error
+            buildCache.articles[markdownPath] = {};
+        }
 
-    const articleInfo = compile(markdownPath);
-    if (isNewArticle) {
-        articleData[articleInfo.createdDate] = articleInfo.data;
-        const sortedArticleData = sortObjectByKey(articleData);
-        updateRss(sortedArticleData);
-        fs.writeFile(ARTICLE_DATA_PATH, JSON.stringify(sortedArticleData, null, 4), (error) => {
-            if (error) throw error;
+        const articleInfo = await compile(markdownPath);
+
+        if (isNewArticle) {
+            articleData[articleInfo.createdDate] = articleInfo.data;
+            const sortedArticleData = sortObjectByKey(articleData);
+            updateRss(sortedArticleData);
+            fs.writeFileSync(ARTICLE_DATA_PATH, JSON.stringify(sortedArticleData, null, 4));
             console.log(MESSAGE.LOG.ARTICLE_REGISTERED);
-        });
-    }
-    updateSitemap();
+        }
+        updateSitemap();
 
-    fs.writeFile(BUILD_CACHE_PATH, JSON.stringify(buildCache, null, 4), (error) => {
-        if (error) throw error;
+        fs.writeFileSync(BUILD_CACHE_PATH, JSON.stringify(buildCache, null, 4));
         console.log(MESSAGE.LOG.CACHE_WRITTEN);
-    });
+
+        console.log(colors.green(MESSAGE.LOG.ALL_PROCESSED_FINISHED));
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error(`${MESSAGE.ERROR.ERROR}　${colors.red(error.message)}`);
+        } else {
+            console.error(`${MESSAGE.ERROR.ERROR}　${colors.red(String(error))}`);
+        }
+    }
 };
 
 main();
