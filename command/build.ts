@@ -1,5 +1,6 @@
 import buildCacheFile from "../.buildcache.json";
 import config from "./.buildconfig.json";
+import articleDataFile from "../article/article_data.json";
 
 import fs from "fs";
 import cryptoLib from "crypto";
@@ -15,8 +16,10 @@ import Handlebars from "handlebars";
 import normalizeUrl from "normalize-url";
 import { minify } from "html-minifier";
 import { toXML } from "jstoxml";
+import RSS from "rss";
 
 const BUILD_CACHE_PATH = ".buildcache.json";
+const ARTICLE_DATA_PATH = "article/article_data.json";
 const RELATIVE_MARKDOWN_PATH_REGEXP = /^(?!\.?\/).+\.md$/;
 const MESSAGE = {
     ERROR: {
@@ -36,7 +39,8 @@ const MESSAGE = {
         IMAGE_OPTIMIZING: "画像を最適化中...",
         SKIPPED_IMAGE_OPTIMIZATION: "画像が変更されていないため最適化をスキップしました：",
         COMPILE_FINISHED: "変換が完了しました。",
-        SITEMAP_UPDATED: "サイトマップを更新しました。"
+        SITEMAP_UPDATED: "サイトマップを更新しました。",
+        ARTICLE_REGISTERED: "指定された記事がデータベースに登録されていなかったため、登録しました。"
     }
 } as const;
 const IMAGE_OUTPUT_DIRNAME = "optimized_images";
@@ -69,6 +73,17 @@ const COMPONENT_DATA = {
     "yt-video": "/src/js/components/yt-video/yt-video.min.js",
     "article-card": "/src/js/components/article-card/article-card.min.js"
 } as const;
+const MAX_NUMBER_OF_RSS_ITEMS = 20;
+const RSS_FILE_NAME = "rss.xml";
+const RSS_OPTION: RSS.FeedOptions = {
+    title: `${config.site_name} RSSフィード`,
+    description: `${config.site_name}のRSSフィードです。最新の${MAX_NUMBER_OF_RSS_ITEMS}件の記事をお知らせします。`,
+    feed_url: normalizeUrl(`${ROOT_URL}/${RSS_FILE_NAME}`),
+    site_url: ROOT_URL,
+    // TODO: コピーライト表記をbuildconfigに追加
+    copyright: "Copyright (C) 2023 Robot-Inventor All rights reserved.",
+    language: "ja"
+} as const;
 
 interface BuildCache {
     articles: {
@@ -96,7 +111,30 @@ interface MetadataValidationResult {
     message: typeof MESSAGE.ERROR[keyof typeof MESSAGE.ERROR][];
 }
 
+interface TemplateValues {
+    title: string;
+    siteName: string;
+    siteNameShort: string;
+    contents: string;
+    description: string;
+    author: string;
+    pageUrl: string;
+    ogType: string;
+    twitterId: string;
+    thumbnailImage: string;
+}
+
+interface ArticleData {
+    [index: string]: {
+        link: string;
+        thumbnail: string;
+        "article-title": string;
+        description: string;
+    };
+}
+
 const buildCache: BuildCache = buildCacheFile;
+const articleData: ArticleData = articleDataFile;
 
 const convertToIso8601Local = (date: Date) => {
     const timezoneOffset = date.getTimezoneOffset();
@@ -362,38 +400,15 @@ const applySyntaxHighlight = (document: Document) => {
     }
 };
 
-const getFirstImageUrl = (relativeHtmlPath: string, document: Document) => {
+const getFirstImageUrl = (relativeMarkdownPath: string, document: Document) => {
     const firstRasterImage = [...document.querySelectorAll("img")].filter((img) => path.extname(img.src) !== ".svg")[0];
     if (!firstRasterImage) return null;
-
-    if (/^https?:\/\//.test(firstRasterImage.src)) {
-        return firstRasterImage.src;
-    } else if (firstRasterImage.src.startsWith("/")) {
-        return normalizeUrl(`${ROOT_URL}/${firstRasterImage.src}`);
-    } else {
-        return normalizeUrl(`${ROOT_URL}/${path.dirname(relativeHtmlPath)}/${firstRasterImage.src}`);
-    }
+    return pathToAbsoluteUrl(relativeMarkdownPath, firstRasterImage.src);
 };
 
-const applyTemplate = (relativeHtmlPath: string, metadata: Metadata, document: Document) => {
+const applyTemplate = (values: TemplateValues) => {
     const template = fs.readFileSync(config.template, "utf-8");
     const handlebars = Handlebars.compile(template);
-
-    const thumbnailImage =
-        metadata.thumbnail || getFirstImageUrl(relativeHtmlPath, document) || config.default_thumbnail;
-    const pageUrl = normalizeUrl(`${ROOT_URL}/${relativeHtmlPath.replace(/index\.html$/, "")}`);
-    const values = {
-        title: metadata.title || document.querySelector("h1")?.textContent,
-        siteName: config.site_name,
-        siteNameShort: config.site_name_short,
-        contents: document.body.innerHTML,
-        description: metadata.description,
-        author: metadata.author || config.default_author,
-        pageUrl,
-        ogType: pageUrl === ROOT_URL ? "website" : "article",
-        twitterId: config.twitter_id,
-        thumbnailImage
-    };
     const html = handlebars(values);
     const { window } = new JSDOM(html);
     return window.document;
@@ -438,6 +453,50 @@ const loadComponentScript = (document: Document) => {
     }
 };
 
+const updateRss = (articleData: ArticleData) => {
+    const rss = new RSS(RSS_OPTION);
+    const createdDates = Object.keys(articleData).slice(0, MAX_NUMBER_OF_RSS_ITEMS);
+    for (const date of createdDates) {
+        const itemData = {
+            title: articleData[date]["article-title"],
+            description: articleData[date].description,
+            url: pathToAbsoluteUrl("", articleData[date].link),
+            date: date
+        };
+        rss.item(itemData);
+    }
+    const xml = rss.xml();
+    fs.writeFileSync(RSS_FILE_NAME, xml);
+};
+
+const pathToAbsoluteUrl = (relativeMarkdownPath: string, targetPath: string) => {
+    if (/^https?:\/\//.test(targetPath)) {
+        return targetPath;
+    } else if (targetPath.startsWith("/")) {
+        return normalizeUrl(`${ROOT_URL}/${targetPath}`);
+    } else {
+        return normalizeUrl(`${ROOT_URL}/${path.dirname(relativeMarkdownPath)}/${targetPath}`);
+    }
+};
+
+const sortObjectByKey = <T extends Object>(object: T): T => {
+    const keys = Object.keys(object) as Array<keyof typeof object>;
+    keys.sort().reverse();
+
+    const result = {} as T;
+
+    for (const key of keys) {
+        result[key] = object[key];
+    }
+    return result;
+};
+
+/**
+ * 指定されたMarkdownファイルをHTMLに変換して保存し、使用されている画像に対して最適化処理を施す。
+ * また、その記事に関する情報を返す。
+ * @param markdownPath 変換対象のMarkdownファイルのパス
+ * @returns 記事についての情報
+ */
 const compile = (markdownPath: string) => {
     const dateTime = convertToIso8601Local(new Date());
 
@@ -452,7 +511,11 @@ const compile = (markdownPath: string) => {
 
     if (checkCache(markdownPath, markdownHash, templateHash)) {
         console.log(MESSAGE.LOG.NOTHING_CHANGED);
-        return;
+        const articleInfo = {
+            createdDate: buildCache.articles[markdownPath].created,
+            data: articleData[buildCache.articles[markdownPath].created]
+        };
+        return articleInfo;
     }
 
     buildCache.articles[markdownPath].hash = markdownHash;
@@ -476,7 +539,27 @@ const compile = (markdownPath: string) => {
     optimizeImages(markdownPath, document);
 
     const outputRelativeHtmlPath = `${path.dirname(markdownPath)}/${path.parse(markdownPath).name}.html`;
-    const compiledDocument = applyTemplate(outputRelativeHtmlPath, metadata, document);
+
+    const title = metadata.title || document.querySelector("h1")?.textContent || "タイトルを入力";
+    const thumbnailUrl =
+        pathToAbsoluteUrl(markdownPath, metadata.thumbnail) ||
+        getFirstImageUrl(markdownPath, document) ||
+        config.default_thumbnail;
+    const pageUrl = normalizeUrl(`${ROOT_URL}/${outputRelativeHtmlPath.replace(/index\.html$/, "")}`);
+
+    const templateValues = {
+        title,
+        siteName: config.site_name,
+        siteNameShort: config.site_name_short,
+        contents: document.body.innerHTML,
+        description: metadata.description,
+        author: metadata.author || config.default_author,
+        pageUrl,
+        ogType: pageUrl === ROOT_URL ? "website" : "article",
+        twitterId: config.twitter_id,
+        thumbnailImage: thumbnailUrl
+    } as const;
+    const compiledDocument = applyTemplate(templateValues);
 
     // シンタックスハイライトはheadに要素を挿入するため、テンプレートの適用後に実行する必要がある。テンプレートの適用時はbodyの中身しか引き継がれない。
     applySyntaxHighlight(compiledDocument);
@@ -485,21 +568,43 @@ const compile = (markdownPath: string) => {
 
     const minifiedHtml = documentToMinifiedHtml(compiledDocument);
 
-    updateSitemap();
-
     fs.writeFileSync(outputRelativeHtmlPath, minifiedHtml);
     console.log(MESSAGE.LOG.COMPILE_FINISHED);
+
+    const articleInfo = {
+        createdDate: buildCache.articles[markdownPath].created,
+        data: {
+            link: `/${outputRelativeHtmlPath.replace(/index\.html$/, "")}`,
+            thumbnail: thumbnailUrl.replace(new RegExp(`^${ROOT_URL}`), ""),
+            "article-title": title,
+            description: metadata.description
+        }
+    };
+    return articleInfo;
 };
 
 const main = () => {
-    // TODO: 記事一覧に自動で追加する機能
     const markdownPath = path.normalize(process.argv[2]).replaceAll("\\", "/");
     if (!RELATIVE_MARKDOWN_PATH_REGEXP.test(markdownPath)) throw new Error(MESSAGE.ERROR.INVALID_MARKDOWN_PATH);
     if (!buildCache.articles) buildCache.articles = {};
-    // @ts-expect-error
-    if (!buildCache.articles[markdownPath]) buildCache.articles[markdownPath] = {};
 
-    compile(markdownPath);
+    const isNewArticle = !Boolean(buildCache.articles[markdownPath]);
+    if (isNewArticle) {
+        // @ts-expect-error
+        buildCache.articles[markdownPath] = {};
+    }
+
+    const articleInfo = compile(markdownPath);
+    if (isNewArticle) {
+        articleData[articleInfo.createdDate] = articleInfo.data;
+        const sortedArticleData = sortObjectByKey(articleData);
+        updateRss(sortedArticleData);
+        fs.writeFile(ARTICLE_DATA_PATH, JSON.stringify(sortedArticleData, null, 4), (error) => {
+            if (error) throw error;
+            console.log(MESSAGE.LOG.ARTICLE_REGISTERED);
+        });
+    }
+    updateSitemap();
 
     fs.writeFile(BUILD_CACHE_PATH, JSON.stringify(buildCache, null, 4), (error) => {
         if (error) throw error;
