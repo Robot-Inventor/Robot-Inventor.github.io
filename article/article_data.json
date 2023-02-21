@@ -1,4 +1,40 @@
 {
+    "2023-02-21T18:45:20.259+09:00": {
+        "link": "/article/2023/02/21/hoge.html",
+        "thumbnail": "/src/icon/ogp_default_thumbnail.png",
+        "article-title": "aaa",
+        "description": "a"
+    },
+    "2023-02-15T17:35:07.938": {
+        "link": "/article/2023/02/15/what-the-new-bing-ai-can-do/",
+        "thumbnail": "/article/2023/02/15/what-the-new-bing-ai-can-do/2023-02-14-00-20-26.png",
+        "article-title": "BingとEdgeにChatGPTが搭載！AIとチャットで検索できる新機能の魅力と限界",
+        "description": "BingとEdgeにChatGPTベースのAIが搭載されました。このAIは、ユーザーが検索エンジンとチャットできる画期的な機能です。検索とチャットの統一的な体験により、コンピューターとのやり取りの方法が変わります。この記事では、実際に試して分かった、新しいBingのAIの魅力と限界を紹介します。"
+    },
+    "2022-12-27T22:18:33.437": {
+        "link": "/article/2022/12/27/extensions-to-hide-twitter-view-count/",
+        "thumbnail": "/article/2022/12/27/extensions-to-hide-twitter-view-count/logo2.png",
+        "article-title": "Twitterのインプレッション数を非表示にする方法まとめ",
+        "description": "2022年12月23日、Twitterにインプレッション数を表示する機能が実装されました。この機能を鬱陶しいと感じる人や、他人と比べてしまうため非表示にしたいという人もいると思います。この記事では、そういった人のためにインプレッション数を非表示にする方法を紹介します。他の「非表示にする方法は見つかりませんでした」と書いているようなふざけたブログとは違い、ちゃんと非表示にする方法を解説します。"
+    },
+    "2022-12-24T20:37:36.681": {
+        "link": "/article/2022/12/24/hide-twitter-view-count/",
+        "thumbnail": "/article/2022/12/24/hide-twitter-view-count/logo2.png",
+        "article-title": "Twitterのインプレッション数を非表示にする拡張機能を公開しました",
+        "description": "Twitterのインプレッション数を非表示にする拡張機能「Hide View Count」を作成・公開しました。この拡張機能をストアからインストールするだけで、ツイートに表示されるインプレッション数を非表示にできます。この拡張機能はインプレッション数の表示を一瞬たりとも許さないため、承認欲求モンスターが生まれてしまうのを防げます。"
+    },
+    "2022-12-19T01:03:40.596": {
+        "link": "/article/2022/12/19/pixel-launcher-behavior/",
+        "thumbnail": "https://robot-inventor.github.io/article/2022/12/19/pixel-launcher-behavior/thumbnail.png",
+        "article-title": "Pixel Launcherのアプリ検索が変な挙動をする理由と対策",
+        "description": "Google PixelのPixel Launcherで利用できるアプリ検索は、直感に反した変な挙動をするときがあります。この記事では、その理由と対策を2つのケースに分けて説明します。"
+    },
+    "2022-11-30T23:54:09.559": {
+        "link": "/article/2022/11/30/figma-to-svg/",
+        "thumbnail": "/article/2022/11/30/figma-to-svg/figma_and_svg.png",
+        "article-title": "Figmaで書き出したSVGの形が崩れるときの対処法",
+        "description": "FigmaでエクスポートしたSVGは、ときどき形が崩れてしまっていることがあります。この記事では、Figmaから形が崩れないようにSVGに書き出す方法を説明します。"
+    },
     "2022-10-17T01:14:47.810": {
         "link": "/article/2022/10/17/misunderstanding-about-generative-ai/",
         "thumbnail": "https://robot-inventor.github.io/article/2022/10/17/misunderstanding-about-generative-ai/thumbnail.png",

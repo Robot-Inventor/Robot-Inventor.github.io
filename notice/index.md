@@ -6,6 +6,26 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/02/15　サイト更新情報
+
+新しい記事「[BingとEdgeにChatGPTが搭載！AIとチャットで検索できる新機能の魅力と限界](/article/2023/02/15/what-the-new-bing-ai-can-do/)」を公開しました。
+
+## 2022/12/27　サイト更新情報
+
+新しい記事「[Twitterのインプレッション数を非表示にする方法まとめ](/article/2022/12/27/extensions-to-hide-twitter-view-count/)」を公開しました。
+
+## 2022/12/24　サイト更新情報
+
+新しい記事「[Twitterのインプレッション数を非表示にする拡張機能を公開しました](/article/2022/12/24/hide-twitter-view-count/)」を公開しました。
+
+## 2022/12/19　サイト更新情報
+
+新しい記事「[Pixel Launcherのアプリ検索が変な挙動をする理由と対策](/article/2022/12/19/pixel-launcher-behavior/)」を公開しました。
+
+## 2022/11/30　サイト更新情報
+
+新しい記事「[Figmaで書き出したSVGの形が崩れるときの対処法](/article/2022/11/30/figma-to-svg/)」を公開しました。
+
 ## 2022/10/17　サイト更新情報
 
 新しい記事「[イラスト生成AIに対するよくある誤解](/article/2022/10/17/misunderstanding-about-generative-ai/)」を公開しました。
