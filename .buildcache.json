@@ -4,13 +4,15 @@
             "created": "2021-06-08T01:16:02.518",
             "hash": "0c20696d376b23ec2e1082c145310999ea97ad334b1e0d9c8bc3d7f095438c08",
             "updated": "2021-06-15T01:09:47.330",
-            "images": {}
+            "images": {},
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "privacy/index.md": {
             "created": "2021-06-08T01:27:01.84",
             "updated": "2021-06-15T01:10:24.363",
             "images": {},
-            "hash": "5686aa6b8b371804581a0df2169f291b208b0c64f2cfec89ea0d84593f7dcdf5"
+            "hash": "5686aa6b8b371804581a0df2169f291b208b0c64f2cfec89ea0d84593f7dcdf5",
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2019-07-28-現在建設中/index.md": {
             "created": "2019-07-28T00:00:00.000",
@@ -18,17 +20,21 @@
             "images": {
                 "hukkousagyou_TP_V.jpg": "764490626b217c72f8c423f935df9fd8f334c1d1ba484d27643504ab410b2de0",
                 "PAK12_10naname_TP_V.jpg": "d91dd78df1d29fa37e8025aae9d188cb685b7ee4ba32a19a7ac55d38ac1948d4",
-                "mo17923IMGL7531_TP_V_s.jpg": "410ad5559ebc118deb563f1657683af82d6dfaa283310b9761ea6c504b88d9d5"
+                "mo17923IMGL7531_TP_V_s.jpg": "410ad5559ebc118deb563f1657683af82d6dfaa283310b9761ea6c504b88d9d5",
+                "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
             },
-            "hash": "b3a9e944047ccf384c66daeb39fb0a3c5809c8c634cc4a7680fbb6cbef49c8b6"
+            "hash": "b3a9e944047ccf384c66daeb39fb0a3c5809c8c634cc4a7680fbb6cbef49c8b6",
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2019-07-30-YouTubeにオススメのフリー素材・フォント/index.md": {
             "created": "2019-07-30T00:00:00.000",
             "updated": "2021-06-12T02:07:59.673",
             "images": {
-                "KENTA039_jidoricamera_TP_V.jpg": "c550b74a11b4f27a121e3d44be89f9f327ccdfc92597e04f5e054f6d9c92e43f"
+                "KENTA039_jidoricamera_TP_V.jpg": "c550b74a11b4f27a121e3d44be89f9f327ccdfc92597e04f5e054f6d9c92e43f",
+                "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
             },
-            "hash": "fc0798add3ae26394854a91fca048712482bf4eb9de577cb678d8b85d601ba8e"
+            "hash": "fc0798add3ae26394854a91fca048712482bf4eb9de577cb678d8b85d601ba8e",
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2019-08-12-「田」という漢字を一筆書きする方法を思いついた/index.md": {
             "created": "2019-08-12T00:00:00.000",
@@ -36,29 +42,35 @@
             "updated": "2021-06-12T02:10:16.428",
             "images": {
                 "penIMGL9882_TP_V.jpg": "70ebed975ff6f695e127a8fd25bc9ec00f79f07f6abb1c2d99c48a3127460764"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2019-11-03-サイトのデザインを変更しました！/index.md": {
             "created": "2019-11-03T00:00:00.000",
             "updated": "2022-03-14T01:51:05.735",
             "images": {
-                "YAMA_DSC2546.jpg": "71efe70870e5df2d08f43253ecae733e53619b9c2d1bf4c44df1356674664aab"
+                "YAMA_DSC2546.jpg": "71efe70870e5df2d08f43253ecae733e53619b9c2d1bf4c44df1356674664aab",
+                "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
             },
-            "hash": "b7765c59befaeb55450bd74c2b3989ee018a98c214e27f1c7e77275a20188db7"
+            "hash": "b7765c59befaeb55450bd74c2b3989ee018a98c214e27f1c7e77275a20188db7",
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2019/12/11/index.md": {
             "created": "2019-12-11T00:00:00.000",
             "updated": "2021-06-10T16:46:34.851",
             "images": {},
-            "hash": "272b1a8f021b16bead0a44b69ffb8ee557270f9d8fb613c6dc6cfcbce5f5a8de"
+            "hash": "272b1a8f021b16bead0a44b69ffb8ee557270f9d8fb613c6dc6cfcbce5f5a8de",
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2020/01/15/index.md": {
             "created": "2020-01-15T00:00:00.000",
             "updated": "2022-03-14T01:52:01.101",
             "images": {
-                "youtube-2617510.jpg": "e700f0bbe67824477d66ced2e5e7785a8205e486533f3aae493410b75b1a0a4c"
+                "youtube-2617510.jpg": "e700f0bbe67824477d66ced2e5e7785a8205e486533f3aae493410b75b1a0a4c",
+                "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
             },
-            "hash": "3a52955ae3f2d3f1f47e386b854e2c5577bdfe08e079b69037b0eb917a71be19"
+            "hash": "3a52955ae3f2d3f1f47e386b854e2c5577bdfe08e079b69037b0eb917a71be19",
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2020/01/16/index.md": {
             "created": "2020-01-16T00:00:00.000",
@@ -67,29 +79,35 @@
             "images": {
                 "terminal.png": "fab455ac1db351800c64567d1dac902343e49c21e41549a501adaee49c33a6a1",
                 "file_manager.png": "a4ae7684466be345dbbeba0d76758488b4736bab80b9a93d0da380f2aa53dbb6"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2020/04/11/index.md": {
             "created": "2020-04-11T00:00:00.000",
             "updated": "2021-06-12T02:27:15.707",
             "hash": "3c54d7a587dbd33ad7b67cf4ab4dd3c8ba7632bf3138ceef4fc2cc40c0eca348",
-            "images": {}
+            "images": {},
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2020/05/12/index.md": {
             "created": "2020-05-12T00:00:00.000",
             "updated": "2022-04-05T23:04:58.299",
             "images": {
-                "flash-845848_1920.jpg": "ddef3f2e4dc8f8f908b847cda8506d0807ca10dbe67bd9c7a92e8367ade52db4"
+                "flash-845848_1920.jpg": "ddef3f2e4dc8f8f908b847cda8506d0807ca10dbe67bd9c7a92e8367ade52db4",
+                "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
             },
-            "hash": "c8f2d57c93975787f61f39f48ef95b72d9986a11ae6cc3102145cd9e2acc4f0a"
+            "hash": "c8f2d57c93975787f61f39f48ef95b72d9986a11ae6cc3102145cd9e2acc4f0a",
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2020/05/12/2/index.md": {
             "created": "2020-05-12T00:00:00.000",
             "updated": "2022-04-05T23:03:49.448",
             "images": {
-                "computer-1591018_1920.jpg": "2809c7e1696915f616d0ad7964dea9f34f725db279f3413e1e5a6de68b486d6d"
+                "computer-1591018_1920.jpg": "2809c7e1696915f616d0ad7964dea9f34f725db279f3413e1e5a6de68b486d6d",
+                "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
             },
-            "hash": "a83b019403d51c0d99d47b3c0ddbef1fc6e3aaa97977812f1dae893c2c357fbf"
+            "hash": "a83b019403d51c0d99d47b3c0ddbef1fc6e3aaa97977812f1dae893c2c357fbf",
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2020/05/13/index.md": {
             "created": "2020-05-13T00:00:00.000",
@@ -97,7 +115,8 @@
             "hash": "6f3821cb4dfec6979dea35d02af2c5a902523574a007bf2777599417f1b5e697",
             "images": {
                 "desert-1654439_1920.jpg": "28284e438a7f91de96087c0f8ae8b20faf144a8dfa360438618d9095a1da9c0b"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2020/05/14/index.md": {
             "created": "2020-05-14T00:00:00.000",
@@ -107,7 +126,8 @@
                 "flags_page.jpg": "a644cdd05561659c17328b6846f97aecd58983bc6a600608664e15e1753c038e",
                 "dark_themed_qiita.jpg": "12ff97abed69f3d923514da052b2e8103879992c333002efb0831ca2840ca02e",
                 "old_dark_themed_qiita.jpg": "2e2755dbd61ddd393795b02cc83c6ef3ac9625f5b0cc6451236403f1cb94f9ad"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2020/05/18/index.md": {
             "created": "2020-05-18T00:00:00.000",
@@ -115,7 +135,8 @@
             "hash": "57d6c78275cf9eb035b98d90d1c865b6cfbc81cff048efa76c8ad151b6be2e08",
             "images": {
                 "screenshot.jpg": "94e0d4ae2a13de56030c8160600e851f9766c89907de557691a981984cefbb41"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2020/07/25/index.md": {
             "created": "2020-07-25T00:00:00.000",
@@ -123,7 +144,8 @@
             "hash": "10c59fa36ccc2dd0dd251a09d19a9533a490616ec1915d43d50e7ebe4ce3de04",
             "images": {
                 "datacenter_DSC00055.jpg": "279b3dee8b508ddb4ff64d8b1157bdc6ee7a97e23110bdfab76c846c6ff599fc"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2020/08/29/index.md": {
             "created": "2020-08-29T00:00:00.000",
@@ -132,31 +154,36 @@
             "images": {
                 "screenshot.jpg": "41de66c1e1152d7328fb23ffbe631499b8aaed9b581e3397eee8cdcbccf1b793",
                 "screenshot2.jpg": "f65f86c55f65792ae516ce7058a18aa81cb3ccd28f07fd3e8b1061564eaf225e"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2021/05/13/index.md": {
             "created": "2021-05-13T00:00:00.000",
             "updated": "2021-06-11T02:24:19.697",
             "hash": "8cebbe3a88bdae69c306e8a5de79b9cfba4946c1817418b055169ba980a17ae4",
-            "images": {}
+            "images": {},
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "index.md": {
             "created": "2021-06-11T02:33:02.543",
             "hash": "47ea0c13458abbf435be290633ed52778f707f3e565cd3be57d9d120564518db",
-            "updated": "2023-02-15T17:39:58.131",
-            "images": {}
+            "updated": "2023-02-21T18:42:03.570+09:00",
+            "images": {},
+            "template": "c5b3bcd1531eeca6ca543d84b9c2e11d946c848a9b809d5eee3e0ecf18764b30"
         },
         "article/index.md": {
             "created": "2021-06-13T02:43:35.295",
             "hash": "761d96c2fff29535c21cf3a1b6da8474f0c88d200578a5a758a03299f46109a3",
             "updated": "2021-06-13T03:37:08.162",
-            "images": {}
+            "images": {},
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "notice/index.md": {
             "created": "2021-06-13T23:28:51.664",
             "hash": "bf61009b3c39d8a227416941214d2d6966c43b2ba671e74b2972f1f7544f06bf",
             "updated": "2023-02-15T17:36:59.510",
-            "images": {}
+            "images": {},
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2021/06/15/index.md": {
             "created": "2021-06-15T00:00:00.000",
@@ -170,15 +197,18 @@
                 "menu_animation.gif": "5bc8cb41021fb1f7e3a59c49c1a7b7f90cbbcf138431adabd71f867c87bdd824",
                 "share_button_animation.gif": "76c072e6772f802c810d8f39fcfa7a928bc494f63f42d2ab145feb5c584c2db1",
                 "date_information.png": "ae96f7f176b3747f96f8a83c03e830041ca6a60708eed19d7a20d56dc0edaf9c",
-                "ogp_preview.png": "5d54786e9ac8d490fe0a4e6ecfcd5c63f35527ef93609c78e54e80c263ab2974"
+                "ogp_preview.png": "5d54786e9ac8d490fe0a4e6ecfcd5c63f35527ef93609c78e54e80c263ab2974",
+                "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
             },
-            "hash": "c170eeb86c4a92844dacd8267e5204360c1383cddae1a300aeab85dcf397a0dc"
+            "hash": "c170eeb86c4a92844dacd8267e5204360c1383cddae1a300aeab85dcf397a0dc",
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2021/06/17/index.md": {
             "created": "2021-06-17T23:59:59.145",
             "hash": "af5b718aa680b7646984382048464dd2b99fd6bcfa34904f59d11c2f1ab0cdd5",
             "updated": "2021-06-18T00:36:13.136",
-            "images": {}
+            "images": {},
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2021/10/24/index.md": {
             "created": "2021-10-24T00:20:19.34",
@@ -186,7 +216,8 @@
             "updated": "2021-10-24T00:25:46.967",
             "images": {
                 "davinci_resolve_17.4_vertical_text.png": "12d7bf7d418a012552e925ccdd8aa95ef11f2cd0bd166fbd7929be14c60a6bc1"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/02/18/index.md": {
             "created": "2022-02-18T17:24:18.909",
@@ -213,7 +244,8 @@
                 "firefox_multi_account_containers.png": "de6ec2c63a58d49f28c7f5cdbf801e6f547ba026f376c80114d787df9491cf8a",
                 "google_lighthouse.png": "df80208e0f7d1a3f254d0ef79f8e2d0fe58e9d2f149eb40a2cf783473fa7f296",
                 "stylus.png": "609679199696c53a4b8a74432a610666db7332ee5e8fffecefa3cdcc8f3d9765"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/03/13/hololive-dictionary/index.md": {
             "created": "2022-03-13T02:53:01.677",
@@ -222,7 +254,8 @@
             "images": {
                 "2022-03-13-01-11-34.png": "9b35498789566bc2adf7b94bc5f8dc629fedea5dc68160f29989e70fb13d26be",
                 "2022-03-13-01-13-54.png": "b5fef0e86d2210f775559f50c63a08a90fce64d15821328a36af071368afc2dd"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/03/29/firefox-overlay-scrollbar/index.md": {
             "created": "2022-03-29T01:00:23.783",
@@ -236,7 +269,8 @@
                 "./about_config.png": "4cb71c49a3345cbed510419a689a4ee0c32116d8e6e56b590e30d935d2290872",
                 "./about_config_search_result.png": "6ce95e6b788ceeed4de2e99828ce2bdbb2ee0be421a94cba250bc5c7d138e6c9",
                 "./overlay_true.png": "f40f38f417bc4d5205dc34c3576d35ed645d99a98b9f5e14d3a23c5ed976490f"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/04/07/won-the-campaign/index.md": {
             "created": "2022-04-07T14:06:50.114",
@@ -258,7 +292,8 @@
                 "2022-04-07-12-55-26.png": "818e5769d38a5bb84bc4884af8d7af476cb88db4637956438c5bd471907f24b9",
                 "2022-04-07-13-01-48.png": "1976e62c67aa5b0bcc004157f88b276a29cfad54b663b95683f86afc198ddd4d",
                 "2022-04-07-13-02-54.png": "37111252cf23943db82c3780dba12ca63d624c8235b419fa37297a8985a91665"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/04/17/count-discord-members/index.md": {
             "created": "2022-04-17T01:25:42.33",
@@ -269,7 +304,8 @@
                 "2022-04-17-00-26-50.png": "145ac245f8b91d0331818dfc4bbb23474d36307fbe43de343b78b082b1c109fb",
                 "2022-04-17-00-55-45.png": "2f291a3ea96eae2decd4f610fda0d24efecbf804e75c596aedb08996b4f78f4a",
                 "2022-04-17-01-00-52.png": "ac2e404857c864931ca8be5b96998367609a57523750b226515c049031d9101b"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/05/31/create-google-forms-from-excel/index.md": {
             "created": "2022-05-31T23:58:49.526",
@@ -280,7 +316,8 @@
                 "2022-05-31-23-40-05.png": "d2be742671f621fe48f6f488c8092ba6115dbd311f7346605d6b0b130707e9b5",
                 "2022-05-31-23-42-33.png": "d4be72e579ce2b4b53ee81e9b93d20f93af2af8878518b6ff2465ff66737e157",
                 "2022-05-31-23-44-12.png": "fb1759c28dcc1f484e2ea21c7b45ff28954e8534a9443b7dfdfe432e39036d25"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/06/07/run-apps-in-multiple-instances-in-android/index.md": {
             "created": "2022-06-07T00:24:08.402",
@@ -295,7 +332,8 @@
                 "Screenshot_20220603-182334.png": "20cebf46055bf90af69d48d0b138018f86baf4743e95ab3d78b705203e99e495",
                 "Screenshot_20220603-182744.png": "bc368c6eef21bfb75ae0ce52aa68487a601b37000dafda946a7e1d38fde7a732",
                 "Screenshot_20220603-182901.png": "4fcdb8eaeb67272b4bf2e6f1ac4c8c1bcb958fbbb02dfc37d1c0600f6b1a5c84"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/06/27/power-saving-with-dark-mode/index.md": {
             "created": "2022-06-27T23:30:35.500",
@@ -303,7 +341,8 @@
             "updated": "2022-06-27T23:40:52.920",
             "images": {
                 "./thumbnail.png": "5fd6c6c542e2c3c0211e797bbb80d1dcf81946e62414b986cf4fe1b4cb30d887"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "tool/retweet-video-only/index.md": {
             "created": "2022-07-31T11:25:14.918",
@@ -311,7 +350,8 @@
             "updated": "2022-07-31T12:19:06.701",
             "images": {
                 "thumbnail.png": "504fe385687070e2c0559b0b4d35ec23263c37375ac86e9a4c183ff8afd58a89"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/08/12/https-everywhere-will-sunset/index.md": {
             "created": "2022-08-12T18:30:50.348",
@@ -322,7 +362,8 @@
                 "2022-08-12-17-28-42.png": "468246640320dbebc34416a23f0138ee6f475908a96cd7761f2751685eece504",
                 "2022-08-12-17-27-03.png": "0a1341d46c8af51df2a3271a4a462a8326f14040f83d6a4ad84d6816ca0f9b07",
                 "2022-08-12-17-19-55.png": "43b7cbcc92d60ea958d1f3ea70121ae4031f874a2008a69b1c1bdb673c7f41d1"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/08/21/android13-minor-changes/index.md": {
             "created": "2022-08-21T00:22:50.617",
@@ -342,7 +383,8 @@
                 "Screenshot_20220820-154915.png": "49ef0d8805e8fc86af507c57fe00f039b8cecc0d51fab4e169ed3fa45cd85eba",
                 "Screenshot_20220820-161214.png": "dd181711e9e6bf81bdf2e4fb1bb6b8453d3e8c530e32e3acc5590ad882fb29a9",
                 "Screenshot_20220820-161540.png": "602aafdf814ecade5d027225b00af0c07dd7ad7cf509854c55001bbec344ced3"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/10/09/logo-background-materials-for-vtubers/index.md": {
             "created": "2022-10-10T00:53:53.210",
@@ -355,7 +397,8 @@
                 "orange.png": "69b80483e92cb105ae900619d21b70be55bdcad291dae9261fc6f57e99f3de7e",
                 "purple.png": "0e85358b2ee72b881e162bfbb6a66e1345009c42df930582cb224ad265090ef8",
                 "green.png": "20805bdbcc3560c6dd5cc44adde6f6d06d1a92ad3075a9b4acb5900bc823f956"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/10/11/youtube-new-feature-handle/index.md": {
             "created": "2022-10-11T23:14:04.541",
@@ -365,7 +408,8 @@
                 "2022-10-11-19-30-09.png": "82a53c4c0ca6e9079bd38a8346342673b2d08b7e36b4f857e9d4ff0ba312cfe9",
                 "2022-10-11-19-34-39.png": "a605a30b6f9247c1f40b68353dba9451becbafeb8730d2312992e55c6d456e9b",
                 "2022-10-11-19-44-12.png": "14e1ffce9c1cd88a97de55867c64bb216878b9229b1b428dc050a72b6e06d62a"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/10/17/misunderstanding-about-generative-ai/index.md": {
             "created": "2022-10-17T00:30:08.284",
@@ -377,7 +421,8 @@
                 "SD_after.png": "9eb22f4741f0815d2a2e6b6f85a92d378f91fb75f141ad630590009238a9f72a",
                 "WD_before.png": "f05c6b583f039c6804f394055528b09e1b5c0e567bf397d23840882f8e4eb59e",
                 "WD_after.jpg": "a6585589174c5db94134af888438d6eff4cda1405536b66d927addb39b7b14ea"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/11/30/figma-to-svg/index.md": {
             "created": "2022-11-30T23:51:43.604",
@@ -394,7 +439,8 @@
                 "2022-11-30-19-27-02.png": "35c879eea11cfb499cfa20d709edc59533f839a749979c8e9bee588f3908c1f8",
                 "2022-11-30-19-35-01.png": "932b48101a39a98be30ac8f51858f3d7b626b00ed763b31b6a1ce259efdb8458",
                 "2022-11-30-19-40-14.png": "4b0b4f2b723167823d713e00e4b1e4ee28dc2b830233849792804c5791bea0f5"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/12/19/pixel-launcher-behavior/index.md": {
             "created": "2022-12-19T00:46:15.347",
@@ -406,7 +452,8 @@
                 "Screenshot_20221216-133829.png": "9fb1eb0459a794967e0c8375be0273d5bcc0aa5b2d1a90d1f4a3743741ecf5d2",
                 "Screenshot_20221216-134009.png": "b8597b77a6bbfc153b69fb48f3a43cc5c83cd2ac15debf1eaded39e280f36dbd",
                 "thumbnail.png": "0f63ed08dbc5004eb7f30bec9e8fd302b142afd872d1fb8c66112a3759ce233f"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/12/24/hide-twitter-view-count/index.md": {
             "created": "2022-12-24T20:36:05.816",
@@ -417,7 +464,8 @@
                 "2022-12-24-18-28-25.png": "673a9c1b9a9d9517bfdb6512cfcd345af16a0dd0e69b906d555d493bd863375a",
                 "2022-12-24-18-39-02.png": "0ae7e2eeb336479b037273431c2e94b4df270b2e726154e85b6975e00f434ea7",
                 "screenshot.png": "1a54a017e7662bcbf51c10528f072853b7b7ce7f6d1c3b922bda0b2424fcc350"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2022/12/27/extensions-to-hide-twitter-view-count/index.md": {
             "created": "2022-12-27T22:16:57.476",
@@ -429,7 +477,8 @@
                 "2022-12-27-22-08-23.png": "799e98e5ce27961f9474c08ebee7c76a671887fabcaec8a91ed0b106c18d1b23",
                 "2022-12-27-22-09-31.png": "65002d107c20d7576f7f123bb3e2c9f1bca951b6a0fa0fe88655bf5c5a4b438b",
                 "2022-12-27-22-10-29.png": "0ca5d2afb5ecb54a5e7eb2a743c551f7cb458c492ad8694e1b56eb4920e44130"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         },
         "article/2023/02/15/what-the-new-bing-ai-can-do/index.md": {
             "created": "2023-02-15T17:19:39.297",
@@ -465,8 +514,8 @@
                 "2023-02-14-02-52-37.png": "123ad88def327d95aa13f845039f0392dbe8eb424696241725d856c99b9a95ba",
                 "2023-02-14-02-53-33.png": "63242fe6497ea44ece825d602d04d2569e8ab8d17e7793b9e5b746aa1f0d9c5c",
                 "2023-02-15-00-04-00.png": "8e2d3c6b251a9ed60bafb6860b12a177f26a7913f7691d3fbee5bdd911cdc308"
-            }
+            },
+            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
         }
-    },
-    "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
+    }
 }
