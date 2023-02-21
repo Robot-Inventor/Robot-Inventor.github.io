@@ -601,7 +601,7 @@ const compile = async (markdownPath: string) => {
         createdDate: buildCache.articles[markdownPath].created,
         data: {
             link: `/${outputRelativeHtmlPath.replace(/index\.html$/, "")}`,
-            thumbnail: thumbnailUrl.replace(new RegExp(`^${ROOT_URL}`), "/"),
+            thumbnail: thumbnailUrl.replace(ROOT_URL, "/"),
             "article-title": title,
             description: metadata.description
         }
