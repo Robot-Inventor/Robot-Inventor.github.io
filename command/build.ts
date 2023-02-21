@@ -94,9 +94,9 @@ interface BuildCache {
             images: {
                 [key: string]: string;
             };
+            template: string;
         };
     };
-    template: string;
 }
 
 type Metadata = Partial<{
@@ -175,7 +175,7 @@ const getHash = (input: cryptoLib.BinaryLike) => {
  */
 const checkCache = (path: string, markdownHash: string, templateHash: string) => {
     const isArticleChanged = buildCache.articles[path].hash !== markdownHash;
-    const isTemplateChanged = buildCache.template !== templateHash;
+    const isTemplateChanged = buildCache.articles[path].template !== templateHash;
 
     return !isArticleChanged && !isTemplateChanged;
 };
@@ -521,7 +521,7 @@ const compile = (markdownPath: string) => {
     }
 
     buildCache.articles[markdownPath].hash = markdownHash;
-    buildCache.template = templateHash;
+    buildCache.articles[markdownPath].template = templateHash;
     buildCache.articles[markdownPath].updated = dateTime;
 
     const { metadata, content: markdownWithoutMetadata } = metadataParser(markdown);
