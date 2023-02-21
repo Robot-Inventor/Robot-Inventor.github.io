@@ -224,7 +224,9 @@ const insertDateInformation = (document: Document, createdDate: string, updatedD
                 <source media="(prefers-color-scheme: dark)" srcset="/src/icon/article_white.svg" loading="lazy" decoding="async" alt="アイコン">
                 <img src="/src/icon/article_black.svg" loading="lazy" decoding="async" alt="アイコン">
             </picture>
-            作成：<time datetime="${createdDate}">${createdDate.replace("T", "　").replace(/:\d+?\.\d+?$/, "")}</time>
+            作成：<time datetime="${createdDate}">${createdDate
+        .replace("T", "　")
+        .replace(/:\d{1,2}\.\d+(Z|[\+\-]\d{1,2}:\d{1,2})$/, "")}</time>
         </div>
     `;
     const h1 = document.querySelector("h1");
@@ -465,7 +467,7 @@ const updateRss = (articleData: ArticleData) => {
         };
         rss.item(itemData);
     }
-    const xml = rss.xml();
+    const xml = rss.xml({ indent: true });
     fs.writeFileSync(RSS_FILE_NAME, xml);
 };
 
@@ -541,10 +543,13 @@ const compile = (markdownPath: string) => {
     const outputRelativeHtmlPath = `${path.dirname(markdownPath)}/${path.parse(markdownPath).name}.html`;
 
     const title = metadata.title || document.querySelector("h1")?.textContent || "タイトルを入力";
-    const thumbnailUrl =
-        pathToAbsoluteUrl(markdownPath, metadata.thumbnail) ||
-        getFirstImageUrl(markdownPath, document) ||
-        config.default_thumbnail;
+    const thumbnailUrl = (() => {
+        if (metadata.thumbnail) {
+            return pathToAbsoluteUrl(markdownPath, metadata.thumbnail);
+        } else {
+            return getFirstImageUrl(markdownPath, document) || config.default_thumbnail;
+        }
+    })();
     const pageUrl = normalizeUrl(`${ROOT_URL}/${outputRelativeHtmlPath.replace(/index\.html$/, "")}`);
 
     const templateValues = {
@@ -575,7 +580,7 @@ const compile = (markdownPath: string) => {
         createdDate: buildCache.articles[markdownPath].created,
         data: {
             link: `/${outputRelativeHtmlPath.replace(/index\.html$/, "")}`,
-            thumbnail: thumbnailUrl.replace(new RegExp(`^${ROOT_URL}`), ""),
+            thumbnail: thumbnailUrl.replace(new RegExp(`^${ROOT_URL}`), "/"),
             "article-title": title,
             description: metadata.description
         }
