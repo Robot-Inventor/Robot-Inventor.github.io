@@ -7,6 +7,9 @@ const menu_icon = document.getElementById("menu_icon")!;
 const menu_close_icon = document.getElementById("menu_bar_close_icon")!;
 const menu_bar = document.getElementById("menu_bar")!;
 
+const copyright = document.getElementById("copyright")!;
+copyright.textContent = `Copyright © ${new Date().getFullYear()} Robot-Inventor All rights reserved.`;
+
 /**
  * メニューを開く
  */
@@ -43,11 +46,11 @@ function copy_url() {
  */
 function share(type: "twitter" | "facebook" | "line") {
     const url_table = {
-        twitter: `https://twitter.com/intent/tweet?text=${
-            document.head.querySelector("title")!.textContent
-        }&url=${location.href}&via=keita_roboin`,
+        twitter: `https://twitter.com/intent/tweet?text=${document.head.querySelector("title")!.textContent}&url=${
+            location.href
+        }&via=keita_roboin`,
         facebook: `https://www.facebook.com/sharer/sharer.php?u=${location.href}`,
-        line: `https://social-plugins.line.me/lineit/share?url=${location.href}`,
+        line: `https://social-plugins.line.me/lineit/share?url=${location.href}`
     };
     window.open(url_table[type], "_blank");
 }
@@ -175,8 +178,7 @@ class ShareButtonElement {
     }
 
     toggle_status() {
-        if (this.button.hasAttribute(this.status_attribute))
-            this.button.removeAttribute(this.status_attribute);
+        if (this.button.hasAttribute(this.status_attribute)) this.button.removeAttribute(this.status_attribute);
         else this.button.setAttribute(this.status_attribute, "");
     }
 
@@ -190,9 +192,7 @@ class ShareButtonElement {
  */
 function initialize_share_button() {
     const share_button = new ShareButtonElement();
-    document
-        .getElementById("article_container_inner")!
-        .appendChild(share_button.button);
+    document.getElementById("article_container_inner")!.appendChild(share_button.button);
 
     setTimeout(() => {
         share_button.show();
@@ -204,9 +204,7 @@ function initialize_share_button() {
 
     const basic_share = ["twitter", "facebook", "line"] as const;
     for (const share_type of basic_share) {
-        share_button[
-            share_type as FilteredKeys<ShareButtonElement, HTMLElement>
-        ].addEventListener("click", () => {
+        share_button[share_type as FilteredKeys<ShareButtonElement, HTMLElement>].addEventListener("click", () => {
             if (share_button.is_active) share(share_type);
         });
     }
@@ -222,7 +220,7 @@ function initialize_share_button() {
 
             const share_data = {
                 title: document.title || "",
-                url: location.href,
+                url: location.href
             };
             navigator.share(share_data);
         });

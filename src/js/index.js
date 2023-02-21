@@ -3,6 +3,8 @@ const menu_overlay = document.getElementById("menu_overlay");
 const menu_icon = document.getElementById("menu_icon");
 const menu_close_icon = document.getElementById("menu_bar_close_icon");
 const menu_bar = document.getElementById("menu_bar");
+const copyright = document.getElementById("copyright");
+copyright.textContent = `Copyright © ${new Date().getFullYear()} Robot-Inventor All rights reserved.`;
 /**
  * メニューを開く
  */
@@ -38,7 +40,7 @@ function share(type) {
     const url_table = {
         twitter: `https://twitter.com/intent/tweet?text=${document.head.querySelector("title").textContent}&url=${location.href}&via=keita_roboin`,
         facebook: `https://www.facebook.com/sharer/sharer.php?u=${location.href}`,
-        line: `https://social-plugins.line.me/lineit/share?url=${location.href}`,
+        line: `https://social-plugins.line.me/lineit/share?url=${location.href}`
     };
     window.open(url_table[type], "_blank");
 }
@@ -50,8 +52,14 @@ menu_icon.addEventListener("click", () => {
 });
 menu_overlay.addEventListener("click", close_menu);
 class ShareButtonElement {
+    button;
+    twitter;
+    facebook;
+    line;
+    copy;
+    more;
+    status_attribute = "data-active";
     constructor() {
-        this.status_attribute = "data-active";
         this.button = this.create_button();
         const overlay = this.create_overlay();
         this.twitter = this.create_twitter();
@@ -151,9 +159,7 @@ class ShareButtonElement {
  */
 function initialize_share_button() {
     const share_button = new ShareButtonElement();
-    document
-        .getElementById("article_container_inner")
-        .appendChild(share_button.button);
+    document.getElementById("article_container_inner").appendChild(share_button.button);
     setTimeout(() => {
         share_button.show();
     }, 1000);
@@ -178,7 +184,7 @@ function initialize_share_button() {
                 return;
             const share_data = {
                 title: document.title || "",
-                url: location.href,
+                url: location.href
             };
             navigator.share(share_data);
         });
