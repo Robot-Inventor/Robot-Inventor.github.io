@@ -4,7 +4,7 @@ import articleDataFile from "../article/article_data.json";
 
 import fs from "fs";
 import cryptoLib from "crypto";
-import metadataParser from "markdown-yaml-metadata-parser";
+import matter from "gray-matter";
 import { marked } from "marked";
 import { qnote } from "qnote-parser";
 import { JSDOM } from "jsdom";
@@ -543,7 +543,7 @@ const compile = async (markdownPath: string) => {
     buildCache.articles[markdownPath].template = templateHash;
     buildCache.articles[markdownPath].updated = dateTime;
 
-    const { metadata, content: markdownWithoutMetadata } = metadataParser(markdown);
+    const { data: metadata, content: markdownWithoutMetadata } = matter(markdown);
     const html = parseMarkdown(markdownWithoutMetadata);
 
     const { window } = new JSDOM(html);
