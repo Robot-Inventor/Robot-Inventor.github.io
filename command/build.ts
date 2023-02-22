@@ -370,7 +370,8 @@ const optimizeImages = async (markdownPath: string, document: Document) => {
         }
 
         const fallback = document.createElement("img");
-        fallback.loading = "lazy";
+        fallback.setAttribute("loading", "lazy");
+        fallback.setAttribute("decoding", "async");
         fallback.src = image.src;
         fallback.alt = image.alt;
         const fallbackResolution = sizeOf(absoluteImagePath);
