@@ -15,14 +15,10 @@
 
 ### MarkdownファイルをHTMLに変換
 
-```powershell
-npm run build-article -- "path/to/article/index.md"
-```
+パスの区切り文字は``/``の代わりに``\``でも可。
 
-### 記事一覧に追加
-
-```powershell
-npm run register-article
+```console
+npm run build-article "path/to/article/index.md"
 ```
 
 ## ToDo
@@ -31,6 +27,6 @@ npm run register-article
 
 - 短い記事の場合、一番下までスクロールしてもサイトロゴや共有ボタンが読み込まれない可能性があるバグ
 
-## Feature
+### Feature
 
 - yt-videoの読み込み中にLoading...という文字を表示する（Loading...という文字を配置し、その上に動画を表示するようにすれば良さそう）
