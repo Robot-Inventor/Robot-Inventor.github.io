@@ -530,7 +530,10 @@ const compile = async (markdownPath: string) => {
     const template = fs.readFileSync(config.template, "utf-8");
     const templateHash = getHash(template);
 
-    if (checkCache(markdownPath, markdownHash, templateHash)) {
+    const isArticleChanged = buildCache.articles[markdownPath].hash !== markdownHash;
+    const isTemplateChanged = buildCache.articles[markdownPath].template !== templateHash;
+
+    if (!isArticleChanged && !isTemplateChanged) {
         console.log(MESSAGE.LOG.NOTHING_CHANGED);
         const articleInfo = {
             createdDate: buildCache.articles[markdownPath].created,
@@ -541,7 +544,9 @@ const compile = async (markdownPath: string) => {
 
     buildCache.articles[markdownPath].hash = markdownHash;
     buildCache.articles[markdownPath].template = templateHash;
-    buildCache.articles[markdownPath].updated = dateTime;
+    if (isArticleChanged) {
+        buildCache.articles[markdownPath].updated = dateTime;
+    }
 
     const { data: metadata, content: markdownWithoutMetadata } = matter(markdown);
     const html = parseMarkdown(markdownWithoutMetadata);
