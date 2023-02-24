@@ -27,7 +27,7 @@
     "image-size": "^1.0.2",
     "jsdom": "^21.0.0",
     "jstoxml": "^3.2.6",
-    "marked": "^4.1.1",
+    "marked": "^4.2.12",
     "normalize-url": "^4.5.1",
     "qnote-parser": "^1.0.2",
     "rss": "^1.2.2",
