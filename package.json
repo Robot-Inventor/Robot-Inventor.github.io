@@ -25,7 +25,7 @@
     "highlight.js": "^11.7.0",
     "html-minifier": "^4.0.0",
     "image-size": "^1.0.2",
-    "jsdom": "^21.0.0",
+    "jsdom": "^21.1.0",
     "jstoxml": "^3.2.6",
     "marked": "^4.2.12",
     "normalize-url": "^4.5.1",
