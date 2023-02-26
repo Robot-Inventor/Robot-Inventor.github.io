@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Icons"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="master_controller">
+            <button id="skip_previous_button" class="material_icon skip_button">
+                skip_previous
+            </button>
+            <button id="play_button" class="material_icon">play_arrow</button>
+            <button id="skip_next_button" class="material_icon skip_button">
+                skip_next
+            </button>
+        </div>
+        <div id="controller_area"></div>
+        <div class="add_controller">
+            <button id="add_controller_button">
+                <span class="material_icon add_controller_button-icon"
+                    >add_circle_outline</span
+                >コントローラーを追加
+            </button>
+        </div>
+        <style>
+            :root {
+                --main_color: #5886df;
+                --text_color: #333333;
+            }
+
+            .material_icon {
+                font-family: "Material Icons";
+                font-weight: normal;
+                font-style: normal;
+                font-size: 24px; /* Preferred icon size */
+                display: inline-block;
+                line-height: 1;
+                text-transform: none;
+                letter-spacing: normal;
+                word-wrap: normal;
+                white-space: nowrap;
+                direction: ltr;
+
+                /* Support for all WebKit browsers. */
+                -webkit-font-smoothing: antialiased;
+                /* Support for Safari and Chrome. */
+                text-rendering: optimizeLegibility;
+
+                /* Support for Firefox. */
+                -moz-osx-font-smoothing: grayscale;
+
+                /* Support for IE. */
+                font-feature-settings: "liga";
+            }
+
+            .master_controller {
+                text-align: center;
+            }
+
+            #play_button {
+                background: none;
+                border: 0.1rem solid var(--main_color);
+                padding: 0.5em;
+                border-radius: 1em;
+                color: var(--main_color);
+                cursor: pointer;
+                font-size: 2rem;
+                transition: 0.3s;
+                margin: 0 1em;
+            }
+
+            #play_button:hover {
+                background: var(--main_color);
+                color: white;
+            }
+
+            .skip_button {
+                background: none;
+                border: none;
+                color: var(--main_color);
+                cursor: pointer;
+                font-size: 2rem;
+            }
+
+            .controller_outer {
+                margin-top: 2em;
+                padding-top: 2em;
+                border-top: 0.1rem solid rgb(125, 125, 125);
+            }
+
+            .controller_item {
+                margin-top: 1em;
+            }
+
+            select {
+                padding: 0.5em 1em;
+            }
+
+            .offset_input {
+                width: 5em;
+                text-align: right;
+                border: none;
+                border-bottom: 0.1rem solid var(--text_color);
+            }
+
+            .add_controller {
+                margin-top: 2em;
+                padding-top: 2em;
+                border-top: 0.1rem solid rgb(125, 125, 125);
+                text-align: center;
+            }
+
+            #add_controller_button {
+                background: none;
+                color: var(--main_color);
+                border: none;
+                font-size: 1.1rem;
+                cursor: pointer;
+            }
+
+            .add_controller_button-icon {
+                vertical-align: top;
+                margin-right: 0.5em;
+            }
+        </style>
+        <script>
+            class GenerateController {
+                constructor(parent_element) {
+                    const document_fragment = document.createDocumentFragment();
+
+                    const file_selector = document.createElement("input");
+                    file_selector.type = "file";
+                    file_selector.accept = "audio/*";
+                    const file_outer = document.createElement("div");
+                    file_outer.className = "controller_item";
+                    file_outer.appendChild(file_selector);
+                    document_fragment.appendChild(file_outer);
+
+                    const device_selector = document.createElement("select");
+                    const selector_outer = document.createElement("div");
+                    selector_outer.className = "controller_item";
+                    selector_outer.appendChild(device_selector);
+                    document_fragment.appendChild(selector_outer);
+
+                    this.generate_device_list(device_selector);
+
+                    const audio = document.createElement("audio");
+                    audio.controls = true;
+                    audio.addEventListener("change", () => {
+                        const files = audio1.files;
+                        if (!files.length) return;
+
+                        const file = files[0];
+                        const file_url = URL.createObjectURL(file);
+
+                        audio.src = file_url;
+                        audio.setSinkId(
+                            device_selector.selectedOptions[0].value
+                        );
+                    });
+                    file_selector.addEventListener("change", () => {
+                        audio.src = URL.createObjectURL(file_selector.files[0]);
+                    });
+                    device_selector.addEventListener("change", () => {
+                        audio.setSinkId(
+                            device_selector.selectedOptions[0].value
+                        );
+                    });
+                    const audio_outer = document.createElement("div");
+                    audio_outer.className = "controller_item";
+                    audio_outer.appendChild(audio);
+                    document_fragment.appendChild(audio_outer);
+                    this.audio = audio;
+
+                    const offset_controller = document.createElement("div");
+                    const offset = document.createTextNode("同期オフセット: ");
+                    offset_controller.appendChild(offset);
+                    const offset_input = document.createElement("input");
+                    offset_input.className = "offset_input";
+                    offset_input.type = "number";
+                    offset_input.value = 0;
+                    offset_controller.appendChild(offset_input);
+                    const ms = document.createTextNode("ms");
+                    offset_controller.className = "controller_item";
+                    offset_controller.appendChild(ms);
+                    document_fragment.appendChild(offset_controller);
+
+                    offset_input.addEventListener("change", () => {
+                        audio.currentTime = offset_input.value / 1000;
+                    });
+                    this.offset_input = offset_input;
+
+                    const outer = document.createElement("div");
+                    outer.className = "controller_outer";
+                    outer.appendChild(document_fragment);
+                    parent_element.appendChild(outer);
+                }
+
+                async generate_device_list(select_element) {
+                    // メディアストリーム音声出力先一覧を適切に取得するには、メディアストリームの許可が必要
+                    try {
+                        await navigator.mediaDevices.getUserMedia({
+                            audio: true,
+                            video: false,
+                        });
+                    } catch {
+                        alert(
+                            "マイクへのアクセスを許可してください。\n\n音声を録音したり送信したりすることはありませんが、ブラウザーの仕様により、音声出力先を取得するためにマイクへのアクセス許可が必要です。"
+                        );
+                    }
+
+                    const devices =
+                        await navigator.mediaDevices.enumerateDevices();
+                    const output_devices = devices.filter(
+                        (device) => device.kind === "audiooutput"
+                    );
+
+                    for (const device of output_devices) {
+                        const option = document.createElement("option");
+                        option.value = device.deviceId;
+                        option.textContent =
+                            device.label || "unknown output device";
+                        select_element.appendChild(option);
+                    }
+                }
+
+                play() {
+                    this.audio.play();
+                }
+
+                pause() {
+                    this.audio.pause();
+                }
+
+                get paused() {
+                    return this.audio.paused;
+                }
+
+                back_to_start() {
+                    const offset = this.offset_input.value / 1000;
+                    this.audio.currentTime = !isNaN(offset) ? offset : 0;
+                }
+
+                go_to_end() {
+                    this.audio.currentTime = this.audio.duration;
+                }
+            }
+
+            const controller_area = document.getElementById("controller_area");
+            const default_controller1 = new GenerateController(controller_area);
+            const default_controller2 = new GenerateController(controller_area);
+            const controllers = [default_controller1, default_controller2];
+
+            const play_button = document.getElementById("play_button");
+            play_button.addEventListener("click", () => {
+                if (controllers[0].paused) {
+                    for (const controller of controllers) {
+                        controller.play();
+                        play_button.textContent = "pause";
+                    }
+                } else {
+                    for (const controller of controllers) {
+                        controller.pause();
+                        play_button.textContent = "play_arrow";
+                    }
+                }
+            });
+
+            const previous_button = document.getElementById(
+                "skip_previous_button"
+            );
+            previous_button.addEventListener("click", () => {
+                for (const controller of controllers) {
+                    controller.back_to_start();
+                }
+            });
+
+            const next_button = document.getElementById("skip_next_button");
+            next_button.addEventListener("click", () => {
+                for (const controller of controllers) {
+                    controller.go_to_end();
+                }
+            });
+
+            const add_button = document.getElementById("add_controller_button");
+            add_button.addEventListener("click", () => {
+                const controller = new GenerateController(controller_area);
+                controllers.push(controller);
+            });
+        </script>
+    </body>
+</html>
