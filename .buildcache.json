@@ -180,10 +180,10 @@
         },
         "notice/index.md": {
             "created": "2021-06-13T23:28:51.664",
-            "hash": "bf61009b3c39d8a227416941214d2d6966c43b2ba671e74b2972f1f7544f06bf",
-            "updated": "2023-02-15T17:36:59.510",
+            "hash": "715d130b79a166d85cfaa60e676ba6501b8d7717a0e7b917fccbbfc2211f8e72",
+            "updated": "2023-06-01T19:39:53.561+09:00",
             "images": {},
-            "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
+            "template": "9c99cc01d775cc8ab9e00c84478347d909ac6d24683fcef593fa8338513f916c"
         },
         "article/2021/06/15/index.md": {
             "created": "2021-06-15T00:00:00.000",
@@ -516,6 +516,33 @@
                 "2023-02-15-00-04-00.png": "8e2d3c6b251a9ed60bafb6860b12a177f26a7913f7691d3fbee5bdd911cdc308"
             },
             "template": "b584d7aeffb1e73356fd5bae87fababf8177eb60df5e6d121d1a875c9e353bf9"
+        },
+        "article/2023/06/01/google-search-labs/index.md": {
+            "created": "2023-06-01T19:34:11.518+09:00",
+            "hash": "4a5d3afda2d175b85043b32e05e85a27b3f8e65f4d8a76f39e4c06a2d615b887",
+            "template": "9c99cc01d775cc8ab9e00c84478347d909ac6d24683fcef593fa8338513f916c",
+            "updated": "2023-06-01T19:34:11.518+09:00",
+            "images": {
+                "2023-05-31-11-02-23.png": "e1e41a05ea8b6a4c0daa34db9e41419e0b50232beb3cb662d4c043ab48f6b869",
+                "2023-05-31-11-09-32.png": "dffc7ed7e30b0817517e4f30268fd8476a64878dc264520f4f43be37590021c1",
+                "2023-05-31-11-12-41.png": "4fd8bd0c7b42ba25a9368fff65c20b6a1ac7708bf1bd81d9274b8ffd3198512a",
+                "2023-05-31-11-18-19.png": "f4b4f2443dc219f060e62ce74aeac838da9e925af1ff420e88c462fd51e3179d",
+                "2023-05-31-11-19-21.png": "46480108ac43c035e524fe8b2c604b3f10cbbac09f862aad8733d05f619b4469",
+                "2023-05-31-11-23-32.png": "ed7c4e4bed51fc29e6b266093f01b0725c981eb492e63f7fe1f6f8204efe1709",
+                "2023-05-31-11-39-04.png": "add81a75fe782e66fa3ab416ca2d7d9be53fee55cee47d8ea288d93156d5afc8",
+                "2023-05-31-11-21-36.png": "ce5e6226ad731c79e0e93634faa638f09df9aa9cdea0c7206d9af9feed508f12",
+                "2023-05-31-11-37-24.png": "2ca5aebf41c68f81a66d0760ecd776a8d1d4d30828cf82559c19d394c9adab27",
+                "2023-05-31-11-43-42.png": "82ce3fc6e431fa8c55d0668970660bf5b755c239c63991f35eea4595ccead65a",
+                "2023-05-31-11-48-46.png": "b461494c7fd6ce60cd8e3c2d98e94c4233db0b734dd78114bc2090bd70062f37",
+                "2023-05-31-11-52-03.png": "cc1ab513fbaeec2d4b835e2f62843c03875313d86ad54aad27da543eaa5d3669",
+                "2023-05-31-11-55-17.png": "818fbaf62ef8698a1db29d7f10965ab6ae113a3e329db9cf218f97599a9d7787",
+                "2023-05-31-12-05-25.png": "c506266ad3394a2dec4ca267a723dc52286015add4d7d69f6607b8f637b3ae3a",
+                "2023-05-31-12-10-08.png": "125a3c2f50076422260af46f4b2f32405c12c327f520531f687ca4ee3454e8b2",
+                "2023-06-01-18-39-30.png": "a43dd45e9cc6a9be529bec7a782d4271f6ba87b84950e54d0e0f4a399423198f",
+                "2023-06-01-18-43-16.png": "65516e348549cffd18446c6683dcba1546816660221113a7770ce878705bb3a2",
+                "2023-06-01-18-56-12.png": "a9c1d4d90092ba3eb2d1e98bddfa18d97a8551fc08654ea5c4596413e4278993",
+                "2023-06-01-18-59-31.png": "2d942506816af970f79202366c98fa787cf60d512b17291bec2e215695fcfeb5"
+            }
         }
     }
 }
