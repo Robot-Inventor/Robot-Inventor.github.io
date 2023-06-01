@@ -6,6 +6,10 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/06/01　サイト更新情報
+
+新しい記事「[Google検索がAI搭載で進化！　Search Labsを日本最速レビュー](article/2023/06/01/google-search-labs/index.md)」を公開しました。
+
 ## 2023/02/15　サイト更新情報
 
 新しい記事「[BingとEdgeにChatGPTが搭載！AIとチャットで検索できる新機能の魅力と限界](/article/2023/02/15/what-the-new-bing-ai-can-do/)」を公開しました。
