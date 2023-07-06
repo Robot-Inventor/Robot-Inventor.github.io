@@ -4,10 +4,17 @@
         <description><![CDATA[Robot InventorのRSSフィードです。最新の20件の記事をお知らせします。]]></description>
         <link>https://robot-inventor.github.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 01 Jun 2023 10:36:53 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 06 Jul 2023 01:03:46 GMT</lastBuildDate>
         <atom:link href="https://robot-inventor.github.io/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[Copyright (C) 2023 Robot-Inventor All rights reserved.]]></copyright>
         <language><![CDATA[ja]]></language>
+        <item>
+            <title><![CDATA[MetaのTwitter対抗SNS「Threads」の登録方法と使い方を解説！]]></title>
+            <description><![CDATA[日本時間2023年7月6日、Instagramの運営のMetaによるTwitter対抗SNS「Threads」がリリースされました。この記事では、Threadsの登録方法や使い方を画像付きで分かりやすく解説します。]]></description>
+            <link>https://robot-inventor.github.io/article/2023/07/06/meta-twitter-competing-app-threads</link>
+            <guid isPermaLink="true">https://robot-inventor.github.io/article/2023/07/06/meta-twitter-competing-app-threads</guid>
+            <pubDate>Thu, 06 Jul 2023 01:02:25 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Google検索がAI搭載で進化！　Search Labsを日本最速レビュー]]></title>
             <description><![CDATA[AIの統合など、Google検索の新機能を試せるGoogle Search Labsが一部のユーザー限定で公開されました。この記事では、Search Labsの新機能を実際に使ってみて、日本最速でレビューします。]]></description>
@@ -140,13 +147,6 @@
             <link>https://robot-inventor.github.io/article/2022/03/13/hololive-dictionary</link>
             <guid isPermaLink="true">https://robot-inventor.github.io/article/2022/03/13/hololive-dictionary</guid>
             <pubDate>Sat, 12 Mar 2022 17:34:20 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[オススメの拡張機能20選]]></title>
-            <description><![CDATA[Webブラウザーは拡張機能をインストールすることで機能を増やせます。この記事では、オススメの拡張機能を紹介します。]]></description>
-            <link>https://robot-inventor.github.io/article/2022/02/18</link>
-            <guid isPermaLink="true">https://robot-inventor.github.io/article/2022/02/18</guid>
-            <pubDate>Fri, 18 Feb 2022 08:18:46 GMT</pubDate>
         </item>
     </channel>
 </rss>
