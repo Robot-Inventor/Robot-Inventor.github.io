@@ -117,7 +117,7 @@ type Metadata = Partial<{
 
 interface MetadataValidationResult {
     result: boolean;
-    message: typeof MESSAGE.ERROR[keyof typeof MESSAGE.ERROR][];
+    message: (typeof MESSAGE.ERROR)[keyof typeof MESSAGE.ERROR][];
 }
 
 interface TemplateValues {
@@ -443,7 +443,10 @@ const documentToMinifiedHtml = (document: Document) => {
 
 const updateSitemap = () => {
     const content = Object.keys(buildCache.articles).map((key) => {
-        const relativePath = normalizeUrl(`${ROOT_URL}/${path.dirname(key)}/${path.parse(key).name}.html`);
+        const relativePath = normalizeUrl(`${ROOT_URL}/${path.dirname(key)}/${path.parse(key).name}.html`).replace(
+            /index\.html$/g,
+            ""
+        );
         return {
             url: {
                 loc: relativePath,
