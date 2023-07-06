@@ -56,6 +56,8 @@ Mastodonとやり取りできるという文言から、Threadsが将来的にAc
 
 Instagramでフォローしているアカウントをまとめてフォローする画面が表示されるので、必要であればフォローしておきましょう。
 
+なお、現時点では複数のアカウントに同時にログインする機能は提供されていません。アカウントを切り替えるには、画面右下のアイコンからプロフィールを表示し、右上のメニューから［ログアウト］して別のアカウントでログインし直す必要があります。
+
 ## Threadsの使い方
 
 Threadsのホーム画面には、まだ何も表示されていないかもしれません。最初に、何かを投稿してみましょう。
@@ -65,6 +67,8 @@ Threadsのホーム画面には、まだ何も表示されていないかもし�
 画面下部に表示されているメニューの中央のボタンをタップすると、投稿画面が表示されます。好きなテキストを入力して投稿してみましょう！
 
 Threadsでは、Twitterと同様に、複数の投稿をつなげるスレッド機能を利用できます。また、画面下部の［すべての人が返信できます］をタップすると、どのアカウントが投稿に返信できるかを設定できます。
+
+クリップのアイコンをタップすると画像を最大で10枚まで添付できます。
 
 ![Threadsの投稿画面](F0Tw1ykacAEsmZk.jpg)
 
@@ -79,6 +83,10 @@ Threadsのアカウントを作成したあとにInstagramアプリを開くと�
 この番号をタップすると、自分が何番目にThreadsのアカウントを作成したかを確認できます。このバッジは期間限定で表示されるようです。私は60846番目でした。
 
 ![Instagramの画面](F0Ty2JYaIAE9Apr.jpg)
+
+また、Instagramで「Threads」と検索すると、Threadsのチケットが表示されます。アカウントによっては表示されないこともありますが、表示されなくてもThreadsのアカウントを作成できます。
+
+<blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="ja" dir="ltr">Instagramで「Threads」で検索するとチケットとカウントダウンが表示されるようになってる！！アカウントによって表示されたりされなかったりするみたい <a href="https://t.co/sCSWMPNzfc">pic.twitter.com/sCSWMPNzfc</a></p>&mdash; ろぼいん@一般人 (@keita_roboin) <a href="https://twitter.com/keita_roboin/status/1676640072001806337?ref_src=twsrc%5Etfw">July 5, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## まとめ
 
