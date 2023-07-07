@@ -1,17 +1,28 @@
 ---
 description: 日本時間2023年7月6日、Instagramの運営のMetaによるTwitter対抗SNS「Threads」がリリースされました。この記事では、Threadsの登録方法や使い方を画像付きで分かりやすく解説します。
 ---
-# MetaのTwitter対抗SNS「Threads」の登録方法と使い方を解説！
+# MetaのTwitter対抗SNS「Threads」の登録方法や使い方、注意点を解説！
 
 ## Threadsとは？
 
 [Threads](https://www.threads.net/)は、Instagramの運営元のMeta（旧Facebook）が開発したテキストベースのSNSです。Instagramからユーザー名やフォローしているアカウントをそのまま引き継げます。
 
-ThreadsはTwitterの対抗のSNSとして注目されており、Twitterがログインしていないと閲覧できなくなったり、1日の閲覧数に制限がかかったりした直後に発表されました。
+ThreadsはTwitterの対抗のSNSとして注目されており、Twitterがログインしていないと[閲覧できなく](https://www.techno-edge.net/article/2023/07/02/1528.html)なったり、1日の閲覧数に[制限](https://k-tai.watch.impress.co.jp/docs/news/1513249.html)がかかったりした直後に発表されました。
 
 日本時間2023年7月6日午後11時にリリースが予告されていましたが、前倒しされ、午前8時ごろから利用可能になりました。
 
-将来的にはMastodonやMisskeyで採用されているActivityPubに対応し、これらのSNSと相互運用できるようになる予定です。
+将来的には[Mastodon](https://joinmastodon.org/ja)や[Misskey](https://join.misskey.page/ja-JP/)で採用されている[ActivityPub](https://www.w3.org/TR/activitypub/)に対応し、これらのSNSと相互運用できるようになる予定です。
+
+## Threadsの注意点
+
+記事執筆時点では、Threadsを使う際の注意点として、次のようなものが挙げられます。
+
+- Instagramアカウントがないと使えません
+- Threadsのアカウントを削除するにはInstagramのアカウントを削除する必要があります
+- Twitterのような「メディア欄」「いいね欄」はありません
+- 再投稿（Twitterのリツイート機能に相当）をしたユーザーやその人数は分かりません
+- フォローしている人の投稿だけを表示するタイムラインはありません
+- 詐欺など、[悪質な商業利用](https://www.itmedia.co.jp/news/articles/2307/06/news135.html)はできません
 
 ## Threadsの登録方法
 
@@ -75,6 +86,10 @@ Threadsでは、Twitterと同様に、複数の投稿をつなげるスレッド
 また、ThreadsではInstagramと違って投稿にリンクを含めることができます。
 
 ![投稿にリンクを含めたようす](F0Tw3SLaMAAzUW1.jpg)
+
+さらに、Threadsの投稿はInstagramのストーリーやフィードでシェアできます。詳細については、こちらの記事をご覧ください。
+
+<article-card link="/article/2023/07/07/share-threads-to-instagram/" article-title="Threadsの投稿をInstagramのストーリーやフィードにシェアする方法" description="ThreadsはInstagramの運営元のMetaが最近公開した、テキストベースのSNSです。利用するにはInstagramのアカウントが必要ですが、Threadsの投稿はInstagramには表示されません。この記事では、Threadsの投稿をInstagramのストーリーやフィードにシェアする方法を、画像付きで分かりやすく解説します。" thumbnail="/article/2023/07/07/share-threads-to-instagram/threads_top_page.png"></article-card>
 
 ## おまけ
 
