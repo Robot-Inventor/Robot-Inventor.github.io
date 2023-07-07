@@ -144,6 +144,20 @@ interface ArticleData {
     };
 }
 
+interface StructuredDataParameters {
+    url: string;
+    title: string;
+    description: string;
+    images: string[];
+    author: {
+        name: string;
+        url: string;
+        sameAs: string;
+    };
+    datePublished: string;
+    dateModified: string;
+}
+
 const buildCache: BuildCache = buildCacheFile;
 const articleData: ArticleData = articleDataFile;
 
@@ -478,6 +492,32 @@ const loadComponentScript = (document: Document) => {
     }
 };
 
+const addStructuredData = (document: Document, parameters: StructuredDataParameters) => {
+    const structuredData = `
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "${parameters.url}"
+      },
+      "headline": "${parameters.title}",
+      "description": "${parameters.description}",
+      "image": [${parameters.images.map((image) => `"${image}"`).join(", ")}],
+      "author": {
+        "@type": "Person",
+        "name": "${parameters.author.name}",
+        "url": "${parameters.author.url}",
+        "sameAs": "${parameters.author.sameAs}"
+      },
+      "datePublished": "${parameters.datePublished}",
+      "dateModified": "${parameters.dateModified}"
+    }
+</script>`.trim();
+    document.head.insertAdjacentHTML("beforeend", structuredData);
+};
+
 const updateRss = (articleData: ArticleData) => {
     const rss = new RSS(RSS_OPTION);
     const createdDates = Object.keys(articleData).slice(0, MAX_NUMBER_OF_RSS_ITEMS);
@@ -600,6 +640,21 @@ const compile = async (markdownPath: string) => {
     applySyntaxHighlight(compiledDocument);
     // コンポーネントのスクリプトはbody閉じタグの直前に挿入するため、テンプレートの適用後に実行する必要がある。理由は上と同じ。
     loadComponentScript(compiledDocument);
+
+    const structuredDataParameters: StructuredDataParameters = {
+        title,
+        description: metadata.description,
+        images: [...new JSDOM(html).window.document.querySelectorAll("img")].map((img) => img.src),
+        url: pageUrl,
+        author: {
+            name: metadata.author || config.default_author,
+            url: metadata.author_url || config.default_author_url,
+            sameAs: metadata.author_sameas || config.default_author_sameas
+        },
+        datePublished: buildCache.articles[markdownPath].created,
+        dateModified: buildCache.articles[markdownPath].updated
+    };
+    addStructuredData(compiledDocument, structuredDataParameters);
 
     const minifiedHtml = documentToMinifiedHtml(compiledDocument);
 

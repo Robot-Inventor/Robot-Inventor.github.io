@@ -5,5 +5,7 @@
     "sitemap": "sitemap.xml",
     "twitter_id": "keita_roboin",
     "default_author": "Robot-Inventor",
+    "default_author_url": "https://robot-inventor.github.io/",
+    "default_author_sameas": "https://twitter.com/keita_roboin",
     "default_thumbnail": "https://robot-inventor.github.io/src/icon/ogp_default_thumbnail.png"
 }
