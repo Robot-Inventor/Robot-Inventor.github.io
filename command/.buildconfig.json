@@ -1,6 +1,7 @@
 {
     "site_name": "Robot Inventor",
     "site_name_short": "Robot Inventor",
+    "root_url": "https://robot-inventor.github.io/",
     "template": "src/html/template.html",
     "sitemap": "sitemap.xml",
     "twitter_id": "keita_roboin",

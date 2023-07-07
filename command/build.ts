@@ -498,6 +498,9 @@ const addStructuredData = (document: Document, parameters: StructuredDataParamet
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
+      "url": "${config.root_url}",
+      "name": "${config.site_name}",
+      "alternateName": "${config.site_name_short}",
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "${parameters.url}"
