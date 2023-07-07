@@ -4,10 +4,17 @@
         <description><![CDATA[Robot InventorのRSSフィードです。最新の20件の記事をお知らせします。]]></description>
         <link>https://robot-inventor.github.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 06 Jul 2023 01:03:46 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 07 Jul 2023 14:58:42 GMT</lastBuildDate>
         <atom:link href="https://robot-inventor.github.io/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[Copyright (C) 2023 Robot-Inventor All rights reserved.]]></copyright>
         <language><![CDATA[ja]]></language>
+        <item>
+            <title><![CDATA[Threadsの投稿をInstagramのストーリーやフィードにシェアする方法]]></title>
+            <description><![CDATA[ThreadsはInstagramの運営元のMetaが最近公開した、テキストベースのSNSです。利用するにはInstagramのアカウントが必要ですが、Threadsの投稿はInstagramには表示されません。この記事では、Threadsの投稿をInstagramのストーリーやフィードにシェアする方法を、画像付きで分かりやすく解説します。]]></description>
+            <link>https://robot-inventor.github.io/article/2023/07/07/share-threads-to-instagram</link>
+            <guid isPermaLink="true">https://robot-inventor.github.io/article/2023/07/07/share-threads-to-instagram</guid>
+            <pubDate>Fri, 07 Jul 2023 14:58:26 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[MetaのTwitter対抗SNS「Threads」の登録方法と使い方を解説！]]></title>
             <description><![CDATA[日本時間2023年7月6日、Instagramの運営のMetaによるTwitter対抗SNS「Threads」がリリースされました。この記事では、Threadsの登録方法や使い方を画像付きで分かりやすく解説します。]]></description>
@@ -140,13 +147,6 @@
             <link>https://robot-inventor.github.io/article/2022/03/29/firefox-overlay-scrollbar</link>
             <guid isPermaLink="true">https://robot-inventor.github.io/article/2022/03/29/firefox-overlay-scrollbar</guid>
             <pubDate>Mon, 28 Mar 2022 16:07:35 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Hololiveメンバーの名前をユーザー辞書に登録して変換しやすくする]]></title>
-            <description><![CDATA[Hololiveメンバーの名前・推しマーク・ハッシュタグ・ファンネーム・TwitterのIDを変換で出せるようにするユーザー辞書を紹介します。]]></description>
-            <link>https://robot-inventor.github.io/article/2022/03/13/hololive-dictionary</link>
-            <guid isPermaLink="true">https://robot-inventor.github.io/article/2022/03/13/hololive-dictionary</guid>
-            <pubDate>Sat, 12 Mar 2022 17:34:20 GMT</pubDate>
         </item>
     </channel>
 </rss>

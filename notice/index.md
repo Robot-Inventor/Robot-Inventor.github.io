@@ -6,6 +6,10 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/07/07　サイト更新情報
+
+新しい記事「[Threadsの投稿をInstagramのストーリーやフィードにシェアする方法](/article/2023/07/07/share-threads-to-instagram/)」を公開しました。
+
 ## 2023/07/06　サイト更新情報
 
 新しい記事「[MetaのTwitter対抗SNS「Threads」の登録方法と使い方を解説！](/article/2023/07/06/meta-twitter-competing-app-threads/)」を公開しました。
