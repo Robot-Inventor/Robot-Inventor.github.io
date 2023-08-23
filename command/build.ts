@@ -495,28 +495,33 @@ const loadComponentScript = (document: Document) => {
 const addStructuredData = (document: Document, parameters: StructuredDataParameters) => {
     const structuredData = `
 <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "url": "${config.root_url}",
-      "name": "${config.site_name}",
-      "alternateName": "${config.site_name_short}",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "${parameters.url}"
-      },
-      "headline": "${parameters.title}",
-      "description": "${parameters.description}",
-      "image": [${parameters.images.map((image) => `"${image}"`).join(", ")}],
-      "author": {
-        "@type": "Person",
-        "name": "${parameters.author.name}",
-        "url": "${parameters.author.url}",
-        "sameAs": "${parameters.author.sameAs}"
-      },
-      "datePublished": "${parameters.datePublished}",
-      "dateModified": "${parameters.dateModified}"
-    }
+    [
+        {
+            "@context" : "https://schema.org",
+            "@type" : "WebSite",
+            "name" : "${config.site_name}",
+            "url" : "${config.root_url}"
+        },
+        {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "${parameters.url}"
+        },
+        "headline": "${parameters.title}",
+        "description": "${parameters.description}",
+        "image": [${parameters.images.map((image) => `"${image}"`).join(", ")}],
+        "author": {
+            "@type": "Person",
+            "name": "${parameters.author.name}",
+            "url": "${parameters.author.url}",
+            "sameAs": "${parameters.author.sameAs}"
+        },
+        "datePublished": "${parameters.datePublished}",
+        "dateModified": "${parameters.dateModified}"
+        }
+    ]
 </script>`.trim();
     document.head.insertAdjacentHTML("beforeend", structuredData);
 };
