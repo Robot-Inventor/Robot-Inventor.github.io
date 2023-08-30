@@ -1,5 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
+import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
     frontmatter: {
@@ -100,9 +101,10 @@ const schema = JSON.stringify([
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@keita_roboin" />
         <script type="application/ld+json" set:html={schema}></script>
+        <ViewTransitions />
     </head>
     <body>
-        <header>
+        <header transition:persist>
             <button id="menu_icon" title="メニュー">
                 <div id="menu_icon_line_top"></div>
                 <div id="menu_icon_line_center"></div>
