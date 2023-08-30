@@ -1,8 +1,11 @@
 ---
 description: Raspberry Pi 4 Model Bの発売に合わせ、新しいRaspberry Pi用OSがリリースされました。最新のOSに更新しましょう。
+title: Raspberry Pi 4 Model B発売！そして、OSをBusterへ更新しよう
+pubDate: "2020-01-16T00:00:00.000+09:00"
+modifiedDate: "2022-03-14T01:53:24.301+09:00"
+author: ろぼいん
+thumbnail: ./file_manager.png
 ---
-
-# Raspberry Pi 4 Model B発売！そして、OSをBusterへ更新しよう
 
 :::note info
 この記事は、私がQiitaに投稿したものに少し変更を加えたものです。[この記事をQiitaで読む](https://qiita.com/Robot-Inventor/items/b565e323b94fc2985ec0)
@@ -130,7 +133,7 @@ $ sudo apt purge timidity lxmusic gnome-disk-utility deluge-gtk evince wicd wicd
 これで、Raspbian Busterを導入できました。
 証拠↓（neofetchは、システムの情報とOSのロゴのアスキーアートを表示してくれます。興味があったらインストールしてみてください）
 
-![Raspberry Piの情報が表示された画面](terminal.png)
+![Raspberry Piの情報が表示された画面](./terminal.png)
 
 OSの欄に"buster"と表示されています。
 
@@ -168,4 +171,4 @@ Raspbian Stretchから変更された点を気付き次第追記します。
 
 久しぶりにsudo apt updateとsudo apt upgradeをしてみたらカーネルが4.19.66に更新され、ファイルマネージャーのアイコンのデザインが変わりました。また、それに伴い、デスクトップに置いているファイルのアイコンも変わりました。さらに、起動時にDebianロゴが表示されなくなりました。新デザインは、画像のような感じです。
 
-![ファイルマネージャーのスクリーンショット](file_manager.png)
+![ファイルマネージャーのスクリーンショット](./file_manager.png)

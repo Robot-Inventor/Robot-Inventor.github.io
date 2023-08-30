@@ -1,10 +1,13 @@
 ---
 description: VTuber向けのフリー素材を配布します。ロゴや立ち絵の背景素材としてどうぞ！！必ず利用条件を確認のうえ、ご利用ください。カラーバリエーションは記事の末尾の素材一覧にまとめてあります。
+title: 【VTuber向けフリー素材】ロゴや立ち絵用の背景素材を配布します！
+pubDate: "2022-10-10T00:53:53.210+09:00"
+modifiedDate: "2022-10-10T00:55:42.823+09:00"
+author: ろぼいん
+thumbnail: ./blue.png
 ---
 
-# 【VTuber向けフリー素材】ロゴや立ち絵用の背景素材を配布します！
-
-![フリー素材　青バージョン](blue.png)
+[![フリー素材　青バージョン](./blue.png)](/download/logo-background-materials-for-vtubers/blue.png)
 
 VTuber向けのフリー素材を配布します。ロゴや立ち絵の背景素材としてどうぞ！！必ず利用条件を確認のうえ、ご利用ください。カラーバリエーションは記事の末尾の素材一覧にまとめてあります。
 
@@ -16,7 +19,7 @@ VTuber向けのフリー素材を配布します。ロゴや立ち絵の背景�
 
 ※使用例の画像および「ろぼいん」ロゴは、フリー素材ではありません。
 
-![フリー素材の使用例](sample.png)
+![フリー素材の使用例](./sample.png)
 
 ## 利用条件
 
@@ -32,12 +35,12 @@ VTuber向けのフリー素材を配布します。ロゴや立ち絵の背景�
 
 ※重要：以下の画像はプレビューのため、そのままダウンロードしても低画質だったり、開けなかったりする可能性があります。**画像を1度クリックしてから**、開いた画面で保存してください。
 
-![フリー素材　青バージョン](blue.png)
+[![フリー素材　青バージョン](./blue.png)](/download/logo-background-materials-for-vtubers/blue.png)
 
-![フリー素材　赤バージョン](red.png)
+[![フリー素材　赤バージョン](./red.png)](/download/logo-background-materials-for-vtubers/red.png)
 
-![フリー素材　オレンジバージョン](orange.png)
+[![フリー素材　オレンジバージョン](./orange.png)](/download/logo-background-materials-for-vtubers/orange.png)
 
-![フリー素材　紫バージョン](purple.png)
+[![フリー素材　紫バージョン](./purple.png)](/download/logo-background-materials-for-vtubers/purple.png)
 
-![フリー素材　緑バージョン](green.png)
+[![フリー素材　緑バージョン](./green.png)](/download/logo-background-materials-for-vtubers/green.png)

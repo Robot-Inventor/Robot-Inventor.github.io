@@ -1,14 +1,17 @@
 ---
 description: Inkscapeで作成したSVGから個人情報流出の可能性があることに気づいたので記事にしました。
+title: Inkscapeで作成したSVGから個人情報流出の可能性
+pubDate: "2020-05-12T00:00:00.000+09:00"
+modifiedDate: "2022-04-05T23:03:49.448+09:00"
+author: ろぼいん
+thumbnail: ./computer-1591018_1920.jpg
 ---
-
-# Inkscapeで作成したSVGから個人情報流出の可能性
 
 :::note info
 この記事と同じ内容を[Qiita](https://qiita.com/Robot-Inventor/items/f7d18438de290a250051)にも投稿してあります。
 :::
 
-![パソコンの上に南京錠が置かれた画像](computer-1591018_1920.jpg)
+![パソコンの上に南京錠が置かれた画像](./computer-1591018_1920.jpg)
 
 [今日の別の記事](https://robot-inventor.github.io/article/2020/05/12/)にも書きましたが、このブログのAMP化の作業をしました。そのとき、SVGファイルをテキストエディターで開いたら個人情報が含まれていたので記事にしました。
 

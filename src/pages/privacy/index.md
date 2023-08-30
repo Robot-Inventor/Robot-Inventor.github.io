@@ -1,8 +1,11 @@
 ---
+layout: ../../layouts/Layout.astro
+title: プライバシーポリシー
 description: Robot Inventorのサイトのプライバシーポリシーです。
+pubDate: "2021-06-08T01:27:01.84+09:00"
+modifiedDate: "2021-06-15T01:10:24.363+09:00"
+author: ろぼいん
 ---
-
-# プライバシーポリシー
 
 Robot Inventor　ブログ（以降、「本サイト」とします）では、サイトの分析と改善のためにGoogleアナリティクスを使用しています。 その際、データ収集のためにGoogleがお使いのブラウザーにCookieの設定および既存のCookieの読み取り等をする場合があります。
 

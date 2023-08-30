@@ -1,8 +1,11 @@
 ---
+layout: ../../layouts/Layout.astro
+title: Robot Inventor　ブログ　利用規約
 description: Robot Inventorのサイトの利用規約です。
+pubDate: "2021-06-08T01:16:02.518+09:00"
+modifiedDate: "2021-06-15T01:09:47.330+09:00"
+author: ろぼいん
 ---
-
-# Robot Inventor　ブログ　利用規約
 
 ## 第1条　効力の及ぶ範囲
 

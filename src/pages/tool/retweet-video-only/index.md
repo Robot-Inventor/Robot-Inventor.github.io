@@ -1,10 +1,14 @@
 ---
+layout: ../../../layouts/Layout.astro
+title: 動画だけ引用リツイートするツール
 description: Twitterには、動画だけを引用してリツイートできる機能があります。このツールに引用元ツイートのURLを貼り付けると、動画だけを引用したツイートの作成画面が開きます。
+thumbnail: ./thumbnail.png
+author: ろぼいん
+pubDate: "2022-07-31T11:25:14.918+09:00"
+modifiedDate: "2022-07-31T12:19:06.701+09:00"
 ---
 
-# 動画だけ引用リツイートするツール
-
-![ロゴ](thumbnail.png)
+![ロゴ](./thumbnail.png)
 
 <input type="url" placeholder="ここにツイートのURLを貼り付ける" id="tweet_url_textbox" autofocus="">
 <button id="open_twitter_button">ツイート画面を開く</button>
@@ -48,7 +52,44 @@ description: Twitterには、動画だけを引用してリツイートできる
     }
 </style>
 
-<script src="script.js"></script>
+<script>
+    const open_twitter_button = document.getElementById("open_twitter_button");
+    const tweet_url_text_box = document.getElementById("tweet_url_textbox");
+
+    open_twitter_button.addEventListener("click", () => {
+        const tweet_url = tweet_url_text_box.value.trim();
+        if (!tweet_url.length) {
+            alert("テキストボックスに元ツイートのURLを入力してください");
+            return;
+        }
+
+        try {
+            const url_parser = new URL(tweet_url);
+            if (
+                !["mobile.twitter.com", "twitter.com"].includes(url_parser.hostname)
+            ) {
+                alert(
+                    "TwitterではないURLが検出されました。TwitterのURLを入力してください"
+                );
+                return;
+            }
+
+            const video_url = `${url_parser.origin}${url_parser.pathname.replace(
+                /\/$/,
+                ""
+            )}/video/1`;
+            window.open(
+                `https://twitter.com/intent/tweet?url=${video_url}`,
+                "_blank"
+            );
+        } catch (error) {
+            alert(
+                `エラーが発生しました。正しいURLを入力しているか確認してください。\n\nエラーメッセージ：\n${error.message}`
+            );
+            console.error(error);
+        }
+    });
+</script>
 
 ## 説明
 

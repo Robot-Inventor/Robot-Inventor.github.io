@@ -1,10 +1,13 @@
 ---
 description: 通信を暗号化してセキュリティーを高めてくれる人気のブラウザー拡張機能「HTTPS Everywhere」が2023年1月に廃止されます。現在はメンテナンスモードに移行しており、廃止までにブラウザー標準搭載の機能に移行することが推奨されます。
+title: HTTPS Everywhereが2023年に廃止　ブラウザー標準の機能に移行しよう
+pubDate: "2022-08-12T18:30:50.348+09:00"
+modifiedDate: "2022-08-12T18:41:35.93+09:00"
+author: ろぼいん
+thumbnail: ./2022-08-12-18-29-05.png
 ---
 
-# HTTPS Everywhereが2023年に廃止　ブラウザー標準の機能に移行しよう
-
-![HTTPS Everywhereの公式サイトのスクリーンショット](2022-08-12-18-29-05.png)
+![HTTPS Everywhereの公式サイトのスクリーンショット](./2022-08-12-18-29-05.png)
 [https://www.eff.org/https-everywhere](https://www.eff.org/https-everywhere)
 
 ## この記事の要約
@@ -62,9 +65,9 @@ HTTPS Everywhereの代わりに、今後はブラウザーに標準搭載され�
 
 詳細：[Chrome の安全性とセキュリティを管理する - パソコン - Google Chrome ヘルプ](https://support.google.com/chrome/answer/10468685?hl=ja&co=GENIE.Platform%3DDesktop)
 
-![Chromeのスクリーンショット1](2022-08-12-17-28-42.png)
+![Chromeのスクリーンショット1](./2022-08-12-17-28-42.png)
 
-![Chromeのスクリーンショット2](2022-08-12-17-27-03.png)
+![Chromeのスクリーンショット2](./2022-08-12-17-27-03.png)
 
 ### Mozilla Firefox
 
@@ -76,7 +79,7 @@ HTTPS Everywhereの代わりに、今後はブラウザーに標準搭載され�
 
 詳細：[Firefox の HTTPS-Only モード | Firefox ヘルプ](https://support.mozilla.org/ja/kb/https-only-prefs)
 
-![Firefoxのスクリーンショット](2022-08-12-17-19-55.png)
+![Firefoxのスクリーンショット](./2022-08-12-17-19-55.png)
 
 ### Safari
 

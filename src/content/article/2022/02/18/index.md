@@ -1,8 +1,11 @@
 ---
 description: Webブラウザーは拡張機能をインストールすることで機能を増やせます。この記事では、オススメの拡張機能を紹介します。
+title: オススメの拡張機能20選
+pubDate: "2022-02-18T17:24:18.909+09:00"
+modifiedDate: "2022-03-13T17:47:49.291+09:00"
+author: ろぼいん
+thumbnail: ./stylus.png
 ---
-
-# オススメの拡張機能20選
 
 Webブラウザーは[拡張機能](https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/What_are_WebExtensions)をインストールすることで機能を増やせます。この記事では、オススメの拡張機能20選を紹介します。すべて無料で使えますので、ぜひインストールしてみてください。
 
@@ -23,7 +26,7 @@ Webブラウザーは[拡張機能](https://developer.mozilla.org/ja/docs/Mozill
 
 ### Audio Equalizer
 
-![Audio Equalizer](audio_equalizer.png)
+![Audio Equalizer](./audio_equalizer.png)
 
 イコライザーです。ブラウザーで音楽を聴く人にオススメです。20個ほどのプリセットが登録されており、プリセットの追加もできます。
 
@@ -42,7 +45,7 @@ Webブラウザーは[拡張機能](https://developer.mozilla.org/ja/docs/Mozill
 
 ### Auto Tab Discard
 
-![Auto Tab Discard](auto_tab_discard.png)
+![Auto Tab Discard](./auto_tab_discard.png)
 
 使っていないタブをスリープ（[*discard*](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/discard)）状態にして、CPUやメモリーの使用量を削減してくれる拡張機能です。どのようなタブをスリープ状態にするか細かく設定できます。Firefox版とChrome版で提供元の名前が違いますが、GitHubリポジトリーの[Download Links](https://github.com/rNeomy/auto-tab-discard#download-links)に掲載されているためどちらも公式と思われます。
 
@@ -61,7 +64,7 @@ Webブラウザーは[拡張機能](https://developer.mozilla.org/ja/docs/Mozill
 
 ### CopyTabTitleUrl
 
-![CopyTabTitleUrl](copy_tab_title_url.png)
+![CopyTabTitleUrl](./copy_tab_title_url.png)
 
 SNSで記事をシェアすることが多い人や、参考文献を書くことが多い人にオススメの拡張機能です。開いているWebページのタイトル、URLまたはその両方をコピーできます。[Markdown](https://ja.wikipedia.org/wiki/Markdown)形式でのコピーにも対応しています。
 
@@ -80,7 +83,7 @@ SNSで記事をシェアすることが多い人や、参考文献を書くこ�
 
 ### Dark Reader
 
-![Dark Reader](dark_reader.png)
+![Dark Reader](./dark_reader.png)
 
 あらゆるWebページをダークモードにできる拡張機能です。
 
@@ -99,7 +102,7 @@ SNSで記事をシェアすることが多い人や、参考文献を書くこ�
 
 ### Link to Text Fragment
 
-![Link to Text Fragment](link_to_text_fragment.png)
+![Link to Text Fragment](./link_to_text_fragment.png)
 
 [Text Fragments](https://web.dev/text-fragments/)を利用して、Webページの特定のテキストへのリンクを作成したり読み込んだりするための拡張機能です。Chrome版も存在しますが、Chromeは[標準対応](https://chromestatus.com/feature/4733392803332096)しているため、わざわざ拡張機能をインストールする必要はありません。
 
@@ -118,7 +121,7 @@ SNSで記事をシェアすることが多い人や、参考文献を書くこ�
 
 ### Multithreaded Download Manager
 
-![Multithreaded Download Manager](multithreaded_download_manager.png)
+![Multithreaded Download Manager](./multithreaded_download_manager.png)
 
 ファイルを分割して並列処理することで、高速でダウンロードできるようになります。小さなファイルだとあまり効果がありませんが、大きいファイルだとダウンロードが速くなることもあります。
 
@@ -143,7 +146,7 @@ GitHub[リポジトリー](https://github.com/jingyu9575/multithreaded-download-
 
 ### QR Code
 
-![QR Code](qr_code.png)
+![QR Code](./qr_code.png)
 
 開いているWebページの[QRコード](https://ja.wikipedia.org/wiki/QR%E3%82%B3%E3%83%BC%E3%83%89)を作成する拡張機能です。単にQRコードを表示するだけでなく、QRコードの画像を[PNG形式](https://developer.mozilla.org/ja/docs/Glossary/PNG)と[SVG形式](https://developer.mozilla.org/ja/docs/Web/SVG)から選んでダウンロードできます。QRコードを作成する拡張機能は他にもたくさんありますが、[ベクター画像](https://ja.wikipedia.org/wiki/%E3%83%99%E3%82%AF%E3%82%BF%E3%83%BC%E7%94%BB%E5%83%8F)の（拡大してもぼやけない）SVG形式でのダウンロードに対応しているため、この拡張機能を利用しています。Firefox版のみの提供で、Chrome版は提供されていません。
 
@@ -162,7 +165,7 @@ GitHub[リポジトリー](https://github.com/jingyu9575/multithreaded-download-
 
 ### QR Code Reader
 
-![QR Code Reader](qr_code_reader.png)
+![QR Code Reader](./qr_code_reader.png)
 
 文字どおりQRコードリーダーです。[バーコード](https://ja.wikipedia.org/wiki/%E3%83%90%E3%83%BC%E3%82%B3%E3%83%BC%E3%83%89)もスキャンできます。
 
@@ -181,7 +184,7 @@ GitHub[リポジトリー](https://github.com/jingyu9575/multithreaded-download-
 
 ### SoundFixer
 
-![SoundFixer](sound_fixer.png)
+![SoundFixer](./sound_fixer.png)
 
 タブごとに音量や[パン](https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%B3%E3%83%8B%E3%83%B3%E3%82%B0_(%E9%9F%B3%E9%9F%BF))を調整できる拡張機能です。GitHubの[リポジトリー](https://github.com/unrelentingtech/soundfixer)にはFirefox版のリンクしか掲載されておらず、Firefox版とChrome版で提供元が違うことから、Chrome版は非公式と思われます。
 
@@ -200,7 +203,7 @@ GitHub[リポジトリー](https://github.com/jingyu9575/multithreaded-download-
 
 ### Tab Session Manager
 
-![Tab Session Manager](tab_session_manager.png)
+![Tab Session Manager](./tab_session_manager.png)
 
 ブラウザーで開いているタブの一覧のバックアップを取ったり、エクスポートしたりできる拡張機能です。開いているタブの一覧を定期的に保存する機能が付いているので、ブラウザーがクラッシュした際に開いていたタブを復元できます。また、タブをたくさん開いてそれらのタブをあとでもう一度見たいというときには、タブの一覧をエクスポート・[インポート](https://github.com/sienori/Tab-Session-Manager/wiki/Q&A:-How-to-import-sessions-from-other-extensions#import-to-tab-session-manager)できます。
 
@@ -219,7 +222,7 @@ GitHub[リポジトリー](https://github.com/jingyu9575/multithreaded-download-
 
 ### Twitter Bookmarks Search
 
-![Twitter Bookmarks Search](twitter_bookmarks_search.png)
+![Twitter Bookmarks Search](./twitter_bookmarks_search.png)
 
 Twitterの[ブックマーク](https://help.twitter.com/ja/using-twitter/bookmarks)を検索できるようにする拡張機能です。ブックマークに保存されたすべてのツイートの中から検索できます。
 
@@ -240,7 +243,7 @@ Twitterの[ブックマーク](https://help.twitter.com/ja/using-twitter/bookmar
 
 ### Web Search Navigator
 
-![Web Search Navigator](web_search_navigator.png)
+![Web Search Navigator](./web_search_navigator.png)
 
 [Google検索](https://www.google.com/)の検索結果にキーボードショートカットを追加する拡張機能です。上下矢印キーで検索結果を選択、選択したページをエンターキーで開けます。キーボードから手を放さずに検索できるので便利です。
 
@@ -261,7 +264,7 @@ Twitterの[ブックマーク](https://help.twitter.com/ja/using-twitter/bookmar
 
 ### ClearURLs
 
-![ClearURLs](clear_urls.png)
+![ClearURLs](./clear_urls.png)
 
 URLには[URLパラメーター](https://e-words.jp/w/URL%E3%83%91%E3%83%A9%E3%83%A1%E3%83%BC%E3%82%BF.html)というものが存在します。URLパラメーターには重要な情報（Google検索なら検索キーワード、YouTubeなら視聴する動画のIDなど）が含まれることもありますが、一方でトラッキングに使われることもあります。ClearURLsは、URLからトラッキングに利用されている不要なURLパラメーターを自動的に削除してくれます。これにより、プライバシーが保護されURLも短くなります。
 
@@ -292,7 +295,7 @@ https://www.amazon.com/dp/exampleProduct
 
 ### DuckDuckGo Privacy Essentials
 
-![DuckDuckGo Privacy Essentials](duckduckgo_privacy_essentials.png)
+![DuckDuckGo Privacy Essentials](./duckduckgo_privacy_essentials.png)
 
 DuckDuckGo Privacy Essentialsはトラッカーをブロックしてくれる拡張機能です。プライバシーに配慮した検索エンジンを提供する[DuckDuckGo](https://duckduckgo.com/)が開発しています。トラッカーのブロックのほかに、サイトのプライバシーを評価してくれる機能も付いています。
 
@@ -311,7 +314,7 @@ DuckDuckGo Privacy Essentialsはトラッカーをブロックしてくれる拡
 
 ### Privacy Badger
 
-![Privacy Badger](privacy_badger.png)
+![Privacy Badger](./privacy_badger.png)
 
 Privacy Badgerはトラッカーを自動でブロックしてくれる拡張機能です。[ドメイン](https://developer.mozilla.org/ja/docs/Glossary/Domain)ごとに「ブロックなし（*allow a domain*）」「[Cookie](https://developer.mozilla.org/ja/docs/Glossary/Cookie)をブロック（*block cookies*）」「ブロック（*block a domain*）」の3段階から自動で選択されます。
 
@@ -330,7 +333,7 @@ Privacy Badgerはトラッカーを自動でブロックしてくれる拡張機
 
 ### uBlock Origin
 
-![uBlock Origin](ublock_origin.png)
+![uBlock Origin](./ublock_origin.png)
 
 uBlock Originは、CPUやメモリーの使用量が少ない広告ブロッカーです。広告以外にも、一部のアフェリエイトリンクやトラッカーもブロックしてくれます。主要なすべてのブラウザーに対応していますが、[Firefox上でもっともよく動作](https://github.com/gorhill/uBlock/wiki/uBlock-Origin-works-best-on-Firefox)します。
 
@@ -351,7 +354,7 @@ uBlock Originは、CPUやメモリーの使用量が少ない広告ブロッカ�
 
 ### HTTPS Everywhere
 
-![HTTPS Everywhere](https_everywhere.png)
+![HTTPS Everywhere](./https_everywhere.png)
 
 HTTPS Everywhereは、Webブラウザーの通信に[HTTPS接続](https://ja.wikipedia.org/wiki/HTTPS)を強制できる拡張機能です。HTTPSは通信を暗号化することで、通信中のデータの改ざんや盗聴を防げるものです。HTTPS Everywhereを使用してHTTPS接続を強制することで、セキュリティーを向上させられます。
 
@@ -374,7 +377,7 @@ HTTPS Everywhereは、Webブラウザーの通信に[HTTPS接続](https://ja.wik
 
 ### Firefox Multi-Account Containers
 
-![Firefox Multi-Account Containers](firefox_multi_account_containers.png)
+![Firefox Multi-Account Containers](./firefox_multi_account_containers.png)
 
 Firefoxでアカウントを切り替えてブラウジングするための拡張機能です。
 
@@ -399,7 +402,7 @@ Firefoxでアカウントを切り替えてブラウジングするための拡�
 
 ### Google Lighthouse
 
-![Google Lighthouse](google_lighthouse.png)
+![Google Lighthouse](./google_lighthouse.png)
 
 [PageSpeed Insights](https://pagespeed.web.dev/)で利用されている[Lighthouse](https://github.com/GoogleChrome/lighthouse)の拡張機能版です。Webページの読み込み速度やアクセシビリティー、SEO対策などの評価をしてくれる拡張機能です。
 
@@ -418,7 +421,7 @@ Firefoxでアカウントを切り替えてブラウジングするための拡�
 
 ### Stylus
 
-![Stylus](stylus.png)
+![Stylus](./stylus.png)
 
 Webサイトの見た目をカスタマイズできる拡張機能です。自分で[CSS](https://developer.mozilla.org/ja/docs/Web/CSS)を書く必要があるので、一般向けではありません。
 

@@ -1,8 +1,11 @@
 ---
 description: DaVinci Resolve 17.4がリリースされました。このバージョンで、メディアでは取り上げられていないものの日本語ユーザーにとってもっとも便利な新機能は「縦書きテキスト」でしょう。
+title: DaVinci Resolve 17.4に「ちゃんとした」縦書きテキストのサポートが追加
+pubDate: "2021-10-24T00:20:19.34+09:00"
+modifiedDate: "2021-10-24T00:25:46.967+09:00"
+author: ろぼいん
+thumbnail: ./davinci_resolve_17.4_vertical_text.png
 ---
-
-# DaVinci Resolve 17.4に「ちゃんとした」縦書きテキストのサポートが追加
 
 10月22日、DaVinci Resolveの最新版、バージョン17.4がリリースされました。今回のアップデートでは提供元のBlackmagic Designが新機能に関する動画を出していたり、変更点の一覧も体感でいつもの5倍くらいあったりと、大きなアップデートとなっています。
 
@@ -16,4 +19,4 @@ description: DaVinci Resolve 17.4がリリースされました。このバー�
 
 今までは句読点をできるだけ使わないようにして、使う場合はその文字だけ向きを変えたり、長音記号は「|」（バーティカルライン）で代用したりしていました。今回のアップデートはとてもありがたいです。
 
-![縦書きテキストのスクリーンショット](davinci_resolve_17.4_vertical_text.png)
+![縦書きテキストのスクリーンショット](./davinci_resolve_17.4_vertical_text.png)

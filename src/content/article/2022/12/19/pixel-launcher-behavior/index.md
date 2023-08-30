@@ -1,10 +1,13 @@
 ---
 description: Google PixelのPixel Launcherで利用できるアプリ検索は、直感に反した変な挙動をするときがあります。この記事では、その理由と対策を2つのケースに分けて説明します。
-thumbnail: https://robot-inventor.github.io/article/2022/12/19/pixel-launcher-behavior/thumbnail.png
+thumbnail: ./thumbnail.png
+title: Pixel Launcherのアプリ検索が変な挙動をする理由と対策
+pubDate: "2022-12-19T00:46:15.347+09:00"
+modifiedDate: "2022-12-19T01:18:22.843+09:00"
+author: ろぼいん
 ---
-# Pixel Launcherのアプリ検索が変な挙動をする理由と対策
 
-![サムネイル](thumbnail.png)
+![サムネイル](./thumbnail.png)
 
 :::note info
 この記事の内容は、次の環境で動作確認しています。
@@ -21,7 +24,7 @@ Google PixelのPixel Launcherで利用できるアプリ検索は、直感に反
 
 まずは、1つ目のケースです。アプリ検索で「an」と入力すると、アプリ名に「an」が含まれていないのに、検索結果に「VLC」が表示されます。
 
-![Pixel Launcherに「an」と入力したようす。検索結果に「VLC」が表示されている](Screenshot_20221216-132833.png)
+![Pixel Launcherに「an」と入力したようす。検索結果に「VLC」が表示されている](./Screenshot_20221216-132833.png)
 
 ### 理由
 
@@ -29,7 +32,7 @@ Google PixelのPixel Launcherで利用できるアプリ検索は、直感に反
 
 さきほどの例の「VLC」は、正式には「VLC for Android」という名前で登録されています。
 
-![「VLC for Android」のGoogle Playページのスクリーンショット](Screenshot_20221216-133138.png)
+![「VLC for Android」のGoogle Playページのスクリーンショット](./Screenshot_20221216-133138.png)
 
 つまりこのケースは、アプリの正式な名称と、Pixel Launcherに表示される略称が一致していないために発生します。
 
@@ -43,9 +46,9 @@ Google PixelのPixel Launcherで利用できるアプリ検索は、直感に反
 
 たとえば、画像のようなケース。「Gboard」を検索するときに「gboa」では表示されないのに、「gboar」だと表示されます。
 
-![Pixel Launcherに「gboa」と入力したようす。検索結果にアプリは1つも表示されていない](Screenshot_20221216-133829.png)
+![Pixel Launcherに「gboa」と入力したようす。検索結果にアプリは1つも表示されていない](./Screenshot_20221216-133829.png)
 
-![Pixel Launcherに「gboa」と入力したようす。アプリの検索結果として「Gboard」が表示されている](Screenshot_20221216-134009.png)
+![Pixel Launcherに「gboa」と入力したようす。アプリの検索結果として「Gboard」が表示されている](./Screenshot_20221216-134009.png)
 
 ### 理由
 
