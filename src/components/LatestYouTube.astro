@@ -1,0 +1,11 @@
+---
+import { YouTube } from "@astro-community/astro-embed-youtube";
+
+const request = await fetch("https://www.youtube.com/feeds/videos.xml?channel_id=UCJFnl1HIx-atCMWnDcKBrfw");
+const responseText = await request.text();
+const latestVideoElement = responseText.match(/<yt:videoId>(.+?)<\/yt:videoId>/);
+if (!latestVideoElement) throw new Error("Failed to get latest video from YouTube.");
+const latestVideoId = latestVideoElement[1];
+---
+
+<YouTube id={latestVideoId} />
