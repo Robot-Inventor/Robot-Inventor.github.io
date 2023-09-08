@@ -5,6 +5,7 @@ pubDate: "2020-08-29T00:00:00.000+09:00"
 modifiedDate: "2022-03-14T01:57:58.773+09:00"
 author: ろぼいん
 thumbnail: ./screenshot2.jpg
+showThumbnail: false
 ---
 
 :::note info

@@ -5,6 +5,7 @@ pubDate: "2022-10-10T00:53:53.210+09:00"
 modifiedDate: "2022-10-10T00:55:42.823+09:00"
 author: ろぼいん
 thumbnail: ./blue.png
+showThumbnail: false
 ---
 
 [![フリー素材　青バージョン](./blue.png)](/download/logo-background-materials-for-vtubers/blue.png)

@@ -1,11 +1,20 @@
 {
     "type": "Person",
+    "icon": "/icon/public(18).png",
     "homePage": "https://robot-inventor.github.io/",
-    "socialMedia": [
+    "sameAs": [
         "https://twitter.com/keita_roboin",
         "https://twitter.com/orizin_project",
         "https://twitter.com/shirato_rei",
         "https://www.threads.net/@keita_roboin",
-        "https://misskey.io/@roboin"
-    ]
+        "https://misskey.io/@roboin",
+        "https://github.com/Robot-Inventor/",
+        "https://qiita.com/Robot-Inventor"
+    ],
+    "profileLinks": {
+        "Twitter": "https://twitter.com/keita_roboin",
+        "Misskey": "https://misskey.io/@roboin",
+        "GitHub": "https://github.com/Robot-Inventor/",
+        "Qiita": "https://qiita.com/Robot-Inventor"
+    }
 }

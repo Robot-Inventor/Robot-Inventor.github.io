@@ -1,73 +1,37 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import ArticleCard from '../../components/ArticleCard.astro';
+import ArticleCard from "../../components/ArticleCard.astro";
 
 const allPosts = await getCollection("article");
 ---
 
-<Layout frontmatter={
-        {
-            title: "記事一覧",
-            description: "Robot Inventor　ブログの記事一覧ページです。",
-            author: "ろぼいん",
-            pubDate: "2021-06-13T02:43:35.295+09:00",
-            showDate: false
-        }
-    }>
+<Layout
+    frontmatter={{
+        title: "記事一覧",
+        description: "Robot Inventor　ブログの記事一覧ページです。",
+        author: "ろぼいん",
+        pubDate: "2021-06-13T02:43:35.295+09:00",
+        showDate: false
+    }}
+>
     <div id="article_list_area">
         {
-            allPosts.sort((a, b) => (new Date(b.data.pubDate)).getTime() - (new Date(a.data.pubDate)).getTime()).map((post) => (
-                <ArticleCard link={`/article/${post.slug}`} />
-            ))
+            allPosts
+                .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+                .map((post) => <ArticleCard link={`/article/${post.slug}`} />)
         }
     </div>
 </Layout>
-<script>
-    const default_card_type = window.innerHeight > window.innerWidth ? "landscape" : "normal";
-
-    const change_button = document.createElement("button");
-    toggle_button_label(default_card_type);
-    change_card_type(default_card_type);
-
-    const loading_message = document.createElement("div");
-    loading_message.textContent = "読み込み中...";
-
-    const h1 = document.querySelector("h1");
-    if (h1) {
-        h1.insertAdjacentElement("afterend", change_button);
-    } else {
-        console.error("#article_container_innerが見つかりませんでした");
-    }
-
-    function change_card_type(type: "landscape" | "normal") {
-        document.querySelectorAll("article-card").forEach(element => element.setAttribute("card-type", type));
-        change_button.dataset.currentType = type;
-        toggle_button_label(type);
-    }
-
-    function toggle_button_label(type: "landscape" | "normal") {
-        change_button.textContent = type === "landscape" ? "横表示に切り替え" : "縦表示に切り替え";
-    }
-
-    change_button.addEventListener("click", () => {
-        if (change_button.dataset.currentType === "normal") change_card_type("landscape");
-        else change_card_type("normal");
-    });
-</script>
 <style is:inline>
-    article-card {
+    #article_list_area > * {
         flex-basis: calc(100% - 0.5rem);
     }
 
     @media (orientation: landscape) {
-        article-card:not([card-type="landscape"]) {
+        #article_list_area > *:not([card-type="landscape"]) {
             flex-basis: calc(50% - 0.5rem);
         }
-    }
-
-    article-card {
-        margin-top: 1rem;
     }
 
     #article_list_area {
@@ -77,5 +41,6 @@ const allPosts = await getCollection("article");
         justify-content: space-between;
         align-items: stretch;
         align-content: flex-start;
+        gap: 1rem;
     }
 </style>

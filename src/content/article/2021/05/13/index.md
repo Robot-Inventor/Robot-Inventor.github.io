@@ -4,6 +4,7 @@ title: ORIZIN Agentの最初のコミットから2年が経ちました！
 pubDate: "2021-05-13T00:00:00.000+09:00"
 modifiedDate: "2021-06-11T02:24:19.697+09:00"
 author: ろぼいん
+showThumbnail: false
 ---
 
 ![ORIZIN Agent HTMLのロゴ](./landscape_logo2.svg)

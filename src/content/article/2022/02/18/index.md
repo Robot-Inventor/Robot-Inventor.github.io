@@ -5,6 +5,7 @@ pubDate: "2022-02-18T17:24:18.909+09:00"
 modifiedDate: "2022-03-13T17:47:49.291+09:00"
 author: ろぼいん
 thumbnail: ./stylus.png
+showThumbnail: false
 ---
 
 Webブラウザーは[拡張機能](https://developer.mozilla.org/ja/docs/Mozilla/Add-ons/WebExtensions/What_are_WebExtensions)をインストールすることで機能を増やせます。この記事では、オススメの拡張機能20選を紹介します。すべて無料で使えますので、ぜひインストールしてみてください。

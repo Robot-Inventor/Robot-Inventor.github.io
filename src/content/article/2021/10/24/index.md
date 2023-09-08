@@ -5,6 +5,7 @@ pubDate: "2021-10-24T00:20:19.34+09:00"
 modifiedDate: "2021-10-24T00:25:46.967+09:00"
 author: ろぼいん
 thumbnail: ./davinci_resolve_17.4_vertical_text.png
+showThumbnail: false
 ---
 
 10月22日、DaVinci Resolveの最新版、バージョン17.4がリリースされました。今回のアップデートでは提供元のBlackmagic Designが新機能に関する動画を出していたり、変更点の一覧も体感でいつもの5倍くらいあったりと、大きなアップデートとなっています。

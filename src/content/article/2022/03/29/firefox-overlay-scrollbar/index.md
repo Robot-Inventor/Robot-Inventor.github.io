@@ -5,6 +5,7 @@ pubDate: "2022-03-29T01:00:23.783+09:00"
 modifiedDate: "2022-03-29T09:34:04.676+09:00"
 author: ろぼいん
 thumbnail: ./windows11_version_information.png
+showThumbnail: false
 ---
 
 :::note alert

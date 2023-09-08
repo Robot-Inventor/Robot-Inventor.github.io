@@ -4,6 +4,7 @@ title: Twitterのインプレッション数を非表示にする拡張機能を
 pubDate: "2022-12-24T20:36:05.816+09:00"
 author: ろぼいん
 thumbnail: ./logo2.png
+showThumbnail: false
 ---
 
 ![Hide View Countのロゴ](./logo2.png)
