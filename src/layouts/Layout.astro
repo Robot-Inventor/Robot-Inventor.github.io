@@ -295,8 +295,6 @@ const ISO8601ToLocale = (iso8601: string) => {
         border-bottom: 0.1rem solid rgb(0, 0, 0, 0.2);
         background: var(--secondary-background-color);
         z-index: 1;
-        display: flex;
-        justify-content: space-between;
     }
 
     #header_logo {
@@ -305,7 +303,9 @@ const ISO8601ToLocale = (iso8601: string) => {
     }
 
     header nav {
-        padding-right: 1.5rem;
+        position: absolute;
+        top: 0.2rem;
+        right: 2rem;
     }
 
     header nav a {
@@ -317,6 +317,14 @@ const ISO8601ToLocale = (iso8601: string) => {
     }
 
     @media (orientation: portrait) {
+        #header_logo {
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+        }
+
         header nav {
             display: none;
         }
@@ -342,7 +350,7 @@ const ISO8601ToLocale = (iso8601: string) => {
     main > article {
         grid-column: 2;
         width: 100%;
-        padding-top: 1.5rem;
+        padding-top: 0.5rem;
     }
 
     @media (orientation: landscape) {
