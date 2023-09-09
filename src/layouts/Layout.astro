@@ -196,7 +196,12 @@ const ISO8601ToLocale = (iso8601: string) => {
                 >
                     <img src="/icon/social/line.svg" alt="LINEのアイコン" />
                 </a>
-                <a href={`barcelona://create?text=${titleWithSiteName} ${generateShareURL("threads")}`} target="_blank">
+                <a
+                    href={`barcelona://create?text=${encodeURIComponent(
+                        `${titleWithSiteName} ${generateShareURL("threads")}`
+                    )}`}
+                    target="_blank"
+                >
                     <img src="/icon/social/threads.svg" alt="Threadsのアイコン" />
                 </a>
             </section>
