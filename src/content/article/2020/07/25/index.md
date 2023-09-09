@@ -5,6 +5,7 @@ pubDate: "2020-07-25T00:00:00.000+09:00"
 modifiedDate: "2021-06-12T03:13:57.692+09:00"
 author: ろぼいん
 thumbnail: ./datacenter_DSC00055.jpg
+showThumbnail: false
 ---
 
 ![データセンターの写真](./datacenter_DSC00055.jpg)

@@ -5,6 +5,7 @@ pubDate: "2022-04-17T01:25:42.33+09:00"
 modifiedDate: "2022-04-17T01:38:44.130+09:00"
 author: ろぼいん
 thumbnail: ./2022-04-17-00-11-20.png
+showThumbnail: false
 ---
 
 :::note info

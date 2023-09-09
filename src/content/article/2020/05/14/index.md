@@ -5,6 +5,7 @@ pubDate: "2020-05-14T00:00:00.000+09:00"
 modifiedDate: "2022-03-14T01:59:39.927+09:00"
 author: ろぼいん
 thumbnail: ./flags_page.jpg
+showThumbnail: false
 ---
 
 :::note warn

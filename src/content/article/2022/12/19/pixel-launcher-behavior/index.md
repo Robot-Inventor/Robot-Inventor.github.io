@@ -5,6 +5,7 @@ title: Pixel Launcherのアプリ検索が変な挙動をする理由と対策
 pubDate: "2022-12-19T00:46:15.347+09:00"
 modifiedDate: "2022-12-19T01:18:22.843+09:00"
 author: ろぼいん
+showThumbnail: false
 ---
 
 ![サムネイル](./thumbnail.png)

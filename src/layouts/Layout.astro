@@ -1,21 +1,22 @@
 ---
-import { getEntry } from 'astro:content';
+import { getEntry } from "astro:content";
 
 interface Props {
     frontmatter: {
         title: string;
         description: string;
-        author: string | {
-            id: string;
-            collection: string;
-        }
+        author:
+            | string
+            | {
+                  id: string;
+                  collection: string;
+              };
         pubDate: string;
         modifiedDate?: string;
         showDate?: boolean;
-        thumbnail?: {
-            src: string;
-        };
-    }
+        thumbnail?: ImageMetadata;
+        showThumbnail: boolean;
+    };
 }
 
 if (!Astro.site) throw new Error("site is not defined");
@@ -24,44 +25,65 @@ if (Astro.props.frontmatter.thumbnail) {
     thumbnailUrl = new URL(Astro.props.frontmatter.thumbnail.src, Astro.site.href).href;
 }
 
-const authorId = typeof Astro.props.frontmatter.author === "string" ? Astro.props.frontmatter.author : Astro.props.frontmatter.author.id
-const author =  await getEntry("author", authorId);
+const authorId =
+    typeof Astro.props.frontmatter.author === "string"
+        ? Astro.props.frontmatter.author
+        : Astro.props.frontmatter.author.id;
+const author = await getEntry("author", authorId);
 if (!author) throw new Error("Undefined author");
+
+const titleWithSiteName = `${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`;
 
 const schema = JSON.stringify([
     {
-        "@context" : "https://schema.org",
-        "@type" : "WebSite",
-        "name" : import.meta.env.SITE_NAME,
-        "url" : Astro.site
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: import.meta.env.SITE_NAME,
+        url: Astro.site
     },
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "mainEntityOfPage": {
+        mainEntityOfPage: {
             "@type": "WebPage",
             "@id": Astro.url
         },
-        "headline": `${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`,
-        "description": Astro.props.frontmatter.description,
+        headline: titleWithSiteName,
+        description: Astro.props.frontmatter.description,
         // TODO: すべての画像を取得
-        "image": [thumbnailUrl],
-        "author": {
+        image: [thumbnailUrl],
+        author: {
             "@type": author.data.type,
-            "name": authorId,
-            "url": author.data.homePage,
-            "sameAs": author.data.socialMedia
+            name: authorId,
+            url: author.data.homePage,
+            sameAs: author.data.sameAs
         },
-        "datePublished": Astro.props.frontmatter.pubDate,
-        "dateModified": Astro.props.frontmatter.modifiedDate || Astro.props.frontmatter.pubDate,
+        datePublished: Astro.props.frontmatter.pubDate,
+        dateModified: Astro.props.frontmatter.modifiedDate || Astro.props.frontmatter.pubDate
     }
 ]);
+
+const generateShareURL = (source: string) => {
+    const url = new URL(Astro.url);
+    url.searchParams.append("utm_source", source);
+    return url.href;
+};
+
+const ISO8601ToLocale = (iso8601: string) => {
+    return iso8601
+        .replace("T", " ")
+        .replace(/[\+\-]\d{2}:\d{2}/, "")
+        .replace(/(\d{2,4})\-(\d{1,2})\-(\d{1,2})/, "$1年$2月$3日")
+        .replace(/(\d{2}:\d{2}):\d{2}/, "$1")
+        .replace(/\.\d+$/, "");
+};
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="ja">
     <head prefix="og: http://ogp.me/ns#">
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140830854-3"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HZY93W2BY"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
@@ -69,22 +91,29 @@ const schema = JSON.stringify([
             }
             gtag("js", new Date());
 
-            gtag("config", "UA-140830854-3");
+            gtag("config", "G-7HZY93W2BY");
         </script>
-        <link rel="preconnect" href="https://www.google-analytics.com" />
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap" rel="stylesheet" />
         <link rel="apple-touch-icon" sizes="180x180" href="/icon/favicon/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon/favicon-16x16.png" />
         <link rel="manifest" href="/icon/favicon/site.webmanifest" />
         <link rel="mask-icon" href="/icon/favicon/safari-pinned-tab.svg" color="#ffa4a4" />
         <link rel="shortcut icon" href="/icon/favicon/favicon.ico" />
-        <link rel="alternate" type="application/rss+xml" title={`${import.meta.env.SITE_NAME} RSS Feed`} href={`${import.meta.env.SITE}/rss.xml`} />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title={`${import.meta.env.SITE_NAME} RSS Feed`}
+            href={`${import.meta.env.SITE}/rss.xml`}
+        />
         <link rel="sitemap" href="/sitemap-index.xml" />
-        <meta name="apple-mobile-web-app-title" content="Robot Inventor" />
-        <meta name="application-name" content="Robot Inventor" />
+        <meta name="apple-mobile-web-app-title" content={import.meta.env.SITE_NAME} />
+        <meta name="application-name" content={import.meta.env.SITE_NAME} />
         <meta name="msapplication-TileColor" content="#2d89ef" />
         <meta name="msapplication-config" content="/icon/favicon/browserconfig.xml" />
         <meta name="theme-color" content="#ffffff" />
@@ -93,1024 +122,503 @@ const schema = JSON.stringify([
         <meta name="description" content={Astro.props.frontmatter.description} />
         <meta property="og:url" content={Astro.url} />
         <meta property="og:type" content={Astro.url.pathname === "/" ? "website" : "article"} />
-        <meta property="og:title" content={`${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`} />
+        <meta property="og:title" content={titleWithSiteName} />
         <meta property="og:description" content={Astro.props.frontmatter.description} />
         <meta property="og:site_name" content={import.meta.env.SITE_NAME} />
         <meta property="og:image" content={thumbnailUrl} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@keita_roboin" />
-        <script type="application/ld+json" set:html={schema}></script>
+        <script type="application/ld+json" set:html={schema} />
     </head>
     <body>
         <header>
-            <button id="menu_icon" title="メニュー">
-                <div id="menu_icon_line_top"></div>
-                <div id="menu_icon_line_center"></div>
-                <div id="menu_icon_line_bottom"></div>
-            </button>
-            <a href="/" id="top_link">
-                <span id="site_logo_placeholder">ROBOT INVENTOR</span>
-                <img data-src="/icon/logo.svg" data-alt="ROBOT INVENTOR" id="site_logo" />
+            <a href="/">
+                <img src="/logo.svg" alt="ろぼいんロゴ" id="header_logo" loading="lazy" decoding="async" />
             </a>
-            <div id="menu_overlay"></div>
-            <div id="menu_bar">
-                <div id="menu_bar_contents">
-                    <div>
-                        <a href="/">トップへ</a>
-                    </div>
-                    <div>
-                        <a href="/article">記事一覧</a>
-                    </div>
-                    <div>
-                        <a href="/notice">お知らせ</a>
-                    </div>
-                </div>
-            </div>
+            <nav>
+                <a href="/article/">ARTICLES</a>
+                <a href="/notice/">NEWS</a>
+            </nav>
         </header>
-        <main id="article_container">
-            <article id="article_container_inner">
+        <main>
+            <article>
+                {
+                    Astro.props.frontmatter.showThumbnail && Astro.props.frontmatter.thumbnail && (
+                        <img
+                            src={Astro.props.frontmatter.thumbnail.src}
+                            alt="サムネイル"
+                            width={Astro.props.frontmatter.thumbnail.width}
+                            height={Astro.props.frontmatter.thumbnail.height}
+                        />
+                    )
+                }
                 <h1>{Astro.props.frontmatter.title}</h1>
-                {Astro.props.frontmatter.showDate && <div id=article_date_information>
-                    <div id="posted_date" title="投稿日時">
-                        <picture>
-                            <source media="(prefers-color-scheme: dark)" srcset="/icon/article_white.svg">
-                            <img src="/icon/article_black.svg" loading="lazy" decoding="async" alt="アイコン">
-                        </picture>
-                        作成：<time datetime={Astro.props.frontmatter.pubDate}>{Astro.props.frontmatter.pubDate
-                    .replace("T", "　")
-                    .replace(/(Z|[\+\-](\d){2}\:(\d){2})$/, "")
-                    .replace(/\.\d+$/, "")}</time>
-                    </div>
+                <div id="article_info">
                     {
-                        Astro.props.frontmatter.modifiedDate && (
-                            <div id="last_updated_date" title="最終更新日時">
-                                <picture>
-                                    <source media="(prefers-color-scheme: dark)" srcset="/icon/edit_white.svg">
-                                    <img src="/icon/edit_black.svg" loading="lazy" decoding="async" alt="アイコン">
-                                </picture>
-                                最終更新：<time datetime={Astro.props.frontmatter.modifiedDate}>{Astro.props.frontmatter.modifiedDate
-                            .replace("T", "　")
-                            .replace(/(Z|[\+\-](\d){2}\:(\d){2})$/, "")
-                            .replace(/\.\d+$/, "")}</time>
-                            </div>
+                        Astro.props.frontmatter.showDate && (
+                            <span>
+                                投稿日：
+                                <time datetime={Astro.props.frontmatter.pubDate}>
+                                    {ISO8601ToLocale(Astro.props.frontmatter.pubDate)}
+                                </time>
+                            </span>
                         )
                     }
-                </div>}
-                <slot/>
+                    {
+                        Astro.props.frontmatter.showDate && Astro.props.frontmatter.modifiedDate && (
+                            <span>
+                                更新日：
+                                <time datetime={Astro.props.frontmatter.modifiedDate}>
+                                    {ISO8601ToLocale(Astro.props.frontmatter.modifiedDate)}
+                                </time>
+                            </span>
+                        )
+                    }
+                </div>
+                <slot />
             </article>
+            <section class="share_button">
+                <a
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                        titleWithSiteName
+                    )}&url=${encodeURIComponent(generateShareURL("twitter"))}&via=${encodeURIComponent(
+                        "keita_roboin"
+                    )}&related=${encodeURIComponent("keita_roboin")}%3A最新の情報を入手する`}
+                    target="_blank"
+                >
+                    <img src="/icon/social/twitter.svg" alt="Twitterのアイコン" />
+                </a>
+                <a
+                    href={`https://line.me/R/share?text=${encodeURIComponent(
+                        `${titleWithSiteName} ${generateShareURL("line")}`
+                    )}`}
+                    target="_blank"
+                >
+                    <img src="/icon/social/line.svg" alt="LINEのアイコン" />
+                </a>
+                <a
+                    href={`barcelona://create?text=${encodeURIComponent(
+                        `${titleWithSiteName} ${generateShareURL("threads")}`
+                    )}`}
+                    target="_blank"
+                >
+                    <img src="/icon/social/threads.svg" alt="Threadsのアイコン" />
+                </a>
+            </section>
+            <address class="author_info">
+                <img
+                    class="author_info-icon"
+                    src={author.data.icon}
+                    alt="著者のアイコン画像"
+                    loading="lazy"
+                    decoding="async"
+                />
+                <div class="author_info-text">
+                    <b class="author_info-name">{authorId}</b>
+                    <div class="author_info-link_container">
+                        {
+                            Object.keys(author.data.profileLinks).map((linkName) => {
+                                const link = author.data.profileLinks[linkName];
+                                return (
+                                    <a href={link} target="_blank">
+                                        {linkName}
+                                    </a>
+                                );
+                            })
+                        }
+                    </div>
+                </div>
+            </address>
         </main>
         <footer>
-            <span id="copyright"></span>
-            <p>
-                <a href="/tos/">利用規約</a>・<a href="/privacy/">プライバシーポリシー</a>
-            </p>
-            <p>
-                <a href="https://twitter.com/keita_roboin">Twitter</a>・<a href="https://github.com/Robot-Inventor"
-                    >GitHub</a
-                >
-            </p>
+            <p>Copyright © 2023 ろぼいん All rights reserved.</p>
+            <p><a href="/tos/">利用規約</a>・<a href="/privacy/">プライバシーポリシー</a></p>
         </footer>
     </body>
 </html>
-<script>
-    type FilteredKeys<T extends object, U> = {
-        [K in keyof T]: T[K] extends U ? K : never;
-    }[keyof T];
-
-    const menu_overlay = document.getElementById("menu_overlay")!;
-    const menu_icon = document.getElementById("menu_icon")!;
-    const menu_close_icon = document.getElementById("menu_bar_close_icon")!;
-    const menu_bar = document.getElementById("menu_bar")!;
-
-    const copyright = document.getElementById("copyright")!;
-    copyright.textContent = `Copyright © ${new Date().getFullYear()} Robot-Inventor All rights reserved.`;
-
-    /**
-     * メニューを開く
-     */
-    function open_menu() {
-        menu_overlay.setAttribute("data-open", "");
-        menu_bar.setAttribute("data-open", "");
-        menu_icon.setAttribute("data-type", "close");
-    }
-
-    /**
-     * メニューを閉じる
-     */
-    function close_menu() {
-        menu_overlay.removeAttribute("data-open");
-        menu_bar.removeAttribute("data-open");
-        menu_icon.removeAttribute("data-type");
-    }
-
-    /**
-     * URLをコピーする
-     */
-    function copy_url() {
-        const textarea = document.createElement("textarea");
-        textarea.textContent = location.href;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        textarea.remove();
-    }
-
-    /**
-     * 指定したSNSでページを共有する
-     * @param type 共有に使用するSNS。twitter、facebook、lineのうち1つ
-     */
-    function share(type: "twitter" | "facebook" | "line") {
-        const url_table = {
-            twitter: `https://twitter.com/intent/tweet?text=${document.head.querySelector("title")!.textContent}&url=${
-                location.href
-            }&via=keita_roboin`,
-            facebook: `https://www.facebook.com/sharer/sharer.php?u=${location.href}`,
-            line: `https://social-plugins.line.me/lineit/share?url=${location.href}`
-        };
-        window.open(url_table[type], "_blank");
-    }
-
-    menu_icon.addEventListener("click", () => {
-        if (menu_icon.hasAttribute("data-type")) close_menu();
-        else open_menu();
-    });
-
-    menu_overlay.addEventListener("click", close_menu);
-
-    class ShareButtonElement {
-        readonly button: HTMLElement;
-        readonly twitter: HTMLElement;
-        readonly facebook: HTMLElement;
-        readonly line: HTMLElement;
-
-        readonly copy: HTMLElement;
-        readonly more: HTMLElement;
-
-        private readonly status_attribute = "data-active";
-
-        constructor() {
-            this.button = this.create_button();
-
-            const overlay = this.create_overlay();
-
-            this.twitter = this.create_twitter();
-            this.facebook = this.create_facebook();
-            this.line = this.create_line();
-
-            const share_icon = this.create_share_icon();
-
-            this.copy = this.create_copy();
-            this.more = this.create_more();
-
-            const close = this.create_close();
-
-            const fragment = document.createDocumentFragment();
-
-            fragment.appendChild(overlay);
-            fragment.appendChild(this.twitter);
-            fragment.appendChild(this.facebook);
-            fragment.appendChild(this.line);
-            fragment.appendChild(share_icon);
-            fragment.appendChild(this.copy);
-            fragment.appendChild(this.more);
-            fragment.appendChild(close);
-
-            this.button.appendChild(fragment);
-        }
-
-        private create_button() {
-            const button = document.createElement("button");
-            button.id = "share_button";
-            return button;
-        }
-
-        private create_overlay() {
-            const overlay = document.createElement("div");
-            overlay.id = "share_button_overlay";
-            return overlay;
-        }
-
-        private create_twitter() {
-            const twitter = document.createElement("img");
-            twitter.src = "/icon/twitter.svg";
-            twitter.id = "share_button_twitter";
-            twitter.alt = "Twitter";
-            return twitter;
-        }
-
-        private create_facebook() {
-            const facebook = document.createElement("img");
-            facebook.src = "/icon/facebook.png";
-            facebook.id = "share_button_facebook";
-            facebook.alt = "Facebook";
-            return facebook;
-        }
-
-        private create_line() {
-            const line = document.createElement("img");
-            line.src = "/icon/line.png";
-            line.id = "share_button_line";
-            line.alt = "LINE";
-            return line;
-        }
-
-        private create_share_icon() {
-            const icon = document.createElement("img");
-            icon.src = "/icon/share_white.svg";
-            icon.alt = "アイコン";
-            icon.id = "share_button_icon";
-            return icon;
-        }
-
-        private create_copy() {
-            const outer = document.createElement("div");
-            outer.id = "share_button_copy";
-            const icon = document.createElement("img");
-            icon.src = "/icon/link.svg";
-            icon.alt = "コピー";
-            outer.appendChild(icon);
-            return outer;
-        }
-
-        private create_more() {
-            const outer = document.createElement("div");
-            outer.id = "share_button_more";
-            const icon = document.createElement("img");
-            icon.src = "/icon/more.svg";
-            icon.alt = "その他";
-            outer.appendChild(icon);
-            return outer;
-        }
-
-        private create_close() {
-            const close = document.createElement("div");
-            close.id = "share_button_close";
-            return close;
-        }
-
-        show() {
-            this.button.setAttribute("data-show", "");
-        }
-
-        toggle_status() {
-            if (this.button.hasAttribute(this.status_attribute)) this.button.removeAttribute(this.status_attribute);
-            else this.button.setAttribute(this.status_attribute, "");
-        }
-
-        get is_active() {
-            return this.button.hasAttribute(this.status_attribute);
-        }
-    }
-
-    /**
-     * シェアボタンを読み込む
-     */
-    function initialize_share_button() {
-        const share_button = new ShareButtonElement();
-        document.getElementById("article_container_inner")!.appendChild(share_button.button);
-
-        setTimeout(() => {
-            share_button.show();
-        }, 1000);
-
-        share_button.button.addEventListener("click", () => {
-            share_button.toggle_status();
-        });
-
-        const basic_share = ["twitter", "facebook", "line"] as const;
-        for (const share_type of basic_share) {
-            share_button[share_type as FilteredKeys<ShareButtonElement, HTMLElement>].addEventListener("click", () => {
-                if (share_button.is_active) share(share_type);
-            });
-        }
-
-        share_button.copy.addEventListener("click", () => {
-            if (share_button.is_active) copy_url();
-        });
-
-        if (navigator.share !== undefined) {
-            share_button.more.style.display = "block";
-            share_button.more.addEventListener("click", () => {
-                if (!share_button.is_active) return;
-
-                const share_data = {
-                    title: document.title || "",
-                    url: location.href
-                };
-                navigator.share(share_data);
-            });
-        }
-    }
-
-    function on_scroll_process() {
-        if (window.scrollY >= window.innerHeight / 2) {
-            window.removeEventListener("scroll", on_scroll_process);
-
-            const site_logo = document.getElementById("site_logo")!;
-            site_logo.setAttribute("src", site_logo.dataset.src || "");
-            site_logo.setAttribute("alt", site_logo.dataset.alt || "");
-            site_logo.setAttribute("data-show", "");
-            document.getElementById("site_logo_placeholder")!.remove();
-
-            initialize_share_button();
-        }
-    }
-
-    window.addEventListener("scroll", on_scroll_process);
-</script>
-<style is:global lang="scss">
-    :root {
-        color-scheme: light dark;
+<style is:global>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     :root {
-        --high_emphasis_font_color: rgba(51, 51, 51, var(--high_emphasis_opacity));
-        --medium_emphasis_font_color: rgba(51, 51, 51, var(--medium_emphasis_opacity));
-        --background_color: white;
-        --header_background_color: white;
-        --primary_color: #6363e2;
-        --font_color_on_primary_color: white;
-        --footer_background_color: var(--primary_color);
-        --menu_icon_color: var(--primary_color);
-        --article_container_inner_background: rgba(0, 0, 0, 0.015);
-        --table_background_color: #e9e9e9;
-        --table_border_color: #d9d9d9;
-        --info_block_background_color: #e2f3fd;
-        --info_block_border_color: #3fb0f3;
-        --info_block_font_color: #0b72ad;
-        --warn_block_background_color: #fff5cd;
-        --warn_block_border_color: #f5c300;
-        --warn_block_font_color: #cfa500;
-        --alert_block_background_color: #ffcdcd;
-        --alert_block_border_color: #b30909;
-        --alert_block_font_color: #970000;
-        --code_block_background_color: #292929;
-        --header_height: 3rem;
-        --footer_min_height: 20vh;
-        --root_font_size: 16px;
-        --article_side_padding: 1rem;
-        --high_emphasis_opacity: 0.87;
-        --medium_emphasis_opacity: 0.6;
+        --header-height: 4rem;
+        --footer-height: 10rem;
+        --social-icon-size: max(2.5rem, 40px);
+
+        --secondary-background-color: #fff;
+        --base-background-color: #fff;
+        --base-text-color: #333;
+        --middle-emphasis-color: rgb(0, 0, 0, 0.6);
+        --low-emphasis-color: rgb(0, 0, 0, 0.6);
+
+        --info-block-background-color: #e2f3fd;
+        --info-block-border-color: #3fb0f3;
+        --info-block-font-color: #0b72ad;
+        --warn-block-background-color: #fff5cd;
+        --warn-block-border-color: #f5c300;
+        --warn-block-font-color: #cfa500;
+        --alert-block-background-color: #ffcdcd;
+        --alert-block-border-color: #b30909;
+        --alert-block-font-color: #970000;
     }
 
     @media (prefers-color-scheme: dark) {
         :root {
-            --high_emphasis_font_color: rgba(255, 255, 255, var(--high_emphasis_opacity));
-            --medium_emphasis_font_color: rgba(255, 255, 255, var(--medium_emphasis_opacity));
-            --background_color: #121212;
-            --header_background_color: #222222;
-            --footer_background_color: var(--header_background_color);
-            --primary_color: #8f8fff;
-            --font_color_on_primary_color: white;
-            --menu_icon_color: white;
-            --article_container_inner_background: rgba(255, 255, 255, 0.04);
-            --table_background_color: #2f2f2f;
-            --table_border_color: #424242;
-            --info_block_background_color: #2a4453;
-            --info_block_border_color: #60b2e4;
-            --info_block_font_color: #99daff;
-            --warn_block_background_color: #665200;
-            --warn_block_border_color: #c8b157;
-            --warn_block_font_color: #e6d17d;
-            --alert_block_background_color: #681e1e;
-            --alert_block_border_color: #c85757;
-            --alert_block_font_color: #ffbcbc;
-        }
-    }
+            --secondary-background-color: #2a2a2a;
+            --base-background-color: #191919;
+            --base-text-color: #fff;
+            --middle-emphasis-color: rgb(255, 255, 255, 0.6);
+            --low-emphasis-color: rgb(255, 255, 255, 0.6);
 
-    * {
-        color: var(--high_emphasis_font_color);
-        font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+            --info-block-background-color: #2a4453;
+            --info-block-border-color: #60b2e4;
+            --info-block-font-color: #99daff;
+            --warn-block-background-color: #665200;
+            --warn-block-border-color: #c8b157;
+            --warn-block-font-color: #e6d17d;
+            --alert-block-background-color: #681e1e;
+            --alert-block-border-color: #c85757;
+            --alert-block-font-color: #ffbcbc;
+        }
     }
 
     html,
     body {
-        background: var(--background_color);
-        font-size: var(--root_font_size);
-        margin: 0;
-        padding: 0;
+        color-scheme: light dark;
+        color: var(--base-text-color);
+        background: var(--base-background-color);
+        font-family: "Noto Sans JP", sans-serif;
     }
 
     header {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: calc(100% - 2rem);
-        height: var(--header_height);
-        background: var(--header_background_color);
-        padding: 1rem;
-        box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: var(--header-height);
+        border-bottom: 0.1rem solid rgb(0, 0, 0, 0.2);
+        background: var(--secondary-background-color);
         z-index: 1;
-        display: grid;
-        grid-template-columns: var(--header_height) 1fr;
+    }
 
-        @media print {
-            display: none;
-        }
+    #header_logo {
+        height: calc(100% - 2rem);
+        margin: 1rem 0 0 1rem;
+    }
 
-        #top_link {
-            grid-column: 2;
-            display: flex;
-            justify-content: center;
-            text-decoration: none;
+    header nav {
+        position: absolute;
+        top: 0.2rem;
+        right: 2rem;
+    }
 
-            #site_logo {
-                height: 100%;
-                max-width: calc(100vw - var(--header_height) * 2);
-                opacity: 0;
-                transition: 1s;
+    header nav a {
+        color: inherit;
+        text-decoration: none;
+        font-size: 1.5rem;
+        display: inline-block;
+        margin: 0.75rem 0 auto 2rem;
+    }
 
-                @media (orientation: landscape) {
-                    transform: unquote("translate(calc(-0.5 * var(--header_height)))");
-                }
-
-                &[data-show] {
-                    opacity: 0.75;
-                }
-            }
-
-            #site_logo_placeholder {
-                height: 100%;
-                opacity: 1;
-                transition: 1s;
-                font-size: unquote("min(2.5rem, 8vw)");
-                white-space: nowrap;
-            }
-        }
-
-        #menu_icon {
-            width: var(--header_height);
-            height: var(--header_height);
-            // $menu_icon_max_widthの0.082は、サイトロゴの 縦/横 の数値
-            $menu_icon_max_width: calc((100vw - var(--header_height) * 2) * 0.082);
-            max-width: $menu_icon_max_width;
-            max-height: $menu_icon_max_width;
-            position: relative;
-            cursor: pointer;
-            z-index: 1;
-            background: none;
-            border: none;
-            display: inline-block;
+    @media (orientation: portrait) {
+        #header_logo {
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
             margin: 0;
-            padding: 0;
-            transition: 0.3s;
-            $menu_icon_translate_y: translateY(
-                calc((max(var(--header_height), #{$menu_icon_max_width}) - #{$menu_icon_max_width}) / 2)
-            );
-            transform: $menu_icon_translate_y;
-
-            &_line_top {
-                width: 100%;
-                height: 15%;
-                background: var(--menu_icon_color);
-                border-radius: 1em;
-                position: absolute;
-                top: 0;
-                transform-origin: 0% 50%;
-                transition: 0.3s;
-            }
-
-            &_line_center {
-                width: 100%;
-                height: 15%;
-                background: var(--menu_icon_color);
-                border-radius: 1em;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                transition: 0.3s;
-            }
-
-            &_line_bottom {
-                width: 100%;
-                height: 15%;
-                background: var(--menu_icon_color);
-                border-radius: 1em;
-                position: absolute;
-                bottom: 0;
-                transform-origin: 0% 50%;
-                transition: 0.3s;
-            }
-
-            &[data-type="close"] {
-                transform: $menu_icon_translate_y rotate(180deg);
-
-                #menu_icon_line_top {
-                    transform: rotate(45deg);
-                    width: 120%;
-                }
-
-                #menu_icon_line_center {
-                    opacity: 0;
-                }
-
-                #menu_icon_line_bottom {
-                    transform: rotate(-45deg);
-                    width: 120%;
-                }
-            }
         }
 
-        #menu_overlay {
-            width: 100vw;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.5);
-            transition: 0.3s;
-
+        header nav {
             display: none;
-
-            &[data-open] {
-                display: block;
-            }
-        }
-
-        #menu_bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            background: var(--header_background_color);
-            box-shadow: none;
-            padding-top: var(--header_height);
-            overflow: scroll;
-            transition: 0.3s;
-
-            @media (orientation: landscape) {
-                min-width: 15vmax;
-            }
-
-            @media (orientation: portrait) {
-                min-width: 50vmin;
-            }
-
-            transform: translate(-100%);
-
-            &[data-open] {
-                box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
-                transform: none;
-            }
-
-            &_contents {
-                margin-top: 2rem;
-                padding: 1rem;
-
-                div {
-                    padding: 2rem 0;
-
-                    a,
-                    a:hover {
-                        color: var(--high_emphasis_font_color);
-                        text-decoration: none;
-                    }
-                }
-            }
         }
     }
 
-    #article_container {
+    main {
+        min-height: calc(100vh - var(--footer-height));
+        padding: var(--header-height) 0.75rem 3rem 0.75rem;
         width: 100%;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+    }
+
+    #article_info {
+        color: var(--middle-emphasis-color);
         display: flex;
-        justify-content: center;
-        margin-top: calc(var(--header_height) + 2rem);
-        min-height: calc(100vh - var(--header_height) - var(--footer_min_height));
-        padding-top: 2rem;
-        padding-bottom: 5rem;
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0 1rem;
+        margin: 0.75rem 0 2.5rem 0;
+        z-index: 0;
+    }
 
-        @media print {
-            margin-top: 0;
-            padding-top: 0;
-        }
+    main > article {
+        grid-column: 2;
+        width: 100%;
+        max-width: 35rem;
+        padding-top: 0.5rem;
+    }
 
-        &_inner {
-            width: 100%;
-            max-width: 40rem;
-            background: var(--article_container_inner_background);
-            border-radius: 1rem;
-            padding: var(--article_side_padding);
-            box-sizing: border-box;
+    main > article a {
+        color: inherit;
+    }
 
-            #share_button {
-                border: none;
-                background: var(--primary_color);
-                width: 1.5rem;
-                height: 1.5rem;
-                padding: 1rem;
-                border-radius: 3rem;
-                position: fixed;
-                bottom: 1rem;
-                right: 1rem;
-                box-sizing: content-box;
-                cursor: pointer;
-                z-index: 1;
-                box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
-                transition: 1s;
-                opacity: 0;
-                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    main > article a:hover {
+        color: #acd8ff;
+    }
 
-                @media print {
-                    display: none;
-                }
+    main > article img {
+        max-width: 100%;
+        max-height: 70vh;
+        width: auto;
+        height: auto;
+        display: block;
+        margin: auto;
+    }
 
-                &[data-show] {
-                    transition: 0.3s;
-                    opacity: 1;
-                }
+    main > article pre {
+        padding: 0.75rem;
+        margin: 1rem 0;
+    }
 
-                &_icon {
-                    width: 1.5rem;
-                    height: 1.5rem;
-                    border-radius: 0;
-                    display: block;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    transition: 0.3s;
-                }
+    main > article hr {
+        border: none;
+        width: 100%;
+        height: 0.1rem;
+        background: var(--base-text-color);
+        opacity: 0.5;
+        margin: 1.5rem 0;
+    }
 
-                &_close {
-                    transform: rotate(45deg);
-                    position: relative;
-                    transition: 0.3s;
-                    opacity: 0;
+    main > article table {
+        width: 100%;
+        overflow-x: scroll;
+        border: solid 0.1rem var(--base-text-color);
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+    }
 
-                    &::before,
-                    &::after {
-                        content: "";
-                        display: block;
-                        background: white;
-                        width: calc(1.5rem * 1.414);
-                        height: 0.2rem;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%) rotate(45deg);
-                        border-radius: 0.2rem;
-                    }
+    main > article th,
+    main > article td {
+        border: solid 0.1rem var(--base-text-color);
+        padding: 0.5rem;
+    }
 
-                    &::after {
-                        transform: translate(-50%, -50%) rotate(135deg);
-                    }
-                }
+    main > article h1 {
+        font-size: 2rem;
+        line-height: calc(0.25rem * 13);
+        margin-top: 1rem;
+        font-feature-settings: "palt";
+    }
 
-                &_twitter,
-                &_facebook,
-                &_line,
-                &_copy,
-                &_more {
-                    width: 3.5rem;
-                    height: 3.5rem;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    transition: 0.3s;
-                    opacity: 0;
-                    filter: drop-shadow(0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5));
-                }
+    main > article h2 {
+        font-size: 1.75rem;
+        line-height: calc(0.25rem * 12);
+        font-feature-settings: "palt";
+    }
 
-                &_copy,
-                &_more {
-                    background: var(--primary_color);
-                    width: 1.5rem;
-                    height: 1.5rem;
-                    padding: 1rem;
-                    border-radius: 3rem;
+    main > article h3 {
+        font-size: 1.5rem;
+        line-height: calc(0.25rem * 10);
+        font-feature-settings: "palt";
+    }
 
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
+    main > article h4 {
+        font-size: 1.3125rem;
+        line-height: calc(0.25rem * 9);
+        font-feature-settings: "palt";
+    }
 
-                &_more {
-                    display: none;
-                }
+    main > article h5 {
+        font-size: 1.125rem;
+        line-height: calc(0.25rem * 8);
+        font-feature-settings: "palt";
+    }
 
-                &_overlay {
-                    width: 100vw;
-                    height: 100vh;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    display: none;
-                    transition: 0.3s;
-                    background: rgba(0, 0, 0, 0.5);
-                }
+    main > article h6 {
+        font-size: 0.875rem;
+        line-height: calc(0.25rem * 6);
+        font-feature-settings: "palt";
+    }
 
-                &[data-active] {
-                    #share_button_icon {
-                        opacity: 0;
-                        transform: translate(-50%, -50%) rotate(180deg);
-                    }
+    main > article p {
+        font-size: 1rem;
+        line-height: calc(0.25rem * 7);
+        text-align: justify;
+        text-justify: inter-character;
+    }
 
-                    #share_button_close {
-                        opacity: 1;
-                        transform: rotate(180deg);
-                    }
+    main > article * + h2 {
+        margin-top: calc(0.25rem * 11);
+    }
 
-                    #share_button_twitter {
-                        transform: translateY(-5.5rem);
-                        opacity: 1;
-                    }
+    main > article * + h3 {
+        margin-top: calc(0.25rem * 10);
+    }
 
-                    #share_button_facebook {
-                        transform: translateY(-11rem);
-                        opacity: 1;
-                    }
+    main > article * + h4 {
+        margin-top: calc(0.25rem * 8);
+    }
 
-                    #share_button_line {
-                        transform: translateY(-16.5rem);
-                        opacity: 1;
-                    }
+    main > article * + h5 {
+        margin-top: calc(0.25rem * 7);
+    }
 
-                    #share_button_copy {
-                        transform: translateX(-5.5rem);
-                        opacity: 1;
-                    }
+    main > article * + h6 {
+        margin-top: calc(0.25rem * 6);
+    }
 
-                    #share_button_more {
-                        transform: translateX(-11rem);
-                        opacity: 1;
-                    }
+    main > article * + p {
+        margin-top: calc(0.25rem * 5);
+    }
 
-                    #share_button_overlay {
-                        display: block;
-                    }
-                }
-            }
+    main > article blockquote {
+        color: var(--low-emphasis-color);
+        border-left: 0.25rem solid var(--low-emphasis-color);
+        padding-left: 0.5rem;
+        margin: 1.25rem 0;
+    }
 
-            img,
-            picture source,
-            picture img {
-                max-width: 100%;
-                width: auto;
-                height: auto;
-                max-height: 80vh;
-                border-radius: 0.5rem;
-                display: block;
-            }
+    main > article ul,
+    main > article ol {
+        margin: 1.25rem 0;
+        margin-left: 2rem;
+    }
 
-            #article_date_information {
-                text-align: right;
+    main > article ul > li,
+    main > article ol > li {
+        margin: 0.5rem 0;
+    }
 
-                #posted_date,
-                #last_updated_date {
-                    display: inline-block;
-                    opacity: var(--medium_emphasis_opacity);
+    .share_button {
+        display: flex;
+        gap: calc(var(--social-icon-size) / 2);
+        padding: calc(var(--social-icon-size) / 2);
+        grid-column: 2;
+    }
 
-                    picture {
-                        display: inline-block;
-                    }
+    .share_button img {
+        width: var(--social-icon-size);
+        height: var(--social-icon-size);
+    }
 
-                    source,
-                    img {
-                        width: 0.8em;
-                        height: auto;
-                        margin-right: 0.25em;
-                        border-radius: 0;
-                    }
-                }
+    .author_info {
+        font-style: normal;
+        border-color: var(--low-emphasis-color);
+        border-style: solid;
+        border-width: 0.1rem 0;
+        padding: 1.5rem;
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 4rem 1fr;
+        margin-top: 0.5rem;
+        grid-column: 2;
+    }
 
-                #last_updated_date {
-                    margin-left: 1em;
-                }
-            }
+    .author_info-icon {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 2rem;
+        object-fit: cover;
+        margin: auto;
+    }
 
-            h1 {
-                border-bottom: 0.1rem solid var(--high_emphasis_font_color);
-                font-size: 2.5rem;
-                margin-top: 0;
-                margin-bottom: 0.5em;
-            }
+    .author_info-text {
+        display: inline-block;
+        margin: auto 0;
+    }
 
-            h2 {
-                border-left: 0.25em solid var(--primary_color);
-                padding-left: 0.5em;
-                box-sizing: border-box;
-                font-size: 1.5rem;
-                margin-bottom: 1em;
-                margin-top: 2.5em;
+    .author_info-name {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
 
-                & + p {
-                    margin-top: 1em;
-                }
-            }
+    .author_info-link_container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 1rem;
+        margin-top: 0.5rem;
+    }
 
-            h3 {
-                font-size: 1.5rem;
-                margin-top: 2.5em;
+    .author_info-link_container a {
+        color: inherit;
+        text-decoration: none;
+    }
 
-                & + p {
-                    margin-top: 1em;
-                }
-            }
+    .note {
+        background: var(--note-background-color);
+        border: 0.1rem solid var(--note-border-color);
+        padding: 0.5rem 1rem;
+        padding-left: 3rem;
+        border-radius: 0.5rem;
+        margin: 1rem 0;
+        position: relative;
+        top: 0;
+        left: 0;
+        color: var(--note-font-color);
+    }
 
-            p {
-                margin-top: 2em;
-                line-height: 175%;
-            }
+    .note::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translate(-2rem, -50%);
+        background: var(--note-icon-url);
+        width: 1.5rem;
+        height: 1.5rem;
+        background-size: 1.5rem;
+    }
 
-            picture {
-                display: flex;
-                justify-content: center;
-            }
+    .note > * {
+        width: calc(100% - 2rem);
+        margin-left: 2rem;
+    }
 
-            a {
-                color: var(--primary_color);
-                text-decoration: none;
+    .note > p:first-child {
+        margin-top: 0;
+    }
 
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
+    .note > p:last-child {
+        margin-bottom: 0;
+    }
 
-            code {
-                background: var(--code_block_background_color);
-                padding: 0.5em;
-                border-radius: 0.25em;
-                color: rgba(255, 255, 255, var(--high_emphasis_opacity));
-                margin: 0 0.5em;
-                line-height: 250%;
-            }
+    .note.info {
+        --note-background-color: var(--info-block-background-color);
+        --note-border-color: var(--info-block-border-color);
+        --note-font-color: var(--info-block-font-color);
+        --note-icon-url: url("/icon/info.svg");
+    }
 
-            pre {
-                padding: var(--article_side_padding);
-                overflow-x: scroll;
-                background: var(--code_block_background_color);
-                box-sizing: border-box;
-                border-radius: 0.5rem;
-                color: rgba(255, 255, 255, 0.87);
+    .note.warn {
+        --note-background-color: var(--warn-block-background-color);
+        --note-border-color: var(--warn-block-border-color);
+        --note-font-color: var(--warn-block-font-color);
+        --note-icon-url: url("/icon/warn.svg");
+    }
 
-                code {
-                    padding: 0;
-                    margin: 0;
-                    line-height: 150%;
-
-                    &[data-is-source-code="true"],
-                    &[data-is-source-code="true"] span {
-                        font-family: "JetBrains Mono", monospace;
-                    }
-                }
-            }
-
-            blockquote {
-                margin: 2rem 0;
-                border-left: solid 0.25rem var(--primary_color);
-                border-radius: 0.1rem;
-                padding: 1rem 0;
-
-                p {
-                    padding: 1rem 0 0 1rem;
-                    padding-top: 1rem;
-                }
-
-                p:first-child {
-                    margin-top: 0;
-                    padding-top: 0;
-                }
-
-                p:last-child {
-                    margin-bottom: 0;
-                }
-            }
-
-            em {
-                margin: 0 0.5em;
-            }
-
-            details {
-                cursor: pointer;
-                margin: var(--article_side_padding) 0;
-
-                summary {
-                    margin-bottom: 0.5em;
-                }
-            }
-
-            hr {
-                border: none;
-                width: 100%;
-                height: 0.1rem;
-                background: var(--medium_emphasis_font_color);
-            }
-
-            table {
-                min-width: 100%;
-                border-collapse: collapse;
-
-                th,
-                td {
-                    padding: 0.5em;
-                    border: 0.075rem solid var(--table_border_color);
-                }
-
-                tr:nth-child(even) {
-                    background: var(--table_background_color);
-                }
-            }
-
-            button:not(.lty-playbtn) {
-                padding: 1em;
-                border-radius: 0.25rem;
-                cursor: pointer;
-                border: 0.1rem solid var(--primary_color);
-                background: none;
-                color: var(--primary_color);
-                transition: 0.1s;
-
-                &:hover {
-                    background: var(--primary_color);
-                    color: var(--font_color_on_primary_color);
-                }
-            }
-
-            .note {
-                background: var(--note_background_color);
-                border: 0.1rem solid var(--note_border_color);
-                padding: 0.5rem 1rem;
-                padding-left: 3rem;
-                border-radius: 0.5rem;
-                margin: 1rem 0;
-                position: relative;
-                top: 0;
-                left: 0;
-
-                &::before {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    top: 50%;
-                    transform: translate(-2rem, -50%);
-                    background: var(--note_icon_url);
-                    width: 1.5rem;
-                    height: 1.5rem;
-                    background-size: 1.5rem;
-                }
-
-                > * {
-                    width: calc(100% - 2rem);
-                    margin-left: 2rem;
-                    color: var(--note_font_color);
-                }
-
-                > p:first-child {
-                    margin-top: 0;
-                }
-
-                > p:last-child {
-                    margin-bottom: 0;
-                }
-            }
-
-            .note.info {
-                --note_background_color: var(--info_block_background_color);
-                --note_border_color: var(--info_block_border_color);
-                --note_font_color: var(--info_block_font_color);
-                --note_icon_url: url("/icon/info.svg");
-            }
-
-            .note.warn {
-                --note_background_color: var(--warn_block_background_color);
-                --note_border_color: var(--warn_block_border_color);
-                --note_font_color: var(--warn_block_font_color);
-                --note_icon_url: url("/icon/warn.svg");
-            }
-
-            .note.alert {
-                --note_background_color: var(--alert_block_background_color);
-                --note_border_color: var(--alert_block_border_color);
-                --note_font_color: var(--alert_block_font_color);
-                --note_icon_url: url("/icon/alert.svg");
-            }
-
-            lite-youtube {
-                border-radius: 0.5rem;
-            }
-        }
+    .note.alert {
+        --note-background-color: var(--alert-block-background-color);
+        --note-border-color: var(--alert-block-border-color);
+        --note-font-color: var(--alert-block-font-color);
+        --note-icon-url: url("/icon/alert.svg");
     }
 
     footer {
-        background: var(--footer_background_color);
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        height: max-content;
-        min-height: var(--footer_min_height);
-        text-align: center;
-        padding-top: 2rem;
-        padding-bottom: 3rem;
+        background: #3a3a3a;
+        height: var(--footer-height);
         color: white;
+        padding-top: 2.5rem;
+    }
 
-        p,
-        a {
-            color: white;
-        }
+    footer p {
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
 
-        @media print {
-            display: none;
-        }
+    footer a {
+        color: inherit;
     }
 </style>

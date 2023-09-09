@@ -5,6 +5,7 @@ pubDate: "2020-05-12T00:00:00.000+09:00"
 modifiedDate: "2022-04-05T23:03:49.448+09:00"
 author: ろぼいん
 thumbnail: ./computer-1591018_1920.jpg
+showThumbnail: false
 ---
 
 :::note info

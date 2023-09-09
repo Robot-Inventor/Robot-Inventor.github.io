@@ -5,6 +5,7 @@ pubDate: "2020-05-18T00:00:00.000+09:00"
 modifiedDate: "2021-06-12T03:10:32.664+09:00"
 author: ろぼいん
 thumbnail: ./screenshot.jpg
+showThumbnail: false
 ---
 
 オープンソースのペイントソフトの[Krita](https://krita.org/)では、デフォルトの状態ではSurface Penの筆圧検知と消しゴム機能が使えません。

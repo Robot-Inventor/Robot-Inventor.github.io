@@ -10,7 +10,8 @@ const articleCollection = defineCollection({
             showDate: z.boolean().default(true),
             pubDate: z.string().datetime({ offset: true }),
             modifiedDate: z.string().datetime({ offset: true }).optional(),
-            thumbnail: image().optional()
+            thumbnail: image().optional(),
+            showThumbnail: z.boolean().default(true)
         })
 });
 
@@ -18,8 +19,10 @@ const authorCollection = defineCollection({
     type: "data",
     schema: z.object({
         type: z.literal("Person").or(z.literal("Organization")),
+        icon: z.string(),
         homePage: z.string().url(),
-        socialMedia: z.array(z.string().url())
+        sameAs: z.array(z.string().url()),
+        profileLinks: z.record(z.string())
     })
 });
 

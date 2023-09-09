@@ -5,6 +5,7 @@ pubDate: "2019-11-03T00:00:00.000+09:00"
 modifiedDate: "2022-03-14T01:51:05.735+09:00"
 author: ろぼいん
 thumbnail: ./YAMA_DSC2546.jpg
+showThumbnail: false
 ---
 
 :::note info
