@@ -131,7 +131,7 @@ const ISO8601ToLocale = (iso8601: string) => {
         <script type="application/ld+json" set:html={schema} />
     </head>
     <body>
-        <header>
+        <header data-overlay-menu="closed">
             <a href="/">
                 <img src="/logo.svg" alt="ろぼいんロゴ" id="header_logo" loading="lazy" decoding="async" />
             </a>
@@ -139,6 +139,9 @@ const ISO8601ToLocale = (iso8601: string) => {
                 <a href="/article/">ARTICLES</a>
                 <a href="/notice/">NEWS</a>
             </nav>
+            <button id="menu_button">
+                <div></div>
+            </button>
         </header>
         <main>
             <article>
@@ -236,6 +239,15 @@ const ISO8601ToLocale = (iso8601: string) => {
         </footer>
     </body>
 </html>
+<script>
+    const menu_button = document.getElementById("menu_button");
+    if (!menu_button) throw new Error("menu_button is not defined");
+    menu_button.addEventListener("click", () => {
+        const header = document.querySelector("header") as HTMLElement | null;
+        if (!header) throw new Error("header is not defined");
+        header.dataset.overlayMenu = header.dataset.overlayMenu === "closed" ? "opened" : "closed";
+    });
+</script>
 <style is:global>
     * {
         margin: 0;
@@ -321,6 +333,44 @@ const ISO8601ToLocale = (iso8601: string) => {
         margin: 0.75rem 0 auto 2rem;
     }
 
+    #menu_button {
+        width: calc(var(--header-height) - 2rem);
+        height: calc(var(--header-height) - 2.5rem);
+        border: none;
+        background: none;
+        cursor: pointer;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+    }
+
+    #menu_button div,
+    #menu_button div::before,
+    #menu_button div::after {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 0.2rem;
+        background: var(--base-text-color);
+        border-radius: 0.2rem;
+        transition: 0.3s;
+        transform-origin: left;
+    }
+
+    #menu_button div::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #menu_button div::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
     @media (orientation: portrait) {
         #header_logo {
             position: absolute;
@@ -331,7 +381,45 @@ const ISO8601ToLocale = (iso8601: string) => {
         }
 
         header nav {
-            display: none;
+            background: var(--secondary-background-color);
+            position: absolute;
+            top: var(--header-height);
+            left: 100vw;
+            width: 100vw;
+            height: calc(100vh - var(--header-height));
+            padding-top: 1rem;
+            transition: 0.3s;
+        }
+
+        header[data-overlay-menu="closed"] nav {
+            left: 100vw;
+        }
+
+        header[data-overlay-menu="opened"] nav {
+            left: 0;
+        }
+
+        header nav a {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        #menu_button {
+            display: block;
+        }
+
+        header[data-overlay-menu="opened"] #menu_button div {
+            background: none;
+        }
+
+        header[data-overlay-menu="opened"] #menu_button div::before {
+            transform: rotate(45deg);
+            width: 95%;
+        }
+
+        header[data-overlay-menu="opened"] #menu_button div::after {
+            transform: rotate(-45deg);
+            width: 95%;
         }
     }
 
