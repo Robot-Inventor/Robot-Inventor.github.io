@@ -436,8 +436,12 @@ const ISO8601ToLocale = (iso8601: string) => {
             main > article {
                 grid-column: 2;
                 width: 100%;
-                max-width: 35rem;
+                max-width: min(35rem, calc(100vw - 1.5rem));
                 padding-top: 0.5rem;
+                hyphens: auto;
+                line-break: strict;
+                overflow-wrap: break-word;
+                word-break: break-word;
             }
 
             main > article a {
