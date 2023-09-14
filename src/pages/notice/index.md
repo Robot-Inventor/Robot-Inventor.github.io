@@ -5,6 +5,7 @@ description: 「ロボット INVENTOR　ブログ」のお知らせページで�
 pubDate: "2021-06-13T23:28:51.664+09:00"
 modifiedDate: "2023-08-05T22:37:36.934+09:00"
 author: ろぼいん
+showAuthor: false
 ---
 
 サイトの更新情報などのお知らせを随時投稿します。

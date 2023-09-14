@@ -6,6 +6,7 @@ const articleCollection = defineCollection({
         z.object({
             title: z.string(),
             author: reference("author"),
+            showAuthor: z.boolean().default(true),
             description: z.string(),
             showDate: z.boolean().default(true),
             pubDate: z.string().datetime({ offset: true }),

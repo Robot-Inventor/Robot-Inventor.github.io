@@ -14,6 +14,7 @@ interface Props {
                   id: string;
                   collection: string;
               };
+        showAuthor: boolean;
         pubDate: string;
         modifiedDate?: string;
         showDate?: boolean;
@@ -209,30 +210,32 @@ const ISO8601ToLocale = (iso8601: string) => {
                     <img src="/icon/social/threads.svg" alt="Threadsのアイコン" />
                 </a>
             </section>
-            <address class="author_info">
-                <img
-                    class="author_info-icon"
-                    src={author.data.icon}
-                    alt="著者のアイコン画像"
-                    loading="lazy"
-                    decoding="async"
-                />
-                <div class="author_info-text">
-                    <b class="author_info-name">{authorId}</b>
-                    <div class="author_info-link_container">
-                        {
-                            Object.keys(author.data.profileLinks).map((linkName) => {
-                                const link = author.data.profileLinks[linkName];
-                                return (
-                                    <a href={link} target="_blank">
-                                        {linkName}
-                                    </a>
-                                );
-                            })
-                        }
-                    </div>
-                </div>
-            </address>
+            {
+                Astro.props.frontmatter.showAuthor && (
+                    <address class="author_info">
+                        <img
+                            class="author_info-icon"
+                            src={author.data.icon}
+                            alt="著者のアイコン画像"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        <div class="author_info-text">
+                            <b class="author_info-name">{authorId}</b>
+                            <div class="author_info-link_container">
+                                {Object.keys(author.data.profileLinks).map((linkName) => {
+                                    const link = author.data.profileLinks[linkName];
+                                    return (
+                                        <a href={link} target="_blank">
+                                            {linkName}
+                                        </a>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </address>
+                )
+            }
         </main>
         <footer>
             <p>Copyright © 2023 ろぼいん All rights reserved.</p>
