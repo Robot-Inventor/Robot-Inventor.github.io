@@ -1,5 +1,7 @@
 ---
 import { getEntry } from "astro:content";
+import { Image } from "astro:assets";
+import defaultThumbnail from "../../public/icon/ogp_default_thumbnail.png";
 
 interface Props {
     link: string;
@@ -12,15 +14,15 @@ const slug = Astro.props.link.replace("/article/", "").replace(/\/$/, "");
 const targetArticle = await getEntry("article", slug);
 if (!targetArticle) throw new Error("article not found");
 
-let thumbnail = "/icon/ogp_default_thumbnail.png";
+let thumbnail = defaultThumbnail;
 if (targetArticle.data.thumbnail) {
-    thumbnail = targetArticle.data.thumbnail.src;
+    thumbnail = targetArticle.data.thumbnail;
 }
 ---
 
 <article>
     <a href={Astro.props.link}>
-        <img src={thumbnail} alt="記事のサムネイル" loading="lazy" decoding="async" class="thumbnail" />
+        <Image src={thumbnail} width={Math.min(600, thumbnail.width)} alt="記事のサムネイル" class="thumbnail" />
         <div class="text_container">
             <div class="title">{targetArticle.data.title}</div>
             <div class="description">{targetArticle.data.description}</div>
