@@ -3,6 +3,7 @@ import "./Layout.css";
 
 import { getEntry } from "astro:content";
 import { ViewTransitions } from "astro:transitions";
+import { Image } from "astro:assets";
 
 interface Props {
     frontmatter: {
@@ -149,11 +150,11 @@ const ISO8601ToLocale = (iso8601: string) => {
             <article>
                 {
                     Astro.props.frontmatter.showThumbnail && Astro.props.frontmatter.thumbnail && (
-                        <img
-                            src={Astro.props.frontmatter.thumbnail.src}
+                        <Image
+                            src={Astro.props.frontmatter.thumbnail}
+                            width={Math.min(1920, Astro.props.frontmatter.thumbnail.width)}
                             alt="サムネイル"
-                            width={Astro.props.frontmatter.thumbnail.width}
-                            height={Astro.props.frontmatter.thumbnail.height}
+                            loading="eager"
                         />
                     )
                 }
