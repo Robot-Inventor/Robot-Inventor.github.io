@@ -1,0 +1,100 @@
+---
+title: シャドウバンやセンシティブ判定を確認できるShadowban Scanner v2をリリースしました
+description: 前回のアップデートから3か月近く経ってしまいましたが、Twitter（X）のシャドウバンやセンシティブ判定を外部サイトに移動せずに確認できる拡張機能「Shadowban Scanner」のバージョン2をリリースしました。Shadowban Scanner v2では、v1の最後の更新からの約3か月間で、多くの改善や新機能の追加が行われました。
+author: ろぼいん
+thumbnail: ./v2-cover.png
+pubDate: "2023-09-21T00:00:00+09:00"
+---
+
+前回のアップデートから3か月近く経ってしまいましたが、Twitter（X）のシャドウバンやセンシティブ判定を外部サイトに移動せずに確認できる拡張機能「Shadowban Scanner」のバージョン2をリリースしました。
+
+また、[公式サイト](https://robot-inventor.github.io/shadowban-scanner/)も公開しました。併せてご覧ください。
+
+## Shadowban Scannerとは？
+
+Shadowban Scannerは、Twitterのいわゆるシャドウバンやセンシティブ判定を、外部サイトに移動せずにその場で確認できる拡張機能です。
+
+Shadowban Scannerは、次のリンクからダウンロードできます。
+
+<div id="extension-badge-container">
+
+[![Chrome](./chrome.svg)](https://chrome.google.com/webstore/detail/enlganfikppbjhabhkkilafmkhifadjd/)
+[![Edge](./Edge.svg)](https://microsoftedge.microsoft.com/addons/detail/shadowban-scanner/kfeecmboomhggeeceipnbbdjmhjoccbl)
+[![Firefox](./Firefox.svg)](https://addons.mozilla.org/firefox/addon/shadowban-scanner/)
+
+</div>
+<style>
+#extension-badge-container p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+#extension-badge-container img {
+  width: auto;
+  height: 5rem;
+}
+</style>
+
+お使いのWebブラウザーにインストールするだけで、次の機能が利用できるようになります。
+
+- アカウント単位のシャドウバンとセンシティブフラグの検出
+- プロフィールのメディア（アイコンとヘッダー画像）のセンシティブフラグの検出
+- ツイート単位のセンシティブフラグの検出
+- ツイートの年齢制限の検出
+
+すべての処理はユーザーのコンピューター上で行われます。一部の拡張機能でみられるような、外部サーバーと通信したり、ユーザーの認証情報を無断で取得してTwitterの内部APIにアクセスしたりするような処理はありません。あなたのデータとプライバシーを守ります。
+
+Shadowban Scannerは、PC向けの最新バージョンのGoogle Chrome、Microsoft Edge、Mozilla Firefoxで利用できます。技術的な理由により、スマートフォンでは利用できません（Android版Firefox Nightlyを除く）。
+
+仕組みなどの詳細は、次のページから確認できます。
+
+- [Shadowban Scannerの仕組みとシャドウバンについて - Shadowban Scanner](https://github.com/Robot-Inventor/shadowban-scanner/blob/main/doc/ja/about-shadowban.md)
+
+:::note info
+Shadowban Scannerは、他の類似のツールと同様に、偽陽性や偽陰性が発生することがあります。Shadowban Scannerで継続的にアカウントやツイートの状態を確認しつつ、他のツールと併用することをオススメします。
+:::
+
+## v2のハイライト
+
+Shadowban Scanner v2では、v1の最後の更新からの約3か月間で、多くの改善や新機能の追加が行われました。
+
+次のリストは、主な変更点の抜粋です。すべての変更点は、[リリースページ](https://github.com/Robot-Inventor/shadowban-scanner/releases/tag/v2.0.0)で確認できます。
+
+### 🎉新機能
+
+- プロフィールのセンシティブフラグの検出機能を追加
+- 自分のツイートにのみ検証結果を表示する機能が正式に利用可能に
+- [公式サイト](https://robot-inventor.github.io/shadowban-scanner/)を開設
+- 繁体字中国語と韓国語に対応
+- Microsoft Edgeに対応
+- シャドウバンやセンシティブ判定、Shadowban Scannerについての解説を追加
+- 設定画面に、リリースノートへリンクされたバージョン番号のテキストを追加
+
+### 🔧変更点
+
+- OS標準の絵文字の代わりに[Twemoji](https://twemoji.twitter.com/)を利用するように変更
+- 設定項目をより分かりやすい文言に変更
+- 結果の読み込みに時間がかかる場合、ローディングアニメーションが表示されるように
+- メッセージをより明確で分かりやすい表現に変更
+
+### 📝その他
+
+- [ローカライズガイド](https://github.com/Robot-Inventor/shadowban-scanner/blob/main/doc/localization.md)を追加
+- Shadowban Scannerについての詳細な技術情報を開示
+- JSDocを追加
+
+## v3の予定
+
+現在、Shadowban Scanner v3の開発準備を進めています。
+
+個人で開発しているのでv3のリリースについて確約はできませんが、v2よりも早くリリースできるといいなと思っています。
+
+Shadowban Scanner v3では、結果をツイートするボタンや、法的理由による表示制限の検出機能を追加する予定です。
+
+Shadowban Scannerは、すべての機能を無料で提供しています。開発の励みになるので[Twitterのフォロー](https://twitter.com/keita_roboin)やShadowban Scannerの拡散をお願いします！
+
+また、何か問題などがあればTwitterのDMか[GitHub](https://github.com/Robot-Inventor/shadowban-scanner)までお願いします。
