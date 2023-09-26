@@ -46,6 +46,8 @@ Shadowban Scannerは、次のリンクからダウンロードできます。
 - ツイート単位のセンシティブフラグの検出
 - ツイートの年齢制限の検出
 
+![Shadowban Scannerのスクリーンショット](./screenshot2_ja.png)
+
 すべての処理はユーザーのコンピューター上で行われます。一部の拡張機能でみられるような、外部サーバーと通信したり、ユーザーの認証情報を無断で取得してTwitterの内部APIにアクセスしたりするような処理はありません。あなたのデータとプライバシーを守ります。
 
 Shadowban Scannerは、PC向けの最新バージョンのGoogle Chrome、Microsoft Edge、Mozilla Firefoxで利用できます。技術的な理由により、スマートフォンでは利用できません（Android版Firefox Nightlyを除く）。
