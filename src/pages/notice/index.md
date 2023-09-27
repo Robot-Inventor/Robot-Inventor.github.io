@@ -10,6 +10,14 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/09/27　サイト更新情報
+
+新しい記事「[タスクバーに追加されたMicrosoft Copilotを消す方法](/article/2023/09/27/hide-microsoft-copilot/)」を公開しました。
+
+## 2023/09/22　サイト更新情報
+
+新しい記事「[【ログアウト不要】Threadsで複数アカウントを切り替える方法](/article/2023/09/22/multiple-accounts-in-threads/)」を公開しました。
+
 ## 2023/09/22　サイト更新情報
 
 新しい記事「[YouTubeの複数の再生リストを1つにまとめる方法](/article/2023/09/22/merge-youtube-playlists/)」を公開しました。
