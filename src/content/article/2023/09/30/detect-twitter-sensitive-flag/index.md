@@ -24,7 +24,7 @@ Twitterには、アカウントごとのいわゆるシャドウバンとは別�
 
 ## Shadowban Scannerとは
 
-Shadowban Scannerは、Twitterのセンシティブ判定やシャドウバンを検出できる拡張機能です。
+[Shadowban Scanner](https://robot-inventor.github.io/shadowban-scanner/)は、Twitterのセンシティブ判定やシャドウバンを検出できる拡張機能です。
 
 この拡張機能をパソコンのブラウザーにインストールすると、ツイートの下にセンシティブ判定やシャドウバンの状態を表示できます。外部サイトへ飛ばずに、アカウントやツイートの状態を確認できます。
 
@@ -44,6 +44,8 @@ Shadowban Scannerには、次のような機能が搭載されています。
 また、ユーザースクリプト版も存在しますが、設定の変更ができないので拡張機能版がオススメです。
 
 Shadowban Scannerは拡張機能版、ユーザースクリプト版ともにスマートフォンに対応しておらず、PCでのみ利用できます。
+
+- [Shadowban Scanner公式サイト](https://robot-inventor.github.io/shadowban-scanner/)
 
 :::note info
 Shadowban Scannerは類似の他のツールと同様に、偽陽性や偽陰性が発生することがあります。Shadowban Scannerで継続的にアカウントやツイートの状態を確認しつつ、必要に応じて他のツールと併用することをオススメします。
