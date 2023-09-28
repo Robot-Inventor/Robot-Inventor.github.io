@@ -8,7 +8,7 @@ pubDate: "2023-09-30T00:00:00+09:00"
 
 ## はじめに
 
-この記事では、Twitter（X）のセンシティブ判定やシャドウバンをリアルタイムで確認できる「Shadowban Scanner」の使い方を解説します。
+この記事では、Twitter（X）のセンシティブ判定やシャドウバンをリアルタイムでチェックできる「Shadowban Scanner」の使い方を解説します。
 
 <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="ja" dir="ltr">Twitterのシャドウバンを検出する拡張機能「Shadowban Scanner」を公開しました！<br><br>アカウント単位のシャドウバンとツイート単位のセンシティブ判定を、外部サイトに飛ばずに確認できます。ぜひインストールしてください！<br><br>Chrome版：<a href="https://t.co/33XTpVLF8G">https://t.co/33XTpVLF8G</a><br>Firefox版：<a href="https://t.co/jNaxV8pVYw">https://t.co/jNaxV8pVYw</a> <a href="https://t.co/wV3IWAlJww">pic.twitter.com/wV3IWAlJww</a></p>&mdash; ろぼいん@一般人 (@keita_roboin) <a href="https://twitter.com/keita_roboin/status/1667365975937757185?ref_src=twsrc%5Etfw">June 10, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -34,9 +34,9 @@ pubDate: "2023-09-30T00:00:00+09:00"
 
 ## Shadowban Scannerとは
 
-Shadowban Scannerは、Twitterのセンシティブ判定やシャドウバンをリアルタイムで確認できる拡張機能です。
+Shadowban Scannerは、Twitterのセンシティブ判定やシャドウバンをリアルタイムでチェックできる拡張機能です。2023年にリリースされたばかりの拡張機能で、9月30日には機能が強化されたv2.0が公開されました。
 
-この拡張機能をパソコンのブラウザーにインストールすると、ツイートの下にセンシティブ判定やシャドウバンの状態を表示できるようになります。外部サイトへ飛ばずに、リアルタイムで手軽にアカウントやツイートの状態を確認できます。
+この拡張機能をパソコンのブラウザーにインストールすると、ツイートの下にセンシティブ判定やシャドウバンの状態を表示できるようになります。外部サイトへ飛ばずに、その場でリアルタイムかつ手軽にアカウントやツイートの状態を確認できます。
 
 ![ツイートの下にシャドウバンされていることを示す赤い背景のメッセージが表示されている画像](./screenshot2_ja.png)
 
