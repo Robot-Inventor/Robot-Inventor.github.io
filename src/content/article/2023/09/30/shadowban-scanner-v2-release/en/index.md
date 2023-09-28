@@ -3,7 +3,7 @@ title: Shadowban Scanner v2 is now available to check shadowban and sensitive ju
 description: It has been almost three months since the last update, and I have released version 2 of Shadowban Scanner, an extension that allows you to check Twitter (X) shadowban and sensitive judgments without having to go to an external site. in Shadowban Scanner v2, many improvements and new features have been added in the three months since the last update of v1.
 author: ろぼいん
 thumbnail: ./v2-cover.png
-pubDate: "2023-09-21T00:00:00+09:00"
+pubDate: "2023-09-30T00:00:00+09:00"
 ---
 
 It has been almost three months since the last update, but I have released version 2 of Shadowban Scanner, an extension that allows you to check Twitter (X) shadowban and sensitive judgments without having to go to an external site.

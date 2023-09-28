@@ -1,32 +1,42 @@
 ---
-title: Twitterのセンシティブ判定を確認できる「Shadowban Scanner」の使い方
-description: Twitterでツイートがセンシティブ判定を受けると、検索やおすすめに表示されにくくなったりします。この記事では、Twitterのセンシティブ判定やシャドウバンを検出できる「Shadowban Scanner」の使い方を解説します。
+title: Twitterのシャドウバンをリアルタイムで確認できる「Shadowban Scanner」の使い方
+description: Twitterでアカウントがシャドウバンされると、検索やおすすめに表示されにくくなったりします。この記事では、Twitterのセンシティブ判定やシャドウバンを検出できる「Shadowban Scanner」の使い方を解説します。
 author: ろぼいん
 thumbnail: ./logo.png
-pubDate: "2023-09-21T00:00:00+09:00"
+pubDate: "2023-09-30T00:00:00+09:00"
 ---
 
 ## はじめに
 
-この記事では、Twitter（X）のセンシティブ判定やシャドウバンを検出できる「Shadowban Scanner」の使い方を解説します。
+この記事では、Twitter（X）のセンシティブ判定やシャドウバンをリアルタイムで確認できる「Shadowban Scanner」の使い方を解説します。
 
 <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="ja" dir="ltr">Twitterのシャドウバンを検出する拡張機能「Shadowban Scanner」を公開しました！<br><br>アカウント単位のシャドウバンとツイート単位のセンシティブ判定を、外部サイトに飛ばずに確認できます。ぜひインストールしてください！<br><br>Chrome版：<a href="https://t.co/33XTpVLF8G">https://t.co/33XTpVLF8G</a><br>Firefox版：<a href="https://t.co/jNaxV8pVYw">https://t.co/jNaxV8pVYw</a> <a href="https://t.co/wV3IWAlJww">pic.twitter.com/wV3IWAlJww</a></p>&mdash; ろぼいん@一般人 (@keita_roboin) <a href="https://twitter.com/keita_roboin/status/1667365975937757185?ref_src=twsrc%5Etfw">June 10, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-## センシティブ判定とは
+## シャドウバンとは
 
-まずは、Twitterのセンシティブ判定について説明します。
+まずは、Twitterのシャドウバンについて説明します。
 
-Twitterには、アカウントごとのいわゆるシャドウバンとは別に、ツイートごとのセンシティブ判定が存在しています。
+シャドウバンには2つの定義があります。1つ目は一般的に用いられる定義で、ツイートが検索結果やおすすめに表示されにくくなったり、それらにまったく表示されなくなったりする現象の総称です。
 
-センシティブ判定されたツイートは、Twitterのオススメや検索結果に表示されにくくなり、インプレッション数に大きな影響を与えます。また、センシティブ判定されているツイートや、センシティブ判定されているリツイートが多いアカウントは、シャドウバンを受ける可能性があります。
+2つ目はTwitter公式の定義で、投稿者に知られずにツイートを投稿者以外の誰にも発見できないようにするというものです。詳しくはTwitterの公式ブログに書かれています。
 
-しかし、Twitterはセンシティブ判定を確認する手段を公式に提供していません。そこで登場するのが、Shadowban Scannerです。
+- [シャドウバンについてのTwitterの公式ブログ](https://blog.twitter.com/en_us/topics/company/2018/Setting-the-record-straight-on-shadow-banning)
+
+この公式ブログで、TwitterはTwitter公式の定義のシャドウバンを行っていないと主張していますが、一般的な定義にもとづくシャドウバンについては否定していません。
+
+一般的な定義のシャドウバンでは、プロフィールにアクセスすればツイートを閲覧できます。
+
+これは、Twitter公式の定義の「誰にも発見できないようにする」には当てはまりませんし、公式ブログの「プロフィールに直接アクセスするなど、ツイートを見つけるにはさらに作業が必要になる場合があります」に該当します。
+
+したがって、Twitterは公式の定義のシャドウバンはしていませんが、一般的な定義のシャドウバンについては間接的に認めています。なお、一般的な定義でのシャドウバンは、Twitterが「ランク付け」と呼ぶものに該当すると思われます。
+
+いずれにしても、シャドウバンを受けるとインプレッション数が激減します。しかし、Twitterはセンシティブ判定やシャドウバンを確認する手段を公式に提供していません。そこで登場するのが、Shadowban Scannerです。
 
 ## Shadowban Scannerとは
 
-Shadowban Scannerは、Twitterのセンシティブ判定やシャドウバンを検出できる拡張機能です。
+Shadowban Scannerは、Twitterのセンシティブ判定やシャドウバンをリアルタイムで確認できる拡張機能です。
 
-この拡張機能をパソコンのブラウザーにインストールすると、ツイートの下にセンシティブ判定やシャドウバンの状態を表示できます。外部サイトへ飛ばずに、アカウントやツイートの状態を確認できます。
+この拡張機能をパソコンのブラウザーにインストールすると、ツイートの下にセンシティブ判定やシャドウバンの状態を表示できるようになります。外部サイトへ飛ばずに、リアルタイムで手軽にアカウントやツイートの状態を確認できます。
 
 ![ツイートの下にシャドウバンされていることを示す赤い背景のメッセージが表示されている画像](./screenshot2_ja.png)
 
