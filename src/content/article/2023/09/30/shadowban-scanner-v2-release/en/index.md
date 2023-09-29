@@ -48,6 +48,8 @@ Just install it on your web browser and you will have access to the following fe
 
 ![screenshot of Shadowban Scanner](./screenshot2_en.png)
 
+![screenshot of Shadowban Scanner](./screenshot1_en.png)
+
 All processing is done on the user's computer. There is no communication with external servers or access to Twitter's internal APIs to obtain your credentials without your permission, as is the case with some extensions. Your data and privacy are protected.
 
 Shadowban Scanner is available in the latest versions of Google Chrome, Microsoft Edge, and Mozilla Firefox for PCs. For technical reasons, it is not available on smartphones (except Firefox Nightly for Android).
