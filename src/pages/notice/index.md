@@ -10,6 +10,18 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/09/30　サイト更新情報
+
+新しい記事「[シャドウバンやセンシティブ判定を確認できるShadowban Scanner v2をリリースしました](/article/2023/09/30/shadowban-scanner-v2-release/)」を公開しました。
+
+## 2023/09/30　サイト更新情報
+
+新しい記事「[Twitterのセンシティブ判定を確認できる「Shadowban Scanner」の使い方](/article/2023/09/30/detect-twitter-sensitive-flag/)」を公開しました。
+
+## 2023/09/30　サイト更新情報
+
+新しい記事「[Twitterのシャドウバンをリアルタイムで確認できる「Shadowban Scanner」の使い方](/article/2023/09/30/detect-twitter-shadowban/)」を公開しました。
+
 ## 2023/09/27　サイト更新情報
 
 新しい記事「[タスクバーに追加されたMicrosoft Copilotを消す方法](/article/2023/09/27/hide-microsoft-copilot/)」を公開しました。
