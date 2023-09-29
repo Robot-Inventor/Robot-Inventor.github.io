@@ -6,9 +6,14 @@ thumbnail: ./v2-cover.png
 pubDate: "2023-09-30T00:00:00+09:00"
 ---
 
+import { YouTube } from "@astro-community/astro-embed-youtube";
+import ExtensionBadges from "../ExtensionBadges.astro";
+
 It has been almost three months since the last update, but I have released version 2 of Shadowban Scanner, an extension that allows you to check Twitter (X) shadowban and sensitive judgments without having to go to an external site.
 
-The [official website](https://robot-inventor.github.io/shadowban-scanner/) is also now available. Please take a look at it as well.
+The [official website](https://robot-inventor.github.io/shadowban-scanner/) and PV are also now available. Please take a look at it as well.
+
+<YouTube id="6c4MCItd7wY" />
 
 ## What Is Shadowban Scanner?
 
@@ -16,28 +21,7 @@ Shadowban Scanner is an extension that allows you to check Twitter's so-called s
 
 Shadowban Scanner can be downloaded from the following links:
 
-<div id="extension-badge-container">
-
-[![Chrome](./chrome.svg)](https://chrome.google.com/webstore/detail/enlganfikppbjhabhkkilafmkhifadjd/)
-[![Edge](./Edge.svg)](https://microsoftedge.microsoft.com/addons/detail/shadowban-scanner/kfeecmboomhggeeceipnbbdjmhjoccbl)
-[![Firefox](./Firefox.svg)](https://addons.mozilla.org/firefox/addon/shadowban-scanner/)
-
-</div>
-<style>
-#extension-badge-container p {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-#extension-badge-container img {
-  width: auto;
-  height: 5rem;
-}
-</style>
+<ExtensionBadges/>
 
 Just install it on your web browser and you will have access to the following features
 

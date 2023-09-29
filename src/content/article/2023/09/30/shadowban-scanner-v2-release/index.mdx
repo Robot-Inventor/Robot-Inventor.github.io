@@ -6,9 +6,14 @@ thumbnail: ./v2-cover.png
 pubDate: "2023-09-30T00:00:00+09:00"
 ---
 
+import { YouTube } from "@astro-community/astro-embed-youtube";
+import ExtensionBadges from "./ExtensionBadges.astro";
+
 前回のアップデートから3か月近く経ってしまいましたが、Twitter（X）のシャドウバンやセンシティブ判定を外部サイトに移動せずに確認できる拡張機能「Shadowban Scanner」のバージョン2をリリースしました。
 
-また、[公式サイト](https://robot-inventor.github.io/shadowban-scanner/)も公開しました。併せてご覧ください。
+また、[公式サイト](https://robot-inventor.github.io/shadowban-scanner/)とPVも公開しました。併せてご覧ください。
+
+<YouTube id="S2mRHz9SEig" />
 
 ## Shadowban Scannerとは？
 
@@ -16,28 +21,7 @@ Shadowban Scannerは、Twitterのいわゆるシャドウバンやセンシテ�
 
 Shadowban Scannerは、次のリンクからダウンロードできます。
 
-<div id="extension-badge-container">
-
-[![Chrome](./chrome.svg)](https://chrome.google.com/webstore/detail/enlganfikppbjhabhkkilafmkhifadjd/)
-[![Edge](./Edge.svg)](https://microsoftedge.microsoft.com/addons/detail/shadowban-scanner/kfeecmboomhggeeceipnbbdjmhjoccbl)
-[![Firefox](./Firefox.svg)](https://addons.mozilla.org/firefox/addon/shadowban-scanner/)
-
-</div>
-<style>
-#extension-badge-container p {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-#extension-badge-container img {
-  width: auto;
-  height: 5rem;
-}
-</style>
+<ExtensionBadges/>
 
 お使いのWebブラウザーにインストールするだけで、次の機能が利用できるようになります。
 

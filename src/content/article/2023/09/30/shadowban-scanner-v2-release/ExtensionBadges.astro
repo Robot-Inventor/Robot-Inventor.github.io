@@ -1,0 +1,36 @@
+---
+import chromeBadge from "./chrome.svg";
+import edgeBadge from "./edge.svg";
+import firefoxBadge from "./firefox.svg";
+---
+
+<div id="extension-badge-container">
+    <a href="https://chrome.google.com/webstore/detail/enlganfikppbjhabhkkilafmkhifadjd/" target="_blank">
+        <img src={chromeBadge.src} alt="Chrome" />
+    </a>
+    <a
+        href="https://microsoftedge.microsoft.com/addons/detail/shadowban-scanner/kfeecmboomhggeeceipnbbdjmhjoccbl"
+        target="_blank"
+    >
+        <img src={edgeBadge.src} alt="Edge" />
+    </a>
+    <a href="https://addons.mozilla.org/firefox/addon/shadowban-scanner/" target="_blank">
+        <img src={firefoxBadge.src} alt="Firefox" />
+    </a>
+</div>
+<style is:inline>
+    #extension-badge-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    #extension-badge-container img {
+        width: auto;
+        height: 5rem;
+    }
+</style>
