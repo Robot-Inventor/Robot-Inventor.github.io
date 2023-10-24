@@ -10,6 +10,14 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/10/24　サイト更新情報
+
+新しい記事「[Googleドキュメントの画像を高画質で保存する方法【PC・スマホ】](/article/2023/10/24/download-images-from-google-doc/)」を公開しました。
+
+## 2023/10/24　サイト更新情報
+
+新しい記事「[Twitterですべてのツイートに「さらに表示」が出るバグの解決方法](/article/2023/10/24/fix-twitter-read-more-button/)」を公開しました。
+
 ## 2023/09/30　サイト更新情報
 
 新しい記事「[シャドウバンやセンシティブ判定を確認できるShadowban Scanner v2をリリースしました](/article/2023/09/30/shadowban-scanner-v2-release/)」を公開しました。
