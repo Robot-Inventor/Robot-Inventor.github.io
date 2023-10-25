@@ -2,7 +2,6 @@
 import "./Layout.css";
 
 import { getEntry } from "astro:content";
-import { ViewTransitions } from "astro:transitions";
 import { Image } from "astro:assets";
 
 interface Props {
@@ -136,7 +135,6 @@ const ISO8601ToLocale = (iso8601: string) => {
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2526648882773973"
             crossorigin="anonymous"></script>
-        <ViewTransitions />
     </head>
     <body>
         <header data-overlay-menu="closed" transition:persist="">
