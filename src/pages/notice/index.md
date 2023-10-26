@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/10/26　サイト更新情報
+
+新しい記事「[Twitterの「-filter:safe」はセンシティブ判定ではない！？正しい確認方法を解説](/article/2023/10/26/twitter-filter-safe/)」を公開しました。
+
 ## 2023/10/24　サイト更新情報
 
 新しい記事「[Googleドキュメントの画像を高画質で保存する方法【PC・スマホ】](/article/2023/10/24/download-images-from-google-doc/)」を公開しました。
