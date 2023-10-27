@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/10/27　サイト更新情報
+
+新しい記事「[YouTubeですべてのコメントに「続きを読む」が出るバグの解決方法](/article/2023/10/27/fix-youtube-read-more-button/)」を公開しました。
+
 ## 2023/10/26　サイト更新情報
 
 新しい記事「[Twitterの「-filter:safe」はセンシティブ判定ではない！？正しい確認方法を解説](/article/2023/10/26/twitter-filter-safe/)」を公開しました。
