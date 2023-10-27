@@ -14,10 +14,7 @@ const slug = Astro.props.link.replace("/article/", "").replace(/\/$/, "");
 const targetArticle = await getEntry("article", slug);
 if (!targetArticle) throw new Error("article not found");
 
-let thumbnail = defaultThumbnail;
-if (targetArticle.data.thumbnail) {
-    thumbnail = targetArticle.data.thumbnail;
-}
+const thumbnail = targetArticle.data.thumbnail || defaultThumbnail;
 ---
 
 <article>

@@ -14,17 +14,11 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props as { entry: CollectionEntry<"tag"> };
 
-const allArticles = await getCollection("article");
-const articles = allArticles
-    .filter((article) => {
-        if (!article.data.tags) return false;
-
-        for (const tag of article.data.tags) {
-            if (tag.id === entry.id) return true;
-        }
-
-        return false;
-    })
+const articles = await getCollection("article", ({ data }) => {
+    if (!data.tags) return false;
+    return data.tags.some((tag) => tag.id === entry.id);
+});
+const articleLinks = articles
     .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
     .map((article) => `/article/${article.slug}`);
 ---
@@ -37,11 +31,12 @@ const articles = allArticles
         showAuthor: false,
         pubDate: "2023-10-28T00:00:00.000+09:00",
         showDate: false,
-        showThumbnail: false
+        showThumbnail: false,
+        showRelatedArticles: false
     }}
 >
     <div id="article_list_area">
-        {articles.map((article) => <ArticleCard link={article} />)}
+        {articleLinks.map((article) => <ArticleCard link={article} />)}
     </div>
     <style is:inline>
         #article_list_area > * {

@@ -13,7 +13,8 @@ const articleCollection = defineCollection({
             modifiedDate: z.string().datetime({ offset: true }).optional(),
             thumbnail: image().optional(),
             showThumbnail: z.boolean().default(true),
-            tags: z.array(reference("tag")).optional()
+            tags: z.array(reference("tag")).optional(),
+            showRelatedArticles: z.boolean().default(true)
         })
 });
 

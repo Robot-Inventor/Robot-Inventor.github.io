@@ -2,7 +2,10 @@
 import "./Layout.css";
 
 import { getEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
+import defaultThumbnail from "../../public/icon/ogp_default_thumbnail.png";
 
 interface Props {
     frontmatter: {
@@ -24,6 +27,7 @@ interface Props {
             id: string;
             collection: string;
         }>;
+        showRelatedArticles: boolean;
     };
 }
 
@@ -91,6 +95,56 @@ const ISO8601ToLocale = (iso8601: string) => {
         .replace(/(\d{2}:\d{2}):\d{2}/, "$1")
         .replace(/\.\d+$/, "");
 };
+
+const sortRelatedArticles = (a: CollectionEntry<"article">, b: CollectionEntry<"article">) => {
+    const tagSort =
+        (b.data.tags || []).filter((tag) => tagIds.includes(tag.id)).length -
+        (a.data.tags || []).filter((tag) => tagIds.includes(tag.id)).length;
+    if (tagSort !== 0) return tagSort;
+    return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
+};
+
+/**
+ * 関連記事を取得する。
+ * 1. 同じタグの記事を取得し、現在の記事とのタグの重複数が多い順に並べる
+ * 2. タグの重複数が同じ場合は、投稿日が新しい順に並べる
+ * 3. 同じタグの記事が足りない場合は、最新の記事で補う
+ */
+const getRelatedArticles = async () => {
+    const ITEM_OF_RELATED_ARTICLES = 4;
+    let relatedArticles: CollectionEntry<"article">[] = [];
+
+    const sameTagArticles = (
+        await getCollection("article", (article) => {
+            if (Astro.url.pathname.includes(article.slug) || !article.data.tags) return false;
+            return article.data.tags.some((tag) => tagIds.includes(tag.id));
+        })
+    ).sort(sortRelatedArticles);
+
+    if (sameTagArticles.length >= ITEM_OF_RELATED_ARTICLES) {
+        relatedArticles = sameTagArticles.slice(0, ITEM_OF_RELATED_ARTICLES);
+    } else {
+        const latestArticles = (await getCollection("article")).sort(sortRelatedArticles);
+        relatedArticles = [
+            ...sameTagArticles,
+            ...latestArticles.slice(0, ITEM_OF_RELATED_ARTICLES - sameTagArticles.length)
+        ];
+    }
+
+    const relatedArticlesData = relatedArticles.map(async (article) => {
+        const articleData = await getEntry("article", article.slug);
+        const thumbnail = articleData.data.thumbnail || defaultThumbnail;
+        return {
+            title: articleData.data.title,
+            link: `/article/${article.slug}/`,
+            thumbnail: thumbnail
+        };
+    });
+
+    return await Promise.all(relatedArticlesData);
+};
+
+const relatedArticles = await getRelatedArticles();
 ---
 
 <!doctype html>
@@ -259,6 +313,31 @@ const ISO8601ToLocale = (iso8601: string) => {
                             </div>
                         </div>
                     </address>
+                )
+            }
+            {
+                Astro.props.frontmatter.showRelatedArticles && (
+                    <section id="related_articles_sectioin">
+                        <h2>関連記事</h2>
+                        <div id="related_articles">
+                            {relatedArticles.map((data) => {
+                                return (
+                                    <article>
+                                        <a href={data.link}>
+                                            <Image
+                                                src={data.thumbnail}
+                                                width={Math.min(600, data.thumbnail.width)}
+                                                alt="サムネイル"
+                                                loading="lazy"
+                                                decoding="async"
+                                            />
+                                            <h3>{data.title}</h3>
+                                        </a>
+                                    </article>
+                                );
+                            })}
+                        </div>
+                    </section>
                 )
             }
             <ins

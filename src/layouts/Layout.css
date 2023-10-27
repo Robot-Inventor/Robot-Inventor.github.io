@@ -442,6 +442,40 @@ main > article ol > li {
     --note-icon-url: url("/icon/alert.svg");
 }
 
+#related_articles_sectioin {
+    margin-top: 3rem;
+}
+
+#related_articles {
+    margin-top: 1rem;
+}
+
+#related_articles article {
+    width: 100%;
+    height: 8rem;
+    margin: 1rem 0;
+}
+
+#related_articles article a {
+    color: inherit;
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    height: 100%;
+}
+
+#related_articles article img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: inline-block;
+}
+
+#related_articles article h3 {
+    display: inline-block;
+    margin-left: 1em;
+}
+
 footer {
     background: #3a3a3a;
     height: var(--footer-height);
