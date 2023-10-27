@@ -6,6 +6,7 @@ modifiedDate: "2022-03-14T01:57:58.773+09:00"
 author: ろぼいん
 thumbnail: ./screenshot2.jpg
 showThumbnail: false
+tags: ["chrome", "google", "android"]
 ---
 
 :::note info

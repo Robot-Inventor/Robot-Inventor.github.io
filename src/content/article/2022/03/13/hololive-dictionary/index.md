@@ -6,6 +6,7 @@ modifiedDate: "2022-03-13T17:46:17.377+09:00"
 author: ろぼいん
 thumbnail: ./2022-03-13-01-11-34.png
 showThumbnail: false
+tags: ["twitter", "windows"]
 ---
 
 Hololiveメンバーの名前って変換ミスしやすいですよね。便利なユーザー辞書を見つけたのでご紹介します。

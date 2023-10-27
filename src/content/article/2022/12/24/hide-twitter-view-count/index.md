@@ -5,6 +5,7 @@ pubDate: "2022-12-24T20:36:05.816+09:00"
 author: ろぼいん
 thumbnail: ./logo2.png
 showThumbnail: false
+tags: ["twitter", "firefox", "chrome", "extension", "hide-view-count"]
 ---
 
 ![Hide View Countのロゴ](./logo2.png)

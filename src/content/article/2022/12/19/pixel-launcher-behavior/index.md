@@ -6,6 +6,7 @@ pubDate: "2022-12-19T00:46:15.347+09:00"
 modifiedDate: "2022-12-19T01:18:22.843+09:00"
 author: ろぼいん
 showThumbnail: false
+tags: ["google", "android"]
 ---
 
 ![サムネイル](./thumbnail.png)

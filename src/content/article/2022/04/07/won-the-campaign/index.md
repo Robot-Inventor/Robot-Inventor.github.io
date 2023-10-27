@@ -6,6 +6,7 @@ modifiedDate: "2022-10-10T00:02:26.219+09:00"
 author: ろぼいん
 thumbnail: ./2022-04-07-00-22-03.png
 showThumbnail: false
+tags: ["twitter"]
 ---
 
 始まりはこのツイート。何かのキャンペーンに当選したらしい。

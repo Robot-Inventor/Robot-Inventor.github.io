@@ -5,6 +5,7 @@ thumbnail: ./astro-official-blog.png
 pubDate: "2023-08-31T03:27:00+09:00"
 author: ろぼいん
 showThumbnail: false
+tags: ["astro"]
 ---
 
 ![Astro 3.0のリリースを知らせる公式ブログのスクリーンショット](./astro-official-blog.png)

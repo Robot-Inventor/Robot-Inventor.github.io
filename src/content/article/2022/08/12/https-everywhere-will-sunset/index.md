@@ -6,6 +6,7 @@ modifiedDate: "2022-08-12T18:41:35.93+09:00"
 author: ろぼいん
 thumbnail: ./2022-08-12-18-29-05.png
 showThumbnail: false
+tags: ["firefox", "chrome", "edge", "extension"]
 ---
 
 ![HTTPS Everywhereの公式サイトのスクリーンショット](./2022-08-12-18-29-05.png)

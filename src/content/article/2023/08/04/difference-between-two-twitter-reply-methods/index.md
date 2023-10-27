@@ -6,6 +6,7 @@ pubDate: "2023-08-05T22:36:02.232+09:00"
 modifiedDate: "2023-08-05T22:38:43.199+09:00"
 author: ろぼいん
 showThumbnail: false
+tags: ["twitter"]
 ---
 
 先日、X（旧Twitter）には2つの返信方法があり、片方はタイムラインに表示されてもう片方は表示されないという[投稿](https://twitter.com/ErrorCodeL/status/1686355534189146112)が話題になりました。

@@ -12,7 +12,8 @@ const articleCollection = defineCollection({
             pubDate: z.string().datetime({ offset: true }),
             modifiedDate: z.string().datetime({ offset: true }).optional(),
             thumbnail: image().optional(),
-            showThumbnail: z.boolean().default(true)
+            showThumbnail: z.boolean().default(true),
+            tags: z.array(reference("tag")).optional()
         })
 });
 
@@ -27,7 +28,15 @@ const authorCollection = defineCollection({
     })
 });
 
+const tagCollection = defineCollection({
+    type: "data",
+    schema: z.object({
+        name: z.string()
+    })
+});
+
 export const collections = {
     article: articleCollection,
-    author: authorCollection
+    author: authorCollection,
+    tag: tagCollection
 };

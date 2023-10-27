@@ -20,6 +20,10 @@ interface Props {
         showDate?: boolean;
         thumbnail?: ImageMetadata;
         showThumbnail: boolean;
+        tags?: Array<{
+            id: string;
+            collection: string;
+        }>;
     };
 }
 
@@ -28,6 +32,12 @@ let thumbnailUrl = new URL("/icon/ogp_default_thumbnail.png", Astro.site.href).h
 if (Astro.props.frontmatter.thumbnail) {
     thumbnailUrl = new URL(Astro.props.frontmatter.thumbnail.src, Astro.site.href).href;
 }
+
+const tagIds = Astro.props.frontmatter.tags ? Astro.props.frontmatter.tags.map((tag) => tag.id) : [];
+const tags = (await Promise.all(tagIds.map((tagId) => getEntry("tag", tagId)))).sort((a, b) => {
+    if (!a || !b) return 0;
+    return a.data.name.localeCompare(b.data.name, "ja");
+});
 
 const authorId =
     typeof Astro.props.frontmatter.author === "string"
@@ -162,6 +172,15 @@ const ISO8601ToLocale = (iso8601: string) => {
                     )
                 }
                 <h1>{Astro.props.frontmatter.title}</h1>
+                <div id="article_tags">
+                    {
+                        !!tags.length &&
+                            tags.map((tag) => {
+                                if (!tag) return;
+                                return <a href={`/tag/${tag.id}/`}>#{tag.data.name}</a>;
+                            })
+                    }
+                </div>
                 <div id="article_info">
                     {
                         Astro.props.frontmatter.showDate && (

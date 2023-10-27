@@ -6,6 +6,7 @@ modifiedDate: "2022-04-05T23:03:49.448+09:00"
 author: ろぼいん
 thumbnail: ./computer-1591018_1920.jpg
 showThumbnail: false
+tags: ["windows"]
 ---
 
 :::note info

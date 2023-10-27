@@ -5,6 +5,7 @@ pubDate: "2022-11-30T23:51:43.604+09:00"
 author: ろぼいん
 thumbnail: ./figma_and_svg.png
 showThumbnail: false
+tags: ["windows"]
 ---
 
 :::note info
