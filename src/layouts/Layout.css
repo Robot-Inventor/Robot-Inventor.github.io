@@ -457,3 +457,7 @@ footer p {
 footer a {
     color: inherit;
 }
+
+.google-auto-placed.ap_container {
+    margin: 3rem 0;
+}
