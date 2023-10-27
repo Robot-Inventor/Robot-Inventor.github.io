@@ -96,17 +96,6 @@ const ISO8601ToLocale = (iso8601: string) => {
 <!doctype html>
 <html lang="ja">
     <head prefix="og: http://ogp.me/ns#">
-        <!-- Google tag (gtag.js) -->
-        <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-7HZY93W2BY"></script>
-        <script is:inline>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-
-        gtag("config", "G-7HZY93W2BY");
-        </script>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -140,11 +129,24 @@ const ISO8601ToLocale = (iso8601: string) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@keita_roboin" />
         <script type="application/ld+json" set:html={schema} />
+        <!-- Google tag (gtag.js) -->
+        <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-7HZY93W2BY"></script>
         <script
             is:inline
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2526648882773973"
             crossorigin="anonymous"></script>
+        <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-7HZY93W2BY");
+
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </head>
     <body>
         <header data-overlay-menu="closed" transition:persist="">
@@ -259,6 +261,15 @@ const ISO8601ToLocale = (iso8601: string) => {
                     </address>
                 )
             }
+            <ins
+                class="adsbygoogle multiplex_ad"
+                style="display:block"
+                data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-2526648882773973"
+                data-ad-slot="7221708457"
+                data-matched-content-rows-num="2"
+                data-matched-content-columns-num="1,2"
+                data-matched-content-ui-type="image_stacked"></ins>
         </main>
         <footer>
             <p>Copyright © 2023 ろぼいん All rights reserved.</p>
