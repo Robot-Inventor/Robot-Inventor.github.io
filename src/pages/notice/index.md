@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/10/29　サイト更新情報
+
+新しい記事「[Shadowban Scannerがv2.1にアップデートされました](/article/2023/10/29/shadowban-scanner-v2.1-release/)」を公開しました。
+
 ## 2023/10/28　サイト更新情報
 
 新しい記事「[Twitter（X）の3つの有料プランの違いを解説](/article/2023/10/28/differences-between-3-twitter-plans/)」を公開しました。
