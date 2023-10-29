@@ -111,8 +111,7 @@ const sortRelatedArticles = (a: CollectionEntry<"article">, b: CollectionEntry<"
  * 3. 同じタグの記事が足りない場合は、最新の記事で補う
  */
 const getRelatedArticles = async () => {
-    const ITEM_OF_RELATED_ARTICLES = 4;
-    let relatedArticles: CollectionEntry<"article">[] = [];
+    const NUMBER_OF_RELATED_ARTICLES = 4;
 
     const sameTagArticles = (
         await getCollection("article", (article) => {
@@ -121,15 +120,11 @@ const getRelatedArticles = async () => {
         })
     ).sort(sortRelatedArticles);
 
-    if (sameTagArticles.length >= ITEM_OF_RELATED_ARTICLES) {
-        relatedArticles = sameTagArticles.slice(0, ITEM_OF_RELATED_ARTICLES);
-    } else {
-        const latestArticles = (await getCollection("article")).sort(sortRelatedArticles);
-        relatedArticles = [
-            ...sameTagArticles,
-            ...latestArticles.slice(0, ITEM_OF_RELATED_ARTICLES - sameTagArticles.length)
-        ];
-    }
+    const latestArticles = (await getCollection("article")).sort(sortRelatedArticles);
+    const relatedArticles = [
+        ...sameTagArticles.slice(0, NUMBER_OF_RELATED_ARTICLES),
+        ...latestArticles.slice(0, Math.max(0, NUMBER_OF_RELATED_ARTICLES - sameTagArticles.length))
+    ];
 
     const relatedArticlesData = relatedArticles.map(async (article) => {
         const articleData = await getEntry("article", article.slug);
