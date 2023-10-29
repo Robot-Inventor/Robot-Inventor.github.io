@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/10/30　サイト更新情報
+
+新しい記事「[Twitter（X）のいいねとリツイート機能が削除される？誤った情報に注意](/article/2023/10/30/twitter-like-and-retweet-changes/)」を公開しました。
+
 ## 2023/10/29　サイト更新情報
 
 新しい記事「[Shadowban Scannerがv2.1にアップデートされました](/article/2023/10/29/shadowban-scanner-v2.1-release/)」を公開しました。
