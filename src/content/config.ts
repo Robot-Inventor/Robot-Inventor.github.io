@@ -14,7 +14,7 @@ const articleCollection = defineCollection({
             thumbnail: image().optional(),
             showThumbnail: z.boolean().default(true),
             tags: z.array(reference("tag")).optional(),
-            showRelatedArticles: z.boolean().default(true)
+            showRecommendedArticles: z.boolean().default(true)
         })
 });
 
