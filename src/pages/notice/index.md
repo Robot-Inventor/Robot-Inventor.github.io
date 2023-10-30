@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/10/31　サイト更新情報
+
+新しい記事「[液タブ・板タブで手書き入力をする方法を解説【Windows 11】](/article/2023/10/31/handwriting-input-with-drawing-tablet/)」を公開しました。
+
 ## 2023/10/30　サイト更新情報
 
 新しい記事「[Twitter（X）のいいねとリツイート機能が削除される？誤った情報に注意](/article/2023/10/30/twitter-like-and-retweet-changes/)」を公開しました。
