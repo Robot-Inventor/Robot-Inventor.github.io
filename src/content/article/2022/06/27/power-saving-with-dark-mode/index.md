@@ -6,7 +6,7 @@ modifiedDate: "2022-06-27T23:40:52.920+09:00"
 author: ろぼいん
 thumbnail: ./thumbnail.png
 showThumbnail: false
-tags: ["windows", "android"]
+tags: ["windows", "android", "explanation"]
 ---
 
 ![サムネイル画像](./thumbnail.png)

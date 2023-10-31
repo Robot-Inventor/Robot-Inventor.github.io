@@ -6,6 +6,7 @@ modifiedDate: "2021-06-12T03:04:18.210+09:00"
 author: ろぼいん
 thumbnail: ./desert-1654439_1920.jpg
 showThumbnail: false
+tags: ["explanation"]
 ---
 
 ニュースで、「黄砂が～」と聞くことがありますね。では、黄砂とは一体何者なのでしょうか。

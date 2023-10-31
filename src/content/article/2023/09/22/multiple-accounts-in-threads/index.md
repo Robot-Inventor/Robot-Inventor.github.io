@@ -3,7 +3,7 @@ title: 【ログアウト不要】Threadsで複数アカウントを切り替え
 description: 2023年9月22日、Metaが開発したTwitter（X）競合のSNS「Threads」のモバイルアプリに、複数アカウントの切り替え機能が搭載されました。この記事では、Threadsアプリでログアウト不要で複数のアカウントを切り替える方法を解説します。
 author: ろぼいん
 pubDate: "2023-09-22T18:15:00+09:00"
-tags: ["twitter", "android", "threads"]
+tags: ["twitter", "android", "threads", "explanation"]
 ---
 
 2023年9月22日、Metaが開発したTwitter（X）競合のSNS「Threads」のモバイルアプリに、ログアウトせずに複数のアカウントを切り替えられる機能が搭載されました。この機能はThreadsのリリース当初から要望があった機能です。

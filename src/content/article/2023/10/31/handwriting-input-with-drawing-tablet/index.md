@@ -4,7 +4,7 @@ author: ろぼいん
 pubDate: "2023-10-31T04:00:00+09:00"
 description: "Windows 11で液タブ・板タブを使って手書き入力をする方法を紹介します。タッチパネルを搭載している必要はなく、ペン入力やマウス入力でも手書き入力ができます。"
 thumbnail: ./image-5.png
-tags: ["windows"]
+tags: ["windows", "explanation"]
 ---
 
 この記事では、Windows 11で液タブ・板タブを使って手書き入力をする方法を紹介します。

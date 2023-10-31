@@ -5,7 +5,7 @@ author: ろぼいん
 thumbnail: ./Screenshot_20230831-161608.png
 pubDate: "2023-09-01T00:40:00+09:00"
 showThumbnail: false
-tags: ["youtube"]
+tags: ["youtube", "verification"]
 ---
 
 [ブルアカ](https://bluearchive.jp/)の一部のイベントには、カードめくりというミニゲームが存在しています。カードめくりには複数のめくり方があります。どのめくり方の効率が一番いいのか、シミュレーションを作って検証してみました。

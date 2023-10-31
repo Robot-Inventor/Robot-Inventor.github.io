@@ -4,7 +4,7 @@ description: この記事では、Googleドキュメントに挿入されてい�
 author: ろぼいん
 pubDate: "2023-10-24T16:00:00+09:00"
 thumbnail: ./thumbnail.png
-tags: ["google", "android"]
+tags: ["google", "android", "explanation"]
 ---
 
 この記事では、[Googleドキュメント](https://www.google.com/intl/ja_jp/docs/about/)に挿入されている画像を高画質でダウンロードする方法について解説します。

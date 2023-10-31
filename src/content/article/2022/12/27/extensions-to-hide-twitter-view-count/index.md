@@ -6,7 +6,7 @@ modifiedDate: "2022-12-27T22:43:30.741+09:00"
 author: ろぼいん
 thumbnail: ./logo2.png
 showThumbnail: false
-tags: ["twitter", "firefox", "chrome", "extension", "hide-view-count"]
+tags: ["twitter", "firefox", "chrome", "extension", "hide-view-count", "explanation"]
 ---
 
 2022年12月23日、Twitterにインプレッション数を表示する機能が実装されました。この機能を鬱陶しいと感じる人や、他人と比べてしまうため非表示にしたいという人もいると思います。
