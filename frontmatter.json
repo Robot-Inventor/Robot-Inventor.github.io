@@ -1,0 +1,84 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": "'article'/yyyy/MM/DD",
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Publishing date",
+          "name": "pubDate",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true,
+          "required": true
+        },
+        {
+          "title": "Modified date",
+          "name": "modifiedDate",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isModifiedDate": true
+        },
+        {
+          "title": "Show date",
+          "name": "showDate",
+          "type": "boolean"
+        },
+        {
+          "title": "Author",
+          "name": "author",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Show author",
+          "name": "showAuthor",
+          "type": "boolean"
+        },
+        {
+          "title": "Thumbnail",
+          "name": "thumbnail",
+          "type": "image",
+          "isPreviewImage": true
+        },
+        {
+          "title": "Show thumbnail",
+          "name": "showThumbnail",
+          "type": "boolean"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Show recommended articles",
+          "name": "showRecommendedArticles",
+          "type": "boolean"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:4321",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "article",
+      "path": "[[workspace]]/src/content/article"
+    }
+  ]
+}
