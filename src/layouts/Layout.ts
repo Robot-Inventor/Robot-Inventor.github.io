@@ -14,11 +14,11 @@ menu_items.forEach((item) => {
     });
 });
 
-document.addEventListener("astro:page-load", () => {
-    const links = document.querySelectorAll("main > article a") as NodeListOf<HTMLAnchorElement>;
-    links.forEach((link) => {
-        if (!link.href.endsWith("/")) {
-            link.setAttribute("data-astro-reload", "");
-        }
-    });
+const links = document.querySelectorAll("main > article a") as NodeListOf<HTMLAnchorElement>;
+links.forEach((link) => {
+    // 外部リンクを新しいタブで開く
+    if (!link.href.startsWith(location.origin)) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+    }
 });
