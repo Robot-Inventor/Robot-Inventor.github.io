@@ -197,7 +197,7 @@ const latestArticlesData = await getLatestArticlesData();
         <meta property="og:description" content={Astro.props.frontmatter.description} />
         <meta property="og:site_name" content={import.meta.env.SITE_NAME} />
         <meta property="og:image" content={thumbnailUrl} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@keita_roboin" />
         <script type="application/ld+json" set:html={schema} />
         <!-- Google tag (gtag.js) -->
