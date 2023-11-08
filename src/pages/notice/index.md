@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/11/08　サイト更新情報
+
+新しい記事「[Twitterサークルを廃止後も使い続ける方法](/article/2023/11/08/continue-to-use-twitter-circle/)」を公開しました。
+
 ## 2023/10/31　サイト更新情報
 
 新しい記事「[液タブ・板タブで手書き入力をする方法を解説【Windows 11】](/article/2023/10/31/handwriting-input-with-drawing-tablet/)」を公開しました。
