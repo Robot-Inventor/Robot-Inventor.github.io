@@ -117,7 +117,7 @@ const latestArticles = (await getCollection("article", (article) => !Astro.url.p
  * 3. 同じタグの記事が足りない場合は、最新の記事で補う
  */
 const getRelatedArticlesData = async () => {
-    const NUMBER_OF_RELATED_ARTICLES = 4;
+    const NUMBER_OF_RELATED_ARTICLES = 5;
 
     const sameTagArticles = (
         await getCollection("article", (article) => {
@@ -145,7 +145,7 @@ const getRelatedArticlesData = async () => {
 };
 
 const getLatestArticlesData = async () => {
-    const NUMBER_OF_LATEST_ARTICLES = 4;
+    const NUMBER_OF_LATEST_ARTICLES = 5;
 
     const latestArticlesData = latestArticles.slice(0, NUMBER_OF_LATEST_ARTICLES).map(async (article) => {
         const articleData = await getEntry("article", article.slug);
@@ -208,15 +208,15 @@ const latestArticlesData = await getLatestArticlesData();
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2526648882773973"
             crossorigin="anonymous"></script>
         <script is:inline>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-        gtag("config", "G-7HZY93W2BY");
+            gtag("config", "G-7HZY93W2BY");
 
-        (adsbygoogle = window.adsbygoogle || []).push({});
+            (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
     </head>
     <body>
