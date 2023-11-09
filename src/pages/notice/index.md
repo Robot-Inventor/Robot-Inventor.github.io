@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/11/09　サイト更新情報
+
+新しい記事「[GitHub Universe 2023の1日目の発表内容まとめ](/article/2023/11/09/summary-of-github-universe/)」を公開しました。
+
 ## 2023/11/08　サイト更新情報
 
 新しい記事「[Twitterサークルを廃止後も使い続ける方法](/article/2023/11/08/continue-to-use-twitter-circle/)」を公開しました。
