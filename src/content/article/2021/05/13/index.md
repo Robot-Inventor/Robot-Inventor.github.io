@@ -5,6 +5,7 @@ pubDate: "2021-05-13T00:00:00.000+09:00"
 modifiedDate: "2021-06-11T02:24:19.697+09:00"
 author: ろぼいん
 showThumbnail: false
+tags: ["github"]
 ---
 
 ![ORIZIN Agent HTMLのロゴ](./landscape_logo2.svg)

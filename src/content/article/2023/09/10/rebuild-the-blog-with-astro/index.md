@@ -4,7 +4,7 @@ description: 今までこのブログでは独自に開発したCMSと静的サ�
 author: ろぼいん
 thumbnail: ./astro-official-site.png
 pubDate: "2023-09-10T16:45:00+09:00"
-tags: ["windows", "astro"]
+tags: ["windows", "astro", "github"]
 ---
 
 今までこのブログでは独自に開発したCMSと静的サイトジェネレーターを使っていましたが、Astroに移行しました。この記事では、Astroに移行した理由と、つまづいたところを紹介します。
