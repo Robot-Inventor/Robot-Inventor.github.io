@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/11/12　サイト更新情報
+
+新しい記事「[Pixelの自動字幕起こしのサイズ変更方法](/article/2023/11/12/resize-live-caption-on-google-pixel/)」を公開しました。
+
 ## 2023/11/11　サイト更新情報
 
 新しい記事「[GitHub製のコーディングフォント「Monaspace」　新技術と可変フォントで読みやすい](/article/2023/11/11/github-monaspace-font/)」を公開しました。
