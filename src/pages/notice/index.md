@@ -12,6 +12,10 @@ showAuthor: false
 
 ## 2023/11/12　サイト更新情報
 
+新しい記事「[DaVinci ResolveでVOICEVOX動画を作る「VoiceAutoTool」](/article/2023/11/12/davinci-resolve-voice-auto-tool/)」を公開しました。
+
+## 2023/11/12　サイト更新情報
+
 新しい記事「[Pixelの自動字幕起こしのサイズ変更方法](/article/2023/11/12/resize-live-caption-on-google-pixel/)」を公開しました。
 
 ## 2023/11/11　サイト更新情報
