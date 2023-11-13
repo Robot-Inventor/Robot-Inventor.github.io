@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -333,6 +334,10 @@ main > article ol {
 main > article ul > li,
 main > article ol > li {
     margin: 0.5rem 0;
+}
+
+main *:target {
+    scroll-margin: 4rem;
 }
 
 .share_button {
