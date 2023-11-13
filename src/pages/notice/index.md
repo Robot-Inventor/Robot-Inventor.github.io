@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/11/13　サイト更新情報
+
+新しい記事「[Twitterの消えたトピックを復活させる方法](/article/2023/11/13/restore-twitter-topics/)」を公開しました。
+
 ## 2023/11/12　サイト更新情報
 
 新しい記事「[DaVinci ResolveでVOICEVOX動画を作る「VoiceAutoTool」](/article/2023/11/12/davinci-resolve-voice-auto-tool/)」を公開しました。
