@@ -4,6 +4,9 @@ description: Twitter（X）では、特定の話題に関するツイート（�
 thumbnail: ./image.png
 pubDate: "2023-11-13T11:10:37+09:00"
 author: ろぼいん
+tags:
+    - twitter
+    - explanation
 ---
 
 Twitter（X）では、特定の話題に関するツイート（ポスト）をまとめて見られる「トピック」という機能が存在しています。
