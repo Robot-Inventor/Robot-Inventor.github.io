@@ -6,7 +6,7 @@ modifiedDate: "2023-08-31T02:02:00+09:00"
 author: ろぼいん
 thumbnail: ./2023-05-31-11-02-23.png
 showThumbnail: false
-tags: ["chrome", "microsoft", "google"]
+tags: ["chrome", "microsoft", "google", "ai"]
 ---
 
 ![Search Labsの設定画面](./2023-05-31-11-02-23.png)

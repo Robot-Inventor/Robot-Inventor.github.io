@@ -7,6 +7,7 @@ thumbnail: ./image1.webp
 tags:
     - explanation
     - github
+    - ai
 ---
 
 2023年11月9日に実施されたGitHub Universe 2023の内容をまとめました。この記事の内容は、公式発表資料をもとにしています。
