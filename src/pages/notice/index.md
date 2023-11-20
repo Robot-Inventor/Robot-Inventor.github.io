@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/11/20　サイト更新情報
+
+新しい記事「[DiscordでAIチャット「Clyde」が使えない2つの理由](/article/2023/11/20/discord-clyde-discontinued/)」を公開しました。
+
 ## 2023/11/13　サイト更新情報
 
 新しい記事「[Twitterの消えたトピックを復活させる方法](/article/2023/11/13/restore-twitter-topics/)」を公開しました。
