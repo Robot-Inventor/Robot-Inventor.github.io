@@ -4,6 +4,7 @@ description: GitHub Nextが、「An innovative superfamily of fonts for code（�
 thumbnail: ./image.png
 author: ろぼいん
 pubDate: "2023-11-11T18:50:53+09:00"
+modifiedDate: "2023-11-24T11:55:35+09:00"
 tags:
   - github
 ---
@@ -79,6 +80,34 @@ Monaspaceは、オープンソースです。GitHubでソースコードが[公�
 Monaspaceフォントファミリーは、公式GitHubリポジトリーからダウンロードできます。
 
 - [githubnext/monaspace: An innovative superfamily of fonts for code](https://github.com/githubnext/monaspace#monaspace)
+
+## VS Codeでの設定方法
+
+VS CodeでMonaspaceを使用するには、次の手順で設定します。
+
+まず、Monaspaceをダウンロードし、インストールします。
+
+次に、VS Codeの設定を変更します。たとえば、英数記号にMonaspace Neonを使用し、それ以外にはNoto Sans JPを使いたい場合、次のように設定します。
+
+```json
+    "editor.fontFamily": "'Monaspace Neon Var', 'Noto Sans JP', monospace",
+```
+
+これは、可変フォントを利用した場合の設定です。可変フォントではなく通常のフォント（.otf形式）をインストールした場合は、次のようになります。
+
+```json
+    "editor.fontFamily": "'Monaspace Neon', 'Noto Sans JP', monospace",
+```
+
+また、テクスチャーヒーリングとコード合字（リガチャ）を有効にするには、``settings.json``に次の設定を追加します。
+
+```json
+  "editor.fontLigatures": true,
+```
+
+:::note info
+VS Codeを起動している状態でフォントをインストールした場合は、VS Codeを再起動しないとフォントが反映されません。コマンドパレットから［ウィンドウの再読み込み］をするのではなく、VS Codeをきちんと終了してから再起動してください。
+:::
 
 ## まとめ
 
