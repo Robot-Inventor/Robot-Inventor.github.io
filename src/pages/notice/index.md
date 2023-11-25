@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/11/25　サイト更新情報
+
+新しい記事「[FilesのInsider Previewをアップデートできない問題](/article/2023/11/25/update-files-insider-preview/)」を公開しました。
+
 ## 2023/11/20　サイト更新情報
 
 新しい記事「[DiscordでAIチャット「Clyde」が使えない2つの理由](/article/2023/11/20/discord-clyde-discontinued/)」を公開しました。
