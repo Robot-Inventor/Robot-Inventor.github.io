@@ -1,5 +1,5 @@
 ---
-title: GitHub製のコーディングフォント「Monaspace」　新技術と可変フォントで読みやすい
+title: GitHub製のコーディングフォント「Monaspace」の特徴と使い方
 description: GitHub Nextが、「An innovative superfamily of fonts for code（コード用フォントの革新的なスーパーファミリー）」と主張する、可変フォント対応の新しいコーディングフォント「Monaspace」を発表しました。
 thumbnail: ./image.png
 author: ろぼいん
