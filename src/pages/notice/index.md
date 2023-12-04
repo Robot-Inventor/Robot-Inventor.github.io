@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/12/04　サイト更新情報
+
+新しい記事「[Windowsですべてのプリンターが「HP LaserJet M101-M106」になる問題](/article/2023/12/04/windows-renames-all-printers-as-hp/)」を公開しました。
+
 ## 2023/11/25　サイト更新情報
 
 新しい記事「[FilesのInsider Previewをアップデートできない問題](/article/2023/11/25/update-files-insider-preview/)」を公開しました。
