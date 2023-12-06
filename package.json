@@ -15,7 +15,7 @@
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.0.0",
     "@masatomakino/qiita-to-md": "^0.4.4",
-    "astro": "^3.0.1",
+    "astro": "^4.0.0",
     "typescript": "^5.2.2"
   }
 }
