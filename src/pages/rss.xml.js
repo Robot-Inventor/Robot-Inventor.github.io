@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss';
 import { getCollection } from "astro:content";
 
-export const get = async () => {
+export const GET = async () => {
     const posts = await getCollection('article');
     return rss({
         title: `${import.meta.env.SITE_NAME} RSS Feed`,
