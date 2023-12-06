@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/12/06　サイト更新情報
+
+新しい記事「[Chrome拡張機能のおすすめバッジを申請する手順](/article/2023/12/06/apply-for-a-featured-badge-for-chrome-extensions/)」を公開しました。
+
 ## 2023/12/04　サイト更新情報
 
 新しい記事「[Windowsですべてのプリンターが「HP LaserJet M101-M106」になる問題](/article/2023/12/04/windows-renames-all-printers-as-hp/)」を公開しました。
