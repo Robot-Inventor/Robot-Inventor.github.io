@@ -191,6 +191,7 @@ const latestArticlesData = await getLatestArticlesData();
         <title>{`${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`}</title>
         <meta name="author" content={authorId} />
         <meta name="description" content={Astro.props.frontmatter.description} />
+        <link rel="canonical" href={Astro.url} />
         <meta property="og:url" content={Astro.url} />
         <meta property="og:type" content={Astro.url.pathname === "/" ? "website" : "article"} />
         <meta property="og:title" content={titleWithSiteName} />
