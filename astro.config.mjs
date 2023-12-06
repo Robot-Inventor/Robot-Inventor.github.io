@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import { RemarkNotePlugin } from "@masatomakino/qiita-to-md/bin/plugin/RemarkNotePlugin";
 
 export default defineConfig({
-    site: "https://robot-inventor.github.io",
+    site: "https://roboin.io",
     integrations: [sitemap(), mdx()],
     markdown: {
         shikiConfig: {
