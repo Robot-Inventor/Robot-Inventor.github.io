@@ -170,12 +170,8 @@ const latestArticlesData = await getLatestArticlesData();
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/icon/favicon/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon/favicon-16x16.png" />
-        <link rel="manifest" href="/icon/favicon/site.webmanifest" />
-        <link rel="mask-icon" href="/icon/favicon/safari-pinned-tab.svg" color="#ffa4a4" />
-        <link rel="shortcut icon" href="/icon/favicon/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <link
             rel="alternate"
             type="application/rss+xml"
@@ -185,8 +181,6 @@ const latestArticlesData = await getLatestArticlesData();
         <link rel="sitemap" href="/sitemap-index.xml" />
         <meta name="apple-mobile-web-app-title" content={import.meta.env.SITE_NAME} />
         <meta name="application-name" content={import.meta.env.SITE_NAME} />
-        <meta name="msapplication-TileColor" content="#2d89ef" />
-        <meta name="msapplication-config" content="/icon/favicon/browserconfig.xml" />
         <meta name="theme-color" content="#ffffff" />
         <title>{`${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`}</title>
         <meta name="author" content={authorId} />
