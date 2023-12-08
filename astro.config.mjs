@@ -18,6 +18,7 @@ export default defineConfig({
         }
     },
     redirects: {
-        "/shadowban-scanner": "https://shadowban-scanner.roboin.io/"
+        "/shadowban-scanner": "https://shadowban-scanner.roboin.io/",
+        "/shadowban-scanner/en": "https://shadowban-scanner.roboin.io/en/",
     }
 });
