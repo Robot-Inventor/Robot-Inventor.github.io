@@ -16,5 +16,8 @@ export default defineConfig({
                 note: RemarkNotePlugin.rehypeNoteHandler
             }
         }
+    },
+    redirects: {
+        "/shadowban-scanner": "https://shadowban-scanner.roboin.io/"
     }
 });
