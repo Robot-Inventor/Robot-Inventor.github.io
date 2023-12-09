@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config';
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { RemarkNotePlugin } from "@masatomakino/qiita-to-md/bin/plugin/RemarkNotePlugin";
@@ -16,9 +16,5 @@ export default defineConfig({
                 note: RemarkNotePlugin.rehypeNoteHandler
             }
         }
-    },
-    redirects: {
-        "/shadowban-scanner": "https://shadowban-scanner.roboin.io/",
-        "/shadowban-scanner/en": "https://shadowban-scanner.roboin.io/en/",
     }
 });
