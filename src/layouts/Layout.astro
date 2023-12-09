@@ -168,6 +168,7 @@ const latestArticlesData = await getLatestArticlesData();
 <html lang="ja">
     <head prefix="og: http://ogp.me/ns#">
         <meta charset="UTF-8" />
+        <meta http-equiv="refresh" content={`0;${Astro.url}`} />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
@@ -215,166 +216,10 @@ const latestArticlesData = await getLatestArticlesData();
         </script>
     </head>
     <body>
-        <header data-overlay-menu="closed" transition:persist="">
-            <a href="/">
-                <img src="/logo.svg" alt="ろぼいんロゴ" id="header_logo" loading="lazy" decoding="async" />
-            </a>
-            <nav>
-                <a href="/article/">ARTICLES</a>
-                <a href="/notice/">NEWS</a>
-            </nav>
-            <button id="menu_button" aria-label="メニューボタン">
-                <div></div>
-            </button>
-        </header>
         <main transition:name="main">
-            <article>
-                {
-                    Astro.props.frontmatter.showThumbnail && Astro.props.frontmatter.thumbnail && (
-                        <Image
-                            src={Astro.props.frontmatter.thumbnail}
-                            width={Math.min(1920, Astro.props.frontmatter.thumbnail.width)}
-                            alt="サムネイル"
-                            loading="eager"
-                        />
-                    )
-                }
-                <h1>{Astro.props.frontmatter.title}</h1>
-                <div id="article_tags">
-                    {
-                        !!tags.length &&
-                            tags.map((tag) => {
-                                if (!tag) return;
-                                return <a href={`/tag/${tag.id}/`}>#{tag.data.name}</a>;
-                            })
-                    }
-                </div>
-                <div id="article_info">
-                    {
-                        Astro.props.frontmatter.showDate && (
-                            <span>
-                                投稿日：
-                                <time datetime={Astro.props.frontmatter.pubDate}>
-                                    {ISO8601ToLocale(Astro.props.frontmatter.pubDate)}
-                                </time>
-                            </span>
-                        )
-                    }
-                    {
-                        Astro.props.frontmatter.showDate && Astro.props.frontmatter.modifiedDate && (
-                            <span>
-                                更新日：
-                                <time datetime={Astro.props.frontmatter.modifiedDate}>
-                                    {ISO8601ToLocale(Astro.props.frontmatter.modifiedDate)}
-                                </time>
-                            </span>
-                        )
-                    }
-                </div>
-                <slot />
-            </article>
-            <section class="share_button">
-                <a
-                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                        titleWithSiteName
-                    )}&url=${encodeURIComponent(generateShareURL("twitter"))}&via=${encodeURIComponent(
-                        "keita_roboin"
-                    )}&related=${encodeURIComponent("keita_roboin")}%3A最新の情報を入手する`}
-                    target="_blank"
-                >
-                    <img src="/icon/social/twitter.svg" alt="Twitterのアイコン" />
-                </a>
-                <a
-                    href={`https://line.me/R/share?text=${encodeURIComponent(
-                        `${titleWithSiteName} ${generateShareURL("line")}`
-                    )}`}
-                    target="_blank"
-                >
-                    <img src="/icon/social/line.svg" alt="LINEのアイコン" />
-                </a>
-                <a
-                    href={`barcelona://create?text=${encodeURIComponent(
-                        `${titleWithSiteName} ${generateShareURL("threads")}`
-                    )}`}
-                    target="_blank"
-                >
-                    <img src="/icon/social/threads.svg" alt="Threadsのアイコン" />
-                </a>
-            </section>
-            {
-                Astro.props.frontmatter.showAuthor && (
-                    <address class="author_info">
-                        <img
-                            class="author_info-icon"
-                            src={author.data.icon}
-                            alt="著者のアイコン画像"
-                            loading="lazy"
-                            decoding="async"
-                        />
-                        <div class="author_info-text">
-                            <b class="author_info-name">{authorId}</b>
-                            <div class="author_info-link_container">
-                                {Object.keys(author.data.profileLinks).map((linkName) => {
-                                    const link = author.data.profileLinks[linkName];
-                                    return (
-                                        <a href={link} target="_blank">
-                                            {linkName}
-                                        </a>
-                                    );
-                                })}
-                            </div>
-                        </div>
-                    </address>
-                )
-            }
-            {
-                Astro.props.frontmatter.showRecommendedArticles && (
-                    <>
-                        <section class="recommended_articles_section">
-                            <h2>関連記事</h2>
-                            <div class="recommended_articles">
-                                {relatedArticlesData.map((data) => {
-                                    return (
-                                        <article>
-                                            <a href={data.link}>
-                                                <Image
-                                                    src={data.thumbnail}
-                                                    width={Math.min(600, data.thumbnail.width)}
-                                                    alt="サムネイル"
-                                                    loading="lazy"
-                                                    decoding="async"
-                                                />
-                                                <h3>{data.title}</h3>
-                                            </a>
-                                        </article>
-                                    );
-                                })}
-                            </div>
-                        </section>
-                        <section class="recommended_articles_section">
-                            <h2>最新記事</h2>
-                            <div class="recommended_articles">
-                                {latestArticlesData.map((data) => {
-                                    return (
-                                        <article>
-                                            <a href={data.link}>
-                                                <Image
-                                                    src={data.thumbnail}
-                                                    width={Math.min(600, data.thumbnail.width)}
-                                                    alt="サムネイル"
-                                                    loading="lazy"
-                                                    decoding="async"
-                                                />
-                                                <h3>{data.title}</h3>
-                                            </a>
-                                        </article>
-                                    );
-                                })}
-                            </div>
-                        </section>
-                    </>
-                )
-            }
+            サイトは移転しました。移転先のURLに移動しています。しばらくしても移動しない場合は、<a href={Astro.url}
+                >ここ</a
+            >をクリックしてください。
         </main>
         <footer>
             <p>Copyright © 2023 ろぼいん All rights reserved.</p>
