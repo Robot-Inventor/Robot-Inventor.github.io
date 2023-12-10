@@ -1,5 +1,13 @@
-import rss from '@astrojs/rss';
+import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
+
+const getMimeType = (extension) => {
+    if (extension === "jpg") {
+        return "image/jpeg";
+    }
+
+    return `image/${extension}`;
+};
 
 export const GET = async () => {
     const posts = await getCollection('article');
@@ -12,6 +20,11 @@ export const GET = async () => {
             pubDate: post.data.pubDate,
             description: post.data.description,
             link: `/article/${post.slug}/`,
+            enclosure: {
+                url: post.data.thumbnail?.src || `${import.meta.env.SITE}/icon/ogp_default_thumbnail.png`,
+                type: post.data.thumbnail?.format ? getMimeType(post.data.thumbnail?.format) : "image/png",
+                length: 1
+            },
         })),
         customData: `<language>ja</language>`,
     });
