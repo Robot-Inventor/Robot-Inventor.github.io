@@ -1,0 +1,70 @@
+---
+title: Shadowban Scannerがv3.0にアップデートされました
+description: Shadowban Scannerがv3.0にアップデートされました。このバージョンでは、いくつかの新機能が追加されています。
+author: ろぼいん
+thumbnail: ./v3-logo.png
+pubDate: "2023-12-10T15:58:27+09:00"
+tags: ["android", "chrome", "edge", "firefox", "shadowban-scanner", "twitter", "extension"]
+---
+
+import { YouTube } from "@astro-community/astro-embed-youtube";
+import ExtensionBadges from "../../../09/30/shadowban-scanner-v2-release/ExtensionBadges.astro";
+
+Shadowban Scannerがv3.0にアップデートされました。このバージョンでは、いくつかの新機能が追加されています。
+
+おもな変更点は次のとおりです。すべての変更点はGitHubの[リリースページ](https://github.com/Robot-Inventor/shadowban-scanner/releases/tag/v3.0.0)で閲覧できます。
+
+また、**次回のアップデートではTwitterの仕様変更に対応するために、追加の権限を求めるダイアログが表示**されます。詳細については、v3.0へのアップデート時に表示される画面か、設定ページに記載されているリンクからご確認ください。
+
+## 🎉新機能
+
+- 結果をツイートするボタンを追加しました。不要な場合は設定から非表示にできます
+- 設定画面を整理しました
+- 法的な理由でアカウントをブロックしている国を検出できるようになりました
+- 初期設定画面を追加しました。既存のユーザーには表示されません
+
+## 🩹修正点
+
+- Twitterの仕様変更でメッセージの表示場所がずれていたため修正しました
+
+## 📝その他
+
+**次回のアップデートではTwitterの仕様変更に対応するために、追加の権限を求めるダイアログが表示**されます。詳細については、v3.0へのアップデート時に表示される画面か、設定ページに記載されているリンクからご確認ください。
+
+追加の権限の承認は必須ではありませんが、承認しない場合ブラウザーの仕様の関係で、以降のアップデートを受け取れなくなります。
+
+## Shadowban Scannerとは？
+
+Shadowban Scannerは、Twitterのいわゆるシャドウバンやセンシティブ判定を、外部サイトに移動せずにその場で確認できる拡張機能です。
+
+<YouTube id="S2mRHz9SEig" />
+
+- [Shadowban Scanner公式サイト](https://robot-inventor.github.io/shadowban-scanner/)
+
+Shadowban Scannerは、次のリンクからダウンロードできます。
+
+<ExtensionBadges/>
+
+お使いのWebブラウザーにインストールするだけで、次の機能が利用できるようになります。
+
+- アカウント単位のシャドウバンとセンシティブフラグの検出
+- プロフィールのメディア（アイコンとヘッダー画像）のセンシティブフラグの検出
+- 法的な理由によりアカウントをブロックしている国の検出
+- ツイート単位のセンシティブフラグの検出
+- ツイートの年齢制限の検出
+
+![Shadowban Scannerのスクリーンショット](../../../09/30/shadowban-scanner-v2-release/screenshot2_ja.png)
+
+![Shadowban Scannerのスクリーンショット](../../../09/30/shadowban-scanner-v2-release/screenshot1_ja.png)
+
+すべての処理はユーザーのコンピューター上で行われます。一部の拡張機能でみられるような、外部サーバーと通信したり、ユーザーの認証情報を無断で取得してTwitterの内部APIにアクセスしたりするような処理はありません。あなたのデータとプライバシーを守ります。
+
+Shadowban Scannerは、PC向けの最新バージョンのGoogle Chrome、Microsoft Edge、Mozilla Firefoxで利用できます。技術的な理由により、スマートフォンでは利用できません（Android版Firefox Nightlyを除く）。
+
+仕組みなどの詳細は、次のページから確認できます。
+
+- [Shadowban Scannerの仕組みとシャドウバンについて - Shadowban Scanner](https://github.com/Robot-Inventor/shadowban-scanner/blob/main/doc/ja/about-shadowban.md)
+
+:::note info
+Shadowban Scannerは、他の類似のツールと同様に、偽陽性や偽陰性が発生することがあります。Shadowban Scannerで継続的にアカウントやツイートの状態を確認しつつ、他のツールと併用することをオススメします。
+:::
