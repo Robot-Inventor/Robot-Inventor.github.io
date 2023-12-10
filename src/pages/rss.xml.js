@@ -26,6 +26,6 @@ export const GET = async () => {
                 length: 1
             },
         })),
-        customData: `<language>ja</language>`,
+        customData: `<language>ja</language><webfeeds:icon>https://roboin.io/favicon.svg</webfeeds:icon>`,
     });
 }
