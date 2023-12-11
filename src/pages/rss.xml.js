@@ -27,5 +27,8 @@ export const GET = async () => {
             },
         })),
         customData: `<language>ja</language><webfeeds:icon>https://roboin.io/favicon.svg</webfeeds:icon>`,
+        xmlns: {
+            webfeeds: "http://webfeeds.org/rss/1.0"
+        }
     });
 }
