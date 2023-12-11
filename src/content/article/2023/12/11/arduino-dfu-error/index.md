@@ -2,6 +2,7 @@
 title: Arduinoで「No DFU capable USB device available」エラーが出たときの対処法
 description: Arduinoで「No DFU capable USB device available」エラーが出たときの対処法をメモしておきます。
 pubDate: "2023-12-11T01:21:41+09:00"
+modifiedDate: "2023-12-11T15:03:02+09:00"
 author: ろぼいん
 tags:
     - arduino
@@ -19,9 +20,29 @@ Failed uploading: uploading error: exit status 74
 
 ## 原因
 
-このエラーは、どうやらドライバーが正しくインストールされていないことが原因のようです。
+このエラーは、Arduinoとパソコンが正しく接続されていないか、認識していないときに発生するようにです。
+
+次のような原因が考えられます。
+
+- Arduinoが書き込み可能な状態になっていない
+- Arduinoとパソコンが接続されていない
+- Arduinoのドライバーが正しくインストールされていない
 
 ## 解決方法
+
+### Arduinoが書き込み可能な状態になっていない
+
+Arduinoが書き込み可能な状態になっていないときは、Arduinoのリセットボタンを2回押してください。
+
+### Arduinoとパソコンが接続されていない
+
+ArduinoとパソコンをつなぐUSBケーブルがしっかりと刺さっているか確認してください。
+
+また、データ転送に対応していない充電のみのUSBケーブルを使っている可能性があります。データ転送に対応しているUSBケーブルを使ってください。
+
+### Arduinoのドライバーが正しくインストールされていない
+
+私の場合はこれが原因でした。
 
 Arduinoのフォーラムを参考にして、次のパスに存在するexeファイルを**管理者権限で**実行することで解決しました。
 
