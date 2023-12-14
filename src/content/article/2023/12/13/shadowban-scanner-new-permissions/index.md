@@ -3,6 +3,7 @@ title: Shadowban Scannerで「新たな権限を承認してください」と�
 description: Shadowban Scannerで「新たな権限を承認してください」と表示される件について説明します。
 thumbnail: ./image.png
 pubDate: "2023-12-13T01:07:20+09:00"
+modifiedDate: "2023-12-14T16:26:10+09:00"
 author: ろぼいん
 tags:
     - shadowban-scanner
@@ -23,6 +24,7 @@ tags:
 - TweetDeckのURLが変わってしまったため、新しいURLを宣言する必要がある
 - 新しいURLを宣言すると前述のようなダイアログが表示される
 - TweetDeckの再サポート以外に、これによる変化はない
+- 新しい権限の承認は必須ではないが、承認しないと以降のアップデートを受け取れなくなる
 
 ## 詳細
 
@@ -56,6 +58,8 @@ Shadowban Scannerも同様です。Twitterのページにアクセスし、デ�
 権限の変更後も今までと同様に、**Shadowban Scannerは外部にデータを送信しません**。すべてのデータはお使いのコンピューター上で安全に処理されます。当然ながら、私のサーバーにもデータは送信されません。
 
 今回の変更によって、Twitterの現在および将来の仕様変更に備え、Shadowban ScannerはTwitterのすべてのURLにアクセスできるようになりますが、今まで通りTwitterとTweetDeckでのみ動作します。
+
+必ずしも新しい権限を承認する必要はありませんが、ブラウザーの仕様の関係上、承認しないと以降のアップデートを受け取れなくなります。
 
 ## まとめ
 
