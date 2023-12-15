@@ -356,49 +356,6 @@ main *:target {
     margin: 1.5rem 0;
 }
 
-/* https://github.com/shikijs/shiki/issues/3#issuecomment-830564854 */
-.expressive-code pre > code {
-    counter-reset: step !important;
-    counter-increment: step 0 !important;
-}
-
-.expressive-code pre > code .ec-line::before {
-    content: counter(step);
-    counter-increment: step;
-    width: 1rem;
-    margin-right: 1rem;
-    display: inline-block;
-    text-align: right;
-    color: var(--low-emphasis-color);
-}
-
-.expressive-code .ec-line.mark,
-.expressive-code .ec-line.ins,
-.expressive-code .ec-line.del {
-    position: relative;
-    left: 2em;
-}
-
-.expressive-code .ec-line.mark::before,
-.expressive-code .ec-line.ins::before,
-.expressive-code .ec-line.del::before {
-    counter-increment: none;
-}
-
-.expressive-code .ec-line.mark::after,
-.expressive-code .ec-line.ins::after,
-.expressive-code .ec-line.del::after {
-    content: counter(step);
-    counter-increment: step;
-    width: 1rem;
-    margin-right: 1rem;
-    display: inline-block;
-    text-align: right;
-    color: var(--low-emphasis-color);
-    position: absolute;
-    left: -0.5em;
-}
-
 .share_button {
     display: flex;
     gap: calc(var(--social-icon-size) / 2);
