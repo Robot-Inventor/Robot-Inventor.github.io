@@ -4,6 +4,7 @@ description: I'm excited to announce that Shadowban Scanner is now compatible wi
 thumbnail: ./thumbnail.png
 author: ろぼいん
 pubDate: "2023-12-15T00:00:00+09:00"
+modifiedDate: "2023-12-15T13:11:01+09:00"
 tags:
     - android
     - firefox
@@ -25,13 +26,9 @@ First, install the Firefox for Android from Google Play.
 
 - [Firefox Fast & Private Browser - Apps on Google Play](https://play.google.com/store/apps/details?id=org.mozilla.firefox)
 
-Next, open the Firefox Add-ons Store, commonly known as "AMO."
+Next, open the Shadowban Scanner distribution page.
 
-- [Add-ons for Firefox Android (en-US)](https://addons.mozilla.org/android/)
-
-Enter "Shadowban Scanner" in the search box, and select [Shadowban Scanner] from the search results.
-
-![Screenshot of entering "Shadowban Scanner" in AMO's search box](./Screenshot_20231215-110136.png)
+- [Shadowban Scanner – Get this Extension for 🦊 Firefox Android (en-US)](https://addons.mozilla.org/android/addon/shadowban-scanner/)
 
 Tap the [Add to Firefox] button, and the extension will be installed.
 

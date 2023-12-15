@@ -4,6 +4,7 @@ description: Shadowban ScannerがAndroid版Firefoxに対応しました。これ
 thumbnail: ./thumbnail.png
 author: ろぼいん
 pubDate: "2023-12-15T00:00:00+09:00"
+modifiedDate: "2023-12-15T13:11:09+09:00"
 tags:
     - android
     - firefox
@@ -25,13 +26,9 @@ Android版Firefoxはスマートフォン向けで唯一、オープンな拡張
 
 - [Firefox 高速プライベートブラウザー - Google Play のアプリ](https://play.google.com/store/apps/details?id=org.mozilla.firefox)
 
-次に、Firefoxの拡張機能ストア（通称「AMO」）を開きます。
+次に、Shadowban Scannerの配布ページを開きます。
 
-- [Firefox Android (ja) 向けアドオン](https://addons.mozilla.org/android/)
-
-検索ボックスに「Shadowban Scanner」と入力し、検索結果の中から［Shadowban Scanner］を選択します。
-
-![AMOの検索ボックスに「Shadowban Scanner」と入力しているようすのスクリーンショット](./Screenshot_20231215-103819.png)
+- [Shadowban Scanner – 🦊 Firefox Android (ja) 向け拡張機能を入手](https://addons.mozilla.org/android/addon/shadowban-scanner/)
 
 ［Firefoxへ追加］ボタンをタップすると、拡張機能がインストールされます。
 
