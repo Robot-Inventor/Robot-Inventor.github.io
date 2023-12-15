@@ -43,7 +43,7 @@ tags: ["twitter", "firefox", "chrome", "extension", "hide-view-count", "explanat
 
 インストールが簡単で、余計な機能は一切ありません。インプレッション数とそのアイコンを非表示にするだけの拡張機能です。ChromeとFirefoxの両方で動作します。
 
-他の拡張機能との比較は[こちら](https://robot-inventor.github.io/article/2022/12/24/hide-twitter-view-count/#%E9%A1%9E%E4%BC%BC%E3%81%AE%E6%8B%A1%E5%BC%B5%E6%A9%9F%E8%83%BD%E3%81%A8%E3%81%AE%E9%81%95%E3%81%84)を参考にしてください。
+他の拡張機能との比較は[こちら](/article/2022/12/24/hide-twitter-view-count/#%E9%A1%9E%E4%BC%BC%E3%81%AE%E6%8B%A1%E5%BC%B5%E6%A9%9F%E8%83%BD%E3%81%A8%E3%81%AE%E9%81%95%E3%81%84)を参考にしてください。
 
 - [Chrome版](https://chrome.google.com/webstore/detail/hide-view-count/mmefeobjcchickbjelledfhagoddcklp)
 - [Firefox版](https://addons.mozilla.org/firefox/addon/hide-view-count/)

@@ -17,7 +17,7 @@ tags: ["windows", "astro", "github"]
 
 ## 独自システムを辞めた理由
 
-今までこのブログでは、独自に開発したCMSと静的サイトジェネレーターを使っていました。この[システム](https://github.com/Robot-Inventor/Robot-Inventor.github.io/blob/590182bfbea2a196d936302a02b3362c3a406a5d/command/build.js)は2021年6月に実施した[全面リニューアル](https://robot-inventor.github.io/article/2021/06/15/)で導入し、2022年2月に[再構築](https://github.com/Robot-Inventor/Robot-Inventor.github.io/blob/ea73ae9a6e3b045e0a53ce37568d35ef83b01fcb/command/build.ts)したものです。
+今までこのブログでは、独自に開発したCMSと静的サイトジェネレーターを使っていました。この[システム](https://github.com/Robot-Inventor/Robot-Inventor.github.io/blob/590182bfbea2a196d936302a02b3362c3a406a5d/command/build.js)は2021年6月に実施した[全面リニューアル](/article/2021/06/15/)で導入し、2022年2月に[再構築](https://github.com/Robot-Inventor/Robot-Inventor.github.io/blob/ea73ae9a6e3b045e0a53ce37568d35ef83b01fcb/command/build.ts)したものです。
 
 Markdownで書いた記事を、テンプレートを使ってHTMLに変換するというシステムです。その過程で、HTMLや画像の最適化をしていました。
 

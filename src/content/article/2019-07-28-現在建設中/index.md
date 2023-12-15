@@ -49,7 +49,7 @@ showThumbnail: false
 - [GitHub](https://github.com/Robot-Inventor)
 - [ORIZIN Agent 公式サイト](https://robot-inventor.github.io/ORIZIN_Agent/)
 - [ORIZIN Agent の GitHub リポジトリ](https://github.com/Robot-Inventor/ORIZIN_Agent)
-- [理系YouTuberのブログ的な何か（建設中...）（本サイト）](https://robot-inventor.github.io/)
+- [理系YouTuberのブログ的な何か（建設中...）（本サイト）](https://roboin.io/)
 - [Twitter](https://twitter.com/keita_roboin)
 
 ぜひ、YouTubeのチャンネル登録やQiita 、Twitterのフォローをお願いします！(・∀・)
