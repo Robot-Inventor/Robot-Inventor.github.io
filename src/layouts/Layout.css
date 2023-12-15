@@ -352,6 +352,26 @@ main *:target {
     border-radius: 0.25em;
 }
 
+.expressive-code {
+    margin: 1.5rem 0;
+}
+
+/* https://github.com/shikijs/shiki/issues/3#issuecomment-830564854 */
+.expressive-code pre > code {
+    counter-reset: step !important;
+    counter-increment: step 0 !important;
+}
+
+.expressive-code pre > code .ec-line::before {
+    content: counter(step);
+    counter-increment: step;
+    width: 1rem;
+    margin-right: 1rem;
+    display: inline-block;
+    text-align: right;
+    color: var(--low-emphasis-color);
+}
+
 .share_button {
     display: flex;
     gap: calc(var(--social-icon-size) / 2);
