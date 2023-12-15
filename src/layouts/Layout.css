@@ -16,6 +16,8 @@
     --middle-emphasis-color: rgb(0, 0, 0, 0.6);
     --low-emphasis-color: rgb(0, 0, 0, 0.6);
 
+    --inline-code-background-color: rgba(0, 0, 0, 0.1);
+
     --info-block-background-color: #e2f3fd;
     --info-block-border-color: #3fb0f3;
     --info-block-font-color: #0b72ad;
@@ -34,6 +36,8 @@
         --base-text-color: #fff;
         --middle-emphasis-color: rgb(255, 255, 255, 0.6);
         --low-emphasis-color: rgb(255, 255, 255, 0.6);
+
+        --inline-code-background-color: rgba(255, 255, 255, 0.1);
 
         --info-block-background-color: #2a4453;
         --info-block-border-color: #60b2e4;
@@ -338,6 +342,14 @@ main > article ol > li {
 
 main *:target {
     scroll-margin: 4rem;
+}
+
+*:not(pre) > code {
+    font-family: monospace;
+    margin: 0 0.25em;
+    background: var(--inline-code-background-color);
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
 }
 
 .share_button {
