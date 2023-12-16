@@ -6,7 +6,7 @@ modifiedDate: "2022-04-17T01:38:44.130+09:00"
 author: ろぼいん
 thumbnail: ./2022-04-17-00-11-20.png
 showThumbnail: false
-tags: ["windows", "android", "explanation", "discord"]
+tags: ["windows", "android", "explanation", "discord", "how-to"]
 ---
 
 :::note info

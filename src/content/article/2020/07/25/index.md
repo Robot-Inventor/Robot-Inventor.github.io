@@ -6,7 +6,7 @@ modifiedDate: "2021-06-12T03:13:57.692+09:00"
 author: ろぼいん
 thumbnail: ./datacenter_DSC00055.jpg
 showThumbnail: false
-tags: ["windows"]
+tags: ["windows", "how-to"]
 ---
 
 ![データセンターの写真](./datacenter_DSC00055.jpg)

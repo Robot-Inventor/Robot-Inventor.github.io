@@ -7,6 +7,7 @@ thumbnail: ./GM3_Hero.width-1200.format-webp.webp
 tags:
     - chrome
     - explanation
+    - how-to
 ---
 
 2023年9月にリリースされた[Google Chrome](https://www.google.com/chrome/) 117では、Chromeの15周年を記念してUIのデザインが変更されました。

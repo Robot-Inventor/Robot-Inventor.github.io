@@ -6,6 +6,7 @@ thumbnail: ./image-15.png
 pubDate: "2023-12-16T22:18:33+09:00"
 tags:
     - arduino
+    - how-to
 ---
 
 ## はじめに

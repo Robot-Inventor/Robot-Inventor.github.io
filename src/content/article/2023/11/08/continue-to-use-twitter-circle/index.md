@@ -6,6 +6,7 @@ author: ろぼいん
 tags:
     - twitter
     - explanation
+    - how-to
 ---
 
 2023年9月22日、Twitter（X）で指定した一部のユーザーにだけ投稿を表示できるサークル機能を廃止することが発表されました。

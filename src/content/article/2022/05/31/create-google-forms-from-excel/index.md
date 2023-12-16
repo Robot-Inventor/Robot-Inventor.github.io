@@ -6,7 +6,7 @@ pubDate: "2022-05-31T23:58:49.526+09:00"
 modifiedDate: "2022-06-01T00:34:36.685+09:00"
 author: ろぼいん
 showThumbnail: false
-tags: ["google"]
+tags: ["google", "how-to"]
 ---
 
 ## はじめに

@@ -4,7 +4,7 @@ description: YouTubeで作った複数の再生リストをまとめたいと思
 author: ろぼいん
 thumbnail: ./image-1.png
 pubDate: "2023-09-22T00:10:00+09:00"
-tags: ["youtube"]
+tags: ["youtube", "how-to"]
 ---
 
 <script type="application/ld+json">

@@ -5,6 +5,7 @@ pubDate: "2023-11-12T01:42:04+09:00"
 author: ろぼいん
 tags:
     - davinci-resolve
+    - how-to
 ---
 
 この記事では、DaVinci ResolveでVOICEVOXやCOEIROINKを使った動画編集を効率化できる「VoiceAutoTool」というスクリプトを紹介します。このスクリプトを使うと、音声の配置や字幕の入力を自動化できます。

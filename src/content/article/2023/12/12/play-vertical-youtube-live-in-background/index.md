@@ -7,6 +7,7 @@ author: ろぼいん
 tags:
     - youtube
     - explanation
+    - how-to
 ---
 
 最近、YouTubeでは縦長の画面のライブ配信が増えてきました。そんな縦型配信をバックグラウンド再生する方法を紹介します。

@@ -6,7 +6,7 @@ modifiedDate: "2022-03-29T09:34:04.676+09:00"
 author: ろぼいん
 thumbnail: ./windows11_version_information.png
 showThumbnail: false
-tags: ["firefox", "windows"]
+tags: ["firefox", "windows", "how-to"]
 ---
 
 :::note alert

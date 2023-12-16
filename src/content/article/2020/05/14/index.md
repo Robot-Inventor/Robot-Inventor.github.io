@@ -6,7 +6,7 @@ modifiedDate: "2022-03-14T01:59:39.927+09:00"
 author: ろぼいん
 thumbnail: ./flags_page.jpg
 showThumbnail: false
-tags: ["chrome", "android", "explanation"]
+tags: ["chrome", "android", "explanation", "how-to"]
 ---
 
 :::note warn

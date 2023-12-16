@@ -7,6 +7,7 @@ author: ろぼいん
 tags:
     - twitter
     - explanation
+    - how-to
 ---
 
 Twitter（X）では、特定の話題に関するツイート（ポスト）をまとめて見られる「トピック」という機能が存在しています。

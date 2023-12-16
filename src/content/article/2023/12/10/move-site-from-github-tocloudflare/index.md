@@ -10,6 +10,7 @@ tags:
     - explanation
     - astro
     - cloudflare
+    - how-to
 ---
 
 ## はじめに
