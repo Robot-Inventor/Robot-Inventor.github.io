@@ -4,6 +4,7 @@ description: この記事では、使い慣れたVS CodeでArduinoの開発を�
 author: ろぼいん
 thumbnail: ./image-15.png
 pubDate: "2023-12-16T22:18:33+09:00"
+modifiedDate: "2023-12-18T13:45:26+09:00"
 tags:
     - arduino
     - how-to
@@ -75,14 +76,14 @@ VS Codeの設定で`arduino.useArduinoCli`と検索し、チェックを入れ�
 "C_Cpp.intelliSenseEngine": "Tag Parser"
 ```
 
-また、お好みで`Clang_format_fallback`を好きな値に設定します。これは、フォーマットのスタイルを指定するものです。私の場合は`Chromium`を指定しています。
+また、お好みで`Clang_format_fallback`を好きな値に設定します。これは、フォーマットのスタイルを指定するものです。私の場合は`{ BasedOnStyle: Chromium, IndentWidth: 4 }`を指定しています。
 
 ![VS Codeの設定画面のスクリーンショット](./image-4.png)
 
 `settings.json`を使う場合は、次のように設定します。
 
 ```json title="settings.json"
-"C_Cpp.clang_format_fallbackStyle": "Chromium"
+"C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Chromium, IndentWidth: 4 }"
 ```
 
 したがって、設定後の`settings.json`は次のようになります。
@@ -92,7 +93,7 @@ VS Codeの設定で`arduino.useArduinoCli`と検索し、チェックを入れ�
     // ...他の設定
     "arduino.useArduinoCli": true,
     "C_Cpp.intelliSenseEngine": "Tag Parser",
-    "C_Cpp.clang_format_fallbackStyle": "Chromium"
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Chromium, IndentWidth: 4 }"
 }
 ```
 
