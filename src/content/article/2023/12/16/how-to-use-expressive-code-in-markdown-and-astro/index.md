@@ -4,6 +4,7 @@ description: QiitaなどのサイトではMarkdown構文が独自に拡張され
 author: ろぼいん
 thumbnail: ./thumbnail.png
 pubDate: "2023-12-16T18:40:23+09:00"
+modifiedDate: "2023-12-18T11:31:43+09:00"
 tags:
     - astro
 ---
@@ -336,7 +337,7 @@ Expressive Codeのターミナルウィンドウ風フレームの左上には�
 
 ### 行番号の表示
 
-Expressive Codeには、記事執筆時点では行番号を表示するオプションが存在しません。
+Expressive Codeには、記事執筆時点では行番号を表示するオプションが存在しません。[Issue](https://github.com/expressive-code/expressive-code/issues/37)は上がっていますが、現時点では実装方法を検討中のようです。
 
 そこで、Expressive Codeが内部で使用している[Shiki](https://github.com/shikijs/shiki)に上がっていた[Issue](https://github.com/shikijs/shiki/issues/3#issuecomment-830564854)を参考に、次のようなCSSを追加すると、行番号を表示できます。
 
