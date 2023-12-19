@@ -1,6 +1,7 @@
 ---
 title: Windowsでプリンターが「HP LaserJet M101-M106」になる問題と修正方法
 description: 記事執筆時点で、Windows 10とWindows 11の両方で、すべてのプリンターのモデル名が実際のメーカーや型番に関係なく「HP LaserJet M101-M106」として表示される問題が発生しています。
+thumbnail: ./image.png
 pubDate: "2023-12-04T13:55:22+09:00"
 modifiedDate: "2023-12-18T12:59:58+09:00"
 author: ろぼいん
@@ -20,6 +21,9 @@ tags:
 これは、Windowsの問題です。海外のニュースサイト「Windows Latest」によれば、プリンターメーカーからMicrosoftに提供されているメタデータに問題があるのではないかとのことです。Windows Updateによって問題のあるメタデータが読み込まれるようになってしまったことで、Windowsがすべてのプリンターを「HP LaserJet M101-M106」として認識してしまうようです。
 
 ただし、Microsoftの[調査](https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2#:~:text=our%20investigations%20indicate%20that%20this%20issue%20is%20not%20caused%20by%20an%20hp%20update.%20)ではHPのアップデートが原因ではないとしています。一方で、修正ツールが「Microsoft プリンター メタデータ トラブルシューティング ツール」という名前のため、メタデータが原因であることは事実のようです。
+
+![この問題についてのMicrosoftのサイト](./image.png)
+*この問題についてのMicrosoftの[サイト](https://learn.microsoft.com/ja-JP/windows/release-health/status-windows-11-23h2#-------------------hp-smart-------------------------)より*
 
 また、それによってWindowsがHPのプリンターが接続されていると誤って認識し、Microsoft Storeから「HP Smart」というアプリを自動的にインストールしてしまいます。一部のユーザーでは、PCのスタートメニューに「HP Smart」のショートカットが表示されているかもしれません。
 
