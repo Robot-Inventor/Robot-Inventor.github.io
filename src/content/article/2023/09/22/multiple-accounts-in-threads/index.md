@@ -14,7 +14,7 @@ tags: ["twitter", "android", "threads", "explanation", "how-to"]
 
 ## アカウントの切り替え方法
 
-:::note info
+:::note
 この記事の内容は、Android版Threadsアプリのバージョン302.0.0.2.113で確認しています。アカウントを切り替えられない場合は、アプリをアップデートしてみてください。
 :::
 

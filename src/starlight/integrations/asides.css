@@ -1,0 +1,88 @@
+:root {
+    --sl-color-blue-high: #4b4bb5;
+    --sl-color-blue: #7878db;
+    --sl-color-blue-low: #dce1f4;
+
+    --sl-color-orange-high: #954b0a;
+    --sl-color-orange: #e3b341;
+    --sl-color-orange-low: #fff6e8;
+
+    --sl-color-red-high: #b31818;
+    --sl-color-red: #bb4646;
+    --sl-color-red-low: #ffe4e4;
+
+    --sl-color-purple-high: #820682;
+    --sl-color-purple: #9f229f;
+    --sl-color-purple-low: #f9def9;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --sl-color-blue-high: #babaf0;
+        --sl-color-blue: #8181ce;
+        --sl-color-blue-low: #273155;
+
+        --sl-color-orange-high: #ecc66c;
+        --sl-color-orange: #cead5e;
+        --sl-color-orange-low: #64460d;
+
+        --sl-color-red-high: #e8a7a7;
+        --sl-color-red: #bd6161;
+        --sl-color-red-low: #6a2e2e;
+
+        --sl-color-purple-high: #d99ed9;
+        --sl-color-purple: #b570b5;
+        --sl-color-purple-low: #511751;
+    }
+}
+
+.starlight-aside {
+    padding: 1rem;
+    border-inline-start: 0.25rem solid;
+    color: var(--sl-color-white);
+    margin: 1rem 0;
+}
+.starlight-aside--note {
+    --sl-color-asides-text-accent: var(--sl-color-blue-high);
+    border-color: var(--sl-color-blue);
+    background-color: var(--sl-color-blue-low);
+}
+.starlight-aside--tip {
+    --sl-color-asides-text-accent: var(--sl-color-purple-high);
+    border-color: var(--sl-color-purple);
+    background-color: var(--sl-color-purple-low);
+}
+.starlight-aside--caution {
+    --sl-color-asides-text-accent: var(--sl-color-orange-high);
+    border-color: var(--sl-color-orange);
+    background-color: var(--sl-color-orange-low);
+}
+.starlight-aside--danger {
+    --sl-color-asides-text-accent: var(--sl-color-red-high);
+    border-color: var(--sl-color-red);
+    background-color: var(--sl-color-red-low);
+}
+
+.starlight-aside__title {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: var(--sl-text-h5);
+    font-weight: 600;
+    line-height: var(--sl-line-height-headings);
+    color: var(--sl-color-asides-text-accent);
+}
+
+.starlight-aside__icon {
+    font-size: 1.333em;
+    width: 1em;
+    height: 1em;
+}
+
+.starlight-aside__title + .starlight-aside__content {
+    margin-top: 0.5rem;
+}
+
+.starlight-aside__content a {
+    color: var(--sl-color-asides-text-accent);
+}

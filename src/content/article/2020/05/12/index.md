@@ -9,7 +9,7 @@ showThumbnail: false
 tags: ["google"]
 ---
 
-:::note info
+:::note
 この記事と同じ内容を[Qiita](https://qiita.com/Robot-Inventor/items/9dfd2f4d0a674e43150f)にも投稿してあります。また2021年6月11日現在、ブログの改修にともない、本ブログのAMPサポートは終了しました。
 :::
 

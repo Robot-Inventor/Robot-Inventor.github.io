@@ -8,7 +8,7 @@ thumbnail: ./hukkousagyou_TP_V.jpg
 showThumbnail: false
 ---
 
-:::note info
+:::note
 現在「理系YouTuberのブログ的な何か」は、まったく新しく1から作り直され、サイト名も「Robot Inventor」に変更になりました。この記事の内容は古い内容を含みます。ご注意ください。
 :::
 

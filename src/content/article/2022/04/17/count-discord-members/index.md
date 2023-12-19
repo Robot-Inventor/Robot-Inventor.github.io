@@ -9,7 +9,7 @@ showThumbnail: false
 tags: ["windows", "android", "explanation", "discord", "how-to"]
 ---
 
-:::note info
+:::note
 この記事の内容は、DiscordのAndroidアプリのバージョン「122.7 - STABLE (122007)」とWindowsアプリのバージョン「Stable 124397 (2bf79b5)」で動作確認しています。
 :::
 
@@ -44,7 +44,7 @@ Discordでメンバーの人数を確認する、もっとも簡単な方法はD
 
 ## デスクトップアプリを使う
 
-:::note warn
+:::danger
 この方法は、**［サーバー管理］権限が必要**です。権限を持っていない場合、手作業で数えるか、[モバイルアプリを使う](#モバイルアプリを使う)必要があります。
 :::
 

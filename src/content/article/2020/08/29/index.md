@@ -9,7 +9,7 @@ showThumbnail: false
 tags: ["chrome", "google", "android"]
 ---
 
-:::note info
+:::note
 記事の投稿後、詳細を調査したところダークモードは以前から一部のユーザーに試験的に展開されており、それが私のところまでロールアウトされただけだということが判明しました。
 :::
 

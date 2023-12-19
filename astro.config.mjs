@@ -1,8 +1,8 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import { RemarkNotePlugin } from "@masatomakino/qiita-to-md/bin/plugin/RemarkNotePlugin";
 import expressiveCode from "astro-expressive-code";
+import { starlightAsides } from "./src/starlight/integrations/asides";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,12 +18,7 @@ export default defineConfig({
         shikiConfig: {
             theme: "dark-plus"
         },
-        remarkPlugins: [RemarkNotePlugin.plugin],
-        remarkRehype: {
-            handlers: {
-                note: RemarkNotePlugin.rehypeNoteHandler
-            }
-        }
+        remarkPlugins: [...starlightAsides()]
     },
     redirects: {
         "/shadowban-scanner": "https://shadowban-scanner.roboin.io/",

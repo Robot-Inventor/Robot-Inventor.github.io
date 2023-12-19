@@ -11,7 +11,7 @@ tags: ["google", "android", "google-pixel"]
 
 ![サムネイル](./thumbnail.png)
 
-:::note info
+:::note
 この記事の内容は、次の環境で動作確認しています。
 
 - 端末：Google Pixel 6

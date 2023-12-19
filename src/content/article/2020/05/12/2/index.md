@@ -9,7 +9,7 @@ showThumbnail: false
 tags: ["windows"]
 ---
 
-:::note info
+:::note
 この記事と同じ内容を[Qiita](https://qiita.com/Robot-Inventor/items/f7d18438de290a250051)にも投稿してあります。
 :::
 

@@ -8,7 +8,7 @@ thumbnail: ./file_manager.png
 showThumbnail: false
 ---
 
-:::note info
+:::note
 この記事は、私がQiitaに投稿したものに少し変更を加えたものです。[この記事をQiitaで読む](https://qiita.com/Robot-Inventor/items/b565e323b94fc2985ec0)
 :::
 

@@ -28,7 +28,7 @@ VoiceAutoToolを使うとこれらの作業を自動化し、効率的に素早�
 
 ## VoiceAutoToolのインストール方法
 
-:::note info
+:::note
 この記事では、Windowsでのインストール方法を説明します。VoiceAutoToolがMacでも動作するかどうかは不明です。
 :::
 

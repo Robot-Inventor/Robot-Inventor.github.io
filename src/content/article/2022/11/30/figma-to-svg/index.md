@@ -8,7 +8,7 @@ showThumbnail: false
 tags: ["windows", "how-to"]
 ---
 
-:::note info
+:::note
 この記事の内容は、次の環境で動作確認しています。
 
 - OS：Windows 11 Home 22H2（22621.819）
