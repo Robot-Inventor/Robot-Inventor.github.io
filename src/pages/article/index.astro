@@ -22,7 +22,7 @@ const allPosts = await getCollection("article");
         {
             allPosts
                 .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
-                .map((post) => <ArticleCard link={`/article/${post.slug}/`} />)
+                .map((post) => <ArticleCard link={`/article/${post.slug}/`} type="portrait" />)
         }
     </div>
 </Layout>
