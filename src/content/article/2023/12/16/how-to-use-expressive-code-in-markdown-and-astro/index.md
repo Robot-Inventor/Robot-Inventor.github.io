@@ -7,6 +7,7 @@ pubDate: "2023-12-16T18:40:23+09:00"
 modifiedDate: "2023-12-18T11:31:43+09:00"
 tags:
     - astro
+    - web-development
 ---
 
 QiitaなどのサイトではMarkdown構文が独自に拡張されており、たとえばコードブロックにファイル名を表示したりできます。しかし、通常のMarkdownでは、そのようなことはできません。

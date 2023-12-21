@@ -11,6 +11,7 @@ tags:
     - astro
     - cloudflare
     - how-to
+    - web-development
 ---
 
 ## はじめに
