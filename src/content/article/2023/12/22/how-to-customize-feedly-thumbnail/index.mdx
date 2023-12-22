@@ -1,0 +1,112 @@
+---
+title: Feedlyのサムネイルをカスタマイズする方法
+description: この記事では、Feedlyのフィード画面に表示されるサムネイルをカスタマイズする方法をまとめます。
+pubDate: "2023-12-22T13:20:44+09:00"
+author: ろぼいん
+tags:
+    - web-development
+    - how-to
+    - astro
+---
+
+import ArticleCard from "@components/ArticleCard.astro";
+
+この記事では、Feedlyのフィード画面に表示されるサムネイルをカスタマイズする方法をまとめます。
+
+Feedlyのfaviconをカスタマイズする方法は、こちらの記事で解説しています。
+
+<ArticleCard link="/article/2023/12/21/how-to-customize-feedly-favicon/" />
+
+## Feedlyのデフォルトのサムネイル
+
+Feedlyは、記事のサムネイルをRSS内で明示的に指定しなくても、自動的にサムネイルを選択してくれる場合があります。[公式ブログ](https://blog.feedly.com/10-ways-to-optimize-your-feed-for-feedly/)によると、Feedlyのサムネイルの選択方法は次のようになっています。
+
+> If the content of the story in the feed has an img element with a webfeedsFeaturedVisual classname, that image will be selected as the featured image.
+>
+> If the first img in the story has a height and width greater than 450 pixels, that first image will be selected as the featured image. If not, Feedly will try to pick the largest image in the story.
+>
+> If the feed is partial, the Feedly poller will look up in the web page and see if the webpage includes open graph or Twitter card metadata and use that as the featured visual.
+>
+> —— [10 ways to optimize your feed for feedly – Feedly Blog](https://blog.feedly.com/10-ways-to-optimize-your-feed-for-feedly/)
+
+このように、Feedlyは次の順番でサムネイルを選択します。
+
+1. `webfeedsFeaturedVisual`というクラス名が付いた`img`要素
+2. 記事内の最初の`img`要素で、高さと幅が450ピクセルより大きいもの
+3. OGPやTwitterカードのメタデータ
+
+Feedlyが自動でサムネイルを選択してくれない場合や、選択されたサムネイルが気に入らない場合は、次の方法でサムネイルをカスタマイズできます。
+
+## サムネイルをカスタマイズする方法
+
+Feedlyでサムネイルをカスタマイズするには、RSSフィードの`item`要素の中に`enclosure`要素を作成します。コード中の`［］`で囲まれた部分は、**`［］`を削除したうえで**実際の値に置き換えてください。
+
+```xml title="rss.xml"
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/"  xmlns:webfeeds="http://webfeeds.org/rss/1.0" version="2.0">
+    <!-- ...フィード名や概要などの設定部分は省略 -->
+    <item>
+        <title>［記事のタイトル］</title>
+        <link>［記事のURL］</link>
+        <guid isPermaLink="true">
+            ［記事のURL］</guid>
+        <description>［記事の説明］</description>
+        <pubDate>［記事の公開日］</pubDate>
+        <enclosure url="［サムネイルのURL］" length="［サムネイルのファイルサイズ（バイト単位）］"
+            type="［サムネイル画像のMIMEタイプ］" />
+    </item>
+</rss>
+```
+
+このRSSフィードをFeedlyに登録すると、`enclosure`要素で指定したサムネイルが表示されます。
+
+### Astroでの実装方法
+
+このブログでは、静的サイトジェネレーターの[Astro](https://astro.build/)を使用しています。Astroの[@astrojs/rss](https://www.npmjs.com/package/@astrojs/rss)パッケージを使用したRSSフィードでサムネイルをカスタマイズするには、たとえば次のようにします。
+
+:::caution
+`item.enclosure.length`は、本来はサムネイルのファイルサイズをバイト単位で指定します。AstroのRSSではこの値を省略できず、また`0`を指定するとエラーになるため、`1`を指定しています。
+
+[RSS 2.0 Specification (Current)](https://www.rssboard.org/rss-specification#ltenclosuregtSubelementOfLtitemgt)では、`length`が省略可能とは書かれていないので、必須のようです。ただし、この値に`0`や`1`を指定しても、Feedlyでは問題なくサムネイルが表示されます。
+:::
+
+```javascript title="./src/pages/rss.xml.js"
+import rss from "@astrojs/rss";
+
+export const GET = async () => {
+    return rss({
+        title: "RSSフィードのタイトル",
+        description: "RSSフィードの概要",
+        site: import.meta.env.SITE,
+        items: [
+            {
+                title: "［記事のタイトル］",
+                pubDate: "［記事の公開日］",
+                description: "［記事の概要］",
+                link: "［記事のURL］",
+                enclosure: {
+                    url: "［サムネイルのURL］",
+                    type: "［サムネイル画像のMIMEタイプ］",
+                    length: 1
+                }
+            },
+            // ...他の記事
+        ],
+        customData: "<webfeeds:icon>［faviconのURL］</webfeeds:icon>",
+        xmlns: {
+            webfeeds: "http://webfeeds.org/rss/1.0"
+        }
+    });
+};
+```
+
+## まとめ
+
+この記事では、Feedlyのフィード選択画面に表示されるサムネイルをカスタマイズする方法をまとめました。
+
+Feedlyのサムネイルを適切にカスタマイズして、ユーザーにとって使いやすく美しいRSSフィードを提供しましょう。
+
+## 参考
+
+- [10 ways to optimize your feed for feedly – Feedly Blog](https://blog.feedly.com/10-ways-to-optimize-your-feed-for-feedly/)
+- [@astrojs/rss - npm](https://www.npmjs.com/package/@astrojs/rss)
+- [RSS 2.0 Specification (Current)](https://www.rssboard.org/rss-specification#ltenclosuregtSubelementOfLtitemgt)
