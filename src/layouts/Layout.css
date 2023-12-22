@@ -200,6 +200,39 @@ main {
     margin: 0.75rem 0 2.5rem 0;
 }
 
+.toc {
+    padding: 1.5rem;
+    padding-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: solid 0.1rem #78b9d9;
+    background: rgba(0, 147, 255, 0.1);
+    box-shadow: 0.1rem 0.1rem 0.5rem rgb(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.toc h2 {
+    position: absolute;
+    font-size: 1.5rem;
+    top: -1em;
+    left: 1em;
+    background-image: linear-gradient(to bottom, var(--base-background-color) 50%, transparent 50%);
+    padding: 0 0.5rem;
+    color: #78b9d9;
+}
+
+.toc li {
+    list-style: none;
+}
+
+.toc ul {
+    margin: 0;
+    padding: 0;
+}
+
+.toc ul ul {
+    margin-left: 1.5rem;
+}
+
 main > article {
     width: 100%;
     padding-top: 0.5rem;

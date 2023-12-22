@@ -7,6 +7,8 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import defaultThumbnail from "../../public/icon/ogp_default_thumbnail.png";
+import type { MarkdownHeading } from "node_modules/astro/dist/@types/astro";
+import { JSDOM } from "jsdom";
 
 interface Props {
     frontmatter: {
@@ -29,7 +31,10 @@ interface Props {
             collection: string;
         }>;
         showRecommendedArticles: boolean;
+        showToc: boolean;
     };
+
+    headings: MarkdownHeading[];
 }
 
 if (!Astro.site) throw new Error("site is not defined");
@@ -164,6 +169,49 @@ const getLatestArticlesData = async () => {
 
 const relatedArticlesData = await getRelatedArticlesData();
 const latestArticlesData = await getLatestArticlesData();
+
+const generateToc = (headings: MarkdownHeading[]) => {
+    const { document } = new JSDOM().window;
+
+    const toc: HTMLElement = document.createElement("ul");
+    let currentDepth = 2;
+    let currentParent = toc;
+    for (const heading of headings) {
+        if (heading.depth === currentDepth) {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = `#${heading.slug}`;
+            a.textContent = heading.text;
+            li.appendChild(a);
+            currentParent.appendChild(li);
+            currentDepth = heading.depth;
+        } else if (heading.depth > currentDepth) {
+            const ul = document.createElement("ul");
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = `#${heading.slug}`;
+            a.textContent = heading.text;
+            li.appendChild(a);
+            ul.appendChild(li);
+            currentParent.appendChild(ul);
+            currentParent = ul;
+            currentDepth = heading.depth;
+        } else {
+            for (let i = 0; i < currentDepth - heading.depth; i++) {
+                currentParent = currentParent.parentElement!;
+            }
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = `#${heading.slug}`;
+            a.textContent = heading.text;
+            li.appendChild(a);
+            currentParent.appendChild(li);
+            currentDepth = heading.depth;
+        }
+    }
+
+    return toc.outerHTML;
+};
 ---
 
 <!doctype html>
@@ -273,6 +321,16 @@ const latestArticlesData = await getLatestArticlesData();
                         )
                     }
                 </div>
+                {
+                    Astro.props.frontmatter.showToc && (
+                        <aside class="toc">
+                            <h2>目次</h2>
+                            <nav>
+                                <Fragment set:html={generateToc(Astro.props.headings)} />
+                            </nav>
+                        </aside>
+                    )
+                }
                 <slot />
             </article>
             <section class="share_button">
