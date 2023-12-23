@@ -83,6 +83,14 @@ const schema = JSON.stringify([
             url: author.data.homePage,
             sameAs: author.data.sameAs
         },
+        publisher: {
+            "@type": "Organization",
+            name: "ろぼいんブログ",
+            logo: {
+                "@type": "ImageObject",
+                url: "https://roboin.io/favicon.svg"
+            }
+        },
         datePublished: Astro.props.frontmatter.pubDate,
         dateModified: Astro.props.frontmatter.modifiedDate || Astro.props.frontmatter.pubDate
     }
