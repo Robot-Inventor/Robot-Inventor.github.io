@@ -238,11 +238,11 @@ main {
     border-radius: 0.2rem;
 }
 
-.toc nav > ul > li:first-child::before {
+.toc li:first-child::before {
     top: 0.5rem;
 }
 
-.toc nav > ul > li:last-child::before {
+.toc li:last-child::before {
     height: 75%;
 }
 
