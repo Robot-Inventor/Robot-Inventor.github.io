@@ -4,11 +4,15 @@ import sitemap from "@astrojs/sitemap";
 import expressiveCode from "astro-expressive-code";
 import { starlightAsides } from "./src/starlight/integrations/asides";
 
+const topPageURL = "https://roboin.io";
+
 // https://astro.build/config
 export default defineConfig({
-    site: "https://roboin.io",
+    site: topPageURL,
     integrations: [
-        sitemap(),
+        sitemap({
+            filter: (page) => !page.startsWith(new URL("/tag/", topPageURL).href)
+        }),
         expressiveCode({
             themes: ["dark-plus", "light-plus"]
         }),
