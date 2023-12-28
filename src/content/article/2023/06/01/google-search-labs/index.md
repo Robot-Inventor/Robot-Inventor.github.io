@@ -2,7 +2,7 @@
 description: AIの統合など、Google検索の新機能を試せるGoogle Search Labsが一部のユーザー限定で公開されました。この記事では、Search Labsの新機能を実際に使ってみて、日本最速でレビューします。
 title: Google検索がAI搭載で進化！　Search Labsを日本最速レビュー
 pubDate: "2023-06-01T19:34:11.518+09:00"
-modifiedDate: "2023-08-31T02:02:00+09:00"
+modifiedDate: "2023-12-29T02:21:16+09:00"
 author: ろぼいん
 thumbnail: ./2023-05-31-11-02-23.png
 showThumbnail: false
@@ -41,7 +41,9 @@ Search Labsは現在、順番待ちリストに登録した少数のユーザー
 
 ![Search Labsの個別の機能が表示されており、それぞれオンオフを切り替えられる](./2023-05-31-11-12-41.png)
 
-SGEとCode Tipsは「Ends Dec 2023」、Add to Sheetsは「Ends Sep 2023」と表示されていることから、それぞれのテストは今年の12月と9月に終了することが分かります。ベータ扱いが解除され、一般提供されるのがその時期なのかもしれません。
+~~SGEとCode Tipsは「Ends Dec 2023」、Add to Sheetsは「Ends Sep 2023」と表示されていることから、それぞれのテストは今年の12月と9月に終了することが分かります。ベータ扱いが解除され、一般提供されるのがその時期なのかもしれません。~~
+
+12月29日追記：現在は、それぞれの機能の終了日が[表示されなくなっています](https://jetstream.bz/archives/181503)。
 
 ## SGEを使ってみる
 
