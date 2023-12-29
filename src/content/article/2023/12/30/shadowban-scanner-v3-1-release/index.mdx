@@ -1,0 +1,76 @@
+---
+title: Shadowban Scannerがv3.1にアップデートされました
+description: Shadowban Scannerがv3.1にアップデートされました。このバージョンでは、非表示にされた外部リンク付きツイートを「復活」させる機能が追加されています。
+author: ろぼいん
+thumbnail: ./screenshot3_ja.png
+pubDate: "2023-12-30T02:33:10+09:00"
+tags: ["android", "chrome", "edge", "firefox", "shadowban-scanner", "twitter", "extension"]
+---
+
+import { YouTube } from "@astro-community/astro-embed-youtube";
+import ExtensionBadges from "../../../09/30/shadowban-scanner-v2-release/ExtensionBadges.astro";
+
+Shadowban Scannerがv3.1にアップデートされました。このバージョンでは、非表示にされた**外部リンク付きツイートを「復活」させる機能**が追加されています。
+
+おもな変更点は次のとおりです。すべての変更点はGitHubの[リリースページ](https://github.com/Robot-Inventor/shadowban-scanner/releases/tag/v3.1.0)で閲覧できます。
+
+## 🎉新機能
+
+最近、Twitterでは外部リンク付きのツイートが非表示になるという問題が話題になりました。Twitter内部では[「tombstone（墓石）」と呼ばれており](https://0115765.com/archives/50433)、意図的な挙動のようです。
+
+Shadowban Scannerはこの問題にいち早く対処し、非表示にされたツイートを「復活」させる機能を追加しました！！
+
+![非表示にされた外部リンク付きツイートを表示するボタンのスクリーンショット](./screenshot3_ja.png)
+
+非表示にされた外部リンク付きツイートを検出すると、ツイートを表示するボタンを追加します。このボタンをクリックすると、非表示にされたツイートが表示されます。
+
+## 🩹修正点
+
+- TweetDeckで共有ボタンが正しく動作しないことがあるバグを修正しました
+
+## FAQ
+
+### ボタンをクリックしなくても、非表示にされたツイートを表示できますか？
+
+いいえ、できません。
+
+技術的な理由により、ボタンをクリックせずに非表示にされたツイートを表示するのは困難です。代わりに、ボタンをクリックすると新しいタブでツイートが表示されます。
+
+## Shadowban Scannerとは？
+
+Shadowban Scannerは、Twitterのいわゆるシャドウバンやセンシティブ判定を、外部サイトに移動せずにその場で確認できる拡張機能です。
+
+<YouTube id="S2mRHz9SEig" />
+
+- [Shadowban Scanner公式サイト](https://shadowban-scanner.roboin.io/)
+
+Shadowban Scannerは、次のリンクからダウンロードできます。
+
+<ExtensionBadges/>
+
+お使いのWebブラウザーにインストールするだけで、次の機能が利用できるようになります。
+
+- アカウント単位のシャドウバンとセンシティブフラグの検出
+- プロフィールのメディア（アイコンとヘッダー画像）のセンシティブフラグの検出
+- 法的な理由によりアカウントをブロックしている国の検出
+- ツイート単位のセンシティブフラグの検出
+- ツイートの年齢制限の検出
+- 非表示にされたツイートを表示するボタンを追加
+
+![Shadowban Scannerのスクリーンショット](../../../09/30/shadowban-scanner-v2-release/screenshot2_ja.png)
+
+![Shadowban Scannerのスクリーンショット](../../../09/30/shadowban-scanner-v2-release/screenshot1_ja.png)
+
+![Shadowban Scannerのスクリーンショット](./screenshot3_ja.png)
+
+すべての処理はユーザーのコンピューター上で行われます。一部の拡張機能でみられるような、外部サーバーと通信したり、ユーザーの認証情報を無断で取得してTwitterの内部APIにアクセスしたりするような処理はありません。あなたのデータとプライバシーを守ります。
+
+Shadowban Scannerは、PC向けの最新バージョンのGoogle Chrome、Microsoft Edge、Mozilla Firefoxで利用できます。技術的な理由により、スマートフォンでは利用できません（Android版Firefoxを除く）。
+
+仕組みなどの詳細は、次のページから確認できます。
+
+- [Shadowban Scannerの仕組みとシャドウバンについて - Shadowban Scanner](https://github.com/Robot-Inventor/shadowban-scanner/blob/main/doc/ja/about-shadowban.md)
+
+:::note
+Shadowban Scannerは、他の類似のツールと同様に、偽陽性や偽陰性が発生することがあります。Shadowban Scannerで継続的にアカウントやツイートの状態を確認しつつ、他のツールと併用することをオススメします。
+:::
