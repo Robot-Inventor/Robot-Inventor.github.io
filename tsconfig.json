@@ -10,6 +10,9 @@
             ],
             "@layouts/*": [
                 "src/layouts/*"
+            ],
+            "@templates/*": [
+                "src/templates/*"
             ]
         },
         "allowJs": true
