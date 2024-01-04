@@ -13,20 +13,11 @@
     --secondary-background-color: #fff;
     --base-background-color: #fff;
     --base-text-color: #333;
+    --h2-background-color: #85c3f7;
     --middle-emphasis-color: rgb(0, 0, 0, 0.6);
     --low-emphasis-color: rgb(0, 0, 0, 0.6);
 
     --inline-code-background-color: rgba(0, 0, 0, 0.1);
-
-    --info-block-background-color: #e2f3fd;
-    --info-block-border-color: #3fb0f3;
-    --info-block-font-color: #0b72ad;
-    --warn-block-background-color: #fff5cd;
-    --warn-block-border-color: #f5c300;
-    --warn-block-font-color: #cfa500;
-    --alert-block-background-color: #ffcdcd;
-    --alert-block-border-color: #b30909;
-    --alert-block-font-color: #970000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,20 +25,11 @@
         --secondary-background-color: #2a2a2a;
         --base-background-color: #191919;
         --base-text-color: #fff;
+        --h2-background-color: #415e77;
         --middle-emphasis-color: rgb(255, 255, 255, 0.6);
         --low-emphasis-color: rgb(255, 255, 255, 0.6);
 
         --inline-code-background-color: rgba(255, 255, 255, 0.1);
-
-        --info-block-background-color: #2a4453;
-        --info-block-border-color: #60b2e4;
-        --info-block-font-color: #99daff;
-        --warn-block-background-color: #665200;
-        --warn-block-border-color: #c8b157;
-        --warn-block-font-color: #e6d17d;
-        --alert-block-background-color: #681e1e;
-        --alert-block-border-color: #c85757;
-        --alert-block-font-color: #ffbcbc;
     }
 }
 
@@ -348,12 +330,15 @@ main > article h2 {
     font-size: 1.75rem;
     line-height: calc(0.25rem * 12);
     font-feature-settings: "palt";
+    background: var(--h2-background-color);
+    padding: 0.25em 0.5em;
 }
 
 main > article h3 {
     font-size: 1.5rem;
     line-height: calc(0.25rem * 10);
     font-feature-settings: "palt";
+    border-bottom: solid 0.2rem var(--middle-emphasis-color);
 }
 
 main > article h4 {
@@ -536,27 +521,6 @@ main *:target {
 
 .note > p:last-child {
     margin-bottom: 0;
-}
-
-.note.info {
-    --note-background-color: var(--info-block-background-color);
-    --note-border-color: var(--info-block-border-color);
-    --note-font-color: var(--info-block-font-color);
-    --note-icon-url: url("/icon/info.svg");
-}
-
-.note.warn {
-    --note-background-color: var(--warn-block-background-color);
-    --note-border-color: var(--warn-block-border-color);
-    --note-font-color: var(--warn-block-font-color);
-    --note-icon-url: url("/icon/warn.svg");
-}
-
-.note.alert {
-    --note-background-color: var(--alert-block-background-color);
-    --note-border-color: var(--alert-block-border-color);
-    --note-font-color: var(--alert-block-font-color);
-    --note-icon-url: url("/icon/alert.svg");
 }
 
 .recommended_articles_section {
