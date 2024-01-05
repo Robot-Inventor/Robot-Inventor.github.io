@@ -370,6 +370,14 @@ const generateToc = (headings: MarkdownHeading[]) => {
                 >
                     <img src="/icon/social/threads.svg" alt="Threadsのアイコン" />
                 </a>
+                <a
+                    href={`https://misskey-hub.net/share/?text=${encodeURIComponent(
+                        `${titleWithSiteName}\n${generateShareURL("misskey")}`
+                    )}&visibility=public&localOnly=0`}
+                    target="_blank"
+                >
+                    <img src="/icon/social/misskey.png" alt="Misskeyのアイコン" />
+                </a>
             </section>
             {
                 Astro.props.frontmatter.showAuthor && (
