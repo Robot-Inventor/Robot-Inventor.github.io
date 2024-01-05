@@ -7,6 +7,7 @@ thumbnail: ./image-1.png
 showToc: true
 tags:
     - how-to
+    - misskey
 ---
 
 Misskeyには、Twitter（X）の本人確認や公式バッジと同等の役割をもつものが2つあります。この記事では、それらの違いと申請方法を紹介します。
