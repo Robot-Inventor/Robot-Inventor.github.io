@@ -1,8 +1,9 @@
 ---
 title: 【PowerToys】コマンドが見つからないときにパッケージを提案する「Command Not Found」の使い方
-description: 2023年1月10日にリリースされたPowerToys v0.77.0では、PowerShellでコマンドの実行に失敗したときに、足りないパッケージを提案する「Command Not Found」機能が追加されました。この記事では、Command Not Foundの特徴や使い方、動作しない場合の対処法などについて紹介します。
+description: 2024年1月10日にリリースされたPowerToys v0.77.0では、PowerShellでコマンドの実行に失敗したときに、足りないパッケージを提案する「Command Not Found」機能が追加されました。この記事では、Command Not Foundの特徴や使い方、動作しない場合の対処法などについて紹介します。
 thumbnail: ./image-3.png
 pubDate: "2024-01-11T14:34:31+09:00"
+modifiedDate: "2024-01-11T15:22:53+09:00"
 author: ろぼいん
 tags:
     - microsoft
@@ -10,7 +11,7 @@ tags:
     - windows
 ---
 
-2023年1月10日にリリースされた[PowerToys](https://github.com/microsoft/PowerToys) v0.77.0では、**PowerShellでコマンドの実行に失敗したときに、足りないパッケージを提案する「Command Not Found」機能**が追加されました。
+2024年1月10日にリリースされた[PowerToys](https://github.com/microsoft/PowerToys) v0.77.0では、**PowerShellでコマンドの実行に失敗したときに、足りないパッケージを提案する「Command Not Found」機能**が追加されました。
 
 この記事では、Command Not Foundの特徴や使い方、動作しない場合の対処法などについて紹介します。
 
