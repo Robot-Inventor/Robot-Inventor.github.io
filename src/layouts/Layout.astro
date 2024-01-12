@@ -58,43 +58,85 @@ if (!author) throw new Error("Undefined author");
 
 const titleWithSiteName = `${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`;
 
-const schema = JSON.stringify([
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: import.meta.env.SITE_NAME,
-        alternateName: ["ろぼいん", "roboin.io"],
-        url: Astro.site
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": Astro.url
+const schema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": `${Astro.site}#organization`,
+            name: import.meta.env.SITE_NAME,
+            url: `${Astro.site}`,
+            logo: {
+                "@type": "ImageObject",
+                "@id": `${Astro.site}#logo`,
+                url: `${Astro.site}favicon.svg`,
+                caption: import.meta.env.SITE_NAME
+            },
+            image: {
+                "@id": `${Astro.site}#logo`
+            }
         },
-        headline: titleWithSiteName,
-        description: Astro.props.frontmatter.description,
-        // TODO: すべての画像を取得
-        image: [thumbnailUrl],
-        author: {
+        {
+            "@type": "WebSite",
+            "@id": `${Astro.site}#website`,
+            url: Astro.site,
+            name: import.meta.env.SITE_NAME,
+            alternateName: ["ろぼいん", "roboin.io"],
+            publisher: {
+                "@id": `${Astro.site}#organization`
+            }
+        },
+        {
+            "@type": "WebPage",
+            "@id": `${Astro.url}#webpage`,
+            url: Astro.url,
+            name: titleWithSiteName,
+            isPartOf: {
+                "@id": `${Astro.site}#website`
+            },
+            image: {
+                "@type": "ImageObject",
+                "@id": `${Astro.url}#primaryimage`,
+                url: thumbnailUrl
+            },
+            primaryImageOfPage: {
+                "@id": `${Astro.url}#primaryimage`
+            },
+            datePublished: Astro.props.frontmatter.pubDate,
+            dateModified: Astro.props.frontmatter.modifiedDate || Astro.props.frontmatter.pubDate,
+            description: Astro.props.frontmatter.description
+        },
+        {
+            "@type": "Article",
+            "@id": `${Astro.url}#article`,
+            isPartOf: {
+                "@id": `${Astro.url}#webpage`
+            },
+            author: {
+                "@type": author.data.type,
+                name: authorId,
+                url: author.data.homePage,
+                sameAs: author.data.sameAs
+            },
+            publisher: {
+                "@id": `${Astro.site}#organization`
+            },
+            headline: titleWithSiteName,
+            datePublished: Astro.props.frontmatter.pubDate,
+            dateModified: Astro.props.frontmatter.modifiedDate || Astro.props.frontmatter.pubDate,
+            mainEntityOfPage: `${Astro.url}#webpage`,
+            image: {
+                "@id": `${Astro.url}#primaryimage`
+            }
+        },
+        {
             "@type": author.data.type,
             name: authorId,
             url: author.data.homePage,
             sameAs: author.data.sameAs
-        },
-        publisher: {
-            "@type": "Organization",
-            name: "ろぼいんブログ",
-            logo: {
-                "@type": "ImageObject",
-                url: "https://roboin.io/favicon.svg"
-            }
-        },
-        datePublished: Astro.props.frontmatter.pubDate,
-        dateModified: Astro.props.frontmatter.modifiedDate || Astro.props.frontmatter.pubDate
-    }
-]);
+        }
+    ]
+});
 
 const generateShareURL = (source: string) => {
     const url = new URL(Astro.url);
@@ -234,7 +276,7 @@ const generateToc = (headings: MarkdownHeading[]) => {
             rel="alternate"
             type="application/rss+xml"
             title={`${import.meta.env.SITE_NAME} RSS Feed`}
-            href={`${import.meta.env.SITE}/rss.xml`}
+            href={`${Astro.site}rss.xml`}
         />
         <link rel="sitemap" href="/sitemap-index.xml" />
         <meta name="apple-mobile-web-app-title" content={import.meta.env.SITE_NAME} />
