@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/Layout.astro
+layout: /src/layouts/Layout.astro
 title: 動画だけ引用リツイートするツール
 description: Twitterには、動画だけを引用してリツイートできる機能があります。このツールに引用元ツイートのURLを貼り付けると、動画だけを引用したツイートの作成画面が開きます。
 thumbnail: ./thumbnail.png
