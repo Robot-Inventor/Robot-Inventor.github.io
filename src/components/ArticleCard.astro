@@ -10,7 +10,10 @@ interface Props {
 
 if (!Astro.props.link.startsWith("/article/")) throw new Error("link attribute must start with /article/");
 
-const slug = Astro.props.link.replace("/article/", "").replace(/\/$/, "");
+const slug = Astro.props.link
+    .replace("/article/", "")
+    .replace(/#[^/]*$/, "")
+    .replace(/\/$/, "");
 
 const targetArticle = await getEntry("article", slug);
 if (!targetArticle) throw new Error("article not found");
