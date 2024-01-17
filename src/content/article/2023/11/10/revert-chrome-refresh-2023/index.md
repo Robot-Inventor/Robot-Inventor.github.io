@@ -1,7 +1,8 @@
 ---
-title: 新しくなったChromeのデザインを元に戻す方法
+title: 新しくなったChromeのUIのデザインを元に戻す方法
 description: 2023年9月にリリースされたGoogle Chrome 117では、Chromeの15周年を記念してUIのデザインが変更されました。この記事では、変更されたデザインを元に戻す方法を解説します。
 pubDate: "2023-11-10T10:56:14+09:00"
+modifiedDate: "2024-01-18T01:45:01+09:00"
 author: ろぼいん
 thumbnail: ./GM3_Hero.width-1200.format-webp.webp
 tags:
@@ -40,9 +41,14 @@ Chrome Refresh 2023は、5年間ほとんど変わっていなかったデザイ
 - Chrome Refresh 2023
 - Chrome WebUI Refresh 2023
 - Chrome Refresh 2023 New Tab Button
-- Chrome Refresh 2023 Top Chrome Font Style
 
 ![「Chrome://flags」にアクセスして検索ボックスに「refresh 2023」と入力した状態のスクリーンショット](./image.png)
+
+## フォントを元に戻す方法
+
+Chrome Refresh 2023では、フォントも変更されています。以前のデザインに戻すには、次のフラグを［Disabled］に変更します。
+
+- Chrome Refresh 2023 Top Chrome Font Style
 
 ## 変更を取り消す方法
 
