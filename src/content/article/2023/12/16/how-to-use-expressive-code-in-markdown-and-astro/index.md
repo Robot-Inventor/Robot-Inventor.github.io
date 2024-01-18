@@ -4,7 +4,7 @@ description: QiitaなどのサイトではMarkdown構文が独自に拡張され
 author: ろぼいん
 thumbnail: ./thumbnail.png
 pubDate: "2023-12-16T18:40:23+09:00"
-modifiedDate: "2023-12-18T11:31:43+09:00"
+modifiedDate: "2024-01-18T09:57:19+09:00"
 tags:
     - astro
     - web-development
@@ -236,6 +236,26 @@ const foo = () => {
 ```
 
 複数行にまたがって削除したい場合や、複数箇所に削除したい場合の指定方法は、[行の強調](#行の強調)や[行の挿入](#行の挿入)と同じです。
+
+## ラベル付きマーカー
+
+コードの特定の行を強調表示し、そこにラベルを付与するには`mark={"ラベル":行番号}`で行番号を指定します。また、`del`や`ins`でも同様にできます。
+
+````markdown
+```javascript title="foo.js" mark={"1":2}
+const foo = () => {
+    console.log("foo");
+    alert("foo");
+};
+```
+````
+
+```javascript title="foo.js" mark={"1":2}
+const foo = () => {
+    console.log("foo");
+    alert("foo");
+};
+```
 
 ## テキストマーカー
 
