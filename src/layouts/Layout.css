@@ -578,6 +578,11 @@ footer a {
     margin: 3rem 0;
 }
 
+/* その他の広告 */
+.adsbygoogle {
+    margin: 2rem 0;
+}
+
 lite-youtube {
     margin: 1.5rem 0;
 }
