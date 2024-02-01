@@ -13,7 +13,7 @@
     --secondary-background-color: #fff;
     --base-background-color: #fff;
     --base-text-color: #333;
-    --h2-background-color: #85c3f7;
+    --h2-border-color: #85c3f7;
     --middle-emphasis-color: rgb(0, 0, 0, 0.6);
     --low-emphasis-color: rgb(0, 0, 0, 0.6);
 
@@ -25,7 +25,7 @@
         --secondary-background-color: #2a2a2a;
         --base-background-color: #191919;
         --base-text-color: #fff;
-        --h2-background-color: #415e77;
+        --h2-border-color: #567c9d;
         --middle-emphasis-color: rgb(255, 255, 255, 0.6);
         --low-emphasis-color: rgb(255, 255, 255, 0.6);
 
@@ -330,15 +330,15 @@ main > article h2 {
     font-size: 1.75rem;
     line-height: calc(0.25rem * 12);
     font-feature-settings: "palt";
-    background: var(--h2-background-color);
     padding: 0.25em 0.5em;
+    border-left: solid 0.4rem var(--h2-border-color);
 }
 
 main > article h3 {
     font-size: 1.5rem;
     line-height: calc(0.25rem * 10);
     font-feature-settings: "palt";
-    border-bottom: solid 0.2rem var(--middle-emphasis-color);
+    border-bottom: solid 0.15rem var(--middle-emphasis-color);
 }
 
 main > article h4 {
