@@ -4,20 +4,27 @@ description: Visual Studio Code (VS Code) に便利な機能が追加されま�
 thumbnail: ./hey-code.jpg
 author: ろぼいん
 pubDate: "2024-02-05T21:04:17+09:00"
-modifiedDate: "2024-02-07T13:54:45+09:00"
+modifiedDate: "2024-02-08T02:07:46+09:00"
 tags:
     - explanation
     - web-development
     - microsoft
+    - vscode
 ---
+
+import ArticleCard from "@components/ArticleCard.astro";
 
 Visual Studio Code (VS Code) に便利な機能が追加されました。
 
 今回追加された「**Hey Code**」ボイスコマンドを使えば、音声でプログラミングのサポートを受けられるようになり、開発の効率が大幅に向上します。この記事では、「Hey Code」機能の魅力と、使い始めるための基本的な情報について解説します。
 
+また、Hey Codeが実装されたv1.86のアップデートでは、標準入力の取り扱いに関する改善も加えられています。詳しくはこちらの記事で解説しています。
+
+<ArticleCard link="/article/2024/02/08/how-to-use-vs-code-stdin/" />
+
 ## 「Hey Code」とは？
 
-![Hey Codeの画像](hey-code.jpg)
+![Hey Codeの画像](./hey-code.jpg)
 *画像：[Visual Studio Code January 2024](https://code.visualstudio.com/updates/v1_86#_use-hey-code-voice-command)より*
 
 「Hey Code」とは、**VS Codeで新たに導入されたボイスコマンド機能**です。この機能を有効にすることで、声による指示でGitHub Copilot Chatとの音声セッションを開始できます。
@@ -34,7 +41,7 @@ Visual Studio Code (VS Code) に便利な機能が追加されました。
 
 ### GitHub Copilot Chat
 
-![GitHub Copilot Chatの画像](image.png)
+![GitHub Copilot Chatの画像](./image.png)
 *画像：[GitHub Copilot Chat - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat)より*
 
 GitHub Copilot Chat拡張機能とは、**GitHub Copilotの会話型AIアシスタンス機能をVS Codeで利用するためのものです**。バグのトラブルシューティングや新機能の開発時など、どんな課題にも対応できるよう支援します。
@@ -45,7 +52,7 @@ GitHub Copilotは、30日間の無料トライアルを提供しています。�
 
 ### VS Code Speech
 
-![VS Code Speechの画像](image-1.png)
+![VS Code Speechの画像](./image-1.png)
 *画像：[VS Code Speech - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-speech)より*
 
 **VS Codeに話しかけるためには、VS Code Speech拡張機能が必要です**。この拡張機能は、音声からテキストへの変換機能をVS Codeに追加します。すべての音声データは、インターネット接続なしにローカルで処理されます。

@@ -7,6 +7,7 @@ pubDate: "2023-11-11T18:50:53+09:00"
 modifiedDate: "2023-11-24T11:55:35+09:00"
 tags:
   - github
+  - vscode
 ---
 
 [GitHub Next](https://githubnext.com/)が、「An innovative superfamily of fonts for code（コード用フォントの革新的なスーパーファミリー）」と主張する、新しいコーディングフォント「[Monaspace](https://monaspace.githubnext.com/)」を発表しました。GitHub Nextはソフトウェア開発の未来を探求する、GitHubの研究チームです。

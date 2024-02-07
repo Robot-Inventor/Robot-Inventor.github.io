@@ -8,6 +8,7 @@ modifiedDate: "2023-12-18T13:45:26+09:00"
 tags:
     - arduino
     - how-to
+    - vscode
 ---
 
 ## はじめに
