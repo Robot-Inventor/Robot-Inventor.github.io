@@ -23,7 +23,7 @@ export const GET = async () => {
             enclosure: {
                 url: post.data.thumbnail?.src || `${import.meta.env.SITE}/icon/ogp_default_thumbnail.png`,
                 type: post.data.thumbnail?.format ? getMimeType(post.data.thumbnail?.format) : "image/png",
-                length: 1
+                length: 0
             },
         })),
         customData: `<language>ja</language><webfeeds:icon>https://roboin.io/favicon.svg</webfeeds:icon>`,
