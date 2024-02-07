@@ -2,6 +2,7 @@
 title: Feedlyのサムネイルをカスタマイズする方法
 description: この記事では、Feedlyのフィード画面に表示されるサムネイルをカスタマイズする方法をまとめます。
 pubDate: "2023-12-22T13:20:44+09:00"
+modifiedDate: "2024-02-07T13:52:41+09:00"
 author: ろぼいん
 tags:
     - web-development
@@ -64,9 +65,7 @@ Feedlyでサムネイルをカスタマイズするには、RSSフィードの`i
 このブログでは、静的サイトジェネレーターの[Astro](https://astro.build/)を使用しています。Astroの[@astrojs/rss](https://www.npmjs.com/package/@astrojs/rss)パッケージを使用したRSSフィードでサムネイルをカスタマイズするには、たとえば次のようにします。
 
 :::caution
-`item.enclosure.length`は、本来はサムネイルのファイルサイズをバイト単位で指定します。AstroのRSSではこの値を省略できず、また`0`を指定するとエラーになるため、`1`を指定しています。
-
-[RSS 2.0 Specification (Current)](https://www.rssboard.org/rss-specification#ltenclosuregtSubelementOfLtitemgt)では、`length`が省略可能とは書かれていないので、必須のようです。ただし、この値に`0`や`1`を指定しても、Feedlyでは問題なくサムネイルが表示されます。
+`item.enclosure.length`は、本来はサムネイルのファイルサイズをバイト単位で指定します。Astroでは画像のファイルサイズが分からないため、[`0`を指定します](https://github.com/withastro/astro/pull/9967)。
 :::
 
 ```javascript title="./src/pages/rss.xml.js"
@@ -86,7 +85,7 @@ export const GET = async () => {
                 enclosure: {
                     url: "［サムネイルのURL］",
                     type: "［サムネイル画像のMIMEタイプ］",
-                    length: 1
+                    length: 0
                 }
             },
             // ...他の記事
