@@ -4,6 +4,7 @@ description: Visual Studio Code (VS Code) に便利な機能が追加されま�
 thumbnail: ./hey-code.jpg
 author: ろぼいん
 pubDate: "2024-02-05T21:04:17+09:00"
+modifiedDate: "2024-02-07T13:54:45+09:00"
 tags:
     - explanation
     - web-development
@@ -86,7 +87,7 @@ GitHub Copilotは、30日間の無料トライアルを提供しています。�
 
 「Hey Code」機能の導入により、VS Codeでの開発作業がこれまで以上に直感的でスムーズになります。GitHub Copilotとの統合により、コーディングの質と効率が大きく向上します。また、音声データのローカル処理によりプライバシーも保護されます。
 
-開発作業中に手を止めずに指示できる「Hey Code」機能をぜひ活用してみてください。より快適な開発体験が待っています。
+ぜひ、「Hey Code」機能を使ってみてください。
 
 ## 参考
 
