@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import expressiveCode from "astro-expressive-code";
 import { pluginFramesTexts } from "astro-expressive-code";
 import { starlightAsides } from "./src/starlight/integrations/asides";
+import rlc from "remark-link-card";
 
 const topPageURL = "https://roboin.io";
 
@@ -29,7 +30,7 @@ export default defineConfig({
         shikiConfig: {
             theme: "dark-plus"
         },
-        remarkPlugins: [...starlightAsides()]
+        remarkPlugins: [...starlightAsides(), rlc]
     },
     redirects: {
         "/shadowban-scanner": "https://shadowban-scanner.roboin.io/",
