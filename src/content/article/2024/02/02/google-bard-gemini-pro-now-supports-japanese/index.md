@@ -8,6 +8,7 @@ tags:
     - google
     - ai
     - explanation
+    - news
 ---
 
 2024年2月2日（日本時間）、GoogleがAIチャットボット「Bard」のアップデートを発表しました。これにより、**BardのGemini Proと呼ばれる高性能なAIモデルが日本語を含む全言語に対応しました**。
