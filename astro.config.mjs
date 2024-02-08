@@ -30,7 +30,16 @@ export default defineConfig({
         shikiConfig: {
             theme: "dark-plus"
         },
-        remarkPlugins: [...starlightAsides(), rlc]
+        remarkPlugins: [
+            ...starlightAsides(),
+            [
+                rlc,
+                {
+                    cache: true,
+                    shortenUrl: true
+                }
+            ]
+        ]
     },
     redirects: {
         "/shadowban-scanner": "https://shadowban-scanner.roboin.io/",

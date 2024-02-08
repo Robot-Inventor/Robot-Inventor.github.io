@@ -596,6 +596,7 @@ main *:target {
     height: 1.2em;
     object-fit: cover;
     border-radius: 0.6em;
+    margin: 0;
 }
 
 .rlc-url {
