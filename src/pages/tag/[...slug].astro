@@ -32,8 +32,10 @@ const articleLinks = articles
         pubDate: "2023-10-28T00:00:00.000+09:00",
         showDate: false,
         showThumbnail: false,
-        showRecommendedArticles: false
+        showRecommendedArticles: false,
+        showToc: false
     }}
+    headings={[]}
 >
     <div id="article_list_area">
         {articleLinks.map((article) => <ArticleCard link={article} type="portrait" />)}
