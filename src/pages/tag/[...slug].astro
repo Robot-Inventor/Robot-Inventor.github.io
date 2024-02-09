@@ -20,7 +20,7 @@ const articles = await getCollection("article", ({ data }) => {
 });
 const articleLinks = articles
     .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
-    .map((article) => `/article/${article.slug}`);
+    .map((article) => `/article/${article.slug}/`);
 ---
 
 <Layout
