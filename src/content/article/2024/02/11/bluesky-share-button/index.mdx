@@ -1,0 +1,58 @@
+---
+title: Blueskyの共有ボタンを実装する方法はあるのか
+description: Webサイトやブログでは、SNSでコンテンツを簡単に共有できるボタンが設置されていることがあります。もちろん、このブログでも設置しています。Twitter（X）やFacebookといったプラットフォームでは、このような共有ボタンが広く普及しています。この記事では、Twitterの代替として注目されているBlueskyの共有ボタンの現状と、今後の展望について深掘りします。
+pubDate: "2024-02-11T01:51:33+09:00"
+author: ろぼいん
+tags:
+    - bluesky
+    - github
+    - how-to
+    - explanation
+    - web-development
+---
+
+import ArticleCard from "@components/ArticleCard.astro";
+
+Webサイトやブログでは、SNSでコンテンツを簡単に共有できるボタンが設置されていることがあります。もちろん、このブログでも設置しています。
+
+Twitter（X）やFacebookといったプラットフォームでは、このような共有ボタンが広く普及しています。この記事では、Twitterの代替として注目されているBlueskyの共有ボタンの現状と、今後の展望について深掘りします。
+
+## 現時点での共有ボタンの実装状況
+
+現在Blueskyには、Webサイトやブログから直接投稿を共有するための公式な**共有ボタンが存在しません**。しかし、GitHubではすでにドラフト状態のPull Requestが提出されており、Blueskyの共有ボタンの実装が進められています。
+
+https://github.com/bluesky-social/social-app/pull/2587
+
+一方で、BlueskyのAPIを利用するサードパーティーのクライアントでは、共有機能をすでに利用可能な場合があります。
+
+## 実装されたらどうなるか
+
+前述のPull Requestでは、Webアプリケーションでは次のようなURLフォーマットを使って投稿画面を開けるように開発が進められています。
+
+```markdown frame="terminal"
+https://bsky.app/?compose=true&text=
+```
+
+また、Blueskyのアプリでは次のようなintentを使用することになります。
+
+```markdown frame="terminal"
+bluesky://?compose=true&text=
+```
+
+このPull RequestがGitHubでマージされると、公式に機能がリリースされることになります。
+
+## どうすればよいか
+
+共有ボタンの実装状況についての最新情報を知りたい場合は、GitHubのプルリクエストの通知をオンにしておくとよいでしょう。
+
+また、サイトのコードを見直し、簡単に共有ボタンを追加できるよう準備しておくと、速やかに対応できます。
+
+## まとめ
+
+現時点ではまだ待ち時間がありますが、今後のアップデートに備えましょう。実装状況が気になる場合は、GitHubでの進捗状況をチェックしておくのがオススメです。プルリクエストがマージされたら、この記事を更新する予定です。
+
+なお、Blueskyと同様にTwitterの代替のSNSとして注目されているMisskeyやThreadsの共有ボタンの実装方法は、こちらの記事で解説しています。
+
+<ArticleCard link="/article/2024/01/06/how-to-add-misskey-share-button/" />
+
+https://qiita.com/Robot-Inventor/items/874e558cdbfaa14ce22e

@@ -3,11 +3,15 @@ title: Misskeyの共有ボタンを設置する方法
 description: Misskeyは、Mastodonと同様にActivityPubを採用した、オープンソースの分散型SNSです。Misskeyの共有ボタンをWebサイトに設置することで、ユーザーは記事やコンテンツをMisskeyで簡単に共有できるようになります。この記事では、Misskeyの共有ボタンを設置する方法を説明します。
 thumbnail: ./image.png
 pubDate: "2024-01-06T01:46:52+09:00"
+modifiedDate: "2024-02-11T01:48:25+09:00"
 author: ろぼいん
 tags:
     - how-to
     - misskey
+    - web-development
 ---
+
+import ArticleCard from "@components/ArticleCard.astro";
 
 MisskeyはMastodonと同様にActivityPubを採用した、オープンソースの分散型SNSです。最近では、Twitter（X）の代替のSNSの1つとして注目されています。
 
@@ -43,7 +47,7 @@ Misskeyの共有ボタンを設置するには、どのMisskeyインスタンス
 
 現在開いているページを共有するためのURLを生成するには、次のようなコードを利用します。
 
-```javascript
+```javascript frame="terminal"
 `https://misskey-hub.net/share/?text=${encodeURIComponent(`${document.title}\n${location.href}`)}&visibility=public&localOnly=0`
 ```
 
@@ -75,7 +79,7 @@ Misskeyの共有ボタンを設置するには、どのMisskeyインスタンス
 
 ただし、`アイコンのURL`の部分は、先ほどダウンロードしたアイコンのURLに置き換えてください。また、共有URLが事前に分かっている場合は`onclick`属性を削除して、`href`属性に共有URLを直接指定できます。
 
-```html
+```html frame="terminal"
 <a href="" onclick="this.href = `https://misskey-hub.net/share/?text=${encodeURIComponent(`${document.title}\n${location.href}`)}&visibility=public&localOnly=0`;" target="_blank" rel="noopener noreferrer">
   <img src="アイコンのURL" alt="Misskeyのアイコン" width="384" height="384">
 </a>
@@ -86,3 +90,9 @@ Misskeyの共有ボタンを設置するには、どのMisskeyインスタンス
 Misskeyの共有ボタンを設置することで、SNSへの共有を促進できます。
 
 この記事の方法を使えば、任意のMisskeyインスタンスでコンテンツを共有するボタンを安全に設置できます。Misskeyの共有ボタンを設置して、コンテンツがより多くの人に共有されるようにしましょう！
+
+なお、Misskeyと同様にTwitterの代替のSNSとして注目されているBlueskyやThreadsの共有ボタンの実装方法は、こちらの記事で解説しています。
+
+<ArticleCard link="/article/2024/02/11/bluesky-share-button/" />
+
+https://qiita.com/Robot-Inventor/items/874e558cdbfaa14ce22e
