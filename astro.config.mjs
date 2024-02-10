@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import expressiveCode from "astro-expressive-code";
 import { pluginFramesTexts } from "astro-expressive-code";
 import { starlightAsides } from "./src/starlight/integrations/asides";
-import rlc from "remark-link-card";
+import rlc from "remark-enhanced-link-card";
 
 const topPageURL = "https://roboin.io";
 

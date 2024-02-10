@@ -21,3 +21,4 @@ pnpm-debug.log*
 .DS_Store
 
 public/remark-link-card/
+public/remark-enhanced-link-card/
