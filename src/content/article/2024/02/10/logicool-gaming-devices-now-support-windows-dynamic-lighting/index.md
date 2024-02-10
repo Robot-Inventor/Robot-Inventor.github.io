@@ -3,6 +3,7 @@ title: Windowsの動的ライティングがLogicoolデバイスをサポート�
 description: Logicool製デバイスがWindowsの新機能「動的ライティング」とを完全サポートしました。この記事では、動的ライティングの対応デバイス、そして実際の使い方まで詳しく解説します。
 thumbnail: ./image.png
 pubDate: "2024-02-10T21:33:48+09:00"
+modifiedDate: "2024-02-11T00:09:33+09:00"
 author: ろぼいん
 tags:
     - news
@@ -61,3 +62,8 @@ Windowsの動的ライティングでは、キーボード、マウス、ゲー�
 Microsoftの動的ライティング機能とLogicoolのデバイスが完全に統合されることで、より自由で、より没入感のあるデスクトップ体験を享受できるようになりました。
 
 とくに、複数のメーカーのゲーミングデバイスを利用している場合は、Windowsの設定画面から統一的に照明を制御できるのは大きなメリットです。対応デバイスを持っている場合は、ぜひ一度試してみてください。
+
+## 参考
+
+- [動的照明デバイス | Microsoft Learn](https://learn.microsoft.com/ja-jp/windows-hardware/design/component-guidelines/dynamic-lighting-devices)
+- [Windows で動的照明デバイスを制御する - Microsoft サポート](https://support.microsoft.com/ja-jp/windows/windows-%E3%81%A7%E5%8B%95%E7%9A%84%E7%85%A7%E6%98%8E%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%82%92%E5%88%B6%E5%BE%A1%E3%81%99%E3%82%8B-8e8f22e3-e820-476c-8f9d-9ffc7b6ffcd2)
