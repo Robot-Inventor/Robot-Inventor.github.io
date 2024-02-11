@@ -1,0 +1,65 @@
+---
+title: ウルトラHDRは普通のHDRと何が違う？撮影方法も解説
+description: 写真撮影の品質は、年々進化していますが、とくに注目を集めているのがハイダイナミックレンジ（HDR）です。実は、HDRと似た技術でウルトラHDRというものもあります。しかし、多くの人が「ウルトラHDRって何？」「普通のHDRとはどう違うの？」と疑問に思っているかもしれません。今回は、それらの疑問を解消し、PixelデバイスでウルトラHDRを有効化する方法についても紹介します。
+pubDate: "2024-02-11T21:55:54+09:00"
+author: ろぼいん
+tags:
+    - android
+    - google-pixel
+    - explanation
+---
+
+import { YouTube } from "@astro-community/astro-embed-youtube";
+
+写真撮影の品質は年々進化していますが、とくに注目を集めているのが**ハイダイナミックレンジ（HDR）** です。実は、HDRと似た技術で**ウルトラHDR**というものもあります。
+
+しかし、多くの人が「**ウルトラHDRって何？**」「**普通のHDRとはどう違うの？**」と疑問に思っているかもしれません。今回は、それらの疑問を解消し、**PixelデバイスでウルトラHDRを有効化する方法**についても紹介します。
+
+## HDRとは？
+
+まずは、基本から学びましょう。ハイダイナミックレンジ（HDR）とは、写真撮影の技術の一つで、現実世界で人間の目で見えるものに近いディテールで写真を撮影できる技術です。
+
+標準ダイナミックレンジ（SDR）の写真では難しい、もっとも暗い部分ともっとも明るい部分が細部まで鮮明に捉えられます。
+
+## ウルトラHDRとは？
+
+<YouTube id="AxyNgKpe9AU" />
+*Ultra HDRについての公式の解説動画*
+
+**ウルトラHDR（Ultra HDR）** は、ノーマルのHDRをさらに進化させた技術です。ウルトラHDRの目標は、SDRの画像ファイル内に追加情報をエンコードし、1つのファイルでSDRと最適なHDR表現の両方が行えるようにすることです。
+
+この新しいファイル形式は、JPEG画像ファイル内に**対数範囲ゲインマップ**と呼ばれるデータをエンコードします。従来のリーダーディスプレイでも、標準の低ダイナミックレンジイメージを読み取って表示可能です。そして、ウルトラHDR形式をサポートするリーダーは、プライマリイメージとゲインマップを組み合わせ、互換性のあるディスプレイ上で高品質のハイダイナミックレンジ画像をレンダリングします。
+
+:::note
+GoogleフォトはウルトラHDR画像形式に対応しています。これにより、ウルトラHDR画像を撮影し、保存し、表示することが可能です。
+:::
+
+## ウルトラHDRと普通のHDRの違い
+
+ウルトラHDRと普通のHDRの主な違いは、**画質の向上**にあります。ウルトラHDRは、**鮮やかな色彩**、**より明るいハイライト**、そして**より暗い影**をもつ写真を作り出します。これにより、よりリアルで生き生きとした写真が撮影できます。
+
+また、ウルトラHDRは従来のSDR画像に比べて、画像のハイライト部分をクリッピングせず、影を潰さず、局所コントラストを変えたり圧縮したりせず、シーン内の物体間の相対的なトーンの関係を変えないように設計されています。
+
+## PixelでウルトラHDRを使う方法
+
+とくに、**Google Pixel 8とPixel 8 Pro**は、ウルトラHDRをフルに活用できるデバイスとしてリリースされました。当初はPixel 8シリーズでのみウルトラHDRがサポートされていましたが、Android 14のリリースにより、他のAndroidデバイスでもウルトラHDRが利用可能になりました。
+
+Android 14にアップデートしたGoogle Pixel端末でのウルトラHDRの使い方は非常に簡単です。
+
+Pixel標準のカメラアプリで設定を開き、 [詳細設定] > [ウルトラHDR]のトグルスイッチをオンにします。これにより、写真撮影時にウルトラHDRが自動的に適用され、画像のもっとも明るい部分を明るくし、さらに色鮮やかに表現する効果が得られます。
+
+ウルトラHDRで撮影した写真は、対応していない端末では通常のSDR画像として表示されるので、互換性について心配する必要はありません。
+
+## まとめ
+
+ウルトラHDRは、今後ますます多くのデバイスでサポートされるようになり、写真撮影の品質向上に大きく寄与していくでしょう。Google Pixel 8やPixel 8 Proのようなデバイスでは、ウルトラHDRを活用することで、これまでにないクオリティの写真を簡単に撮影できるようになります。
+
+Android 14の機能としてリリースされているので、ぜひウルトラHDRを使ってみてください。
+
+## 参考
+
+- [ハイ ダイナミック レンジ（HDR）写真について - Android - Google フォト ヘルプ](https://support.google.com/photos/answer/14159275?hl=ja)
+- [Ultra HDR Image Format v1.0  |  Android media  |  Android Developers](https://developer.android.com/media/platform/hdr-image-format)
+- [Google Pixel 8 and Pixel 8 Pro: Features, specs, price](https://blog.google/products/pixel/google-pixel-8-pro/)
+- [Android 14: Official news, new OS features and updates](https://blog.google/products/android/android-14/)
+- [google/libultrahdr: Ultra HDR is a true HDR image format, and is backcompatible. libultrahdr is the reference codec for the Ultra HDR format. The codecs that support the format can render the HDR intent of the image on HDR displays; other codecs can still decode and display the SDR intent of the image.](https://github.com/google/libultrahdr?tab=readme-ov-file)
