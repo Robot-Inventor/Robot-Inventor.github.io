@@ -35,6 +35,7 @@ export default defineConfig({
             [
                 rlc,
                 {
+                    cache: true,
                     shortenUrl: true
                 }
             ]
