@@ -3,6 +3,7 @@ title: BlueskyのDiscoverフィードとは？非表示にする方法も解説
 description: BlueskyはTwitter（X）の代替として注目されている分散型のSNSです。この記事では、BlueskyのDiscoverフィードとは何か、そしてDiscoverフィードを非表示にする方法について解説します。
 thumbnail: ./image-3.png
 pubDate: "2024-02-13T01:14:12+09:00"
+modifiedDate: "2024-02-13T17:47:03+09:00"
 author: ろぼいん
 tags:
     - bluesky
@@ -21,7 +22,7 @@ ThreadsやMisskey、Mastodonなど、ActivityPubを採用した他の分散型SN
 
 Blueskyは長らくベータ版で参加には招待コードが必要でしたが、最近になって招待制が廃止されたことで新規参加のハードルが下がり、急速にユーザー数を増やしています。
 
-## Discoverフィードとは？
+## Discoverとは？
 
 ![Discoverフィードの説明](image-3.png)
 *画像：[Discoverフィードの説明画面](https://bsky.app/profile/did:plc:z72i7hdynmk6r22z27h6tvur/feed/whats-hot)より*
@@ -34,7 +35,7 @@ URLを見ると、どうやらこのフィードは旧名が「What's Hot」の�
 
 また、Discoverに似たフィードとして、フォローしているユーザーの人気な投稿を表示する「[Best of Follows](https://bsky.app/profile/did:plc:z72i7hdynmk6r22z27h6tvur/feed/best-of-follows)」、フォローしているアカウントの人気コンテンツとフォローしているアカウントがいいねしたコンテンツを組み合わせた「[Popular With Friends](https://bsky.app/profile/did:plc:z72i7hdynmk6r22z27h6tvur/feed/with-friends)」などがあります。
 
-## Discoverを非表示にする方法
+## Discoverを消す方法
 
 Discoverは自分のアカウントに合わせて人気な投稿を表示してくれる便利な機能ですが、自分の興味に合わない投稿が表示されることもあります。「おすすめ表示は不要なので、フォローしている人の投稿だけを見たい」という場合は、Discoverを非表示にできます。
 
@@ -48,7 +49,7 @@ Discoverは自分のアカウントに合わせて人気な投稿を表示して
 
 ［マイフィードを編集］という画面が表示されます。この画面で、フィードの順番を変更したり、ホームに表示するフィードを変えたりできます。自分で追加したフィードもこの画面に表示されます。
 
-Discoverを非表示にするには、［Discover］の右側にある青いピンのアイコンをクリックします。そうすると、ピンのアイコンが灰色になって固定が解除されます。この状態でホームに戻ると、Discoverフィードが非表示になっていることが確認できます。
+Discoverを消すには、［Discover］の右側にある青いピンのアイコンをクリックします。そうすると、ピンのアイコンが灰色になって固定が解除されます。この状態でホームに戻ると、Discoverフィードが非表示になっていることが確認できます。
 
 ![マイフィードの編集画面](./image-2.png)
 
