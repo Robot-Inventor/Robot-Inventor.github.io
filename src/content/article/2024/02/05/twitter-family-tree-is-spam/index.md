@@ -1,5 +1,5 @@
 ---
-title: 「私のTwitter家族」「私のTwitterやりとりークル」に注意　犯罪組織が関わっている可能性も
+title: 「私のTwitter家族」「私のTwitterやりとりークル」は危険なスパム　犯罪組織が関わっている可能性も
 description: Twitter（X）で「私のTwitter家族」「私のTwitterやりとりークル」などを見かけたことはありませんか？実は、これは悪質なスパムです。また、犯罪組織がかかわっている可能性もあります。この記事では、「私のTwitter家族」「私のTwitterやりとりークル」などの問題点や危険性について解説します。
 thumbnail: ./image-2.png
 showThumbnail: false
