@@ -2,6 +2,7 @@
 title: NVIDIAが「Chat with RTX」をリリース　使い方を解説
 description: NVIDIAは2024年2月14日、ローカルで動作するRAG対応のチャットソフト「Chat with RTX」を発表しました。Chat with RTXは、個人や開発者に新しい方法で資料やデータにアクセスする手段を提供します。この記事では、NVIDIAがリリースした「Chat with RTX」概要から使い方までを解説します。
 pubDate: "2024-02-14T06:59:26+09:00"
+modifiedDate: "2024-02-15T03:20:50+09:00"
 thumbnail: ./image-1.png
 showThumbnail: false
 author: ろぼいん
@@ -31,7 +32,7 @@ Chat with RTXでは**検索拡張生成（RAG）** と呼ばれる技術を用�
 
 <YouTube id="gdsRJZT3IJw" />
 
-このデモアプリを使用すると、LLMを自分のドキュメント、ノート、ビデオなどに接続し、パーソナライズできるようになります。**RTX acceleration**、**TensorRT-LLM**、および**検索強化生成（RAG）** を活用してチャットボットにクエリを送り、文脈に合った適切な回答を素早く得られます。
+このデモアプリを使用すると、LLMを自分のドキュメント、ノート、ビデオなどに接続し、パーソナライズできるようになります。**RTX acceleration**、**TensorRT-LLM**、および**検索拡張生成（RAG）** を活用してチャットボットにクエリを送り、文脈に合った適切な回答を素早く得られます。
 
 さらに、Chat with RTXはPC上で**ローカルに実行**されるため、速くて安全な結果を得られます。
 
@@ -84,7 +85,7 @@ Chat with RTXで利用されているソフトウェアのライセンスの同�
 
 ![ライセンスの確認画面](./image-3.png)
 
-インストールのオプションの画面が表示されます。どうやら、Chat with RTXはMistral 7Bを使っているようです。また、ファイルを見てみると、LLaMA 13Bのモデルも対応しているようです。ここでは元々の設定のまま［NEXT］で進みました。
+インストールのオプションの画面が表示されます。Chat with RTXはMistral 7Bを使っているようです。また、ファイルを見てみると、LLaMA 13Bのモデルも対応しているようです。ここでは元々の設定のまま［NEXT］で進みました。
 
 ![インストールオプションの画面](./image-4.png)
 
@@ -110,7 +111,11 @@ Chat with RTXで利用されているソフトウェアのライセンスの同�
 > Channel: OpenAI<br/>
 > Uploaded Date: 2023-11-06
 
-［Dataset］で［Folder Path］を選択してみます。フォルダーを指定すると、その中のファイルを読み込みます。どうやらパスに日本語が含まれているとエラーが出るようです。今回は、GoogleのGeminiについての記事をPDFにしてフォルダーに入れてみました。
+［Select AI model］では**Mistral 7B int4**しか選択できませんでした。おそらく、筆者のPCに搭載されているGPUのVRAMが8GBしかないのが原因と思われます。VRAMが豊富にある環境ならLlama 2 13B int4も選択できるはずです。
+
+［Dataset］で［Folder Path］を選択してみます。フォルダーを指定するとその中のファイルが読み込まれます。ファイル数が多いと埋め込み処理に時間がかかります。
+
+現時点ではパスに日本語が含まれているとエラーが出るようです。今回は、GoogleのGeminiについての記事をPDFにしてフォルダーに入れてみました。
 
 <ArticleCard link="/article/2024/02/11/google-assistant-gemini-app/" />
 
@@ -133,6 +138,45 @@ Chat with RTXで利用されているソフトウェアのライセンスの同�
 > In the case where there are two Gemini applications installed on a smartphone, they can be distinguished by tapping on the icon. The icon for the Gemini application will be labeled "Gemini," while the icon for the Google Assistant application will be labeled "アシスタント." <br/>
 > Reference files: <br/>
 > GeminiアプリとGoogleアシスタントが統合！使い方と注意点を解説 - ろぼいんブログ.pdf
+
+なお、文脈の保持はできないようです。前回の質問についての追加の質問をしても、「I apologize, but I need more context to understand what you are asking me to do. Can you please provide more information about the task or the specific topic you would like me to provide more information on?」というような回答が返ってきます。
+
+また、VRAMの使用量は7.7GBほどでした。ただし、筆者の環境では4Kモニターを2枚接続しているため、Chat with RTX単体での使用量はもう少し少ないと思われます。
+
+### Chat with RTXを終了する
+
+Chat with RTXを終了するには、UIの右上の電源アイコンをクリックするか、起動時に表示されるコマンドプロンプトで`Ctrl+C`を押します。
+
+### Chat with RTXの起動方法
+
+Chat with RTXのインストールが完了すると、自動的に起動します。2回目以降の起動時は、Chat with RTXのショートカットが作成されているので、それをクリックすると起動します。
+
+ショートカットが見当たらない場合は、次のバッチファイルを実行すると起動できます。インストーラーでインストール先を変更した場合は、その場所に合わせて読み替えてください。
+
+```txt
+C:\Users\<ユーザー名>\AppData\Local\NVIDIA\ChatWithRTX\RAG\trt-llm-rag-windows-main\app_launch.bat
+```
+
+### 起動に時間がかかる場合
+
+Chat with RTXは前回起動したときの設定が保存されています。前回の起動時にファイル数の多いフォルダーを読み込んでいると、次回の起動時に埋め込みの処理から始まるため起動に時間がかかります。
+
+その場合は、次の場所にある設定ファイルを書き換えることをオススメします。なお、インストール先として初期設定とは別の場所にインストールした場合は、その場所に合わせて読み替えてください。
+
+```txt
+C:\Users\<ユーザー名>\AppData\Local\NVIDIA\ChatWithRTX\RAG\trt-llm-rag-windows-main\config\preferences.json
+```
+
+``preferences.json``の中身は次のようになっています。この``dataset.path``の値を、ファイル数が少なくパスに日本語が含まれない適当なフォルダーに変更することで、起動時間を短縮できます。
+
+```json title="preferences.json" mark={3}
+{
+  "dataset": {
+    "path": "［Dataset］に指定したフォルダーのパス",
+    "isRelative": false
+  }
+}
+```
 
 ## まとめ
 
