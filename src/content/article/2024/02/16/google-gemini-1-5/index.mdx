@@ -1,0 +1,90 @@
+---
+title: Google Gemini 1.5リリース！コンテキストウィンドウ拡大と高効率アーキテクチャで性能が大幅に向上
+description: Googleがマルチモーダルな大規模言語モデル（LLM）のGemini 1.5をリリースしました。今回のリリースは、先日のGemini Advancedの公開に続くものです。また、AI StudioおよびVertex AIのGemini APIを通して1.0 Ultraを利用できるようになりました。この記事では、Googleの次世代モデルである「Gemini 1.5」について深堀りします。
+pubDate: "2024-02-16T02:30:08+09:00"
+thumbnail: ./final_gemini_1.5_blog_header_2096x1182-1.gif
+author: ろぼいん
+tags:
+    - google
+    - ai
+    - news
+---
+
+import { YouTube } from "@astro-community/astro-embed-youtube";
+import ArticleCard from "@components/ArticleCard.astro";
+
+Googleがマルチモーダルな大規模言語モデル（LLM）の**Gemini 1.5**をリリースしました。
+
+今回のリリースは、先日の**Gemini Advanced**の公開に続くものです。また、AI StudioおよびVertex AIのGemini APIを通して**1.0 Ultra**モデルを利用できるようになりました。
+
+この記事では、Googleの次世代モデルである「Gemini 1.5」について深堀りします。
+
+なお、Gemini APIの使い方とGemini Advancedなどについては、これらの記事で紹介しています。
+
+<ArticleCard link="/article/2024/02/09/bard-becomes-gemini-and-mobile-app/" />
+
+<ArticleCard link="/article/2024/02/11/google-assistant-gemini-app/" />
+
+<ArticleCard link="/article/2024/01/02/how-to-use-google-gemini-api/" />
+
+## Gemini 1.5の特徴と進化
+
+Google DeepMindのデミス・ハサビスCEOはプレスリリースでGemini 1.5を発表しました。**Gemini 1.5は、以前のモデルのGemini 1.0 Ultraと比較して、複数の次元にわたり顕著な改善**を達成しています。
+
+中規模のマルチモーダルモデルの「Gemini 1.5 Pro」は、少ない計算資源で1.0 Ultraと同等の品質を提供するとのことです。
+
+### 長文脈理解のブレークスルー
+
+<YouTube id="SSnsmqIj1MI" />
+
+**Gemini 1.5の最大の特徴は、長文脈理解に関する突破口**です。最大100万トークンの情報を処理できるようになり、これまでのモデルとしては最長のコンテキストウィンドウを実現しています。
+
+開発者と企業顧客には、この実験的機能の限定的なプレビューが提供されます。
+
+Googleのサンダー・ピチャイCEOはTwitter（X）への[投稿](https://twitter.com/sundarpichai/status/1758145921131630989)で、「100万トークン機能は、開発者に大きな可能性をもたらします。数百ページのテキスト、コードリポジトリ全体、長いビデオをアップロードし、Geminiにそれらを推論させられます」と述べ、Gemini 1.5の優位性を強調しました。
+
+Gemini 1.5が処理できる100万トークンは、1時間の動画、11時間の音声、3万行のコード、70万語のコードベースに相当します。また、最大1,000万トークンでのテストにも成功したとのことです。
+
+<blockquote class="twitter-tweet" data-media-max-width="560" data-dnt="true"><p lang="en" dir="ltr">In December, we launched Gemini 1.0 Pro. Today, we&#39;re introducing Gemini 1.5 Pro! 🚀 <br/><br/>This next-gen model uses a Mixture-of-Experts (MoE) approach for more efficient training &amp; higher-quality responses. Gemini 1.5 Pro, our mid-sized model, will soon come standard with a… <a href="https://t.co/m2BNufHd8C">pic.twitter.com/m2BNufHd8C</a></p>&mdash; Sundar Pichai (@sundarpichai) <a href="https://twitter.com/sundarpichai/status/1758145921131630989?ref_src=twsrc%5Etfw">February 15, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+### 高効率アーキテクチャ
+
+Gemini 1.5は、TransformerとMoE（Mixture-of-Experts）アーキテクチャに基づいて構築されています。
+
+従来のTransformerが一つの大きなニューラルネットワークとして機能するのに対し、**MoEモデルは複数の「専門家」ニューラルネットワークに分割されます**。これにより、モデルの効率が飛躍的に向上しました。
+
+与えられた入力の種類に応じてもっとも関連性の高いエキスパートパスウェイのみを選択的にアクティブ化することで、**Gemini 1.5は1.0 Ultraと同等の品質を提供しつつ、計算資源の使用効率を向上**させています。
+
+ChatGPTで知られるOpenAIのGPT-4も、MoEアーキテクチャを採用しているとうわさされています。
+
+### 複雑な課題の理解と解決
+
+<YouTube id="wa0MT8OwHuk" />
+
+長いコンテキストウィンドウをもつことで、**Gemini 1.5 Proは大量の情報を一度に処理し、分析、分類、要約する能力**を持ちます。高度な理解と異なるモード（ビデオ、オーディオ、コードなど）間での推論も可能です。
+
+### 性能の向上
+
+<YouTube id="LHKL_210CcU" />
+
+Gemini 1.5 Proは、テキストやコード、画像、オーディオ、ビデオのベンチマークの87%においてGemini 1.0 Proを上回り、1.0 Ultraと同等のレベルを達成しています。**とくに、長いコンテキストウィンドウの中で、特定の情報を発見する能力に優れています**。
+
+Gemini 1.5 Proは、長文脈の中で新たなスキルを学習する「**インコンテキスト学習**」能力も備えています。これは、ファインチューニングを必要とせずにプロンプトから新しいスキルを学習できるというものです。
+
+### 倫理と安全の徹底検証
+
+Googleは同社のAI原則にもとづき、**モデルが広範な倫理と安全性のテストを受けている**と説明しています。1.5 Proのリリースに先立ち、内容安全性や表現の損害などの分野で徹底的な評価が行われ、そのテストは継続されるとのことです。
+
+## Geminiモデルの提供
+
+Gemini 1.5 ProはAI StudioおよびVertex AIを通じて開発者と企業顧客に限定プレビューとして提供されています。一般提供が開始されると、標準の128,000トークンコンテキストウィンドウに加えて、100万トークンまでのコンテキストウィンドウに対応したプランを利用できるようになります。
+
+## まとめ
+
+**Gemini 1.5は、AI技術における大きな前進を象徴するモデル**です。より効率的なモデル構造、拡張された文脈理解能力、複雑な課題への適応力など、この次世代モデルが提供する多方面の進化は、開発者と企業に新たな可能性をもたらします。
+
+Gemini 1.5は従来よりも大規模な情報を高度に処理できるため、**大規模なデータセットや複雑な課題に対応するアプリケーションの開発に大きな影響を与える**ことが期待されます。また、AI技術の進化に伴い、倫理と安全性の問題にも注目が集まることでしょう。
+
+## 参考
+
+- [Introducing Gemini 1.5, Google's next-generation AI model](https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/)
