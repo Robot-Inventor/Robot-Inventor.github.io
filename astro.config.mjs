@@ -1,8 +1,8 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import expressiveCode from "astro-expressive-code";
-import { pluginFramesTexts } from "astro-expressive-code";
+import astroExpressiveCode, { pluginFramesTexts } from "astro-expressive-code";
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import { starlightAsides } from "./src/starlight/integrations/asides";
 import rlc from "remark-enhanced-link-card";
 
@@ -11,7 +11,7 @@ const topPageURL = "https://roboin.io";
 pluginFramesTexts.overrideTexts("ja", {
     copyButtonTooltip: "クリップボードにコピーする",
     copyButtonCopied: "コピーしました！",
-})
+});
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,9 +20,19 @@ export default defineConfig({
         sitemap({
             filter: (page) => !page.startsWith(new URL("/tag/", topPageURL).href)
         }),
-        expressiveCode({
+        astroExpressiveCode({
             themes: ["dark-plus", "light-plus"],
             defaultLocale: "ja",
+            plugins: [
+                pluginLineNumbers()
+            ],
+            defaultProps: {
+                overridesByLang: {
+                    "shell,sh,bash,powershell": {
+                        showLineNumbers: false
+                    }
+                }
+            }
         }),
         mdx()
     ],
