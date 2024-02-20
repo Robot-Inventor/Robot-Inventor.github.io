@@ -4,7 +4,7 @@ description: QiitaなどのサイトではMarkdown構文が独自に拡張され
 author: ろぼいん
 thumbnail: ./thumbnail.png
 pubDate: "2023-12-16T18:40:23+09:00"
-modifiedDate: "2024-01-18T09:57:19+09:00"
+modifiedDate: "2024-02-21T03:38:47+09:00"
 tags:
     - astro
     - web-development
@@ -51,7 +51,7 @@ remarkで使う場合とAstroで使う場合に分けて説明します。
 
 Expressive Codeをremarkで使う場合は、プラグインとしてインストールします。
 
-```console title="terminal"
+```shell
 npm install remark-expressive-code
 ```
 
@@ -103,7 +103,7 @@ async function main() {
 
 Astroの場合は、インテグレーションが用意されています。次のコマンドを実行するだけで、自動的に使えるようになります。
 
-```console title="terminal"
+```shell
 npx astro add astro-expressive-code
 ```
 
@@ -337,26 +337,125 @@ const foo = () => {
 };
 ```
 
-## Tips
+### ワードラップ（行の折り返し）
 
-### ターミナルウィンドウをmacOS風にする
+行を折り返すには、``wrap``に``true``を指定します。``false``を指定すると折り返しを無効にできます。``true``や``false``を省略した場合は``true``とみなされます。
 
-Expressive Codeのターミナルウィンドウ風フレームの左上には、3つのボタンのような飾りがついています。これらのボタンは、デフォルトでは灰色です。
+````markdown
+```javascript wrap
+const hoge = () => {
+    console.log("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+}
+```
+````
 
-![Expressive Codeのターミナルウィンドウ風フレームのスクリーンショット](./image.png)
-
-これをmacOSのウィンドウ風の配色にするには、次のようなCSSを追加します。
-
-```css
-.expressive-code .frame.is-terminal .header::before {
-    background-image: linear-gradient(to right, #c95b5b 30%, 30%, #e0b054 70%, 70%, #62b162);
-    opacity: 0.8 !important;
+```javascript wrap
+const hoge = () => {
+    console.log("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
 }
 ```
 
-![macOS風に配色を変更したターミナルウィンドウ風フレームのスクリーンショット](./image-1.png)
+折り返したときに折り返し部分のインデントを無効化するには、``preserveIndent``に``false``を指定します。``true``や``false``を省略した場合は``true``とみなされます。
+
+````markdown
+```javascript wrap preserveIndent=false
+const hoge = () => {
+    console.log("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+}
+```
+````
+
+```javascript wrap preserveIndent=false
+const hoge = () => {
+    console.log("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+}
+```
 
 ### 行番号の表示
+
+Expressive Codeで行番号を表示するには、次のようにプラグインをインストールします。
+
+```shell
+npm i @expressive-code/plugin-line-numbers
+```
+
+Astroの場合は、プラグインとして``pluginLineNumbers()``を追加します。
+
+```javascript title="astro.config.mjs" ins={3,9}
+import { defineConfig } from "astro/config";
+import astroExpressiveCode from "astro-expressive-code";
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
+
+export default defineConfig({
+    integrations: [
+        astroExpressiveCode({
+            plugins: [
+                pluginLineNumbers()
+            ]
+        })
+    ]
+});
+```
+
+コードブロックごとに個別に行番号のオン・オフを切り替えたい場合は、``showLineNumbers``に``true``または``false``を指定します。``true``や``false``を省略した場合は``true``とみなされます。
+
+````markdown
+```javascript title="foo.js" showLineNumbers=false
+const foo = () => {
+    console.log("foo");
+};
+```
+````
+
+```javascript title="foo.js" showLineNumbers=false
+const foo = () => {
+    console.log("foo");
+};
+```
+
+また、行番号の開始番号を変更したい場合は、``startLineNumber=``に開始番号を指定します。
+
+````markdown
+```javascript title="foo.js" startLineNumber=10
+const foo = () => {
+    console.log("foo");
+};
+```
+````
+
+```javascript title="foo.js" startLineNumber=10
+const foo = () => {
+    console.log("foo");
+};
+```
+
+特定の言語の場合にのみ行番号を表示したい場合や、逆に特定の言語の場合にのみ行番号を非表示にしたい場合は、設定で挙動を変更できます。たとえば、コンソール系の言語では行番号を表示しない場合は、次のようにします。
+
+```javascript title="astro.config.mjs" ins={11-17}
+import { defineConfig } from "astro/config";
+import astroExpressiveCode from "astro-expressive-code";
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
+
+export default defineConfig({
+    integrations: [
+        astroExpressiveCode({
+            plugins: [
+                pluginLineNumbers()
+            ],
+            defaultProps: {
+                overridesByLang: {
+                    "shell,sh,bash,powershell": {
+                        showLineNumbers: false
+                    }
+                }
+            }
+        })
+    ]
+});
+```
+
+<details>
+  <summary>古い内容（一応残しているだけなので無視して大丈夫）</summary>
 
 Expressive Codeには、記事執筆時点では行番号を表示するオプションが存在しません。[Issue](https://github.com/expressive-code/expressive-code/issues/37)は上がっていますが、現時点では実装方法を検討中のようです。
 
@@ -380,6 +479,52 @@ Expressive Codeには、記事執筆時点では行番号を表示するオプ�
     text-align: right;
     color: rgba(115, 138, 148, 0.4);
 }
+```
+
+</details>
+
+## Tips
+
+### ターミナルウィンドウをmacOS風にする
+
+Expressive Codeのターミナルウィンドウ風フレームの左上には、3つのボタンのような飾りがついています。これらのボタンは、デフォルトでは灰色です。
+
+![Expressive Codeのターミナルウィンドウ風フレームのスクリーンショット](./image.png)
+
+これをmacOSのウィンドウ風の配色にするには、次のようなCSSを追加します。
+
+```css
+.expressive-code .frame.is-terminal .header::before {
+    background-image: linear-gradient(to right, #c95b5b 30%, 30%, #e0b054 70%, 70%, #62b162);
+    opacity: 0.8 !important;
+}
+```
+
+![macOS風に配色を変更したターミナルウィンドウ風フレームのスクリーンショット](./image-1.png)
+
+### コピーボタンのテキストを変更する
+
+Expressive Codeのコピーボタンのテキストは、デフォルトでは英語表記になっています。Astroでこれを日本語にしたい場合は、次のようにします。
+
+```javascript ins={2,5-8,15} title="astro.config.mjs"
+import { defineConfig } from "astro/config";
+import astroExpressiveCode, { pluginFramesTexts } from "astro-expressive-code";
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
+
+pluginFramesTexts.overrideTexts("ja", {
+    copyButtonTooltip: "クリップボードにコピーする",
+    copyButtonCopied: "コピーしました！",
+});
+
+// https://astro.build/config
+export default defineConfig({
+    integrations: [
+        astroExpressiveCode({
+            themes: ["dark-plus", "light-plus"],
+            defaultLocale: "ja"
+        })
+    ]
+});
 ```
 
 ## まとめ
