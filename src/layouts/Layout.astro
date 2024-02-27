@@ -227,6 +227,9 @@ const generateToc = (headings: MarkdownHeading[]) => {
     let currentDepth = 2;
     let currentParent = toc;
     for (const heading of headings) {
+        // 目次を生成する際、h4以降の見出しは無視する
+        if (heading.depth > 3) continue;
+
         if (heading.depth === currentDepth) {
             const li = document.createElement("li");
             const a = document.createElement("a");
