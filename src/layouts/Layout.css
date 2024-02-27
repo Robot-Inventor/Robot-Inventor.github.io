@@ -51,6 +51,7 @@ header {
 }
 
 #header_logo {
+    width: auto;
     height: calc(100% - 2rem);
     margin: 1rem 0 0 1rem;
 }

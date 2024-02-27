@@ -322,7 +322,7 @@ const generateToc = (headings: MarkdownHeading[]) => {
     <body>
         <header data-overlay-menu="closed" transition:persist="">
             <a href="/">
-                <img src="/logo.svg" alt="ろぼいんロゴ" id="header_logo" loading="lazy" decoding="async" />
+                <Image src="/logo.svg" alt="ロゴ" id="header_logo" width="512" height="185" loading="eager" />
             </a>
             <nav>
                 <a href="/article/">ARTICLES</a>
@@ -397,7 +397,7 @@ const generateToc = (headings: MarkdownHeading[]) => {
                     )}&related=${encodeURIComponent("keita_roboin")}%3A最新の情報を入手する`}
                     target="_blank"
                 >
-                    <img src="/icon/social/twitter.svg" alt="Twitterのアイコン" />
+                    <Image src="/icon/social/twitter.svg" alt="Twitterのアイコン" width="72" height="72" />
                 </a>
                 <a
                     href={`https://line.me/R/share?text=${encodeURIComponent(
@@ -405,7 +405,7 @@ const generateToc = (headings: MarkdownHeading[]) => {
                     )}`}
                     target="_blank"
                 >
-                    <img src="/icon/social/line.svg" alt="LINEのアイコン" />
+                    <Image src="/icon/social/line.svg" alt="LINEのアイコン" width="72" height="72" />
                 </a>
                 <a
                     href={`https://www.threads.net/intent/post?text=${encodeURIComponent(
@@ -413,7 +413,7 @@ const generateToc = (headings: MarkdownHeading[]) => {
                     )}`}
                     target="_blank"
                 >
-                    <img src="/icon/social/threads.svg" alt="Threadsのアイコン" />
+                    <Image src="/icon/social/threads.svg" alt="Threadsのアイコン" width="72" height="72" />
                 </a>
                 <a
                     href={`https://misskey-hub.net/share/?text=${encodeURIComponent(
@@ -421,18 +421,18 @@ const generateToc = (headings: MarkdownHeading[]) => {
                     )}&visibility=public&localOnly=0`}
                     target="_blank"
                 >
-                    <img src="/icon/social/misskey.png" alt="Misskeyのアイコン" />
+                    <Image src="/icon/social/misskey.png" alt="Misskeyのアイコン" width="72" height="72" />
                 </a>
             </section>
             {
                 Astro.props.frontmatter.showAuthor && (
                     <address class="author_info">
-                        <img
+                        <Image
                             class="author_info-icon"
                             src={author.data.icon}
                             alt="著者のアイコン画像"
-                            loading="lazy"
-                            decoding="async"
+                            width="100"
+                            height="100"
                         />
                         <div class="author_info-text">
                             <b class="author_info-name">{authorId}</b>
