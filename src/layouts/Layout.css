@@ -183,20 +183,31 @@ main {
 }
 
 .toc {
-    padding-bottom: 1rem;
+    padding: 1rem 0;
     margin: 2rem 0;
+    padding: 1rem;
+    border-top: solid 0.1rem var(--low-emphasis-color);
+    border-bottom: solid 0.1rem var(--low-emphasis-color);
+}
+
+.toc h2 {
+    font-size: 1.2rem;
+    padding: 0;
+    line-height: 2rem;
+    border-left: none;
+    display: inline-block;
 }
 
 .toc a {
     text-decoration: none;
 }
 
-.toc h2 {
-    font-size: 1.5rem;
+.toc nav > ul {
+    margin-left: 1.25rem;
 }
 
-.toc nav > ul {
-    margin-left: 2.25rem;
+.toc ul > ul {
+    font-size: 0.9em;
 }
 
 .toc li {
