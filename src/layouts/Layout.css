@@ -202,6 +202,8 @@ main {
 .toc li {
     list-style: none;
     position: relative;
+    --toc-li-margin: 0.5rem;
+    margin: var(--toc-li-margin) 0;
 }
 
 .toc li::before,
@@ -211,13 +213,39 @@ main {
     position: absolute;
 }
 
-.toc li + li:before {
+.toc li::before {
     width: 0.1rem;
-    height: 100%;
+    height: calc(100% + var(--toc-li-margin) * 2);
     background: #78b9d9;
     left: -0.75rem;
-    border-radius: 0.2rem;
-    top: -1rem;
+}
+
+/*
+ * 見出しレベルが変わって最初のli要素は、上方向に線を引かずに下方向にのみ引く
+ */
+.toc :not(li) + li::before,
+.toc li:first-child::before {
+    height: calc(50% + var(--toc-li-margin));
+    top: 50%;
+}
+
+/*
+ * 見出しレベルが変わる直前のli要素は、下方向に線を引かずに上方向にのみ引く
+ */
+.toc li:last-child::before,
+.toc li:not(:has(+ li))::before {
+    height: calc(50% + var(--toc-li-margin));
+    bottom: 50%;
+}
+
+/*
+ * 最初で最後のli要素や、ul要素で上下両方を挟まれているli要素は線を引かない
+ */
+.toc :not(li) + li:last-child::before,
+.toc li:first-child:last-child::before,
+.toc :not(li) + li:not(:has(+ li))::before,
+.toc li:first-child:not(:has(+ li))::before {
+    height: 0;
 }
 
 .toc li::after {
@@ -226,8 +254,9 @@ main {
     border-radius: 0.6rem;
     background: var(--base-background-color);
     border: solid 0.1rem #78b9d9;
-    top: 0.3rem;
+    top: 50%;
     left: -1.1rem;
+    transform: translateY(-50%);
     transition: background 0.2s;
 }
 
