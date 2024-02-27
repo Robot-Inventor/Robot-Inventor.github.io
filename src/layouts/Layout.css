@@ -481,39 +481,6 @@ main *:target {
     text-decoration: none;
 }
 
-.note {
-    background: var(--note-background-color);
-    border: 0.1rem solid var(--note-border-color);
-    padding: 0.5rem 1rem;
-    padding-left: 3rem;
-    border-radius: 0.5rem;
-    margin: 1rem 0;
-    position: relative;
-    top: 0;
-    left: 0;
-    color: var(--note-font-color);
-}
-
-.note::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translate(-2rem, -50%);
-    background: var(--note-icon-url);
-    width: 1.5rem;
-    height: 1.5rem;
-    background-size: 1.5rem;
-}
-
-.note > p:first-child {
-    margin-top: 0;
-}
-
-.note > p:last-child {
-    margin-bottom: 0;
-}
-
 .rlc-container {
     background: var(--secondary-background-color);
     border-radius: 0.25rem;
