@@ -211,26 +211,13 @@ main {
     position: absolute;
 }
 
-.toc li::before {
+.toc li + li:before {
     width: 0.1rem;
     height: 100%;
     background: #78b9d9;
-    top: 0;
     left: -0.75rem;
     border-radius: 0.2rem;
-}
-
-.toc li:first-child::before {
-    top: 0.5rem;
-}
-
-.toc li:last-child::before {
-    height: 75%;
-}
-
-.toc li + li:before {
-    top: -0.75rem;
-    height: calc(100% + 1.25rem);
+    top: -1rem;
 }
 
 .toc li::after {
