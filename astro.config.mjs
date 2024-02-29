@@ -28,7 +28,7 @@ export default defineConfig({
             ],
             defaultProps: {
                 overridesByLang: {
-                    "shell,sh,bash,powershell,console,shellsession": {
+                    "shell,sh,bash,powershell,console,shellsession,ansi": {
                         showLineNumbers: false
                     }
                 }
