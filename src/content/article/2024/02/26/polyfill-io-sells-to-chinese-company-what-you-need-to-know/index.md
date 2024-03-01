@@ -2,7 +2,7 @@
 title: Polyfill.ioが中国企業に売却　背景と対応策は？
 description: Web開発者たちにとって、ブラウザー間の互換性問題は長年にわたり頭痛の種となっています。そんな中、Polyfill.ioは多くの開発者にとって救世主のような存在でした。しかし、この度Polyfill.ioは中国の企業Funnullに売却されたことが明らかになり、開発コミュニティーに波紋を広げています。この記事では、Polyfill.ioの売却について、またWeb開発者が取るべき対策について詳しく解説します。
 pubDate: "2024-02-26T17:30:41+09:00"
-modifiedDate: "2024-02-26T23:42:35+09:00"
+modifiedDate: "2024-03-01T19:20:32+09:00"
 thumbnail: ./image-1.png
 author: ろぼいん
 tags:
@@ -68,7 +68,7 @@ Polyfill.ioのコントリビューターでFastlyのDevRelでもあるAndrew Be
 
 <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">If your website uses <a href="https://t.co/3xHecLPXkB">https://t.co/3xHecLPXkB</a>, remove it IMMEDIATELY.<br><br>I created the polyfill service project but I have never owned the domain name and I have had no influence over its sale. <a href="https://t.co/GYt3dhr5fI">https://t.co/GYt3dhr5fI</a></p>&mdash; Andrew Betts (@triblondon) <a href="https://twitter.com/triblondon/status/1761852117579427975?ref_src=twsrc%5Etfw">February 25, 2024</a></blockquote>
 
-彼の懸念は、第三者のスクリプトが提供するドメインに大きなセキュリティーリスクが伴うことにあります。たとえば、google-analytics.comのような人気のあるサードパーティスクリプトを提供するドメインのチームは、理論上は世界中のほぼすべてのWebサイトを読み取ったり、変更したりできます。
+彼の懸念は、第三者のスクリプトが提供するドメインに大きなセキュリティリスクが伴うことにあります。たとえば、google-analytics.comのような人気のあるサードパーティスクリプトを提供するドメインのチームは、理論上は世界中のほぼすべてのWebサイトを読み取ったり、変更したりできます。
 
 ### ポリフィルの必要性の減少
 
@@ -84,9 +84,27 @@ Polyfill.ioのコントリビューターでFastlyのDevRelでもあるAndrew Be
 
 あるいは、ポリフィルを廃止し、最新のブラウザーの機能にのみ依存するという選択肢もあります。
 
+### 3月1日追記：cdnjsを使用する
+
+3月1日より、Cloudflareが運営する[cdnjs](https://cdnjs.com/)でPolyfill.ioが利用できるようになりました。
+
+セルフホストする必要がなく、URLを書き換えるだけでそのまま動作するため、もっとも手軽な選択肢です。
+
+```ansi title="Before"
+https://[36mpolyfill.io/[0mv3/polyfill.min.js
+```
+
+```ansi title="After"
+https://[36mcdnjs.cloudflare.com/polyfill/[0mv3/polyfill.min.js
+```
+
+また、コードを直接変更できない場合は、Cloudflare Workersを使用して動的にURLを書き換えることもできます。詳細は公式ブログを参照してください。
+
+- [polyfill.io now available on cdnjs: reduce your supply chain risk | The Cloudflare Blog](https://blog.cloudflare.com/polyfill-io-now-available-on-cdnjs-reduce-your-supply-chain-risk)
+
 ### Polyfill.ioをセルフホストする
 
-セキュリティーリスクを最小限に抑えるために、Polyfill.ioを自分たちのサーバーでセルフホストすることも有効な方法です。
+セキュリティリスクを最小限に抑えるために、Polyfill.ioを自分たちのサーバーでセルフホストすることも有効な方法です。
 
 Polyfill.ioをセルフホストする場合は、[GitHubリポジトリー](https://github.com/jakeChampion/polyfill-service-self-hosted/)からソースコードをダウンロードして、自分たちのサーバーにデプロイする必要があります。
 
@@ -105,13 +123,13 @@ npm run deploy
 
 ## まとめ
 
-Polyfill.ioの中国企業への売却は、Web開発者にとってさまざまな懸念材料を提示しています。セキュリティー、信頼性、そしてWebプラットフォームの進化によるポリフィルの必要性の減少など、検討すべきポイントが多くあります。
+Polyfill.ioの中国企業への売却は、Web開発者にとってさまざまな懸念材料を提示しています。セキュリティ、信頼性、そしてWebプラットフォームの進化によるポリフィルの必要性の減少など、検討すべきポイントが多くあります。
 
 重要なのは、自分のWebサイトやアプリケーションにとって最適な選択をすることです。代替のポリフィルサービスを探すか、あるいはポリフィル自体の依存を減らすなど、適切な対策を講じることが求められます。
 
 ## 参考
 
-- [polyfillpolyfill/polyfill-service: Automatic polyfill service.](https://github.com/polyfillpolyfill/polyfill-service?tab=readme-ov-file)
+- [polyfillpolyfill/polyfill-service: Automatic polyfill service.](https://github.com/polyfillpolyfill/polyfill-service)
 - [JakeChampion/polyfill-service-self-hosted](https://github.com/jakeChampion/polyfill-service-self-hosted/)
 - [Polyfill.io](https://polyfill.io/)
 - [方能CDN - 合作伙伴](https://funnull.com/Partner/)
