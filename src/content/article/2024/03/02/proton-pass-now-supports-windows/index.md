@@ -10,6 +10,7 @@ tags:
     - news
     - open-source
     - github
+    - privacy
 ---
 
 2024年2月29日、**Proton Pass**のWindowsアプリがついにリリースされました。Proton Passにデスクトップから直接アクセス可能となることで、使い勝手が向上します。

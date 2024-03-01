@@ -9,6 +9,9 @@ tags:
     - chrome
     - edge
     - extension
+    - privacy
+    - open-source
+    - github
 ---
 
 今回は、オンラインプライバシーを改善しながらWebサイトの読み込み速度を改善するブラウザー拡張機能「**Decentraleyes**」を紹介します。

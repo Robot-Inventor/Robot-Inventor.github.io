@@ -12,6 +12,9 @@ tags:
     - edge
     - how-to
     - explanation
+    - privacy
+    - open-source
+    - github
 ---
 
 インターネット上でのプライバシー保護は大きな話題です。Webを見ているとき、オンラインでの行動を追跡するための要素を含むURLに頻繁に遭遇することがあります。
