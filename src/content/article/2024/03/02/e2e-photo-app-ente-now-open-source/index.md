@@ -24,6 +24,8 @@ Enteはこれまで、モバイルアプリやデスクトップクライアン�
 
 そして、2024年3月、同社は自社のサーバーコードを含むすべてのコードをオープンソース化したことを発表しました。
 
+<blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="en" dir="ltr">Ente is now fully <a href="https://twitter.com/hashtag/opensource?src=hash&amp;ref_src=twsrc%5Etfw">#opensource</a>!<br><br>You can find the source to our apps and SERVER @ <a href="https://t.co/A7rWX1rGQI">https://t.co/A7rWX1rGQI</a><br><br>Thank YOU for helping us get this far! 🙏<br><br>Please star the repo to watch us take <a href="https://twitter.com/hashtag/privacy?src=hash&amp;ref_src=twsrc%5Etfw">#privacy</a> and <a href="https://twitter.com/hashtag/security?src=hash&amp;ref_src=twsrc%5Etfw">#security</a> to the stars ✨ 😉</p>&mdash; Ente (@enteio) <a href="https://twitter.com/enteio/status/1763564466040647692?ref_src=twsrc%5Etfw">March 1, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 これにより、ユーザーは、[GitHub上のリポジトリー](https://github.com/ente-io/ente)をクローンするだけで、フルスタックのフォトストレージソリューションを手に入れられるようになります。
 
 Enteのこの一歩は、同社の顧客やE2Eのサービスの将来の創業者、セルフホストの愛好家、さらにはGo/Flutter/TypeScriptを扱うエンジニアにまで、多くの利益をもたらすものです。
