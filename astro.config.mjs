@@ -5,6 +5,7 @@ import astroExpressiveCode, { pluginFramesTexts } from "astro-expressive-code";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import { starlightAsides } from "./src/starlight/integrations/asides";
 import rlc from "remark-enhanced-link-card";
+import customToc from "astro-custom-toc";
 
 const topPageURL = "https://roboin.io";
 
@@ -12,6 +13,16 @@ pluginFramesTexts.overrideTexts("ja", {
     copyButtonTooltip: "クリップボードにコピーする",
     copyButtonCopied: "コピーしました！",
 });
+
+const tocTemplate = (html) => {
+    return `
+<aside class="toc">
+    <h2>目次</h2>
+    <nav>
+        ${html}
+    </nav>
+</aside>`.trim();
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -33,6 +44,9 @@ export default defineConfig({
                     }
                 }
             }
+        }),
+        customToc({
+            template: tocTemplate
         }),
         mdx()
     ],
