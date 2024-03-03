@@ -6,6 +6,7 @@ import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import { starlightAsides } from "./src/starlight/integrations/asides";
 import rlc from "remark-enhanced-link-card";
 import customToc from "astro-custom-toc";
+import { remarkAutoAd } from "./src/plugins/remark-auto-ad";
 
 const topPageURL = "https://roboin.io";
 
@@ -61,6 +62,22 @@ export default defineConfig({
                 {
                     cache: true,
                     shortenUrl: true
+                }
+            ],
+            [
+                remarkAutoAd,
+                {
+                    countFrom: 2,
+                    adCode: `
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-2526648882773973"
+    data-ad-slot="9413147471"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>`.trim()
                 }
             ]
         ]

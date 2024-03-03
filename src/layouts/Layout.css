@@ -661,11 +661,11 @@ footer a {
 }
 
 /* 記事内のコンテンツ内の広告 */
-.google-auto-placed.ap_container {
+article .adsbygoogle {
     margin: 3rem 0;
 }
 
-.google-auto-placed.ap_container::before {
+article .adsbygoogle::before {
     content: "広告";
     display: block;
     text-align: center;
