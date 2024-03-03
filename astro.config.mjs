@@ -6,7 +6,7 @@ import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import { starlightAsides } from "./src/starlight/integrations/asides";
 import rlc from "remark-enhanced-link-card";
 import customToc from "astro-custom-toc";
-import { remarkAutoAds } from "./src/plugins/remark-auto-ads";
+import remarkAutoAds from "remark-auto-ads";
 
 const topPageURL = "https://roboin.io";
 
