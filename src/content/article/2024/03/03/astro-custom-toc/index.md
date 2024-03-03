@@ -1,7 +1,8 @@
 ---
 title: Astroでカスタマイズ可能な目次を生成する「astro-custom-toc」
-description: description
+description: Astroでカスタマイズ可能な目次を生成するAstro integration「astro-custom-toc」を作りました！この記事では、astro-custom-tocの使い方や他のプラグインとの違い、カスタマイズ方法などについて説明します。
 pubDate: "2024-03-03T20:40:50+09:00"
+modifiedDate: "2024-03-04T01:33:49+09:00"
 author: ろぼいん
 showToc: true
 tags:
@@ -14,6 +15,8 @@ tags:
 ---
 
 Astroでカスタマイズ可能な目次を生成するAstro integration「astro-custom-toc」を作りました！
+
+この記事では、astro-custom-tocの使い方や他のプラグインとの違い、カスタマイズ方法などについて説明します。
 
 <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark"><p lang="ja" dir="ltr">I just released my first <a href="https://twitter.com/astrodotbuild?ref_src=twsrc%5Etfw">@astrodotbuild</a> integration! 🥳 It generates a customizable table of contents for your markdown pages.<br><br>初めてのAstro integrationを公開しました！🥳 Markdownのページにカスタマイズ可能な目次を生成します。<br><br>astro-custom-toc - npm<a href="https://t.co/RFDRF1qDhe">https://t.co/RFDRF1qDhe</a></p>&mdash; ろぼいん (@keita_roboin) <a href="https://twitter.com/keita_roboin/status/1764206314526572799?ref_src=twsrc%5Etfw">March 3, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
