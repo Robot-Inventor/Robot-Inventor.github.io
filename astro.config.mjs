@@ -22,7 +22,7 @@ const tocTemplate = (html) => {
         ${html}
     </nav>
 </aside>`.trim();
-}
+};
 
 // https://astro.build/config
 export default defineConfig({
