@@ -1,14 +1,25 @@
 import { visitParents } from "unist-util-visit-parents";
 
-export interface RemarkAutoAdOptions {
+export interface RemarkAutoAdsOptions {
     adCode: string;
     countFrom?: number;
+    paragraphInterval?: number;
 }
 
-export const remarkAutoAd = (options: RemarkAutoAdOptions) => {
-    return transform;
+type RemarkAutoAdsFullOptions = Required<RemarkAutoAdsOptions>;
 
-    function transform(tree) {
+export const remarkAutoAds = (args: RemarkAutoAdsOptions) => {
+    const defaultOptions = {
+        countFrom: 0,
+        paragraphInterval: 5
+    };
+
+    const options: RemarkAutoAdsFullOptions = {
+        ...defaultOptions,
+        ...args
+    };
+
+    const transform = (tree) => {
         let paragraphCount = options.countFrom || 0;
 
         visitParents(tree, "paragraph", (node, ancestors) => {
@@ -24,7 +35,7 @@ export const remarkAutoAd = (options: RemarkAutoAdOptions) => {
                 return tree;
             }
 
-            if (paragraphCount >= 5) {
+            if (paragraphCount >= options.paragraphInterval) {
                 paragraphCount = 0;
 
                 const adNode = {
@@ -46,5 +57,7 @@ export const remarkAutoAd = (options: RemarkAutoAdOptions) => {
 
             return node;
         });
-    }
+    };
+
+    return transform;
 };
