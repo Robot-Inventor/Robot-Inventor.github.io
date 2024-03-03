@@ -663,6 +663,7 @@ footer a {
 /* 記事内のコンテンツ内の広告 */
 article .adsbygoogle {
     margin: 3rem 0;
+    text-decoration: none;
 }
 
 article .adsbygoogle::before {
