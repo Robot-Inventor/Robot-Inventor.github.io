@@ -52,7 +52,35 @@ const authorId =
 const author = await getEntry("author", authorId);
 if (!author) throw new Error("Undefined author");
 
-const titleWithSiteName = `${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`;
+const escapeURLs = (text: string) => {
+    // URLのドットをゼロ幅スペースとドットに置換する。国際化TLDではTLDにハイフンが含まれることに注意
+    const URLs = text.match(/([a-zA-Z0-9\-]+\.)+[a-zA-Z][a-zA-Z0-9\-]+/g);
+    if (!URLs) return text;
+
+    for (const URL of URLs) {
+        text = text.replace(URL, URL.replace(/\./g, "\u200B."));
+    }
+
+    return text;
+};
+
+const escapeMentions = (text: string) => {
+    // メンションをゼロ幅スペースと@に置換する
+    const mentions = text.match(/@[a-zA-Z0-9_]+/g);
+    if (!mentions) return text;
+
+    for (const mention of mentions) {
+        text = text.replace(mention, mention.replace(/@/g, "\u200B@"));
+    }
+
+    return text;
+};
+
+const escapeTitle = (title: string) => {
+    return escapeMentions(escapeURLs(title));
+};
+
+const titleWithSiteName = escapeTitle(`${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`);
 
 const schema = JSON.stringify({
     "@context": "https://schema.org",
