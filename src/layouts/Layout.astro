@@ -53,24 +53,24 @@ const author = await getEntry("author", authorId);
 if (!author) throw new Error("Undefined author");
 
 const escapeURLs = (text: string) => {
-    // URLのドットをゼロ幅スペースとドットに置換する。国際化TLDではTLDにハイフンが含まれることに注意
+    // URLのドットをスペースとドットに置換する。国際化TLDではTLDにハイフンが含まれることに注意
     const URLs = text.match(/([a-zA-Z0-9\-]+\.)+[a-zA-Z][a-zA-Z0-9\-]+/g);
     if (!URLs) return text;
 
     for (const URL of URLs) {
-        text = text.replace(URL, URL.replace(/\./g, "\u200B."));
+        text = text.replace(URL, URL.replace(/\./g, " ."));
     }
 
     return text;
 };
 
 const escapeMentions = (text: string) => {
-    // メンションをゼロ幅スペースと@に置換する
+    // メンションをスペースと@に置換する
     const mentions = text.match(/@[a-zA-Z0-9_]+/g);
     if (!mentions) return text;
 
     for (const mention of mentions) {
-        text = text.replace(mention, mention.replace(/@/g, "\u200B@"));
+        text = text.replace(mention, mention.replace(/@/g, "@ "));
     }
 
     return text;
