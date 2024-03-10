@@ -7,6 +7,7 @@ import { starlightAsides } from "./src/starlight/integrations/asides";
 import rlc from "remark-enhanced-link-card";
 import customToc from "astro-custom-toc";
 import rehypeAutoAds from "rehype-auto-ads";
+import regexGrammar from "./src/grammars/javascript-regex.json";
 
 const topPageURL = "https://roboin.io";
 
@@ -44,6 +45,11 @@ export default defineConfig({
                         showLineNumbers: false
                     }
                 }
+            },
+            shiki: {
+                langs: [
+                    regexGrammar
+                ]
             }
         }),
         customToc({
