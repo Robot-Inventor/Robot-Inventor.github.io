@@ -8,6 +8,8 @@ import rlc from "remark-enhanced-link-card";
 import customToc from "astro-custom-toc";
 import rehypeAutoAds from "rehype-auto-ads";
 import regexGrammar from "./src/grammars/javascript-regex.json";
+import darkModernTheme from "./src/themes/dark-modern.json";
+import lightModernTheme from "./src/themes/light-modern.json";
 
 const topPageURL = "https://roboin.io";
 
@@ -34,7 +36,7 @@ export default defineConfig({
             filter: (page) => !page.startsWith(new URL("/tag/", topPageURL).href)
         }),
         astroExpressiveCode({
-            themes: ["dark-plus", "light-plus"],
+            themes: [darkModernTheme, lightModernTheme],
             defaultLocale: "ja",
             plugins: [
                 pluginLineNumbers()

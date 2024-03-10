@@ -465,10 +465,6 @@ main *:target {
     opacity: 0.8 !important;
 }
 
-.expressive-code .frame.has-title:not(.is-terminal) .title {
-    border-top: solid 0.15rem var(--theme-color) !important;
-}
-
 .share_button {
     display: flex;
     gap: calc(var(--social-icon-size) / 2);
