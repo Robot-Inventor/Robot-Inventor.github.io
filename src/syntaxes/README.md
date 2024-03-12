@@ -1,4 +1,4 @@
-# grammars
+# syntaxes
 
 This directory contains the TextMate grammars for syntax highlighting.
 

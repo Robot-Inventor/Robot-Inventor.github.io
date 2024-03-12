@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "robot-inventor.github.io",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "update-grammars": "node --loader ts-node/esm ./scripts/updateGrammars.ts"
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.4.1",
@@ -25,6 +26,7 @@
     "remark-directive": "^3.0.0",
     "remark-enhanced-link-card": "github:Robot-Inventor/remark-link-card",
     "sharp": "^0.33.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "unist-util-remove": "^4.0.0",
     "unist-util-visit-parents": "^6.0.1"
