@@ -1,6 +1,6 @@
 ---
 title: Astro v4.5がリリース！アクセシビリティ監査やページ遷移の改善など
-description: description
+description: 3月11日（現地時間）、さらなる改善と便利な新機能を搭載したAstro 4.5がリリースされました。今回のアップデートでは、ページ性能やアクセシビリティに関する問題を開発者が簡単に特定できるDev Audit UIや、View Transitionを使ったページ間遷移時の再描画の改善などが含まれています。
 pubDate: "2024-03-14T00:30:36+09:00"
 thumbnail: ./thumbnail.webp
 showToc: true
