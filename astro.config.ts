@@ -16,7 +16,7 @@ const topPageURL = "https://roboin.io";
 
 pluginFramesTexts.overrideTexts("ja", {
     copyButtonTooltip: "クリップボードにコピーする",
-    copyButtonCopied: "コピーしました！",
+    copyButtonCopied: "コピーしました！"
 });
 
 const tocTemplate = (html) => {
@@ -39,9 +39,7 @@ export default defineConfig({
         astroExpressiveCode({
             themes: [darkModernTheme, lightModernTheme],
             defaultLocale: "ja",
-            plugins: [
-                pluginLineNumbers()
-            ],
+            plugins: [pluginLineNumbers()],
             defaultProps: {
                 overridesByLang: {
                     "shell,sh,bash,powershell,console,shellsession,ansi": {
@@ -50,10 +48,8 @@ export default defineConfig({
                 }
             },
             shiki: {
-                langs: [
-                    regexGrammar,
-                    shellSessionGrammar
-                ]
+                // @ts-expect-error
+                langs: [regexGrammar, shellSessionGrammar]
             }
         }),
         customToc({
