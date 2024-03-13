@@ -12,7 +12,7 @@ This directory contains the themes of the code blocks.
 Difference from the original file:
 
 - Changed ``panel.background`` color
-- Added ``entity.other.prompt-prefix``, ``punctuation.separator.prompt.shell-session`` and ``meta.output.shell-session`` for a better look of ``shellsession`` code blocks
+- Added ``entity.other.prompt-prefix``, ``punctuation.separator.prompt.shell-session``, ``meta.output.shell-session`` and ``meta.function-call.generic.python`` for a better look of ``shellsession`` code blocks
 
 ### ``./light-modern.json``
 
@@ -22,4 +22,4 @@ Difference from the original file:
 Difference from the original file:
 
 - Changed ``panel.background`` color
-- Added ``entity.other.prompt-prefix``, ``punctuation.separator.prompt.shell-session`` and ``meta.output.shell-session`` for a better look of ``shellsession`` code blocks
+- Added ``entity.other.prompt-prefix``, ``punctuation.separator.prompt.shell-session``, ``meta.output.shell-session`` and ``meta.function-call.generic.python`` for a better look of ``shellsession`` code blocks
