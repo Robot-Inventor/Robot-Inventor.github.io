@@ -10,6 +10,10 @@ showAuthor: false
 
 サイトの更新情報などのお知らせを随時投稿します。
 
+## 2023/03/15　サイト更新情報
+
+ブログの[利用規約](/tos/)を改訂しました。
+
 ## 2023/12/06　サイト更新情報
 
 新しい記事「[Chrome拡張機能のおすすめバッジを申請する手順](/article/2023/12/06/apply-for-a-featured-badge-for-chrome-extensions/)」を公開しました。
