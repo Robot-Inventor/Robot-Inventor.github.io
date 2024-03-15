@@ -3,7 +3,7 @@ layout: ../../layouts/Layout.astro
 title: 利用規約
 description: ろぼいんのサイトの利用規約です。
 pubDate: "2021-06-08T01:16:02.518+09:00"
-modifiedDate: "2024-03-15T02:55:16+09:00"
+modifiedDate: "2024-03-15T18:37:45+09:00"
 author: ろぼいん
 showAuthor: false
 ---
@@ -36,6 +36,6 @@ showAuthor: false
 
 ## お問い合わせ
 
-ご不明な点などがありましたら、Twitter（X）のDMにてお気軽にお問い合わせください。
+ご不明な点などがありましたら、お問い合わせページよりお問い合わせください。
 
-- Twitterアカウント：[@keita_roboin](https://twitter.com/keita_roboin)
+- [お問い合わせページ](/contact/)
