@@ -86,7 +86,7 @@ export default defineConfig({
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>`.trim()
-                }
+                } satisfies Parameters<typeof rehypeAutoAds>[0]
             ]
         ]
     },
