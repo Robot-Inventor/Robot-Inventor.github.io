@@ -15,6 +15,6 @@ const { entry } = Astro.props as { entry: CollectionEntry<"article"> };
 const { Content, headings } = await entry.render();
 ---
 
-<Layout frontmatter={entry.data} headings={headings}>
+<Layout frontmatter={entry.data}>
     <Content />
 </Layout>
