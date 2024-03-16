@@ -10,5 +10,5 @@ showDate: false
 
 本ブログについてのお問い合わせは、メールアドレスまたはTwitter（X）のDMにて受け付けております。お気軽にご連絡ください。
 
-- メールアドレス：[info.robot.inventor@gmail.com](mailto:info.robot.inventor@gmail.com)
+- メールアドレス：[info@roboin.io](mailto:info@roboin.io)
 - Twitter：[@keita_roboin](https://twitter.com/keita_roboin)
