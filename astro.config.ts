@@ -11,6 +11,7 @@ import regexGrammar from "./src/syntaxes/regex.tmLanguage.json";
 import shellSessionGrammar from "./src/syntaxes/shell-session.tmLanguage.json";
 import darkModernTheme from "./src/themes/dark-modern.json";
 import lightModernTheme from "./src/themes/light-modern.json";
+import rehypeImageCaption from "rehype-image-caption";
 
 const topPageURL = "https://roboin.io";
 
@@ -87,7 +88,8 @@ export default defineConfig({
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>`.trim()
                 } satisfies Parameters<typeof rehypeAutoAds>[0]
-            ]
+            ],
+            rehypeImageCaption
         ]
     },
     redirects: {
