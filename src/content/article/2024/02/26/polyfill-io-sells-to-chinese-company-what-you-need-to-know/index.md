@@ -10,6 +10,7 @@ tags:
     - javascript
     - news
     - explanation
+    - security
 ---
 
 Web開発者たちにとって、ブラウザー間の互換性問題は長年にわたり頭痛の種となっています。そんな中、**Polyfill.io**は多くの開発者にとって救世主のような存在でした。
