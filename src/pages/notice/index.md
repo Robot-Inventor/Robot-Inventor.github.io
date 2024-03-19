@@ -1,14 +1,18 @@
 ---
 layout: ../../layouts/Layout.astro
 title: お知らせ
-description: 「ロボット INVENTOR　ブログ」のお知らせページです。
+description: 「ろぼいんブログ」のお知らせページです。
 pubDate: "2021-06-13T23:28:51.664+09:00"
-modifiedDate: "2023-08-05T22:37:36.934+09:00"
+modifiedDate: "2024-03-20T02:19:44+09:00"
 author: ろぼいん
 showAuthor: false
 ---
 
 サイトの更新情報などのお知らせを随時投稿します。
+
+## 2023/03/20　サイト更新情報
+
+ブログの[利用規約](/tos/)を改訂しました。
 
 ## 2023/03/15　サイト更新情報
 
