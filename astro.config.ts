@@ -12,6 +12,7 @@ import shellSessionGrammar from "./src/syntaxes/shell-session.tmLanguage.json";
 import darkModernTheme from "./src/themes/dark-modern.json";
 import lightModernTheme from "./src/themes/light-modern.json";
 import rehypeImageCaption from "rehype-image-caption";
+import remarkBreaks from "remark-breaks";
 
 const topPageURL = "https://roboin.io";
 
@@ -70,7 +71,8 @@ export default defineConfig({
                     cache: true,
                     shortenUrl: true
                 }
-            ]
+            ],
+            remarkBreaks
         ],
         rehypePlugins: [
             [
