@@ -2,6 +2,7 @@
 title: GoogleのHow-to構造化データが廃止されていた話
 description: 先日、ブログにHow-to構造化データを追加しようと思って調べていたところ、Google公式のドキュメントがほとんど出てこないことに気づきました。検索結果に出てくるのは、How-to構造化データについて解説したサードパーティの記事ばかりです。これはどういうことなのでしょうか？
 pubDate: "2024-03-19T17:45:38+09:00"
+modifiedDate: "2024-03-19T23:46:30+09:00"
 thumbnail: ./image.png
 showThumbnail: false
 showToc: true
@@ -37,7 +38,7 @@ Googleの公式ドキュメントを探していたところ、こちらのペ�
 
 2023年8月に発表された当初の案では、How-toリッチリザルトが**デスクトップデバイス**でのみ表示されるよう変更されるとされていました。しかし、9月14日の追加発表により、**デスクトップにおいても表示されなくなる**ことが明らかにされました。
 
-GoogleはHow-to構造化データについて、「この結果タイプのサポートは終了しました」としています。したがって、Googleが提供する検索結果における**How-to構造化データを用いたリッチリザルト完全に廃止**されました。
+GoogleはHow-to構造化データについて、「この結果タイプのサポートは終了しました」としています。したがって、Googleが提供する検索結果における**How-to構造化データを用いたリッチリザルト完全に廃止**されました。実際、[Googleがサポートする構造化データの一覧](https://developers.google.com/search/docs/appearance/structured-data/search-gallery?hl=ja)からも削除されています。
 
 Googleの発表をまとめると、次のようになります。
 
@@ -76,3 +77,4 @@ GoogleのHow-to構造化データの廃止は、Webサイトの運営者やSEO�
 ## 参考
 
 - [HowTo とよくある質問のリッチリザルトにおける変更  |  Google 検索セントラル ブログ  |  Google for Developers](https://developers.google.com/search/blog/2023/08/howto-faq-changes?hl=ja)
+- [Google 検索がサポートする構造化データ マークアップ | Google 検索セントラル  |  ドキュメント  |  Google for Developers](https://developers.google.com/search/docs/appearance/structured-data/search-gallery?hl=ja)
