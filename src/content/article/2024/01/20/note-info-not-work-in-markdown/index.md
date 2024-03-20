@@ -3,6 +3,7 @@ title: Markdownでnoteやinfoを使えない理由と対処法
 description: Markdownは、テキストをマークアップするための軽量な記法です。ブログやドキュメントの作成によく使用されています。Markdownでは、いくつかのキーワードを使用して、テキストのスタイルや構造を指定できます。一部のサイトでは、Markdownで「note」や「info」などのキーワードで注釈を表現できます。しかし、これらの機能が使えないことがあります。この記事では、Markdownで「note」や「info」を使用できない理由と代替方法についても紹介します。
 author: ろぼいん
 pubDate: "2024-01-20T16:56:24+09:00"
+modifiedDate: "2024-03-20T17:57:25+09:00"
 tags:
     - explanation
     - web-development
@@ -82,7 +83,7 @@ Markdown向けの便利な機能が搭載されている、拡張機能の「[Ma
 
 前者はQiitaのNote記法、後者はGitHubのNote記法に対応しています。
 
-ちなみに、このブログではStarlightというドキュメント作成フレームワークの[コード](https://github.com/withastro/starlight/blob/f12efa789f27fa3f6a7828847d63be6dce7b3ccc/packages/starlight/integrations/asides.ts)の一部を利用しています。Starlightでは、次のような構文でNote記法を使えます。remarkを使っている場合は、Starlightのコードを参考にしてもよいでしょう。
+ちなみに、このブログではStarlightというドキュメント作成フレームワークの[コード](https://github.com/withastro/starlight/blob/f12efa789f27fa3f6a7828847d63be6dce7b3ccc/packages/starlight/integrations/asides.ts)の一部を利用しています。Starlightでは、次のような構文でNote記法を使えます。remarkを使っている場合は、Starlightのコードを参考にしてもよいでしょう。あるいは、[remark-github-beta-blockquote-admonitions](https://github.com/myl7/remark-github-beta-blockquote-admonitions)を使うこともできます。
 
 ```markdown
 :::note
