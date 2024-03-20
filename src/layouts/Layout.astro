@@ -298,7 +298,7 @@ const latestArticlesData = await getLatestArticlesData();
         </script>
     </head>
     <body>
-        <header data-overlay-menu="closed" transition:persist="">
+        <header data-overlay-menu="closed">
             <a href="/">
                 <Image src="/logo.svg" alt="ロゴ" id="header_logo" width="512" height="185" loading="eager" />
             </a>
@@ -310,7 +310,7 @@ const latestArticlesData = await getLatestArticlesData();
                 <div></div>
             </button>
         </header>
-        <main transition:name="main">
+        <main>
             <article>
                 {
                     Astro.props.frontmatter.showThumbnail && Astro.props.frontmatter.thumbnail && (
@@ -478,7 +478,8 @@ const latestArticlesData = await getLatestArticlesData();
             <p>Copyright © {new Date().getFullYear()} ろぼいん All rights reserved.</p>
             <p>
                 <a href="/tos/">利用規約</a>・<a href="/privacy/">プライバシーポリシー</a>・<a href="/contact/"
-                    >お問い合わせ</a>
+                    >お問い合わせ</a
+                >
             </p>
         </footer>
         <script src="./Layout.ts"></script>
