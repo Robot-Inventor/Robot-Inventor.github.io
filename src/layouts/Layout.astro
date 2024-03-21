@@ -183,9 +183,11 @@ const getThumbnailData = async () => {
         } as const;
     });
 
+    const fallbackType = ["gif", "svg", "jpg", "jpeg"].includes(thumbnail.format) ? thumbnail.format : "png";
+
     const fallback = await getImage({
         src: thumbnail,
-        format: "png",
+        format: fallbackType,
         width: Math.min(1920, thumbnail.width)
     });
 
