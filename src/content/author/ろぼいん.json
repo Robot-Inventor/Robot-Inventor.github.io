@@ -1,6 +1,6 @@
 {
     "type": "Person",
-    "icon": "/icon/public(18).png",
+    "icon": "./icon/public(18).png",
     "homePage": "https://roboin.io/",
     "sameAs": [
         "https://twitter.com/keita_roboin",

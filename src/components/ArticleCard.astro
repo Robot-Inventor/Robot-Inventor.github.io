@@ -1,6 +1,6 @@
 ---
 import { getEntry } from "astro:content";
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import defaultThumbnail from "../../public/icon/ogp_default_thumbnail.png";
 
 interface Props {
@@ -23,7 +23,13 @@ const thumbnail = targetArticle.data.thumbnail || defaultThumbnail;
 
 <article class={Astro.props.type || "landscape"}>
     <a href={Astro.props.link}>
-        <Image src={thumbnail} width={Math.min(600, thumbnail.width)} alt="記事のサムネイル" class="thumbnail" />
+        <Picture
+            src={thumbnail}
+            formats={["avif", "webp"]}
+            width={Math.min(600, thumbnail.width)}
+            alt="記事のサムネイル"
+            class="thumbnail"
+        />
         <div class="text_container">
             <div class="title">{targetArticle.data.title}</div>
             <div class="description">{targetArticle.data.description}</div>

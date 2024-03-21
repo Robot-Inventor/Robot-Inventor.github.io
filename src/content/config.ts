@@ -21,13 +21,14 @@ const articleCollection = defineCollection({
 
 const authorCollection = defineCollection({
     type: "data",
-    schema: z.object({
-        type: z.literal("Person").or(z.literal("Organization")),
-        icon: z.string(),
-        homePage: z.string().url(),
-        sameAs: z.array(z.string().url()),
-        profileLinks: z.record(z.string())
-    })
+    schema: ({ image }) =>
+        z.object({
+            type: z.literal("Person").or(z.literal("Organization")),
+            icon: image(),
+            homePage: z.string().url(),
+            sameAs: z.array(z.string().url()),
+            profileLinks: z.record(z.string())
+        })
 });
 
 const tagCollection = defineCollection({
