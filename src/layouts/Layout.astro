@@ -4,7 +4,7 @@ import "../starlight/integrations/asides.css";
 
 import { getEntry, getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import { Image, Picture } from "astro:assets";
+import { Image, Picture, getImage } from "astro:assets";
 import defaultThumbnail from "../../public/icon/ogp_default_thumbnail.png";
 
 interface Props {
@@ -161,6 +161,46 @@ const schema = JSON.stringify({
     ]
 });
 
+const getThumbnailData = async () => {
+    const thumbnail = Astro.props.frontmatter.thumbnail;
+
+    if (!(Astro.props.frontmatter.showThumbnail && thumbnail)) {
+        return {
+            showThumbnail: false
+        } as const;
+    }
+
+    const sources = ["avif", "webp"].map(async (format) => {
+        const image = await getImage({
+            src: thumbnail,
+            format: format,
+            width: Math.min(1920, thumbnail.width)
+        });
+
+        return {
+            srcset: image.src,
+            type: `image/${format}`
+        } as const;
+    });
+
+    const fallback = await getImage({
+        src: thumbnail,
+        format: "png",
+        width: Math.min(1920, thumbnail.width)
+    });
+
+    return {
+        showThumbnail: true,
+        sources: await Promise.all(sources),
+        fallback: {
+            src: fallback.src,
+            attributes: fallback.attributes
+        }
+    } as const;
+};
+
+const thumbnailData = await getThumbnailData();
+
 const generateShareURL = (source: string) => {
     const url = new URL(Astro.url);
     url.searchParams.append("utm_source", source);
@@ -250,6 +290,16 @@ const latestArticlesData = await getLatestArticlesData();
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {
+            thumbnailData.showThumbnail && (
+                <link
+                    rel="preload"
+                    href={thumbnailData.sources[0].srcset}
+                    as="image"
+                    type={thumbnailData.sources[0].type}
+                />
+            )
+        }
         <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link
@@ -312,14 +362,18 @@ const latestArticlesData = await getLatestArticlesData();
         <main>
             <article>
                 {
-                    Astro.props.frontmatter.showThumbnail && Astro.props.frontmatter.thumbnail && (
-                        <Picture
-                            src={Astro.props.frontmatter.thumbnail}
-                            formats={["avif", "webp"]}
-                            width={Math.min(1920, Astro.props.frontmatter.thumbnail.width)}
-                            alt="サムネイル"
-                            loading="eager"
-                        />
+                    thumbnailData.showThumbnail && (
+                        <picture>
+                            {thumbnailData.sources.map((source) => {
+                                return <source srcset={source.srcset} type={source.type} />;
+                            })}
+                            <img
+                                src={thumbnailData.fallback.src}
+                                alt="サムネイル"
+                                loading="eager"
+                                {...thumbnailData.fallback.attributes}
+                            />
+                        </picture>
                     )
                 }
                 <h1>{Astro.props.frontmatter.title}</h1>
