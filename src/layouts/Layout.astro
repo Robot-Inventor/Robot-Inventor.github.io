@@ -4,7 +4,7 @@ import "../starlight/integrations/asides.css";
 
 import { getEntry, getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import { Image } from "astro:assets";
+import { Image, Picture } from "astro:assets";
 import defaultThumbnail from "../../public/icon/ogp_default_thumbnail.png";
 
 interface Props {
@@ -313,8 +313,9 @@ const latestArticlesData = await getLatestArticlesData();
             <article>
                 {
                     Astro.props.frontmatter.showThumbnail && Astro.props.frontmatter.thumbnail && (
-                        <Image
+                        <Picture
                             src={Astro.props.frontmatter.thumbnail}
+                            formats={["avif", "webp"]}
                             width={Math.min(1920, Astro.props.frontmatter.thumbnail.width)}
                             alt="サムネイル"
                             loading="eager"
@@ -394,9 +395,10 @@ const latestArticlesData = await getLatestArticlesData();
             {
                 Astro.props.frontmatter.showAuthor && (
                     <address class="author_info">
-                        <Image
+                        <Picture
                             class="author_info-icon"
                             src={author.data.icon}
+                            formats={["avif", "webp"]}
                             alt="著者のアイコン画像"
                             width="100"
                             height="100"
