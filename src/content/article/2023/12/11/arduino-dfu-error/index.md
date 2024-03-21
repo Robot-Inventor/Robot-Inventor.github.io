@@ -48,7 +48,7 @@ Arduinoのフォーラムを参考にして、次のパスに存在するexeフ�
 
 ただし、`[ユーザー名]`は自分のユーザー名に置き換えてください。また、`1.0.5`の部分はバージョンによって異なる可能性があります。
 
-```path
+```txt
 C:\Users\[ユーザー名]\AppData\Local\Arduino15\packages\arduino\hardware\renesas_uno\1.0.5\drivers\dpinst-amd64.exe
 ```
 
