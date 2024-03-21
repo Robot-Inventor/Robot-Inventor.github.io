@@ -369,11 +369,13 @@ const latestArticlesData = await getLatestArticlesData();
                             {thumbnailData.sources.map((source) => {
                                 return <source srcset={source.srcset} type={source.type} />;
                             })}
+                            {
+                                // Firefoxでは問題ないが、Chromeでレイアウトシフトが発生するのを防ぐため、img要素にstyle属性を追加
+                            }
                             <img
                                 src={thumbnailData.fallback.src}
                                 alt="サムネイル"
                                 loading="eager"
-                                // Firefoxでは問題ないが、Chromeではこの指定がないとレイアウトシフトが発生する
                                 style="width: 100%; height: auto;"
                                 {...thumbnailData.fallback.attributes}
                             />
