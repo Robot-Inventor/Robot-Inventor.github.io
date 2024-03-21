@@ -4,6 +4,7 @@ description: Twitter（X）で「私のTwitter家族」「私のTwitterやりと
 thumbnail: ./image-2.png
 showThumbnail: false
 pubDate: "2024-02-05T16:52:33+09:00"
+modifiedDate: "2024-03-22T02:17:05+09:00"
 author: ろぼいん
 tags:
     - twitter
@@ -38,7 +39,7 @@ Twitter（X）で「**私のTwitter家族**」「**私のTwitterやりとりー�
 Twitterでこんなサイトを見かけたことはありませんか？
 
 - 「あなたが2024年のバレンタインを一緒に過ごすTwitterの特別な人は」
-- 「私のTwitterやりとりークル」
+- 「私のTwitterやりとりサークル」
 - 「私のTwitter家族」
 - 「Twitter家系図」
 
@@ -131,7 +132,7 @@ Round Year Funにアカウントを連携すると、知らないアカウント
 
 ## 連携を解除するには？
 
-Round Year Funはアカウントを乗っ取っているわけではなく、アカウント連携を悪用しているに過ぎません。
+Round Year Funの実態はアカウントの乗っ取りではなく、アカウント連携を悪用しているに過ぎません。
 
 そのため、**連携を解除すればそれ以降はアカウントを操作されることはありません**。ただし、勝手にフォローしてしまったアカウントは、**手動でフォローを解除する必要があります**。
 
