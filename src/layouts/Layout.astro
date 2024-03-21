@@ -373,6 +373,8 @@ const latestArticlesData = await getLatestArticlesData();
                                 src={thumbnailData.fallback.src}
                                 alt="サムネイル"
                                 loading="eager"
+                                // Firefoxでは問題ないが、Chromeではこの指定がないとレイアウトシフトが発生する
+                                style="width: 100%; height: auto;"
                                 {...thumbnailData.fallback.attributes}
                             />
                         </picture>
