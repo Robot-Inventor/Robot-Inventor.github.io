@@ -9,6 +9,9 @@ showThumbnail: false
 tags: ["windows", "android", "explanation", "discord", "how-to"]
 ---
 
+import ArticleCard from "@components/ArticleCard.astro";
+import "./style.css";
+
 :::note
 この記事の内容は、DiscordのAndroidアプリのバージョン「122.7 - STABLE (122007)」とWindowsアプリのバージョン「Stable 124397 (2bf79b5)」で動作確認しています。
 :::
@@ -56,23 +59,6 @@ Discordでメンバーの人数を確認する、もっとも簡単な方法はD
 
 ![人数が表示されたようす](./2022-04-17-01-00-52.png)
 
-<style>
-    .member_count_dot {
-        display: inline-block;
-        width: 0.75em;
-        height: 0.75em;
-        border-radius: 0.5em;
-        margin-right: 0.25em;
-        vertical-align: middle;
-        text-indent: 100%;
-        overflow: hidden;
-    }
+## オススメの記事
 
-    .member_count_dot-gray {
-        background: #747f8d;
-    }
-
-    .member_count_dot-green {
-        background: #3ba55c;
-    }
-</style>
+<ArticleCard link="/article/2024/03/22/how-to-take-a-survey-on-discord-without-a-bot/" />

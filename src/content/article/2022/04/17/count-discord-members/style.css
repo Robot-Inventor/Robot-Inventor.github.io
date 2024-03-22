@@ -1,0 +1,18 @@
+.member_count_dot {
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    border-radius: 0.5em;
+    margin-right: 0.25em;
+    vertical-align: middle;
+    text-indent: 100%;
+    overflow: hidden;
+}
+
+.member_count_dot-gray {
+    background: #747f8d;
+}
+
+.member_count_dot-green {
+    background: #3ba55c;
+}
