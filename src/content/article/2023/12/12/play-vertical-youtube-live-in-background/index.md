@@ -61,9 +61,13 @@ YouTube Premiumに加入している場合は、スマートフォンのYouTube�
 
 下のテキストボックスに縦型配信のURLを入力すると、自動で書き換えたURLが表示されます。入力されたURLはサーバーに送信されず、お使いのブラウザー上でのみ処理されます。
 
+-----
+
 <input id="youtube-url-input"><button id="youtube-url-submit">変換</button>
 
 変換後のURL：<a href="" id="youtube-url-converted-link" target="_blank"></a><span id="youtube-url-error" style="display: none;"></span>
+
+-----
 
 <script>
     const input = document.querySelector("#youtube-url-input");
