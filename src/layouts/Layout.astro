@@ -2,6 +2,7 @@
 import "./Layout.css";
 import "../starlight/integrations/asides.css";
 import MisskeyIcon from "/public/icon/social/misskey.png";
+import BlueskyIcon from "/public/icon/social/bluesky.png";
 
 import { getEntry, getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -456,6 +457,19 @@ const latestArticlesData = await getLatestArticlesData();
                         alt="Misskeyのアイコン"
                         width="72"
                         height="72"
+                    />
+                </a>
+                <a
+                    href={`https://bsky.app/intent/compose?text=${encodeURIComponent(`${titleWithSiteName}\n${generateShareURL("bluesky")}`)}`}
+                    target="_blank"
+                >
+                    <Picture
+                        src={BlueskyIcon}
+                        formats={["avif", "webp"]}
+                        alt="Misskeyのアイコン"
+                        width="72"
+                        height="72"
+                        style="border-radius: 50%;"
                     />
                 </a>
             </section>
