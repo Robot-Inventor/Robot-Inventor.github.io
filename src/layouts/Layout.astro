@@ -1,6 +1,7 @@
 ---
 import "./Layout.css";
 import "../starlight/integrations/asides.css";
+import MisskeyIcon from "/public/icon/social/misskey.png";
 
 import { getEntry, getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -449,7 +450,13 @@ const latestArticlesData = await getLatestArticlesData();
                     )}&visibility=public&localOnly=0`}
                     target="_blank"
                 >
-                    <Image src="/icon/social/misskey.png" alt="Misskeyのアイコン" width="72" height="72" />
+                    <Picture
+                        src={MisskeyIcon}
+                        formats={["avif", "webp"]}
+                        alt="Misskeyのアイコン"
+                        width="72"
+                        height="72"
+                    />
                 </a>
             </section>
             {
