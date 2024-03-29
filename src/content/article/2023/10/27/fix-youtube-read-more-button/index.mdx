@@ -2,6 +2,7 @@
 title: YouTubeですべてのコメントに「続きを読む」が出るバグの解決方法
 description: YouTubeですべてのコメントに［続きを読む］が出てしまうバグが発生しています。コメントの文章が全部表示されていたとしても、あらゆるコメントに［続きを読む］が出てしまうため不便です。この記事では、すべてのコメントに［続きを読む］が出る条件と解決策を紹介します。
 pubDate: "2023-10-27T22:45:00+09:00"
+modifiedDate: "2024-03-29T18:33:56+09:00"
 author: ろぼいん
 showThumbnail: false
 tags: ["youtube", "firefox", "chrome", "extension", "explanation"]
@@ -82,10 +83,14 @@ Stylusの設定画面が開いたら、［www .youtube .com］という文字列
 もしYouTube全体ではなくコメント欄のフォントだけを変更したい場合は、次のように書きます。ただし、こちらの方法はYouTubeの仕様変更によって動作しなくなる可能性があります。
 
 ```css
-.style-scope.ytd-comment-renderer {
+.style-scope.ytd-comment-view-model {
     font-family: "Yu Gothic", system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 ```
+
+:::note[2024年3月29日更新]
+最近のYouTubeの仕様変更に合わせて、コメント欄のフォントだけを変更する場合のコードを更新しました。
+:::
 
 ## まとめ
 
