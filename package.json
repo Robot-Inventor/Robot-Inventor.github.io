@@ -11,7 +11,7 @@
     "update-grammars": "node --loader ts-node/esm ./scripts/updateGrammars.ts"
   },
   "dependencies": {
-    "@astro-community/astro-embed-youtube": "^0.4.1",
+    "@astro-community/astro-embed-youtube": "^0.5.0",
     "@astrojs/mdx": "^2.0.0",
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.0.0",
