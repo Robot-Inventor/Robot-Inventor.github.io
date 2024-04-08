@@ -1,4 +1,4 @@
-const header = document.querySelector("header") as HTMLElement | null;
+const header = document.querySelector("header");
 if (!header) throw new Error("header is not defined");
 const menu_button = document.getElementById("menu_button");
 if (!menu_button) throw new Error("menu_button is not defined");
@@ -22,3 +22,11 @@ links.forEach((link) => {
         link.setAttribute("rel", "noopener noreferrer");
     }
 });
+
+const toc = document.querySelector<HTMLElement>(".toc");
+const tocToggle = document.querySelector<HTMLElement>(".toc-toggle");
+if (toc && tocToggle) {
+    tocToggle.addEventListener("click", () => {
+        toc.dataset.tocState = "opened";
+    });
+}

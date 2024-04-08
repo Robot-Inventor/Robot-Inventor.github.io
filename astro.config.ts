@@ -29,6 +29,7 @@ const tocTemplate = (html) => {
     <nav>
         ${html}
     </nav>
+    <button class="toc-toggle">さらに表示</button>
 </aside>`.trim();
 };
 
