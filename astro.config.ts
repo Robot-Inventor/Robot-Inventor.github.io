@@ -13,7 +13,6 @@ import darkModernTheme from "./src/themes/dark-modern.json";
 import lightModernTheme from "./src/themes/light-modern.json";
 import rehypeImageCaption from "rehype-image-caption";
 import remarkBreaks from "remark-breaks";
-import { pluginLanguageBadge } from "./src/plugin/pluginLanguageBudge";
 
 const topPageURL = "https://roboin.io";
 
