@@ -42,7 +42,7 @@ export default defineConfig({
         astroExpressiveCode({
             themes: [darkModernTheme, lightModernTheme],
             defaultLocale: "ja",
-            plugins: [pluginLineNumbers(), pluginLanguageBadge()],
+            plugins: [pluginLineNumbers()],
             defaultProps: {
                 overridesByLang: {
                     "shell,sh,bash,powershell,console,shellsession,ansi": {
