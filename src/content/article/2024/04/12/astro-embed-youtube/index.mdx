@@ -19,7 +19,7 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
 
 [Astro](https://astro.build/)は、近年人気が高まっている静的サイトジェネレーターです。フレームワークに依存せず、フロントエンドで動作させる必要があるスクリプトがないため、高速なページ読み込みが特徴です。
 
-しかし、AstroでYouTubeの通常の埋め込みコードを使用すると、ページの読み込み速度が低下してしまいます。YouTubeの埋め込みコードは速度を重視していないため、[PageSpeed Insights](https://pagespeed.web.dev/)などのツールで評価が低下してしまいます。
+しかし、AstroでYouTubeの通常の埋め込みコードを使用すると、ページの読み込み速度が低下し、[PageSpeed Insights](https://pagespeed.web.dev/)などのツールで評価が下がってしまいます。これは、YouTubeの埋め込みコードが速度を重視していないため、
 
 そこで、この記事ではパフォーマンスを維持しながらAstroベースのサイトにYouTubeを埋め込める「[astro-embed-youtube](https://astro-embed.netlify.app/components/youtube/)」を紹介します。
 
@@ -94,7 +94,7 @@ import { YouTube } from "astro-embed";
 
 :::
 
-次に、YouTubeの動画を埋め込みたい箇所で``YouTube``コンポーネントを使います。すると、動画が埋め込まれます。
+次に、YouTubeの動画を埋め込みたい箇所で``YouTube``コンポーネントを使います。``id``属性には動画のIDを指定します。すると、動画が埋め込まれます。
 
 ```mdx
 <YouTube id="5u0Ds7wzUeI" />
