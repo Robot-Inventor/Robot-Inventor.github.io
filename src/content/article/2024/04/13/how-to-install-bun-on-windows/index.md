@@ -2,6 +2,7 @@
 title: WindowsにBunをインストールする方法
 description: 2024年4月1日、Windowsに対応したBun 1.1がリリースされました。この記事では、WindowsにBunをインストールする方法を説明します。
 pubDate: "2024-04-13T00:58:05+09:00"
+thumbnail: ./image-1.png
 showToc: true
 author: ろぼいん
 tags:
@@ -40,6 +41,9 @@ bun --version
 ```
 
 ## Bunとは？
+
+![Bunの公式サイトのスクリーンショット](./image-1.png)
+*画像：[Bunの公式サイト](https://bun.sh/)*
 
 Bunは、**JavaScriptおよびTypeScriptを実行、構築、テストするためのオールインワンのツール**です。Bunは、Node.jsのパッケージマネージャーであるnpmと互換性があり、Node.jsやnpmよりも高速で動作することが特徴です。
 
