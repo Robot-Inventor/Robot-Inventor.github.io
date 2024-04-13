@@ -1,6 +1,6 @@
 ---
 title: DaVinci Resolve 19がリリース！AIツールやカラーグレーディングの強化など多数の新機能を搭載
-description: description
+description: Blackmagic Designが動画編集ソフト「DaVinci Resolve 19」のパブリックベータ版をリリースしました。今回のアップデートでは、新たなAIツール、100以上の機能強化、進化したカラーグレーディング、オーディオ編集機能など、多岐にわたる強化が施されています。動画編集、カラーコレクション、オーディオのポストプロダクションなどがより便利になります。
 pubDate: "2024-04-13T21:57:47+09:00"
 thumbnail: ./DaVinci_Resolve_19_Edit.jpg
 showThumbnail: false
