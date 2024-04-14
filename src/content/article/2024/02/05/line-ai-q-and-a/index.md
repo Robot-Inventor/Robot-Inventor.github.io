@@ -8,6 +8,9 @@ tags:
     - how-to
     - explanation
     - others
+    - line
+    - news
+    - app
 ---
 
 「LINE」アプリ内に革新的なサービス「**LINE AI Q&A**」が導入されました。2024年2月2日にAndroid版が先行リリースされ、iOS版も間もなくお披露目される予定です。
