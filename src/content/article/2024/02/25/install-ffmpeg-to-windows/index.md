@@ -1,5 +1,5 @@
 ---
-title: 【Windows】PATHの設定なしでFFmpegをインストールする方法
+title: 【Windows 11】PATHの設定なしでFFmpegをインストールする方法
 description: Windowsユーザーが開発や動画編集をする際、FFmpegはほぼ避けて通れないツールのひとつです。しかし、FFmpegのインストールとPATHの設定は初心者にとっては少し難しいかもしれません。実は、Windowsにはwingetという強力なパッケージマネージャーがあります。これを使えば、PATHの手動設定不要でFFmpegを簡単にインストールできます。この記事では、まずFFmpegとwingetについての基本情報を紹介し、その後、具体的なインストール方法について説明します。
 pubDate: "2024-02-25T21:39:08+09:00"
 author: ろぼいん
