@@ -35,9 +35,6 @@ const tocTemplate = (html) => {
 // https://astro.build/config
 export default defineConfig({
     site: topPageURL,
-    experimental: {
-        contentCollectionCache: true
-    },
     integrations: [
         sitemap({
             filter: (page) => !page.startsWith(new URL("/tag/", topPageURL).href)
