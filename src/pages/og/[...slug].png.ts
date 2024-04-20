@@ -2,7 +2,9 @@ import type { APIRoute } from "astro";
 import { getCollection, getEntryBySlug } from "astro:content";
 import { getOgImage } from "../../components/OgImage";
 
-const posts = await getCollection("article");
+const posts = await getCollection("article", (post) => {
+    return !post.data.thumbnail;
+});
 
 export const getStaticPaths = async () => {
     return posts.map((post) => ({
