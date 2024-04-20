@@ -1,25 +1,26 @@
 {
-    // 注意："astro/tsconfigs/strict"または"astro/tsconfigs/strictest"を使用する場合は変更する必要はありません。
-    "extends": "astro/tsconfigs/base",
-    "compilerOptions": {
-        "strictNullChecks": true,
-        "baseUrl": ".",
-        "paths": {
-            "@components/*": [
-                "src/components/*"
-            ],
-            "@layouts/*": [
-                "src/layouts/*"
-            ],
-            "@templates/*": [
-                "src/templates/*"
-            ]
-        },
-        "allowJs": true,
-        "module": "ESNext"
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@templates/*": [
+        "src/templates/*"
+      ]
     },
-    "ts-node": {
-        "esm": true,
-        "experimentalSpecifierResolution": "node"
-    }
+    "allowJs": true,
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  }
 }

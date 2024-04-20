@@ -1,7 +1,6 @@
 ---
 import { getEntry } from "astro:content";
 import { Picture } from "astro:assets";
-import defaultThumbnail from "../../public/icon/ogp_default_thumbnail.png";
 
 interface Props {
     link: string;
@@ -14,6 +13,13 @@ const slug = Astro.props.link
     .replace("/article/", "")
     .replace(/#[^/]*$/, "")
     .replace(/\/$/, "");
+
+const defaultThumbnail: ImageMetadata = {
+    width: 1920,
+    height: 1080,
+    format: "png",
+    src: `/og/${slug}.png`
+};
 
 const targetArticle = await getEntry("article", slug);
 if (!targetArticle) throw new Error("article not found");

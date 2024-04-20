@@ -7,7 +7,6 @@ import BlueskyIcon from "/public/icon/social/bluesky.png";
 import { getEntry, getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { Image, Picture, getImage } from "astro:assets";
-import defaultThumbnail from "../../public/icon/ogp_default_thumbnail.png";
 
 interface Props {
     frontmatter: {
@@ -35,7 +34,13 @@ interface Props {
 }
 
 if (!Astro.site) throw new Error("site is not defined");
-let thumbnailUrl = new URL("/icon/ogp_default_thumbnail.png", Astro.site.href).href;
+const defaultThumbnail: ImageMetadata = {
+    width: 1920,
+    height: 1080,
+    format: "png",
+    src: new URL(`/og/${Astro.url.pathname.replace(/^\//, "").replace(/\/$/, "")}.png`, Astro.site).href
+};
+let thumbnailUrl = defaultThumbnail.src;
 if (Astro.props.frontmatter.thumbnail) {
     thumbnailUrl = new URL(Astro.props.frontmatter.thumbnail.src, Astro.site.href).href;
 }
