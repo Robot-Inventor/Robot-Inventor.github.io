@@ -14,6 +14,12 @@ export const getStaticPaths = async () => {
     }));
 };
 
+/**
+ * OGP画像を生成するAPIエンドポイント。
+ * 生成した画像はキャッシュされ、再リクエスト時にはタイトルのが変更されていない場合はキャッシュを返す。
+ * キャッシュが存在しない、またはタイトルが変更されている場合は新たに生成する。
+ * 手動でサムネイルが指定されていない記事のサムネイルのみを生成する。
+ */
 export const GET: APIRoute = async ({ params }) => {
     if (!params.slug || typeof params.slug !== "string") {
         return new Response(null, {
@@ -29,9 +35,14 @@ export const GET: APIRoute = async ({ params }) => {
         });
     }
 
-    const cacheFilePath = `./og-cache/${post.slug}.png`;
-    if (fs.existsSync(cacheFilePath)) {
-        const body = fs.readFileSync(cacheFilePath);
+    const cachedImagePath = `./og-cache/${post.slug}.png`;
+    const cachedDataPath = `./og-cache/${post.slug}.json`;
+    const cacheExists = fs.existsSync(cachedImagePath) && fs.existsSync(cachedDataPath);
+    const titleEdited = cacheExists
+        ? JSON.parse(fs.readFileSync(cachedDataPath).toString()).title !== post.data.title
+        : true;
+    if (cacheExists && !titleEdited) {
+        const body = fs.readFileSync(cachedImagePath);
 
         return new Response(body, {
             headers: {
@@ -41,10 +52,12 @@ export const GET: APIRoute = async ({ params }) => {
     } else {
         const body = await getOgImage(post.data.title);
 
-        if (!fs.existsSync(path.dirname(cacheFilePath))) {
-            fs.mkdirSync(path.dirname(cacheFilePath), { recursive: true });
+        if (!fs.existsSync(path.dirname(cachedImagePath))) {
+            fs.mkdirSync(path.dirname(cachedImagePath), { recursive: true });
         }
-        fs.writeFileSync(cacheFilePath, body);
+
+        fs.writeFileSync(cachedImagePath, body);
+        fs.writeFileSync(cachedDataPath, JSON.stringify({ title: post.data.title }));
 
         return new Response(body, {
             headers: {
