@@ -1,6 +1,8 @@
 import type { APIRoute } from "astro";
 import { getCollection, getEntryBySlug } from "astro:content";
 import { getOgImage } from "../../components/OgImage";
+import fs from "fs";
+import path from "path";
 
 const posts = await getCollection("article", (post) => {
     return !post.data.thumbnail;
@@ -26,11 +28,28 @@ export const GET: APIRoute = async ({ params }) => {
             statusText: "Not found"
         });
     }
-    const body = await getOgImage(post.data.title);
 
-    return new Response(body, {
-        headers: {
-            "Content-Type": "image/png"
+    const cacheFilePath = `./og-cache/${post.slug}.png`;
+    if (fs.existsSync(cacheFilePath)) {
+        const body = fs.readFileSync(cacheFilePath);
+
+        return new Response(body, {
+            headers: {
+                "Content-Type": "image/png"
+            }
+        });
+    } else {
+        const body = await getOgImage(post.data.title);
+
+        if (!fs.existsSync(path.dirname(cacheFilePath))) {
+            fs.mkdirSync(path.dirname(cacheFilePath), { recursive: true });
         }
-    });
+        fs.writeFileSync(cacheFilePath, body);
+
+        return new Response(body, {
+            headers: {
+                "Content-Type": "image/png"
+            }
+        });
+    }
 };
