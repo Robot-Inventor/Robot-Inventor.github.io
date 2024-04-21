@@ -7,7 +7,6 @@ import BlueskyIcon from "/public/icon/social/bluesky.png";
 import { getEntry, getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { Image, Picture, getImage } from "astro:assets";
-import oldThumbnail from "../../public/icon/ogp_default_thumbnail.png";
 
 interface Props {
     frontmatter: {
@@ -35,16 +34,22 @@ interface Props {
 }
 
 if (!Astro.site) throw new Error("site is not defined");
-const defaultThumbnail: ImageMetadata = {
-    width: 1920,
-    height: 1080,
-    format: "png",
-    src: `/og/${Astro.url.pathname
-        .replace(/^\//, "")
-        .replace(/^article\//, "")
-        .replace(/\/$/, "")}.png`
+
+const getDefualtThumbnail = (slug: string): ImageMetadata => {
+    const defaultThumbnail: ImageMetadata = {
+        width: 1920,
+        height: 1080,
+        format: "png",
+        src: `/og/${slug
+            .replace(/^\//, "")
+            .replace(/^article\//, "")
+            .replace(/\/$/, "")}.png`
+    };
+
+    return defaultThumbnail;
 };
-let thumbnailUrl = defaultThumbnail.src;
+
+let thumbnailUrl = getDefualtThumbnail(Astro.url.pathname).src;
 if (Astro.props.frontmatter.thumbnail) {
     thumbnailUrl = new URL(Astro.props.frontmatter.thumbnail.src, Astro.site.href).href;
 }
@@ -266,7 +271,7 @@ const getRelatedArticlesData = async () => {
 
     const relatedArticlesData = relatedArticles.map(async (article) => {
         const articleData = await getEntry("article", article.slug);
-        const thumbnail = articleData.data.thumbnail || defaultThumbnail;
+        const thumbnail = articleData.data.thumbnail || getDefualtThumbnail(article.slug);
         return {
             title: articleData.data.title,
             link: `/article/${article.slug}/`,
@@ -282,7 +287,7 @@ const getLatestArticlesData = async () => {
 
     const latestArticlesData = latestArticles.slice(0, NUMBER_OF_LATEST_ARTICLES).map(async (article) => {
         const articleData = await getEntry("article", article.slug);
-        const thumbnail = articleData.data.thumbnail || defaultThumbnail;
+        const thumbnail = articleData.data.thumbnail || getDefualtThumbnail(article.slug);
         return {
             title: articleData.data.title,
             link: `/article/${article.slug}/`,
