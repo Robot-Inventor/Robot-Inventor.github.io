@@ -35,8 +35,8 @@ export const GET: APIRoute = async ({ params }) => {
         });
     }
 
-    const cachedImagePath = `./og-cache/${post.slug}.png`;
-    const cachedDataPath = `./og-cache/${post.slug}.json`;
+    const cachedImagePath = `./node_modules/.astro/og-cache/${post.slug}.png`;
+    const cachedDataPath = `./node_modules/.astro/og-cache/${post.slug}.json`;
     const cacheExists = fs.existsSync(cachedImagePath) && fs.existsSync(cachedDataPath);
     const titleEdited = cacheExists
         ? JSON.parse(fs.readFileSync(cachedDataPath).toString()).title !== post.data.title
