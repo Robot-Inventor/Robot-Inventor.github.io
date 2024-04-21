@@ -7,6 +7,7 @@ import BlueskyIcon from "/public/icon/social/bluesky.png";
 import { getEntry, getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { Image, Picture, getImage } from "astro:assets";
+import oldThumbnail from "../../public/icon/ogp_default_thumbnail.png";
 
 interface Props {
     frontmatter: {
@@ -38,7 +39,10 @@ const defaultThumbnail: ImageMetadata = {
     width: 1920,
     height: 1080,
     format: "png",
-    src: new URL(`/og/${Astro.url.pathname.replace(/^\//, "").replace(/\/$/, "")}.png`, Astro.site).href
+    src: `/og/${Astro.url.pathname
+        .replace(/^\//, "")
+        .replace(/^article\//, "")
+        .replace(/\/$/, "")}.png`
 };
 let thumbnailUrl = defaultThumbnail.src;
 if (Astro.props.frontmatter.thumbnail) {
