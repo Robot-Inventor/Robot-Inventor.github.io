@@ -49,7 +49,7 @@ const getDefualtThumbnail = (slug: string): ImageMetadata => {
     return defaultThumbnail;
 };
 
-let thumbnailUrl = getDefualtThumbnail(Astro.url.pathname).src;
+let thumbnailUrl = new URL(getDefualtThumbnail(Astro.url.pathname).src, Astro.site.href).href;
 if (Astro.props.frontmatter.thumbnail) {
     thumbnailUrl = new URL(Astro.props.frontmatter.thumbnail.src, Astro.site.href).href;
 }
