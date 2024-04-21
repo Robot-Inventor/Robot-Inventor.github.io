@@ -29,7 +29,7 @@ export const GET: APIRoute = async ({ params }) => {
         });
     }
 
-    const cacheFilePath = `./public/og-cache/${post.slug}.png`;
+    const cacheFilePath = `./og-cache/${post.slug}.png`;
     if (fs.existsSync(cacheFilePath)) {
         const body = fs.readFileSync(cacheFilePath);
 
