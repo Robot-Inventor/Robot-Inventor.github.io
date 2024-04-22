@@ -1,6 +1,13 @@
 // ref: https://blog.70-10.net/posts/satori-og-image/
 import satori from "satori";
 import sharp from "sharp";
+import fs from "fs";
+
+const IMAGE_WIDTH = 1920;
+const IMAGE_HEIGHT = 1080;
+
+const logoText = fs.readFileSync("./public/logo.svg");
+const logoDataURL = `data:image/svg+xml;base64,${logoText.toString("base64")}`;
 
 export const getOgImage = async (text: string) => {
     const fontData = (await getFontData()) as ArrayBuffer;
@@ -42,7 +49,7 @@ export const getOgImage = async (text: string) => {
                     }}
                 >
                     <img
-                        src="https://roboin.io/logo.svg"
+                        src={logoDataURL}
                         style={{
                             margin: "auto",
                             marginTop: "75px",
@@ -68,8 +75,8 @@ export const getOgImage = async (text: string) => {
             </div>
         </main>,
         {
-            width: 1920,
-            height: 1080,
+            width: IMAGE_WIDTH,
+            height: IMAGE_HEIGHT,
             fonts: [
                 {
                     name: "Noto Sans JP",
