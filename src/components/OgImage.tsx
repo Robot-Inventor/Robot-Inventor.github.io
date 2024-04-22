@@ -6,8 +6,8 @@ import fs from "fs";
 const IMAGE_WIDTH = 1920;
 const IMAGE_HEIGHT = 1080;
 
-const logoText = fs.readFileSync("./public/logo.svg");
-const logoDataURL = `data:image/svg+xml;base64,${logoText.toString("base64")}`;
+const logoText = fs.readFileSync("./public/logo.png");
+const logoDataURL = `data:image/png;base64,${logoText.toString("base64")}`;
 
 export const getOgImage = async (text: string) => {
     const fontData = (await getFontData()) as ArrayBuffer;
