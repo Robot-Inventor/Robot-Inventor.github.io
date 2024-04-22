@@ -55,6 +55,7 @@ export const getOgImage = async (text: string) => {
                             marginTop: "75px",
                             width: "300px"
                         }}
+                        width={300}
                     />
                 </div>
                 <h1
