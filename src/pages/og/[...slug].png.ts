@@ -41,42 +41,28 @@ export const GET: APIRoute = async ({ params }) => {
     const titleEdited = cacheExists
         ? JSON.parse(fs.readFileSync(cachedDataPath).toString()).title !== post.data.title
         : true;
-    // if (cacheExists && !titleEdited) {
-    //     const body = fs.readFileSync(cachedImagePath);
+    if (cacheExists && !titleEdited) {
+        const body = fs.readFileSync(cachedImagePath);
 
-    //     return new Response(body, {
-    //         headers: {
-    //             "Content-Type": "image/png"
-    //         }
-    //     });
-    // } else {
-    //     const body = await getOgImage(post.data.title);
+        return new Response(body, {
+            headers: {
+                "Content-Type": "image/png"
+            }
+        });
+    } else {
+        const body = await getOgImage(post.data.title);
 
-    //     if (!fs.existsSync(path.dirname(cachedImagePath))) {
-    //         fs.mkdirSync(path.dirname(cachedImagePath), { recursive: true });
-    //     }
-
-    //     fs.writeFileSync(cachedImagePath, body);
-    //     fs.writeFileSync(cachedDataPath, JSON.stringify({ title: post.data.title }));
-
-    //     return new Response(body, {
-    //         headers: {
-    //             "Content-Type": "image/png"
-    //         }
-    //     });
-    // }
-    const body = await getOgImage(post.data.title);
-
-    if (!fs.existsSync(path.dirname(cachedImagePath))) {
-        fs.mkdirSync(path.dirname(cachedImagePath), { recursive: true });
-    }
-
-    fs.writeFileSync(cachedImagePath, body);
-    fs.writeFileSync(cachedDataPath, JSON.stringify({ title: post.data.title }));
-
-    return new Response(body, {
-        headers: {
-            "Content-Type": "image/png"
+        if (!fs.existsSync(path.dirname(cachedImagePath))) {
+            fs.mkdirSync(path.dirname(cachedImagePath), { recursive: true });
         }
-    });
+
+        fs.writeFileSync(cachedImagePath, body);
+        fs.writeFileSync(cachedDataPath, JSON.stringify({ title: post.data.title }));
+
+        return new Response(body, {
+            headers: {
+                "Content-Type": "image/png"
+            }
+        });
+    }
 };
