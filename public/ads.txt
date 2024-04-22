@@ -1,1 +1,107 @@
 google.com, pub-2526648882773973, DIRECT, f08c47fec0942fa0
+ad-generation.jp, 12474, RESELLER, 7f4ea9029ac04e53
+admanmedia.com, 726, RESELLER
+aps.amazon.com, c06cc614-f284-4373-8e7b-e334e4dcb9d3, DIRECT
+appnexus.com, 1908, RESELLER, f5ab79cb980f11d1
+districtm.io, 100962, RESELLER, 3fd707be9c4527c3
+gumgum.com, 14141, RESELLER, ffdef49475d318a9
+indexexchange.com, 192410, RESELLER, 50b1c356f2c5c8fc
+adtech.com, 12068, RESELLER, e1a5b5b6e3255540
+openx.com, 540191398, RESELLER, 6a698e2ec38604c6
+pubmatic.com, 157150, RESELLER, 5d62403b186f2ace
+pubmatic.com, 160006, RESELLER, 5d62403b186f2ace
+pubmatic.com, 160096, RESELLER, 5d62403b186f2ace
+rhythmone.com, 1654642120, RESELLER, a670c89d4a324e47
+rubiconproject.com, 18020, RESELLER, 0bfd66d529a55807
+smaato.com, 1100044650, RESELLER, 07bcf65f187117b4
+appnexus.com, 3663, RESELLER, f5ab79cb980f11d1
+yahoo.com, 55029, RESELLER, e1a5b5b6e3255540
+sharethrough.com, 7144eb80, RESELLER
+yieldmo.com, 2719019867620450718, RESELLER
+appnexus.com, 1356, RESELLER, f5ab79cb980f11d1
+contextweb.com, 562541, RESELLER, 89ff185a4c4e857c
+emxdgt.com, 2009, RESELLER, 1e1d41537f7cad7f
+smartadserver.com, 4125, RESELLER, 060d053dcf45cbf3
+themediagrid.com, jtqkmp, RESELLER, 35d5010d7789b49d
+yahoo.com, 59029, RESELLER, e1a5b5b6e3255540
+adagio.io, 1044, DIRECT
+improvedigital.com, 1790, RESELLER
+indexexchange.com, 194558, RESELLER
+onetag.com, 6b859b96c564fbe, RESELLER
+pubmatic.com, 159110, RESELLER, 5d62403b186f2ace
+pubwise.io, 68867843, RESELLER, c327c91a93a7cdd3
+rubiconproject.com, 19116, RESELLER, 0bfd66d529a55807
+ad-generation.jp, 12338, RESELLER
+adtdp.com, 2306, RESELLER
+aja.vision, 2306, RESELLER
+as.amanad.adtdp.com, 2306, RESELLER
+criteo.com, B-060299, DIRECT, 9fac4a4a87c2a44f
+themediagrid.com, KJA93L, DIRECT, 35d5010d7789b49d
+adingo.jp, 23903, RESELLER
+appnexus.com, 7044, RESELLER
+openx.com, 540679900, RESELLER, 6a698e2ec38604c6
+pubmatic.com, 156313, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 15794, RESELLER, 0bfd66d529a55807
+gmossp-sp.jp, 2002122, RESELLER
+gumgum.com, 14078, RESELLER, ffdef49475d318a9
+openx.com, 537149485, RESELLER, 6a698e2ec38604c6
+indexexchange.com, 192348, RESELLER
+criteo.com, B-062736, RESELLER, 9fac4a4a87c2a44f
+gammassp.com, 1621480685, RESELLER, 31ac53fec2772a83
+microad.co.jp, 21965, RESELLER
+pubmatic.com, 158212, RESELLER, 5d62403b186f2ace
+pubmatic.com, 157492, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 23540, RESELLER, 0bfd66d529a55807
+pubmatic.com, 158977, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 20510, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 20512, RESELLER, 0bfd66d529a55807
+appnexus.com, 11664, RESELLER
+appnexus.com, 1868, RESELLER
+contextweb.com, 558299, RESELLER, 89ff185a4c4e857c
+EMXDGT.com, 273, RESELLER, 1e1d41537f7cad7f
+impact-ad.jp, 4315, RESELLER
+indexexchange.com, 184110, RESELLER, 50b1c356f2c5c8fc
+indexexchange.com, 184626, RESELLER, 50b1c356f2c5c8fc
+rubiconproject.com, 17250, RESELLER, 0bfd66d529a55807
+xad.com, 240, RESELLER, 81cbf0a75a5e0e9a
+yahoo.com, 58340, RESELLER, e1a5b5b6e3255540
+indexexchange.com, 175407, RESELLER, 50b1c356f2c5c8fc
+openx.com, 537143344, RESELLER, 6a698e2ec38604c6
+pubmatic.com, 156107, RESELLER, 5d62403b186f2ace
+pubmatic.com, 156971, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 18222, RESELLER, 0bfd66d529a55807
+appnexus.com, 3663, RESELLER
+impact-ad.jp, 4391, RESELLER
+google.com, pub-2067800044730756, RESELLER, f08c47fec0942fa0
+i-mobile.co.jp,82103, DIRECT
+criteo.com, B-061220, DIRECT, 9fac4a4a87c2a44f
+themediagrid.com, Z6RUED, DIRECT, 35d5010d7789b49d
+publishers.logicad.jp, nLZO, DIRECT
+relaido.jp, 1439, DIRECT
+ad-generation.jp, 12558, RESELLER, 7f4ea9029ac04e53
+adingo.jp, 23664, RESELLER
+pubmatic.com, 156313, RESELLER, 5d62403b186f2ace
+adcolony.com, 801e49d1be83b5f9, RESELLER, 1ad675c9de6b5176
+admixer.net, 3bc509b2-6568-4bd8-a997-9859ba0c9118, RESELLER
+pubmatic.com, 157962, RESELLER, 5d62403b186f2ace
+pubmatic.com, 158060, RESELLER, 5d62403b186f2ace
+pubmatic.com, 158853, RESELLER, 5d62403b186f2ace
+webeyemob.com, 70080, RESELLER
+indexexchange.com, 199650, RESELLER, 50b1c356f2c5c8fc
+pubmatic.com, 158338, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 21090, RESELLER, 0bfd66d529a55807
+impact-ad.jp, 4386, DIRECT
+impact-ad.jp, 4367, DIRECT
+pubmatic.com, 158466, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 21088, RESELLER, 0bfd66d529a55807
+yahoo.com, 58905, RESELLER, e1a5b5b6e3255540
+appnexus.com, 13099, RESELLER
+smartadserver.com, 4111, RESELLER
+33across.com, 0015a00002oUk4aAAC, RESELLER, bbea06d9c4d2853c
+yahoo.com, 57289, RESELLER, e1a5b5b6e3255540
+appnexus.com, 10239, RESELLER, f5ab79cb980f11d1
+rubiconproject.com, 16414, RESELLER, 0bfd66d529a55807
+richaudience.com, 1BTOoaD22a, RESELLER
+appnexus.com, 8233, RESELLER
+pubmatic.com, 81564, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 13510, RESELLER
