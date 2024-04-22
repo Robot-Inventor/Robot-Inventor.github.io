@@ -1,3 +1,4 @@
 [submodule "src/content/article"]
 	path = src/content/article
-	url = https://github.com/Robot-Inventor/blog-article.git
+	# Access to git repository via SSH https://stackoverflow.com/a/78291745
+	url = git@github.com:Robot-Inventor/blog-article.git
