@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "git submodule update && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "update-grammars": "node --loader ts-node/esm ./scripts/updateGrammars.ts"
