@@ -5,8 +5,8 @@
         "https://github.com/jeff-hykin/better-shell-syntax/",
         "https://github.com/github-linguist/linguist/"
     ],
-    "lastUpdated": "2024-04-15T04:12:36.131Z",
-    "shellGrammarVersion": "21748db7c7fd6ccd660c5bc770212836e58385ae",
+    "lastUpdated": "2024-04-22T00:50:01.287Z",
+    "shellGrammarVersion": "3d4b49d090d8253f35debdfaf59e17ea1a3e92af",
     "shellSessionGrammarVersion": "v7.29.0",
     "name": "shellsession",
     "scopeName": "text.shell-session",
@@ -121,7 +121,7 @@
         "argument_context": {
             "patterns": [
                 {
-                    "match": "(?:[ \\t]*+)((?:[^ \t\n'&;<>\\(\\)\\$`\\\\\"\\|]+)(?!>))",
+                    "match": "(?:[ \\t]*+)((?:[^ \t\n>&;<>\\(\\)\\$`\\\\\"'<\\|]+)(?!>))",
                     "captures": {
                         "1": {
                             "name": "string.unquoted.argument.shell",
@@ -322,7 +322,7 @@
             ]
         },
         "basic_command_name": {
-            "match": "(?:(?:(?!(?:!|&|\\||\\(|\\)|\\{|\\[|<|>|#|\\n|$|;|[ \\t]))(?!nocorrect |nocorrect\t|nocorrect$|readonly |readonly\t|readonly$|function |function\t|function$|foreach |foreach\t|foreach$|coproc |coproc\t|coproc$|logout |logout\t|logout$|export |export\t|export$|select |select\t|select$|repeat |repeat\t|repeat$|pushd |pushd\t|pushd$|until |until\t|until$|while |while\t|while$|local |local\t|local$|case |case\t|case$|done |done\t|done$|elif |elif\t|elif$|else |else\t|else$|esac |esac\t|esac$|popd |popd\t|popd$|then |then\t|then$|time |time\t|time$|for |for\t|for$|end |end\t|end$|fi |fi\t|fi$|do |do\t|do$|in |in\t|in$|if |if\t|if$))(?:((?<=^|;|&|[ \\t])(?:readonly|declare|typeset|export|local)(?=[ \\t]|;|&|$))|((?!\"|'|\\\\\\n?$)(?:[^!'\" \\t\\n\\r]+?)))(?:(?= |\\t)|(?:(?=;|\\||&|\\n|\\)|\\`|\\{|\\}|[ \\t]*#|\\])(?<!\\\\))))",
+            "match": "(?:(?:(?!(?:!|&|\\||\\(|\\)|\\{|\\[|<|>|#|\\n|$|;|[ \\t]))(?!nocorrect |nocorrect\t|nocorrect$|readonly |readonly\t|readonly$|function |function\t|function$|foreach |foreach\t|foreach$|coproc |coproc\t|coproc$|logout |logout\t|logout$|export |export\t|export$|select |select\t|select$|repeat |repeat\t|repeat$|pushd |pushd\t|pushd$|until |until\t|until$|while |while\t|while$|local |local\t|local$|case |case\t|case$|done |done\t|done$|elif |elif\t|elif$|else |else\t|else$|esac |esac\t|esac$|popd |popd\t|popd$|then |then\t|then$|time |time\t|time$|for |for\t|for$|end |end\t|end$|fi |fi\t|fi$|do |do\t|do$|in |in\t|in$|if |if\t|if$))(?:((?<=^|;|&|[ \\t])(?:readonly|declare|typeset|export|local)(?=[ \\t]|;|&|$))|((?!\"|'|\\\\\\n?$)(?:[^!'\"<> \\t\\n\\r]+?)))(?:(?= |\\t)|(?:(?=;|\\||&|\\n|\\)|\\`|\\{|\\}|[ \\t]*#|\\])(?<!\\\\))))",
             "captures": {
                 "1": {
                     "name": "storage.modifier.$1.shell"
@@ -461,10 +461,18 @@
                     "name": "keyword.operator.orvariable.language.special.or.shell keyword.operator.alternation.ruby.shell punctuation.definition.regex.alternation.shell punctuation.separator.regex.alternation.shell"
                 },
                 {
-                    "begin": "\\(",
+                    "match": "\\\\.",
+                    "name": "constant.character.escape.shell"
+                },
+                {
+                    "match": "(?<=\\tin| in| |\\t|;;)\\(",
+                    "name": "keyword.operator.pattern.case.shell"
+                },
+                {
+                    "begin": "(?<=\\S)(\\()",
                     "end": "\\)",
                     "beginCaptures": {
-                        "0": {
+                        "1": {
                             "name": "punctuation.definition.group.shell punctuation.definition.regex.group.shell"
                         }
                     },
@@ -512,7 +520,7 @@
         },
         "command_name_range": {
             "begin": "\\G",
-            "end": "(?= |\\t|;|\\||&|$|\\n|\\)|\\`)",
+            "end": "(?:(?= |\\t|;|\\||&|$|\\n|\\)|\\`)|(?=<))",
             "beginCaptures": {},
             "endCaptures": {},
             "name": "meta.statement.command.name.shell",
@@ -529,7 +537,7 @@
                     "include": "#variable"
                 },
                 {
-                    "match": "(?:(?<!\\w)(?<=\\G|'|\"|\\}|\\))([^ \\n\\t\\r\"'=;&\\|`\\)\\{]+))",
+                    "match": "(?:(?<!\\w)(?<=\\G|'|\"|\\}|\\))([^ \\n\\t\\r\"'=;&\\|`\\)\\{<>]+))",
                     "captures": {
                         "1": {
                             "name": "entity.name.function.call.shell entity.name.command.shell"
@@ -590,6 +598,9 @@
                 },
                 {
                     "include": "#string"
+                },
+                {
+                    "include": "#heredoc"
                 }
             ]
         },
@@ -893,7 +904,7 @@
                     },
                     "endCaptures": {
                         "0": {
-                            "name": "punctuation.definition.string.heredoc.delimiter.shell"
+                            "name": "punctuation.definition.string.heredoc.$0.shell"
                         }
                     },
                     "contentName": "string.quoted.heredoc.indent.$3",
@@ -1526,6 +1537,30 @@
                 }
             ]
         },
+        "math_operators": {
+            "patterns": [
+                {
+                    "match": "\\+{1,2}|-{1,2}|!|~|\\*{1,2}|/|%|<[<=]?|>[>=]?|==|!=|^|\\|{1,2}|&{1,2}|\\?|\\:|,|=|[*/%+\\-&^|]=|<<=|>>=",
+                    "name": "keyword.operator.arithmetic.shell"
+                },
+                {
+                    "match": "0[xX][0-9A-Fa-f]+",
+                    "name": "constant.numeric.hex.shell"
+                },
+                {
+                    "match": "0\\d+",
+                    "name": "constant.numeric.octal.shell"
+                },
+                {
+                    "match": "\\d{1,2}#[0-9a-zA-Z@_]+",
+                    "name": "constant.numeric.other.shell"
+                },
+                {
+                    "match": "\\d+",
+                    "name": "constant.numeric.integer.shell"
+                }
+            ]
+        },
         "misc_ranges": {
             "patterns": [
                 {
@@ -1938,7 +1973,7 @@
             ]
         },
         "redirect_fix": {
-            "match": "(?:(>>?)(?:[ \\t]*+)([^ \t\n'&;<>\\(\\)\\$`\\\\\"\\|]+))",
+            "match": "(?:(>>?)(?:[ \\t]*+)([^ \t\n>&;<>\\(\\)\\$`\\\\\"'<\\|]+))",
             "captures": {
                 "1": {
                     "name": "keyword.operator.redirect.shell"
@@ -2022,7 +2057,7 @@
             }
         },
         "simple_unquoted": {
-            "match": "[^ \\t\\n'&;<>\\(\\)\\$`\\\\\"\\|]",
+            "match": "[^ \\t\\n>&;<>\\(\\)\\$`\\\\\"'<\\|]",
             "name": "string.unquoted.shell"
         },
         "special_expansion": {
@@ -2162,6 +2197,9 @@
                     "include": "#for_statement"
                 },
                 {
+                    "include": "#while_statement"
+                },
+                {
                     "include": "#function_definition"
                 },
                 {
@@ -2299,6 +2337,41 @@
                             "name": "variable.other.normal.shell"
                         }
                     }
+                }
+            ]
+        },
+        "while_statement": {
+            "patterns": [
+                {
+                    "begin": "(\\bwhile\\b)",
+                    "end": "(?=;|\\||&|\\n|\\)|\\`|\\{|\\}|[ \\t]*#|\\])(?<!\\\\)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.while.shell"
+                        }
+                    },
+                    "endCaptures": {},
+                    "name": "meta.while.shell",
+                    "patterns": [
+                        {
+                            "include": "#line_continuation"
+                        },
+                        {
+                            "include": "#math_operators"
+                        },
+                        {
+                            "include": "#option"
+                        },
+                        {
+                            "include": "#simple_unquoted"
+                        },
+                        {
+                            "include": "#normal_context"
+                        },
+                        {
+                            "include": "#string"
+                        }
+                    ]
                 }
             ]
         }
