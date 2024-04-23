@@ -32,7 +32,7 @@ export const getOgImage = async (text: string) => {
                     background: "rgb(255, 255, 255, 0.9)",
                     display: "flex",
                     flexDirection: "column",
-                    borderRadius: "10px",
+                    borderRadius: "30px",
                     boxShadow: `
           0.8px 0.8px 4.4px rgba(0, 0, 0, 0.02),
           2px 2px 10.5px rgba(0, 0, 0, 0.028),
