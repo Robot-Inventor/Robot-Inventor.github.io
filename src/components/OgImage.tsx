@@ -3,6 +3,8 @@ import satori from "satori";
 import sharp from "sharp";
 import fs from "fs";
 
+export const OG_IMAGE_COMPONENT_VERSION = "1.0.1";
+
 const IMAGE_WIDTH = 1920;
 const IMAGE_HEIGHT = 1080;
 

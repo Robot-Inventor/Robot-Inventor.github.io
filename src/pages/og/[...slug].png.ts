@@ -1,8 +1,13 @@
 import type { APIRoute } from "astro";
 import { getCollection, getEntryBySlug } from "astro:content";
-import { getOgImage } from "../../components/OgImage";
+import { getOgImage, OG_IMAGE_COMPONENT_VERSION } from "../../components/OgImage";
 import fs from "fs";
 import path from "path";
+
+interface CacheData {
+    title: string;
+    componentVersion: string;
+}
 
 const posts = await getCollection("article", (post) => {
     return !post.data.thumbnail;
@@ -38,10 +43,15 @@ export const GET: APIRoute = async ({ params }) => {
     const cachedImagePath = `./node_modules/.astro/og-cache/${post.slug}.png`;
     const cachedDataPath = `./node_modules/.astro/og-cache/${post.slug}.json`;
     const cacheExists = fs.existsSync(cachedImagePath) && fs.existsSync(cachedDataPath);
-    const titleEdited = cacheExists
-        ? JSON.parse(fs.readFileSync(cachedDataPath).toString()).title !== post.data.title
-        : true;
-    if (cacheExists && !titleEdited) {
+
+    let titleEdited = true;
+    let componentVersionEdited = true;
+    if (cacheExists) {
+        const cachedData = JSON.parse(fs.readFileSync(cachedDataPath).toString());
+        titleEdited = cachedData.title !== post.data.title;
+        componentVersionEdited = cachedData.componentVersion !== OG_IMAGE_COMPONENT_VERSION;
+    }
+    if (cacheExists && !titleEdited && !componentVersionEdited) {
         const body = fs.readFileSync(cachedImagePath);
 
         return new Response(body, {
@@ -56,8 +66,13 @@ export const GET: APIRoute = async ({ params }) => {
             fs.mkdirSync(path.dirname(cachedImagePath), { recursive: true });
         }
 
+        const cacheData: CacheData = {
+            title: post.data.title,
+            componentVersion: OG_IMAGE_COMPONENT_VERSION
+        };
+
         fs.writeFileSync(cachedImagePath, body);
-        fs.writeFileSync(cachedDataPath, JSON.stringify({ title: post.data.title }));
+        fs.writeFileSync(cachedDataPath, JSON.stringify(cacheData));
 
         return new Response(body, {
             headers: {
