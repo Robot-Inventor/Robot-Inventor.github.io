@@ -29,7 +29,7 @@ export const GET = async () => {
                         url: post.data.thumbnail
                             ? post.data.thumbnail.src
                             : new URL(defaultThumbnail.src, import.meta.env.SITE).href,
-                        type: post.data.thumbnail ? post.data.thumbnail.format : defaultThumbnail.format,
+                        type: post.data.thumbnail ? getMimeType(post.data.thumbnail.format) : getMimeType(defaultThumbnail.format),
                         length: 0
                     }
                 };
