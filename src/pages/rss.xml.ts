@@ -1,13 +1,10 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { getDefaultThumbnail } from "src/utils/getDefaultThumbnailPath";
+import mime from "mime";
 
 const getMimeType = (extension) => {
-    if (extension === "jpg") {
-        return "image/jpeg";
-    }
-
-    return `image/${extension}`;
+    return mime.getType(extension) || "";
 };
 
 export const GET = async () => {
@@ -29,7 +26,9 @@ export const GET = async () => {
                         url: post.data.thumbnail
                             ? post.data.thumbnail.src
                             : new URL(defaultThumbnail.src, import.meta.env.SITE).href,
-                        type: post.data.thumbnail ? getMimeType(post.data.thumbnail.format) : getMimeType(defaultThumbnail.format),
+                        type: post.data.thumbnail
+                            ? getMimeType(post.data.thumbnail.format)
+                            : getMimeType(defaultThumbnail.format),
                         length: 0
                     }
                 };
