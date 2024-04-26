@@ -25,7 +25,7 @@
         --secondary-background-color: #2a2a2a;
         --base-background-color: #191919;
         --base-text-color: #fff;
-        --theme-color: #567c9d;
+        --theme-color: #87b7e1;
         --middle-emphasis-color: rgb(255, 255, 255, 0.6);
         --low-emphasis-color: rgb(255, 255, 255, 0.6);
 
@@ -202,6 +202,7 @@ main {
 
 .toc a {
     text-decoration: none;
+    color: inherit;
 }
 
 .toc nav > ul {
@@ -229,7 +230,7 @@ main {
 .toc li::before {
     width: 0.1rem;
     height: calc(100% + var(--toc-li-margin) * 2);
-    background: #78b9d9;
+    background: var(--theme-color);
     left: -0.75rem;
 }
 
@@ -266,7 +267,7 @@ main {
     height: 0.6rem;
     border-radius: 0.6rem;
     background: var(--base-background-color);
-    border: solid 0.1rem #78b9d9;
+    border: solid 0.1rem var(--theme-color);
     top: 50%;
     left: -1.1rem;
     transform: translateY(-50%);
@@ -274,7 +275,7 @@ main {
 }
 
 .toc li:hover:after {
-    background: #78b9d9;
+    background: var(--theme-color);
 }
 
 .toc ul {
@@ -341,7 +342,7 @@ main > article {
 }
 
 main > article a {
-    color: inherit;
+    color: var(--theme-color);
 }
 
 main > article a:hover {
