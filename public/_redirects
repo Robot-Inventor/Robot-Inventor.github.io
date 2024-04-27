@@ -1,2 +1,2 @@
-/shadowban-scanner/ https://shadowban-scanner.roboin.io/ 301
-/shadowban-scanner/en/ https://shadowban-scanner.roboin.io/en/ 301
+/shadowban-scanner https://shadowban-scanner.roboin.io/ 301
+/shadowban-scanner/* https://shadowban-scanner.roboin.io/:splat 301
