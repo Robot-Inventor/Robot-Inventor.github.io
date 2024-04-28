@@ -94,11 +94,15 @@ export default defineConfig({
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>`.trim(),
-                    shouldInsertAd: (vfile, previousNode) => {
+                    shouldInsertAd: (vfile, previousNode, _, ancestors) => {
                         const adsSettings =
                             // @ts-expect-error
                             vfile.data.astro.frontmatter && vfile.data.astro.frontmatter.showAds !== false;
                         if (!adsSettings) return false;
+
+                        // MDXのコンポーネント内には広告を挿入しない
+                        // @ts-expect-error
+                        if (ancestors.some((node) => node.type === "mdxJsxFlowElement")) return false;
 
                         /**
                          * ひとつ前の要素に「次の」「こちらの」というテキストが含まれている場合は広告を挿入しない。
