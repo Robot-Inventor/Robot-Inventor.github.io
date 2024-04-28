@@ -94,18 +94,21 @@ export default defineConfig({
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>`.trim(),
-                    shouldInsertAd: (vfile, previousNode, nextNode, ancestors) => {
+                    shouldInsertAd: (vfile, previousNode) => {
                         const adsSettings =
                             // @ts-expect-error
                             vfile.data.astro.frontmatter && vfile.data.astro.frontmatter.showAds !== false;
                         if (!adsSettings) return false;
 
                         /**
-                         * ひとつ前の要素に「次の」というテキストが含まれている場合は広告を挿入しない。
-                         * たとえば、「次の記事で解説しています」「次のような機能があります」というテキストの直後に
-                         * 広告が挿入されていると、読者にとって広告が記事の内容と混ざってしまうため。
+                         * ひとつ前の要素に「次の」「こちらの」というテキストが含まれている場合は広告を挿入しない。
+                         * たとえば、「こちらの記事で解説しています」「次のような機能があります」というテキストの直後に
+                         * 広告が挿入されていると、読者を混乱させる可能性があるため。
                          */
-                        return !(isElement(previousNode, "p") && toString(previousNode).includes("次の"));
+                        return !(
+                            isElement(previousNode, "p") &&
+                            ["次の", "こちらの"].some((text) => toString(previousNode).includes(text))
+                        );
                     }
                 } satisfies Parameters<typeof rehypeAutoAds>[0]
             ],
