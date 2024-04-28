@@ -183,6 +183,11 @@ main {
     margin: 0.75rem 0 2.5rem 0;
 }
 
+#article_tags a {
+    color: var(--base-text-color);
+    text-decoration: none;
+}
+
 .toc {
     padding: 1rem 0;
     margin: 2rem 0;
