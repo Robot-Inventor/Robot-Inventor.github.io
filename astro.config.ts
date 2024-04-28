@@ -14,6 +14,8 @@ import lightModernTheme from "./src/themes/light-modern.json";
 import rehypeImageCaption from "rehype-image-caption";
 import remarkBreaks from "remark-breaks";
 import react from "@astrojs/react";
+import { isElement } from "hast-util-is-element";
+import { toString } from "hast-util-to-string";
 
 const topPageURL = "https://roboin.io";
 
@@ -92,9 +94,18 @@ export default defineConfig({
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>`.trim(),
-                    shouldInsertAd: (vfile) => {
-                        // @ts-expect-error
-                        return vfile.data.astro.frontmatter && vfile.data.astro.frontmatter.showAds !== false;
+                    shouldInsertAd: (vfile, previousNode, nextNode, ancestors) => {
+                        const adsSettings =
+                            // @ts-expect-error
+                            vfile.data.astro.frontmatter && vfile.data.astro.frontmatter.showAds !== false;
+                        if (!adsSettings) return false;
+
+                        /**
+                         * ひとつ前の要素に「次の」というテキストが含まれている場合は広告を挿入しない。
+                         * たとえば、「次の記事で解説しています」「次のような機能があります」というテキストの直後に
+                         * 広告が挿入されていると、読者にとって広告が記事の内容と混ざってしまうため。
+                         */
+                        return !(isElement(previousNode, "p") && toString(previousNode).includes("次の"));
                     }
                 } satisfies Parameters<typeof rehypeAutoAds>[0]
             ],
