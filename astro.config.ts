@@ -14,13 +14,16 @@ import lightModernTheme from "./src/themes/light-modern.json";
 import rehypeImageCaption from "rehype-image-caption";
 import remarkBreaks from "remark-breaks";
 import react from "@astrojs/react";
+
 const topPageURL = "https://roboin.io";
+
 pluginFramesTexts.overrideTexts("ja", {
-  copyButtonTooltip: "クリップボードにコピーする",
-  copyButtonCopied: "コピーしました！"
+    copyButtonTooltip: "クリップボードにコピーする",
+    copyButtonCopied: "コピーしました！"
 });
-const tocTemplate = html => {
-  return `
+
+const tocTemplate = (html) => {
+    return `
 <aside class="toc">
     <h2>目次</h2>
     <nav>
@@ -30,41 +33,56 @@ const tocTemplate = html => {
 </aside>`.trim();
 };
 
-
 // https://astro.build/config
 export default defineConfig({
-  site: topPageURL,
-  integrations: [sitemap({
-    filter: page => !page.startsWith(new URL("/tag/", topPageURL).href)
-  }), astroExpressiveCode({
-    themes: [darkModernTheme, lightModernTheme],
-    defaultLocale: "ja",
-    plugins: [pluginLineNumbers()],
-    defaultProps: {
-      overridesByLang: {
-        "shell,sh,bash,powershell,console,shellsession,ansi": {
-          showLineNumbers: false
-        }
-      }
-    },
-    shiki: {
-      // @ts-expect-error
-      langs: [regexGrammar, shellSessionGrammar]
-    }
-  }), customToc({
-    template: tocTemplate
-  }), mdx(), react()],
-  markdown: {
-    shikiConfig: {
-      theme: "dark-plus"
-    },
-    remarkPlugins: [...starlightAsides(), [rlc, {
-      cache: true,
-      shortenUrl: true
-    }], remarkBreaks],
-    rehypePlugins: [[rehypeAutoAds, ({
-      countFrom: 2,
-      adCode: `
+    site: topPageURL,
+    integrations: [
+        sitemap({
+            filter: (page) => !page.startsWith(new URL("/tag/", topPageURL).href)
+        }),
+        astroExpressiveCode({
+            themes: [darkModernTheme, lightModernTheme],
+            defaultLocale: "ja",
+            plugins: [pluginLineNumbers()],
+            defaultProps: {
+                overridesByLang: {
+                    "shell,sh,bash,powershell,console,shellsession,ansi": {
+                        showLineNumbers: false
+                    }
+                }
+            },
+            shiki: {
+                // @ts-expect-error
+                langs: [regexGrammar, shellSessionGrammar]
+            }
+        }),
+        customToc({
+            template: tocTemplate
+        }),
+        mdx(),
+        react()
+    ],
+    markdown: {
+        shikiConfig: {
+            theme: "dark-plus"
+        },
+        remarkPlugins: [
+            ...starlightAsides(),
+            [
+                rlc,
+                {
+                    cache: true,
+                    shortenUrl: true
+                }
+            ],
+            remarkBreaks
+        ],
+        rehypePlugins: [
+            [
+                rehypeAutoAds,
+                {
+                    countFrom: 2,
+                    adCode: `
 <ins class="adsbygoogle"
     style="display:block"
     data-ad-client="ca-pub-2526648882773973"
@@ -73,7 +91,14 @@ export default defineConfig({
     data-full-width-responsive="false"></ins>
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>`.trim()
-    } satisfies Parameters<typeof rehypeAutoAds>[0])], rehypeImageCaption]
-  }
+</script>`.trim(),
+                    shouldInsertAd: (vfile) => {
+                        // @ts-expect-error
+                        return vfile.data.astro.frontmatter && vfile.data.astro.frontmatter.showAds !== false;
+                    }
+                } satisfies Parameters<typeof rehypeAutoAds>[0]
+            ],
+            rehypeImageCaption
+        ]
+    }
 });

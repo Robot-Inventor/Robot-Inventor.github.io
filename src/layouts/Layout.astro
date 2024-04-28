@@ -31,6 +31,7 @@ interface Props {
         }>;
         showRecommendedArticles: boolean;
         showToc: boolean;
+        showAds: boolean;
     };
 }
 
@@ -334,11 +335,16 @@ const latestArticlesData = await getLatestArticlesData();
         <script type="application/ld+json" set:html={schema} />
         <!-- Google tag (gtag.js) -->
         <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-7HZY93W2BY"></script>
-        <script
-            is:inline
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2526648882773973"
-            crossorigin="anonymous"></script>
+        {
+            Astro.props.frontmatter.showAds && (
+                <script
+                    is:inline
+                    async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2526648882773973"
+                    crossorigin="anonymous"
+                />
+            )
+        }
         <script is:inline>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
