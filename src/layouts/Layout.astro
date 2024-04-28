@@ -10,29 +10,7 @@ import { Image, Picture, getImage } from "astro:assets";
 import { getDefaultThumbnail } from "src/utils/getDefaultThumbnailPath";
 
 interface Props {
-    frontmatter: {
-        title: string;
-        description: string;
-        author:
-            | string
-            | {
-                  id: string;
-                  collection: string;
-              };
-        showAuthor: boolean;
-        pubDate: string;
-        modifiedDate?: string;
-        showDate?: boolean;
-        thumbnail?: ImageMetadata;
-        showThumbnail: boolean;
-        tags?: Array<{
-            id: string;
-            collection: string;
-        }>;
-        showRecommendedArticles: boolean;
-        showToc: boolean;
-        showAds: boolean;
-    };
+    frontmatter: CollectionEntry<"article">["data"];
 }
 
 if (!Astro.site) throw new Error("site is not defined");

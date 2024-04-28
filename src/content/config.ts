@@ -6,17 +6,17 @@ const articleCollection = defineCollection({
         z.object({
             title: z.string(),
             author: reference("author"),
-            showAuthor: z.boolean().default(true),
+            showAuthor: z.boolean().optional().default(true),
             description: z.string(),
-            showDate: z.boolean().default(true),
+            showDate: z.boolean().optional().default(true),
             pubDate: z.string().datetime({ offset: true }),
             modifiedDate: z.string().datetime({ offset: true }).optional(),
             thumbnail: image().optional(),
-            showThumbnail: z.boolean().default(true),
+            showThumbnail: z.boolean().optional().default(true),
             tags: z.array(reference("tag")).optional(),
-            showRecommendedArticles: z.boolean().default(true),
-            showToc: z.boolean().default(false),
-            showAds: z.boolean().default(true)
+            showRecommendedArticles: z.boolean().optional().default(true),
+            showToc: z.boolean().optional().default(false),
+            showAds: z.boolean().optional().default(true)
         })
 });
 
