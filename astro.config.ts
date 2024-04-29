@@ -7,8 +7,8 @@ import { starlightAsides } from "./src/starlight/integrations/asides";
 import rlc from "remark-enhanced-link-card";
 import customToc from "astro-custom-toc";
 import rehypeAutoAds from "rehype-auto-ads";
-import regexGrammar from "./src/syntaxes/regex.tmLanguage.json";
-import shellSessionGrammar from "./src/syntaxes/shell-session.tmLanguage.json";
+import regexGrammar from "@robot-inventor/regex-syntax";
+import shellSessionGrammar from "@robot-inventor/shell-session-syntax";
 import darkModernTheme from "./src/themes/dark-modern.json";
 import lightModernTheme from "./src/themes/light-modern.json";
 import rehypeImageCaption from "rehype-image-caption";
@@ -54,7 +54,6 @@ export default defineConfig({
                 }
             },
             shiki: {
-                // @ts-expect-error
                 langs: [regexGrammar, shellSessionGrammar]
             }
         }),
