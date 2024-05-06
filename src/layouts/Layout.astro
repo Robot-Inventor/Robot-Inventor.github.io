@@ -535,48 +535,20 @@ const latestArticlesData = await getLatestArticlesData();
                     </address>
                 )
             }
-            <ins
-                class="adsbygoogle"
-                style="display:block; text-align:center;"
-                data-ad-layout="in-article"
-                data-ad-format="fluid"
-                data-ad-client="ca-pub-2526648882773973"
-                data-ad-slot="7632993109"></ins>
             {
                 Astro.props.frontmatter.showRecommendedArticles && (
                     <>
-                        <section class="recommended_articles_section">
+                        <section class="recommended_articles_section" id="related_articles_section">
+                            <ins
+                                class="adsbygoogle"
+                                style="display:block"
+                                data-ad-client="ca-pub-2526648882773973"
+                                data-ad-slot="5941904776"
+                                data-ad-format="auto"
+                                data-full-width-responsive="false"
+                            />
+                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                             <h2>関連記事</h2>
-                            <script
-                                is:inline
-                                async
-                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2526648882773973"
-                                crossorigin="anonymous"
-                            />
-                            <ins
-                                class="adsbygoogle"
-                                style="display:block"
-                                data-ad-format="fluid"
-                                data-ad-layout-key="-gc+3r+68-9q-29"
-                                data-ad-client="ca-pub-2526648882773973"
-                                data-ad-slot="4887009254"
-                            />
-                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                            <script
-                                is:inline
-                                async
-                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2526648882773973"
-                                crossorigin="anonymous"
-                            />
-                            <ins
-                                class="adsbygoogle"
-                                style="display:block"
-                                data-ad-format="fluid"
-                                data-ad-layout-key="-gc+3r+68-9q-29"
-                                data-ad-client="ca-pub-2526648882773973"
-                                data-ad-slot="4887009254"
-                            />
-                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                             <div class="recommended_articles">
                                 {relatedArticlesData.map((data) => {
                                     return (
@@ -595,15 +567,18 @@ const latestArticlesData = await getLatestArticlesData();
                                     );
                                 })}
                             </div>
+                            <ins
+                                class="adsbygoogle"
+                                style="display:block"
+                                data-ad-client="ca-pub-2526648882773973"
+                                data-ad-slot="5941904776"
+                                data-ad-format="auto"
+                                data-full-width-responsive="false"
+                            />
+                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                         </section>
                         <section class="recommended_articles_section">
                             <h2>最新記事</h2>
-                            <script
-                                is:inline
-                                async
-                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2526648882773973"
-                                crossorigin="anonymous"
-                            />
                             <ins
                                 class="adsbygoogle"
                                 style="display:block"
@@ -613,12 +588,6 @@ const latestArticlesData = await getLatestArticlesData();
                                 data-ad-slot="4887009254"
                             />
                             <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                            <script
-                                is:inline
-                                async
-                                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2526648882773973"
-                                crossorigin="anonymous"
-                            />
                             <ins
                                 class="adsbygoogle"
                                 style="display:block"
