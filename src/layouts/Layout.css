@@ -175,7 +175,7 @@ main > * {
 }
 
 #top_ad_mobile {
-    height: calc(100px + 2rem);
+    height: 100px;
     margin: 1rem 0;
 }
 
