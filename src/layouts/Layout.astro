@@ -551,22 +551,18 @@ const latestArticlesData = await getLatestArticlesData();
                 </script>
             </div>
             {
-                // ↓記事の末尾に表示する広告
-            }
-            <ins
-                class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-2526648882773973"
-                data-ad-slot="5941904776"
-                data-ad-format="horizontal, rectangle"
-                data-full-width-responsive="false"></ins>
-            <script is:inline>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            {
                 Astro.props.frontmatter.showRecommendedArticles && (
                     <>
                         <section class="recommended_articles_section" id="related_articles_section">
+                            <ins
+                                class="adsbygoogle"
+                                style="display:block"
+                                data-ad-client="ca-pub-2526648882773973"
+                                data-ad-slot="5941904776"
+                                data-ad-format="horizontal, rectangle"
+                                data-full-width-responsive="false"
+                            />
+                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                             <h2>関連記事</h2>
                             <div class="recommended_articles">
                                 {relatedArticlesData.map((data) => {
