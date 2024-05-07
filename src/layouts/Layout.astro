@@ -560,11 +560,13 @@ const latestArticlesData = await getLatestArticlesData();
                 data-ad-slot="5941904776"
                 data-ad-format="horizontal, rectangle"
                 data-full-width-responsive="false"></ins>
+            <script is:inline>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
             {
                 Astro.props.frontmatter.showRecommendedArticles && (
                     <>
                         <section class="recommended_articles_section" id="related_articles_section">
-                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                             <h2>関連記事</h2>
                             <div class="recommended_articles">
                                 {relatedArticlesData.map((data) => {
@@ -605,15 +607,6 @@ const latestArticlesData = await getLatestArticlesData();
                                 data-ad-slot="4887009254"
                             />
                             <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                            <ins
-                                class="adsbygoogle"
-                                style="display:block"
-                                data-ad-format="fluid"
-                                data-ad-layout-key="-gc+3r+68-9q-29"
-                                data-ad-client="ca-pub-2526648882773973"
-                                data-ad-slot="4887009254"
-                            />
-                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                             <div class="recommended_articles">
                                 {latestArticlesData.map((data) => {
                                     return (
@@ -632,6 +625,15 @@ const latestArticlesData = await getLatestArticlesData();
                                     );
                                 })}
                             </div>
+                            <ins
+                                class="adsbygoogle"
+                                style="display:block"
+                                data-ad-format="fluid"
+                                data-ad-layout-key="-gc+3r+68-9q-29"
+                                data-ad-client="ca-pub-2526648882773973"
+                                data-ad-slot="4887009254"
+                            />
+                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                         </section>
                     </>
                 )
