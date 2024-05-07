@@ -175,15 +175,13 @@ main > * {
 }
 
 #top_ad_mobile {
-    min-height: calc(100px + 2rem);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: calc(100px + 2rem);
+    margin: 1rem 0;
 }
 
 #top_ad_mobile .adsbygoogle {
     display: block;
-    margin: 1rem 0;
+    margin: auto 0;
     max-height: 100px;
 }
 
