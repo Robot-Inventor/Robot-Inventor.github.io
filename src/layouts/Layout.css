@@ -174,10 +174,21 @@ main > * {
     grid-column: 2 / 3;
 }
 
+#top_ad_mobile {
+    min-height: calc(100px + 2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #top_ad_mobile .adsbygoogle {
     display: block;
     margin: 1rem 0;
     max-height: 100px;
+}
+
+#top_ad_mobile .adsbygoogle::before {
+    content: "";
 }
 
 #top_ad_desktop {
