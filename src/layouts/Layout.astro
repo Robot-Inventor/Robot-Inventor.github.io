@@ -401,19 +401,20 @@ const latestArticlesData = await getLatestArticlesData();
         <main>
             <article>
                 {
-                    // ↓記事のトップに表示する広告。スマホ専用
+                    Astro.props.frontmatter.showAds && (
+                        // ↓記事のトップに表示する広告。スマホ専用
+                        <div id="top_ad_mobile">
+                            <ins
+                                class="adsbygoogle"
+                                data-ad-client="ca-pub-2526648882773973"
+                                data-ad-slot="1835222588"
+                                data-ad-format="horizontal"
+                                data-full-width-responsive="false"
+                            />
+                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        </div>
+                    )
                 }
-                <div id="top_ad_mobile">
-                    <ins
-                        class="adsbygoogle"
-                        data-ad-client="ca-pub-2526648882773973"
-                        data-ad-slot="1835222588"
-                        data-ad-format="horizontal"
-                        data-full-width-responsive="false"></ins>
-                    <script is:inline>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
                 {
                     thumbnailData.showThumbnail && (
                         <picture>
