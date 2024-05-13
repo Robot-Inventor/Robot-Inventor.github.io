@@ -3,10 +3,10 @@ import satori from "satori";
 import sharp from "sharp";
 import fs from "fs";
 
-export const OG_IMAGE_COMPONENT_VERSION = "1.0.1";
+export const OG_IMAGE_COMPONENT_VERSION = "2.0.0";
 
-const IMAGE_WIDTH = 1920;
-const IMAGE_HEIGHT = 1080;
+const IMAGE_WIDTH = 1280;
+const IMAGE_HEIGHT = 720;
 
 const logoText = fs.readFileSync("./public/logo.png");
 const logoDataURL = `data:image/png;base64,${logoText.toString("base64")}`;
