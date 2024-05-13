@@ -3,7 +3,7 @@ import satori from "satori";
 import sharp from "sharp";
 import fs from "fs";
 
-export const OG_IMAGE_COMPONENT_VERSION = "2.0.0";
+export const OG_IMAGE_COMPONENT_VERSION = "2.0.1";
 
 const IMAGE_WIDTH = 1280;
 const IMAGE_HEIGHT = 720;
@@ -32,7 +32,7 @@ export const getOgImage = async (text: string) => {
                     background: "rgb(255, 255, 255, 0.9)",
                     display: "flex",
                     flexDirection: "column",
-                    borderRadius: "30px",
+                    borderRadius: "20px",
                     boxShadow: `
           0.8px 0.8px 4.4px rgba(0, 0, 0, 0.02),
           2px 2px 10.5px rgba(0, 0, 0, 0.028),
@@ -54,14 +54,14 @@ export const getOgImage = async (text: string) => {
                         src={logoDataURL}
                         style={{
                             margin: "auto",
-                            marginTop: "75px",
-                            width: "300px"
+                            marginTop: "50px",
+                            width: "200px"
                         }}
                     />
                 </div>
                 <h1
                     style={{
-                        fontSize: "100px",
+                        fontSize: "67px",
                         fontFamily: "Noto Sans JP",
                         fontWeight: 800,
                         display: "block",
@@ -69,7 +69,7 @@ export const getOgImage = async (text: string) => {
                         padding: "0 1.5em",
                         margin: "auto",
                         color: "#555",
-                        transform: "translateY(-60px)"
+                        transform: "translateY(-40px)"
                     }}
                 >
                     {text}
