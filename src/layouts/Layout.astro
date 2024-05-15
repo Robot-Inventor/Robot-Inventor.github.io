@@ -266,6 +266,28 @@ const getLatestArticlesData = async () => {
 
 const relatedArticlesData = await getRelatedArticlesData();
 const latestArticlesData = await getLatestArticlesData();
+
+const getFeaturedArticles = async () => {
+    const featuredArticles = await getCollection("featuredArticles");
+    if (featuredArticles.length === 0) return null;
+
+    const result: { link: `/article/${CollectionEntry<"article">["slug"]}/`; title: string }[] = [];
+
+    for (const featuredArticleData of featuredArticles) {
+        for (const article of featuredArticleData.data.articles) {
+            const collectionData = await getEntry("article", article.slug);
+            const articleData = {
+                link: `/article/${article.slug}/`,
+                title: collectionData.data.title
+            } as const;
+            result.push(articleData);
+        }
+    }
+
+    return result;
+};
+
+const featuredArticles = await getFeaturedArticles();
 ---
 
 <!doctype html>
@@ -400,6 +422,25 @@ const latestArticlesData = await getLatestArticlesData();
         </header>
         <main>
             <article>
+                {
+                    featuredArticles && (
+                        <>
+                            {featuredArticles.map((article) => {
+                                return (
+                                    <div style="display: none;" class="featured_article">
+                                        注目記事：<a href={article.link}>{article.title}</a>
+                                    </div>
+                                );
+                            })}
+                            <script is:inline>
+                                const featuredArticles = document.querySelectorAll(".featured_article"); const
+                                randomIndex = Math.floor(Math.random() * featuredArticles.length);
+                                featuredArticles[randomIndex].style.display = "block";
+                                featuredArticles[randomIndex].style.margin = "1rem 0";
+                            </script>
+                        </>
+                    )
+                }
                 {
                     Astro.props.frontmatter.showAds && (
                         // ↓記事のトップに表示する広告。スマホ専用

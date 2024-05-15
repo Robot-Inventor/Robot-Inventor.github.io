@@ -39,8 +39,16 @@ const tagCollection = defineCollection({
     })
 });
 
+const featuredArticlesCollection = defineCollection({
+    type: "data",
+    schema: z.object({
+        articles: z.array(reference("article"))
+    })
+});
+
 export const collections = {
     article: articleCollection,
     author: authorCollection,
-    tag: tagCollection
+    tag: tagCollection,
+    featuredArticles: featuredArticlesCollection
 };
