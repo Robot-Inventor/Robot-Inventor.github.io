@@ -202,8 +202,6 @@ main > * {
         margin-top: 0;
         margin-left: 5rem;
         width: calc(100% - 8rem);
-        position: sticky;
-        top: calc(var(--header-height) + 1rem);
     }
 
     #related_articles_section article {
