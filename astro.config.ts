@@ -82,7 +82,7 @@ export default defineConfig({
             [
                 rehypeAutoAds,
                 {
-                    countFrom: 2,
+                    countFrom: 3,
                     adCode: `
 <ins class="adsbygoogle"
     style="display:block"
