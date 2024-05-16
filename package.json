@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "git submodule update --remote && node --loader ts-node/esm ./scripts/updatePopularArticles.ts && astro build",
+    "build": "git submodule update --remote && tsx ./scripts/updatePopularArticles.ts && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -38,7 +38,7 @@
     "remark-enhanced-link-card": "github:Robot-Inventor/remark-link-card",
     "satori": "^0.10.13",
     "sharp": "^0.33.2",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.10.3",
     "typescript": "^5.2.2",
     "unist-util-remove": "^4.0.0",
     "unist-util-visit-parents": "^6.0.1"
