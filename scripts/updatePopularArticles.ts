@@ -3,7 +3,8 @@ import fs from "fs";
 
 const propertyId = "309465986";
 const analyticsDataClient = new BetaAnalyticsDataClient({
-    credentials: import.meta.env.GA_CREDENTIALS
+    // @ts-expect-error
+    credentials: JSON.parse(process.env.GA_CREDENTIALS)
 });
 
 async function getPopularArticles() {
