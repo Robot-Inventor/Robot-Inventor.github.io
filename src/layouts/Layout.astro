@@ -271,16 +271,16 @@ const getFeaturedArticles = async () => {
     const featuredArticles = await getCollection("featuredArticles");
     if (featuredArticles.length === 0) return null;
 
-    const result: { link: `/article/${CollectionEntry<"article">["slug"]}/`; title: string }[] = [];
+    const result: { title: string; link: string; thumbnail: ImageMetadata }[] = [];
 
     for (const featuredArticleData of featuredArticles) {
         for (const article of featuredArticleData.data.articles) {
             const collectionData = await getEntry("article", article.slug);
-            const articleData = {
+            result.push({
+                title: collectionData.data.title,
                 link: `/article/${article.slug}/`,
-                title: collectionData.data.title
-            } as const;
-            result.push(articleData);
+                thumbnail: collectionData.data.thumbnail || getDefaultThumbnail(article.slug)
+            });
         }
     }
 
@@ -422,25 +422,6 @@ const featuredArticles = await getFeaturedArticles();
         </header>
         <main>
             <article>
-                {
-                    featuredArticles && (
-                        <>
-                            {featuredArticles.map((article) => {
-                                return (
-                                    <div style="display: none;" class="featured_article">
-                                        注目記事：<a href={article.link}>{article.title}</a>
-                                    </div>
-                                );
-                            })}
-                            <script is:inline>
-                                const featuredArticles = document.querySelectorAll(".featured_article"); const
-                                randomIndex = Math.floor(Math.random() * featuredArticles.length);
-                                featuredArticles[randomIndex].style.display = "block";
-                                featuredArticles[randomIndex].style.margin = "1rem 0";
-                            </script>
-                        </>
-                    )
-                }
                 {
                     Astro.props.frontmatter.showAds && (
                         // ↓記事のトップに表示する広告。スマホ専用
@@ -611,7 +592,7 @@ const featuredArticles = await getFeaturedArticles();
                                 class="adsbygoogle"
                                 data-ad-client="ca-pub-2526648882773973"
                                 data-ad-slot="1755549071"
-                                data-ad-format="auto"
+                                data-ad-format="rectangle, horizontal"
                                 data-full-width-responsive="false"
                             />
                             <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -639,22 +620,72 @@ const featuredArticles = await getFeaturedArticles();
                                 style="display:block"
                                 data-ad-client="ca-pub-2526648882773973"
                                 data-ad-slot="5941904776"
+                                data-ad-format="rectangle, horizontal"
+                                data-full-width-responsive="false"
+                            />
+                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                            {featuredArticles && (
+                                <>
+                                    <h2>注目記事</h2>
+                                    <div class="recommended_articles">
+                                        {featuredArticles.map((article) => {
+                                            return (
+                                                <article>
+                                                    <a href={article.link}>
+                                                        <Image
+                                                            src={article.thumbnail}
+                                                            width={Math.min(600, article.thumbnail.width)}
+                                                            alt="サムネイル"
+                                                            loading="lazy"
+                                                            decoding="async"
+                                                        />
+                                                        <h3>{article.title}</h3>
+                                                    </a>
+                                                </article>
+                                            );
+                                        })}
+                                    </div>
+                                </>
+                            )}
+                            <ins
+                                class="adsbygoogle"
+                                style="display:block"
+                                data-ad-client="ca-pub-2526648882773973"
+                                data-ad-slot="3438012431"
                                 data-ad-format="auto"
                                 data-full-width-responsive="false"
                             />
                             <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                         </section>
+                        <ins
+                            class="adsbygoogle"
+                            style="display:block"
+                            data-ad-format="fluid"
+                            data-ad-layout-key="-gc+3r+68-9q-29"
+                            data-ad-client="ca-pub-2526648882773973"
+                            data-ad-slot="4887009254"
+                        />
+                        <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        <ins
+                            class="adsbygoogle"
+                            style="display:block"
+                            data-ad-format="fluid"
+                            data-ad-layout-key="-gc+3r+68-9q-29"
+                            data-ad-client="ca-pub-2526648882773973"
+                            data-ad-slot="4887009254"
+                        />
+                        <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        <ins
+                            class="adsbygoogle"
+                            style="display:block"
+                            data-ad-format="fluid"
+                            data-ad-layout-key="-gc+3r+68-9q-29"
+                            data-ad-client="ca-pub-2526648882773973"
+                            data-ad-slot="4887009254"
+                        />
+                        <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                         <section class="recommended_articles_section">
                             <h2>最新記事</h2>
-                            <ins
-                                class="adsbygoogle"
-                                style="display:block"
-                                data-ad-format="fluid"
-                                data-ad-layout-key="-gc+3r+68-9q-29"
-                                data-ad-client="ca-pub-2526648882773973"
-                                data-ad-slot="4887009254"
-                            />
-                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                             <div class="recommended_articles">
                                 {latestArticlesData.map((data) => {
                                     return (
@@ -673,15 +704,6 @@ const featuredArticles = await getFeaturedArticles();
                                     );
                                 })}
                             </div>
-                            <ins
-                                class="adsbygoogle"
-                                style="display:block"
-                                data-ad-format="fluid"
-                                data-ad-layout-key="-gc+3r+68-9q-29"
-                                data-ad-client="ca-pub-2526648882773973"
-                                data-ad-slot="4887009254"
-                            />
-                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                         </section>
                     </>
                 )
