@@ -767,7 +767,12 @@ main *:target {
 
 .recommended_articles article h3 {
     display: inline-block;
+    height: 4.5em;
     margin-left: 1em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 footer {
