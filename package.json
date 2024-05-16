@@ -7,8 +7,7 @@
     "start": "astro dev",
     "build": "git submodule update --remote && astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "update-grammars": "node --loader ts-node/esm ./scripts/updateGrammars.ts"
+    "astro": "astro"
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.5.0",
