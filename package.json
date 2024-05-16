@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "git submodule update --remote && astro build",
+    "build": "git submodule update --remote && node --loader ts-node/esm ./scripts/updatePopularArticles.ts && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -16,6 +16,7 @@
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.0.0",
     "@expressive-code/plugin-line-numbers": "^0.35.0",
+    "@google-analytics/data": "^4.5.0",
     "@robot-inventor/regex-syntax": "^1.0.3",
     "@robot-inventor/shell-session-syntax": "^1.0.0",
     "@types/react": "^18.2.79",
