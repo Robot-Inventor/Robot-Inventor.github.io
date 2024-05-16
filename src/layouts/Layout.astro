@@ -275,6 +275,8 @@ const getFeaturedArticles = async () => {
 
     for (const featuredArticleData of featuredArticles) {
         for (const article of featuredArticleData.data.articles) {
+            if (result.filter((data) => data.link === `/article/${article.slug}/`).length) continue;
+
             const collectionData = await getEntry("article", article.slug);
             result.push({
                 title: collectionData.data.title,

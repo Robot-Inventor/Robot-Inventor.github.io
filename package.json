@@ -5,10 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "git submodule update --remote && astro build",
+    "build": "git submodule update --remote && tsx ./scripts/updatePopularArticles.ts && astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "update-grammars": "node --loader ts-node/esm ./scripts/updateGrammars.ts"
+    "astro": "astro"
   },
   "dependencies": {
     "@astro-community/astro-embed-youtube": "^0.5.0",
@@ -17,6 +16,7 @@
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.0.0",
     "@expressive-code/plugin-line-numbers": "^0.35.0",
+    "@google-analytics/data": "^4.5.0",
     "@robot-inventor/regex-syntax": "^1.0.3",
     "@robot-inventor/shell-session-syntax": "^1.0.0",
     "@types/react": "^18.2.79",
@@ -38,7 +38,7 @@
     "remark-enhanced-link-card": "github:Robot-Inventor/remark-link-card",
     "satori": "^0.10.13",
     "sharp": "^0.33.2",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.10.3",
     "typescript": "^5.2.2",
     "unist-util-remove": "^4.0.0",
     "unist-util-visit-parents": "^6.0.1"
