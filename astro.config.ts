@@ -119,9 +119,11 @@ export default defineConfig({
         ]
     },
     image: {
-        // ビルド時間短縮のため、テスト環境では画像の最適化をスキップする
-        service: ["master", "main"].includes(process.env.CF_PAGES_BRANCH!)
-            ? sharpImageService()
-            : passthroughImageService()
+        // ビルド時間短縮のため、Cloudflare Pagesのテスト環境では画像の最適化をスキップする。
+        // ローカルまたは本番環境では画像の最適化を実施する。
+        service:
+            !process.env.CF_PAGES_BRANCH || ["master", "main"].includes(process.env.CF_PAGES_BRANCH)
+                ? sharpImageService()
+                : passthroughImageService()
     }
 });
