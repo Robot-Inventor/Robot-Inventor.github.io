@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, sharpImageService, passthroughImageService } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import astroExpressiveCode, { pluginFramesTexts } from "astro-expressive-code";
@@ -117,5 +117,11 @@ export default defineConfig({
             ],
             rehypeImageCaption
         ]
+    },
+    image: {
+        // ビルド時間短縮のため、テスト環境では画像の最適化をスキップする
+        service: ["master", "main"].includes(process.env.CF_PAGES_BRANCH!)
+            ? sharpImageService()
+            : passthroughImageService()
     }
 });
