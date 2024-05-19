@@ -16,6 +16,7 @@ import remarkBreaks from "remark-breaks";
 import react from "@astrojs/react";
 import { isElement } from "hast-util-is-element";
 import { toString } from "hast-util-to-string";
+import rehypeExternalLinks from "rehype-external-links";
 
 const topPageURL = "https://roboin.io";
 
@@ -115,7 +116,22 @@ export default defineConfig({
                     }
                 } satisfies Parameters<typeof rehypeAutoAds>[0]
             ],
-            rehypeImageCaption
+            rehypeImageCaption,
+            [
+                rehypeExternalLinks,
+                {
+                    rel: ["noopener", "noreferrer"],
+                    test: (element) => {
+                        if (element.tagName !== "a") return false;
+                        if (!element.properties.href || typeof element.properties.href !== "string") return false;
+
+                        return (
+                            !element.properties.href.startsWith("/") && !element.properties.href.startsWith(topPageURL)
+                        );
+                    },
+                    target: "_blank"
+                } satisfies Parameters<typeof rehypeExternalLinks>[0]
+            ]
         ]
     },
     image: {

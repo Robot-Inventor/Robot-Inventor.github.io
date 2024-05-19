@@ -14,15 +14,6 @@ menu_items.forEach((item) => {
     });
 });
 
-const links = document.querySelectorAll("main > article a") as NodeListOf<HTMLAnchorElement>;
-links.forEach((link) => {
-    // 外部リンクを新しいタブで開く
-    if (!link.href.startsWith(location.origin)) {
-        link.setAttribute("target", "_blank");
-        link.setAttribute("rel", "noopener noreferrer");
-    }
-});
-
 const toc = document.querySelector<HTMLElement>(".toc");
 const tocToggle = document.querySelector<HTMLElement>(".toc-toggle");
 if (toc && tocToggle) {
