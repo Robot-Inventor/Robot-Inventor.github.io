@@ -237,6 +237,10 @@ main > * {
     margin: 0.75rem 0 2.5rem 0;
 }
 
+#article_tags {
+    margin: 0.75rem 0 0 0;
+}
+
 #article_tags a {
     color: var(--base-text-color);
     text-decoration: none;
@@ -466,43 +470,46 @@ main > article td {
     padding: 0.5rem;
 }
 
+/*
+ * フォントサイズは https://qiita.com/xrxoxcxox/items/206b223844e3c42dc86f を参考に改変
+ */
 main > article h1 {
-    font-size: 2rem;
-    line-height: calc(0.25rem * 13);
+    font-size: 1.75rem;
+    line-height: calc(0.25rem * 10);
     margin-top: 1rem;
     font-feature-settings: "palt";
 }
 
 main > article h2 {
-    font-size: 1.75rem;
-    line-height: calc(0.25rem * 12);
+    font-size: 1.5rem;
+    line-height: calc(0.25rem * 9);
     font-feature-settings: "palt";
     padding: 0.25em 0.5em;
     border-left: solid 0.4rem var(--theme-color);
 }
 
 main > article h3 {
-    font-size: 1.5rem;
-    line-height: calc(0.25rem * 10);
+    font-size: 1.3125rem;
+    line-height: calc(0.25rem * 8);
     font-feature-settings: "palt";
     border-bottom: solid 0.15rem var(--middle-emphasis-color);
 }
 
 main > article h4 {
-    font-size: 1.3125rem;
-    line-height: calc(0.25rem * 9);
+    font-size: 1.125rem;
+    line-height: calc(0.25rem * 6);
     font-feature-settings: "palt";
 }
 
 main > article h5 {
-    font-size: 1.125rem;
-    line-height: calc(0.25rem * 8);
+    font-size: 0.875rem;
+    line-height: calc(0.25rem * 5);
     font-feature-settings: "palt";
 }
 
 main > article h6 {
-    font-size: 0.875rem;
-    line-height: calc(0.25rem * 6);
+    font-size: 0.758rem;
+    line-height: calc(0.25rem * 4);
     font-feature-settings: "palt";
 }
 
@@ -554,14 +561,6 @@ main > article ul > li,
 main > article ol > li {
     margin: 0.5rem 0;
 }
-
-/* main strong {
-    text-decoration: underline;
-    text-decoration-thickness: 0.5em;
-    text-decoration-color: rgba(255, 255, 0, 0.3);
-    text-underline-offset: -0.2em;
-    text-decoration-skip-ink: none;
-} */
 
 main *:target {
     scroll-margin: 4rem;
