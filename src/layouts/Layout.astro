@@ -8,6 +8,7 @@ import { getEntry, getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { Image, Picture, getImage } from "astro:assets";
 import { getDefaultThumbnail } from "src/utils/getDefaultThumbnailPath";
+import { getFeaturedArticles } from "src/utils/getFeaturedArticles";
 
 interface Props {
     frontmatter: CollectionEntry<"article">["data"];
@@ -266,29 +267,6 @@ const getLatestArticlesData = async () => {
 
 const relatedArticlesData = await getRelatedArticlesData();
 const latestArticlesData = await getLatestArticlesData();
-
-const getFeaturedArticles = async () => {
-    const featuredArticles = await getCollection("featuredArticles");
-    if (featuredArticles.length === 0) return null;
-
-    const result: { title: string; link: string; thumbnail: ImageMetadata }[] = [];
-
-    for (const featuredArticleData of featuredArticles) {
-        for (const article of featuredArticleData.data.articles) {
-            if (result.filter((data) => data.link === `/article/${article.slug}/`).length) continue;
-
-            const collectionData = await getEntry("article", article.slug);
-            result.push({
-                title: collectionData.data.title,
-                link: `/article/${article.slug}/`,
-                thumbnail: collectionData.data.thumbnail || getDefaultThumbnail(article.slug)
-            });
-        }
-    }
-
-    return result;
-};
-
 const featuredArticles = await getFeaturedArticles();
 ---
 
@@ -417,6 +395,7 @@ const featuredArticles = await getFeaturedArticles();
             <nav>
                 <a href="/article/">ARTICLES</a>
                 <a href="/notice/">NEWS</a>
+                <a href="/about/">ABOUT</a>
             </nav>
             <button id="menu_button" aria-label="メニューボタン">
                 <div></div>
@@ -744,9 +723,9 @@ const featuredArticles = await getFeaturedArticles();
         <footer>
             <p>Copyright © {new Date().getFullYear()} ろぼいん All rights reserved.</p>
             <p>
-                <a href="/tos/">利用規約</a>・<a href="/privacy/">プライバシーポリシー</a>・<a href="/contact/"
-                    >お問い合わせ</a
-                >
+                <a href="/about/">このサイトについて</a>・<a href="/tos/">利用規約</a>・<a href="/privacy/"
+                    >プライバシーポリシー</a
+                >・<a href="/contact/">お問い合わせ</a>
             </p>
         </footer>
         <script src="./Layout.ts"></script>

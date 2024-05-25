@@ -1,9 +1,0 @@
----
-import { getCollection } from "astro:content";
-import ArticleCard from "@components/ArticleCard.astro";
-
-const allPosts = await getCollection("article");
-const latestPost = allPosts.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())[0];
----
-
-<ArticleCard link={`/article/${latestPost.slug}/`} type="portrait" />
