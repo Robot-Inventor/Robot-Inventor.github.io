@@ -400,6 +400,7 @@ main > * {
 .affiliate_link_disclosure {
     font-size: 0.9rem;
     color: var(--middle-emphasis-color);
+    margin: 2rem 0;
 }
 
 .affiliate_link_button {
