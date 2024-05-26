@@ -17,6 +17,7 @@
     --theme-color: #85c3f7;
     --middle-emphasis-color: rgb(0, 0, 0, 0.6);
     --low-emphasis-color: rgb(0, 0, 0, 0.6);
+    --text-color-on-theme: #191919;
 
     --inline-code-background-color: rgba(0, 0, 0, 0.1);
 }
@@ -29,6 +30,7 @@
         --theme-color: #87b7e1;
         --middle-emphasis-color: rgb(255, 255, 255, 0.6);
         --low-emphasis-color: rgb(255, 255, 255, 0.6);
+        --text-color-on-theme: #191919;
 
         --inline-code-background-color: rgba(255, 255, 255, 0.1);
     }
@@ -393,6 +395,29 @@ main > * {
 
 .toc:has(li:nth-child(8))[data-toc-state="opened"] .toc-toggle {
     display: none;
+}
+
+.affiliate_link_disclosure {
+    font-size: 0.9rem;
+    color: var(--middle-emphasis-color);
+}
+
+.affiliate_link_button {
+    display: block;
+    width: max-content;
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    background: var(--theme-color);
+    color: var(--text-color-on-theme);
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 2rem;
+}
+
+.affiliate_link_button:hover {
+    color: var(--text-color-on-theme);
 }
 
 main > article {
