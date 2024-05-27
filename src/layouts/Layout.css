@@ -786,6 +786,7 @@ main *:target {
     height: 100%;
     object-fit: cover;
     display: inline-block;
+    overflow: hidden;
 }
 
 .recommended_articles article h3 {
