@@ -16,7 +16,8 @@ const articleCollection = defineCollection({
             tags: z.array(reference("tag")).optional(),
             showRecommendedArticles: z.boolean().optional().default(true),
             showToc: z.boolean().optional().default(false),
-            showAds: z.boolean().optional().default(true)
+            showAds: z.boolean().optional().default(true),
+            showInArticleAds: z.boolean().optional().default(true)
         })
 });
 

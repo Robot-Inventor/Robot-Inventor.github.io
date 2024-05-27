@@ -99,7 +99,11 @@ export default defineConfig({
                     shouldInsertAd: (vfile, previousNode, _, ancestors) => {
                         const adsSettings =
                             // @ts-expect-error
-                            vfile.data.astro.frontmatter && vfile.data.astro.frontmatter.showAds !== false;
+                            vfile.data.astro.frontmatter &&
+                            // @ts-expect-error
+                            vfile.data.astro.frontmatter.showAds !== false &&
+                            // @ts-expect-error
+                            vfile.data.astro.frontmatter.showInArticleAds !== false;
                         if (!adsSettings) return false;
 
                         // MDXのコンポーネント内には広告を挿入しない
