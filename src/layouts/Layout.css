@@ -406,6 +406,7 @@ main > * {
 .affiliate_link_button {
     display: block;
     width: max-content;
+    max-width: 100%;
     margin: 1rem auto;
     padding: 0.5rem 1rem;
     background: var(--theme-color);
