@@ -1,4 +1,4 @@
-import type { Root } from "hast";
+import type { ElementContent, Text, Root } from "hast";
 import type { Plugin, Transformer } from "unified";
 import { visit } from "unist-util-visit";
 import { isElement } from "hast-util-is-element";
@@ -13,14 +13,19 @@ const isValidURL = (url: string): boolean => {
     }
 };
 
+const isTextNode = (node: ElementContent): node is Text => {
+    return !!node && typeof node === "object" && "type" in node && node.type === "text";
+};
+
 const rehypeAmazonAssociates: Plugin<[], Root> = () => {
     const transformer: Transformer<Root> = (tree) => {
         let affiliateLinkFound = false;
 
-        visit(tree, "element", (node, index, parent) => {
+        visit(tree, "element", (node, _, parent) => {
             if (!isElement(node, "a")) return;
             if (!node.properties.href || !(typeof node.properties.href === "string")) return;
             if (!isValidURL(node.properties.href)) return;
+            if (node.children.length !== 1 || !isTextNode(node.children[0])) return;
 
             const isShortenAffiliateLink = node.properties.href.startsWith("https://amzn.to/");
             const isFullAffiliateLink =
@@ -29,12 +34,10 @@ const rehypeAmazonAssociates: Plugin<[], Root> = () => {
 
             if (!isShortenAffiliateLink && !isFullAffiliateLink) return;
 
-            if (
-                node.children.length !== 1 ||
-                node.children[0].type !== "text" ||
-                node.children[0].value !== node.properties.href
-            )
-                return;
+            const isBareLink = node.children[0].value === node.properties.href;
+            const isOnlyChildInParagraphElement = isElement(parent, "p") && parent.children.length === 1;
+
+            if (!isBareLink && !isOnlyChildInParagraphElement) return;
 
             if (node.properties.className && Array.isArray(node.properties.className)) {
                 node.properties.className.push("affiliate_link_button");
@@ -42,7 +45,9 @@ const rehypeAmazonAssociates: Plugin<[], Root> = () => {
                 node.properties.className = ["affiliate_link_button"];
             }
 
-            node.children[0].value = "Amazonで詳細を見る";
+            if (isBareLink) {
+                node.children[0].value = "Amazonで詳細を見る";
+            }
 
             if (affiliateLinkFound) return;
 
