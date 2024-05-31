@@ -82,6 +82,7 @@ export default defineConfig({
             remarkBreaks
         ],
         rehypePlugins: [
+            rehypeImageCaption,
             [
                 rehypeAutoAds,
                 {
@@ -96,7 +97,7 @@ export default defineConfig({
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>`.trim(),
-                    shouldInsertAd: (vfile, previousNode, _, ancestors) => {
+                    shouldInsertAd: (vfile, previousNode, nextNode, ancestors) => {
                         const adsSettings =
                             // @ts-expect-error
                             vfile.data.astro.frontmatter &&
@@ -115,14 +116,31 @@ export default defineConfig({
                          * たとえば、「こちらの記事で解説しています」「次のような機能があります」というテキストの直後に
                          * 広告が挿入されていると、読者を混乱させる可能性があるため。
                          */
-                        return !(
+                        const isBeforeLink =
                             isElement(previousNode, "p") &&
-                            ["次の", "こちらの"].some((text) => toString(previousNode).includes(text))
-                        );
+                            ["次の", "こちらの"].some((text) => toString(previousNode).includes(text));
+
+                        /**
+                         * figure要素とiframe要素の直前・直後には広告を挿入しない。
+                         */
+                        const MEDIA_ELEMENTS = ["figure", "iframe"];
+
+                        let nextSiblingNode = nextNode;
+                        if (nextNode?.type === "text") {
+                            const parent = ancestors[ancestors.length - 1];
+                            const nextNextNodeIndex = parent.children.indexOf(nextNode) + 1;
+                            const nextNextNode = parent.children[nextNextNodeIndex];
+                            nextSiblingNode = nextNextNode;
+                        }
+
+                        const isBeforeMedia = MEDIA_ELEMENTS.some((tagName) => isElement(previousNode, tagName));
+                        const isAfterMedia = MEDIA_ELEMENTS.some((tagName) => isElement(nextSiblingNode, tagName));
+                        const isAroundMedia = isBeforeMedia || isAfterMedia;
+
+                        return !isBeforeLink && !isAroundMedia;
                     }
                 } satisfies Parameters<typeof rehypeAutoAds>[0]
             ],
-            rehypeImageCaption,
             [
                 rehypeExternalLinks,
                 {
