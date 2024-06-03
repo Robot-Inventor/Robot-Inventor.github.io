@@ -116,14 +116,9 @@ export default defineConfig({
                          * たとえば、「こちらの記事で解説しています」「次のような機能があります」というテキストの直後に
                          * 広告が挿入されていると、読者を混乱させる可能性があるため。
                          */
-                        const isBeforeLink =
+                        const isBeforeReference =
                             isElement(previousNode, "p") &&
                             ["次の", "こちらの"].some((text) => toString(previousNode).includes(text));
-
-                        /**
-                         * figure要素とiframe要素の直前・直後には広告を挿入しない。
-                         */
-                        const MEDIA_ELEMENTS = ["figure", "iframe"];
 
                         let nextSiblingNode = nextNode;
                         if (nextNode?.type === "text") {
@@ -133,11 +128,25 @@ export default defineConfig({
                             nextSiblingNode = nextNextNode;
                         }
 
+                        /**
+                         * figure要素とiframe要素の直前・直後には広告を挿入しない。
+                         */
+                        const MEDIA_ELEMENTS = ["figure", "iframe"];
                         const isBeforeMedia = MEDIA_ELEMENTS.some((tagName) => isElement(previousNode, tagName));
                         const isAfterMedia = MEDIA_ELEMENTS.some((tagName) => isElement(nextSiblingNode, tagName));
                         const isAroundMedia = isBeforeMedia || isAfterMedia;
 
-                        return !isBeforeLink && !isAroundMedia;
+                        const isBeforeLink =
+                            isElement(previousNode, "p") &&
+                            previousNode.children.length === 1 &&
+                            isElement(previousNode.children[0], "a");
+                        const isAfterLink =
+                            isElement(nextSiblingNode, "p") &&
+                            nextSiblingNode.children.length === 1 &&
+                            isElement(nextSiblingNode.children[0], "a");
+                        const isAroundLink = isBeforeLink || isAfterLink;
+
+                        return !isBeforeReference && !isAroundMedia && !isAroundLink;
                     }
                 } satisfies Parameters<typeof rehypeAutoAds>[0]
             ],
