@@ -26,7 +26,7 @@ declare global {
 
 if (!Astro.site) throw new Error("site is not defined");
 
-let thumbnailUrl = new URL(getDefaultThumbnail(Astro.url.pathname).src, Astro.site.href).href;
+let thumbnailUrl = new URL((await getDefaultThumbnail(Astro.url.pathname)).src, Astro.site.href).href;
 if (Astro.props.frontmatter.thumbnail) {
     thumbnailUrl = new URL(Astro.props.frontmatter.thumbnail.src, Astro.site.href).href;
 }
@@ -248,7 +248,7 @@ const getRelatedArticlesData = async () => {
 
     const relatedArticlesData = relatedArticles.map(async (article) => {
         const articleData = await getEntry("article", article.slug);
-        const thumbnail = articleData.data.thumbnail || getDefaultThumbnail(article.slug);
+        const thumbnail = articleData.data.thumbnail || (await getDefaultThumbnail(article.slug));
         return {
             title: articleData.data.title,
             link: `/article/${article.slug}/`,
@@ -264,7 +264,7 @@ const getLatestArticlesData = async () => {
 
     const latestArticlesData = latestArticles.slice(0, NUMBER_OF_LATEST_ARTICLES).map(async (article) => {
         const articleData = await getEntry("article", article.slug);
-        const thumbnail = articleData.data.thumbnail || getDefaultThumbnail(article.slug);
+        const thumbnail = articleData.data.thumbnail || (await getDefaultThumbnail(article.slug));
         return {
             title: articleData.data.title,
             link: `/article/${article.slug}/`,
