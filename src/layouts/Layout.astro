@@ -120,7 +120,7 @@ const schema = JSON.stringify({
             },
             author: {
                 "@type": author.data.type,
-                name: authorId,
+                name: author.data.name,
                 url: author.data.homePage,
                 sameAs: author.data.sameAs
             },
@@ -137,7 +137,7 @@ const schema = JSON.stringify({
         },
         {
             "@type": author.data.type,
-            name: authorId,
+            name: author.data.name,
             url: author.data.homePage,
             sameAs: author.data.sameAs
         }
@@ -325,7 +325,7 @@ const featuredArticles = await getFeaturedArticles();
         <meta name="application-name" content={import.meta.env.SITE_NAME} />
         <meta name="theme-color" content="#ffffff" />
         <title>{`${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`}</title>
-        <meta name="author" content={authorId} />
+        <meta name="author" content={author.data.name} />
         <meta name="description" content={Astro.props.frontmatter.description} />
         <link rel="canonical" href={Astro.url} />
         <link rel="me" href="https://mstdn.jp/@keita_roboin" />
@@ -538,7 +538,7 @@ const featuredArticles = await getFeaturedArticles();
                             height="100"
                         />
                         <div class="author_info-text">
-                            <b class="author_info-name">{authorId}</b>
+                            <b class="author_info-name">{author.data.name}</b>
                             <div class="author_info-link_container">
                                 {Object.keys(author.data.profileLinks).map((linkName) => {
                                     const link = author.data.profileLinks[linkName];

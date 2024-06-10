@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import ArticleCard from "@components/ArticleCard.astro";
@@ -27,13 +27,15 @@ const articleLinks = articles
     frontmatter={{
         title: `「${entry.data.name}」タグが付いた記事一覧`,
         description: `${entry.data.name}についての記事一覧です。`,
-        author: "ろぼいん",
+        author: await getEntry("author", "ろぼいん"),
         showAuthor: false,
         pubDate: "2023-10-28T00:00:00.000+09:00",
         showDate: false,
         showThumbnail: false,
         showRecommendedArticles: false,
-        showToc: false
+        showToc: false,
+        showAds: true,
+        showInArticleAds: false
     }}
 >
     <div id="article_list_area">
