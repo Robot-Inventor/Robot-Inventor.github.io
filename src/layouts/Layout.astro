@@ -538,7 +538,7 @@ const featuredArticles = await getFeaturedArticles();
             </section>
             {
                 Astro.props.frontmatter.showAuthor && (
-                    <address class="author_info">
+                    <article class="author_info">
                         <Picture
                             class="author_info-icon"
                             src={author.data.icon}
@@ -549,7 +549,7 @@ const featuredArticles = await getFeaturedArticles();
                         />
                         <div class="author_info-text">
                             <b class="author_info-name">{author.data.name}</b>
-                            <div class="author_info-link_container">
+                            <address class="author_info-link_container">
                                 {Object.keys(author.data.profileLinks).map((linkName) => {
                                     const link = author.data.profileLinks[linkName];
                                     return (
@@ -558,9 +558,14 @@ const featuredArticles = await getFeaturedArticles();
                                         </a>
                                     );
                                 })}
-                            </div>
+                            </address>
                         </div>
-                    </address>
+                        <div class="author_info-bio">
+                            {author.data.bio.split("\n\n").map((paragraph) => {
+                                return <p>{paragraph}</p>;
+                            })}
+                        </div>
+                    </article>
                 )
             }
             <ins

@@ -29,7 +29,9 @@ const authorCollection = defineCollection({
             icon: image(),
             homePage: z.string().url(),
             sameAs: z.array(z.string().url()),
-            profileLinks: z.record(z.string())
+            profileLinks: z.record(z.string()),
+            bio: z.string(),
+            name: z.string()
         })
 });
 
