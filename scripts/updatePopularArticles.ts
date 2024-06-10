@@ -1,13 +1,14 @@
 import { BetaAnalyticsDataClient } from "@google-analytics/data";
 import fs from "fs";
-
-const propertyId = "309465986";
-const analyticsDataClient = new BetaAnalyticsDataClient({
-    // @ts-expect-error
-    credentials: JSON.parse(process.env.GA_CREDENTIALS)
-});
+import { checkEnvironmentType } from "src/utils/checkEnvironmentType";
 
 async function getPopularArticles() {
+    const propertyId = "309465986";
+    const analyticsDataClient = new BetaAnalyticsDataClient({
+        // @ts-expect-error
+        credentials: JSON.parse(process.env.GA_CREDENTIALS)
+    });
+
     const currentDate = new Date();
     currentDate.setHours(currentDate.getHours() + 9);
     const currentHour = currentDate.getHours();
@@ -63,6 +64,13 @@ async function getPopularArticles() {
 }
 
 const main = async () => {
+    /**
+     * 本番環境以外では実行しない。
+     * Cloudflareのテスト環境でも実行しない。
+     * テスト環境で実行しないのは、Google AnalyticsのAPIキーを窃取するPull Requestが送られてきた場合の対策。
+     */
+    if (checkEnvironmentType() !== "production") return;
+
     const popularArticles = await getPopularArticles();
     const jsonData = {
         articles: popularArticles

@@ -18,6 +18,7 @@ import react from "@astrojs/react";
 import { isElement } from "hast-util-is-element";
 import { toString } from "hast-util-to-string";
 import rehypeExternalLinks from "rehype-external-links";
+import { checkEnvironmentType } from "./src/utils/checkEnvironmentType";
 
 const topPageURL = "https://roboin.io";
 
@@ -171,9 +172,8 @@ export default defineConfig({
     image: {
         // ビルド時間短縮のため、Cloudflare Pagesのテスト環境では画像の最適化をスキップする。
         // ローカルまたは本番環境では画像の最適化を実施する。
-        service:
-            !process.env.CF_PAGES_BRANCH || ["master", "main"].includes(process.env.CF_PAGES_BRANCH)
-                ? sharpImageService()
-                : passthroughImageService()
+        service: ["local", "production"].includes(checkEnvironmentType())
+            ? sharpImageService()
+            : passthroughImageService()
     }
 });
