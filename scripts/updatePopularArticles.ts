@@ -1,12 +1,12 @@
 import { BetaAnalyticsDataClient } from "@google-analytics/data";
 import fs from "fs";
-import { checkEnvironmentType } from "src/utils/checkEnvironmentType";
+import { getSecret } from "astro:env/server";
+import { checkEnvironmentType } from "../src/utils/checkEnvironmentType";
 
 async function getPopularArticles() {
     const propertyId = "309465986";
     const analyticsDataClient = new BetaAnalyticsDataClient({
-        // @ts-expect-error
-        credentials: JSON.parse(process.env.GA_CREDENTIALS)
+        credentials: JSON.parse(getSecret("GA_CREDENTIALS"))
     });
 
     const currentDate = new Date();

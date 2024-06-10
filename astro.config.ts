@@ -1,4 +1,4 @@
-import { defineConfig, sharpImageService, passthroughImageService } from "astro/config";
+import { defineConfig, sharpImageService, passthroughImageService, envField } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import astroExpressiveCode, { pluginFramesTexts } from "astro-expressive-code";
@@ -175,5 +175,23 @@ export default defineConfig({
         service: ["local", "production"].includes(checkEnvironmentType())
             ? sharpImageService()
             : passthroughImageService()
+    },
+    experimental: {
+        env: {
+            schema: {
+                GA_CREDENTIALS: envField.string({
+                    context: "server",
+                    access: "secret"
+                }),
+                CF_PAGES_BRANCH: envField.string({
+                    context: "server",
+                    /**
+                     * secretな値ではないが、publicな値は`PUBLIC_`プレフィックスを付ける必要があるため、secretとして扱う。
+                     * `experimental.env.schema  An environment variable that is public must have a name prefixed by "PUBLIC_"`
+                     */
+                    access: "secret"
+                })
+            }
+        }
     }
 });
