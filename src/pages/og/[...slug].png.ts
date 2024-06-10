@@ -1,5 +1,5 @@
 import type { APIRoute } from "astro";
-import { getCollection, getEntryBySlug } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import { getOgImage, OG_IMAGE_COMPONENT_VERSION } from "../../components/OgImage";
 import fs from "fs";
 import path from "path";
@@ -32,7 +32,7 @@ export const GET: APIRoute = async ({ params }) => {
             statusText: "slug parameter is missing or invalid type"
         });
     }
-    const post = await getEntryBySlug("article", params.slug);
+    const post = await getEntry("article", params.slug);
     if (!post) {
         return new Response(null, {
             status: 404,
