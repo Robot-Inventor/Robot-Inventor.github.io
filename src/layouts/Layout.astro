@@ -288,27 +288,6 @@ const featuredArticles = await getFeaturedArticles();
                 <!-- HEAD_AD_SCRIPT -->
             )
         }
-        <script is:inline>
-            window.googletag = window.googletag || { cmd: [] };
-            googletag.cmd.push(function () {
-                googletag
-                    .defineSlot("/9176203,23127422405/1856051", [728, 90], "div-gpt-ad-1713946891063-0")
-                    .addService(googletag.pubads());
-                googletag
-                    .defineSlot(
-                        "/9176203,23127422405/1856052",
-                        [
-                            [320, 50],
-                            [320, 100]
-                        ],
-                        "div-gpt-ad-1713946948591-0"
-                    )
-                    .addService(googletag.pubads());
-                googletag.pubads().enableSingleRequest();
-                googletag.pubads().collapseEmptyDivs(); //空のdivを閉じる
-                googletag.enableServices();
-            });
-        </script>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -374,30 +353,11 @@ const featuredArticles = await getFeaturedArticles();
         </script>
     </head>
     <body>
-        <!-- /9176203,23127422405/1856051 PC オーバーレイ_PC -->
-        <div
-            style="position:fixed;bottom:0;padding-bottom:env(safe-area-inset-bottom);left:0;right:0;width:100%;background:rgba(0, 0, 0, 0);z-index:99998;text-align:center;transform:translate3d(0, 0, 0);"
-        >
-            <div id="div-gpt-ad-1713946891063-0" style="margin:auto;text-align:center;z-index:99999;">
-                <script is:inline>
-                    googletag.cmd.push(function () {
-                        googletag.display("div-gpt-ad-1713946891063-0");
-                    });
-                </script>
-            </div>
-        </div>
-        <!-- /9176203,23127422405/1856052 SP オーバーレイ -->
-        <div
-            style="position:fixed;bottom:0;padding-bottom:env(safe-area-inset-bottom);left:0;right:0;width:100%;background:rgba(0, 0, 0, 0);z-index:99998;text-align:center;transform:translate3d(0, 0, 0);"
-        >
-            <div id="div-gpt-ad-1713946948591-0" style="margin:auto;text-align:center;z-index:99999;">
-                <script is:inline>
-                    googletag.cmd.push(function () {
-                        googletag.display("div-gpt-ad-1713946948591-0");
-                    });
-                </script>
-            </div>
-        </div>
+        {
+            Astro.props.frontmatter.showAds && (
+                <!-- BODY_AD_SCRIPT -->
+            )
+        }
         <header data-overlay-menu="closed">
             <a href="/">
                 <Image src="/logo.svg" alt="ロゴ" id="header_logo" width="512" height="185" loading="eager" />
