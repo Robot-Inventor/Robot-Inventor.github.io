@@ -64,18 +64,25 @@ async function getPopularArticles() {
 }
 
 const main = async () => {
+    const environmentType = checkEnvironmentType();
+    console.log(`[INFO] Start updating popular articles. Environment type: ${environmentType}.`);
+
     /**
      * 本番環境以外では実行しない。
      * Cloudflareのテスト環境でも実行しない。
      * テスト環境で実行しないのは、Google AnalyticsのAPIキーを窃取するPull Requestが送られてきた場合の対策。
      */
-    if (checkEnvironmentType() !== "production") return;
+    if (environmentType !== "production") {
+        console.log("[INFO] Skip updating popular articles.");
+        return;
+    }
 
     const popularArticles = await getPopularArticles();
     const jsonData = {
         articles: popularArticles
     };
     fs.writeFileSync("./src/content/featuredArticles/popularArticles.json", JSON.stringify(jsonData, null, 4));
+    console.log("[INFO] Finish updating popular articles.");
 };
 
-main();
+await main();
