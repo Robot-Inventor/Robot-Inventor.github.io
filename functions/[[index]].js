@@ -12,9 +12,8 @@ class ElementHandler {
     }
 
     comments(comment) {
-        console.log(`comment found: "${comment.text}"`);
         if (comment.text.trim() !== "HEAD_AD_SCRIPT") return;
 
-        comment.replace('<script is:inline async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" />', { html: true });
+        comment.replace('<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>', { html: true });
     }
 }
