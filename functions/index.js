@@ -1,22 +1,14 @@
-// export async function onRequest(context) {
-//     const { request, env } = context;
-//     const response = await env.ASSETS.fetch(request);
-//     return new HTMLRewriter().on("head", new ElementHandler()).transform(response);
-// }
-
-async function handleRequest(request) {
-    const response = await fetch(request);
+export async function onRequest(context) {
+    console.log("Request received");
+    const { request, env } = context;
+    const response = await env.ASSETS.fetch(request);
     return new HTMLRewriter().on("head", new ElementHandler()).transform(response);
 }
-
-addEventListener("fetch", async event => {
-    event.respondWith(handleRequest(event.request))
-})
 
 
 class ElementHandler {
     element(element) {
-        console.log("element found: ", element.tagName);
+        console.log(`element found: "${element.tagName}"`);
     }
 
     comments(comment) {
