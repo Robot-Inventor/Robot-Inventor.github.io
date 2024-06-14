@@ -171,7 +171,8 @@ export const onRequest = async (context) => {
     const { request, env } = context;
     const response = await env.ASSETS.fetch(request);
 
-    const adScripts = selectRandomArray([I_MOBILE_AD_SCRIPTS, MICROAD_AD_SCRIPTS]);
+    // const adScripts = selectRandomArray([I_MOBILE_AD_SCRIPTS, MICROAD_AD_SCRIPTS]);
+    const adScripts = selectRandomArray([MICROAD_AD_SCRIPTS]);
 
     return new HTMLRewriter().on("head, body", new ElementHandler(adScripts)).transform(response);
 }
