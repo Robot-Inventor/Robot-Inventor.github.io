@@ -248,6 +248,11 @@ main > * {
     text-decoration: none;
 }
 
+#page_top_thumbnail {
+    display: block;
+    margin-bottom: 2rem;
+}
+
 .toc {
     padding: 1rem 0;
     margin: 2rem 0;

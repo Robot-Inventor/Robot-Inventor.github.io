@@ -388,25 +388,6 @@ const featuredArticles = await getFeaturedArticles();
                         </div>
                     )
                 }
-                {
-                    thumbnailData.showThumbnail && (
-                        <picture>
-                            {thumbnailData.sources.map((source) => {
-                                return <source srcset={source.srcset} type={source.type} />;
-                            })}
-                            {
-                                // Firefoxでは問題ないが、Chromeでレイアウトシフトが発生するのを防ぐため、img要素にstyle属性を追加
-                            }
-                            <img
-                                src={thumbnailData.fallback.src}
-                                alt="サムネイル"
-                                loading="eager"
-                                style="width: 100%; height: auto; max-height: none;"
-                                {...thumbnailData.fallback.attributes}
-                            />
-                        </picture>
-                    )
-                }
                 <h1>{Astro.props.frontmatter.title}</h1>
                 <div id="article_tags">
                     {
@@ -439,6 +420,25 @@ const featuredArticles = await getFeaturedArticles();
                         )
                     }
                 </div>
+                {
+                    thumbnailData.showThumbnail && (
+                        <picture id="page_top_thumbnail">
+                            {thumbnailData.sources.map((source) => {
+                                return <source srcset={source.srcset} type={source.type} />;
+                            })}
+                            {
+                                // Firefoxでは問題ないが、Chromeでレイアウトシフトが発生するのを防ぐため、img要素にstyle属性を追加
+                            }
+                            <img
+                                src={thumbnailData.fallback.src}
+                                alt="サムネイル"
+                                loading="eager"
+                                style="width: 100%; height: auto; max-height: none;"
+                                {...thumbnailData.fallback.attributes}
+                            />
+                        </picture>
+                    )
+                }
                 <slot />
             </article>
             <section class="share_button">
