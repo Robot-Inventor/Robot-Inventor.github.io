@@ -59,6 +59,7 @@ export async function onRequest(context) {
 
 class ElementHandler {
     comments(comment) {
+        return;
         const commentString = comment.text.trim();
 
         if (!(commentString in AD_SCRIPTS)) return;
