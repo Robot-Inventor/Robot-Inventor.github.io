@@ -105,7 +105,7 @@ richaudience.com, 1BTOoaD22a, RESELLER
 appnexus.com, 8233, RESELLER
 pubmatic.com, 81564, RESELLER, 5d62403b186f2ace
 rubiconproject.com, 13510, RESELLER
-microad.co.jp,〇〇〇〇,DIRECT
+microad.co.jp,36291,DIRECT
 pubmatic.com,157492, RESELLER,5d62403b186f2ace
 rubiconproject.com, 23540, RESELLER, 0bfd66d529a55807
 gammassp.com, 1621480685, RESELLER, 31ac53fec2772a83
