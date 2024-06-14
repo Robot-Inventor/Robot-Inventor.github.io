@@ -830,17 +830,23 @@ footer a {
 
 /* 記事内のコンテンツ内の広告 */
 article .adsbygoogle {
-    margin: 3rem 0;
+    /* 広告の上に［広告］というテキストを付けるので上のマージンを広く取る */
+    margin: 3rem 0 2rem 0;
     text-decoration: none;
+    height: 280px;
+    position: relative;
 }
 
 article .adsbygoogle::before {
     content: "広告";
     display: block;
+    width: 100%;
     text-align: center;
     color: var(--middle-emphasis-color);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
+    position: absolute;
+    top: -2em;
 }
 
 /* その他の広告 */
