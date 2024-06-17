@@ -183,7 +183,6 @@ class ElementHandler {
     }
 
     comments(comment) {
-        return;
         const commentString = comment.text.trim();
 
         if (!(commentString in this.adScripts)) return;
