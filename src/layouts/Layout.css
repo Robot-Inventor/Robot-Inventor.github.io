@@ -189,8 +189,17 @@ main > * {
     content: "";
 }
 
-#top_ad_desktop {
+#top_ad_desktop,
+#middle_ad {
     display: none;
+    height: 280px;
+}
+
+@media (max-width: 1500px) {
+    #top_ad_desktop,
+    #middle_ad {
+        height: 250px;
+    }
 }
 
 @media (orientation: landscape) {
