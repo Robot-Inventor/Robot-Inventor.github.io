@@ -221,6 +221,7 @@ main > * {
     #top_ad_desktop {
         display: block;
         margin: 1rem 0;
+        height: 280px;
     }
 }
 
