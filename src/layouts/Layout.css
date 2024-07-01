@@ -177,14 +177,12 @@ main > * {
 }
 
 #top_ad_mobile {
-    height: 100px;
     margin: 1rem 0;
 }
 
 #top_ad_mobile .adsbygoogle {
     display: block;
     margin: auto 0;
-    max-height: 100px;
 }
 
 #top_ad_mobile .adsbygoogle::before {
@@ -221,7 +219,6 @@ main > * {
     #top_ad_desktop {
         display: block;
         margin: 1rem 0;
-        height: 280px;
     }
 }
 
@@ -839,7 +836,6 @@ article .adsbygoogle {
     /* 広告の上に［広告］というテキストを付けるので上のマージンを広く取る */
     margin: 3rem 0 2rem 0;
     text-decoration: none;
-    height: 280px;
     position: relative;
 }
 

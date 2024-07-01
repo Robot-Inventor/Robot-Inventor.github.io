@@ -94,7 +94,8 @@ export default defineConfig({
     data-ad-client="ca-pub-2526648882773973"
     data-ad-slot="9413147471"
     data-ad-format="rectangle, horizontal"
-    data-full-width-responsive="false"></ins>
+    data-full-width-responsive="false"
+    style="height: 280px;"></ins>
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>`.trim(),
