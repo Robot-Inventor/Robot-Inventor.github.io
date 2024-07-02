@@ -28,25 +28,25 @@ const allPosts = await getCollection("article");
                 .map((post) => <ArticleCard link={`/article/${post.slug}/`} type="portrait" />)
         }
     </div>
-</Layout>
-<style is:inline>
-    #article_list_area > * {
-        flex-basis: calc(100% - 0.5rem);
-    }
-
-    @media (orientation: landscape) {
-        #article_list_area > *:not([card-type="landscape"]) {
-            flex-basis: calc(50% - 0.5rem);
+    <style is:inline>
+        #article_list_area > * {
+            flex-basis: calc(100% - 0.5rem);
         }
-    }
 
-    #article_list_area {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: stretch;
-        align-content: flex-start;
-        gap: 1rem;
-    }
-</style>
+        @media (orientation: landscape) {
+            #article_list_area > *:not([card-type="landscape"]) {
+                flex-basis: calc(50% - 0.5rem);
+            }
+        }
+
+        #article_list_area {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: stretch;
+            align-content: flex-start;
+            gap: 1rem;
+        }
+    </style>
+</Layout>
