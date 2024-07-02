@@ -6,12 +6,9 @@ const getFeaturedArticles = async () => {
     const featuredArticles = await getCollection("featuredArticles");
     if (featuredArticles.length === 0) return null;
 
-    const flattenFeaturedArticles = featuredArticles
-        .map((data) => data.data.articles as Array<CollectionEntry<"article">>)
-        .flat();
+    const flattenFeaturedArticles = featuredArticles.map((data) => data.data.articles).flat();
 
     const result: { title: string; link: string; thumbnail: ImageMetadata }[] = [];
-
     for (const article of flattenFeaturedArticles) {
         if (result.filter((data) => data.link === `/article/${article.slug}/`).length) continue;
 
