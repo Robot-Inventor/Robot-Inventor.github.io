@@ -319,6 +319,7 @@ const featuredArticles = await getFeaturedArticles();
         <link rel="canonical" href={Astro.url} />
         <link rel="me" href="https://mstdn.jp/@keita_roboin" />
         <link rel="me" href="https://misskey.io/@roboin" />
+        <meta name="fediverse:creator" content="@roboin@misskey.io" />
         <meta property="og:url" content={Astro.url} />
         <meta property="og:type" content={Astro.url.pathname === "/" ? "website" : "article"} />
         <meta property="og:title" content={titleWithSiteName} />
