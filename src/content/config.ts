@@ -31,7 +31,17 @@ const authorCollection = defineCollection({
             sameAs: z.array(z.string().url()),
             profileLinks: z.record(z.string()),
             bio: z.string(),
-            name: z.string()
+            name: z.string(),
+            /**
+             * Mastodonでリンクを共有したときに著者のアカウントを表示するためのフィールド。
+             * ref: [Highlighting journalism on Mastodon - Mastodon Blog](https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/)
+             */
+            fediverseCreator: z.string().optional(),
+            /**
+             * Twitterでリンクを共有したときに著者のアカウントをメンションするためのフィールド。
+             * `<meta name="twitter:site" content="@keita_roboin" />`的なやつ
+             */
+            twitterSite: z.string().optional()
         })
 });
 

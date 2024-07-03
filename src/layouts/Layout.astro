@@ -319,7 +319,11 @@ const featuredArticles = await getFeaturedArticles();
         <link rel="canonical" href={Astro.url} />
         <link rel="me" href="https://mstdn.jp/@keita_roboin" />
         <link rel="me" href="https://misskey.io/@roboin" />
-        <meta name="fediverse:creator" content="@roboin@misskey.io" />
+        {
+            author.data.fediverseCreator && (
+                <meta name="fediverse:creator" content={author.data.fediverseCreator} />
+            )
+        }
         <meta property="og:url" content={Astro.url} />
         <meta property="og:type" content={Astro.url.pathname === "/" ? "website" : "article"} />
         <meta property="og:title" content={titleWithSiteName} />
@@ -327,7 +331,11 @@ const featuredArticles = await getFeaturedArticles();
         <meta property="og:site_name" content={import.meta.env.SITE_NAME} />
         <meta property="og:image" content={thumbnailUrl} />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@keita_roboin" />
+        {
+            author.data.twitterSite && (
+                <meta name="twitter:site" content={author.data.twitterSite} />
+            )
+        }
         <script is:inline type="application/ld+json" set:html={schema} />
         <!-- Google tag (gtag.js) -->
         <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-7HZY93W2BY"></script>
