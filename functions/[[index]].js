@@ -218,7 +218,7 @@ const getMicroadAdScript = (isMobile) => {
  * A/Bテスト用に2つの広告ユニットを用意
  *
  * - ディスプレイ広告×1&インフィード広告×3
- * - Multiplex広告×1（モバイルでは4×1、デスクトップでは3×3枠）
+ * - Multiplex広告×1（モバイルでは1×4、デスクトップでは3×2枠）
  */
 const BOTTOM_AD_SCRIPT = [
     // 1つ目の広告ユニット
@@ -267,13 +267,76 @@ const BOTTOM_AD_SCRIPT = [
     // 2つ目（Multiplex）の広告ユニット
     `
 <ins class="adsbygoogle"
-    style="display:block"
+    style="display: block; width: 100%;"
     data-ad-format="autorelaxed"
     data-ad-client="ca-pub-2526648882773973"
     data-ad-slot="3546449335"
     data-matched-content-rows-num="4,2"
     data-matched-content-columns-num="1,3"
     data-matched-content-ui-type="image_stacked,image_stacked"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    `.trim()
+];
+
+/**
+ * A/Bテスト用に2つの広告ユニットを用意
+ *
+ * - ディスプレイ広告×1&インフィード広告×3
+ * - Multiplex広告×1（1×3枠）
+ */
+const MIDDLE_AD_SCRIPT = [
+    // 1つ目の広告ユニット
+    `
+<ins
+    id="middle_ad"
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-2526648882773973"
+    data-ad-slot="5941904776"
+    data-ad-format="rectangle, horizontal"
+    data-full-width-responsive="false"
+/>
+<script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-format="fluid"
+    data-ad-layout-key="-fb+5w+4e-db+86"
+    data-ad-client="ca-pub-2526648882773973"
+    data-ad-slot="5676621363"></ins>
+<script is:inline>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-format="fluid"
+    data-ad-layout-key="-fb+5w+4e-db+86"
+    data-ad-client="ca-pub-2526648882773973"
+    data-ad-slot="5676621363"></ins>
+<script is:inline>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-format="fluid"
+    data-ad-layout-key="-fb+5w+4e-db+86"
+    data-ad-client="ca-pub-2526648882773973"
+    data-ad-slot="5676621363"></ins>
+<script is:inline>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    `.trim(),
+    // 2つ目（Multiplex）の広告ユニット
+    `
+<ins class="adsbygoogle"
+    style="display: block; width: 100%;"
+    data-ad-format="autorelaxed"
+    data-ad-client="ca-pub-2526648882773973"
+    data-ad-slot="3095308603"
+    data-matched-content-rows-num="3"
+    data-matched-content-columns-num="1"
+    data-matched-content-ui-type="image_sidebyside"></ins>
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
@@ -294,7 +357,8 @@ export const onRequest = async (context) => {
         [
             {
                 ...getMicroadAdScript(isMobile),
-                BOTTOM_AD_SCRIPT: selectRandomArray(BOTTOM_AD_SCRIPT)
+                BOTTOM_AD_SCRIPT: selectRandomArray(BOTTOM_AD_SCRIPT),
+                MIDDLE_AD_SCRIPT: selectRandomArray(MIDDLE_AD_SCRIPT)
             }
         ]
     );
