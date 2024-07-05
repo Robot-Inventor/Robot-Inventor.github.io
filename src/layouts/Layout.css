@@ -196,6 +196,7 @@ main > * {
 #top_ad_desktop,
 #middle_ad {
     display: none;
+    width: 100%;
     height: 280px;
 }
 
