@@ -296,8 +296,7 @@ const MIDDLE_AD_SCRIPT = [
     data-ad-client="ca-pub-2526648882773973"
     data-ad-slot="5941904776"
     data-ad-format="rectangle, horizontal"
-    data-full-width-responsive="false"
-/>
+    data-full-width-responsive="false"></ins>
 <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 <ins class="adsbygoogle"
     style="display:block"
