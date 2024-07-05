@@ -214,6 +214,72 @@ const getMicroadAdScript = (isMobile) => {
     };
 };
 
+/**
+ * A/Bテスト用に2つの広告ユニットを用意
+ *
+ * - ディスプレイ広告×1&インフィード広告×3
+ * - Multiplex広告×1（モバイルでは4×1、デスクトップでは3×3枠）
+ */
+const BOTTOM_AD_SCRIPT = [
+    // 1つ目の広告ユニット
+    `
+<ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-2526648882773973"
+    data-ad-slot="3108993340"
+    data-ad-format="rectangle, horizontal"
+    data-full-width-responsive="false"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-format="fluid"
+    data-ad-layout-key="-gc+3r+68-9q-29"
+    data-ad-client="ca-pub-2526648882773973"
+    data-ad-slot="4887009254"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-format="fluid"
+    data-ad-layout-key="-gc+3r+68-9q-29"
+    data-ad-client="ca-pub-2526648882773973"
+    data-ad-slot="4887009254"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-format="fluid"
+    data-ad-layout-key="-gc+3r+68-9q-29"
+    data-ad-client="ca-pub-2526648882773973"
+    data-ad-slot="4887009254"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    `.trim(),
+    // 2つ目（Multiplex）の広告ユニット
+    `
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-format="autorelaxed"
+    data-ad-client="ca-pub-2526648882773973"
+    data-ad-slot="3546449335"
+    data-matched-content-rows-num="4.3"
+    data-matched-content-columns-num="1.3"
+    data-matched-content-ui-type="image_stacked"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    `.trim()
+];
+
 const selectRandomArray = (array) => array[Math.floor(Math.random() * array.length)];
 
 export const onRequest = async (context) => {
@@ -223,8 +289,15 @@ export const onRequest = async (context) => {
     const userAgent = request.headers.get("User-Agent");
     const isMobile = Boolean(userAgent.match(/iPhone|Android.+Mobile/u));
 
-    // const adScripts = selectRandomArray([getMicroadAdScript(isMobile), MICROAD_AD_SCRIPTS]);
-    const adScripts = selectRandomArray([getMicroadAdScript(isMobile)]);
+    // const adScripts = selectRandomArray([getMicroadAdScript(isMobile), I_MOBILE_AD_SCRIPTS]);
+    const adScripts = selectRandomArray(
+        [
+            {
+                ...getMicroadAdScript(isMobile),
+                BOTTOM_AD_SCRIPT: selectRandomArray(BOTTOM_AD_SCRIPT)
+            }
+        ]
+    );
 
     return new HTMLRewriter().on("head, body", new ElementHandler(adScripts)).transform(response);
 }
