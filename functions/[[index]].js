@@ -273,7 +273,7 @@ const BOTTOM_AD_SCRIPT = [
     data-ad-slot="3546449335"
     data-matched-content-rows-num="4,2"
     data-matched-content-columns-num="1,3"
-    data-matched-content-ui-type="image_stacked,image_stacked"></ins>
+    data-matched-content-ui-type="image_sidebyside,image_stacked"></ins>
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
