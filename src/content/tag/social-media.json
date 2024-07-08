@@ -1,3 +1,13 @@
 {
-    "name": "SNS"
+    "name": "SNS",
+    "description": "SNS（ソーシャルメディア）は、ユーザーが情報を共有し、他のユーザーと交流するためのオンラインプラットフォームです。Facebook、Twitter、Instagramなどのサービスがあります。",
+    "relatedTags": [
+        "instagram",
+        "line",
+        "threads",
+        "twitter",
+        "bluesky",
+        "mastodon",
+        "misskey"
+    ]
 }

@@ -1,3 +1,10 @@
 {
-    "name": "Windows"
+    "name": "Windows",
+    "description": "Windowsは、Microsoftが開発したオペレーティングシステムです。デスクトップパソコンやノートパソコンに広く搭載されています。",
+    "relatedTags": [
+        "linux",
+        "macos",
+        "microsoft",
+        "microsoft-surface"
+    ]
 }

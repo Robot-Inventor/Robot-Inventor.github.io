@@ -1,3 +1,9 @@
 {
-    "name": "HTML"
+    "name": "HTML",
+    "description": "HTMLは、ウェブサイトの構造を定義するためのマークアップ言語です。テキスト、画像、動画などのコンテンツを配置し、ウェブサイトのレイアウトを構築します。",
+    "relatedTags": [
+        "web-development",
+        "javascript",
+        "typescript"
+    ]
 }

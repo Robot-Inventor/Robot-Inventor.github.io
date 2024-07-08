@@ -1,3 +1,12 @@
 {
-    "name": "Firefox"
+    "name": "Firefox",
+    "description": "Firefoxは、Mozillaが開発したオープンソースのWebブラウザーです。プライバシーとセキュリティに重点を置いています。",
+    "relatedTags": [
+        "chrome",
+        "edge",
+        "mozilla",
+        "privacy",
+        "security",
+        "open-source"
+    ]
 }

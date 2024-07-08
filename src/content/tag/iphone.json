@@ -1,3 +1,10 @@
 {
-    "name": "iPhone"
+    "name": "iPhone",
+    "description": "iPhoneは、Appleが製造するスマートフォンです。iOSを搭載し、スタイリッシュなデザインと高性能が特徴です。",
+    "relatedTags": [
+        "apple",
+        "android",
+        "google-pixel",
+        "ios"
+    ]
 }

@@ -1,3 +1,10 @@
 {
-    "name": "Chrome"
+    "name": "Chrome",
+    "description": "Chromeは、Googleが開発したウェブブラウザです。高速で安全なブラウジング体験を提供し、多くの拡張機能が利用できます。",
+    "relatedTags": [
+        "edge",
+        "firefox",
+        "microsoft",
+        "mozilla"
+    ]
 }

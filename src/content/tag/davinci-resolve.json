@@ -1,3 +1,7 @@
 {
-    "name": "DaVinci Resolve"
+    "name": "DaVinci Resolve",
+    "description": "DaVinci Resolveは、Blackmagic Designが開発した映像編集ソフトウェアです。プロの編集者やカラーグレーディングアーティストに広く使用されています。",
+    "relatedTags": [
+        "blackmagic-design"
+    ]
 }

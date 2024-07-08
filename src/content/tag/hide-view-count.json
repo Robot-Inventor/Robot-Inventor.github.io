@@ -1,3 +1,9 @@
 {
-    "name": "Hide View Count"
+    "name": "Hide View Count",
+    "description": "Hide View Countは、X（旧Twitter）の投稿の閲覧数を非表示にする機能です。",
+    "relatedTags": [
+        "privacy",
+        "social-media",
+        "twitter"
+    ]
 }

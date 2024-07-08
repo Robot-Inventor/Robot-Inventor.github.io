@@ -1,3 +1,8 @@
 {
-    "name": "Inkscape"
+    "name": "Inkscape",
+    "description": "Inkscapeは、オープンソースのベクターグラフィックエディタです。Illustratorなどの商用ソフトウェアに代わる選択肢として人気があります。",
+    "relatedTags": [
+        "adobe",
+        "figma"
+    ]
 }

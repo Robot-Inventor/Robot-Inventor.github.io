@@ -1,3 +1,8 @@
 {
-    "name": "Python"
+    "name": "Python",
+    "description": "Pythonは、汎用プログラミング言語です。読みやすく、書きやすい言語として知られており、データ分析、機械学習、Web開発など、さまざまな分野で使用されています。",
+    "relatedTags": [
+        "programming",
+        "web-development"
+    ]
 }

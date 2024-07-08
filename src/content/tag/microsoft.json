@@ -1,3 +1,10 @@
 {
-    "name": "Microsoft"
+    "name": "Microsoft",
+    "description": "Microsoftは、Windows、Officeアプリケーション、クラウドコンピューティングサービスなどを提供する企業です。",
+    "relatedTags": [
+        "edge",
+        "windows",
+        "microsoft-365",
+        "microsoft-surface"
+    ]
 }

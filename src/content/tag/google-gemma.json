@@ -1,3 +1,9 @@
 {
-    "name": "Gemma"
+    "name": "Gemma",
+    "description": "Gemmaは、Googleが開発したオープンな大規模言語モデルです。パラメーター数に対して性能が高いことが特徴です。",
+    "relatedTags": [
+        "ai",
+        "google-gemini",
+        "openai"
+    ]
 }

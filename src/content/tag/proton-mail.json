@@ -1,3 +1,9 @@
 {
-    "name": "Proton Mail"
+    "name": "Proton Mail",
+    "description": "Proton Mailは、Protonが提供するエンドツーエンド暗号化されたメールサービスです。プライバシーを重視するユーザーに人気があります。",
+    "relatedTags": [
+        "proton",
+        "gmail",
+        "privacy"
+    ]
 }

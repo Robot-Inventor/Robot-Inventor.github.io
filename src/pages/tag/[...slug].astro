@@ -21,6 +21,9 @@ const articles = await getCollection("article", ({ data }) => {
 const articleLinks = articles
     .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
     .map((article) => `/article/${article.slug}/`);
+
+const relatedTagsPromise = (entry.data.relatedTags || []).map((tag) => getEntry("tag", tag.id));
+const relatedTags = await Promise.all(relatedTagsPromise);
 ---
 
 <Layout
@@ -38,6 +41,17 @@ const articleLinks = articles
         showInArticleAds: false
     }}
 >
+    {entry.data.description && <p>{entry.data.description}</p>}
+    {
+        entry.data.relatedTags && (
+            <div id="article_tags">
+                関連タグ：
+                {relatedTags.map((tag) => {
+                    return <a href={`/tag/${tag.id}/`}>#{tag.data.name}</a>;
+                })}
+            </div>
+        )
+    }
     <div id="article_list_area">
         {articleLinks.map((article) => <ArticleCard link={article} type="portrait" />)}
     </div>
@@ -60,6 +74,7 @@ const articleLinks = articles
             align-items: stretch;
             align-content: flex-start;
             gap: 1rem;
+            margin-top: 2rem;
         }
     </style>
 </Layout>

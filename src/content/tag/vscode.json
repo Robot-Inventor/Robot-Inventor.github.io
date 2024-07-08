@@ -1,3 +1,8 @@
 {
-    "name": "VS Code"
+    "name": "VS Code",
+    "description": "VS Code（Visual Studio Code）は、Microsoftが開発した無料のコードエディタです。さまざまなプログラミング言語に対応し、拡張機能も豊富です。",
+    "relatedTags": [
+        "programming",
+        "extension"
+    ]
 }

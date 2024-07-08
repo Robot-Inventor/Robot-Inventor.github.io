@@ -1,3 +1,9 @@
 {
-    "name": "拡張機能"
+    "name": "拡張機能",
+    "description": "拡張機能は、Webブラウザーや他のアプリケーションに機能を追加するソフトウェアです。さまざまな機能を拡張できます。",
+    "relatedTags": [
+        "chrome",
+        "firefox",
+        "vscode"
+    ]
 }

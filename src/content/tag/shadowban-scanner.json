@@ -1,3 +1,9 @@
 {
-    "name": "Shadowban Scanner"
+    "name": "Shadowban Scanner",
+    "description": "Shadowban Scannerは、X（旧Twitter）のシャドウバンやセンシティブ判定を検出するためのツールです。シャドウバンとは、特定のユーザーの投稿やアカウントが他のユーザーに表示されにくくなる現象です。",
+    "relatedTags": [
+        "social-media",
+        "twitter",
+        "extension"
+    ]
 }

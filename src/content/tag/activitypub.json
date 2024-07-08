@@ -1,3 +1,10 @@
 {
-    "name": "ActivityPub"
+    "name": "ActivityPub",
+    "description": "ActivityPubは、分散型ソーシャルネットワークにおける相互運用性を可能にするオープンなコミュニケーションプロトコルです。ソーシャルメディアプラットフォームがActivityPubを使用すると、ユーザーは異なるプラットフォーム間で相互にフォローしたり、投稿を共有したりできます。",
+    "relatedTags": [
+        "bluesky",
+        "fediverse",
+        "mastodon",
+        "misskey"
+    ]
 }

@@ -1,3 +1,7 @@
 {
-    "name": "Blackmagic Design"
+    "name": "Blackmagic Design",
+    "description": "Blackmagic Designは、映像編集、カラーグレーディング、ライブストリーミングなどのソフトウェアとハードウェアを提供する企業です。DaVinci Resolveなどの製品は、プロの映像編集者やクリエイターに人気があります。",
+    "relatedTags": [
+        "davinci-resolve"
+    ]
 }

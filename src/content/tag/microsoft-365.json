@@ -1,3 +1,7 @@
 {
-    "name": "Microsoft 365"
+    "name": "Microsoft 365",
+    "description": "Microsoft 365は、Microsoftが提供するクラウドベースのサブスクリプションサービスです。Word、Excel、PowerPointなどのオフィスアプリケーションや、クラウドストレージ、メールサービスなどが含まれます。",
+    "relatedTags": [
+        "microsoft"
+    ]
 }

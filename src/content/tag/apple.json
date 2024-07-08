@@ -1,3 +1,11 @@
 {
-    "name": "Apple"
+    "name": "Apple",
+    "description": "Appleは、コンピューター、スマートフォン、タブレット、ウェアラブルデバイスなどの製品を製造する企業です。macOS、iOS、iPadOSなどのオペレーティングシステムも提供しています。",
+    "relatedTags": [
+        "android",
+        "ios",
+        "iphone",
+        "mac",
+        "macos"
+    ]
 }

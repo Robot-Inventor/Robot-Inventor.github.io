@@ -1,3 +1,9 @@
 {
-    "name": "Anthropic"
+    "name": "Anthropic",
+    "description": "Anthropicは、安全で信頼性の高いAIシステムの開発を目的とする企業です。Claudeと呼ばれる大規模言語モデルを提供しています。",
+    "relatedTags": [
+        "ai",
+        "claude",
+        "openai"
+    ]
 }

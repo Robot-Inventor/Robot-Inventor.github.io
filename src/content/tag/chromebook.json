@@ -1,3 +1,7 @@
 {
-    "name": "Chromebook"
+    "name": "Chromebook",
+    "description": "Chromebookは、GoogleのChrome OSを搭載したノートパソコンです。Webブラウザーベースのオペレーティングシステムで、シンプルで使いやすい点が特徴です。",
+    "relatedTags": [
+        "chromeos"
+    ]
 }

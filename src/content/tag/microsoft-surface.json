@@ -1,3 +1,8 @@
 {
-    "name": "Microsoft Surface"
+    "name": "Microsoft Surface",
+    "description": "Microsoft Surfaceは、Microsoftが製造するタブレットやノートパソコンなどのデバイスです。Windowsを搭載し、スタイリッシュなデザインと高性能が特徴です。",
+    "relatedTags": [
+        "microsoft",
+        "windows"
+    ]
 }

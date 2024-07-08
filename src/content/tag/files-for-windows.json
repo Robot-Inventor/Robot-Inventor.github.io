@@ -1,3 +1,7 @@
 {
-    "name": "Files（Windows）"
+    "name": "Files（Windows）",
+    "description": "Filesは、Windows 11向けのオープンソースのファイル管理アプリです。ファイルの検索、管理、共有などが可能で、モダンなデザインとパワーユーザー向けの豊富な機能が特徴です。",
+    "relatedTags": [
+        "windows"
+    ]
 }

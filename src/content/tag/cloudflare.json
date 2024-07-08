@@ -1,3 +1,8 @@
 {
-    "name": "Cloudflare"
+    "name": "Cloudflare",
+    "description": "Cloudflareは、ウェブサイトのパフォーマンス、セキュリティ、信頼性を向上させるためのサービスを提供する企業です。CDN、DDoS攻撃対策、DNSサービスなど、さまざまなサービスを提供しています。",
+    "relatedTags": [
+        "web-development",
+        "programming"
+    ]
 }

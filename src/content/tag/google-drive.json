@@ -1,3 +1,10 @@
 {
-    "name": "Googleドライブ"
+    "name": "Googleドライブ",
+    "description": "Googleドライブは、Googleが提供する無料のクラウドストレージサービスです。ファイルの保存、共有、アクセスなどができます。",
+    "relatedTags": [
+        "google",
+        "files-by-google",
+        "google-docs",
+        "proton-drive"
+    ]
 }

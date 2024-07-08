@@ -1,3 +1,9 @@
 {
-    "name": "Bluesky"
+    "name": "Bluesky",
+    "description": "Blueskyは、Twitterの創業者であるジャック・ドーシーが立ち上げた分散型ソーシャルネットワークです。AT Protocolを使用し、オープンで分散型のプラットフォームを目指しています。",
+    "relatedTags": [
+        "activitypub",
+        "fediverse",
+        "twitter"
+    ]
 }

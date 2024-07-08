@@ -1,3 +1,9 @@
 {
-    "name": "Node.js"
+    "name": "Node.js",
+    "description": "Node.jsは、JavaScriptでサーバーサイドアプリケーションを開発するためのランタイム環境です。非同期イベント駆動型のアーキテクチャを採用し、高速でスケーラブルなアプリケーション開発を可能にします。",
+    "relatedTags": [
+        "javascript",
+        "programming",
+        "web-development"
+    ]
 }

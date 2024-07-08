@@ -1,3 +1,8 @@
 {
-    "name": "Adobe"
+    "name": "Adobe",
+    "description": "Adobeは、クリエイティブプロフェッショナル向けのソフトウェアやサービスを提供する企業です。Photoshop、Illustrator、Premiere Proなどの製品は、デザイン、写真編集、ビデオ編集など、幅広い分野で使用されています。",
+    "relatedTags": [
+        "figma",
+        "inkscape"
+    ]
 }

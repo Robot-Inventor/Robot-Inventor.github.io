@@ -1,3 +1,7 @@
 {
-    "name": "ChromeOS"
+    "name": "ChromeOS",
+    "description": "ChromeOSは、Googleが開発したオペレーティングシステムです。Chromebookで使用されており、Webブラウザーベースの操作が中心です。",
+    "relatedTags": [
+        "chromebook"
+    ]
 }

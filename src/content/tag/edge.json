@@ -1,3 +1,9 @@
 {
-    "name": "Edge"
+    "name": "Edge",
+    "description": "Edgeは、Microsoftが開発したWebブラウザーです。Windows 10以降のバージョンに標準搭載されています。",
+    "relatedTags": [
+        "chrome",
+        "firefox",
+        "microsoft"
+    ]
 }

@@ -1,3 +1,7 @@
 {
-    "name": "Sonos"
+    "name": "Sonos",
+    "description": "Sonosは、ワイヤレスオーディオシステムを製造する企業です。複数のスピーカーを連携させ、高音質の音楽再生を楽しむことができます。",
+    "relatedTags": [
+        "audio"
+    ]
 }

@@ -1,3 +1,11 @@
 {
-    "name": "AI"
+    "name": "AI",
+    "description": "AI（人工知能）は、人間の知能を模倣するコンピューターシステムです。機械学習、ディープラーニング、自然言語処理などの技術を使用して、さまざまなタスクを実行できます。",
+    "relatedTags": [
+        "chatgpt",
+        "claude",
+        "google-gemini",
+        "openai",
+        "perplexity"
+    ]
 }

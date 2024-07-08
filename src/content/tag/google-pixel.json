@@ -1,3 +1,9 @@
 {
-    "name": "Google Pixel"
+    "name": "Google Pixel",
+    "description": "Google Pixelは、Googleが製造するスマートフォンです。優れたカメラ性能や最新ソフトウェアへの早期アクセスが特徴です。",
+    "relatedTags": [
+        "android",
+        "apple",
+        "iphone"
+    ]
 }

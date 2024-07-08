@@ -1,3 +1,11 @@
 {
-    "name": "Misskey"
+    "name": "Misskey",
+    "description": "Misskeyは、オープンソースの分散型ソーシャルネットワークです。ActivityPubプロトコルを使用し、MastodonやThreadsとの相互運用性を実現しています。",
+    "relatedTags": [
+        "activitypub",
+        "fediverse",
+        "mastodon",
+        "bluesky",
+        "threads"
+    ]
 }

@@ -1,3 +1,10 @@
 {
-    "name": "Figma"
+    "name": "Figma",
+    "description": "Figmaは、Webベースのデザインツールです。ユーザーインターフェースデザイン、プロトタイピング、コラボレーションなどに使用されます。",
+    "relatedTags": [
+        "adobe",
+        "inkscape",
+        "web-development",
+        "figma-config-2024"
+    ]
 }

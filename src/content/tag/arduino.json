@@ -1,3 +1,7 @@
 {
-    "name": "Arduino"
+    "name": "Arduino",
+    "description": "Arduinoは、初心者向けの電子工作プラットフォームです。マイクロコントローラーボードとソフトウェアの組み合わせにより、電子工作やプログラミングを簡単に学習できます。",
+    "relatedTags": [
+        "programming"
+    ]
 }

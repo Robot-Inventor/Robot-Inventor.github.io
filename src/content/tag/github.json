@@ -1,3 +1,9 @@
 {
-    "name": "GitHub"
+    "name": "GitHub",
+    "description": "GitHubは、Gitリポジトリをホスティングするサービスです。開発者がソースコードを共有、コラボレーション、管理するためのプラットフォームを提供しています。",
+    "relatedTags": [
+        "git",
+        "programming",
+        "web-development"
+    ]
 }

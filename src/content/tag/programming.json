@@ -1,3 +1,14 @@
 {
-    "name": "プログラミング"
+    "name": "プログラミング",
+    "description": "プログラミングは、コンピュータープログラムを作成する行為です。さまざまなプログラミング言語を使用し、ソフトウェアやウェブサイトを開発すできます。",
+    "relatedTags": [
+        "javascript",
+        "python",
+        "typescript",
+        "git",
+        "html",
+        "nodejs",
+        "arduino",
+        "open-source"
+    ]
 }

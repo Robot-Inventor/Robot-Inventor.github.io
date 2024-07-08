@@ -1,3 +1,11 @@
 {
-    "name": "OpenAI"
+    "name": "OpenAI",
+    "description": "OpenAIは、人工知能の研究開発企業です。ChatGPTやDALL-Eなどの大規模言語モデルや画像生成モデルを開発しています。",
+    "relatedTags": [
+        "ai",
+        "chatgpt",
+        "claude",
+        "google-gemini",
+        "perplexity"
+    ]
 }

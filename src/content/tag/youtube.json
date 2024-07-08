@@ -1,3 +1,9 @@
 {
-    "name": "YouTube"
+    "name": "YouTube",
+    "description": "YouTubeは、ユーザーが動画をアップロード、視聴、共有できる動画共有サービスです。音楽、映画、教育、ゲームなど、さまざまなジャンルの動画が視聴できます。",
+    "relatedTags": [
+        "google",
+        "chromecast",
+        "social-media"
+    ]
 }

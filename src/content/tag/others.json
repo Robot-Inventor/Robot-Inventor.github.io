@@ -1,3 +1,5 @@
 {
-    "name": "その他"
+    "name": "その他",
+    "description": "その他は、他のタグ分類されない記事です。",
+    "relatedTags": []
 }

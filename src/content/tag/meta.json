@@ -1,3 +1,8 @@
 {
-    "name": "Meta"
+    "name": "Meta",
+    "description": "Metaは、Facebook、Instagram、WhatsAppなどのソーシャルメディアプラットフォームを運営する企業です。メタバースやAIなどの新しい技術分野にも注力しています。",
+    "relatedTags": [
+        "instagram",
+        "threads"
+    ]
 }

@@ -244,6 +244,7 @@ main > * {
     flex-wrap: wrap;
     gap: 0 1rem;
     z-index: 0;
+    align-items: center;
 }
 
 #article_info {

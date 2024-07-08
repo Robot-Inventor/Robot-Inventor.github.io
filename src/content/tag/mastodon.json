@@ -1,3 +1,10 @@
 {
-    "name": "Mastodon"
+    "name": "Mastodon",
+    "description": "Mastodonは、オープンソースの分散型ソーシャルネットワークです。ActivityPubプロトコルを使用し、ユーザーは異なるサーバー間で相互にフォローしたり、投稿を共有したりできます。",
+    "relatedTags": [
+        "activitypub",
+        "fediverse",
+        "misskey",
+        "bluesky"
+    ]
 }

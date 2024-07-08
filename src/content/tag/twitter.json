@@ -1,3 +1,12 @@
 {
-    "name": "Twitter（X）"
+    "name": "Twitter（X）",
+    "description": "Twitter（X）は、ユーザーが短いメッセージ（ツイート）を投稿し、他のユーザーと交流するためのソーシャルメディアプラットフォームです。ニュース、情報共有、意見交換などに利用されています。",
+    "relatedTags": [
+        "bluesky",
+        "instagram",
+        "threads",
+        "social-media",
+        "mastodon",
+        "misskey"
+    ]
 }

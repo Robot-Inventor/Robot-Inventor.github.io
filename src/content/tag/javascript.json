@@ -1,3 +1,9 @@
 {
-    "name": "JavaScript"
+    "name": "JavaScript",
+    "description": "JavaScriptは、Webサイトにインタラクティブな機能を追加するためのスクリプト言語です。ユーザーインターフェースの制御、アニメーション、データ処理などに使用されます。",
+    "relatedTags": [
+        "html",
+        "typescript",
+        "web-development"
+    ]
 }

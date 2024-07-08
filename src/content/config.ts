@@ -48,7 +48,9 @@ const authorCollection = defineCollection({
 const tagCollection = defineCollection({
     type: "data",
     schema: z.object({
-        name: z.string()
+        name: z.string(),
+        description: z.string().optional(),
+        relatedTags: z.array(reference("tag")).optional()
     })
 });
 

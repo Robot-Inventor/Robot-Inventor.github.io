@@ -1,3 +1,11 @@
 {
-    "name": "Threads"
+    "name": "Threads",
+    "description": "Threadsは、Metaが提供するテキストベースのソーシャルメディアプラットフォームです。Instagramと連携し、ユーザーは短いテキスト投稿を共有できます。ActivityPubに対応しており、MastodonやMisskeyなどとの相互運用が可能です。",
+    "relatedTags": [
+        "instagram",
+        "meta",
+        "twitter",
+        "social-media",
+        "activitypub"
+    ]
 }

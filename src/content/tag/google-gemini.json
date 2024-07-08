@@ -1,3 +1,11 @@
 {
-    "name": "Gemini"
+    "name": "Gemini",
+    "description": "Geminiは、Googleが開発した大規模言語モデルです。ChatGPTやClaudeと同様に、自然な会話が可能です。",
+    "relatedTags": [
+        "ai",
+        "chatgpt",
+        "claude",
+        "openai",
+        "perplexity"
+    ]
 }

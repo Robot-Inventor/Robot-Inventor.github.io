@@ -1,3 +1,9 @@
 {
-    "name": "Proton Drive"
+    "name": "Proton Drive",
+    "description": "Proton Driveは、Protonが提供するエンドツーエンド暗号化されたクラウドストレージサービスです。プライバシーを重視するユーザー向けに設計されています。",
+    "relatedTags": [
+        "proton",
+        "google-drive",
+        "privacy"
+    ]
 }

@@ -1,3 +1,5 @@
 {
-    "name": "Chromecast"
+    "name": "Chromecast",
+    "description": "Chromecastは、スマートフォンやタブレットなどのデバイスからテレビにコンテンツをストリーミングするためのデバイスです。YouTube、Netflix、Huluなどのサービスに対応しています。",
+    "relatedTags": []
 }

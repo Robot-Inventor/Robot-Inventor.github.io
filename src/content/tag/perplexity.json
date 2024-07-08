@@ -1,3 +1,11 @@
 {
-    "name": "Perplexity"
+    "name": "Perplexity",
+    "description": "Perplexityは、AIベースの検索エンジンです。ユーザーの質問に対して、関連する情報やWebサイトへのリンクを提示します。",
+    "relatedTags": [
+        "ai",
+        "chatgpt",
+        "claude",
+        "google-gemini",
+        "openai"
+    ]
 }

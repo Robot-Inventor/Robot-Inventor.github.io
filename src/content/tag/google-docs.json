@@ -1,3 +1,8 @@
 {
-    "name": "Googleドキュメント"
+    "name": "Googleドキュメント",
+    "description": "Googleドキュメントは、Googleが提供する無料のオンライン文書作成ツールです。共同編集やリアルタイムコラボレーションが可能です。",
+    "relatedTags": [
+        "google",
+        "google-drive"
+    ]
 }

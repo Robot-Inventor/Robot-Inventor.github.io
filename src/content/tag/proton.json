@@ -1,3 +1,10 @@
 {
-    "name": "Proton"
+    "name": "Proton",
+    "description": "Protonは、プライバシーとセキュリティを重視したソフトウェアとサービスを提供する企業です。Proton Mail、Proton Drive、Proton Passなどの製品があります。",
+    "relatedTags": [
+        "proton-drive",
+        "proton-mail",
+        "proton-pass",
+        "privacy"
+    ]
 }

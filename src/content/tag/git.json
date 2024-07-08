@@ -1,3 +1,9 @@
 {
-    "name": "Git"
+    "name": "Git",
+    "description": "Gitは、ソフトウェア開発におけるバージョン管理システムです。ソースコードの変更を記録し、チームで共同作業を円滑に進めるために使用されます。",
+    "relatedTags": [
+        "github",
+        "programming",
+        "web-development"
+    ]
 }

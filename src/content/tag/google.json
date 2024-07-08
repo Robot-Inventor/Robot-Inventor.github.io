@@ -1,3 +1,11 @@
 {
-    "name": "Google"
+    "name": "Google",
+    "description": "Googleは、検索エンジン、クラウドコンピューティング、ソフトウェアなどのサービスを提供する企業です。Gmail、Googleドライブ、Androidなどの製品で知られています。",
+    "relatedTags": [
+        "android",
+        "chrome",
+        "gmail",
+        "google-docs",
+        "google-drive"
+    ]
 }

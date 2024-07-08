@@ -1,3 +1,9 @@
 {
-    "name": "Xiaomi"
+    "name": "Xiaomi",
+    "description": "Xiaomiは、スマートフォン、タブレット、ウェアラブルデバイスなどの製品を製造する中国の企業です。コストパフォーマンスの高い製品が特徴です。",
+    "relatedTags": [
+        "android",
+        "apple",
+        "iphone"
+    ]
 }

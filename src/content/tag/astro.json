@@ -1,3 +1,10 @@
 {
-    "name": "Astro"
+    "name": "Astro",
+    "description": "Astroは、パフォーマンスに優れたウェブサイトやWebアプリを作成するための静的サイトジェネレーター/フレームワークです。React、Vue、Svelteなどのコンポーネントを組み合わせて使用できます。",
+    "relatedTags": [
+        "web-development",
+        "programming",
+        "javascript",
+        "typescript"
+    ]
 }

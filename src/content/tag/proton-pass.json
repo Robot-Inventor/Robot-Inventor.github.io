@@ -1,3 +1,8 @@
 {
-    "name": "Proton Pass"
+    "name": "Proton Pass",
+    "description": "Proton Passは、Protonが提供するパスワードマネージャーです。パスワードを安全に管理し、Webサイトへのログインを自動化できます。",
+    "relatedTags": [
+        "proton",
+        "security"
+    ]
 }

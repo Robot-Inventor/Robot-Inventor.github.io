@@ -1,3 +1,7 @@
 {
-    "name": "Config2024"
+    "name": "Config2024",
+    "description": "Config2024は、Figmaのデザインシステムに関するカンファレンスの名称です。デザインの最新トレンドや技術に関する情報が共有されます。",
+    "relatedTags": [
+        "figma"
+    ]
 }

@@ -1,3 +1,11 @@
 {
-    "name": "Fediverse"
+    "name": "Fediverse",
+    "description": "Fediverseは、ActivityPubプロトコルにもとづいた分散型ソーシャルネットワークの集合体です。Mastodon、Misskey、Threadsなどのプラットフォームが含まれます。",
+    "relatedTags": [
+        "activitypub",
+        "bluesky",
+        "mastodon",
+        "misskey",
+        "threads"
+    ]
 }

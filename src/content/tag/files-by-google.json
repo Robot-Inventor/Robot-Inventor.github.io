@@ -1,3 +1,8 @@
 {
-    "name": "Files by Google"
+    "name": "Files by Google",
+    "description": "Files by Googleは、Android向けのファイル管理アプリです。クラウドストレージとの連携や、ファイルの共有などができます。",
+    "relatedTags": [
+        "android",
+        "google-drive"
+    ]
 }

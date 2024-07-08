@@ -1,3 +1,7 @@
 {
-    "name": "Slack"
+    "name": "Slack",
+    "description": "Slackは、チーム向けコミュニケーションプラットフォームです。チャット、音声通話、ビデオ通話、ファイル共有などの機能を提供しています。",
+    "relatedTags": [
+        "social-media"
+    ]
 }

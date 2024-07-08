@@ -1,3 +1,10 @@
 {
-    "name": "macOS"
+    "name": "macOS",
+    "description": "macOSは、Appleが開発したオペレーティングシステムです。Macコンピューターで使用されており、直感的で洗練されたインターフェースが特徴です。",
+    "relatedTags": [
+        "apple",
+        "mac",
+        "linux",
+        "windows"
+    ]
 }

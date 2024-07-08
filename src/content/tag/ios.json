@@ -1,3 +1,9 @@
 {
-    "name": "iOS"
+    "name": "iOS",
+    "description": "iOSは、Appleが開発したモバイルオペレーティングシステムです。iPhone、iPad、iPod touchなどのデバイスで使用されています。",
+    "relatedTags": [
+        "android",
+        "apple",
+        "iphone"
+    ]
 }

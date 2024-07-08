@@ -1,3 +1,8 @@
 {
-    "name": "Linux"
+    "name": "Linux",
+    "description": "Linuxは、オープンソースのオペレーティングシステムです。デスクトップ、サーバー、組み込みシステムなど、幅広い分野で使用されています。",
+    "relatedTags": [
+        "windows",
+        "macos"
+    ]
 }

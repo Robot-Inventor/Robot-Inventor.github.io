@@ -1,3 +1,12 @@
 {
-    "name": "Claude"
+    "name": "Claude",
+    "description": "Claudeは、Anthropicが開発した大規模言語モデルです。ChatGPTと同様に、自然な会話ができます。",
+    "relatedTags": [
+        "ai",
+        "anthropic",
+        "chatgpt",
+        "openai",
+        "google-gemini",
+        "perplexity"
+    ]
 }

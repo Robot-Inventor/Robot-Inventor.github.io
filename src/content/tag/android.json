@@ -1,3 +1,10 @@
 {
-    "name": "Android"
+    "name": "Android",
+    "description": "Androidは、Googleが開発したモバイルオペレーティングシステム（OS）です。スマートフォン、タブレット、ウェアラブルデバイスなど、幅広いデバイスで使用されています。",
+    "relatedTags": [
+        "apple",
+        "ios",
+        "google-pixel",
+        "xiaomi"
+    ]
 }

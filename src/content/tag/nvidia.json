@@ -1,3 +1,5 @@
 {
-    "name": "NVIDIA"
+    "name": "NVIDIA",
+    "description": "NVIDIAは、グラフィック処理ユニット（GPU）などの半導体チップを製造する企業です。ゲーミング、データセンター、人工知能などの分野で広く使用されています。",
+    "relatedTags": []
 }

@@ -1,3 +1,8 @@
 {
-    "name": "Mac"
+    "name": "Mac",
+    "description": "Macは、Appleが製造するコンピューターです。macOSを搭載し、クリエイティブな仕事やデザインに適しています。",
+    "relatedTags": [
+        "apple",
+        "macos"
+    ]
 }

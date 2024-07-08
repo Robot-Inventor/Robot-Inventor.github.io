@@ -1,3 +1,11 @@
 {
-    "name": "ChatGPT"
+    "name": "ChatGPT",
+    "description": "ChatGPTは、OpenAIが開発した大規模言語モデルです。自然な会話が可能で、さまざまな質問に答えたり、文章を作成したりできます。",
+    "relatedTags": [
+        "ai",
+        "openai",
+        "claude",
+        "google-gemini",
+        "perplexity"
+    ]
 }

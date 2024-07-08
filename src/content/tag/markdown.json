@@ -1,3 +1,8 @@
 {
-    "name": "Markdown"
+    "name": "Markdown",
+    "description": "Markdownは、シンプルなテキスト形式で文章やコンテンツを作成するためのマークアップ言語です。Webサイトやブログ記事の執筆によく使用されます。",
+    "relatedTags": [
+        "web-development",
+        "programming"
+    ]
 }

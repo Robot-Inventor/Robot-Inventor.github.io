@@ -1,3 +1,10 @@
 {
-    "name": "Instagram"
+    "name": "Instagram",
+    "description": "Instagramは、写真や動画を共有するためのソーシャルメディアプラットフォームです。ユーザーは写真や動画を投稿し、他のユーザーと交流できます。",
+    "relatedTags": [
+        "social-media",
+        "threads",
+        "twitter",
+        "meta"
+    ]
 }

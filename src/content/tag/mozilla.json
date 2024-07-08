@@ -1,3 +1,7 @@
 {
-    "name": "Mozilla"
+    "name": "Mozilla",
+    "description": "Mozillaは、FirefoxやThunderbirdなどのソフトウェアを開発する非営利団体です。オープンソースソフトウェアの開発と普及に取り組んでいます。",
+    "relatedTags": [
+        "firefox"
+    ]
 }

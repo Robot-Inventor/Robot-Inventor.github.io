@@ -1,3 +1,14 @@
 {
-    "name": "Web開発"
+    "name": "Web開発",
+    "description": "Web開発は、WebサイトやWebアプリケーションを作成するプロセスです。HTML、CSS、JavaScriptなどの技術を用いて、インタラクティブなWebコンテンツを構築します。",
+    "relatedTags": [
+        "html",
+        "javascript",
+        "typescript",
+        "git",
+        "figma",
+        "astro",
+        "nodejs",
+        "python"
+    ]
 }

@@ -1,3 +1,9 @@
 {
-    "name": "TypeScript"
+    "name": "TypeScript",
+    "description": "TypeScriptは、JavaScriptのスーパーセットです。静的型付けを導入することで、コードの可読性と保守性を向上させます。",
+    "relatedTags": [
+        "javascript",
+        "programming",
+        "web-development"
+    ]
 }

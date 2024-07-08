@@ -1,3 +1,9 @@
 {
-    "name": "LINE"
+    "name": "LINE",
+    "description": "LINEは、スマートフォン向けのコミュニケーションアプリです。メッセージ、音声通話、ビデオ通話、スタンプなど、さまざまな機能を提供しています。",
+    "relatedTags": [
+        "social-media",
+        "yahoo",
+        "softbank"
+    ]
 }
