@@ -881,7 +881,7 @@ article .adsbygoogle::before {
     margin: 2rem 0;
 }
 
-.adsbygoogle[data-ad-format="fluid"] {
+main > .adsbygoogle[data-ad-format="fluid"] {
     margin: 0;
 }
 
