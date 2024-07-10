@@ -390,19 +390,12 @@ export const onRequest = async (context) => {
         ]
     );
 
-    return new HTMLRewriter().on("head, body", new ElementHandler(adScripts)).transform(response);
+    return new HTMLRewriter().on("head, body", new CommentHandler(adScripts)).on("body main ins[data-in-article-ad]", new ElementHandler()).transform(response);
 }
 
-class ElementHandler {
+class CommentHandler {
     constructor(adScripts) {
         this.adScripts = adScripts;
-    }
-
-    element(element) {
-        console.log(element.tagName);
-        if (element.hasAttribute("data-in-article-ad")) {
-            element.replace(selectRandomArray(...IN_ARTICLE_AD_SCRIPT), { html: true });
-        }
     }
 
     comments(comment) {
@@ -411,5 +404,13 @@ class ElementHandler {
         if (!(commentString in this.adScripts)) return;
 
         comment.replace(this.adScripts[commentString], { html: true });
+    }
+}
+
+class ElementHandler {
+    element(element) {
+        if (element.hasAttribute("data-in-article-ad")) {
+            element.replace(selectRandomArray(...IN_ARTICLE_AD_SCRIPT), { html: true });
+        }
     }
 }
