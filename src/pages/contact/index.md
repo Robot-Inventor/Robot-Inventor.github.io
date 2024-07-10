@@ -13,3 +13,9 @@ showAds: false
 
 - メールアドレス：[info@roboin.io](mailto:info@roboin.io)
 - Twitter：[@keita_roboin](https://twitter.com/keita_roboin)
+
+:::danger[【重要】メールについて]
+2024年7月11日より、メールの送信元のプロバイダーを変更しました。これまではDKIM/DMARCに対応していませんでしたが、現在は対応しています。
+
+変更以前に送信されたメールは、SPFにのみ対応しており、メールクライアントによっては［Gmail経由］などのメッセージが表示されることがあります。
+:::
