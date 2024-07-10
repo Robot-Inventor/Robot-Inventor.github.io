@@ -342,6 +342,34 @@ const MIDDLE_AD_SCRIPT = [
     `.trim()
 ];
 
+const IN_ARTICLE_AD_SCRIPT = [
+    // ディスプレイ広告
+    `
+<ins class="adsbygoogle"
+    style="display:block; width: 100%; height: 280px;"
+    data-ad-client="ca-pub-2526648882773973"
+    data-ad-slot="9413147471"
+    data-ad-format="rectangle, horizontal"
+    data-full-width-responsive="false"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    `.trim(),
+    // 記事内広告
+    `
+<ins class="adsbygoogle"
+     style="display:block; text-align:center; width: 100%; height: 280px;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2526648882773973"
+     data-ad-slot="9378851209"
+     data-full-width-responsive="false"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    `.trim()
+];
+
 const selectRandomArray = (array) => array[Math.floor(Math.random() * array.length)];
 
 export const onRequest = async (context) => {
@@ -368,6 +396,12 @@ export const onRequest = async (context) => {
 class ElementHandler {
     constructor(adScripts) {
         this.adScripts = adScripts;
+    }
+
+    element(element) {
+        if (element.hasAttribute("data-in-article-ad")) {
+            element.replace(selectRandomArray(...IN_ARTICLE_AD_SCRIPT), { html: true });
+        }
     }
 
     comments(comment) {

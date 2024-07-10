@@ -89,15 +89,8 @@ export default defineConfig({
                 {
                     countFrom: 3,
                     adCode: `
-<ins class="adsbygoogle"
-    style="display:block; width: 100%; height: 280px;"
-    data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="9413147471"
-    data-ad-format="rectangle, horizontal"
-    data-full-width-responsive="false"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>`.trim(),
+<ins data-in-article-ad=""></ins>
+`.trim(),
                     shouldInsertAd: (vfile, previousNode, nextNode, ancestors) => {
                         const adsSettings =
                             // @ts-expect-error
