@@ -283,7 +283,7 @@ const BOTTOM_AD_SCRIPT = [
 /**
  * A/Bテスト用に2つの広告ユニットを用意
  *
- * - ディスプレイ広告×1&インフィード広告×3
+ * - ディスプレイ広告×2
  * - Multiplex広告×1（1×3枠）
  */
 const MIDDLE_AD_SCRIPT = [
@@ -298,33 +298,15 @@ const MIDDLE_AD_SCRIPT = [
     data-ad-format="rectangle, horizontal"
     data-full-width-responsive="false"></ins>
 <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<ins class="adsbygoogle"
+<ins
+    id="middle_ad"
+    class="adsbygoogle"
     style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-fb+5w+4e-db+86"
     data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="5676621363"></ins>
-<script is:inline>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-fb+5w+4e-db+86"
-    data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="5676621363"></ins>
-<script is:inline>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-fb+5w+4e-db+86"
-    data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="5676621363"></ins>
-<script is:inline>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    data-ad-slot="5941904776"
+    data-ad-format="rectangle, horizontal"
+    data-full-width-responsive="false"></ins>
+<script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     `.trim(),
     // 2つ目（Multiplex）の広告ユニット
     `
