@@ -399,6 +399,7 @@ class ElementHandler {
     }
 
     element(element) {
+        console.log(element.tagName);
         if (element.hasAttribute("data-in-article-ad")) {
             element.replace(selectRandomArray(...IN_ARTICLE_AD_SCRIPT), { html: true });
         }
