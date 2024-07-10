@@ -410,7 +410,8 @@ class CommentHandler {
 class ElementHandler {
     element(element) {
         if (element.hasAttribute("data-in-article-ad")) {
-            element.replace(selectRandomArray(...IN_ARTICLE_AD_SCRIPT), { html: true });
+            element.after(selectRandomArray(...IN_ARTICLE_AD_SCRIPT), { html: true });
+            element.remove();
         }
     }
 }
