@@ -89,7 +89,7 @@ export default defineConfig({
                 {
                     countFrom: 3,
                     adCode: `
-<ins data-in-article-ad=""></ins>
+<ins data-in-article-ad="" class="adsbygoogle" style="display: block; height: 280px;"></ins>
 `.trim(),
                     shouldInsertAd: (vfile, previousNode, nextNode, ancestors) => {
                         const adsSettings =
