@@ -362,10 +362,11 @@ export const onRequest = async (context) => {
     const isMobile = Boolean(userAgent.match(/iPhone|Android.+Mobile/u));
 
     // const adScripts = selectRandomArray([getMicroadAdScript(isMobile), I_MOBILE_AD_SCRIPTS]);
+    const headAndBodyAdScripts = isMobile ? getMicroadAdScript(isMobile) : I_MOBILE_AD_SCRIPTS;
     const adScripts = selectRandomArray(
         [
             {
-                ...getMicroadAdScript(isMobile),
+                ...headAndBodyAdScripts,
                 BOTTOM_AD_SCRIPT: selectRandomArray(BOTTOM_AD_SCRIPT),
                 MIDDLE_AD_SCRIPT: selectRandomArray(MIDDLE_AD_SCRIPT)
             }
