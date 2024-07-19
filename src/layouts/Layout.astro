@@ -3,6 +3,7 @@ import "./Layout.css";
 import "../starlight/integrations/asides.css";
 import MisskeyIcon from "/public/icon/social/misskey.png";
 import BlueskyIcon from "/public/icon/social/bluesky.png";
+import BreakingNewsBanner from "@components/BreakingNewsBanner.astro";
 
 import { getEntry, getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -382,9 +383,7 @@ const featuredArticles = await getFeaturedArticles();
         </header>
         <main>
             <article>
-                <aside style="width: 100%; display: block; background: rgb(255, 0, 0, 0.2); padding: 0.5em 1em; margin: 1em 0; border-radius: 0.25em;">
-                    <a href="/article/2024/07/19/global-windows-blue-screen-issue-caused-by-crowdstrike/" style="color: inherit;">【注目ニュース】Windowsでブルスクなど大規模障害が発生中。影響や解決策は？</a>
-                </aside>
+                <BreakingNewsBanner title="【注目ニュース】Windowsでブルスクなど大規模障害が発生中。影響や解決策は？" url="/article/2024/07/19/global-windows-blue-screen-issue-caused-by-crowdstrike/"></BreakingNewsBanner>
                 {
                     Astro.props.frontmatter.showAds && (
                         // ↓記事のトップに表示する広告。スマホ専用

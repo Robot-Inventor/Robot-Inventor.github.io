@@ -1,0 +1,35 @@
+---
+interface Props {
+    title: string;
+    url: string;
+}
+---
+
+<aside id="breaking_news_banner">
+    <a href={Astro.props.url}>{Astro.props.title}</a>
+</aside>
+<style>
+    :root {
+        --breaking-news-banner-color: rgb(255, 0, 0, 0.2);
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --breaking-news-banner-color: rgba(174, 76, 76, 0.5);
+        }
+    }
+
+    #breaking_news_banner {
+        width: 100%;
+        display: block;
+        background: var(--breaking-news-banner-color);
+        border: 0.15em solid var(--breaking-news-banner-color);
+        padding: 0.5em 1em;
+        margin: 1em 0;
+        border-radius: 0.25em;
+    }
+
+    #breaking_news_banner a {
+        color: inherit;
+    }
+</style>
