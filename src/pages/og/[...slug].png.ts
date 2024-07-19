@@ -40,8 +40,8 @@ export const GET: APIRoute = async ({ params }) => {
         });
     }
 
-    const cachedImagePath = `./.cache/og-cache/${post.slug}.png`;
-    const cachedDataPath = `./.cache/og-cache/${post.slug}.json`;
+    const cachedImagePath = `./node_modules/.cache/og-cache/${post.slug}.png`;
+    const cachedDataPath = `./node_modules/.cache/og-cache/${post.slug}.json`;
     const cacheExists = fs.existsSync(cachedImagePath) && fs.existsSync(cachedDataPath);
 
     let titleEdited = true;
