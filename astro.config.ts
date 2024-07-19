@@ -106,13 +106,15 @@ export default defineConfig({
                         if (ancestors.some((node) => node.type === "mdxJsxFlowElement")) return false;
 
                         /**
-                         * ひとつ前の要素に「次の」「こちらの」というテキストが含まれている場合は広告を挿入しない。
+                         * ひとつ前の要素に「次の」「こちらの」などのテキストが含まれている場合は広告を挿入しない。
                          * たとえば、「こちらの記事で解説しています」「次のような機能があります」というテキストの直後に
                          * 広告が挿入されていると、読者を混乱させる可能性があるため。
                          */
                         const isBeforeReference =
                             isElement(previousNode, "p") &&
-                            ["次の", "こちらの"].some((text) => toString(previousNode).includes(text));
+                            ["次の", "次に", "こちらの", "以下の", "以下に", "："].some((text) =>
+                                toString(previousNode).includes(text)
+                            );
 
                         let nextSiblingNode = nextNode;
                         if (nextNode?.type === "text") {
