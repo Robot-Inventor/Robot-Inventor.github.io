@@ -7,6 +7,7 @@ export const OG_IMAGE_COMPONENT_VERSION = "2.0.1";
 
 const IMAGE_WIDTH = 1280;
 const IMAGE_HEIGHT = 720;
+const FONT_FILE_PATH = "./src/fonts/NotoSansJP/NotoSansJP-ExtraBold.ttf";
 
 const logoText = fs.readFileSync("./public/logo.png");
 const logoDataURL = `data:image/png;base64,${logoText.toString("base64")}`;
@@ -92,21 +93,7 @@ export const getOgImage = async (text: string) => {
     return await sharp(Buffer.from(svg)).png().toBuffer();
 };
 
-const getFontData = async () => {
-    const API = `https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@800`;
-
-    const css = await (
-        await fetch(API, {
-            headers: {
-                "User-Agent":
-                    "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; de-at) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1"
-            }
-        })
-    ).text();
-
-    const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/);
-
-    if (!resource) return;
-
-    return await fetch(resource[1]).then((res) => res.arrayBuffer());
+const getFontData = () => {
+    const fontFile = fs.readFileSync(FONT_FILE_PATH);
+    return fontFile.buffer;
 };
