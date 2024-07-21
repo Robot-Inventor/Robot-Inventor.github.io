@@ -76,7 +76,9 @@ export default defineConfig({
                 rehypeOGCard,
                 {
                     enableSameTextURLConversion: true,
-                    excludeDomains: ["amzn.to", "www.amazon.co.jp"]
+                    excludeDomains: ["amzn.to", "www.amazon.co.jp"],
+                    buildCache: true,
+                    buildCachePath: "./node_modules/.astro"
                 } satisfies Parameters<typeof rehypeOGCard>[0]
             ],
             rehypeImageCaption,
