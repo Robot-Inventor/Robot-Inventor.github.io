@@ -2,24 +2,33 @@
 interface Props {
     title: string;
     url: string;
+    type: "alert" | "info";
 }
+
+const BANNAR_COLORS = {
+    alert: {
+        light: "rgb(255, 0, 0, 0.2)",
+        dark: "rgba(174, 76, 76, 0.5)"
+    },
+    info: {
+        light: "rgb(0, 0, 255, 0.2)",
+        dark: "rgba(76, 76, 174, 0.5)"
+    }
+} as const;
+
+const breakingNewsBannarColorLight = BANNAR_COLORS[Astro.props.type].light;
+const breakingNewsBannarColorDark = BANNAR_COLORS[Astro.props.type].dark;
 ---
 
 <aside id="breaking_news_banner">
     <a href={Astro.props.url}>{Astro.props.title}</a>
 </aside>
-<style>
+<style define:vars={{ breakingNewsBannarColorLight, breakingNewsBannarColorDark }}>
     :root {
-        --breaking-news-banner-color: rgb(255, 0, 0, 0.2);
-    }
-
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --breaking-news-banner-color: rgba(174, 76, 76, 0.5);
-        }
     }
 
     #breaking_news_banner {
+        --breaking-news-banner-color: var(--breakingNewsBannarColorLight);
         width: 100%;
         display: block;
         background: var(--breaking-news-banner-color);
@@ -27,6 +36,12 @@ interface Props {
         padding: 0.5em 1em;
         margin: 1em 0;
         border-radius: 0.25em;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        #breaking_news_banner {
+            --breaking-news-banner-color: var(--breakingNewsBannarColorDark);
+        }
     }
 
     #breaking_news_banner a {
