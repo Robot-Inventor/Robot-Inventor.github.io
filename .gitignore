@@ -2,10 +2,7 @@
 dist/
 
 # generated types
-.astro/
-
-# dependencies
-node_modules/
+.astro/*
 
 # logs
 npm-debug.log*
@@ -20,4 +17,20 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-public/rehype-og-card
+# dependencies
+node_modules/*
+
+# rehype-og-card関連のファイルを.gitignoreに追加する。
+# `node_modules/.astro/rehype-og-card/*.json`はGitの管理対象にするが、
+# `node_modules`の他のファイルは管理対象にしない。
+
+node_modules/.astro/*
+!node_modules/.astro/
+
+node_modules/.astro/rehype-og-card/*
+!node_modules/.astro/rehype-og-card/
+
+!node_modules/.astro/rehype-og-card/*.json
+
+public/rehype-og-card/
+
