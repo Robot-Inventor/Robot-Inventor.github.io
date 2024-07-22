@@ -218,7 +218,7 @@ const getMicroadAdScript = (isMobile) => {
  * A/Bテスト用に2つの広告ユニットを用意
  *
  * - ディスプレイ広告×2
- * - Multiplex広告×1（モバイルでは1×8、デスクトップでは3×4枠）
+ * - Multiplex広告×1（モバイルでは1×4、デスクトップでは3×2枠）
  */
 const BOTTOM_AD_SCRIPT = [
     // 1つ目の広告ユニット
@@ -251,7 +251,7 @@ const BOTTOM_AD_SCRIPT = [
     data-ad-format="autorelaxed"
     data-ad-client="ca-pub-2526648882773973"
     data-ad-slot="3546449335"
-    data-matched-content-rows-num="8,4"
+    data-matched-content-rows-num="4,2"
     data-matched-content-columns-num="1,3"
     data-matched-content-ui-type="image_sidebyside,image_stacked"></ins>
 <script>
