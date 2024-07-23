@@ -225,7 +225,7 @@ const BOTTOM_AD_SCRIPT = [
     `
 <ins
     class="adsbygoogle"
-    style="display:block"
+    style="display: block; margin: 2rem 0 0 0;"
     data-ad-client="ca-pub-2526648882773973"
     data-ad-slot="3108993340"
     data-ad-format="rectangle, horizontal"
@@ -235,7 +235,7 @@ const BOTTOM_AD_SCRIPT = [
 </script>
 <ins
     class="adsbygoogle"
-    style="display:block"
+    style="display: block; margin: 1rem 0 0 0;"
     data-ad-client="ca-pub-2526648882773973"
     data-ad-slot="3108993340"
     data-ad-format="rectangle, horizontal"
