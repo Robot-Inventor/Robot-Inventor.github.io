@@ -813,8 +813,8 @@ main *:target {
 
 .recommended_articles article {
     width: 100%;
-    height: 8rem;
-    margin: 1rem 0;
+    height: 5rem;
+    margin: 1.5rem 0;
 }
 
 .recommended_articles article a {
@@ -829,7 +829,7 @@ main *:target {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: inline-block;
+    /* `overflow: hidden;`がないとChromeで画像がトリミングされない */
     overflow: hidden;
 }
 
@@ -841,6 +841,7 @@ main *:target {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    font-size: 1rem;
 }
 
 footer {
