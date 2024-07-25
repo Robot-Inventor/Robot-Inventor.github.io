@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "git submodule update --remote && tsx ./scripts/updatePopularArticles.ts && astro build",
+    "build": "git submodule update --remote && tsx ./scripts/updatePopularArticles.ts && tsx ./scripts/restoreCache.ts && astro build && tsx ./scripts/uploadCache.ts",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,6 +15,7 @@
     "@astrojs/react": "^3.3.0",
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.0.0",
+    "@aws-sdk/client-s3": "^3.617.0",
     "@expressive-code/plugin-line-numbers": "^0.35.0",
     "@google-analytics/data": "^4.5.0",
     "@robot-inventor/regex-syntax": "^2.0.0",
@@ -22,6 +23,7 @@
     "@types/hast": "^3.0.4",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
+    "archiver": "^7.0.1",
     "astro": "^4.0.0",
     "astro-custom-toc": "^2.0.0",
     "astro-expressive-code": "^0.35.0",
@@ -45,6 +47,11 @@
     "unified": "^11.0.4",
     "unist-util-remove": "^4.0.0",
     "unist-util-visit": "^5.0.0",
-    "unist-util-visit-parents": "^6.0.1"
+    "unist-util-visit-parents": "^6.0.1",
+    "unzipper": "^0.12.2"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.2",
+    "@types/unzipper": "^0.10.9"
   }
 }
