@@ -6,6 +6,7 @@
         "chatgpt",
         "claude",
         "google-gemini",
-        "openai"
+        "openai",
+        "searchgpt"
     ]
 }

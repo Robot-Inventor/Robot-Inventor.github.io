@@ -1,0 +1,11 @@
+{
+    "name": "SearchGPT",
+    "description": "ChatGPTなどで知られるOpenAIが開発した、AIを活用した検索エンジンです。さまざまなサイトからの情報源を生成AIで要約します。",
+    "relatedTags": [
+        "ai",
+        "openai",
+        "claude",
+        "google-gemini",
+        "perplexity"
+    ]
+}
