@@ -8,7 +8,7 @@
 :root {
     --header-height: 4rem;
     --article-max-width: min(35rem, calc(100vw - 1.5rem));
-    --footer-height: 15rem;
+    --footer-height: 25rem;
     --social-icon-size: max(2.5rem, 40px);
 
     --secondary-background-color: #fff;
