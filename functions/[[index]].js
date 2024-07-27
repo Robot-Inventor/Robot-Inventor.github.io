@@ -263,44 +263,42 @@ const BOTTOM_AD_SCRIPT = [
 /**
  * A/Bテスト用に2つの広告ユニットを用意
  *
- * - ディスプレイ広告×2
- * - Multiplex広告×1（1×3枠）
+ * - ディスプレイ広告（レクタングル）×2
+ * - ディスプレイ広告（縦長）×1
  */
-const MIDDLE_AD_SCRIPT = [
+const SIDEBAR_BOTTOM_AD = [
     // 1つ目の広告ユニット
     `
 <ins
-    id="middle_ad"
     class="adsbygoogle"
     style="display:block"
     data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="5941904776"
-    data-ad-format="rectangle, horizontal"
-    data-full-width-responsive="false"></ins>
-<script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    data-ad-slot="3438012431"
+    data-ad-format="rectangle"
+    data-full-width-responsive="false"
+/>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 <ins
-    id="middle_ad"
     class="adsbygoogle"
     style="display:block"
     data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="5941904776"
-    data-ad-format="rectangle, horizontal"
-    data-full-width-responsive="false"></ins>
-<script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    data-ad-slot="3438012431"
+    data-ad-format="rectangle"
+    data-full-width-responsive="false"
+/>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     `.trim(),
-    // 2つ目（Multiplex）の広告ユニット
+    // 2つ目（縦長）の広告ユニット
     `
-<ins class="adsbygoogle"
-    style="display: block; width: 100%;"
-    data-ad-format="autorelaxed"
+<ins
+    class="adsbygoogle"
+    style="display:block"
     data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="3095308603"
-    data-matched-content-rows-num="3"
-    data-matched-content-columns-num="1"
-    data-matched-content-ui-type="image_sidebyside"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    data-ad-slot="4720213014"
+    data-ad-format="vertical"
+    data-full-width-responsive="false"
+/>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     `.trim()
 ];
 
@@ -320,7 +318,7 @@ export const onRequest = async (context) => {
             {
                 ...headAndBodyAdScripts,
                 BOTTOM_AD_SCRIPT: selectRandomArray(BOTTOM_AD_SCRIPT),
-                MIDDLE_AD_SCRIPT: selectRandomArray(MIDDLE_AD_SCRIPT)
+                SIDEBAR_BOTTOM_AD_SCRIPT: selectRandomArray(SIDEBAR_BOTTOM_AD)
             }
         ]
     );
