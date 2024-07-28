@@ -1,13 +1,13 @@
 /// <reference types="mdast-util-directive" />
 
-import type { AstroUserConfig } from "astro";
+import type { AstroIntegration, AstroUserConfig } from "astro";
 import { h as _h, s as _s, type Properties } from "hastscript";
-import type { Node, Paragraph as P, Parent, Root } from "mdast";
+import type { Node, Paragraph as P, Parent, PhrasingContent, Root } from "mdast";
 import { type Directives, directiveToMarkdown, type TextDirective, type LeafDirective } from "mdast-util-directive";
 import { toMarkdown } from "mdast-util-to-markdown";
+import { toString } from "mdast-util-to-string";
 import remarkDirective from "remark-directive";
 import type { Plugin, Transformer } from "unified";
-import { remove } from "unist-util-remove";
 import { visit } from "unist-util-visit";
 
 /** Hacky function that generates an mdast HTML tree ready for conversion to HTML by rehype. */
@@ -117,13 +117,12 @@ function remarkAsides(): Plugin<[], Root> {
         ]
     };
 
-    const transformer: Transformer<Root> = (tree, file) => {
+    const transformer: Transformer<Root> = (tree) => {
         visit(tree, (node, index, parent) => {
             if (!parent || index === undefined || !isNodeDirective(node)) {
                 return;
             }
             if (node.type === "textDirective" || node.type === "leafDirective") {
-                transformUnhandledDirective(node, index, parent);
                 return;
             }
             const variant = node.name;
@@ -136,19 +135,24 @@ function remarkAsides(): Plugin<[], Root> {
                 danger: "警告"
             };
 
-            // remark-directive converts a container’s “label” to a paragraph in
-            // its children, but we want to pass it as the title prop to <Aside>, so
-            // we iterate over the children, find a directive label, store it for the
-            // title prop, and remove the paragraph from children.
+            // remark-directive converts a container’s “label” to a paragraph added as the head of its
+            // children with the `directiveLabel` property set to true. We want to pass it as the title
+            // prop to <Aside>, so when we find a directive label, we store it for the title prop and
+            // remove the paragraph from the container’s children.
             let title = translations[variant];
-            remove(node, (child): boolean | void => {
-                if (child.data && "directiveLabel" in child.data && child.data.directiveLabel) {
-                    if ("children" in child && Array.isArray(child.children) && "value" in child.children[0]) {
-                        title = child.children[0].value;
-                    }
-                    return true;
-                }
-            });
+            let titleNode: PhrasingContent[] = [{ type: "text", value: title }];
+            const firstChild = node.children[0];
+            if (
+                firstChild?.type === "paragraph" &&
+                firstChild.data &&
+                "directiveLabel" in firstChild.data &&
+                firstChild.children.length > 0
+            ) {
+                titleNode = firstChild.children;
+                title = toString(firstChild.children);
+                // The first paragraph contains a directive label, we can safely remove it.
+                node.children.splice(0, 1);
+            }
 
             const aside = h(
                 "aside",
@@ -169,7 +173,7 @@ function remarkAsides(): Plugin<[], Root> {
                             },
                             iconPaths[variant]
                         ),
-                        { type: "text", value: title }
+                        ...titleNode
                     ]),
                     h("section", { class: "starlight-aside__content" }, node.children)
                 ]
@@ -188,4 +192,40 @@ type RemarkPlugins = NonNullable<NonNullable<AstroUserConfig["markdown"]>["remar
 
 export function starlightAsides(): RemarkPlugins {
     return [remarkDirective, remarkAsides()];
+}
+
+export function remarkDirectivesRestoration() {
+    return function transformer(tree: Root) {
+        visit(tree, (node, index, parent) => {
+            if (index !== undefined && parent && (node.type === "textDirective" || node.type === "leafDirective")) {
+                transformUnhandledDirective(node, index, parent);
+                return;
+            }
+        });
+    };
+}
+
+/**
+ * Directives not handled by Starlight are transformed back to their original form to avoid
+ * breaking user content.
+ * To allow remark plugins injected by Starlight plugins through Astro integrations to handle
+ * such directives, we need to restore unhandled text and leaf directives back to their original
+ * form only after all these other plugins have run.
+ * To do so, we run a remark plugin restoring these directives back to their original form from
+ * another Astro integration that runs after all the ones that may have been injected by Starlight
+ * plugins.
+ */
+export function starlightDirectivesRestorationIntegration(): AstroIntegration {
+    return {
+        name: "starlight-directives-restoration",
+        hooks: {
+            "astro:config:setup": ({ updateConfig }) => {
+                updateConfig({
+                    markdown: {
+                        remarkPlugins: [remarkDirectivesRestoration]
+                    }
+                });
+            }
+        }
+    };
 }

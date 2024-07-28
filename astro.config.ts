@@ -20,6 +20,7 @@ import { toString } from "hast-util-to-string";
 import rehypeExternalLinks from "rehype-external-links";
 import { checkEnvironmentType } from "./src/utils/checkEnvironmentType";
 import markdownIntegration from "@astropub/md";
+import { starlightDirectivesRestorationIntegration } from "./src/starlight/integrations/asides";
 
 const topPageURL = "https://roboin.io";
 
@@ -66,7 +67,8 @@ export default defineConfig({
         }),
         mdx(),
         react(),
-        markdownIntegration()
+        markdownIntegration(),
+        starlightDirectivesRestorationIntegration()
     ],
     markdown: {
         shikiConfig: {
