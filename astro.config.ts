@@ -19,6 +19,7 @@ import { isElement } from "hast-util-is-element";
 import { toString } from "hast-util-to-string";
 import rehypeExternalLinks from "rehype-external-links";
 import { checkEnvironmentType } from "./src/utils/checkEnvironmentType";
+import markdownIntegration from "@astropub/md";
 
 const topPageURL = "https://roboin.io";
 
@@ -64,7 +65,8 @@ export default defineConfig({
             template: tocTemplate
         }),
         mdx(),
-        react()
+        react(),
+        markdownIntegration()
     ],
     markdown: {
         shikiConfig: {

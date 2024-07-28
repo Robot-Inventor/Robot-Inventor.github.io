@@ -4,6 +4,7 @@ import "../starlight/integrations/asides.css";
 import MisskeyIcon from "/public/icon/social/misskey.png";
 import BlueskyIcon from "/public/icon/social/bluesky.png";
 import BreakingNewsBanner from "@components/BreakingNewsBanner.astro";
+import { Markdown } from "@astropub/md"
 
 import { getEntry, getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -434,21 +435,30 @@ const featuredArticles = await getFeaturedArticles();
                 </div>
                 {
                     thumbnailData.showThumbnail && (
-                        <picture id="page_top_thumbnail">
-                            {thumbnailData.sources.map((source) => {
-                                return <source srcset={source.srcset} type={source.type} />;
-                            })}
+                        <figure id="page_top_thumbnail">
+                            <picture id="">
+                                {thumbnailData.sources.map((source) => {
+                                    return <source srcset={source.srcset} type={source.type} />;
+                                })}
+                                {
+                                    // Firefoxでは問題ないが、Chromeでレイアウトシフトが発生するのを防ぐため、img要素にstyle属性を追加
+                                }
+                                <img
+                                    src={thumbnailData.fallback.src}
+                                    alt="サムネイル"
+                                    loading="eager"
+                                    style="width: 100%; height: auto; max-height: none;"
+                                    {...thumbnailData.fallback.attributes}
+                                />
+                            </picture>
                             {
-                                // Firefoxでは問題ないが、Chromeでレイアウトシフトが発生するのを防ぐため、img要素にstyle属性を追加
+                                Astro.props.frontmatter.thumbnailCaption && (
+                                    <figcaption>
+                                        <Markdown.Inline of={Astro.props.frontmatter.thumbnailCaption}></Markdown>
+                                    </figcaption>
+                                )
                             }
-                            <img
-                                src={thumbnailData.fallback.src}
-                                alt="サムネイル"
-                                loading="eager"
-                                style="width: 100%; height: auto; max-height: none;"
-                                {...thumbnailData.fallback.attributes}
-                            />
-                        </picture>
+                        </figure>
                     )
                 }
                 <slot />
