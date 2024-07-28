@@ -275,8 +275,7 @@ const SIDEBAR_BOTTOM_AD = [
     data-ad-client="ca-pub-2526648882773973"
     data-ad-slot="3438012431"
     data-ad-format="rectangle"
-    data-full-width-responsive="false"
-/>
+    data-full-width-responsive="false"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 <ins
     class="adsbygoogle"
@@ -284,8 +283,7 @@ const SIDEBAR_BOTTOM_AD = [
     data-ad-client="ca-pub-2526648882773973"
     data-ad-slot="3438012431"
     data-ad-format="rectangle"
-    data-full-width-responsive="false"
-/>
+    data-full-width-responsive="false"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     `.trim(),
     // 2つ目（縦長）の広告ユニット
@@ -296,8 +294,7 @@ const SIDEBAR_BOTTOM_AD = [
     data-ad-client="ca-pub-2526648882773973"
     data-ad-slot="4720213014"
     data-ad-format="vertical"
-    data-full-width-responsive="false"
-/>
+    data-full-width-responsive="false"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     `.trim()
 ];
