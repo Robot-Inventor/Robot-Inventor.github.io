@@ -4,7 +4,7 @@ import "../starlight/integrations/asides.css";
 import MisskeyIcon from "/public/icon/social/misskey.png";
 import BlueskyIcon from "/public/icon/social/bluesky.png";
 import BreakingNewsBanner from "@components/BreakingNewsBanner.astro";
-import { Markdown } from "@astropub/md"
+import { Markdown } from "@astropub/md";
 
 import { getEntry, getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -285,11 +285,7 @@ const featuredArticles = await getFeaturedArticles();
 <!doctype html>
 <html lang="ja">
     <head prefix="og: http://ogp.me/ns#">
-        {
-            Astro.props.frontmatter.showAds && (
-                <!-- HEAD_AD_SCRIPT -->
-            )
-        }
+        {Astro.props.frontmatter.showAds && <ins data-ad-code-slot="head" />}
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -321,11 +317,7 @@ const featuredArticles = await getFeaturedArticles();
         <link rel="canonical" href={Astro.url} />
         <link rel="me" href="https://mstdn.jp/@keita_roboin" />
         <link rel="me" href="https://misskey.io/@roboin" />
-        {
-            author.data.fediverseCreator && (
-                <meta name="fediverse:creator" content={author.data.fediverseCreator} />
-            )
-        }
+        {author.data.fediverseCreator && <meta name="fediverse:creator" content={author.data.fediverseCreator} />}
         <meta property="og:url" content={Astro.url} />
         <meta property="og:type" content={Astro.url.pathname === "/" ? "website" : "article"} />
         <meta property="og:title" content={titleWithSiteName} />
@@ -333,11 +325,7 @@ const featuredArticles = await getFeaturedArticles();
         <meta property="og:site_name" content={import.meta.env.SITE_NAME} />
         <meta property="og:image" content={thumbnailUrl} />
         <meta name="twitter:card" content="summary" />
-        {
-            author.data.twitterSite && (
-                <meta name="twitter:site" content={author.data.twitterSite} />
-            )
-        }
+        {author.data.twitterSite && <meta name="twitter:site" content={author.data.twitterSite} />}
         <script is:inline type="application/ld+json" set:html={schema} />
         <!-- Google tag (gtag.js) -->
         <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-7HZY93W2BY"></script>
@@ -364,11 +352,7 @@ const featuredArticles = await getFeaturedArticles();
         </script>
     </head>
     <body>
-        {
-            Astro.props.frontmatter.showAds && (
-                <!-- BODY_AD_SCRIPT -->
-            )
-        }
+        <ins data-ad-code-slot="body"></ins>
         <header data-overlay-menu="closed">
             <a href="/">
                 <Image src="/logo.svg" alt="ろぼいんブログ" id="header_logo" width="512" height="185" loading="eager" />
@@ -384,7 +368,11 @@ const featuredArticles = await getFeaturedArticles();
         </header>
         <main>
             <article>
-                <BreakingNewsBanner title="【注目ニュース】OpenAIがAI搭載検索エンジン「SearchGPT」を発表" url="/article/2024/07/26/openai-announces-searchgpt-prototype/" type="info"></BreakingNewsBanner>
+                <BreakingNewsBanner
+                    title="【注目ニュース】OpenAIがAI搭載検索エンジン「SearchGPT」を発表"
+                    url="/article/2024/07/26/openai-announces-searchgpt-prototype/"
+                    type="info"
+                />
                 {
                     Astro.props.frontmatter.showAds && (
                         // ↓記事のトップに表示する広告。スマホ専用
@@ -451,13 +439,11 @@ const featuredArticles = await getFeaturedArticles();
                                     {...thumbnailData.fallback.attributes}
                                 />
                             </picture>
-                            {
-                                Astro.props.frontmatter.thumbnailCaption && (
-                                    <figcaption>
-                                        <Markdown.Inline of={Astro.props.frontmatter.thumbnailCaption}></Markdown>
-                                    </figcaption>
-                                )
-                            }
+                            {Astro.props.frontmatter.thumbnailCaption && (
+                                <figcaption>
+                                    <Markdown.Inline of={Astro.props.frontmatter.thumbnailCaption} />
+                                </figcaption>
+                            )}
                         </figure>
                     )
                 }
@@ -550,7 +536,7 @@ const featuredArticles = await getFeaturedArticles();
                     </article>
                 )
             }
-            <!-- BOTTOM_AD_SCRIPT -->
+            <ins data-ad-code-slot="bottom"></ins>
             {
                 Astro.props.frontmatter.showRecommendedArticles && (
                     <>
@@ -591,7 +577,8 @@ const featuredArticles = await getFeaturedArticles();
                                 data-ad-client="ca-pub-2526648882773973"
                                 data-ad-slot="5941904776"
                                 data-ad-format="rectangle, horizontal"
-                                data-full-width-responsive="false"></ins>
+                                data-full-width-responsive="false"
+                            />
                             <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                             <ins
                                 id="middle_ad"
@@ -600,7 +587,8 @@ const featuredArticles = await getFeaturedArticles();
                                 data-ad-client="ca-pub-2526648882773973"
                                 data-ad-slot="5941904776"
                                 data-ad-format="rectangle, horizontal"
-                                data-full-width-responsive="false"></ins>
+                                data-full-width-responsive="false"
+                            />
                             <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                             {featuredArticles && (
                                 <>
@@ -625,7 +613,7 @@ const featuredArticles = await getFeaturedArticles();
                                     </div>
                                 </>
                             )}
-                            <!-- SIDEBAR_BOTTOM_AD_SCRIPT -->
+                            <ins data-ad-code-slot="sidebar" />
                         </section>
                         <section class="recommended_articles_section">
                             <h2>最新記事</h2>
@@ -654,7 +642,11 @@ const featuredArticles = await getFeaturedArticles();
         </main>
         <footer>
             <p>
-                <a href="https://www.buymeacoffee.com/keita_roboin" target="_blank" rel="noopener noreferrer"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=keita_roboin&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff" /></a>
+                <a href="https://www.buymeacoffee.com/keita_roboin" target="_blank" rel="noopener noreferrer"
+                    ><img
+                        src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=keita_roboin&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff"
+                    /></a
+                >
             </p>
             <p>Copyright © {new Date().getFullYear()} ろぼいん All rights reserved.</p>
             <p>
