@@ -1,5 +1,5 @@
 const I_MOBILE_AD_SCRIPTS = {
-    HEAD_AD_SCRIPT: `
+    head: `
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 <script>
     window.googletag = window.googletag || { cmd: [] };
@@ -23,7 +23,7 @@ const I_MOBILE_AD_SCRIPTS = {
     });
 </script>
 `.trim(),
-    BODY_AD_SCRIPT: `
+    body: `
 <!-- /9176203,23127422405/1856051 PC オーバーレイ_PC -->
 <div
     style="position:fixed;bottom:0;padding-bottom:env(safe-area-inset-bottom);left:0;right:0;width:100%;background:rgba(0, 0, 0, 0);z-index:99998;text-align:center;transform:translate3d(0, 0, 0);"
@@ -209,8 +209,8 @@ const getMicroadAdScript = (isMobile) => {
 `.trim();
 
     return {
-        HEAD_AD_SCRIPT: "",
-        BODY_AD_SCRIPT: isMobile ? mobileAdScript : desktopAdScript
+        head: "",
+        body: isMobile ? mobileAdScript : desktopAdScript
     };
 };
 
@@ -317,25 +317,26 @@ export const onRequest = async (context) => {
         [
             {
                 ...headAndBodyAdScripts,
-                BOTTOM_AD_SCRIPT: selectRandomArray(BOTTOM_AD_SCRIPT),
-                SIDEBAR_BOTTOM_AD_SCRIPT: selectRandomArray(SIDEBAR_BOTTOM_AD)
+                bottom: selectRandomArray(BOTTOM_AD_SCRIPT),
+                sidebar: selectRandomArray(SIDEBAR_BOTTOM_AD)
             }
         ]
     );
 
-    return new HTMLRewriter().on("head, body", new CommentHandler(adScripts)).transform(response);
+    return new HTMLRewriter().on("*[data-ad-code-slot]", new ElementHandler(adScripts)).transform(response);
 }
 
-class CommentHandler {
+class ElementHandler {
     constructor(adScripts) {
         this.adScripts = adScripts;
     }
 
-    comments(comment) {
-        const commentString = comment.text.trim();
+    element(element) {
+        if (!element.hasAttribute("data-ad-code-slot")) return;
 
-        if (!(commentString in this.adScripts)) return;
+        const adCodeSlot = element.getAttribute("data-ad-code-slot");
+        if (!(adCodeSlot in this.adScripts)) return;
 
-        comment.replace(this.adScripts[commentString], { html: true });
+        element.replace(this.adScripts[adCodeSlot], { html: true });
     }
 }
