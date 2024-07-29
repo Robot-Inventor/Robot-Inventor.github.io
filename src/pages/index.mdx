@@ -9,13 +9,13 @@ showRecommendedArticles: false
 showAds: false
 ---
 
-import LatestArticles from "../components/LatestArticles.astro";
-import FeaturedArticles from "../components/FeaturedArticles.astro";
+import LatestArticleCards from "../components/LatestArticleCards.astro";
+import FeaturedArticleCards from "../components/FeaturedArticleCards.astro";
 import LatestYouTube from "../components/LatestYouTube.astro";
 
 ## 新着記事
 
-<LatestArticles />
+<LatestArticleCards />
 
 <div style="text-align: center; font-size: 1.25rem;">
     <a href="/article/">記事をもっと見る</a>
@@ -23,7 +23,7 @@ import LatestYouTube from "../components/LatestYouTube.astro";
 
 ## 注目記事
 
-<FeaturedArticles />
+<FeaturedArticleCards />
 
 ## 新着動画
 

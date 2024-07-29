@@ -1,0 +1,99 @@
+---
+import { Picture } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    author: CollectionEntry<"author">;
+}
+---
+
+<article class="author_info">
+    <Picture
+        class="author_info-icon"
+        src={Astro.props.author.data.icon}
+        formats={["avif", "webp"]}
+        alt="著者のアイコン画像"
+        width="100"
+        height="100"
+    />
+    <div class="author_info-text">
+        <b class="author_info-name">{Astro.props.author.data.name}</b>
+        <address class="author_info-link_container">
+            {
+                Object.keys(Astro.props.author.data.profileLinks).map((linkName) => {
+                    const link = Astro.props.author.data.profileLinks[linkName];
+                    return (
+                        <a href={link} target="_blank">
+                            {linkName}
+                        </a>
+                    );
+                })
+            }
+        </address>
+    </div>
+    <div class="author_info-bio">
+        {
+            Astro.props.author.data.bio.split("\n\n").map((paragraph) => {
+                return <p>{paragraph}</p>;
+            })
+        }
+    </div>
+</article>
+<style>
+    .author_info {
+        width: 100%;
+        max-width: var(--article-max-width);
+        margin: 0 auto;
+        border-color: var(--low-emphasis-color);
+        border-style: solid;
+        border-width: 0.1rem 0;
+        padding: 1.5rem;
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 4rem 1fr;
+        margin-top: 0.5rem;
+    }
+
+    .author_info-icon {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 2rem;
+        object-fit: cover;
+        margin: auto;
+    }
+
+    .author_info-text {
+        display: inline-block;
+        margin: auto 0;
+    }
+
+    .author_info-name {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .author_info-link_container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 1rem;
+        margin-top: 0.5rem;
+        font-style: normal;
+    }
+
+    .author_info-link_container a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .author_info-bio {
+        grid-column: 1 / 3;
+    }
+
+    .author_info-bio p {
+        font-size: 0.9rem;
+    }
+
+    .author_info-bio p + p {
+        margin-top: 1rem;
+    }
+</style>

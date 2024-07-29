@@ -1,12 +1,14 @@
 ---
-import { getCollection } from "astro:content";
-import ArticleCard from "@components/ArticleCard.astro";
+import RecommendedArticles from "./RecommendedArticles.astro";
+import type { CollectionEntry } from "astro:content";
+import { getLatestArticles } from "../utils/getLatestArticles";
 
-const allPosts = await getCollection("article");
-// 直近の5件の記事を取得
-const latestPosts = allPosts
-    .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
-    .slice(0, 5);
+interface Props {
+    currentPageSlug: CollectionEntry<"article">["slug"];
+}
+
+const NUMBER_OF_LATEST_ARTICLES = 5;
+const latestArticles = await getLatestArticles(NUMBER_OF_LATEST_ARTICLES, [Astro.props.currentPageSlug]);
 ---
 
-{latestPosts.map((post) => <ArticleCard link={`/article/${post.slug}/`} />)}
+<RecommendedArticles header="最新記事" articles={latestArticles} />

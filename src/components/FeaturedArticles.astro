@@ -1,10 +1,11 @@
 ---
-import { getFeaturedArticles } from "src/utils/getFeaturedArticles";
-import ArticleCard from "@components/ArticleCard.astro";
+import { getEntries } from "astro:content";
+import RecommendedArticles from "./RecommendedArticles.astro";
+import { getCollection } from "astro:content";
 
-const featuredArticles = await getFeaturedArticles();
+const featuredArticlesCollection = await getCollection("featuredArticles");
+const articleSlugs = featuredArticlesCollection.map((article) => article.data.articles).flat();
+const articles = await getEntries(articleSlugs);
 ---
 
-{featuredArticles && featuredArticles.map((post) => <ArticleCard link={post.link} />)}
-
-{!featuredArticles && <p>現在、注目記事はありません。</p>}
+<RecommendedArticles header="注目記事" {articles} />

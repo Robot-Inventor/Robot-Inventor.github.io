@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { getDefaultThumbnail } from "../utils/getDefaultThumbnailPath";
+
+interface Props {
+    header: string;
+    articles: CollectionEntry<"article">[];
+}
+
+const articleDataPromises = Astro.props.articles.map(async (article) => {
+    return {
+        ...article,
+        data: {
+            ...article.data,
+            thumbnail: article.data.thumbnail || (await getDefaultThumbnail(article.slug))
+        }
+    };
+});
+
+const articleData = await Promise.all(articleDataPromises);
+---
+
+<h2>{Astro.props.header}</h2>
+<div class="recommended_articles">
+    {
+        articleData.map((article) => {
+            return (
+                <article>
+                    <a href={`/article/${article.slug}/`}>
+                        {article.data.thumbnail && (
+                            <Image
+                                src={article.data.thumbnail}
+                                width={Math.min(600, article.data.thumbnail.width)}
+                                alt="サムネイル"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        )}
+                        <h3>{article.data.title}</h3>
+                    </a>
+                </article>
+            );
+        })
+    }
+</div>
+<style>
+    .recommended_articles {
+        margin-top: 1rem;
+    }
+
+    .recommended_articles article {
+        width: 100%;
+        height: 5rem;
+        margin: 1.5rem 0;
+    }
+
+    .recommended_articles article a {
+        color: inherit;
+        text-decoration: none;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        height: 100%;
+    }
+
+    .recommended_articles article img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* `overflow: hidden;`がないとChromeで画像がトリミングされない */
+        overflow: hidden;
+    }
+
+    .recommended_articles article h3 {
+        display: inline-block;
+        height: 4.5em;
+        margin-left: 1em;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 1rem;
+    }
+</style>

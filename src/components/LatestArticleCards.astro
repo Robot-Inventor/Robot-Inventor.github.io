@@ -1,0 +1,12 @@
+---
+import { getCollection } from "astro:content";
+import ArticleCard from "@components/ArticleCard.astro";
+
+const allPosts = await getCollection("article");
+// 直近の5件の記事を取得
+const latestPosts = allPosts
+    .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+    .slice(0, 5);
+---
+
+{latestPosts.map((post) => <ArticleCard link={`/article/${post.slug}/`} />)}

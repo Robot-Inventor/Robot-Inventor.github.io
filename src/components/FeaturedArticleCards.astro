@@ -1,0 +1,10 @@
+---
+import { getFeaturedArticles } from "src/utils/getFeaturedArticles";
+import ArticleCard from "@components/ArticleCard.astro";
+
+const featuredArticles = await getFeaturedArticles();
+---
+
+{featuredArticles && featuredArticles.map((post) => <ArticleCard link={post.link} />)}
+
+{!featuredArticles && <p>現在、注目記事はありません。</p>}

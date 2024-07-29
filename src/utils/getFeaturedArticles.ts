@@ -1,5 +1,4 @@
 import { getCollection, getEntry } from "astro:content";
-import type { CollectionEntry } from "astro:content";
 import { getDefaultThumbnail } from "./getDefaultThumbnailPath";
 
 const getFeaturedArticles = async () => {

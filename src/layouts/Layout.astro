@@ -1,19 +1,24 @@
 ---
 import "./Layout.css";
 import "../starlight/integrations/asides.css";
-import MisskeyIcon from "/public/icon/social/misskey.png";
-import BlueskyIcon from "/public/icon/social/bluesky.png";
 import BreakingNewsBanner from "@components/BreakingNewsBanner.astro";
+import AuthorInfo from "@components/AuthorInfo.astro";
+import ShareButton from "@components/ShareButton.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import FeaturedArticles from "@components/FeaturedArticles.astro";
+import LatestArticles from "@components/LatestArticles.astro";
+import RelatedArticles from "@components/RelatedArticles.astro";
 import { Markdown } from "@astropub/md";
 
-import { getEntry, getCollection } from "astro:content";
+import { getEntry } from "astro:content";
 import type { CollectionEntry } from "astro:content";
-import { Image, Picture, getImage } from "astro:assets";
+import { getImage } from "astro:assets";
 import { getDefaultThumbnail } from "src/utils/getDefaultThumbnailPath";
-import { getFeaturedArticles } from "src/utils/getFeaturedArticles";
 
 interface Props {
     frontmatter: CollectionEntry<"article">["data"];
+    slug?: CollectionEntry<"article">["slug"];
 }
 
 declare global {
@@ -198,12 +203,6 @@ const getThumbnailData = async () => {
 
 const thumbnailData = await getThumbnailData();
 
-const generateShareURL = (source: string) => {
-    const url = new URL(Astro.url);
-    url.searchParams.append("utm_source", source);
-    return url.href;
-};
-
 const ISO8601ToLocale = (iso8601: string) => {
     return iso8601
         .replace("T", " ")
@@ -212,74 +211,6 @@ const ISO8601ToLocale = (iso8601: string) => {
         .replace(/(\d{2}:\d{2}):\d{2}/, "$1")
         .replace(/\.\d+$/, "");
 };
-
-const sortRelatedArticles = (a: CollectionEntry<"article">, b: CollectionEntry<"article">) => {
-    const tagSort =
-        (b.data.tags || []).filter((tag) => tagIds.includes(tag.id)).length -
-        (a.data.tags || []).filter((tag) => tagIds.includes(tag.id)).length;
-    if (tagSort !== 0) return tagSort;
-    return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
-};
-
-const latestArticles = (await getCollection("article", (article) => !Astro.url.pathname.includes(article.slug))).sort(
-    (a, b) => {
-        return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
-    }
-);
-
-/**
- * 関連記事を取得する。
- * 1. 同じタグの記事を取得し、現在の記事とのタグの重複数が多い順に並べる
- * 2. タグの重複数が同じ場合は、投稿日が新しい順に並べる
- * 3. 同じタグの記事が足りない場合は、最新の記事で補う
- */
-const getRelatedArticlesData = async () => {
-    const NUMBER_OF_RELATED_ARTICLES = 5;
-
-    const sameTagArticles = (
-        await getCollection("article", (article) => {
-            if (Astro.url.pathname.includes(article.slug) || !article.data.tags) return false;
-            return article.data.tags.some((tag) => tagIds.includes(tag.id));
-        })
-    ).sort(sortRelatedArticles);
-
-    const relatedArticles = [
-        ...sameTagArticles.slice(0, NUMBER_OF_RELATED_ARTICLES),
-        ...latestArticles.slice(0, Math.max(0, NUMBER_OF_RELATED_ARTICLES - sameTagArticles.length))
-    ];
-
-    const relatedArticlesData = relatedArticles.map(async (article) => {
-        const articleData = await getEntry("article", article.slug);
-        const thumbnail = articleData.data.thumbnail || (await getDefaultThumbnail(article.slug));
-        return {
-            title: articleData.data.title,
-            link: `/article/${article.slug}/`,
-            thumbnail: thumbnail
-        };
-    });
-
-    return await Promise.all(relatedArticlesData);
-};
-
-const getLatestArticlesData = async () => {
-    const NUMBER_OF_LATEST_ARTICLES = 5;
-
-    const latestArticlesData = latestArticles.slice(0, NUMBER_OF_LATEST_ARTICLES).map(async (article) => {
-        const articleData = await getEntry("article", article.slug);
-        const thumbnail = articleData.data.thumbnail || (await getDefaultThumbnail(article.slug));
-        return {
-            title: articleData.data.title,
-            link: `/article/${article.slug}/`,
-            thumbnail: thumbnail
-        };
-    });
-
-    return await Promise.all(latestArticlesData);
-};
-
-const relatedArticlesData = await getRelatedArticlesData();
-const latestArticlesData = await getLatestArticlesData();
-const featuredArticles = await getFeaturedArticles();
 ---
 
 <!doctype html>
@@ -353,19 +284,7 @@ const featuredArticles = await getFeaturedArticles();
     </head>
     <body>
         <ins data-ad-code-slot="body"></ins>
-        <header data-overlay-menu="closed">
-            <a href="/">
-                <Image src="/logo.svg" alt="ろぼいんブログ" id="header_logo" width="512" height="185" loading="eager" />
-            </a>
-            <nav>
-                <a href="/article/">ARTICLES</a>
-                <a href="/notice/">NEWS</a>
-                <a href="/about/">ABOUT</a>
-            </nav>
-            <button id="menu_button" aria-label="メニューボタン">
-                <div></div>
-            </button>
-        </header>
+        <Header />
         <main>
             <article>
                 <BreakingNewsBanner
@@ -449,93 +368,8 @@ const featuredArticles = await getFeaturedArticles();
                 }
                 <slot />
             </article>
-            <section class="share_button">
-                <a
-                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                        titleWithSiteName
-                    )}&url=${encodeURIComponent(generateShareURL("twitter"))}&via=${encodeURIComponent(
-                        "keita_roboin"
-                    )}&related=${encodeURIComponent("keita_roboin")}%3A最新の情報を入手する`}
-                    target="_blank"
-                >
-                    <Image src="/icon/social/twitter.svg" alt="Twitterのアイコン" width="100" height="100" />
-                </a>
-                <a
-                    href={`https://line.me/R/share?text=${encodeURIComponent(
-                        `${titleWithSiteName} ${generateShareURL("line")}`
-                    )}`}
-                    target="_blank"
-                >
-                    <Image src="/icon/social/line.svg" alt="LINEのアイコン" width="100" height="100" />
-                </a>
-                <a
-                    href={`https://www.threads.net/intent/post?text=${encodeURIComponent(
-                        `${titleWithSiteName} ${generateShareURL("threads")}`
-                    )}`}
-                    target="_blank"
-                >
-                    <Image src="/icon/social/threads.svg" alt="Threadsのアイコン" width="100" height="100" />
-                </a>
-                <a
-                    href={`https://misskey-hub.net/share/?text=${encodeURIComponent(
-                        `${titleWithSiteName}\n${generateShareURL("misskey")}`
-                    )}&visibility=public&localOnly=0`}
-                    target="_blank"
-                >
-                    <Picture
-                        src={MisskeyIcon}
-                        formats={["avif", "webp"]}
-                        alt="Misskeyのアイコン"
-                        width="100"
-                        height="100"
-                    />
-                </a>
-                <a
-                    href={`https://bsky.app/intent/compose?text=${encodeURIComponent(`${titleWithSiteName}\n${generateShareURL("bluesky")}`)}`}
-                    target="_blank"
-                >
-                    <Picture
-                        src={BlueskyIcon}
-                        formats={["avif", "webp"]}
-                        alt="Misskeyのアイコン"
-                        width="100"
-                        height="100"
-                        style="border-radius: 50%;"
-                    />
-                </a>
-            </section>
-            {
-                Astro.props.frontmatter.showAuthor && (
-                    <article class="author_info">
-                        <Picture
-                            class="author_info-icon"
-                            src={author.data.icon}
-                            formats={["avif", "webp"]}
-                            alt="著者のアイコン画像"
-                            width="100"
-                            height="100"
-                        />
-                        <div class="author_info-text">
-                            <b class="author_info-name">{author.data.name}</b>
-                            <address class="author_info-link_container">
-                                {Object.keys(author.data.profileLinks).map((linkName) => {
-                                    const link = author.data.profileLinks[linkName];
-                                    return (
-                                        <a href={link} target="_blank">
-                                            {linkName}
-                                        </a>
-                                    );
-                                })}
-                            </address>
-                        </div>
-                        <div class="author_info-bio">
-                            {author.data.bio.split("\n\n").map((paragraph) => {
-                                return <p>{paragraph}</p>;
-                            })}
-                        </div>
-                    </article>
-                )
-            }
+            <ShareButton title={titleWithSiteName} url={Astro.url.href} />
+            {Astro.props.frontmatter.showAuthor && <AuthorInfo {author} />}
             <ins data-ad-code-slot="bottom"></ins>
             {
                 Astro.props.frontmatter.showRecommendedArticles && (
@@ -551,25 +385,7 @@ const featuredArticles = await getFeaturedArticles();
                                 data-full-width-responsive="false"
                             />
                             <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                            <h2>関連記事</h2>
-                            <div class="recommended_articles">
-                                {relatedArticlesData.map((data) => {
-                                    return (
-                                        <article>
-                                            <a href={data.link}>
-                                                <Image
-                                                    src={data.thumbnail}
-                                                    width={Math.min(600, data.thumbnail.width)}
-                                                    alt="サムネイル"
-                                                    loading="lazy"
-                                                    decoding="async"
-                                                />
-                                                <h3>{data.title}</h3>
-                                            </a>
-                                        </article>
-                                    );
-                                })}
-                            </div>
+                            {Astro.props.slug && <RelatedArticles targetArticleSlug={Astro.props.slug} />}
                             <ins
                                 id="middle_ad"
                                 class="adsbygoogle"
@@ -590,71 +406,19 @@ const featuredArticles = await getFeaturedArticles();
                                 data-full-width-responsive="false"
                             />
                             <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                            {featuredArticles && (
-                                <>
-                                    <h2>注目記事</h2>
-                                    <div class="recommended_articles">
-                                        {featuredArticles.map((article) => {
-                                            return (
-                                                <article>
-                                                    <a href={article.link}>
-                                                        <Image
-                                                            src={article.thumbnail}
-                                                            width={Math.min(600, article.thumbnail.width)}
-                                                            alt="サムネイル"
-                                                            loading="lazy"
-                                                            decoding="async"
-                                                        />
-                                                        <h3>{article.title}</h3>
-                                                    </a>
-                                                </article>
-                                            );
-                                        })}
-                                    </div>
-                                </>
-                            )}
+                            <FeaturedArticles />
                             <ins data-ad-code-slot="sidebar" />
                         </section>
-                        <section class="recommended_articles_section">
-                            <h2>最新記事</h2>
-                            <div class="recommended_articles">
-                                {latestArticlesData.map((data) => {
-                                    return (
-                                        <article>
-                                            <a href={data.link}>
-                                                <Image
-                                                    src={data.thumbnail}
-                                                    width={Math.min(600, data.thumbnail.width)}
-                                                    alt="サムネイル"
-                                                    loading="lazy"
-                                                    decoding="async"
-                                                />
-                                                <h3>{data.title}</h3>
-                                            </a>
-                                        </article>
-                                    );
-                                })}
-                            </div>
-                        </section>
+                        {Astro.props.slug && (
+                            <section class="recommended_articles_section">
+                                <LatestArticles currentPageSlug={Astro.props.slug} />
+                            </section>
+                        )}
                     </>
                 )
             }
         </main>
-        <footer>
-            <p>
-                <a href="https://www.buymeacoffee.com/keita_roboin" target="_blank" rel="noopener noreferrer"
-                    ><img
-                        src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=keita_roboin&button_colour=FFDD00&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=ffffff"
-                    /></a
-                >
-            </p>
-            <p>Copyright © {new Date().getFullYear()} ろぼいん All rights reserved.</p>
-            <p>
-                <a href="/about/">このサイトについて</a>・<a href="/tos/">利用規約</a>・<a href="/privacy/"
-                    >プライバシーポリシー</a
-                >・<a href="/contact/">お問い合わせ</a>
-            </p>
-        </footer>
+        <Footer />
         <script src="./Layout.ts"></script>
     </body>
 </html>

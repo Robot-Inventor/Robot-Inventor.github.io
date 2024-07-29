@@ -15,6 +15,6 @@ const { entry } = Astro.props as { entry: CollectionEntry<"article"> };
 const { Content } = await entry.render();
 ---
 
-<Layout frontmatter={entry.data}>
+<Layout frontmatter={entry.data} slug={Astro.params.slug}>
     <Content />
 </Layout>

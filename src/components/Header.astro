@@ -1,0 +1,154 @@
+---
+import { Image } from "astro:assets";
+---
+
+<header data-overlay-menu="closed">
+    <a href="/">
+        <Image src="/logo.svg" alt="ろぼいんブログ" id="header_logo" width="512" height="185" loading="eager" />
+    </a>
+    <nav>
+        <a href="/article/">ARTICLES</a>
+        <a href="/notice/">NEWS</a>
+        <a href="/about/">ABOUT</a>
+    </nav>
+    <button id="menu_button" aria-label="メニューボタン">
+        <div></div>
+    </button>
+</header>
+<style>
+    header {
+        position: fixed;
+        width: 100vw;
+        height: var(--header-height);
+        border-bottom: 0.1rem solid rgb(0, 0, 0, 0.2);
+        background: var(--secondary-background-color);
+        z-index: 2;
+    }
+
+    #header_logo {
+        width: auto;
+        height: calc(100% - 2rem);
+        margin: 1rem 0 0 1rem;
+    }
+
+    header nav {
+        position: absolute;
+        top: 0.2rem;
+        right: 2rem;
+    }
+
+    header nav a {
+        color: inherit;
+        text-decoration: none;
+        font-size: 1.5rem;
+        display: inline-block;
+        margin: 0.75rem 0 auto 2rem;
+    }
+
+    #menu_button {
+        width: calc(var(--header-height) - 2rem);
+        height: calc(var(--header-height) - 2.5rem);
+        border: none;
+        background: none;
+        cursor: pointer;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+    }
+
+    #menu_button div,
+    #menu_button div::before,
+    #menu_button div::after {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 0.2rem;
+        background: var(--base-text-color);
+        border-radius: 0.2rem;
+        transition: 0.3s;
+        transform-origin: left;
+    }
+
+    #menu_button div::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    #menu_button div::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    @media (orientation: portrait) {
+        #header_logo {
+            position: absolute;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+        }
+
+        header nav {
+            background: var(--secondary-background-color);
+            position: absolute;
+            top: var(--header-height);
+            left: 100vw;
+            width: 100vw;
+            height: calc(100vh - var(--header-height));
+            padding-top: 1rem;
+            transition: 0.3s;
+        }
+
+        header[data-overlay-menu="closed"] nav {
+            left: 100vw;
+        }
+
+        header[data-overlay-menu="opened"] nav {
+            left: 0;
+        }
+
+        header nav a {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        #menu_button {
+            display: block;
+        }
+
+        header[data-overlay-menu="opened"] #menu_button div {
+            background: none;
+        }
+
+        header[data-overlay-menu="opened"] #menu_button div::before {
+            transform: rotate(45deg);
+            width: 95%;
+        }
+
+        header[data-overlay-menu="opened"] #menu_button div::after {
+            transform: rotate(-45deg);
+            width: 95%;
+        }
+    }
+</style>
+<script>
+    const header = document.querySelector("header");
+    if (!header) throw new Error("header is not defined");
+    const menu_button = document.getElementById("menu_button");
+    if (!menu_button) throw new Error("menu_button is not defined");
+
+    menu_button.addEventListener("click", () => {
+        header.dataset.overlayMenu = header.dataset.overlayMenu === "closed" ? "opened" : "closed";
+    });
+
+    const menu_items = document.querySelectorAll("header nav a");
+    menu_items.forEach((item) => {
+        item.addEventListener("click", () => {
+            header.dataset.overlayMenu = "closed";
+        });
+    });
+</script>
