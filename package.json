@@ -15,7 +15,7 @@
     "@astrojs/react": "^3.3.0",
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.0.0",
-    "@astropub/md": "^0.4.0",
+    "@astropub/md": "^1.0.0",
     "@aws-sdk/client-s3": "^3.617.0",
     "@expressive-code/plugin-line-numbers": "^0.35.0",
     "@google-analytics/data": "^4.5.0",
