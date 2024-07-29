@@ -144,7 +144,6 @@ main > * {
     padding: 0.25em 0.75em;
     margin: 0.25em 0;
     border-radius: 1em;
-    transition: 0.3s;
 }
 
 #article_tags a:hover {
