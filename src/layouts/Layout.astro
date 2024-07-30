@@ -15,6 +15,7 @@ import { getEntry } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { getImage } from "astro:assets";
 import { getDefaultThumbnail } from "src/utils/getDefaultThumbnailPath";
+import { cache } from "src/utils/cache";
 
 interface Props {
     frontmatter: CollectionEntry<"article">["data"];
@@ -284,14 +285,18 @@ const ISO8601ToLocale = (iso8601: string) => {
     </head>
     <body>
         <ins data-ad-code-slot="body"></ins>
-        <Header />
+        {cache("header", () => <Header />)}
         <main>
             <article>
-                <BreakingNewsBanner
-                    title="【注目ニュース】OpenAIがAI搭載検索エンジン「SearchGPT」を発表"
-                    url="/article/2024/07/26/openai-announces-searchgpt-prototype/"
-                    type="info"
-                />
+                {
+                    cache("breakingNewsBanner", () => (
+                        <BreakingNewsBanner
+                            title="【注目ニュース】OpenAIがAI搭載検索エンジン「SearchGPT」を発表"
+                            url="/article/2024/07/26/openai-announces-searchgpt-prototype/"
+                            type="info"
+                        />
+                    ))
+                }
                 {
                     Astro.props.frontmatter.showAds && (
                         // ↓記事のトップに表示する広告。スマホ専用
@@ -369,7 +374,7 @@ const ISO8601ToLocale = (iso8601: string) => {
                 <slot />
             </article>
             <ShareButton title={titleWithSiteName} url={Astro.url.href} />
-            {Astro.props.frontmatter.showAuthor && <AuthorInfo {author} />}
+            {Astro.props.frontmatter.showAuthor && cache(`authorInfo-${author.id}`, () => <AuthorInfo {author} />)}
             <ins data-ad-code-slot="bottom"></ins>
             {
                 Astro.props.frontmatter.showRecommendedArticles && (
@@ -406,19 +411,23 @@ const ISO8601ToLocale = (iso8601: string) => {
                                 data-full-width-responsive="false"
                             />
                             <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                            <FeaturedArticles />
+                            {cache("featuredArticles", () => (
+                                <FeaturedArticles />
+                            ))}
                             <ins data-ad-code-slot="sidebar" />
                         </section>
-                        {Astro.props.slug && (
-                            <section class="recommended_articles_section">
-                                <LatestArticles currentPageSlug={Astro.props.slug} />
-                            </section>
-                        )}
+                        {Astro.props.slug &&
+                            cache("latestArticles", () => (
+                                <section class="recommended_articles_section">
+                                    {/* @ts-expect-error */}
+                                    <LatestArticles currentPageSlug={Astro.props.slug} />
+                                </section>
+                            ))}
                     </>
                 )
             }
         </main>
-        <Footer />
+        {cache("footer", () => <Footer />)}
         <script src="./Layout.ts"></script>
     </body>
 </html>
