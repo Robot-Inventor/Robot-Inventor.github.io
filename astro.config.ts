@@ -180,5 +180,8 @@ export default defineConfig({
         service: ["local", "production"].includes(checkEnvironmentType())
             ? sharpImageService()
             : passthroughImageService()
+    },
+    experimental: {
+        contentCollectionCache: true
     }
 });
