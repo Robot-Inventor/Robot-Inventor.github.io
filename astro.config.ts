@@ -4,7 +4,6 @@ import sitemap from "@astrojs/sitemap";
 import astroExpressiveCode, { pluginFramesTexts } from "astro-expressive-code";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import { starlightAsides } from "./src/starlight/integrations/asides";
-import rehypeOGCard from "rehype-og-card";
 import customToc from "astro-custom-toc";
 import rehypeAutoAds from "rehype-auto-ads";
 import regexGrammar from "@robot-inventor/regex-syntax";
@@ -21,6 +20,7 @@ import rehypeExternalLinks from "rehype-external-links";
 import { checkEnvironmentType } from "./src/utils/checkEnvironmentType";
 import markdownIntegration from "@astropub/md";
 import { starlightDirectivesRestorationIntegration } from "./src/starlight/integrations/asides";
+import linkCard from "astro-link-card";
 
 const topPageURL = "https://roboin.io";
 
@@ -68,7 +68,11 @@ export default defineConfig({
         mdx(),
         react(),
         markdownIntegration(),
-        starlightDirectivesRestorationIntegration()
+        starlightDirectivesRestorationIntegration(),
+        linkCard({
+            excludeDomains: ["amzn.to", "www.amazon.co.jp"],
+            openInNewTab: true
+        })
     ],
     markdown: {
         shikiConfig: {
@@ -76,15 +80,6 @@ export default defineConfig({
         },
         remarkPlugins: [...starlightAsides(), remarkBreaks],
         rehypePlugins: [
-            [
-                rehypeOGCard,
-                {
-                    enableSameTextURLConversion: true,
-                    excludeDomains: ["amzn.to", "www.amazon.co.jp"],
-                    buildCache: true,
-                    buildCachePath: "./node_modules/.astro"
-                } satisfies Parameters<typeof rehypeOGCard>[0]
-            ],
             rehypeImageCaption,
             [
                 rehypeAutoAds,
