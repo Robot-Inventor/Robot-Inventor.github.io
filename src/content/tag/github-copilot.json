@@ -1,0 +1,9 @@
+{
+    "name": "GitHub Copilot",
+    "description": "GitHub Copilotは、GitHubが提供するコーディング用AIです。コードの補完や生成、コードに関する質問への応答などが可能です。",
+    "relatedTags": [
+        "github",
+        "ai",
+        "openai"
+    ]
+}
