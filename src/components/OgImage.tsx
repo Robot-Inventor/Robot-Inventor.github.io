@@ -3,6 +3,7 @@ import satori from "satori";
 import sharp from "sharp";
 import fs from "fs";
 
+// サムネイルの仕様を変更した場合は、この値を変更してキャッシュをクリアする。
 export const OG_IMAGE_COMPONENT_VERSION = "2.0.1";
 
 export const IMAGE_WIDTH = 1280;
@@ -13,7 +14,7 @@ const logoText = fs.readFileSync("./public/logo.png");
 const logoDataURL = `data:image/png;base64,${logoText.toString("base64")}`;
 
 export const getOgImage = async (text: string) => {
-    const fontData = (await getFontData()) as ArrayBuffer;
+    const fontData = getFontData();
     const svg = await satori(
         <main
             style={{
