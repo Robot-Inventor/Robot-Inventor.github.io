@@ -1,4 +1,5 @@
 import { getEntry } from "astro:content";
+import { IMAGE_WIDTH, IMAGE_HEIGHT } from "@components/OgImage";
 
 const getDefaultThumbnail = async (slug: string): Promise<ImageMetadata> => {
     const cleanedSlug = slug
@@ -10,8 +11,8 @@ const getDefaultThumbnail = async (slug: string): Promise<ImageMetadata> => {
 
     if (entry) {
         return {
-            width: 1280,
-            height: 720,
+            width: IMAGE_WIDTH,
+            height: IMAGE_HEIGHT,
             format: "png",
             src: `/og/${cleanedSlug}.png`
         };

@@ -5,8 +5,8 @@ import fs from "fs";
 
 export const OG_IMAGE_COMPONENT_VERSION = "2.0.1";
 
-const IMAGE_WIDTH = 1280;
-const IMAGE_HEIGHT = 720;
+export const IMAGE_WIDTH = 1280;
+export const IMAGE_HEIGHT = 720;
 const FONT_FILE_PATH = "./src/fonts/NotoSansJP/NotoSansJP-ExtraBold.ttf";
 
 const logoText = fs.readFileSync("./public/logo.png");
