@@ -5,7 +5,13 @@ import { getCollection } from "astro:content";
 
 const featuredArticlesCollection = await getCollection("featuredArticles");
 const articleSlugs = featuredArticlesCollection.map((article) => article.data.articles).flat();
-const articles = await getEntries(articleSlugs);
+const uniqueArticleSlugs = [...new Set(articleSlugs.map((article) => article.slug))].map((slug) => {
+    return {
+        collection: "article",
+        slug
+    } as const;
+});
+const articles = await getEntries(uniqueArticleSlugs);
 ---
 
 <RecommendedArticles header="注目記事" {articles} />
