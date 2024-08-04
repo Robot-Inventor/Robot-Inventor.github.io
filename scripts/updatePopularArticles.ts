@@ -5,7 +5,7 @@ import { checkEnvironmentType } from "../src/utils/checkEnvironmentType";
 
 const getPreviousDate = (date: Date): Date => {
     const previousDate = new Date(date);
-    previousDate.setDate(previousDate.getDate() - 1);
+    previousDate.setUTCDate(previousDate.getUTCDate() - 1);
     return previousDate;
 };
 
@@ -164,20 +164,21 @@ const getTrendingArticles = async () => {
         credentials: JSON.parse(process.env.GA_CREDENTIALS)
     });
 
+    const timeZoneOffset = 9;
     const currentDate = new Date();
+    currentDate.setUTCHours(currentDate.getUTCHours() + timeZoneOffset);
     const currentHour = currentDate.getUTCHours();
 
     // 日本時間で15時より前なら前日のデータ、15時以降なら当日のデータを取得する
     const thresholdHour = 15;
-    const timeZoneOffset = 9;
 
     const startDateLatest =
-        currentHour + timeZoneOffset < thresholdHour ? getPreviousDate(currentDate) : getCurrentDate(currentDate);
+        currentHour < thresholdHour ? getPreviousDate(currentDate) : getCurrentDate(currentDate);
 
     const latestReportWeight =
-        currentHour + timeZoneOffset < thresholdHour
+        currentHour < thresholdHour
             ? 1
-            : 2 - (currentHour + timeZoneOffset - thresholdHour) / (24 - thresholdHour);
+            : 2 - (currentHour - thresholdHour) / (24 - thresholdHour);
 
     const startDatePrevious = getPreviousDate(startDateLatest);
 
