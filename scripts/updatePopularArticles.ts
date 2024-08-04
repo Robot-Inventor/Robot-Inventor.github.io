@@ -165,7 +165,7 @@ const getTrendingArticles = async () => {
     });
 
     const currentDate = new Date();
-    const currentHour = currentDate.getHours();
+    const currentHour = currentDate.getUTCHours();
 
     // 日本時間で15時より前なら前日のデータ、15時以降なら当日のデータを取得する
     const thresholdHour = 15;
