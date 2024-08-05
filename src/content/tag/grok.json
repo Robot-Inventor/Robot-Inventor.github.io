@@ -1,0 +1,8 @@
+{
+    "name": "Grok",
+    "description": "Grokは、X（旧Twitter）の関連会社のxAIが開発した大規模言語モデル（LLM：Large Language Model）です。Xのリアルタイムのデータを参考にしながらユーザーの質問に回答できます。",
+    "relatedTags": [
+        "twitter",
+        "ai"
+    ]
+}
