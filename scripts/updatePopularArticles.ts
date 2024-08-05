@@ -53,8 +53,7 @@ const getReport = async (
 
 const compareReports = (
     previousReport: google.analytics.data.v1beta.IRunReportResponse,
-    latestReport: google.analytics.data.v1beta.IRunReportResponse,
-    latestReportWeight: number
+    latestReport: google.analytics.data.v1beta.IRunReportResponse
 ): string[] => {
     const previousRows = previousReport.rows || [];
     const latestRows = latestReport.rows || [];
@@ -84,7 +83,7 @@ const compareReports = (
         const cleanedSlug = path.replace(/^\/article\//, "").replace(/\/$/, "");
         // 記事一覧ページを除外
         if (!cleanedSlug) continue;
-        const views = parseInt(row.metricValues[0].value || "0", 10) * latestReportWeight;
+        const views = parseInt(row.metricValues[0].value || "0", 10);
         latestData[cleanedSlug] = views;
     }
 
@@ -97,19 +96,26 @@ const compareReports = (
     for (const path in latestData) {
         const latestViews = latestData[path];
         const previousViews = previousData[path] || 0;
-        const increase = latestViews - previousViews;
-        const increaseRate = previousViews > 0 ? (increase / previousViews) * 100 : 100;
 
-        increases.push(increase);
-        increaseRates.push(increaseRate);
         previousViewsArray.push(previousViews);
         latestViewsArray.push(latestViews);
     }
 
-    const normalizedIncreases = normalize(increases);
-    const normalizedIncreaseRates = normalize(increaseRates);
     const normalizedPreviousViews = normalize(previousViewsArray);
     const normalizedLatestViews = normalize(latestViewsArray);
+
+    for (let i = 0; i < normalizedLatestViews.length; i++) {
+        const previousView = normalizedPreviousViews[i];
+        const latestView = normalizedLatestViews[i];
+        const increase = latestView - previousView;
+        const increaseRate = previousView > 0 ? (increase / previousView) * 100 : 100;
+
+        increases.push(increase);
+        increaseRates.push(increaseRate);
+    }
+
+    const normalizedIncreases = normalize(increases);
+    const normalizedIncreaseRates = normalize(increaseRates);
 
     let index = 0;
     for (const path in latestData) {
@@ -125,10 +131,10 @@ const compareReports = (
         let weightLatestView = 0.1;
 
         if (normalizedPreviousView < 0.25) {
-            weightIncrease = 0.5;
+            weightIncrease = 0.3;
             weightRate = 0.1;
             weightPreviousView = 0.1;
-            weightLatestView = 0.3;
+            weightLatestView = 0.5;
         } else if (normalizedPreviousView < 0.75) {
             weightIncrease = 0.3;
             weightRate = 0.3;
@@ -136,9 +142,9 @@ const compareReports = (
             weightLatestView = 0.2;
         } else {
             weightIncrease = 0.1;
-            weightRate = 0.5;
+            weightRate = 0.3;
             weightPreviousView = 0.3;
-            weightLatestView = 0.1;
+            weightLatestView = 0.3;
         }
 
         const score =
@@ -164,27 +170,27 @@ const getTrendingArticles = async () => {
         credentials: JSON.parse(process.env.GA_CREDENTIALS)
     });
 
-    const timeZoneOffset = 9;
+    // UTC+9のタイムゾーンオフセット
+    const timeZoneOffset = 9 * 60;
     const currentDate = new Date();
-    currentDate.setUTCHours(currentDate.getUTCHours() + timeZoneOffset);
-    const currentHour = currentDate.getUTCHours();
+    const japanCurrentDate = new Date(currentDate.getTime() + timeZoneOffset * 60000);
+
+    const currentHour = japanCurrentDate.getUTCHours();
 
     // 日本時間で15時より前なら前日のデータ、15時以降なら当日のデータを取得する
     const thresholdHour = 15;
 
     const startDateLatest =
-        currentHour < thresholdHour ? getPreviousDate(currentDate) : getCurrentDate(currentDate);
-
-    const latestReportWeight =
-        currentHour < thresholdHour
-            ? 1
-            : 2 - (currentHour - thresholdHour) / (24 - thresholdHour);
+        currentHour < thresholdHour ? getPreviousDate(japanCurrentDate) : getCurrentDate(japanCurrentDate);
 
     const startDatePrevious = getPreviousDate(startDateLatest);
 
     const dateRanges: google.analytics.data.v1beta.IDateRange[] = [
         {
             name: "last24Hours",
+            // `Date.toISOString()`は常にUTC時刻を返すが、
+            // UTC時刻自体を日本時間に合わせてずらしているので日本時間の日付を取得できる。
+            // Google Analytics APIの`dateRanges`はレポートの時刻ロケール（日本時間）を指定する必要がある。
             startDate: startDateLatest.toISOString().split("T")[0],
             endDate: startDateLatest.toISOString().split("T")[0]
         },
@@ -198,7 +204,7 @@ const getTrendingArticles = async () => {
     const latestPeriodReport = await getReport(analyticsDataClient, propertyId, dateRanges[0]);
     const previousPeriodReport = await getReport(analyticsDataClient, propertyId, dateRanges[1]);
 
-    const trendingArticles = compareReports(previousPeriodReport, latestPeriodReport, latestReportWeight);
+    const trendingArticles = compareReports(previousPeriodReport, latestPeriodReport);
 
     return trendingArticles;
 };
