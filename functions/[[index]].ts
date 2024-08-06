@@ -310,25 +310,25 @@ export const onRequest = async (context) => {
 
     // const adScripts = selectRandomArray([getMicroadAdScript(isMobile), I_MOBILE_AD_SCRIPTS]);
     const headAndBodyAdScripts = isMobile ? getMicroadAdScript(isMobile) : I_MOBILE_AD_SCRIPTS;
-    const adScripts = selectRandomArray(
-        [
-            {
-                ...headAndBodyAdScripts,
-                bottom: selectRandomArray(BOTTOM_AD_SCRIPT),
-                sidebar: selectRandomArray(SIDEBAR_BOTTOM_AD)
-            }
-        ]
-    );
+    const adScripts = selectRandomArray([
+        {
+            ...headAndBodyAdScripts,
+            bottom: selectRandomArray(BOTTOM_AD_SCRIPT),
+            sidebar: selectRandomArray(SIDEBAR_BOTTOM_AD)
+        }
+    ]);
 
     return new HTMLRewriter().on("*[data-ad-code-slot]", new ElementHandler(adScripts)).transform(response);
-}
+};
 
 class ElementHandler {
-    constructor(adScripts) {
+    private adScripts: { [key: string]: string };
+
+    constructor(adScripts: { [key: string]: string }) {
         this.adScripts = adScripts;
     }
 
-    element(element) {
+    element(element: Element) {
         if (!element.hasAttribute("data-ad-code-slot")) return;
 
         const adCodeSlot = element.getAttribute("data-ad-code-slot");
