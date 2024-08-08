@@ -1,0 +1,9 @@
+{
+    "name": "Google TV",
+    "description": "Google TVは、スマートテレビ向けのOSです。さまざまなストリーミングサービスを利用できます。",
+    "relatedTags": [
+        "google",
+        "google-tv-streamer",
+        "chromecast"
+    ]
+}
