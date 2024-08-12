@@ -314,7 +314,7 @@ const ISO8601ToLocale = (iso8601: string) => {
                         </div>
                     )
                 }
-                <h1>{Astro.props.frontmatter.title}</h1>
+                <h1><Markdown.Inline of={Astro.props.frontmatter.title} /></h1>
                 <div id="article_tags">
                     {
                         !!tags.length &&

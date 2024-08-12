@@ -2,6 +2,7 @@
 import { getEntry } from "astro:content";
 import { Picture } from "astro:assets";
 import { getDefaultThumbnail } from "src/utils/getDefaultThumbnailPath";
+import { Markdown } from "@astropub/md";
 
 interface Props {
     link: string;
@@ -33,7 +34,7 @@ const thumbnail = targetArticle.data.thumbnail || defaultThumbnail;
             class="thumbnail"
         />
         <div class="text_container">
-            <div class="title">{targetArticle.data.title}</div>
+            <div class="title"><Markdown.Inline of={targetArticle.data.title} /></div>
             <div class="description">{targetArticle.data.description}</div>
         </div>
     </a>
