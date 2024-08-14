@@ -498,6 +498,18 @@ main > article ol > li {
     margin: 0.5rem 0;
 }
 
+main > article a[href^="https://linksynergy.jrs5.com/"]:has(img)
+{
+    display: block;
+    margin: 2rem 0;
+}
+
+main > article img[src^="https://ad.linksynergy.com/"]
+{
+    display: block;
+    margin: auto;
+}
+
 main *:target {
     scroll-margin: 4rem;
 }
