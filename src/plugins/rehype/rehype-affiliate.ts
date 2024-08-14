@@ -27,7 +27,7 @@ const isMdxJsxHrefAttribute = (
 const rehypeAmazonAssociates: Plugin<[], Root> = () => {
     const addAffiliateLinkDisclosure = (tree: Root) => {
         const disclosure = h("aside", { className: "affiliate_link_disclosure" }, [
-            "※この記事の一部またはすべてのリンクを経由して商品を購入すると、当サイトの運営者が報酬を得ることがあります。",
+            "※この記事にはアフィリエイトリンクが含まれています。この記事のリンクを経由して商品を購入すると、当サイトの運営者が報酬を得ることがあります。",
             h("a", { href: "/affiliate-disclosure/" }, "詳細はこちら")
         ]);
 
