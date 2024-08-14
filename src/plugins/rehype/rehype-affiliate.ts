@@ -89,13 +89,57 @@ const rehypeAmazonAssociates: Plugin<[], Root> = () => {
                 addAffiliateLinkDisclosure(tree);
             }
 
+            const isImageLink =
+                node.children.length === 1 &&
+                node.children[0].type === "mdxJsxFlowElement" &&
+                node.children[0].name === "img";
+
             const buttonClass: MdxJsxAttribute = {
                 type: "mdxJsxAttribute",
                 name: "className",
                 value: "affiliate_link_button"
-            };
+            } as const;
 
-            node.attributes.push(buttonClass);
+            if (!isImageLink) {
+                node.attributes.push(buttonClass);
+            }
+
+            const openInNewTab: MdxJsxAttribute[] = [
+                {
+                    type: "mdxJsxAttribute",
+                    name: "target",
+                    value: "_blank"
+                },
+                {
+                    type: "mdxJsxAttribute",
+                    name: "rel",
+                    value: "noopener noreferrer"
+                }
+            ] as const;
+
+            node.attributes.push(...openInNewTab);
+        });
+
+        visit(tree, "raw", (node, index, parent) => {
+            if (!parent || parent.type !== "element" || parent.tagName !== "p") return;
+            if (parent?.children.length !== 4) return;
+            if (parent.children[0] !== node) return;
+
+            const isLinkShareAffiliateLink = node.value.includes("https://linksynergy.jrs5.com/");
+            if (!isLinkShareAffiliateLink) return;
+
+            if (!affiliateLinkFound) {
+                affiliateLinkFound = true;
+                addAffiliateLinkDisclosure(tree);
+            }
+
+            node.value = node.value.replace(
+                />$/,
+
+                ` target="_blank" rel="noopener noreferrer" ${
+                    isTextNode(parent.children[1]) && 'class="affiliate_link_button"'
+                }>`
+            );
         });
     };
 
