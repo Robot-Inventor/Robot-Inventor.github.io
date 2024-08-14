@@ -301,7 +301,7 @@ const SIDEBAR_BOTTOM_AD = [
 
 const selectRandomArray = (array) => array[Math.floor(Math.random() * array.length)];
 
-export const onRequest = async (context) => {
+export const onRequest: PagesFunction = async (context) => {
     const { request, env } = context;
     const response = await env.ASSETS.fetch(request);
 
