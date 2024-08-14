@@ -306,9 +306,10 @@ main > * {
 }
 
 .affiliate_link_disclosure {
-    font-size: 0.9rem;
-    color: var(--middle-emphasis-color);
     margin: 2rem 0;
+    padding: 1rem 0;
+    border: solid var(--low-emphasis-color);
+    border-width: 0.1rem 0;
 }
 
 .affiliate_link_button {

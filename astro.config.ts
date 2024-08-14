@@ -11,7 +11,7 @@ import shellSessionGrammar from "@robot-inventor/shell-session-syntax";
 import darkModernTheme from "./src/themes/dark-modern.json";
 import lightModernTheme from "./src/themes/light-modern.json";
 import rehypeImageCaption from "rehype-image-caption";
-import rehypeAmazonAssociates from "./src/plugins/rehype/rehype-amazon-associates";
+import rehypeAffiliate from "./src/plugins/rehype/rehype-affiliate";
 import remarkBreaks from "remark-breaks";
 import react from "@astrojs/react";
 import { isElement } from "hast-util-is-element";
@@ -166,7 +166,7 @@ export default defineConfig({
                     target: "_blank"
                 } satisfies Parameters<typeof rehypeExternalLinks>[0]
             ],
-            rehypeAmazonAssociates
+            rehypeAffiliate
         ]
     },
     image: {
