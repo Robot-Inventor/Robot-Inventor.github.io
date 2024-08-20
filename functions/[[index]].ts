@@ -214,6 +214,11 @@ const getMicroadAdScript = (isMobile) => {
     };
 };
 
+const TWOBET_AD_SCRIPTS = {
+    head: '<script type="text/javascript" src="https://adsby.2bet.co.jp/roboindisplay.js"></script>',
+    body: ""
+};
+
 /**
  * A/Bテスト用に2つの広告ユニットを用意
  *
@@ -308,8 +313,8 @@ export const onRequest: PagesFunction = async (context) => {
     const userAgent = request.headers.get("User-Agent");
     const isMobile = Boolean(userAgent.match(/iPhone|Android.+Mobile/u));
 
-    // const adScripts = selectRandomArray([getMicroadAdScript(isMobile), I_MOBILE_AD_SCRIPTS]);
-    const headAndBodyAdScripts = isMobile ? getMicroadAdScript(isMobile) : I_MOBILE_AD_SCRIPTS;
+    // const headAndBodyAdScripts = isMobile ? getMicroadAdScript(isMobile) : I_MOBILE_AD_SCRIPTS;
+    const headAndBodyAdScripts = isMobile ? { head: "", body: "" } : I_MOBILE_AD_SCRIPTS;
     const adScripts = selectRandomArray([
         {
             ...headAndBodyAdScripts,
