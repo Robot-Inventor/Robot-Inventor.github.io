@@ -177,6 +177,7 @@ export default defineConfig({
             : passthroughImageService()
     },
     experimental: {
-        contentCollectionCache: true
+        contentCollectionCache: true,
+        contentIntellisense: true
     }
 });
