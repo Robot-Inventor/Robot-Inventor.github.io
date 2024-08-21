@@ -51,7 +51,7 @@ const I_MOBILE_AD_SCRIPTS = {
 `.trim()
 };
 
-const getMicroadAdScript = (isMobile) => {
+const getMicroadAdScript = (type: "mobile" | "desktop") => {
     const desktopAdScript = `
 <script type="text/javascript">
     var microadCompass = microadCompass || {};
@@ -210,7 +210,7 @@ const getMicroadAdScript = (isMobile) => {
 
     return {
         head: "",
-        body: isMobile ? mobileAdScript : desktopAdScript
+        body: type === "mobile" ? mobileAdScript : desktopAdScript
     };
 };
 
@@ -304,7 +304,22 @@ const SIDEBAR_BOTTOM_AD = [
     `.trim()
 ];
 
-const selectRandomArray = (array) => array[Math.floor(Math.random() * array.length)];
+const selectRandomArray = <T>(array: T[]): T => array[Math.floor(Math.random() * array.length)];
+
+const getDesktopAdScript = () => {
+    const microadOrIMobile = selectRandomArray([getMicroadAdScript("desktop"), I_MOBILE_AD_SCRIPTS]);
+
+    return {
+        head: microadOrIMobile.head + TWOBET_AD_SCRIPTS.head,
+        body: microadOrIMobile.body + TWOBET_AD_SCRIPTS.body
+    } as const;
+};
+
+const getMobileAdScript = () => {
+    const adScripts = selectRandomArray([getMicroadAdScript("mobile"), I_MOBILE_AD_SCRIPTS, TWOBET_AD_SCRIPTS]);
+
+    return adScripts;
+};
 
 export const onRequest: PagesFunction = async (context) => {
     const { request, env } = context;
@@ -313,8 +328,7 @@ export const onRequest: PagesFunction = async (context) => {
     const userAgent = request.headers.get("User-Agent");
     const isMobile = Boolean(userAgent.match(/iPhone|Android.+Mobile/u));
 
-    // const headAndBodyAdScripts = isMobile ? getMicroadAdScript(isMobile) : I_MOBILE_AD_SCRIPTS;
-    const headAndBodyAdScripts = isMobile ? { head: "", body: "" } : I_MOBILE_AD_SCRIPTS;
+    const headAndBodyAdScripts = isMobile ? getMobileAdScript() : getDesktopAdScript();
     const adScripts = selectRandomArray([
         {
             ...headAndBodyAdScripts,
