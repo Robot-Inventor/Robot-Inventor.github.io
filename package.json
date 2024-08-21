@@ -28,7 +28,7 @@
     "archiver": "^7.0.1",
     "astro": "^4.0.0",
     "astro-custom-toc": "^2.0.0",
-    "astro-expressive-code": "^0.35.0",
+    "astro-expressive-code": "^0.36.0",
     "astro-link-card": "^1.0.0",
     "hast-util-is-element": "^3.0.0",
     "hast-util-to-string": "^3.0.0",
