@@ -22,9 +22,7 @@ const deploymentNotifier = async () => {
     const commitURL = commitHash
         ? `[${commitHash}](${githubRepositoryURL}/commit/${commitHash})`
         : "コミットハッシュを取得できなかったみたい";
-    const deploymentURL = process.env.CF_PAGES_URL
-        ? `[${process.env.CF_PAGES_URL}](${process.env.CF_PAGES_URL})`
-        : "デプロイURLを取得できなかったみたい";
+    const deploymentURL = process.env.CF_PAGES_URL ?? "デプロイURLを取得できなかったみたい";
 
     const date = new Date();
     const jst = date.toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
