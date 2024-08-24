@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "git submodule update --remote && tsx ./scripts/updatePopularArticles.ts && tsx ./scripts/restoreCache.ts && astro build && tsx ./scripts/uploadCache.ts",
+    "build": "git submodule update --remote && tsx ./scripts/updatePopularArticles.ts && tsx ./scripts/restoreCache.ts && astro build && tsx ./scripts/uploadCache.ts && tsx ./scripts/deploymentNotifier.ts",
     "preview": "astro preview",
     "astro": "astro"
   },
