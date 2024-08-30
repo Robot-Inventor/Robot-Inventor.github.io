@@ -1,0 +1,10 @@
+{
+    "name": "CSS",
+    "description": "CSSは、Webページのデザインやレイアウトを記述するための仕組みです。HTMLとセットで利用します。",
+    "relatedTags": [
+        "programming",
+        "javascript",
+        "typescript",
+        "html"
+    ]
+}
