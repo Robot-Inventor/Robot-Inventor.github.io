@@ -27,7 +27,8 @@ export const GET = async () => {
                         ? getMimeType(post.data.thumbnail.format)
                         : getMimeType(defaultThumbnail.format),
                     length: 0
-                }
+                },
+                customData: `<dc:creator>${post.data.author.id}</dc:creator>`
             };
         })
     );
@@ -39,7 +40,8 @@ export const GET = async () => {
         items: rssEntries,
         customData: `<language>ja</language><webfeeds:icon>https://roboin.io/favicon.svg</webfeeds:icon>`,
         xmlns: {
-            webfeeds: "http://webfeeds.org/rss/1.0"
+            webfeeds: "http://webfeeds.org/rss/1.0",
+            dc: "http://purl.org/dc/elements/1.1/"
         }
     });
 };
