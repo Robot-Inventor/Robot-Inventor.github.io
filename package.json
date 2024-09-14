@@ -42,7 +42,7 @@
     "rehype-image-caption": "^2.0.0",
     "remark-breaks": "^4.0.0",
     "remark-directive": "^3.0.0",
-    "satori": "^0.10.13",
+    "satori": "^0.11.0",
     "sharp": "^0.33.2",
     "tsx": "^4.10.3",
     "typescript": "^5.2.2",
