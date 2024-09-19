@@ -520,3 +520,57 @@ appnexus.com, 11470, RESELLER
 pubmatic.com, 163238, RESELLER, 5d62403b186f2ace
 smartadserver.com, 4537, RESELLER, 060d053dcf45cbf3
 rubiconproject.com, 25198, RESELLER, 0bfd66d529a55807
+ad-stir.com, 13047, DIRECT
+zmaticoo.com, 116355, RESELLER
+rubiconproject.com, 24362, RESELLER, 0bfd66d529a55807
+pubmatic.com, 161136, RESELLER, 5d62403b186f2ace
+smaato.com, 1100051149, RESELLER, 07bcf65f187117b4
+smaato.com, 1100004890, RESELLER, 07bcf65f187117b4
+martadserver.com, 4457, RESELLER, 060d053dcf45cbf3
+video.unrulymedia.com, 158727213, DIRECT
+Contextweb.com, 562762, RESELLER, 89ff185a4c4e857c
+loopme.com, 11605, RESELLER, 6c8d5f95897a5a3b
+pubmatic.com, 158154, RESELLER, 5d62403b186f2ace
+triplelift.com, 12158, RESELLER, 6c33edb13117fd86
+xandr.com, 13799, RESELLER
+sharethrough.com, 6qlnf8SY, RESELLER, d53b998a7bd4ecd2
+freewheel.tv, 1137745, RESELLER
+freewheel.tv, 1138513, RESELLER
+conversantmedia.com, 100246, RESELLER, 03113cd04947736d
+media.net, 8CUN37DCC, RESELLER
+improvedigital.com, 2110, RESELLER
+improvedigital.com, 1532, RESELLER
+onairglobal.com, 4357627, RESELLER
+thebrave.io, 1234585, RESELLER, c25b2154543746ac
+videoheroes.tv, 212503, RESELLER, 064bc410192443d8
+Se7en.es, 212503, RESELLER, 064bc410192443d8
+opera.com,pub7275292332480,RESELLER,55a0c5fd61378de3
+pokkt.com, 7606, RESELLER, c45702d9311e25fd
+appads.in, 107606, RESELLER
+pubmatic.com, 159382, RESELLER
+pubmatic.com, 161058, RESELLER, 5d62403b186f2ace
+appnexus.com, 6849, RESELLER
+xad.com, 963, RESELLER, 81cbf0a75a5e0e9a
+openx.com, 543878511, RESELLER, 6a698e2ec38604c6
+smaato.com, 1100047589, RESELLER, 07bcf65f187117b4
+inmobi.com, ba5fd3fb82c5412989b23c3eec71baf7, RESELLER, 83e75a7ae333ca9d
+improvedigital.com, 1699, RESELLER
+loopme.com, 9718, RESELLER, 6c8d5f95897a5a3b
+tvp.tv, AR40, RESELLER, 1125b6434104a723
+adelement.com, 36003, RESELLER
+adelement.com, 36004, RESELLER
+betweendigital.com, 44659, RESELLER
+betweendigital.com, 44659, DIRECT
+vidoomy.com, 9148331, RESELLER
+pubmatic.com, 159668, RESELLER, 5d62403b186f2ace
+inmobi.com, 86357825a302443d9a99c0b5dda0eafa, RESELLER, 83e75a7ae333ca9d
+smartyads.com, 100064, RESELLER, fd2bde0ff2e62c5d
+xandr.com, 8678, RESELLER
+appnexus.com, 8678, RESELLER
+pubmatic.com, 160260, RESELLER, 5d62403b186f2ace
+pubmatic.com, 161380, RESELLER, 5d62403b186f2ace
+rubiconproject.com, 12130, RESELLER, 0bfd66d529a55807
+google.com, pub-2801326990568508, RESELLER, f08c47fec0942fa0
+pubmatic.com, 160008, RESELLER, 5d62403b186f2ace
+publishers.logicad.jp, DQMo, DIRECT
+appnexus.com, 3663, RESELLER
