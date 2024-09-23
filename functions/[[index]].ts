@@ -222,52 +222,6 @@ const TWOBET_AD_SCRIPTS = {
 /**
  * A/Bテスト用に2つの広告ユニットを用意
  *
- * - ディスプレイ広告×2
- * - Multiplex広告×1（モバイルでは1×4、デスクトップでは3×2枠）
- */
-const BOTTOM_AD_SCRIPT = [
-    // 1つ目の広告ユニット
-    `
-<ins
-    class="adsbygoogle"
-    style="display: block; margin: 2rem 0 0 0;"
-    data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="3108993340"
-    data-ad-format="rectangle, horizontal"
-    data-full-width-responsive="false"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<ins
-    class="adsbygoogle"
-    style="display: block; margin: 1rem 0 0 0;"
-    data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="3108993340"
-    data-ad-format="rectangle, horizontal"
-    data-full-width-responsive="false"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    `.trim(),
-    // 2つ目（Multiplex）の広告ユニット
-    `
-<ins class="adsbygoogle"
-    style="display: block; width: 100%;"
-    data-ad-format="autorelaxed"
-    data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="3546449335"
-    data-matched-content-rows-num="4,2"
-    data-matched-content-columns-num="1,3"
-    data-matched-content-ui-type="image_sidebyside,image_stacked"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    `.trim()
-];
-
-/**
- * A/Bテスト用に2つの広告ユニットを用意
- *
  * - ディスプレイ広告（レクタングル）×2
  * - ディスプレイ広告（縦長）×1
  */
@@ -332,7 +286,6 @@ export const onRequest: PagesFunction = async (context) => {
     const adScripts = selectRandomArray([
         {
             ...headAndBodyAdScripts,
-            bottom: selectRandomArray(BOTTOM_AD_SCRIPT),
             sidebar: selectRandomArray(SIDEBAR_BOTTOM_AD)
         }
     ]);

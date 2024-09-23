@@ -282,6 +282,22 @@ const ISO8601ToLocale = (iso8601: string) => {
 
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+        <script
+            type="text/javascript"
+            src="//nc.pubpowerplatform.io/w/e47f3a83-49fc-40bc-a3a3-de265b248056.js"
+            async
+            defer
+            is:inline></script>
+        <script is:inline>
+            var powerTag = powerTag || {};
+            powerTag.gdprShowConsentToolButton = false;
+        </script>
+        <script
+            type="text/javascript"
+            src="//nc.pubpowerplatform.io/ata/adv/e47f3a83-49fc-40bc-a3a3-de265b248056.js"
+            async
+            defer
+            is:inline></script>
     </head>
     <body>
         {Astro.props.frontmatter.showAds && <ins data-ad-code-slot="body" />}
@@ -375,7 +391,12 @@ const ISO8601ToLocale = (iso8601: string) => {
             </article>
             <ShareButton title={titleWithSiteName} url={Astro.url.href} />
             {Astro.props.frontmatter.showAuthor && cache(`authorInfo-${author.id}`, () => <AuthorInfo {author} />)}
-            <ins data-ad-code-slot="bottom"></ins>
+            <pubtag class="adsbypubpower" data-ad-slot="pw_41825"></pubtag>
+            <script type="text/javascript" is:inline>
+                (powerTag.Init = window.powerTag.Init || []).push(function () {
+                    powerAPITag.initNativeAds("pw_41825");
+                });
+            </script>
             {
                 Astro.props.frontmatter.showRecommendedArticles && (
                     <>
