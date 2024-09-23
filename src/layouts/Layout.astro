@@ -391,12 +391,14 @@ const ISO8601ToLocale = (iso8601: string) => {
             </article>
             <ShareButton title={titleWithSiteName} url={Astro.url.href} />
             {Astro.props.frontmatter.showAuthor && cache(`authorInfo-${author.id}`, () => <AuthorInfo {author} />)}
-            <pubtag class="adsbypubpower" data-ad-slot="pw_41825"></pubtag>
-            <script type="text/javascript" is:inline>
-                (powerTag.Init = window.powerTag.Init || []).push(function () {
-                    powerAPITag.initNativeAds("pw_41825");
-                });
-            </script>
+            <div style="width: 100%; max-width: 100%;">
+                <pubtag class="adsbypubpower" data-ad-slot="pw_41825"></pubtag>
+                <script type="text/javascript" is:inline>
+                    (powerTag.Init = window.powerTag.Init || []).push(function () {
+                        powerAPITag.initNativeAds("pw_41825");
+                    });
+                </script>
+            </div>
             {
                 Astro.props.frontmatter.showRecommendedArticles && (
                     <>
