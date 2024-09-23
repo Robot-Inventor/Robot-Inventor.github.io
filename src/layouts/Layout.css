@@ -81,6 +81,12 @@ main > * {
     height: 280px;
 }
 
+#bottom_ad {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 2rem;
+}
+
 @media (max-width: 1500px) {
     #top_ad_desktop,
     #middle_ad {
