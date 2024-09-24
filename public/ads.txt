@@ -1107,6 +1107,7 @@ google.com, pub-4370452252708446, DIRECT, f08c47fec0942fa0
 ucfunnel.com, pub-AA728B3229D24766C8442DD66B868267, DIRECT
 aralego.com, pub-AA728B3229D24766C8442DD66B868267, DIRECT
 adiiix.com, 1dbf2354, DIRECT
+pubpower.io, 2831, DIRECT
 appnexus.com, 10273, RESELLER, f5ab79cb980f11d1
 appnexus.com, 11395, RESELLER, f5ab79cb980f11d1
 indexexchange.com, 192922, RESELLER, 50b1c356f2c5c8fc
