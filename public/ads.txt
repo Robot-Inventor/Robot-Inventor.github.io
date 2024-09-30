@@ -728,6 +728,9 @@ onetag.com, 5d1628750185ace, RESELLER
 xapads.com, 144307, RESELLER
 lunamedia.io, bfacf5e017bb11edb41173b0ca2c748c, RESELLER, 524ecb396915caaf
 e-planning.net, 949b688810cb7439, RESELLER, c1ba615865ed87b2
+ushareit.com, LC48271a2d40da7ed3, DIRECT
+loopme.com, 11633, RESELLER, 6c8d5f95897a5a3b
+opera.com, pub8049291171776, RESELLER, 55a0c5fd61378de3
 smaato.com, 1100045673, DIRECT, 07bcf65f187117b4
 smaato.com, 1100004890, DIRECT, 07bcf65f187117b4
 inmobi.com, 3da71e06eda5416c83b129509cb92e73, DIRECT, 83e75a7ae333ca9d
