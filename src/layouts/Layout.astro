@@ -414,30 +414,19 @@ const ISO8601ToLocale = (iso8601: string) => {
                             />
                             <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                             {Astro.props.slug && <RelatedArticles targetArticleSlug={Astro.props.slug} />}
-                            <ins
-                                id="middle_ad"
-                                class="adsbygoogle"
-                                style="display:block"
-                                data-ad-client="ca-pub-2526648882773973"
-                                data-ad-slot="5941904776"
-                                data-ad-format="rectangle, horizontal"
-                                data-full-width-responsive="false"
-                            />
-                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                            <ins
-                                id="middle_ad"
-                                class="adsbygoogle"
-                                style="display:block"
-                                data-ad-client="ca-pub-2526648882773973"
-                                data-ad-slot="5941904776"
-                                data-ad-format="rectangle, horizontal"
-                                data-full-width-responsive="false"
-                            />
-                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                            <pubtag class="adsbypubpower" data-ad-slot="pw_41761" />
+                            <script type="text/javascript" is:inline>
+                                (powerTag.Init = window.powerTag.Init || []).push(function ()
+                                {powerAPITag.display("pw_41761")})
+                            </script>
                             {cache("featuredArticles", () => (
                                 <FeaturedArticles />
                             ))}
-                            <ins data-ad-code-slot="sidebar" />
+                            <pubtag class="adsbypubpower" data-ad-slot="pw_41762" />
+                            <script type="text/javascript" is:inline>
+                                (powerTag.Init = window.powerTag.Init || []).push(function ()
+                                {powerAPITag.display("pw_41762")})
+                            </script>
                         </section>
                         {Astro.props.slug &&
                             cache("latestArticles", () => (

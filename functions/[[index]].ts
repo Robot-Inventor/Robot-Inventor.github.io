@@ -219,45 +219,6 @@ const TWOBET_AD_SCRIPTS = {
     body: ""
 };
 
-/**
- * A/Bテスト用に2つの広告ユニットを用意
- *
- * - ディスプレイ広告（レクタングル）×2
- * - ディスプレイ広告（縦長）×1
- */
-const SIDEBAR_BOTTOM_AD = [
-    // 1つ目の広告ユニット
-    `
-<ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="3438012431"
-    data-ad-format="rectangle"
-    data-full-width-responsive="false"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="3438012431"
-    data-ad-format="rectangle"
-    data-full-width-responsive="false"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    `.trim(),
-    // 2つ目（縦長）の広告ユニット
-    `
-<ins
-    class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="4720213014"
-    data-ad-format="vertical"
-    data-full-width-responsive="false"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    `.trim()
-];
-
 const selectRandomArray = <T>(array: T[]): T => array[Math.floor(Math.random() * array.length)];
 
 const getDesktopAdScript = () => {
@@ -285,8 +246,7 @@ export const onRequest: PagesFunction = async (context) => {
     const headAndBodyAdScripts = isMobile ? getMobileAdScript() : getDesktopAdScript();
     const adScripts = selectRandomArray([
         {
-            ...headAndBodyAdScripts,
-            sidebar: selectRandomArray(SIDEBAR_BOTTOM_AD)
+            ...headAndBodyAdScripts
         }
     ]);
 
