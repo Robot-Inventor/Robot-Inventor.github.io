@@ -86,14 +86,9 @@ export default defineConfig({
                 {
                     countFrom: 3,
                     adCode: `
-<ins class="adsbygoogle"
-    style="display:block; width: 100%; height: 280px;"
-    data-ad-client="ca-pub-2526648882773973"
-    data-ad-slot="9413147471"
-    data-ad-format="rectangle, horizontal"
-    data-full-width-responsive="false"></ins>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+<pubtag class="adsbypubpower" data-ad-slot="pw_41759"></pubtag>
+<script type="text/javascript">
+    (powerTag.Init = window.powerTag.Init || []).push(function () { powerAPITag.display("pw_41759") })
 </script>
 `.trim(),
                     shouldInsertAd: (vfile, previousNode, nextNode, ancestors) => {
