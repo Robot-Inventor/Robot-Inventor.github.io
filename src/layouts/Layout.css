@@ -636,14 +636,16 @@ main *:target {
 }
 
 /* 記事内のコンテンツ内の広告 */
-article .adsbygoogle {
+article .adsbygoogle,
+article .adsbypubpower {
     /* 広告の上に［広告］というテキストを付けるので上のマージンを広く取る */
     margin: 3rem 0 2rem 0;
     text-decoration: none;
     position: relative;
 }
 
-article .adsbygoogle::before {
+article .adsbygoogle::before,
+article .adsbypubpower::before {
     content: "広告";
     display: block;
     width: 100%;
