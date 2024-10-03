@@ -648,7 +648,7 @@ article pubtag.adsbypubpower[data-ad-slot="pw_41759"] {
     margin: 3rem 0 2rem 0;
     text-decoration: none;
     position: relative;
-    overflow: visible;
+    overflow: visible !important;
 }
 
 article .adsbygoogle::before,
