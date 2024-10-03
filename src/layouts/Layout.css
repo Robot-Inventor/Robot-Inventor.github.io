@@ -633,17 +633,26 @@ main *:target {
     margin-top: 3rem;
 }
 
+p:has(+ pubtag.adsbypubpower[data-ad-slot="pw_41759"]) {
+    margin-bottom: 3rem;
+}
+
+pubtag.adsbypubpower[data-ad-slot="pw_41759"] + script + * {
+    margin-top: 2rem;
+}
+
 /* 記事内のコンテンツ内の広告 */
 article .adsbygoogle,
-article .adsbypubpower {
+article pubtag.adsbypubpower[data-ad-slot="pw_41759"] {
     /* 広告の上に［広告］というテキストを付けるので上のマージンを広く取る */
     margin: 3rem 0 2rem 0;
     text-decoration: none;
     position: relative;
+    overflow: visible;
 }
 
 article .adsbygoogle::before,
-article .adsbypubpower::before {
+article pubtag.adsbypubpower[data-ad-slot="pw_41759"]::before {
     content: "広告";
     display: block;
     width: 100%;
