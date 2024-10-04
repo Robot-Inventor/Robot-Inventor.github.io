@@ -11,40 +11,40 @@
     --footer-height: 25rem;
     --social-icon-size: max(2.5rem, 40px);
 
-    --secondary-background-color: #fff;
-    --base-background-color: #fff;
-    --base-text-color: #333;
-    --theme-color: #3476ac;
-    --theme-color-lighter: #3d8fd1;
-    --middle-emphasis-color: rgb(0, 0, 0, 0.6);
-    --low-emphasis-color: rgb(0, 0, 0, 0.6);
-    --text-color-on-theme: white;
+    --md-surface: #fff;
+    --md-surface-container: #eceef4;
+    --md-surface-container-high: #e6e8ee;
+    --md-on-surface: #333;
+    --md-on-surface-variant: rgb(0, 0, 0, 0.6);
+    --md-primary: #34618e;
+    --md-primary-container: #104570;
+    --md-on-primary: white;
 
     --inline-code-background-color: rgba(0, 0, 0, 0.1);
-    --chips-background-color: rgb(0, 0, 0, 0.05);
+    --header-background-color: var(--md-surface);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --secondary-background-color: #2a2a2a;
-        --base-background-color: #191919;
-        --base-text-color: #fff;
-        --theme-color: #87b7e1;
-        --theme-color-lighter: #acd8ff;
-        --middle-emphasis-color: rgb(255, 255, 255, 0.6);
-        --low-emphasis-color: rgb(255, 255, 255, 0.6);
-        --text-color-on-theme: #191919;
+        --md-surface: #101418;
+        --md-surface-container: #1d2024;
+        --md-surface-container-high: #272a2f;
+        --md-on-surface: #fafaff;
+        --md-on-surface-variant: #90969f;
+        --md-primary: #6994c3;
+        --md-primary-container: #a5ceff;
+        --md-on-primary: #00172c;
 
-        --inline-code-background-color: rgba(255, 255, 255, 0.1);
-        --chips-background-color: rgb(255, 255, 255, 0.1);
+        --inline-code-background-color: var(--md-surface-container-high);
+        --header-background-color: var(--md-surface-container);
     }
 }
 
 html,
 body {
     color-scheme: light dark;
-    color: var(--base-text-color);
-    background: var(--base-background-color);
+    color: var(--md-on-surface);
+    background: var(--md-surface);
     font-family: "Noto Sans JP", sans-serif;
 }
 
@@ -127,13 +127,12 @@ main > * {
     justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 0 1rem;
-    z-index: 0;
+    gap: 0.75rem 0.5rem;
     align-items: center;
 }
 
 #article_info {
-    color: var(--middle-emphasis-color);
+    color: var(--md-on-surface-variant);
     margin: 0.75rem 0 2.5rem 0;
 }
 
@@ -142,17 +141,16 @@ main > * {
 }
 
 #article_tags a {
-    color: var(--base-text-color);
+    color: var(--md-on-surface);
     text-decoration: none;
-    background: var(--chips-background-color);
+    background: var(--md-surface-container-high);
     padding: 0.25em 0.75em;
-    margin: 0.25em 0;
     border-radius: 1em;
 }
 
 #article_tags a:hover {
-    background: var(--theme-color);
-    color: var(--text-color-on-theme);
+    background: var(--md-primary);
+    color: var(--md-on-primary);
 }
 
 #page_top_thumbnail {
@@ -161,12 +159,11 @@ main > * {
 }
 
 .toc {
-    padding: 1rem 0;
     margin: 2rem 0;
-    padding: 1rem;
-    border-top: solid 0.1rem var(--low-emphasis-color);
-    border-bottom: solid 0.1rem var(--low-emphasis-color);
+    padding: 1rem 1.5rem;
     position: relative;
+    background: var(--md-surface-container);
+    border-radius: 1rem;
 }
 
 .toc h2 {
@@ -175,6 +172,7 @@ main > * {
     line-height: 2rem;
     border-left: none;
     display: inline-block;
+    color: var(--md-primary);
 }
 
 .toc a {
@@ -207,7 +205,7 @@ main > * {
 .toc li::before {
     width: 0.1rem;
     height: calc(100% + var(--toc-li-margin) * 2);
-    background: var(--theme-color);
+    background: var(--md-primary);
     left: -0.75rem;
 }
 
@@ -243,8 +241,8 @@ main > * {
     width: 0.6rem;
     height: 0.6rem;
     border-radius: 0.6rem;
-    background: var(--base-background-color);
-    border: solid 0.1rem var(--theme-color);
+    background: var(--md-surface-container);
+    border: solid 0.1rem var(--md-primary);
     top: 50%;
     left: -1.1rem;
     transform: translateY(-50%);
@@ -252,7 +250,7 @@ main > * {
 }
 
 .toc li:hover:after {
-    background: var(--theme-color);
+    background: var(--md-primary);
 }
 
 .toc ul {
@@ -282,7 +280,7 @@ main > * {
     position: absolute;
     width: 100%;
     height: 5rem;
-    background: linear-gradient(to bottom, transparent 0%, var(--base-background-color) 90%);
+    background: linear-gradient(to bottom, transparent 0%, var(--md-surface) 90%);
     bottom: 0;
     left: 0;
     pointer-events: none;
@@ -300,7 +298,7 @@ main > * {
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.9rem;
-    color: var(--middle-emphasis-color);
+    color: var(--md-on-surface-variant);
     background: none;
     border: none;
 }
@@ -312,7 +310,7 @@ main > * {
 .affiliate_link_disclosure {
     margin: 2rem 0;
     padding: 1rem 0;
-    border: solid var(--low-emphasis-color);
+    border: solid var(--md-on-surface-variant);
     border-width: 0.1rem 0;
 }
 
@@ -322,8 +320,8 @@ main > * {
     max-width: 100%;
     margin: 1rem auto;
     padding: 0.5rem 1rem;
-    background: var(--theme-color);
-    color: var(--text-color-on-theme);
+    background: var(--md-primary);
+    color: var(--md-on-primary);
     font-weight: bold;
     font-size: 1.2rem;
     text-align: center;
@@ -332,7 +330,7 @@ main > * {
 }
 
 .affiliate_link_button:hover {
-    color: var(--text-color-on-theme);
+    color: var(--md-on-primary);
 }
 
 main > article {
@@ -347,11 +345,11 @@ main > article {
 }
 
 main > article a {
-    color: var(--theme-color);
+    color: var(--md-primary-container);
 }
 
 main > article a:hover {
-    color: var(--theme-color-lighter);
+    color: var(--md-primary);
 }
 
 main > article img {
@@ -367,7 +365,7 @@ main > article img + em {
     display: block;
     text-align: center;
     font-size: 0.8rem;
-    color: var(--middle-emphasis-color);
+    color: var(--md-on-surface-variant);
     margin-top: 0.5rem;
 }
 
@@ -378,8 +376,12 @@ main > article figure {
 main > article figure figcaption {
     text-align: center;
     font-size: 0.8rem;
-    color: var(--middle-emphasis-color);
+    color: var(--md-on-surface-variant);
     margin-top: 0.5rem;
+}
+
+main > article figure figcaption a {
+    color: inherit;
 }
 
 main > article pre {
@@ -391,7 +393,7 @@ main > article hr {
     border: none;
     width: 100%;
     height: 0.1rem;
-    background: var(--base-text-color);
+    background: var(--md-on-surface);
     opacity: 0.5;
     margin: 1.5rem 0;
 }
@@ -399,14 +401,14 @@ main > article hr {
 main > article table {
     width: 100%;
     overflow-x: scroll;
-    border: solid 0.1rem var(--base-text-color);
+    border: solid 0.1rem var(--md-on-surface);
     border-collapse: collapse;
     margin: 1.5rem 0;
 }
 
 main > article th,
 main > article td {
-    border: solid 0.1rem var(--base-text-color);
+    border: solid 0.1rem var(--md-on-surface);
     padding: 0.5rem;
 }
 
@@ -424,15 +426,18 @@ main > article h2 {
     font-size: 1.5rem;
     line-height: calc(0.25rem * 9);
     font-feature-settings: "palt";
-    padding: 0.25em 0.5em;
-    border-left: solid 0.4rem var(--theme-color);
+    padding: 0.5em 0.75em;
+    background: var(--md-surface-container);
+    border-radius: 1rem;
+    color: var(--md-primary);
 }
 
 main > article h3 {
     font-size: 1.3125rem;
     line-height: calc(0.25rem * 8);
     font-feature-settings: "palt";
-    border-bottom: solid 0.15rem var(--middle-emphasis-color);
+    border-bottom: solid 0.1rem var(--md-on-surface-variant);
+    padding-bottom: 0.25rem;
 }
 
 main > article h4 {
@@ -455,7 +460,7 @@ main > article h6 {
 
 main > article p {
     font-size: 1rem;
-    line-height: calc(0.25rem * 7);
+    line-height: calc(0.25rem * 9);
     text-align: justify;
     text-justify: inter-character;
 }
@@ -485,8 +490,8 @@ main > article * + p {
 }
 
 main > article blockquote {
-    color: var(--low-emphasis-color);
-    border-left: 0.25rem solid var(--low-emphasis-color);
+    color: var(--md-on-surface-variant);
+    border-left: 0.25rem solid var(--md-on-surface-variant);
     padding-left: 0.5rem;
     margin: 1.25rem 0;
 }
@@ -536,7 +541,7 @@ main *:target {
 }
 
 .og-card-container {
-    background: var(--secondary-background-color);
+    background: var(--md-surface-container);
     border-radius: 0.25rem;
     overflow: hidden;
     box-shadow: 0.1rem 0.1rem 0.5rem rgb(0, 0, 0, 0.2);
@@ -576,7 +581,7 @@ main *:target {
 }
 
 .og-card-description {
-    color: var(--middle-emphasis-color);
+    color: var(--md-on-surface-variant);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -619,7 +624,7 @@ main *:target {
 }
 
 .og-card-url {
-    color: var(--middle-emphasis-color);
+    color: var(--md-on-surface-variant);
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -657,7 +662,7 @@ article pubtag.adsbypubpower[data-ad-slot="pw_41759"]::before {
     display: block;
     width: 100%;
     text-align: center;
-    color: var(--middle-emphasis-color);
+    color: var(--md-on-surface-variant);
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
     position: absolute;
