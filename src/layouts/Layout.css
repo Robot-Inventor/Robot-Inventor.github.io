@@ -429,7 +429,6 @@ main > article h2 {
     padding: 0.5em 0.75em;
     background: var(--md-surface-container);
     border-radius: 1rem;
-    color: var(--md-primary);
 }
 
 main > article h3 {
