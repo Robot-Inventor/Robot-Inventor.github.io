@@ -172,7 +172,6 @@ main > * {
     line-height: 2rem;
     border-left: none;
     display: inline-block;
-    color: var(--md-primary);
 }
 
 .toc a {
