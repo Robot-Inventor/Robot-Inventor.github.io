@@ -356,10 +356,11 @@ main > article a:hover {
 main > article img {
     max-width: 100%;
     max-height: 70vh;
-    width: auto;
+    width: 100%;
     height: auto;
     display: block;
     margin: auto;
+    object-fit: contain;
 }
 
 main > article img + em {
