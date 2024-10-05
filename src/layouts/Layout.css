@@ -13,7 +13,7 @@
 
     --md-surface: #fff;
     --md-surface-container: #eceef4;
-    --md-surface-container-high: #e6e8ee;
+    --md-surface-container-highest: #e6e8ee;
     --md-on-surface: #333;
     --md-on-surface-variant: rgb(0, 0, 0, 0.6);
     --md-primary: #34618e;
@@ -27,15 +27,15 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --md-surface: #101418;
-        --md-surface-container: #1d2024;
-        --md-surface-container-high: #272a2f;
+        --md-surface-container: #272a2f;
+        --md-surface-container-highest: #32353a;
         --md-on-surface: #fafaff;
         --md-on-surface-variant: #90969f;
         --md-primary: #6994c3;
         --md-primary-container: #a5ceff;
         --md-on-primary: #00172c;
 
-        --inline-code-background-color: var(--md-surface-container-high);
+        --inline-code-background-color: var(--md-surface-container-highest);
         --header-background-color: var(--md-surface-container);
     }
 }
@@ -143,7 +143,7 @@ main > * {
 #article_tags a {
     color: var(--md-on-surface);
     text-decoration: none;
-    background: var(--md-surface-container-high);
+    background: var(--md-surface-container-highest);
     padding: 0.25em 0.75em;
     border-radius: 1em;
 }
