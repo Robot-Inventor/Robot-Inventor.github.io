@@ -14,7 +14,6 @@
     --md-surface: #fff;
     --md-surface-container: #eceef4;
     --md-surface-container-highest: #e6e8ee;
-    --md-surface-container-highest-low: #f2f3f9;
     --md-on-surface: #333;
     --md-on-surface-variant: rgb(0, 0, 0, 0.6);
     --md-primary: #34618e;
@@ -30,7 +29,6 @@
         --md-surface: #101418;
         --md-surface-container: #272a2f;
         --md-surface-container-highest: #32353a;
-        --md-surface-container-highest-low: #1d2024;
         --md-on-surface: #fafaff;
         --md-on-surface-variant: #90969f;
         --md-primary: #6994c3;
@@ -310,8 +308,9 @@ main > * {
 
 .affiliate_link_disclosure {
     margin: 2rem 0;
-    padding: 1rem 0;
-    border: solid var(--md-on-surface-variant);
+    padding: 1rem;
+    background: var(--md-surface-container);
+    border-radius: 1rem;
     border-width: 0.1rem 0;
 }
 
