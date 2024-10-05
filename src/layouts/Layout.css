@@ -14,6 +14,7 @@
     --md-surface: #fff;
     --md-surface-container: #eceef4;
     --md-surface-container-highest: #e6e8ee;
+    --md-surface-container-highest-low: #f2f3f9;
     --md-on-surface: #333;
     --md-on-surface-variant: rgb(0, 0, 0, 0.6);
     --md-primary: #34618e;
@@ -29,6 +30,7 @@
         --md-surface: #101418;
         --md-surface-container: #272a2f;
         --md-surface-container-highest: #32353a;
+        --md-surface-container-highest-low: #1d2024;
         --md-on-surface: #fafaff;
         --md-on-surface-variant: #90969f;
         --md-primary: #6994c3;
@@ -101,10 +103,6 @@ main > * {
         margin-top: 0;
         margin-left: 5rem;
         width: calc(100% - 8rem);
-    }
-
-    #related_articles_section article {
-        height: 5rem;
     }
 
     #related_articles_section h3 {
@@ -534,6 +532,7 @@ main *:target {
 
 .expressive-code {
     margin: 1.5rem 0;
+    --ec-frm-frameBoxShdCssVal: none;
 }
 
 .expressive-code .frame.is-terminal .header::before {
