@@ -674,6 +674,11 @@ article pubtag.adsbypubpower[data-ad-slot="pw_41759"]::before {
     margin: 2rem 0;
 }
 
+/* Google Adsenseの［関連トピックの発見］ */
+article .autors-widget {
+    margin: 2rem 0;
+}
+
 main > .adsbygoogle[data-ad-format="fluid"] {
     margin: 0;
 }
