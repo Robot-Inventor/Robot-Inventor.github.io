@@ -45,6 +45,10 @@ const articleData = await Promise.all(articleDataPromises);
     }
 </div>
 <style>
+    h2 {
+        margin-top: 3rem;
+    }
+
     .recommended_articles {
         margin-top: 1rem;
     }
@@ -52,10 +56,17 @@ const articleData = await Promise.all(articleDataPromises);
     .recommended_articles article {
         width: 100%;
         height: 6.5rem;
-        margin: 0.5rem 0;
+        margin: 0.15rem 0;
         background: var(--md-surface-container);
-        border-radius: 0.5rem;
         overflow: hidden;
+    }
+
+    .recommended_articles article:first-child {
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .recommended_articles article:last-child {
+        border-radius: 0 0 1rem 1rem;
     }
 
     .recommended_articles article a {
