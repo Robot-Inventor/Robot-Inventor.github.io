@@ -30,6 +30,8 @@ const generateShareURL = (source: string) => {
     <a
         href={`https://line.me/R/share?text=${encodeURIComponent(`${Astro.props.title} ${generateShareURL("line")}`)}`}
         target="_blank"
+        data-share-url={generateShareURL("line")}
+        id="line_share_button"
     >
         <Image src="/icon/social/line.svg" alt="LINEのアイコン" width="100" height="100" />
     </a>
@@ -63,6 +65,19 @@ const generateShareURL = (source: string) => {
         />
     </a>
 </section>
+<script>
+    const isMobile = Boolean(navigator.userAgent.match(/iPhone|Android.+Mobile/u));
+
+    // PCではintentが使えないのでSocial Pluginsを使う
+    if (!isMobile) {
+        const lineShareButton = document.querySelector<HTMLAnchorElement>("#line_share_button");
+        if (lineShareButton) {
+            lineShareButton.href = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(
+                lineShareButton.dataset.shareUrl || location.href
+            )}`;
+        }
+    }
+</script>
 <style>
     .share_button {
         width: 100%;
