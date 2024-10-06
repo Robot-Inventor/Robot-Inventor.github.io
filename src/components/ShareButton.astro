@@ -16,7 +16,7 @@ const generateShareURL = (source: string) => {
 };
 ---
 
-<section class="share_button">
+<section id="share_button">
     {
         /**
          * `/intent/tweet`を`/intent/post`にしてしまうとスマホでXのアプリが起動しないため注意が必要。
@@ -30,6 +30,7 @@ const generateShareURL = (source: string) => {
             "keita_roboin"
         )}&related=${encodeURIComponent("keita_roboin")}%3A最新の情報を入手する`}
         target="_blank"
+        data-share-name="x"
     >
         <Image src="/icon/social/x.svg" alt="Xに共有する" width="100" height="100" />
     </a>
@@ -38,6 +39,7 @@ const generateShareURL = (source: string) => {
         target="_blank"
         data-share-url={generateShareURL("line")}
         id="line_share_button"
+        data-share-name="line"
     >
         <Image src="/icon/social/line.svg" alt="LINEに共有する" width="100" height="100" />
     </a>
@@ -46,6 +48,7 @@ const generateShareURL = (source: string) => {
             `${Astro.props.title} ${generateShareURL("threads")}`
         )}`}
         target="_blank"
+        data-share-name="threads"
     >
         <Image src="/icon/social/threads.svg" alt="Threadsに共有する" width="100" height="100" />
     </a>
@@ -54,12 +57,14 @@ const generateShareURL = (source: string) => {
             `${Astro.props.title}\n${generateShareURL("misskey")}`
         )}&visibility=public&localOnly=0`}
         target="_blank"
+        data-share-name="misskey"
     >
         <Picture src={MisskeyIcon} formats={["avif", "webp"]} alt="Misskeyに共有する" width="100" height="100" />
     </a>
     <a
         href={`https://bsky.app/intent/compose?text=${encodeURIComponent(`${Astro.props.title}\n${generateShareURL("bluesky")}`)}`}
         target="_blank"
+        data-share-name="bluesky"
     >
         <Picture
             src={BlueskyIcon}
@@ -72,6 +77,14 @@ const generateShareURL = (source: string) => {
     </a>
 </section>
 <script>
+    declare global {
+        interface Window {
+            gtag: Function;
+        }
+
+        const gtag: Window["gtag"];
+    }
+
     const isMobile = Boolean(navigator.userAgent.match(/iPhone|Android.+Mobile/u));
 
     // PCではintentが使えないのでSocial Pluginsを使う
@@ -83,9 +96,20 @@ const generateShareURL = (source: string) => {
             )}`;
         }
     }
+
+    const shareButtons = document.querySelectorAll<HTMLAnchorElement>("#share_button a");
+    shareButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            gtag("event", "share", {
+                event_category: "engagement",
+                event_label: button.dataset.shareName,
+                value: location.href
+            });
+        });
+    });
 </script>
 <style>
-    .share_button {
+    #share_button {
         width: 100%;
         max-width: var(--article-max-width);
         margin: 0 auto;
@@ -94,7 +118,7 @@ const generateShareURL = (source: string) => {
         padding: calc(var(--social-icon-size) / 2);
     }
 
-    .share_button img {
+    #share_button img {
         width: var(--social-icon-size);
         height: var(--social-icon-size);
     }
