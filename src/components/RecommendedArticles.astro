@@ -59,14 +59,15 @@ const articleData = await Promise.all(articleDataPromises);
         margin: 0.15rem 0;
         background: var(--md-surface-container);
         overflow: hidden;
+        border-radius: 0.25rem;
     }
 
     .recommended_articles article:first-child {
-        border-radius: 1rem 1rem 0 0;
+        border-radius: 1rem 1rem 0.25rem 0.25rem;
     }
 
     .recommended_articles article:last-child {
-        border-radius: 0 0 1rem 1rem;
+        border-radius: 0.25rem 0.25rem 1rem 1rem;
     }
 
     .recommended_articles article a {
