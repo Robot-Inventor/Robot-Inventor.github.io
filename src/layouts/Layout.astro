@@ -305,13 +305,14 @@ const ISO8601ToLocale = (iso8601: string) => {
         <main>
             <article>
                 {
-                    cache("breakingNewsBanner", () => (
-                        <BreakingNewsBanner
-                            title="【注目ニュース】OpenAI、人間のように思考するAI「OpenAI o1」を発表"
-                            url="/article/2024/09/13/openai-announces-new-reasoning-model-series-openai-o1/"
-                            type="info"
-                        />
-                    ))
+                    Astro.props.frontmatter.showRecommendedArticles &&
+                        cache("breakingNewsBanner", () => (
+                            <BreakingNewsBanner
+                                title="【注目ニュース】OpenAI、人間のように思考するAI「OpenAI o1」を発表"
+                                url="/article/2024/09/13/openai-announces-new-reasoning-model-series-openai-o1/"
+                                type="info"
+                            />
+                        ))
                 }
                 {
                     Astro.props.frontmatter.showAds && (
