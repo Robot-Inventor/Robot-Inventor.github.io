@@ -3,23 +3,39 @@ import { z, defineCollection, reference } from "astro:content";
 const articleCollection = defineCollection({
     type: "content",
     schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            author: reference("author"),
-            showAuthor: z.boolean().optional().default(true),
-            description: z.string(),
-            showDate: z.boolean().optional().default(true),
-            pubDate: z.string().datetime({ offset: true }),
-            modifiedDate: z.string().datetime({ offset: true }).optional(),
-            thumbnail: image().optional(),
-            showThumbnail: z.boolean().optional().default(true),
-            tags: z.array(reference("tag")).optional(),
-            showRecommendedArticles: z.boolean().optional().default(true),
-            showToc: z.boolean().optional().default(false),
-            showAds: z.boolean().optional().default(true),
-            showInArticleAds: z.boolean().optional().default(true),
-            thumbnailCaption: z.string().optional()
-        })
+        z
+            .object({
+                title: z.string(),
+                author: reference("author"),
+                showAuthor: z.boolean().optional().default(true),
+                description: z.string(),
+                showDate: z.boolean().optional().default(true),
+                pubDate: z.string().datetime({ offset: true }),
+                modifiedDate: z.string().datetime({ offset: true }).optional(),
+                thumbnail: image().optional(),
+                showThumbnail: z.boolean().optional().default(true),
+                tags: z.array(reference("tag")).optional(),
+                showRecommendedArticles: z.boolean().optional().default(true),
+                showToc: z.boolean().optional().default(false),
+                showAds: z.boolean().optional().default(true),
+                showInArticleAds: z.boolean().optional().default(true),
+                thumbnailCaption: z.string().optional(),
+                documentFormat: z.boolean().optional().default(false),
+                recipient: z.string().optional(),
+                authorName: z.string().optional()
+            })
+            .refine(
+                (data) => {
+                    if (data.documentFormat) {
+                        return data.recipient && data.authorName;
+                    }
+                    return true;
+                },
+                {
+                    message: "When documentFormat is true, recipient and authorName are required.",
+                    path: ["recipient", "authorName"] // エラーの対象フィールドを指定
+                }
+            )
 });
 
 const authorCollection = defineCollection({

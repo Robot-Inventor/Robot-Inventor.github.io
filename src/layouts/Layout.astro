@@ -1,5 +1,6 @@
 ---
 import "./Layout.css";
+import DocumentLayout from "./DocumentLayout.css?raw";
 import "../starlight/integrations/asides.css";
 import BreakingNewsBanner from "@components/BreakingNewsBanner.astro";
 import AuthorInfo from "@components/AuthorInfo.astro";
@@ -212,6 +213,23 @@ const ISO8601ToLocale = (iso8601: string) => {
         .replace(/(\d{2}:\d{2}):\d{2}/, "$1")
         .replace(/\.\d+$/, "");
 };
+
+const convertToReiwaDate = (iso8601: string): string => {
+    const date = new Date(iso8601);
+
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    let reiwaYear = year - 2018;
+    if (year === 2019 && month < 5) {
+        throw new Error("平成時代の日付は含まれません。2019年5月1日以降のみ対応です。");
+    }
+
+    const reiwaYearStr = reiwaYear === 1 ? "元" : reiwaYear.toString();
+
+    return `令和${reiwaYearStr}年${month}月${day}日`;
+}
 ---
 
 <!doctype html>
@@ -300,6 +318,7 @@ const ISO8601ToLocale = (iso8601: string) => {
             is:inline></script>
     </head>
     <body>
+        {Astro.props.frontmatter.documentFormat && <style is:inline set:html={DocumentLayout} />}
         {Astro.props.frontmatter.showAds && <ins data-ad-code-slot="body" />}
         {cache("header", () => <Header />)}
         <main>
@@ -330,10 +349,31 @@ const ISO8601ToLocale = (iso8601: string) => {
                         </div>
                     )
                 }
+                {
+                    Astro.props.frontmatter.documentFormat && (
+                        <div style="text-align: right;">
+                            <time datetime={Astro.props.frontmatter.pubDate}>
+                                    {convertToReiwaDate(Astro.props.frontmatter.pubDate)}
+                            </time>
+                        </div>
+                    )
+                }
+                {
+                    Astro.props.frontmatter.documentFormat && (
+                        <div>{Astro.props.frontmatter.recipient}</div>
+                    )
+                }
+                {
+                    Astro.props.frontmatter.documentFormat && (
+                        <div style="text-align: right;">
+                            <Markdown.Inline of={Astro.props.frontmatter.authorName} />
+                        </div>
+                    )
+                }
                 <h1><Markdown.Inline of={Astro.props.frontmatter.title} /></h1>
                 <div id="article_tags">
                     {
-                        !!tags.length &&
+                        !!tags.length && !Astro.props.frontmatter.documentFormat &&
                             tags.map((tag) => {
                                 if (!tag) return;
                                 return <a href={`/tag/${tag.id}/`}>#{tag.data.name}</a>;
@@ -342,7 +382,7 @@ const ISO8601ToLocale = (iso8601: string) => {
                 </div>
                 <div id="article_info">
                     {
-                        Astro.props.frontmatter.showDate && (
+                        Astro.props.frontmatter.showDate && !Astro.props.frontmatter.documentFormat && (
                             <span>
                                 投稿日：
                                 <time datetime={Astro.props.frontmatter.pubDate}>
@@ -352,7 +392,7 @@ const ISO8601ToLocale = (iso8601: string) => {
                         )
                     }
                     {
-                        Astro.props.frontmatter.showDate && Astro.props.frontmatter.modifiedDate && (
+                        Astro.props.frontmatter.showDate && !Astro.props.frontmatter.documentFormat && Astro.props.frontmatter.modifiedDate && (
                             <span>
                                 更新日：
                                 <time datetime={Astro.props.frontmatter.modifiedDate}>
