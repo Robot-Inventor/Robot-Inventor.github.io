@@ -300,22 +300,28 @@ const convertToReiwaDate = (iso8601: string): string => {
 
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
-        <script
-            type="text/javascript"
-            src="//nc.pubpowerplatform.io/w/e47f3a83-49fc-40bc-a3a3-de265b248056.js"
-            async
-            defer
-            is:inline></script>
-        <script is:inline>
-            var powerTag = powerTag || {};
-            powerTag.gdprShowConsentToolButton = false;
-        </script>
-        <script
-            type="text/javascript"
-            src="//nc.pubpowerplatform.io/ata/adv/e47f3a83-49fc-40bc-a3a3-de265b248056.js"
-            async
-            defer
-            is:inline></script>
+        {
+            Astro.props.frontmatter.showAds && (
+                <>
+                    <script
+                        type="text/javascript"
+                        src="//nc.pubpowerplatform.io/w/e47f3a83-49fc-40bc-a3a3-de265b248056.js"
+                        async
+                        defer
+                        is:inline></script>
+                    <script is:inline>
+                        var powerTag = powerTag || {};
+                        powerTag.gdprShowConsentToolButton = false;
+                    </script>
+                    <script
+                        type="text/javascript"
+                        src="//nc.pubpowerplatform.io/ata/adv/e47f3a83-49fc-40bc-a3a3-de265b248056.js"
+                        async
+                        defer
+                        is:inline></script>
+                </>
+            )
+        }
     </head>
     <body>
         {Astro.props.frontmatter.documentFormat && <style is:inline set:html={DocumentLayout} />}
