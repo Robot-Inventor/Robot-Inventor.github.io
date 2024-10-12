@@ -229,7 +229,7 @@ const convertToReiwaDate = (iso8601: string): string => {
     const reiwaYearStr = reiwaYear === 1 ? "元" : reiwaYear.toString();
 
     return `令和${reiwaYearStr}年${month}月${day}日`;
-}
+};
 ---
 
 <!doctype html>
@@ -308,17 +308,18 @@ const convertToReiwaDate = (iso8601: string): string => {
                         src="//nc.pubpowerplatform.io/w/e47f3a83-49fc-40bc-a3a3-de265b248056.js"
                         async
                         defer
-                        is:inline></script>
+                        is:inline
+                    />
                     <script is:inline>
-                        var powerTag = powerTag || {};
-                        powerTag.gdprShowConsentToolButton = false;
+                        var powerTag = powerTag || {}; powerTag.gdprShowConsentToolButton = false;
                     </script>
                     <script
                         type="text/javascript"
                         src="//nc.pubpowerplatform.io/ata/adv/e47f3a83-49fc-40bc-a3a3-de265b248056.js"
                         async
                         defer
-                        is:inline></script>
+                        is:inline
+                    />
                 </>
             )
         }
@@ -359,27 +360,24 @@ const convertToReiwaDate = (iso8601: string): string => {
                     Astro.props.frontmatter.documentFormat && (
                         <div style="text-align: right;">
                             <time datetime={Astro.props.frontmatter.pubDate}>
-                                    {convertToReiwaDate(Astro.props.frontmatter.pubDate)}
+                                {convertToReiwaDate(Astro.props.frontmatter.pubDate)}
                             </time>
                         </div>
                     )
                 }
-                {
-                    Astro.props.frontmatter.documentFormat && (
-                        <div>{Astro.props.frontmatter.recipient}</div>
-                    )
-                }
+                {Astro.props.frontmatter.documentFormat && <div>{Astro.props.frontmatter.recipient}</div>}
                 {
                     Astro.props.frontmatter.documentFormat && (
                         <div style="text-align: right;">
-                            <Markdown.Inline of={Astro.props.frontmatter.authorName} />
+                            <Markdown.Inline of={Astro.props.frontmatter.authorName || author.data.name} />
                         </div>
                     )
                 }
                 <h1><Markdown.Inline of={Astro.props.frontmatter.title} /></h1>
                 <div id="article_tags">
                     {
-                        !!tags.length && !Astro.props.frontmatter.documentFormat &&
+                        !!tags.length &&
+                            !Astro.props.frontmatter.documentFormat &&
                             tags.map((tag) => {
                                 if (!tag) return;
                                 return <a href={`/tag/${tag.id}/`}>#{tag.data.name}</a>;
@@ -398,14 +396,16 @@ const convertToReiwaDate = (iso8601: string): string => {
                         )
                     }
                     {
-                        Astro.props.frontmatter.showDate && !Astro.props.frontmatter.documentFormat && Astro.props.frontmatter.modifiedDate && (
-                            <span>
-                                更新日：
-                                <time datetime={Astro.props.frontmatter.modifiedDate}>
-                                    {ISO8601ToLocale(Astro.props.frontmatter.modifiedDate)}
-                                </time>
-                            </span>
-                        )
+                        Astro.props.frontmatter.showDate &&
+                            !Astro.props.frontmatter.documentFormat &&
+                            Astro.props.frontmatter.modifiedDate && (
+                                <span>
+                                    更新日：
+                                    <time datetime={Astro.props.frontmatter.modifiedDate}>
+                                        {ISO8601ToLocale(Astro.props.frontmatter.modifiedDate)}
+                                    </time>
+                                </span>
+                            )
                     }
                 </div>
                 {
