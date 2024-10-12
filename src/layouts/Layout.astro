@@ -1,12 +1,10 @@
 ---
 import "./Layout.css";
-import DocumentLayout from "./DocumentLayout.css?raw";
+import BaseLayout from "./BaseLayout.astro";
 import "../starlight/integrations/asides.css";
 import BreakingNewsBanner from "@components/BreakingNewsBanner.astro";
 import AuthorInfo from "@components/AuthorInfo.astro";
 import ShareButton from "@components/ShareButton.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
 import FeaturedArticles from "@components/FeaturedArticles.astro";
 import LatestArticles from "@components/LatestArticles.astro";
 import RelatedArticles from "@components/RelatedArticles.astro";
@@ -21,16 +19,6 @@ import { cache } from "src/utils/cache";
 interface Props {
     frontmatter: CollectionEntry<"article">["data"];
     slug?: CollectionEntry<"article">["slug"];
-}
-
-declare global {
-    interface Window {
-        googletag: {
-            [key: string]: any;
-        };
-    }
-
-    const googletag: Window["googletag"];
 }
 
 if (!Astro.site) throw new Error("site is not defined");
@@ -82,86 +70,6 @@ const escapeTitle = (title: string) => {
 };
 
 const titleWithSiteName = escapeTitle(`${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`);
-
-const schema = JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "Organization",
-            "@id": `${Astro.site}#organization`,
-            name: import.meta.env.SITE_NAME,
-            url: `${Astro.site}`,
-            logo: {
-                "@type": "ImageObject",
-                "@id": `${Astro.site}#logo`,
-                url: `${Astro.site}favicon.svg`,
-                caption: import.meta.env.SITE_NAME
-            },
-            image: {
-                "@id": `${Astro.site}#logo`
-            }
-        },
-        {
-            "@type": "WebSite",
-            "@id": `${Astro.site}#website`,
-            url: Astro.site,
-            name: import.meta.env.SITE_NAME,
-            alternateName: ["ろぼいん", "roboin.io"],
-            publisher: {
-                "@id": `${Astro.site}#organization`
-            }
-        },
-        {
-            "@type": "WebPage",
-            "@id": `${Astro.url}#webpage`,
-            url: Astro.url,
-            name: titleWithSiteName,
-            isPartOf: {
-                "@id": `${Astro.site}#website`
-            },
-            image: {
-                "@type": "ImageObject",
-                "@id": `${Astro.url}#primaryimage`,
-                url: thumbnailUrl
-            },
-            primaryImageOfPage: {
-                "@id": `${Astro.url}#primaryimage`
-            },
-            datePublished: Astro.props.frontmatter.pubDate,
-            dateModified: Astro.props.frontmatter.modifiedDate || Astro.props.frontmatter.pubDate,
-            description: Astro.props.frontmatter.description
-        },
-        {
-            "@type": "Article",
-            "@id": `${Astro.url}#article`,
-            isPartOf: {
-                "@id": `${Astro.url}#webpage`
-            },
-            author: {
-                "@type": author.data.type,
-                name: author.data.name,
-                url: author.data.homePage,
-                sameAs: author.data.sameAs
-            },
-            publisher: {
-                "@id": `${Astro.site}#organization`
-            },
-            headline: titleWithSiteName,
-            datePublished: Astro.props.frontmatter.pubDate,
-            dateModified: Astro.props.frontmatter.modifiedDate || Astro.props.frontmatter.pubDate,
-            mainEntityOfPage: `${Astro.url}#webpage`,
-            image: {
-                "@id": `${Astro.url}#primaryimage`
-            }
-        },
-        {
-            "@type": author.data.type,
-            name: author.data.name,
-            url: author.data.homePage,
-            sameAs: author.data.sameAs
-        }
-    ]
-});
 
 const getThumbnailData = async () => {
     const thumbnail = Astro.props.frontmatter.thumbnail;
@@ -232,261 +140,147 @@ const convertToReiwaDate = (iso8601: string): string => {
 };
 ---
 
-<!doctype html>
-<html lang="ja">
-    <head prefix="og: http://ogp.me/ns#">
-        {Astro.props.frontmatter.showAds && <ins data-ad-code-slot="head" />}
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {
-            thumbnailData.showThumbnail && (
-                <link
-                    rel="preload"
-                    href={thumbnailData.sources[0].srcset}
-                    as="image"
-                    type={thumbnailData.sources[0].type}
-                />
-            )
-        }
-        <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link
-            rel="alternate"
-            type="application/rss+xml"
-            title={`${import.meta.env.SITE_NAME} RSS Feed`}
-            href={`${Astro.site}rss.xml`}
-        />
-        <link rel="sitemap" href="/sitemap-index.xml" />
-        <meta name="apple-mobile-web-app-title" content={import.meta.env.SITE_NAME} />
-        <meta name="application-name" content={import.meta.env.SITE_NAME} />
-        <meta name="theme-color" content="#ffffff" />
-        <title>{`${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`}</title>
-        <meta name="author" content={author.data.name} />
-        <meta name="description" content={Astro.props.frontmatter.description} />
-        <link rel="canonical" href={Astro.url} />
-        <link rel="me" href="https://mstdn.jp/@keita_roboin" />
-        <link rel="me" href="https://misskey.io/@roboin" />
-        {author.data.fediverseCreator && <meta name="fediverse:creator" content={author.data.fediverseCreator} />}
-        <meta property="og:url" content={Astro.url} />
-        <meta property="og:type" content={Astro.url.pathname === "/" ? "website" : "article"} />
-        <meta property="og:title" content={titleWithSiteName} />
-        <meta property="og:description" content={Astro.props.frontmatter.description} />
-        <meta property="og:site_name" content={import.meta.env.SITE_NAME} />
-        <meta property="og:image" content={thumbnailUrl} />
-        <meta name="twitter:card" content="summary" />
-        {author.data.twitterSite && <meta name="twitter:site" content={author.data.twitterSite} />}
-        <script is:inline type="application/ld+json" set:html={schema} />
-        <!-- Google tag (gtag.js) -->
-        <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-7HZY93W2BY"></script>
-        {
-            Astro.props.frontmatter.showAds && (
-                <script
-                    is:inline
-                    async
-                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2526648882773973"
-                    crossorigin="anonymous"
-                />
-            )
-        }
-        <script is:inline>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
+<BaseLayout frontmatter={Astro.props.frontmatter} lang={Astro.props.frontmatter.lang}>
+    {Astro.props.frontmatter.showAds && <ins data-ad-code-slot="body" slot="beforeHeader" />}
+    <Fragment slot="main">
+        <article>
+            {
+                Astro.props.frontmatter.showRecommendedArticles &&
+                    cache("breakingNewsBanner", () => (
+                        <BreakingNewsBanner
+                            title="【注目ニュース】OpenAI、人間のように思考するAI「OpenAI o1」を発表"
+                            url="/article/2024/09/13/openai-announces-new-reasoning-model-series-openai-o1/"
+                            type="info"
+                        />
+                    ))
             }
-            gtag("js", new Date());
-
-            gtag("config", "G-7HZY93W2BY");
-
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+            {
+                Astro.props.frontmatter.showAds && (
+                    // ↓記事のトップに表示する広告。スマホ専用
+                    <div id="top_ad_mobile">
+                        <ins
+                            class="adsbygoogle"
+                            data-ad-client="ca-pub-2526648882773973"
+                            data-ad-slot="1835222588"
+                            data-ad-format="horizontal"
+                            data-full-width-responsive="false"
+                            style="height: 100px;"
+                        />
+                        <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                    </div>
+                )
+            }
+            <h1><Markdown.Inline of={Astro.props.frontmatter.title} /></h1>
+            <div id="article_tags">
+                {
+                    !!tags.length &&
+                        tags.map((tag) => {
+                            if (!tag) return;
+                            return <a href={`/tag/${tag.id}/`}>#{tag.data.name}</a>;
+                        })
+                }
+            </div>
+            <div id="article_info">
+                {
+                    Astro.props.frontmatter.showDate && (
+                        <span>
+                            投稿日：
+                            <time datetime={Astro.props.frontmatter.pubDate}>
+                                {ISO8601ToLocale(Astro.props.frontmatter.pubDate)}
+                            </time>
+                        </span>
+                    )
+                }
+                {
+                    Astro.props.frontmatter.showDate && Astro.props.frontmatter.modifiedDate && (
+                        <span>
+                            更新日：
+                            <time datetime={Astro.props.frontmatter.modifiedDate}>
+                                {ISO8601ToLocale(Astro.props.frontmatter.modifiedDate)}
+                            </time>
+                        </span>
+                    )
+                }
+            </div>
+            {
+                thumbnailData.showThumbnail && (
+                    <figure id="page_top_thumbnail">
+                        <picture id="">
+                            {thumbnailData.sources.map((source) => {
+                                return <source srcset={source.srcset} type={source.type} />;
+                            })}
+                            {
+                                // Firefoxでは問題ないが、Chromeでレイアウトシフトが発生するのを防ぐため、img要素にstyle属性を追加
+                            }
+                            <img
+                                src={thumbnailData.fallback.src}
+                                alt="サムネイル"
+                                loading="eager"
+                                style="width: 100%; height: auto; max-height: none;"
+                                {...thumbnailData.fallback.attributes}
+                            />
+                        </picture>
+                        {Astro.props.frontmatter.thumbnailCaption && (
+                            <figcaption>
+                                <Markdown.Inline of={Astro.props.frontmatter.thumbnailCaption} />
+                            </figcaption>
+                        )}
+                    </figure>
+                )
+            }
+            <slot />
+        </article>
+        <ShareButton title={titleWithSiteName} url={Astro.url.href} />
+        {Astro.props.frontmatter.showAuthor && cache(`authorInfo-${author.id}`, () => <AuthorInfo {author} />)}
+        <div id="bottom_ad">
+            <pubtag class="adsbypubpower" data-ad-slot="pw_41825"></pubtag>
+            <script type="text/javascript" is:inline>
+                (powerTag.Init = window.powerTag.Init || []).push(function () {
+                    powerAPITag.initNativeAds("pw_41825");
+                });
+            </script>
+        </div>
         {
-            Astro.props.frontmatter.showAds && (
+            Astro.props.frontmatter.showRecommendedArticles && (
                 <>
-                    <script
-                        type="text/javascript"
-                        src="//nc.pubpowerplatform.io/w/e47f3a83-49fc-40bc-a3a3-de265b248056.js"
-                        async
-                        defer
-                        is:inline
-                    />
-                    <script is:inline>
-                        var powerTag = powerTag || {}; powerTag.gdprShowConsentToolButton = false;
-                    </script>
-                    <script
-                        type="text/javascript"
-                        src="//nc.pubpowerplatform.io/ata/adv/e47f3a83-49fc-40bc-a3a3-de265b248056.js"
-                        async
-                        defer
-                        is:inline
-                    />
+                    <section class="recommended_articles_section" id="related_articles_section">
+                        {/* ↓関連記事の上に表示する広告。PC専用 */}
+                        <ins
+                            id="top_ad_desktop"
+                            class="adsbygoogle"
+                            data-ad-client="ca-pub-2526648882773973"
+                            data-ad-slot="1755549071"
+                            data-ad-format="rectangle, horizontal"
+                            data-full-width-responsive="false"
+                        />
+                        <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                        {Astro.props.slug && <RelatedArticles targetArticleSlug={Astro.props.slug} />}
+                        <pubtag class="adsbypubpower" data-ad-slot="pw_41761" />
+                        <script type="text/javascript" is:inline>
+                            (powerTag.Init = window.powerTag.Init || []).push(function ()
+                            {powerAPITag.display("pw_41761")})
+                        </script>
+                        {cache("featuredArticles", () => (
+                            <FeaturedArticles />
+                        ))}
+                        <pubtag class="adsbypubpower" data-ad-slot="pw_41762" />
+                        <script type="text/javascript" is:inline>
+                            (powerTag.Init = window.powerTag.Init || []).push(function ()
+                            {powerAPITag.display("pw_41762")})
+                        </script>
+                    </section>
+                    {Astro.props.slug &&
+                        cache("latestArticles", () => (
+                            <section class="recommended_articles_section">
+                                {/* @ts-expect-error */}
+                                <LatestArticles currentPageSlug={Astro.props.slug} />
+                            </section>
+                        ))}
                 </>
             )
         }
-    </head>
-    <body>
-        {Astro.props.frontmatter.documentFormat && <style is:inline set:html={DocumentLayout} />}
-        {Astro.props.frontmatter.showAds && <ins data-ad-code-slot="body" />}
-        {cache("header", () => <Header />)}
-        <main>
-            <article>
-                {
-                    Astro.props.frontmatter.showRecommendedArticles &&
-                        cache("breakingNewsBanner", () => (
-                            <BreakingNewsBanner
-                                title="【注目ニュース】OpenAI、人間のように思考するAI「OpenAI o1」を発表"
-                                url="/article/2024/09/13/openai-announces-new-reasoning-model-series-openai-o1/"
-                                type="info"
-                            />
-                        ))
-                }
-                {
-                    Astro.props.frontmatter.showAds && (
-                        // ↓記事のトップに表示する広告。スマホ専用
-                        <div id="top_ad_mobile">
-                            <ins
-                                class="adsbygoogle"
-                                data-ad-client="ca-pub-2526648882773973"
-                                data-ad-slot="1835222588"
-                                data-ad-format="horizontal"
-                                data-full-width-responsive="false"
-                                style="height: 100px;"
-                            />
-                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                        </div>
-                    )
-                }
-                {
-                    Astro.props.frontmatter.documentFormat && (
-                        <div style="text-align: right;">
-                            <time datetime={Astro.props.frontmatter.pubDate}>
-                                {convertToReiwaDate(Astro.props.frontmatter.pubDate)}
-                            </time>
-                        </div>
-                    )
-                }
-                {Astro.props.frontmatter.documentFormat && <div>{Astro.props.frontmatter.recipient}</div>}
-                {
-                    Astro.props.frontmatter.documentFormat && (
-                        <div style="text-align: right;">
-                            <Markdown.Inline of={Astro.props.frontmatter.authorName || author.data.name} />
-                        </div>
-                    )
-                }
-                <h1><Markdown.Inline of={Astro.props.frontmatter.title} /></h1>
-                <div id="article_tags">
-                    {
-                        !!tags.length &&
-                            !Astro.props.frontmatter.documentFormat &&
-                            tags.map((tag) => {
-                                if (!tag) return;
-                                return <a href={`/tag/${tag.id}/`}>#{tag.data.name}</a>;
-                            })
-                    }
-                </div>
-                <div id="article_info">
-                    {
-                        Astro.props.frontmatter.showDate && !Astro.props.frontmatter.documentFormat && (
-                            <span>
-                                投稿日：
-                                <time datetime={Astro.props.frontmatter.pubDate}>
-                                    {ISO8601ToLocale(Astro.props.frontmatter.pubDate)}
-                                </time>
-                            </span>
-                        )
-                    }
-                    {
-                        Astro.props.frontmatter.showDate &&
-                            !Astro.props.frontmatter.documentFormat &&
-                            Astro.props.frontmatter.modifiedDate && (
-                                <span>
-                                    更新日：
-                                    <time datetime={Astro.props.frontmatter.modifiedDate}>
-                                        {ISO8601ToLocale(Astro.props.frontmatter.modifiedDate)}
-                                    </time>
-                                </span>
-                            )
-                    }
-                </div>
-                {
-                    thumbnailData.showThumbnail && (
-                        <figure id="page_top_thumbnail">
-                            <picture id="">
-                                {thumbnailData.sources.map((source) => {
-                                    return <source srcset={source.srcset} type={source.type} />;
-                                })}
-                                {
-                                    // Firefoxでは問題ないが、Chromeでレイアウトシフトが発生するのを防ぐため、img要素にstyle属性を追加
-                                }
-                                <img
-                                    src={thumbnailData.fallback.src}
-                                    alt="サムネイル"
-                                    loading="eager"
-                                    style="width: 100%; height: auto; max-height: none;"
-                                    {...thumbnailData.fallback.attributes}
-                                />
-                            </picture>
-                            {Astro.props.frontmatter.thumbnailCaption && (
-                                <figcaption>
-                                    <Markdown.Inline of={Astro.props.frontmatter.thumbnailCaption} />
-                                </figcaption>
-                            )}
-                        </figure>
-                    )
-                }
-                <slot />
-            </article>
-            <ShareButton title={titleWithSiteName} url={Astro.url.href} />
-            {Astro.props.frontmatter.showAuthor && cache(`authorInfo-${author.id}`, () => <AuthorInfo {author} />)}
-            <div id="bottom_ad">
-                <pubtag class="adsbypubpower" data-ad-slot="pw_41825"></pubtag>
-                <script type="text/javascript" is:inline>
-                    (powerTag.Init = window.powerTag.Init || []).push(function () {
-                        powerAPITag.initNativeAds("pw_41825");
-                    });
-                </script>
-            </div>
-            {
-                Astro.props.frontmatter.showRecommendedArticles && (
-                    <>
-                        <section class="recommended_articles_section" id="related_articles_section">
-                            {/* ↓関連記事の上に表示する広告。PC専用 */}
-                            <ins
-                                id="top_ad_desktop"
-                                class="adsbygoogle"
-                                data-ad-client="ca-pub-2526648882773973"
-                                data-ad-slot="1755549071"
-                                data-ad-format="rectangle, horizontal"
-                                data-full-width-responsive="false"
-                            />
-                            <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                            {Astro.props.slug && <RelatedArticles targetArticleSlug={Astro.props.slug} />}
-                            <pubtag class="adsbypubpower" data-ad-slot="pw_41761" />
-                            <script type="text/javascript" is:inline>
-                                (powerTag.Init = window.powerTag.Init || []).push(function ()
-                                {powerAPITag.display("pw_41761")})
-                            </script>
-                            {cache("featuredArticles", () => (
-                                <FeaturedArticles />
-                            ))}
-                            <pubtag class="adsbypubpower" data-ad-slot="pw_41762" />
-                            <script type="text/javascript" is:inline>
-                                (powerTag.Init = window.powerTag.Init || []).push(function ()
-                                {powerAPITag.display("pw_41762")})
-                            </script>
-                        </section>
-                        {Astro.props.slug &&
-                            cache("latestArticles", () => (
-                                <section class="recommended_articles_section">
-                                    {/* @ts-expect-error */}
-                                    <LatestArticles currentPageSlug={Astro.props.slug} />
-                                </section>
-                            ))}
-                    </>
-                )
-            }
-        </main>
-        {cache("footer", () => <Footer />)}
+    </Fragment>
+    <Fragment slot="beforeEnd">
         <script src="./Layout.ts"></script>
-    </body>
-</html>
+    </Fragment>
+</BaseLayout>

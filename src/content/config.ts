@@ -22,7 +22,8 @@ const articleCollection = defineCollection({
                 thumbnailCaption: z.string().optional(),
                 documentFormat: z.boolean().optional().default(false),
                 recipient: z.string().optional(),
-                authorName: z.string().optional()
+                authorName: z.string().optional(),
+                lang: z.enum(["ja", "en"]).optional().default("ja")
             })
             .refine(
                 (data) => {

@@ -1,19 +1,24 @@
-main > article:first-of-type {
-    font-family: serif;
+article.document_layout {
+    font-family: "Noto Sans JP", sans-serif;
 }
 
-main > article h1 {
+article.document_layout p,
+article.document_layout ul {
+    font-family: "Noto Serif JP", serif;
+}
+
+article.document_layout h1 {
     text-align: center;
-    margin: 2rem 0 1rem 0 !important;
+    margin: 2em 0 !important;
 }
 
-h1,
-h2 {
-    font-family: sans-serif;
+.document_layout h1,
+.document_layout h2 {
     background: none !important;
     padding: 0 !important;
 }
 
-h2 {
+.document_layout h2 {
     margin: 3em 0 1em 0 !important;
+    padding: 0 !important;
 }

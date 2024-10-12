@@ -1,0 +1,136 @@
+---
+import "./DocumentLayout.css";
+import BaseLayout from "./BaseLayout.astro";
+import "../starlight/integrations/asides.css";
+import ShareButton from "@components/ShareButton.astro";
+import { Markdown } from "@astropub/md";
+
+import { getEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    frontmatter: CollectionEntry<"article">["data"];
+    slug?: CollectionEntry<"article">["slug"];
+}
+
+if (!Astro.site) throw new Error("site is not defined");
+
+const authorId =
+    typeof Astro.props.frontmatter.author === "string"
+        ? Astro.props.frontmatter.author
+        : Astro.props.frontmatter.author.id;
+const author = await getEntry("author", authorId);
+if (!author) throw new Error("Undefined author");
+
+const escapeURLs = (text: string) => {
+    // URLのドットをスペースとドットに置換する。国際化TLDではTLDにハイフンが含まれることに注意
+    const URLs = text.match(/([a-zA-Z0-9\-]+\.)+[a-zA-Z][a-zA-Z0-9\-]+/g);
+    if (!URLs) return text;
+
+    for (const URL of URLs) {
+        text = text.replace(URL, URL.replace(/\./g, " ."));
+    }
+
+    return text;
+};
+
+const escapeMentions = (text: string) => {
+    // メンションをスペースと@に置換する
+    const mentions = text.match(/@[a-zA-Z0-9_]+/g);
+    if (!mentions) return text;
+
+    for (const mention of mentions) {
+        text = text.replace(mention, mention.replace(/@/g, "@ "));
+    }
+
+    return text;
+};
+
+const escapeTitle = (title: string) => {
+    return escapeMentions(escapeURLs(title));
+};
+
+const titleWithSiteName = escapeTitle(`${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`);
+
+const convertToReiwaDate = (iso8601: string): string => {
+    const date = new Date(iso8601);
+
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    let reiwaYear = year - 2018;
+    if (year === 2019 && month < 5) {
+        throw new Error("平成時代の日付は含まれません。2019年5月1日以降のみ対応です。");
+    }
+
+    const reiwaYearStr = reiwaYear === 1 ? "元" : reiwaYear.toString();
+
+    return `令和${reiwaYearStr}年${month}月${day}日`;
+};
+
+const convertToEnglishDate = (iso8601: string): string => {
+    const date = new Date(iso8601);
+
+    const options: Intl.DateTimeFormatOptions = {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC"
+    };
+
+    return date.toLocaleDateString("en-US", options);
+};
+---
+
+<BaseLayout frontmatter={Astro.props.frontmatter} lang={Astro.props.frontmatter.lang}>
+    <Fragment slot="head">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap"
+            rel="stylesheet"
+        />
+    </Fragment>
+    {Astro.props.frontmatter.showAds && <ins data-ad-code-slot="body" slot="beforeHeader" />}
+    <Fragment slot="main">
+        <article class="document_layout">
+            {
+                Astro.props.frontmatter.lang === "ja" && (
+                    <>
+                        <p style="text-align: right;">
+                            <time datetime={Astro.props.frontmatter.pubDate}>
+                                {convertToReiwaDate(Astro.props.frontmatter.pubDate)}
+                            </time>
+                        </p>
+                        <p>{Astro.props.frontmatter.recipient}</p>
+                        <p style="text-align: right;">
+                            <Markdown.Inline of={Astro.props.frontmatter.authorName || author.data.name} />
+                        </p>
+                    </>
+                )
+            }
+            {
+                Astro.props.frontmatter.lang === "en" && (
+                    <>
+                        <p style="text-align: right;">
+                            <Markdown.Inline of={Astro.props.frontmatter.authorName || author.data.name} />
+                        </p>
+                        <p style="text-align: right;">
+                            <time datetime={Astro.props.frontmatter.pubDate}>
+                                {convertToEnglishDate(Astro.props.frontmatter.pubDate)}
+                            </time>
+                        </p>
+                        <p>{Astro.props.frontmatter.recipient}</p>
+                    </>
+                )
+            }
+            <h1><Markdown.Inline of={Astro.props.frontmatter.title} /></h1>
+            <slot />
+        </article>
+        <ShareButton title={titleWithSiteName} url={Astro.url.href} />
+    </Fragment>
+    <Fragment slot="beforeEnd">
+        <script src="./Layout.ts"></script>
+    </Fragment>
+</BaseLayout>

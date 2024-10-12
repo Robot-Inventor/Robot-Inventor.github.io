@@ -1,6 +1,7 @@
 ---
+import DocumentLayout from "@layouts/DocumentLayout.astro";
+import ArticleLayout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
@@ -13,6 +14,8 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props as { entry: CollectionEntry<"article"> };
 const { Content } = await entry.render();
+
+const Layout = entry.data.documentFormat ? DocumentLayout : ArticleLayout;
 ---
 
 <Layout frontmatter={entry.data} slug={Astro.params.slug}>

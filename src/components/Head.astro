@@ -1,0 +1,160 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    author: CollectionEntry<"author">;
+    title: string;
+    titleWithSiteName: string;
+    description: string;
+    preloadThumbnailData?: {
+        srcset: string;
+        type: string;
+    };
+    thumbnailUrl: string;
+    pubDate: string;
+    modifiedDate?: string;
+}
+
+const schema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": `${Astro.site}#organization`,
+            name: import.meta.env.SITE_NAME,
+            url: `${Astro.site}`,
+            logo: {
+                "@type": "ImageObject",
+                "@id": `${Astro.site}#logo`,
+                url: `${Astro.site}favicon.svg`,
+                caption: import.meta.env.SITE_NAME
+            },
+            image: {
+                "@id": `${Astro.site}#logo`
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": `${Astro.site}#website`,
+            url: Astro.site,
+            name: import.meta.env.SITE_NAME,
+            alternateName: ["ろぼいん", "roboin.io"],
+            publisher: {
+                "@id": `${Astro.site}#organization`
+            }
+        },
+        {
+            "@type": "WebPage",
+            "@id": `${Astro.url}#webpage`,
+            url: Astro.url,
+            name: Astro.props.titleWithSiteName,
+            isPartOf: {
+                "@id": `${Astro.site}#website`
+            },
+            image: {
+                "@type": "ImageObject",
+                "@id": `${Astro.url}#primaryimage`,
+                url: Astro.props.thumbnailUrl
+            },
+            primaryImageOfPage: {
+                "@id": `${Astro.url}#primaryimage`
+            },
+            datePublished: Astro.props.pubDate,
+            dateModified: Astro.props.modifiedDate || Astro.props.pubDate,
+            description: Astro.props.description
+        },
+        {
+            "@type": "Article",
+            "@id": `${Astro.url}#article`,
+            isPartOf: {
+                "@id": `${Astro.url}#webpage`
+            },
+            author: {
+                "@type": Astro.props.author.data.type,
+                name: Astro.props.author.data.name,
+                url: Astro.props.author.data.homePage,
+                sameAs: Astro.props.author.data.sameAs
+            },
+            publisher: {
+                "@id": `${Astro.site}#organization`
+            },
+            headline: Astro.props.titleWithSiteName,
+            datePublished: Astro.props.pubDate,
+            dateModified: Astro.props.modifiedDate || Astro.props.pubDate,
+            mainEntityOfPage: `${Astro.url}#webpage`,
+            image: {
+                "@id": `${Astro.url}#primaryimage`
+            }
+        },
+        {
+            "@type": Astro.props.author.data.type,
+            name: Astro.props.author.data.name,
+            url: Astro.props.author.data.homePage,
+            sameAs: Astro.props.author.data.sameAs
+        }
+    ]
+});
+---
+
+<head prefix="og: http://ogp.me/ns#">
+    <meta charset="UTF-8" />
+    <slot name="afterBegin" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {
+        Astro.props.preloadThumbnailData && (
+            <link
+                rel="preload"
+                href={Astro.props.preloadThumbnailData.srcset}
+                as="image"
+                type={Astro.props.preloadThumbnailData.type}
+            />
+        )
+    }
+    <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+        rel="alternate"
+        type="application/rss+xml"
+        title={`${import.meta.env.SITE_NAME} RSS Feed`}
+        href={`${Astro.site}rss.xml`}
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="apple-mobile-web-app-title" content={import.meta.env.SITE_NAME} />
+    <meta name="application-name" content={import.meta.env.SITE_NAME} />
+    <meta name="theme-color" content="#ffffff" />
+    <title>{`${Astro.props.title} - ${import.meta.env.SITE_NAME}`}</title>
+    <meta name="author" content={Astro.props.author.data.name} />
+    <meta name="description" content={Astro.props.description} />
+    <link rel="canonical" href={Astro.url} />
+    <link rel="me" href="https://mstdn.jp/@keita_roboin" />
+    <link rel="me" href="https://misskey.io/@roboin" />
+    {
+        Astro.props.author.data.fediverseCreator && (
+            <meta name="fediverse:creator" content={Astro.props.author.data.fediverseCreator} />
+        )
+    }
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:type" content={Astro.url.pathname === "/" ? "website" : "article"} />
+    <meta property="og:title" content={Astro.props.titleWithSiteName} />
+    <meta property="og:description" content={Astro.props.description} />
+    <meta property="og:site_name" content={import.meta.env.SITE_NAME} />
+    <meta property="og:image" content={Astro.props.thumbnailUrl} />
+    <meta name="twitter:card" content="summary" />
+    {Astro.props.author.data.twitterSite && <meta name="twitter:site" content={Astro.props.author.data.twitterSite} />}
+    <script is:inline type="application/ld+json" set:html={schema} />
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-7HZY93W2BY"></script>
+    <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-7HZY93W2BY");
+
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <slot name="beforeEnd" />
+</head>

@@ -1,0 +1,162 @@
+---
+import "./BaseLayout.css";
+import Head from "@components/Head.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+
+import { getEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { getImage } from "astro:assets";
+import { getDefaultThumbnail } from "src/utils/getDefaultThumbnailPath";
+import { cache } from "src/utils/cache";
+
+interface Props {
+    frontmatter: CollectionEntry<"article">["data"];
+    lang: "ja" | "en";
+}
+
+if (!Astro.site) throw new Error("site is not defined");
+
+let thumbnailUrl = new URL((await getDefaultThumbnail(Astro.url.pathname)).src, Astro.site.href).href;
+if (Astro.props.frontmatter.thumbnail) {
+    thumbnailUrl = new URL(Astro.props.frontmatter.thumbnail.src, Astro.site.href).href;
+}
+
+const authorId =
+    typeof Astro.props.frontmatter.author === "string"
+        ? Astro.props.frontmatter.author
+        : Astro.props.frontmatter.author.id;
+const author = await getEntry("author", authorId);
+if (!author) throw new Error("Undefined author");
+
+const escapeURLs = (text: string) => {
+    // URLのドットをスペースとドットに置換する。国際化TLDではTLDにハイフンが含まれることに注意
+    const URLs = text.match(/([a-zA-Z0-9\-]+\.)+[a-zA-Z][a-zA-Z0-9\-]+/g);
+    if (!URLs) return text;
+
+    for (const URL of URLs) {
+        text = text.replace(URL, URL.replace(/\./g, " ."));
+    }
+
+    return text;
+};
+
+const escapeMentions = (text: string) => {
+    // メンションをスペースと@に置換する
+    const mentions = text.match(/@[a-zA-Z0-9_]+/g);
+    if (!mentions) return text;
+
+    for (const mention of mentions) {
+        text = text.replace(mention, mention.replace(/@/g, "@ "));
+    }
+
+    return text;
+};
+
+const escapeTitle = (title: string) => {
+    return escapeMentions(escapeURLs(title));
+};
+
+const titleWithSiteName = escapeTitle(`${Astro.props.frontmatter.title} - ${import.meta.env.SITE_NAME}`);
+
+const getThumbnailData = async () => {
+    const thumbnail = Astro.props.frontmatter.thumbnail;
+
+    if (!(Astro.props.frontmatter.showThumbnail && thumbnail)) {
+        return {
+            showThumbnail: false
+        } as const;
+    }
+
+    const sources = ["avif", "webp"].map(async (format) => {
+        const image = await getImage({
+            src: thumbnail,
+            format: format,
+            width: Math.min(1920, thumbnail.width)
+        });
+
+        return {
+            srcset: image.src,
+            type: `image/${format}`
+        } as const;
+    });
+
+    const fallbackType = ["gif", "svg", "jpg", "jpeg"].includes(thumbnail.format) ? thumbnail.format : "png";
+
+    const fallback = await getImage({
+        src: thumbnail,
+        format: fallbackType,
+        width: Math.min(1920, thumbnail.width)
+    });
+
+    return {
+        showThumbnail: true,
+        sources: await Promise.all(sources),
+        fallback: {
+            src: fallback.src,
+            attributes: fallback.attributes
+        }
+    } as const;
+};
+
+const thumbnailData = await getThumbnailData();
+
+const headContentData = {
+    author,
+    title: Astro.props.frontmatter.title,
+    titleWithSiteName,
+    description: Astro.props.frontmatter.description,
+    preloadedThumbnail: thumbnailData.showThumbnail ? thumbnailData.sources[0] : undefined,
+    thumbnailUrl,
+    pubDate: Astro.props.frontmatter.pubDate,
+    modifiedDate: Astro.props.frontmatter.modifiedDate
+} as const;
+---
+
+<!doctype html>
+<html lang={Astro.props.lang}>
+    <Head {...headContentData}>
+        {Astro.props.frontmatter.showAds && <meta data-ad-code-slot="head" slot="afterBegin" />}
+        <Fragment slot="beforeEnd">
+            {
+                Astro.props.frontmatter.showAds && (
+                    <>
+                        <script
+                            is:inline
+                            async
+                            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2526648882773973"
+                            crossorigin="anonymous"
+                        />
+                        <script
+                            type="text/javascript"
+                            src="//nc.pubpowerplatform.io/w/e47f3a83-49fc-40bc-a3a3-de265b248056.js"
+                            async
+                            defer
+                            is:inline
+                        />
+                        <script is:inline>
+                            var powerTag = powerTag || {}; powerTag.gdprShowConsentToolButton = false;
+                        </script>
+                        <script
+                            type="text/javascript"
+                            src="//nc.pubpowerplatform.io/ata/adv/e47f3a83-49fc-40bc-a3a3-de265b248056.js"
+                            async
+                            defer
+                            is:inline
+                        />
+                    </>
+                )
+            }
+            <slot name="head" />
+        </Fragment>
+    </Head>
+    <body>
+        <slot name="beforeHeader" />
+        {cache("header", () => <Header />)}
+        <main>
+            <slot name="main" />
+        </main>
+        {cache("footer", () => <Footer />)}
+        <slot name="beforeEnd" />
+    </body>
+</html>
