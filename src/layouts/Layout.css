@@ -477,8 +477,6 @@ main > article img[src^="https://ad.linksynergy.com/"]
     background: var(--md-surface-container);
     border-radius: 0.25rem;
     overflow: hidden;
-    box-shadow: 0.1rem 0.1rem 0.5rem rgb(0, 0, 0, 0.2);
-    border: solid 0.1rem rgb(50, 50, 50, 0.1);
     margin: 2rem 0;
     font-family: sans-serif;
 }
@@ -526,13 +524,6 @@ main > article img[src^="https://ad.linksynergy.com/"]
 .og-card-image-container {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    border-right: solid 0.1rem #e8e8e8;
-}
-
-@media (prefers-color-scheme: dark) {
-    .og-card-image-container {
-        border-color: transparent;
-    }
 }
 
 .og-card-image {
