@@ -25,6 +25,7 @@ import { Image } from "astro:assets";
         background: var(--header-background-color);
         z-index: 2;
         box-shadow: 0.1rem 0.1rem 0.5rem rgb(0, 0, 0, 0.2);
+        transition: 0.3s;
     }
 
     #header_logo {
@@ -86,6 +87,10 @@ import { Image } from "astro:assets";
     }
 
     @media (orientation: portrait) {
+        header.hidden {
+            transform: translateY(-100%);
+        }
+
         #header_logo {
             position: absolute;
             top: 1rem;
@@ -152,5 +157,17 @@ import { Image } from "astro:assets";
         item.addEventListener("click", () => {
             header.dataset.overlayMenu = "closed";
         });
+    });
+
+    let lastScrollY = 0;
+
+    window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > lastScrollY) {
+            header.classList.add("hidden");
+        } else {
+            header.classList.remove("hidden");
+        }
+        lastScrollY = currentScrollY;
     });
 </script>
