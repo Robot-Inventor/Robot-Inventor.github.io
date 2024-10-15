@@ -121,23 +121,6 @@ const ISO8601ToLocale = (iso8601: string) => {
         .replace(/(\d{2}:\d{2}):\d{2}/, "$1")
         .replace(/\.\d+$/, "");
 };
-
-const convertToReiwaDate = (iso8601: string): string => {
-    const date = new Date(iso8601);
-
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-
-    let reiwaYear = year - 2018;
-    if (year === 2019 && month < 5) {
-        throw new Error("平成時代の日付は含まれません。2019年5月1日以降のみ対応です。");
-    }
-
-    const reiwaYearStr = reiwaYear === 1 ? "元" : reiwaYear.toString();
-
-    return `令和${reiwaYearStr}年${month}月${day}日`;
-};
 ---
 
 <BaseLayout frontmatter={Astro.props.frontmatter} lang={Astro.props.frontmatter.lang}>
