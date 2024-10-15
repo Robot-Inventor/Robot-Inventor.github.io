@@ -4,6 +4,10 @@ import ArticleLayout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
+import Steps from "src/starlight/components/Steps.astro";
+import ArticleCard from "@components/ArticleCard.astro";
+import { YouTube } from "@astro-community/astro-embed-youtube";
+
 export async function getStaticPaths() {
     const blogEntries = await getCollection("article");
     return blogEntries.map((entry) => ({
@@ -12,6 +16,12 @@ export async function getStaticPaths() {
     }));
 }
 
+const components = {
+    Steps,
+    ArticleCard,
+    YouTube
+};
+
 const { entry } = Astro.props as { entry: CollectionEntry<"article"> };
 const { Content } = await entry.render();
 
@@ -19,5 +29,5 @@ const Layout = entry.data.documentFormat ? DocumentLayout : ArticleLayout;
 ---
 
 <Layout frontmatter={entry.data} slug={Astro.params.slug}>
-    <Content />
+    <Content {components} />
 </Layout>
