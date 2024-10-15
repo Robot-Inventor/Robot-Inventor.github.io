@@ -16,7 +16,6 @@ export async function getStaticPaths() {
     }));
 }
 
-// ref: https://blog.kizu.dev/astro-mdx-components/
 const components = {
     Steps,
     ArticleCard,
@@ -30,5 +29,9 @@ const Layout = entry.data.documentFormat ? DocumentLayout : ArticleLayout;
 ---
 
 <Layout frontmatter={entry.data} slug={Astro.params.slug}>
+    {
+        // // コンポーネントを自動でロードする。
+        // ref: https://blog.kizu.dev/astro-mdx-components/
+    }
     <Content {components} />
 </Layout>
