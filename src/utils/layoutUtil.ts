@@ -1,6 +1,7 @@
 import { getImage } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import { getEntry, type CollectionEntry } from "astro:content";
+import { cache } from "./cache";
 
 const escapeURLs = (text: string) => {
     // URLのドットをスペースとドットに置換する。国際化TLDではTLDにハイフンが含まれることに注意
@@ -64,12 +65,14 @@ const getThumbnailData = async (thumbnail: ImageMetadata) => {
 const getAuthorData = async (
     authorNameOrId: string | { collection: "author"; id: CollectionEntry<"author">["id"] }
 ) => {
-    const authorId = typeof authorNameOrId === "string" ? authorNameOrId : authorNameOrId.id;
+    const authorData = await cache(`get-author-data-${authorNameOrId}`, async () => {
+        const authorId = typeof authorNameOrId === "string" ? authorNameOrId : authorNameOrId.id;
+        const author = await getEntry("author", authorId);
+        if (!author) throw new Error("Undefined author");
+        return author;
+    });
 
-    const author = await getEntry("author", authorId);
-    if (!author) throw new Error("Undefined author");
-
-    return author;
+    return authorData;
 };
 
 export { escapeTitle, getThumbnailData, getAuthorData };
