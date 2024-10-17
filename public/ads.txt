@@ -1018,6 +1018,9 @@ undertone.com, 3934, RESELLER
 google.com, pub-4282252113865235, RESELLER, f08c47fec0942fa0
 freewheel.tv, 625393, RESELLER
 supply.colossusssp.com, 181, RESELLER, 6c5b49d96ec1b458
+emxdgt.com, 1799, RESELLER, 1e1d41537f7cad7f
+33across.com, 0014000001a0hIqAAI, RESELLER, bbea06d9c4d2853c
+yieldmo.com, 3624960084913628105, RESELLER
 aps.amazon.com, cfee765f-a9ba-4867-af16-2ff8d62ed9ba, RESELLER
 triplelift.com, 11883, RESELLER, 6c33edb13117fd86
 sharethrough.com, 0c3ba0a3, RESELLER, d53b998a7bd4ecd2
