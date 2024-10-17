@@ -3,6 +3,7 @@ import { getEntry } from "astro:content";
 import { Picture } from "astro:assets";
 import { getDefaultThumbnail } from "src/utils/getDefaultThumbnailPath";
 import { Markdown } from "@astropub/md";
+import { cache } from "src/utils/cache";
 
 interface Props {
     link: string;
@@ -18,7 +19,7 @@ const slug = Astro.props.link
 
 const defaultThumbnail = await getDefaultThumbnail(slug);
 
-const targetArticle = await getEntry("article", slug);
+const targetArticle = await cache(`article-entry-${slug}`, async () => await getEntry("article", slug));
 if (!targetArticle) throw new Error("article not found");
 
 const thumbnail = targetArticle.data.thumbnail || defaultThumbnail;

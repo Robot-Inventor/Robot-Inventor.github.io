@@ -1,5 +1,6 @@
 import { getEntry } from "astro:content";
 import { IMAGE_WIDTH, IMAGE_HEIGHT } from "@components/OgImage";
+import { cache } from "./cache";
 
 const getDefaultThumbnail = async (slug: string): Promise<ImageMetadata> => {
     const cleanedSlug = slug
@@ -7,7 +8,9 @@ const getDefaultThumbnail = async (slug: string): Promise<ImageMetadata> => {
         .replace(/^article\//, "")
         .replace(/\/$/, "");
 
-    const entry = cleanedSlug ? await getEntry("article", cleanedSlug) : null;
+    const entry = cleanedSlug
+        ? await cache(`article-entry-${cleanedSlug}`, async () => await getEntry("article", cleanedSlug))
+        : null;
 
     if (entry) {
         return {
