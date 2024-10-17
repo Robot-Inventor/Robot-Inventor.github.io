@@ -25,6 +25,7 @@ showAds: false
 
 #### 主な実績など
 
+- 2024年10月～　Larva06の運営元「[一般社団法人lirfa](https://lirfa.jp/)」理事に就任
 - 中高生研究者採掘メディア「[Larva06](https://larva06.com/)」技術開発部リーダー兼企画部リーダー
 - 合成生物学の世界大会 iGEM（International Genetically Engineered Machine competition）2023 出場チーム「Japan United（通称 Ninjas）」のメンバーとして[Wiki](https://2023.igem.wiki/japan-united/)の作成に参加。Japan-Unitedチームは高校生部門で優勝
 - 2023年10月　X（旧Twitter）のリンクカードの旧デザインを復活させる「[Restore Link Card](https://github.com/Robot-Inventor/restore-link-card)」を公開し、[窓の杜に掲載](https://forest.watch.impress.co.jp/docs/review/1537798.html)される
